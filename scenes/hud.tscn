@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://3um1kb0drhgb"]
+
+[ext_resource type="Script" uid="uid://b35wtp6w5yaiy" path="res://scripts/button_next.gd" id="1_ahhtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
+font_size = 30
+
+[node name="Hud" type="Control" unique_id=1466224900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=710470278]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 100.0
+offset_right = 44.5
+offset_bottom = 143.0
+grow_horizontal = 2
+text = "next"
+script = ExtResource("1_ahhtf")
+metadata/pasajero_on = false
+
+[node name="Color" type="Label" parent="." unique_id=694807523]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.5
+offset_right = 234.5
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "Color que no tiene que pasar hoy: "
+label_settings = SubResource("LabelSettings_oo0fn")
+
+[node name="Panel" type="Panel" parent="Color" unique_id=1249458428]
+z_index = -1
+layout_mode = 0
+offset_left = -14.0
+offset_top = 3.0
+offset_right = 615.0
+offset_bottom = 48.0
+
+[node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="yes" type="Button" parent="YES_NO_menu" unique_id=1948610653]
+modulate = Color(0.29158273, 0.9396508, 0.52764267, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -50.0
+offset_right = -70.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YES"
+
+[node name="no" type="Button" parent="YES_NO_menu" unique_id=184277018]
+modulate = Color(0.8671932, 0, 0.13321015, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -50.0
+offset_right = 170.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO
+"
+
+[node name="Fallos" type="Label" parent="." unique_id=279618866]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_bottom = 42.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "Fallos: "
+label_settings = SubResource("LabelSettings_5ysmq")
+
+[node name="Panel" type="Panel" parent="Fallos" unique_id=1467160755]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.081
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.019000053
+offset_bottom = -1.0
+
+[node name="Pasajeros" type="Label" parent="." unique_id=750532179]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pasajeros: "
+label_settings = SubResource("LabelSettings_6fi6k")
+
+[node name="Panel" type="Panel" parent="Pasajeros" unique_id=248829330]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.071
+anchor_right = 1.1090001
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 0.017999887
+offset_right = -0.0040130615
+offset_bottom = 1.0
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="YES_NO_menu/yes" to="Button" method="_on_yes_pressed"]
+[connection signal="pressed" from="YES_NO_menu/no" to="Button" method="_on_no_pressed"]

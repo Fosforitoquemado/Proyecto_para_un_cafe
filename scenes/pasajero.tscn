@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://chal0714mc20w"]
+
+[ext_resource type="Script" uid="uid://df8wo01v0i8j8" path="res://scripts/pasajero.gd" id="1_g2e5i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vo1e"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g2e5i"]
+material = SubResource("StandardMaterial3D_6vo1e")
+radius = 0.15
+height = 0.7
+
+[node name="Pasajero" type="MeshInstance3D" unique_id=1818023385]
+mesh = SubResource("CapsuleMesh_g2e5i")
+script = ExtResource("1_g2e5i")
