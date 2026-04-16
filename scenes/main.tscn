@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://citi7q2w4rvw" path="res://texture/WhatsApp Image 2025-12-25 at 2.50.51 PM.jpeg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://byhdl3rlhdvtu" path="res://modelos/road.glb" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dpqri5gb47jk" path="res://scenes/832a0c02-0b3a-4751-a5f0-9cca0bf590a9.jpeg" id="4_tbgi4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0xm2m"]
 panorama = ExtResource("1_o5qli")
@@ -35,3 +36,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9,
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Control" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161018913]
+position = Vector2(562, 408)
+scale = Vector2(0.5854917, 0.5452562)
+texture = ExtResource("4_tbgi4")
