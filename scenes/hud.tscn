@@ -31,7 +31,7 @@ offset_bottom = 143.0
 grow_horizontal = 2
 text = "next"
 script = ExtResource("1_ahhtf")
-metadata/pasajero_on = false
+metadata/Auto_on = false
 
 [node name="Color" type="Label" parent="." unique_id=694807523]
 layout_mode = 1
@@ -117,14 +117,14 @@ anchor_bottom = 1.0
 offset_left = 0.019000053
 offset_bottom = -1.0
 
-[node name="Pasajeros" type="Label" parent="." unique_id=750532179]
+[node name="Autos" type="Label" parent="." unique_id=750532179]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Pasajeros: "
 label_settings = SubResource("LabelSettings_6fi6k")
 
-[node name="Panel" type="Panel" parent="Pasajeros" unique_id=248829330]
+[node name="Panel" type="Panel" parent="Autos" unique_id=248829330]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1

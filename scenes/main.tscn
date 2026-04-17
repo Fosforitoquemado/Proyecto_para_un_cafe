@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
-[ext_resource type="Texture2D" uid="uid://citi7q2w4rvw" path="res://texture/WhatsApp Image 2025-12-25 at 2.50.51 PM.jpeg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://byhdl3rlhdvtu" path="res://modelos/road.glb" id="4_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://dpqri5gb47jk" path="res://scenes/832a0c02-0b3a-4751-a5f0-9cca0bf590a9.jpeg" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bu6o1wlt1ruxg" path="res://scenes/piso.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://d1du8d661ygmo" path="res://modelos/mate/mate.glb" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c745ge57dblwo" path="res://scenes/arbol_pino.tscn" id="8_tipki"]
+
+[sub_resource type="Gradient" id="Gradient_tefeu"]
+colors = PackedColorArray(0, 0, 0, 1, 0.25882354, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
+gradient = SubResource("Gradient_tefeu")
+fill_from = Vector2(1, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0xm2m"]
-panorama = ExtResource("1_o5qli")
-filter = false
-energy_multiplier = 0.5
+panorama = SubResource("GradientTexture2D_o6xl0")
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
 sky_material = SubResource("PanoramaSkyMaterial_0xm2m")
@@ -30,14 +37,20 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1234503639]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9, 0.7, -0.6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.8020438, 0.7, 1.4984684)
 
 [node name="road" parent="." unique_id=1349534051 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Control" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161018913]
-position = Vector2(562, 408)
-scale = Vector2(0.5854917, 0.5452562)
-texture = ExtResource("4_tbgi4")
+[node name="Node3D" parent="." unique_id=1795013420 instance=ExtResource("4_tbgi4")]
+
+[node name="mate2" parent="." unique_id=453296566 instance=ExtResource("6_tipki")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.9334333, 0.3847344, 0.5524355)
+
+[node name="mesa precaria(con coso)" parent="." unique_id=755773858 instance=ExtResource("7_85g3d")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
+
+[node name="pinos" parent="." unique_id=160014855 instance=ExtResource("8_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.422178, 3.8827205, -23.270905)

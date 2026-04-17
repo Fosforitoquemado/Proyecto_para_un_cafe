@@ -1,0 +1,424 @@
+[gd_scene format=4 uid="uid://c745ge57dblwo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xjk0"]
+resource_name = "copa"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6900502, 0.6628816, 0.31356567, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2dhx"]
+resource_name = "tronco"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.23923562, 0.18984091, 0.17003125, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_otdjt"]
+_surfaces = [{
+"aabb": AABB(-0.010823423, -0.010823423, -0.010673156, 0.021646846, 0.021646846, 0.020673156),
+"format": 34359742465,
+"index_count": 372,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAABAAAABQACAAEABQABAAQAAAAGAAQABQAEAAcACAAHAAQABAAGAAgABQAHAAgACQAGAAAACAAGAAkACAAKAAUAAAALAAkADAALAAAAAAADAAwACQALAA0ADQALAAwACQAOAAgADwAKAAgACAAOAA8AEAAOAAkADwAOABAADQARAAkACQARABAABQAKABIAEgAKAA8AEgATAAUABQATAAIAEwAUAAIAFAATABIAFAAVAAIAAgAVABYAFgAVABQAFgADAAIAEgAXABQAFAAXABYADAADABYAGAAXABIAFgAXABgAFgAZAAwAGAAZABYADAAZABoAGgAZABgAEgAbABgADwAbABIAGAAbABwAHAAbAA8AHAAdABgAGAAdABoADwAeABwAEAAeAA8AHwAdABwAGgAdAB8AHAAeACAAIAAeABAAGgAhAAwAIAAiABwAHAAiAB8ADAAhAA0AIwAhABoADQAhACMAHwAkABoAGgAkACMAHwAiACUAJQAiACAAJgAkAB8AIwAkACYAJQAnAB8AHwAnACYAIwAoAA0ADQAoACkAKQARAA0AKgAoACMAKQAoACoAEAARACkAKQArABAAEAArACAALAArACkAIAArACwAKgAtACkAKQAtACwAIwAuACoAJgAuACMALwAtACoALAAtAC8ALAAwACAAIAAwACUAMQAwACwAJQAwADEALwAyACwALAAyADEAKgAzAC8AKgAuADQANAAzACoANAAuACYALwAzADUANQAzADQANQA2AC8ANwAyAC8ALwA2ADcAMQAyADcANgA1ADgANAA4ADUANwA2ADgAJgA5ADQANwA6ADEAOgA3ADgAOwA4ADQAOgA4ADsANAA5ADsAPAA5ACYAOwA5ADwAJgAnADwAPAAnACUAMQA9ACUAJQA9ADwAMQA6AD4APgA9ADEAPgA6ADsAPAA9AD4APgA7AD8APAA/ADsAPgA/ADwA"),
+"name": "copa",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("u8EgO7vBIDt2fKc7KWATOSlgEzkK1yM8XJWgLoVrUDkK1yM8LZ5xLihYYzufbZE7rmtQOQAAAAAK1yM8XJWgLoVrULkK1yM8KlhjO1zhXC2fbZE7KWATOSlgE7kK1yM8u8EgO7vBILt2fKc7F5wtOwAAAAAK16M7LZ5xLihYY7ufbZE7boX1Om6F9ToK16M7CuBwLhScLTsK16M7WSaQO1kmkDtxdbk4boX1Om6F9boK16M7CuBwLhScLbsK16M7WSaQO1kmkLtxdbk4ztvLOwAAAAANSBm6u8Egu7vBILt2fKc7KWATuSlgE7kK1yM8hWtQuQAAAAAK1yM8KWATuSlgEzkK1yM8u8Egu7vBIDt2fKc7KFhju1zhXC2fbZE7FJwtuwAAAAAK16M7boX1um6F9ToK16M7WSaQu1kmkDtxdbk4boX1um6F9boK16M7WSaQu1kmkLtxdbk4zdvLuwAAAAANSBm6j6T3Lc3by7sNSBm6uBinuwAAAAAAAAAAXJUgLrgYp7sAAAAAj6T3Lc3byzsNSBm6bE9su2xPbLsAAAAAXJUgLrgYpzsAAAAAbE9su2xPbDsAAAAAg17Tu4Ne07sAwp67g17Tu4Ne0zsAwp676nUVvOaRkC3X0LS7bE9sO2xPbDsAAAAAuhinOwAAAAAAAAAAg17TO4Ne0zsAwp67bE9sO2xPbLsAAAAAg17TO4Ne07sAwp676nUVPOaRkC3X0LS7JlQtLup1FTzX0LS7ZmP3OwAAAAAK16O7JlQtLup1FbzX0LS7XJWgLWZj97sK16O7D+6uOw/urrsK16O7D+6uOw/urjsK16O7XJWgLWZj9zsK16O7qsj6O6rI+jsK1yO8ulQxPAAAAAB23i68qsj6O6rI+rsK1yO89trXrLpUMTx23i68D+6uuw/urjsK16O79trXrLpUMbx23i68qsj6u6rI+jsK1yO8ZmP3uwAAAAAK16O7D+6uuw/urrsK16O7qsj6u6rI+rsK1yO8ulQxvAAAAAB23i68")
+}, {
+"aabb": AABB(-0.0037186826, -0.0037186826, -0.015018158, 0.007437365, 0.007437365, 0.0053119315),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEAAQAFAAQABgADAAIABgACAAQABwAAAAMAAwAGAAcACAABAAAACAAFAAEACAAAAAcACQAEAAUABQAIAAkABgAEAAkACAAHAAoACgAHAAYACwAJAAgABgAJAAsADAAIAAoACAAMAAsABgANAAoADQAGAAsADAAKAA4ADgAKAA0ADAAOAA8ADQAPAA4ADwALAAwADQALAA8A"),
+"name": "tronco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("yVMsO8lTLDvdBh+8AAAAACS1czvdBh+8AAAAACS1czu4Dna8yVMsO8lTLDu4Dna8yVMsu8lTLDu4Dna8yVMsu8lTLDvdBh+8JLVzOwAAAAC4Dna8JLVzOwAAAADdBh+8JLVzuwAAAADdBh+8JLVzuwAAAAC4Dna8yVMsO8lTLLvdBh+8yVMsu8lTLLu4Dna8yVMsu8lTLLvdBh+8yVMsO8lTLLu4Dna8AAAAACS1c7vdBh+8AAAAACS1c7u4Dna8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iiftd"]
+resource_name = "Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.010823423, -0.010823423, -0.010673156, 0.021646846, 0.021646846, 0.020673156),
+"attribute_data": PackedByteArray("AABgP4hN+j0AAGA/AAAAAAAAgD8AAAAAAACAP4hN+j0AAEA/AAAAAAAAYD8AAAAAAABgP4hN+j0AAEA/iE36PQAAID+ITfo9AAAgPwAAAAAAAEA/AAAAAAAAQD+ITfo9AAAAPwAAAAAAACA/AAAAAAAAID+ITfo9AAAAP4hN+j0AAMA+iE36PQAAwD4AAAAAAAAAPwAAAAAAAAA/iE36PQAAgD4AAAAAAADAPgAAAAAAAMA+iE36PQAAgD6ITfo9AACAPqRwfT+o49Y+LI4UP0jh+j4AAEA/qOPWPtRxaz8AAIA+XI8CP2JxpD3UcWs/ENcjPAAAQD9icaQ9LI4UPwAAAD6ITfo9AAAAPgAAAAAAAIA+AAAAAAAAgD6ITfo9AAAAAAAAAAAAAAA+AAAAAAAAAD6ITfo9AAAAAIhN+j0AAEA/pHB9PwAAQD9cjwI/LI4UPyyOFD8sjhQ/1HFrP1yPAj8AAEA/1HFrP9Rxaz+kcH0/AABAP9Rxaz8sjhQ/AAAAAAAAwD4AAAA+AADAPgAAAD4AAAA/AAAAAAAAAD8AAAAAAACAPgAAAD4AAIA+AAAAPsgDvj4AAAAAyAO+PgAAAAAAAAA+AAAAPgAAAD4AAAA+cLx9PgAAAABwvH0+AAAAPgAAAD8AAAA+AADAPgAAgD4AAMA+AACAPgAAAD8AAAA+yAO+PgAAAD4AAIA+AACAPgAAgD4AAIA+yAO+PgAAAD5wvH0+AAAAPgAAAD4AAIA+AAAAPgAAgD5wvH0+AACAPgAAwD4AAMA+AADAPgAAwD4AAAA/AACAPgAAAD8AAIA+AACAPgAAwD4AAIA+AADAPsgDvj4AAIA+yAO+PgAAgD4AAAA+AADAPgAAAD4AAMA+cLx9PgAAgD5wvH0+AADAPgAAAD8AAMA+AADAPgAAAD8AAMA+AAAAPwAAAD8AAMA+yAO+PgAAwD4AAIA+AAAAPwAAgD4AAAA/yAO+PgAAwD5wvH0+AADAPgAAAD4AAAA/AAAAPgAAAD9wvH0+AAAAPwAAwD4AACA/AADAPgAAID8AAAA/AAAAPwAAAD8AAAA/AACAPgAAID8AAIA+AAAgP8gDvj4AAAA/yAO+PgAAAD8AAAA+AAAgPwAAAD7//x8/cLx9PgAAAD9wvH0+AAAgPwAAAD8AACA/AADAPgAAQD8AAMA+AABAPwAAAD8AACA/yAO+PgAAID8AAIA+AABAPwAAgD4AAEA/yAO+Pv//Hz9wvH0+AAAgPwAAAD4AAEA/AAAAPgAAQD9wvH0+AABAPwAAwD4AAGA/AADAPgAAYD8AAAA/AABAPwAAAD8AAEA/AACAPgAAYD8AAIA+AABgP8gDvj4AAEA/yAO+PgAAQD8AAAA+AABgPwAAAD4AAGA/cLx9PgAAQD9wvH0+AABgPwAAAD8AAGA/AADAPgAAgD8AAMA+AACAPwAAAD8AAGA/yAO+PgAAYD8AAIA+AACAPwAAgD4AAIA/yAO+PgAAYD9wvH0+AABgPwAAAD4AAIA/AAAAPgAAgD9wvH0+AAAAAAAAAD4AAAAAiE36PQAAAD6ITfo9AAAAPgAAAD4AAAA+iE36PQAAgD6ITfo9AACAPgAAAD4AAAA+AAAAPgAAgD4AAAA+AACAPohN+j0AAMA+iE36PQAAwD4AAAA+AADAPohN+j0AAAA/iE36PQAAAD8AAAA+AADAPgAAAD4AAAA/AAAAPgAAAD+ITfo9AAAgP4hN+j0AACA/AAAAPgAAID+ITfo9AABAP4hN+j0AAEA/AAAAPgAAID8AAAA+AABAPwAAAD4AAEA/iE36PQAAYD+ITfo9AABgPwAAAD4AAGA/iE36PQAAgD+ITfo9AACAPwAAAD4AAGA/AAAAPgAAYD9wvH0+AACAP3C8fT4AAIA/AACAPgAAYD8AAIA+AABAPwAAgD4AAEA/cLx9PgAAYD9wvH0+AABgPwAAgD7//x8/cLx9PgAAQD9wvH0+AABAPwAAgD4AACA/AACAPgAAAD8AAIA+AAAAP3C8fT7//x8/cLx9PgAAID8AAIA+AADAPnC8fT4AAAA/cLx9PgAAAD8AAIA+AADAPgAAgD4AAIA+AACAPgAAgD5wvH0+AADAPnC8fT4AAMA+AACAPgAAAD5wvH0+AACAPnC8fT4AAIA+AACAPgAAAD4AAIA+AAAAAAAAgD4AAAAAcLx9PgAAAD5wvH0+AAAAPgAAgD4AAGA/yAO+PgAAgD/IA74+AACAPwAAwD4AAGA/AADAPgAAQD8AAMA+AABAP8gDvj4AAGA/yAO+PgAAYD8AAMA+AAAgP8gDvj4AAEA/yAO+PgAAQD8AAMA+AAAgPwAAwD4AAAA/AADAPgAAAD/IA74+AAAgP8gDvj4AACA/AADAPgAAwD7IA74+AAAAP8gDvj4AAAA/AADAPgAAwD4AAMA+AACAPgAAwD4AAIA+yAO+PgAAwD7IA74+AADAPgAAwD4AAAA+yAO+PgAAgD7IA74+AACAPgAAwD4AAAA+AADAPgAAAAAAAMA+AAAAAMgDvj4AAAA+yAO+PgAAAD4AAMA+"),
+"format": 34359742487,
+"index_count": 372,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGAAaABsAGAAcABkAGAAdABwAHQAeABwAHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKwAoACoAKwAqACwAKAAtACkALQAuACkALgAvACkAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQAiACJAIoAigCLAIgAjACNAI4AjgCPAIwAkACRAJIAkgCTAJAAlACVAJYAlgCXAJQAmACZAJoAmgCbAJgAnACdAJ4AngCfAJwAoAChAKIAogCjAKAApAClAKYApgCnAKQAqACpAKoAqgCrAKgArACtAK4ArgCvAKwAsACxALIAsgCzALAAtAC1ALYAtgC3ALQAuAC5ALoAugC7ALgAvAC9AL4AvgC/ALwAwADBAMIAwgDDAMAAxADFAMYAxgDHAMQAyADJAMoAygDLAMgAzADNAM4AzgDPAMwA0ADRANIA0gDTANAA1ADVANYA1gDXANQA2ADZANoA2gDbANgA3ADdAN4A3gDfANwA4ADhAOIA4gDjAOAA5ADlAOYA5gDnAOQA6ADpAOoA6gDrAOgA7ADtAO4A7gDvAOwA"),
+"material": SubResource("StandardMaterial3D_6xjk0"),
+"name": "copa",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 240,
+"vertex_data": PackedByteArray("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JlQtLup1FbzX0LS7XJWgLWZj97sK16O7D+6uuw/urrsK16O7ZmP3uwAAAAAK16O76nUVvOaRkC3X0LS7g17Tu4Ne07sAwp67D+6uuw/urrsK16O7g17Tu4Ne0zsAwp676nUVvOaRkC3X0LS7ZmP3uwAAAAAK16O7D+6uuw/urjsK16O7XJWgLWZj9zsK16O7JlQtLup1FTzX0LS7g17Tu4Ne0zsAwp67D+6uuw/urjsK16O7AZIYxcwfDdoBkhjFABzu0AGSGMURHX7TAZIYxdkfLdoYxQGS7WJ/7BjFAZL+Yw/vGMUBkjNg8eUYxQGSJWDQ5RjF/W0btBjwGMX9bd6h/vEYxf1t/qZ28RjF/W1ctBLwAZLmOgDZiM4BkuY6IN7/zQGS5jrjy+XPAZLmOqLL7M/9beY6MuDxpf1t5jr+4w+v/W3mOu3if6z9beY6JeDQpeY6/W0RnX6T5jr9bQCc7pDmOv1ty58NmuY6/W3Zny2a/3//f/7//7//f/9//v//v/9//3/+//+//3//f/7//7//f/9//v//v/9//3/+//+//3//f/7//7//f/9//v//v+Y6AZLjS+WP5joBkiBe/43mOgGSAFmIjuY6AZKiS+yP/W0Yxf4mdrH9bRjF3iH+sf1tGMUbNBmw/W0YxVw0ErD/////////P/////////8//////////z//////////P/////////8//////////z//////////P/////////8/XmdWwMwo6K1eZ1bAwSQwrl5nVsBUKPCtXmdWwEUrvK0gaje8xigwriBqN7zAJKWuIGo3vK8pFq4gaje8GizQrR5qyb/AKOCuHmrJvxckU68easm/2yx6rh5qyb/dLkmuqD+gmKtXDpKoP6CYPVvOkag/oJgyVxaSqD+gmLpUQpLHQ96VUFbokcdD3pU/W1mRx0PelThXzZHHQ96V5FMukjVA4JUkU4ORNUDglehbq5A1QOCVPlcekTVA4JUhUbWRqD9eZy2kZZSoP15nnaNgkqg/XmccpCmUqD9eZ4WkopXHQyBqnKNilMdDIGqzol+Sx0MgatGj15THQyBqXaQMljVAHmo9ol+UNUAealehC5I1QB5qCKNtljVAHmpro26XXmeoP+Hb1ateZ6g/YdyerV5nqD/Q25irXmeoP3jbXKogasdDLdwnqyBqx0NL3Z+tIGrHQ2Lcm6sgasdDodvxqR5qNUD23JGpHmo1QKbe860eajVAwN2eqx5qNUCT3JCooJioPzLXFtKgmKg/PdvO0aCYqD+q1w3SoJioP7nUQtLelcdDONfN0d6Vx0M+21nR3pXHQ0/W6NHelcdD5NMu0uCVNUA+1x7R4JU1QOfbq9DglTVAI9OD0eCVNUAh0bXRVsBeZ1Oo8O1WwF5nwaQw7lbAXmfMqOftVsBeZ0Sru+03vCBqrqkW7je8IGq/pKXuN7wgasaoMO43vCBqGqzQ7cm/HmrarHruyb8eahakUu/Jvx5qwKjf7sm/HmrdrknuVsCgmNFbmOtWwKCYYVye7VbAoJjiW9TrVsCgmHlbXOo3vN6VYlyb6ze83pVLXZ7tN7zelS1cJ+s3vN6VoVvx6cm/4JXAXZ7ryb/glade8+3Jv+CV9lyR6cm/4JWTXJDooJhWwB0kKdSgmFbAnSNg0qCYVsAuJGXUoJhWwIYkodXelTe80SPW1N6VN7yzIl/S3pU3vJwjYtTelTe8XSQM1uCVyb8II2zW4JXJv1ghCtLglcm/PiJf1OCVyb9rI27XTB/NAfsvh65MH80BxTA5rkwfzQHyLLCvTB/NATUrW7Ax/rLgDFNOkDH+suA6T8WRMf6y4ARQd5Ex/rLgylSjjzH+TB/vov2XMf5MH4qjYpgx/kwfnKB4ljH+TB9Hn5qVTB8x/mHfhalMHzH+c9ycp0wfMf4O3QGoTB8x/rbgZKqy4DH+A9B30bLgMf45z8TRsuAx/gzTTdCy4DH+ydSjz80BTB/yrLDvzQFMH8SwOe7NAUwf+q+G7s0BTB80q1rwzQGy4A9dAejNAbLgdFyc580BsuBiX4XpzQGy4LdgZOqy4M0BnSB41rLgzQGLI2HYsuDNAfAi/Ney4M0BSB+Z1UYZ/wGvItXURhn/AVAk39VGGf8BEyS41UYZ/wE4IorU/wFGGetbRer/AUYZr1se6v8BRhlQXSjr/wFGGcZddOv/AbjmrKmn7v8BuObAq9bt/wG45nKr9e3/AbjmFani7kYZ//2L1AnSRhn//T7UJ9JGGf/9UtZW0UYZ//3p1hvRuOb//U/dKKu45v/9rtseqrjm//3r20WquOb//cbddKv//bjmE6S5lf/9uOZPpN+V//245q6i1ZT//bjmOKKKlP/9RhlSVleR//1GGT5UJ5L//UYZjFQJkv/9RhnpVhuRuOb/AXMr9a245v8BwCvXrbjm/wGsKaeuuOb/ARUp4q658BsAviNV1LnwGwBnJLXUufAbAFAkp9S58BsAlSM+1BsAufCvW1brGwC58JdbSesbALnwQFyo6xsAufBqXMDrGwBFD6yoH+4bAEUPa6nL7RsARQ9QqdbtGwBFD32oNO658OP/rdYn0rnw4/+T1jPSufDj/1LX3tG58OP/gdfJ0UUP4/9A3KirRQ/j/5fbSatFD+P/rttWq0UP4/9p3MCr4/9FD0+kqJTj/0UPZ6S1lOP/RQ++o1WU4/9FD5SjPpTj/7nwUlfekeP/ufCTVjOS4/+58K5WJ5Lj/7nwgVfKkUUPGwBRKdetRQ8bAGspy61FDxsArCgfrkUPGwB9KDSu")
+}, {
+"aabb": AABB(-0.0037186826, -0.0037186826, -0.015018158, 0.007437365, 0.007437365, 0.0053119315),
+"attribute_data": PackedByteArray("AABgPwAAAAAAAIA/AAAAAAAAgD8AAAA/AABgPwAAAD8AAEA/AAAAAAAAYD8AAAAAAABgPwAAAD8AAEA/AAAAPwAAID8AAAAAAABAPwAAAAAAAEA/AAAAPwAAID8AAAA/AAAAPwAAAAAAACA/AAAAAAAAID8AAAA/AAAAPwAAAD8AAMA+AAAAAAAAAD8AAAAAAAAAPwAAAD8AAMA+AAAAPwAAgD4AAAAAAADAPgAAAAAAAMA+AAAAPwAAgD4AAAA/ENcjPAAAQD+o49Y+LI4UP0jh+j4AAEA/AACAPlyPAj9icaQ9LI4UP6jj1j7UcWs/YnGkPdRxaz8AAIA+pHB9PwAAAD4AAAAAAACAPgAAAAAAAIA+AAAAPwAAAD4AAAA/AAAAAAAAAAAAAAA+AAAAAAAAAD4AAAA/AAAAAAAAAD+kcH0/AABAPwAAQD9cjwI/LI4UPyyOFD/UcWs/LI4UP1yPAj8AAEA/LI4UP9Rxaz/UcWs/1HFrPwAAQD+kcH0/"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGAAbABkAGAAcABsAGAAaAB0AHgAYAB0AHgAdAB8AIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKAArACkAKAAqACwAKAAsAC0ALgAoAC0ALgAtAC8A"),
+"material": SubResource("StandardMaterial3D_q2dhx"),
+"name": "tronco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("yVMsO8lTLDvdBh+8AAAAACS1czvdBh+8AAAAACS1czu4Dna8yVMsO8lTLDu4Dna8JLVzOwAAAADdBh+8yVMsO8lTLDvdBh+8yVMsO8lTLDu4Dna8JLVzOwAAAAC4Dna8yVMsO8lTLLvdBh+8JLVzOwAAAADdBh+8JLVzOwAAAAC4Dna8yVMsO8lTLLu4Dna8AAAAACS1c7vdBh+8yVMsO8lTLLvdBh+8yVMsO8lTLLu4Dna8AAAAACS1c7u4Dna8yVMsu8lTLLvdBh+8AAAAACS1c7vdBh+8AAAAACS1c7u4Dna8yVMsu8lTLLu4Dna8JLVzuwAAAADdBh+8yVMsu8lTLLvdBh+8yVMsu8lTLLu4Dna8JLVzuwAAAAC4Dna8JLVzuwAAAADdBh+8yVMsO8lTLDvdBh+8JLVzOwAAAADdBh+8AAAAACS1czvdBh+8yVMsu8lTLDvdBh+8yVMsO8lTLLvdBh+8yVMsu8lTLLvdBh+8AAAAACS1c7vdBh+8yVMsu8lTLDvdBh+8JLVzuwAAAADdBh+8JLVzuwAAAAC4Dna8yVMsu8lTLDu4Dna8AAAAACS1czvdBh+8yVMsu8lTLDvdBh+8yVMsu8lTLDu4Dna8AAAAACS1czu4Dna8JLVzOwAAAAC4Dna8AAAAACS1czu4Dna8yVMsu8lTLDu4Dna8yVMsO8lTLDu4Dna8JLVzuwAAAAC4Dna8yVMsu8lTLLu4Dna8yVMsO8lTLLu4Dna8AAAAACS1c7u4Dna8fKWB2n0lvdJ8pYHafSW90nylgdp9Jb3SfKWB2n0lvdKB2nylglpA7YHafKWCWkDtgdp8pYJaQO2B2nylglpA7YHaglp8pUDtgdqCWnylQO2B2oJafKVA7YHaglp8pUDtfKV9JYHavdJ8pX0lgdq90nylfSWB2r3SfKV9JYHavdKCWn0lgdpArYJafSWB2kCtglp9JYHaQK2CWn0lgdpArX0lglp8pb6SfSWCWnylvpJ9JYJafKW+kn0lglp8pb6S/3//f////7//f/9/////v/9//3////+//3//f////7//f/9//v//v/9//3////+//3//f////7//f/9/////v30lfKWCWr6SfSV8pYJavpJ9JXylglq+kn0lfKWCWr6SglqB2n0lQK2CWoHafSVArYJagdp9JUCtglqB2n0lQK3/////////P/////////8//////////z///////v//P/////////8//////////z//////////P/////////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_otdjt")
+
+[node name="Node3D" type="Node3D" unique_id=160014855]
+
+[node name="arbol pino" type="Node3D" parent="." unique_id=1379209240]
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino" unique_id=1197720241]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino" unique_id=1039794873]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino2" type="Node3D" parent="." unique_id=2095008327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6346111)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino2" unique_id=152144239]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino2" unique_id=1709259153]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino3" type="Node3D" parent="." unique_id=1727963249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.1928024)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino3" unique_id=1687110310]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino3" unique_id=842779953]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino4" type="Node3D" parent="." unique_id=369490869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.8274136)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino4" unique_id=1681998569]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino4" unique_id=646860192]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino5" type="Node3D" parent="." unique_id=244429943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.476508)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino5" unique_id=1870262101]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino5" unique_id=778705388]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino6" type="Node3D" parent="." unique_id=326987328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.111119)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino6" unique_id=929102850]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino6" unique_id=1679834431]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino7" type="Node3D" parent="." unique_id=2123186935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.669311)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino7" unique_id=1521539752]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino7" unique_id=756785054]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino8" type="Node3D" parent="." unique_id=1084344615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.30392)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino8" unique_id=1630056005]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino8" unique_id=528739781]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino9" type="Node3D" parent="." unique_id=1928123892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 0)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino9" unique_id=513885637]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino9" unique_id=129276738]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino10" type="Node3D" parent="." unique_id=202002697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 2.6346111)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino10" unique_id=606337977]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino10" unique_id=90725513]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino11" type="Node3D" parent="." unique_id=693849341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 5.1928024)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino11" unique_id=785781335]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino11" unique_id=2001778043]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino12" type="Node3D" parent="." unique_id=1723227393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 7.8274136)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino12" unique_id=2035040958]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino12" unique_id=2046080393]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino13" type="Node3D" parent="." unique_id=148172453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 10.476508)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino13" unique_id=1886833262]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino13" unique_id=759458240]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino14" type="Node3D" parent="." unique_id=767005004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 13.111119)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino14" unique_id=2027636968]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino14" unique_id=921098792]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino15" type="Node3D" parent="." unique_id=564579770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 15.669311)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino15" unique_id=896772098]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino15" unique_id=1687492371]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino16" type="Node3D" parent="." unique_id=8808119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6219382, 0, 18.30392)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino16" unique_id=1333558479]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino16" unique_id=374395765]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino17" type="Node3D" parent="." unique_id=1260228734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 0)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino17" unique_id=709812758]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino17" unique_id=1201110813]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino18" type="Node3D" parent="." unique_id=404984159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 2.6346111)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino18" unique_id=1752784155]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino18" unique_id=402567067]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino19" type="Node3D" parent="." unique_id=89754713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 5.1928024)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino19" unique_id=898919260]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino19" unique_id=1093106634]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino20" type="Node3D" parent="." unique_id=1581271741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 7.8274136)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino20" unique_id=2076376200]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino20" unique_id=1282995189]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino21" type="Node3D" parent="." unique_id=1283951748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 10.476508)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino21" unique_id=1794909363]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino21" unique_id=1651703615]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino22" type="Node3D" parent="." unique_id=794752382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 13.111119)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino22" unique_id=879553194]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino22" unique_id=418552351]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino23" type="Node3D" parent="." unique_id=1655027433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 15.669311)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino23" unique_id=1364474310]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino23" unique_id=712553146]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino24" type="Node3D" parent="." unique_id=1728068893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4969034, 0, 18.30392)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino24" unique_id=47119665]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino24" unique_id=239096176]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino25" type="Node3D" parent="." unique_id=1164453560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 0)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino25" unique_id=572048649]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino25" unique_id=1316959777]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino26" type="Node3D" parent="." unique_id=1256884400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 2.6346111)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino26" unique_id=529526323]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino26" unique_id=132068818]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino27" type="Node3D" parent="." unique_id=1166922139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 5.1928024)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino27" unique_id=1865204689]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino27" unique_id=699367878]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino28" type="Node3D" parent="." unique_id=1132603724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 7.8274136)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino28" unique_id=1596035884]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino28" unique_id=295856093]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino29" type="Node3D" parent="." unique_id=1566340974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 10.476508)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino29" unique_id=1734847807]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino29" unique_id=2036644208]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino30" type="Node3D" parent="." unique_id=1688071135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 13.111119)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino30" unique_id=197662213]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino30" unique_id=1447337687]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino31" type="Node3D" parent="." unique_id=313703039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 15.669311)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino31" unique_id=442376701]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino31" unique_id=1849948146]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="arbol pino32" type="Node3D" parent="." unique_id=1538755986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118841, 0, 18.30392)
+
+[node name="copa" type="MeshInstance3D" parent="arbol pino32" unique_id=485642891]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iiftd")
+
+[node name="copa2" type="MeshInstance3D" parent="arbol pino32" unique_id=597641114]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 261.95728, 0, -99.99999, -3.1227744e-05, 0, 0, 21.192177)
+mesh = SubResource("ArrayMesh_iiftd")
