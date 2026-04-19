@@ -70,13 +70,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -50.0
-offset_right = -70.0
-offset_bottom = 50.0
+offset_left = -508.0
+offset_top = 250.0
+offset_right = -318.0
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "YES"
+text = "APROBADO"
 
 [node name="no" type="Button" parent="YES_NO_menu" unique_id=184277018]
 modulate = Color(0.8671932, 0, 0.13321015, 1)
@@ -86,14 +86,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
-offset_top = -50.0
-offset_right = 170.0
-offset_bottom = 50.0
+offset_left = -311.0
+offset_top = 249.0
+offset_right = -129.0
+offset_bottom = 302.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "NO
-"
+text = "MULTAR"
+
+[node name="mate" type="Button" parent="YES_NO_menu" unique_id=443093647]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 572.0
+offset_right = 635.0
+offset_bottom = 625.0
+mouse_filter = 1
+text = "TOMAR MATE "
 
 [node name="Fallos" type="Label" parent="." unique_id=279618866]
 layout_mode = 1
@@ -121,7 +129,7 @@ offset_bottom = -1.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Pasajeros: "
+text = "Autos: "
 label_settings = SubResource("LabelSettings_6fi6k")
 
 [node name="Panel" type="Panel" parent="Autos" unique_id=248829330]

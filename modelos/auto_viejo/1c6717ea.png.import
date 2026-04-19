@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5g2muju52lc6"
-path.s3tc="res://.godot/imported/3d3809c3.png-2b9ecfd72a00bb2000bc036ec4533719.s3tc.ctex"
+uid="uid://bn5u2q16rn657"
+path.s3tc="res://.godot/imported/1c6717ea.png-ed818d787a0a4f8f6179fc96ffa159e3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://modelos/3d3809c3.png"
-dest_files=["res://.godot/imported/3d3809c3.png-2b9ecfd72a00bb2000bc036ec4533719.s3tc.ctex"]
+source_file="res://modelos/auto_viejo/1c6717ea.png"
+dest_files=["res://.godot/imported/1c6717ea.png-ed818d787a0a4f8f6179fc96ffa159e3.s3tc.ctex"]
 
 [params]
 
