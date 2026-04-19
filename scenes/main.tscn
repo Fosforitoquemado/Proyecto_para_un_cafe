@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://byhdl3rlhdvtu" path="res://modelos/road.glb" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bu6o1wlt1ruxg" path="res://scenes/piso.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dworu2tixvs7i" path="res://modelos/escenario/planobuenoarboleda.glb" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
-[ext_resource type="PackedScene" uid="uid://c745ge57dblwo" path="res://scenes/arbol_pino.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://d1u8at6bl32cm" path="res://modelos/escenario/plano.glb" id="7_o6xl0"]
 
 [sub_resource type="Gradient" id="Gradient_tefeu"]
 colors = PackedColorArray(0, 0, 0, 1, 0.25882354, 1, 1, 1)
@@ -39,9 +39,6 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.8020438, 0.7, 1.4984684)
 
-[node name="road" parent="." unique_id=1349534051 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
 [node name="Control" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
 [node name="Node3D" parent="." unique_id=1795013420 instance=ExtResource("4_tbgi4")]
@@ -49,8 +46,20 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 [node name="mesa precaria(con coso)" parent="." unique_id=755773858 instance=ExtResource("7_85g3d")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
 
-[node name="pinos" parent="." unique_id=160014855 instance=ExtResource("8_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.422178, 3.8827205, -23.270905)
-
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
+
+[node name="planobuenoarboleda" parent="." unique_id=133455462 instance=ExtResource("6_o6xl0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.222328, -0.0532521, 1.2842426)
+
+[node name="planobuenoarboleda2" parent="." unique_id=995026154 instance=ExtResource("6_o6xl0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.31023, -0.014706492, -22.058897)
+
+[node name="plano" parent="." unique_id=1831230011 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.507542, -0.0468632, -13.612932)
+
+[node name="plano2" parent="." unique_id=2103682971 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.513261, -0.061935544, 8.700431)
+
+[node name="plano3" parent="." unique_id=1901412602 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.5124855, -0.027750611, -32.385853)
