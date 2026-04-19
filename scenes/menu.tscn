@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boyl4f3gotn5h"]
 
 [ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://cg3d5g6buur2s" path="res://modelos/menu/para el cafe.png" id="2_vjb58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
 font_size = 70
@@ -20,10 +21,10 @@ anchor_left = 0.37
 anchor_top = 0.54
 anchor_right = 0.63000005
 anchor_bottom = 0.84900004
-offset_left = -0.23999023
-offset_top = 0.07998657
-offset_right = 0.2399292
-offset_bottom = -0.15203857
+offset_left = -348.24
+offset_top = -60.920013
+offset_right = -519.7601
+offset_bottom = -187.15204
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
@@ -36,13 +37,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -174.0
-offset_right = 105.0
-offset_bottom = -74.0
+offset_left = 1101.0
+offset_top = -167.0
+offset_right = 1311.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "MENU"
 label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="ParaElCafe" type="Sprite2D" parent="." unique_id=14826079]
+position = Vector2(577, 324.25006)
+scale = Vector2(0.5989584, 0.5958333)
+texture = ExtResource("2_vjb58")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
