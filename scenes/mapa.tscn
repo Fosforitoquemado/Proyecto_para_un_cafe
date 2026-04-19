@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cn27nwpubwqeq"]
+
+[ext_resource type="PackedScene" uid="uid://dworu2tixvs7i" path="res://modelos/escenario/planobuenoarboleda.glb" id="1_u1vf7"]
+[ext_resource type="PackedScene" uid="uid://d1u8at6bl32cm" path="res://modelos/escenario/plano.glb" id="2_tfnl5"]
+[ext_resource type="Shader" uid="uid://k802f1uulchn" path="res://shaders/blur.gdshader" id="3_tfnl5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7lwh"]
+render_priority = 0
+shader = ExtResource("3_tfnl5")
+shader_parameter/blur_amount = 2.0
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6i2c2"]
+material = SubResource("ShaderMaterial_k7lwh")
+flip_faces = true
+radius = 37.0
+height = 60.0
+
+[node name="Mapa" type="Node3D" unique_id=323544247]
+
+[node name="planobuenoarboleda" parent="." unique_id=1346973537 instance=ExtResource("1_u1vf7")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.222328, -0.0532521, 1.2842426)
+
+[node name="planobuenoarboleda2" parent="." unique_id=1611406714 instance=ExtResource("1_u1vf7")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.31023, -0.014706492, -22.058897)
+
+[node name="plano" parent="." unique_id=1987338610 instance=ExtResource("2_tfnl5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.507542, -0.0468632, -13.612932)
+
+[node name="plano2" parent="." unique_id=1689389959 instance=ExtResource("2_tfnl5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.513261, -0.061935544, 8.700431)
+
+[node name="plano3" parent="." unique_id=552484482 instance=ExtResource("2_tfnl5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.5124855, -0.027750611, -32.385853)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=306651080]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.54484, 0, -7.4235315)
+mesh = SubResource("SphereMesh_6i2c2")

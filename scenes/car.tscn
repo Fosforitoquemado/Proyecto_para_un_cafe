@@ -123,41 +123,42 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.4, 0, 3, 1, 0, 0.4, 20)
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
 resource_name = "llegada"
+length = 2.0
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.4, -18.129, 0.1, 1, 0, 0.35, -17.621, 0.16666667, 1, 0, 0.4, -17.105, 0.23333333, 1, 0, 0.35, -16.304, 0.33333334, 1, 0, 0.4, -14.58, 0.46666667, 1, 0, 0.35, -11.541, 0.56666666, 1, 0, 0.4, -8.985, 0.6666667, 1, 0, 0.35, -6.311, 0.76666665, 1, 0, 0.4, -3.725, 1, 1, 0, 0.4, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.4, -45, 2, 1, 0, 0.4, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("rueda trasera izq")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.3, 0, 0.16666667, 1, 0, 0, 0, 0.2333, 1, 0, 0.3, 0, 0.3333, 1, 0, 0, 0, 0.4667, 1, 0, 0.3, 0, 0.5667, 1, 0, 0, 0, 0.6667, 1, 0, 0.3, 0, 0.7667, 1, 0, 0, 0)
+tracks/1/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1.1, 1, 0, 0.3, 0, 1.1667, 1, 0, 0, 0, 1.2333, 1, 0, 0.3, 0, 1.3333, 1, 0, 0, 0, 1.4667, 1, 0, 0.3, 0, 1.5667, 1, 0, 0, 0, 1.6667, 1, 0, 0.3, 0, 1.7667, 1, 0, 0, 0)
 tracks/2/type = "position_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("rueda delantera izq")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.3, 0, 0.16666667, 1, 0, 0, 0, 0.23333333, 1, 0, 0.3, 0, 0.33333334, 1, 0, 0, 0, 0.46666667, 1, 0, 0.3, 0, 0.56666666, 1, 0, 0, 0, 0.6666667, 1, 0, 0.3, 0, 0.76666665, 1, 0, 0, 0)
+tracks/2/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1.1, 1, 0, 0.3, 0, 1.1666666, 1, 0, 0, 0, 1.2333333, 1, 0, 0.3, 0, 1.3333334, 1, 0, 0, 0, 1.4666667, 1, 0, 0.3, 0, 1.5666666, 1, 0, 0, 0, 1.6666667, 1, 0, 0.3, 0, 1.7666667, 1, 0, 0, 0)
 tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("rueda delantera der")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.4, 0, 0.16666667, 1, 0, 0, 0, 0.23333333, 1, 0, 0.4, 0, 0.33333334, 1, 0, 0, 0, 0.46666667, 1, 0, 0.4, 0, 0.56666666, 1, 0, 0, 0, 0.6666667, 1, 0, 0.4, 0, 0.76666665, 1, 0, 0, 0)
+tracks/3/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1.1, 1, 0, 0.4, 0, 1.1666666, 1, 0, 0, 0, 1.2333333, 1, 0, 0.4, 0, 1.3333334, 1, 0, 0, 0, 1.4666667, 1, 0, 0.4, 0, 1.5666666, 1, 0, 0, 0, 1.6666667, 1, 0, 0.4, 0, 1.7666667, 1, 0, 0, 0)
 tracks/4/type = "position_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("rueda trasera der")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.3, 0, 0.16666667, 1, 0, 0, 0, 0.23333333, 1, 0, 0.3, 0, 0.33333334, 1, 0, 0, 0, 0.46666667, 1, 0, 0.3, 0, 0.56666666, 1, 0, 0, 0, 0.6666667, 1, 0, 0.3, 0, 0.76666665, 1, 0, 0, 0)
+tracks/4/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1.1, 1, 0, 0.3, 0, 1.1666666, 1, 0, 0, 0, 1.2333333, 1, 0, 0.3, 0, 1.3333334, 1, 0, 0, 0, 1.4666667, 1, 0, 0.3, 0, 1.5666666, 1, 0, 0, 0, 1.6666667, 1, 0, 0.3, 0, 1.7666667, 1, 0, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_50v30"]
 _data = {
