@@ -244,7 +244,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.8, 1, 0.4558879, 0, 0.6396469, 2.5, 1, 0.4558879, 0, 0.6396469, 4, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.8, 1, 0.4558879, 0, 0.6396469, 3.2666667, 1, 0.4558879, 0, 0.6396469, 4, 1, 0, 0, 0)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -252,7 +252,7 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.57, 2.5, 4),
+"times": PackedFloat32Array(0, 0.57, 3.2666667, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -2.4829402, 0), Vector3(0, -2.4829402, 0), Vector3(0, 0, 0)]

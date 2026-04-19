@@ -79,11 +79,11 @@ func _on_pressed() -> void:
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
+		auto_dupe.irse()
+		await get_tree().create_timer(3.0).timeout
 		autos += 1
 		if condicion_auto == condicion_dia:
 			fallos += 1
-		auto_dupe.irse()
-		await get_tree().create_timer(3.0).timeout
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		yes_no_menu.visible = false
