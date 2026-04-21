@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7lwh"]
 render_priority = 0
 shader = ExtResource("3_tfnl5")
-shader_parameter/blur_amount = 2.0
+shader_parameter/blur_amount = 2.50000011875
 shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_6i2c2"]

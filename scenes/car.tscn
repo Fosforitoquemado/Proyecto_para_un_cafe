@@ -760,3 +760,17 @@ mesh = SubResource("ArrayMesh_3mrxu")
 [node name="rueda trasera der" type="MeshInstance3D" parent="." unique_id=110822817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 mesh = SubResource("ArrayMesh_cp117")
+
+[node name="patente_adelante" type="Label3D" parent="." unique_id=356989658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83696675, 5.509369)
+text = "PBY 786"
+
+[node name="patente_atras" type="Label3D" parent="." unique_id=1677505864]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3308287, -5.436203)
+text = "PBY 786"
+
+[node name="camara_patente_adelante" type="Node3D" parent="." unique_id=108871728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53123546, 10.445152)
+
+[node name="camara_patente_atras" type="Node3D" parent="." unique_id=929523462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53123546, -9.429291)
