@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkp6ngblq3jcp"]
+
+[ext_resource type="PackedScene" uid="uid://bjt1akt5o2la8" path="res://scenes/Untitled.glb" id="1_temid"]
+
+[node name="Nube" type="Node3D" unique_id=698684162]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=176004133]
+
+[node name="Untitled" parent="MeshInstance3D" unique_id=1552740079 instance=ExtResource("1_temid")]
+transform = Transform3D(0.068709955, 0.6544237, 0.7529999, 0.13363959, 0.7419435, -0.65700877, -0.9886454, 0.14577371, -0.03647803, -0.36090863, 0.31683022, 0.4394341)
