@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
-[ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]

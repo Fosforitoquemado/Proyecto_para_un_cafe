@@ -2,21 +2,26 @@ extends Button
 
 @onready var node_main: Node3D = $"../.."
 
+@onready var camera_3d: Camera3D = $"../../Camera3D"
+
+#elementos HUD
 @onready var label: Label = $"../Color"
 @onready var fallos_label: Label = $"../Fallos"
 @onready var autos_label: Label = $"../Autos"
 
-@onready var auto = preload("res://scenes/car.tscn")
 @onready var yes_no_menu: Control = $"../YES_NO_menu"
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
 
+#elementos auto
+@onready var auto = preload("res://scenes/car.tscn")
+
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
 
-@onready var camera_3d: Camera3D = $"../../Camera3D"
-
+#max valores
 @export var max_fallos : int = 999
 @export var max_autos: int = 10
 
+#valores in-game
 @onready var fallos : int = 0
 @onready var autos : int = 0
 
@@ -43,7 +48,7 @@ func generate_word(chars: String, length: int) -> String:
 		word += chars[randi() % n_char]
 	return word
 
-func generate_patente():
+func generate_patente() -> String:
 	#random patente
 	
 	var patente_adelante = auto_dupe.find_child("patente_adelante")
@@ -61,14 +66,17 @@ func generate_patente():
 	
 	patente_atras.text = patente
 	
+	print(patente)
+	
+	return patente
+	
+func generate_papel_patente(patente):
 	var num_correct_paper = randi_range(0,1)
 	
 	if num_correct_paper == 0:
 		print("el papel es verdadero")
 	if num_correct_paper == 1:
 		print("el papel es falso")
-	
-	print(patente)
 	
 	if num_correct_paper == 0:
 		#resultado correcto/papeles en regla
@@ -107,8 +115,8 @@ func generate_patente():
 				papel_patente.text = patente_error.insert(error_posicion,str(letra))
 				patente = papel_patente.text
 				print("error de letra: ", letra, " posicion: ", error_posicion)
-		#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
-	
+			#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
+
 func _ready() -> void:
 	
 	#random color
@@ -145,9 +153,13 @@ func _on_pressed() -> void:
 		node_main.add_child(auto_dupe)
 		auto_dupe.global_position = Vector3(0.2,0,-2.0)
 		
-		generate_patente()
+		var patente = generate_patente()
+		
+		generate_papel_patente(patente)
 		
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
+		
+		visible = false
 		
 		await get_tree().create_timer(0.2).timeout
 		
@@ -171,6 +183,7 @@ func _on_yes_pressed() -> void:
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		yes_no_menu.visible = false
+		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos," / ",max_autos)
 		active = false
@@ -184,6 +197,7 @@ func _on_no_pressed() -> void:
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		yes_no_menu.visible = false
+		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos," / ",max_autos)
 		active = false
