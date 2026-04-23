@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://caj8u0opfksko" path="res://modelos/escenario/planotexturas.glb" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bjt1akt5o2la8" path="res://scenes/Untitled.glb" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
@@ -46,9 +46,6 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007,
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
 
-[node name="Mapa" parent="." unique_id=323544247 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0038532019, 0.07304923, 0.004339695)
-
 [node name="NUBE" parent="." unique_id=1552740079 instance=ExtResource("5_tefeu")]
 transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -15.687209, 6.5642147, -24.25255)
 
@@ -84,3 +81,6 @@ transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33
 
 [node name="NUBE12" parent="." unique_id=928049084 instance=ExtResource("5_tefeu")]
 transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -6.6749234, 6.8597355, -9.351997)
+
+[node name="planotexturas" parent="." unique_id=223967341 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7894754, 0, -8.163797)
