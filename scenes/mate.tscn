@@ -284,7 +284,7 @@ _data = {
 [node name="MATE" type="Node3D" unique_id=2130085467]
 
 [node name="mate" type="MeshInstance3D" parent="." unique_id=1484088852]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5l73y")
 
 [node name="mate" type="Button" parent="mate" unique_id=2111898625]

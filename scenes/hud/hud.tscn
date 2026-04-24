@@ -39,6 +39,7 @@ text = "next"
 script = ExtResource("1_ahhtf")
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
+metadata/Auto_legal_bool = false
 
 [node name="Color" type="Label" parent="." unique_id=694807523]
 layout_mode = 1

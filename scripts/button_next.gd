@@ -47,7 +47,7 @@ func generate_word(chars: String, length: int) -> String:
 	for i in range(length):
 		word += chars[randi() % n_char]
 	return word
-
+	
 func generate_patente() -> String:
 	#random patente
 	
@@ -82,6 +82,7 @@ func generate_papel_patente(patente):
 		papel_patente.text = patente
 	else:
 		#papeles erroneos
+		set_meta("Auto_legal_bool", false)
 		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
 		var posiciones_errores = [0,1,2,4,5,6]
@@ -149,7 +150,7 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	if get_meta("Auto_on") == false:
 		set_meta("Auto_on", true)
-		
+		set_meta("Auto_legal_bool", true)
 		#random color
 		
 		var num_color = randi_range(0,4)
@@ -172,15 +173,16 @@ func _on_pressed() -> void:
 		
 		visible = false
 		
+		if condicion_auto == condicion_dia:
+			set_meta("Auto_legal_bool", false)
+		
 		await get_tree().create_timer(0.2).timeout
 		
 		yes_no_menu.visible = true
 		
-		
 	else:
 		print("ya hay pasajero")
 		pass
-	
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
@@ -188,7 +190,7 @@ func _on_yes_pressed() -> void:
 		yes_no_menu.visible = false
 		await get_tree().create_timer(3.0).timeout
 		autos += 1
-		if condicion_auto == condicion_dia:
+		if get_meta("Auto_legal_bool") == false:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
@@ -197,11 +199,10 @@ func _on_yes_pressed() -> void:
 		autos_label.text = str("Autos: ",autos," / ",max_autos)
 		active = false
 	pass # Replace with function body.
-
 func _on_no_pressed() -> void:
 	if active == false:
 		active = true
-		if condicion_auto != condicion_dia:
+		if get_meta("Auto_legal_bool") == true:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
@@ -211,7 +212,6 @@ func _on_no_pressed() -> void:
 		autos_label.text = str("Autos: ",autos," / ",max_autos)
 		active = false
 	pass # Replace with function body.
-
 
 func _on_inspeccion_pressed() -> void:
 	if get_meta("inspeccion_menu_on") == false:
