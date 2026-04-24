@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://copb8jr78uga5" path="res://modelos/laptop/laptop.glb" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://wdiu4ny0onks" path="res://modelos/laptop/laptop.glb" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
@@ -169,5 +169,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.724, 0.07323456, 0)
 transform = Transform3D(-0.024851099, 0, 0.054611564, 0, 0.06, 0, -0.054611564, 0, -0.024851099, 1.1575974, 0.39363158, 0.7614409)
 mesh = SubResource("ArrayMesh_tefeu")
 
-[node name="laptop" parent="." unique_id=1337102900 instance=ExtResource("6_o6xl0")]
-transform = Transform3D(0.10620281, 0, 0.16947259, 0, 0.19999999, 0, -0.16947259, 0, 0.10620281, 1.001651, 0.3978911, 1.0787004)
+[node name="laptop" parent="." unique_id=1772112889 instance=ExtResource("6_o6xl0")]
+transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.08945815, 0.9807792, 0.3897425, 1.0496691)
