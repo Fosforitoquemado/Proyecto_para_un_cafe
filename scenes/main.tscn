@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://caj8u0opfksko" path="res://modelos/escenario/planotexturas.glb" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dkp6ngblq3jcp" path="res://scenes/NUBE.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mate.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa.tscn" id="7_o6xl0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_tefeu")
@@ -40,7 +40,8 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007,
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
 
-[node name="planotexturas" parent="." unique_id=223967341 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7894754, 0, -8.163797)
-
 [node name="NUBES" parent="." unique_id=596915490 instance=ExtResource("6_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.2929583)
+
+[node name="mapa" parent="." unique_id=483872397 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7136414, 0, 0)

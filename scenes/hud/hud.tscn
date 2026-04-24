@@ -42,23 +42,26 @@ metadata/inspeccion_menu_on = false
 
 [node name="Color" type="Label" parent="." unique_id=694807523]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -234.5
-offset_right = 234.5
-offset_bottom = 42.0
+anchors_preset = -1
+anchor_left = 0.2847222
+anchor_right = 0.7152778
+anchor_bottom = 0.06481481
+offset_left = 13.5
+offset_right = -13.5
 grow_horizontal = 2
 text = "Color que no tiene que pasar hoy: "
 label_settings = SubResource("LabelSettings_oo0fn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Color" unique_id=1249458428]
 z_index = -1
-layout_mode = 0
-offset_left = -14.0
-offset_top = 3.0
-offset_right = 615.0
-offset_bottom = 48.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.028225806
+anchor_top = 0.071428575
+anchor_right = 1.2399193
+anchor_bottom = 1.1428572
+metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
 visible = false
@@ -73,51 +76,42 @@ grow_vertical = 2
 modulate = Color(0.29158273, 0.9396508, 0.52764267, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.059000004
-anchor_top = 0.88400006
-anchor_right = 0.224
-anchor_bottom = 0.966
-offset_left = 0.03199768
-offset_top = 0.16796875
-offset_right = -0.04800415
-offset_bottom = 0.031982422
+anchor_left = 0.059027776
+anchor_top = 0.8842593
+anchor_right = 0.22395833
+anchor_bottom = 0.9660494
 grow_horizontal = 2
 grow_vertical = 2
 text = "APROBADO"
+metadata/_edit_use_anchors_ = true
 
 [node name="no" type="Button" parent="YES_NO_menu" unique_id=184277018]
 modulate = Color(0.8671932, 0, 0.13321015, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.23
-anchor_top = 0.88400006
-anchor_right = 0.395
-anchor_bottom = 0.966
-offset_left = 0.040008545
-offset_top = 0.16796875
-offset_right = -0.040008545
-offset_bottom = 0.031982422
+anchor_left = 0.23003472
+anchor_top = 0.8842593
+anchor_right = 0.3949653
+anchor_bottom = 0.9660494
 grow_horizontal = 2
 grow_vertical = 2
 text = "MULTAR"
+metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion" type="Button" parent="YES_NO_menu" unique_id=381550042]
 modulate = Color(0, 0, 1, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.55600005
-anchor_top = 0.88400006
-anchor_right = 0.71400005
-anchor_bottom = 0.966
-offset_left = -0.51208496
-offset_top = 0.16796875
-offset_right = -0.52789307
-offset_bottom = 0.031982422
+anchor_left = 0.5555556
+anchor_top = 0.8842593
+anchor_right = 0.7135418
+anchor_bottom = 0.9660494
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
@@ -132,89 +126,85 @@ grow_vertical = 2
 modulate = Color(0, 0, 1, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.55600005
-anchor_top = 0.88400006
-anchor_right = 0.71400005
-anchor_bottom = 0.966
-offset_left = -0.51208496
-offset_top = 0.16796875
-offset_right = -0.52789307
-offset_bottom = 0.031982422
+anchor_left = 0.5555556
+anchor_top = 0.8842593
+anchor_right = 0.7135418
+anchor_bottom = 0.9660494
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_atras" type="Button" parent="Inspeccion_menu" unique_id=643723193]
 modulate = Color(0, 0, 1, 1)
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.84201366
+anchor_top = 0.45910493
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -182.00024
-offset_top = -26.5
-offset_bottom = 26.5
+anchor_bottom = 0.54089504
 grow_horizontal = 0
 grow_vertical = 2
 text = "Inspeccion
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_adelante" type="Button" parent="Inspeccion_menu" unique_id=1776988783]
 modulate = Color(0, 0, 1, 1)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -26.5
-offset_right = 182.00018
-offset_bottom = 26.5
+anchors_preset = -1
+anchor_top = 0.45910493
+anchor_right = 0.15798627
+anchor_bottom = 0.54089504
 grow_vertical = 2
 text = "Inspeccion
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Fallos" type="Label" parent="." unique_id=279618866]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.9140625
 anchor_right = 1.0
-offset_left = -91.0
-offset_bottom = 42.0
+anchor_bottom = 0.06481481
+offset_left = 8.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 text = "Fallos: "
 label_settings = SubResource("LabelSettings_5ysmq")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Fallos" unique_id=1467160755]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.081
+anchor_left = -0.08080808
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.019000053
-offset_bottom = -1.0
+anchor_bottom = 0.97619045
+metadata/_edit_use_anchors_ = true
 
 [node name="Autos" type="Label" parent="." unique_id=750532179]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.08680555
+anchor_bottom = 0.06481481
+offset_right = -60.0
+offset_bottom = -19.0
 text = "Autos: "
 label_settings = SubResource("LabelSettings_6fi6k")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Autos" unique_id=248829330]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.071
-anchor_right = 1.1090001
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 0.017999887
-offset_right = -0.0040130615
-offset_bottom = 1.0
+anchor_left = 0.02
+anchor_top = 0.071428575
+anchor_right = 1.1089599
+anchor_bottom = 1.0238096
+metadata/_edit_use_anchors_ = true
 
 [node name="papel" type="MeshInstance3D" parent="." unique_id=228471103]
 transform = Transform3D(0.9246258, 0.38087672, 0, -0.38087672, 0.9246258, 0, 0, 0, 1, 1, 0.4, 1.5)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boyl4f3gotn5h"]
 
 [ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://cg3d5g6buur2s" path="res://modelos/menu/para el cafe.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://texture/menu.tres" id="2_y5i5w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
 font_size = 70
@@ -15,20 +15,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="." unique_id=1545100273]
+modulate = Color(0.7137255, 0.41568628, 0, 0)
+self_modulate = Color(1, 1, 1, 0.92941177)
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.068
-anchor_top = 0.446
-anchor_right = 0.179
-anchor_bottom = 0.56
-offset_left = -0.33600616
-offset_top = -0.0079956055
-offset_right = -0.20800781
-offset_bottom = 0.11999512
+anchor_left = 0.067708336
+anchor_top = 0.44598764
+anchor_right = 0.17881945
+anchor_bottom = 0.5601852
 grow_horizontal = 2
 grow_vertical = 2
-text = "Play"
+text = "
+"
 script = ExtResource("1_yqeox")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1053020099]
 layout_mode = 1
@@ -46,9 +47,15 @@ grow_vertical = 2
 text = "MENU"
 label_settings = SubResource("LabelSettings_vjb58")
 
-[node name="ParaElCafe" type="Sprite2D" parent="." unique_id=14826079]
-position = Vector2(577, 324.25006)
-scale = Vector2(0.5989584, 0.5958333)
-texture = ExtResource("2_vjb58")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1087707124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_y5i5w")
+expand_mode = 1
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
