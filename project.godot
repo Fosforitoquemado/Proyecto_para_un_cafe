@@ -13,7 +13,6 @@ config_version=5
 config/name="para un cafe"
 run/main_scene="uid://boyl4f3gotn5h"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://texture/icon.svg"
 
 [physics]
 

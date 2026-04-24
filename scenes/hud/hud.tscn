@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://3um1kb0drhgb"]
 
 [ext_resource type="Script" uid="uid://b35wtp6w5yaiy" path="res://scripts/button_next.gd" id="1_ahhtf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
-font_size = 30
+[ext_resource type="Script" uid="uid://ckesx38dvngdo" path="res://scripts/timer.gd" id="2_cgeww"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
 font_size = 30
@@ -40,29 +38,6 @@ script = ExtResource("1_ahhtf")
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
 metadata/Auto_legal_bool = false
-
-[node name="Color" type="Label" parent="." unique_id=694807523]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2847222
-anchor_right = 0.7152778
-anchor_bottom = 0.06481481
-offset_left = 13.5
-offset_right = -13.5
-grow_horizontal = 2
-text = "Color que no tiene que pasar hoy: "
-label_settings = SubResource("LabelSettings_oo0fn")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="Color" unique_id=1249458428]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.028225806
-anchor_top = 0.071428575
-anchor_right = 1.2399193
-anchor_bottom = 1.1428572
-metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
 visible = false
@@ -164,6 +139,19 @@ text = "Inspeccion
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="Inspeccion_VTV" type="Button" parent="Inspeccion_menu" unique_id=381492510]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31770834
+anchor_top = 0.46141976
+anchor_right = 0.4756946
+anchor_bottom = 0.54320985
+grow_vertical = 2
+text = "Inspeccion
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="Fallos" type="Label" parent="." unique_id=279618866]
 layout_mode = 1
 anchors_preset = -1
@@ -208,12 +196,36 @@ anchor_bottom = 1.0238096
 metadata/_edit_use_anchors_ = true
 
 [node name="papel" type="MeshInstance3D" parent="." unique_id=228471103]
-transform = Transform3D(0.9246258, 0.38087672, 0, -0.38087672, 0.9246258, 0, 0, 0, 1, 1, 0.4, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.5)
 mesh = SubResource("PlaneMesh_ahhtf")
 
 [node name="papel_patente" type="Label3D" parent="papel" unique_id=181652647]
 transform = Transform3D(-1.3113417e-08, -0.3, -1.3113417e-08, 0, -1.3113417e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, -0.14096877, 0.0009806752, 0)
-text = "6768"
+text = "patente
+"
+
+[node name="color_papel" type="Label3D" parent="papel" unique_id=1140763991]
+transform = Transform3D(-1.3113417e-08, -0.3, -2.9802322e-08, 0, -2.9802322e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, -0.053423405, 0.0029999912, 0)
+text = "color
+"
+
+[node name="VTV_papel" type="Label3D" parent="papel" unique_id=2133799788]
+transform = Transform3D(-1.3113417e-08, -0.3, -2.9802322e-08, 0, -2.9802322e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, 0.042065382, 0.0029999912, 0)
+text = "VTV
+
+"
+
+[node name="Timer" type="ProgressBar" parent="." unique_id=397951695]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3263889
+anchor_right = 0.6736111
+anchor_bottom = 0.041666668
+grow_horizontal = 2
+mouse_filter = 2
+max_value = 30.0
+script = ExtResource("2_cgeww")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="YES_NO_menu/yes" to="Button" method="_on_yes_pressed"]
@@ -222,3 +234,4 @@ text = "6768"
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion2" to="Button" method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_atras" to="Button" method="_on_inspeccion_atras_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_adelante" to="Button" method="_on_inspeccion_adelante_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV" to="Button" method="_on_inspeccion_vtv_pressed"]

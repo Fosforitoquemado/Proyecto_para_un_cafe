@@ -5,9 +5,9 @@ extends Button
 @onready var camera_3d: Camera3D = $"../../Camera3D"
 
 #elementos HUD
-@onready var label: Label = $"../Color"
 @onready var fallos_label: Label = $"../Fallos"
 @onready var autos_label: Label = $"../Autos"
+@onready var timer: ProgressBar = $"../Timer"
 
 @onready var yes_no_menu: Control = $"../YES_NO_menu"
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
@@ -16,10 +16,16 @@ extends Button
 @onready var auto = preload("res://scenes/car.tscn")
 
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
+@onready var color_papel: Label3D = $"../papel/color_papel"
+@onready var vtv_papel: Label3D = $"../papel/VTV_papel"
 
 #max valores
 @export var max_fallos : int = 999
 @export var max_autos: int = 10
+
+@export var probabilidad_color: int = 70
+@export var probabilidad_patente: int = 70
+@export var probabilidad_VTV: int = 70
 
 #valores in-game
 @onready var fallos : int = 0
@@ -35,12 +41,11 @@ extends Button
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
-var condicion_dia
+var condicion_papel
 var condicion_auto
 var auto_dupe
 
 var active = false
-
 func generate_word(chars: String, length: int) -> String:
 	var word: String = ""
 	var n_char = chars.length()
@@ -48,6 +53,33 @@ func generate_word(chars: String, length: int) -> String:
 		word += chars[randi() % n_char]
 	return word
 	
+func generate_VTV():
+	var VTV = auto_dupe.find_child("mes_VTV")
+	var num = randi_range(1,12)
+	VTV.text = str(num)
+func generate_VTV_papel():
+	var VTV = auto_dupe.find_child("mes_VTV")
+	var num_correct_paper = randi_range(0,100)
+	
+	if num_correct_paper <= probabilidad_VTV:
+		#correcto
+		
+		vtv_papel.text = VTV.text
+		set_meta("Auto_legal_bool", true)
+		print("la vtv del papel es true")
+	else:
+		#intento de fake
+		var num = randi_range(1,12)
+		if num == int(VTV.text):
+			#true
+			vtv_papel.text = str(num)
+			set_meta("Auto_legal_bool", true)
+			print("la vtv del papel es true")
+		else:
+			#fake
+			vtv_papel.text = str(num)
+			set_meta("Auto_legal_bool", false)
+			print("la vtv del papel es fake")
 func generate_patente() -> String:
 	#random patente
 	
@@ -70,22 +102,20 @@ func generate_patente() -> String:
 	
 	return patente
 func generate_papel_patente(patente):
-	var num_correct_paper = randi_range(0,1)
+	var num_correct_paper = randi_range(0,100)
+	var posiciones_errores = [0,1,2,4,5,6]
 	
-	if num_correct_paper == 0:
-		print("el papel es verdadero")
-	if num_correct_paper == 1:
-		print("el papel es falso")
-	
-	if num_correct_paper == 0:
-		#resultado correcto/papeles en regla
+	if num_correct_paper <= probabilidad_patente:
+		#correcto
 		papel_patente.text = patente
+		print("la patente del papel es verdadera")
 	else:
-		#papeles erroneos
+		#intento de fake
+		print("la patente del papel es falsa")
 		set_meta("Auto_legal_bool", false)
+		
 		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
-		var posiciones_errores = [0,1,2,4,5,6]
 		
 		if dificultad_papel == 7:
 			var num_patente1 = randi_range(0,9)
@@ -127,16 +157,44 @@ func generate_papel_patente(patente):
 					patente = papel_patente.text
 					print("error de letra: ", letra, " posicion: ", error_posicion)
 				#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
-
-func _ready() -> void:
-	
+func generate_color():
+	var num_color = randi_range(0,4)
+	#var materiall = auto_dupe.get_active_material(0).duplicate()
+	var materiall = auto_dupe.get_active_material(0)
+	materiall.albedo_color = Color(colors.values()[num_color])
+	auto_dupe.set_surface_override_material(0, materiall)
+	condicion_auto = colors.values()[num_color]
+	node_main.add_child(auto_dupe)
+	auto_dupe.global_position = Vector3(0.2,0,-2.0)
+	return num_color
+func generate_color_papel(num_color):
 	#random color
-	var num = randi_range(0,4)
-	condicion_dia = colors.values()[num]
-	label.text += str(colors.keys()[num])
+	
+	var num_correct_paper = randi_range(0,100)
+	
+	if num_correct_paper <= probabilidad_color:
+		#correcto
+		condicion_papel = colors.values()[num_color]
+		color_papel.text = str(colors.keys()[num_color])
+		set_meta("Auto_legal_bool", true)
+		print("el color del papel es true")
+	else:
+		#intento de fake
+		var num = randi_range(0,4)
+		if num == num_color:
+			condicion_papel = colors.values()[num_color]
+			color_papel.text = str(colors.keys()[num_color])
+			set_meta("Auto_legal_bool", true)
+			print("el color del papel es true")
+		else:
+			condicion_papel = colors.values()[num]
+			color_papel.text = str(colors.keys()[num])
+			set_meta("Auto_legal_bool", false)
+			print("el color del papel es falso")
+	
+func _ready() -> void:
 	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 	autos_label.text = str("Autos: ",autos," / ",max_autos)
-	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -151,29 +209,25 @@ func _on_pressed() -> void:
 	if get_meta("Auto_on") == false:
 		set_meta("Auto_on", true)
 		set_meta("Auto_legal_bool", true)
-		#random color
 		
-		var num_color = randi_range(0,4)
+		timer._start_timer()
 		
 		auto_dupe = auto.instantiate()
 		
-		#var materiall = auto_dupe.get_active_material(0).duplicate()
-		var materiall = auto_dupe.get_active_material(0)
-		materiall.albedo_color = Color(colors.values()[num_color])
-		auto_dupe.set_surface_override_material(0, materiall)
-		condicion_auto = colors.values()[num_color]
-		node_main.add_child(auto_dupe)
-		auto_dupe.global_position = Vector3(0.2,0,-2.0)
+		var num_color = generate_color()
+		generate_color_papel(num_color)
 		
 		var patente = generate_patente()
-		
 		generate_papel_patente(patente)
+		
+		generate_VTV()
+		generate_VTV_papel()
 		
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 		
 		visible = false
 		
-		if condicion_auto == condicion_dia:
+		if condicion_auto != condicion_papel:
 			set_meta("Auto_legal_bool", false)
 		
 		await get_tree().create_timer(0.2).timeout
@@ -183,10 +237,12 @@ func _on_pressed() -> void:
 	else:
 		print("ya hay pasajero")
 		pass
+	
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
 		auto_dupe.irse()
+		timer._stop_timer()
 		yes_no_menu.visible = false
 		await get_tree().create_timer(3.0).timeout
 		autos += 1
@@ -202,6 +258,7 @@ func _on_yes_pressed() -> void:
 func _on_no_pressed() -> void:
 	if active == false:
 		active = true
+		timer._stop_timer()
 		if get_meta("Auto_legal_bool") == true:
 			fallos += 1
 		auto_dupe.queue_free()
@@ -236,4 +293,10 @@ func _on_inspeccion_adelante_pressed() -> void:
 func _on_inspeccion_atras_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(180),0)
 	camera_3d.position = auto_dupe.find_child("camara_patente_atras").global_position
+	pass # Replace with function body.
+
+
+func _on_inspeccion_vtv_pressed() -> void:
+	camera_3d.rotation = Vector3(0,deg_to_rad(0),0)
+	camera_3d.position = auto_dupe.find_child("camara_VTV").global_position
 	pass # Replace with function body.

@@ -159,6 +159,42 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.4, 0, 3, 1, 0, 0.4, 20)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rueda_trasera_izq:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rueda_delantera_izq:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.04, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rueda_delantera_der:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.04, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
 resource_name = "llegada"
@@ -177,7 +213,7 @@ tracks/1/path = NodePath("rueda_trasera_izq:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6666666, 2),
+"times": PackedFloat32Array(1.4666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
@@ -189,7 +225,7 @@ tracks/2/path = NodePath("rueda_delantera_izq:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.6666666, 2),
+"times": PackedFloat32Array(1.4666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
@@ -201,7 +237,7 @@ tracks/3/path = NodePath("rueda_delantera_der:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.6666666, 2),
+"times": PackedFloat32Array(1.4666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
@@ -902,6 +938,45 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ugdpj")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c35m8"]
+load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
+
+[sub_resource type="FontFile" id="FontFile_qt2eu"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/200/0/ascent = 0.0
+cache/0/200/0/descent = 0.0
+cache/0/200/0/underline_position = 0.0
+cache/0/200/0/underline_thickness = 0.0
+cache/0/200/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
 [node name="armazon" type="MeshInstance3D" unique_id=1172965403]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -18.129066)
 mesh = SubResource("ArrayMesh_sfqam")
@@ -955,5 +1030,25 @@ text = "PBY 786"
 [node name="camara_patente_adelante" type="Node3D" parent="." unique_id=1621756922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53123546, 10.445152)
 
+[node name="camara_VTV" type="Node3D" parent="." unique_id=438690819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4225124, 2.1490235, 3.4316823)
+
 [node name="camara_patente_atras" type="Node3D" parent="." unique_id=915672034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53123546, -9.429291)
+
+[node name="VTV" type="Sprite3D" parent="." unique_id=1572291092]
+transform = Transform3D(0.030000003, 0, 0, 0, 0.021133453, 0.021292659, 0, -0.021292659, 0.021133453, 1.4634933, 2.0157871, 1.2821202)
+modulate = Color(0.6246397, 0.47923124, 0.30457014, 1)
+texture = SubResource("CompressedTexture2D_c35m8")
+
+[node name="mes_VTV" type="Label3D" parent="VTV" unique_id=600600888]
+transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)
+pixel_size = 0.05
+shaded = true
+double_sided = false
+outline_render_priority = 0
+text = "12
+"
+font = SubResource("FontFile_qt2eu")
+font_size = 70
+outline_size = 3
