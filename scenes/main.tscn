@@ -1,23 +1,17 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
+[ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://caj8u0opfksko" path="res://modelos/escenario/planotexturas.glb" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://bjt1akt5o2la8" path="res://scenes/Untitled.glb" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dkp6ngblq3jcp" path="res://scenes/NUBE.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b6ubgu7blhqh5" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
 
-[sub_resource type="Gradient" id="Gradient_tefeu"]
-colors = PackedColorArray(1.1551381e-06, 0.592867, 0.5928671, 1, 0.25882354, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
-gradient = SubResource("Gradient_tefeu")
-fill_from = Vector2(1, 1)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0xm2m"]
-panorama = SubResource("GradientTexture2D_o6xl0")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
+panorama = ExtResource("1_tefeu")
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
-sky_material = SubResource("PanoramaSkyMaterial_0xm2m")
+sky_material = SubResource("PanoramaSkyMaterial_o6xl0")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
@@ -46,41 +40,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007,
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
 
-[node name="NUBE" parent="." unique_id=1552740079 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -15.687209, 6.5642147, -24.25255)
-
-[node name="NUBE2" parent="." unique_id=1084282910 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -12.755972, 6.5642147, -13.680853)
-
-[node name="NUBE3" parent="." unique_id=1208536006 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -8.517608, 6.770337, -27.657825)
-
-[node name="NUBE4" parent="." unique_id=114528127 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -9.997866, 8.24706, -5.648697)
-
-[node name="NUBE5" parent="." unique_id=270133533 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -9.997866, 6.2495394, 2.018424)
-
-[node name="NUBE6" parent="." unique_id=640107075 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -13.254465, 9.244307, 10.652377)
-
-[node name="NUBE7" parent="." unique_id=330042003 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -9.952636, 6.2495394, 8.7112465)
-
-[node name="NUBE8" parent="." unique_id=1502138909 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -17.070663, 5.690354, 4.373641)
-
-[node name="NUBE9" parent="." unique_id=1012279091 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -16.435377, 6.7196436, -4.9167295)
-
-[node name="NUBE10" parent="." unique_id=340980228 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -4.4231057, 7.435483, 0.45049715)
-
-[node name="NUBE11" parent="." unique_id=1078392754 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -3.0876796, 5.7837234, -18.3556)
-
-[node name="NUBE12" parent="." unique_id=928049084 instance=ExtResource("5_tefeu")]
-transform = Transform3D(0.6965545, 0.019108623, -0.028343122, -0.042513568, 0.33130464, -0.39901805, 0.0040272796, 0.19237216, 0.6900072, -6.6749234, 6.8597355, -9.351997)
-
 [node name="planotexturas" parent="." unique_id=223967341 instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7894754, 0, -8.163797)
+
+[node name="NUBES" parent="." unique_id=596915490 instance=ExtResource("6_o6xl0")]

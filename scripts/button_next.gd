@@ -69,7 +69,6 @@ func generate_patente() -> String:
 	print(patente)
 	
 	return patente
-	
 func generate_papel_patente(patente):
 	var num_correct_paper = randi_range(0,1)
 	
@@ -83,39 +82,50 @@ func generate_papel_patente(patente):
 		papel_patente.text = patente
 	else:
 		#papeles erroneos
-		var dificultad_papel = randi_range(1,6)
+		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
 		var posiciones_errores = [0,1,2,4,5,6]
 		
-		for i in range(dificultad_papel):
-			print(i)
-			var error_tipo = randi_range(0,1)
-			# 0 es error en 1 numero, 1 es error en 1 letra
-			if error_tipo == 0:
-				var error_posicion = randi_range(0,2)
-				var num = randi_range(0,9)
-				posiciones_errores.erase(error_posicion)
-				if patente[error_posicion] == str(num):
-					i -= 1
-					print("paso")
-					pass
-				var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
-				papel_patente.text = patente_error.insert(error_posicion,str(num))
-				patente = papel_patente.text
-				print("error de numero: ", num, " posicion: ", error_posicion)
-			else:
-				var error_posicion = randi_range(4,6)
-				var letra = generate_word(characters,1)
-				posiciones_errores.erase(error_posicion)
-				if patente[error_posicion] == letra:
-					i -= 1
-					print("paso")
-					pass
-				var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
-				papel_patente.text = patente_error.insert(error_posicion,str(letra))
-				patente = papel_patente.text
-				print("error de letra: ", letra, " posicion: ", error_posicion)
-			#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
+		if dificultad_papel == 7:
+			var num_patente1 = randi_range(0,9)
+			var num_patente2 = randi_range(0,9)
+			var num_patente3 =  randi_range(0,9)
+	
+			var letras = generate_word(characters,3)
+	
+			var patente_R = str(num_patente1,num_patente2,num_patente3," ",letras)
+			
+			papel_patente.text = patente_R
+		else:
+			for i in range(dificultad_papel):
+				print(i)
+				var error_tipo = randi_range(0,1)
+				# 0 es error en 1 numero, 1 es error en 1 letra
+				if error_tipo == 0:
+					var error_posicion = randi_range(0,2)
+					var num = randi_range(0,9)
+					posiciones_errores.erase(error_posicion)
+					if patente[error_posicion] == str(num):
+						i -= 1
+						print("paso")
+						pass
+					var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
+					papel_patente.text = patente_error.insert(error_posicion,str(num))
+					patente = papel_patente.text
+					print("error de numero: ", num, " posicion: ", error_posicion)
+				else:
+					var error_posicion = randi_range(4,6)
+					var letra = generate_word(characters,1)
+					posiciones_errores.erase(error_posicion)
+					if patente[error_posicion] == letra:
+						i -= 1
+						print("paso")
+						pass
+					var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
+					papel_patente.text = patente_error.insert(error_posicion,str(letra))
+					patente = papel_patente.text
+					print("error de letra: ", letra, " posicion: ", error_posicion)
+				#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
 
 func _ready() -> void:
 	
@@ -146,7 +156,8 @@ func _on_pressed() -> void:
 		
 		auto_dupe = auto.instantiate()
 		
-		var materiall = auto_dupe.get_active_material(0).duplicate()
+		#var materiall = auto_dupe.get_active_material(0).duplicate()
+		var materiall = auto_dupe.get_active_material(0)
 		materiall.albedo_color = Color(colors.values()[num_color])
 		auto_dupe.set_surface_override_material(0, materiall)
 		condicion_auto = colors.values()[num_color]
@@ -170,19 +181,17 @@ func _on_pressed() -> void:
 		print("ya hay pasajero")
 		pass
 	
-
-
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
 		auto_dupe.irse()
+		yes_no_menu.visible = false
 		await get_tree().create_timer(3.0).timeout
 		autos += 1
 		if condicion_auto == condicion_dia:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
-		yes_no_menu.visible = false
 		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos," / ",max_autos)
