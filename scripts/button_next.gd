@@ -15,8 +15,7 @@ extends Button
 #elementos auto
 @onready var autos_lista = {
 	"fiat 147": preload("res://scenes/147.tscn"),
-	"suran": preload("res://scenes/suran.tscn"),
-	"fiat doblo": preload("res://scenes/fiat doblo.tscn")
+	"suran": preload("res://scenes/suran.tscn")
 }
 
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
