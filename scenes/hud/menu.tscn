@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://texture/hud/menu.tres" id="2_y5i5w"]
+[ext_resource type="AudioStream" uid="uid://djdt7blxnd58e" path="res://sonidos/new trap.mp3" id="3_ygb62"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
 font_size = 70
@@ -57,5 +58,10 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_y5i5w")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127613637]
+stream = ExtResource("3_ygb62")
+volume_db = -25.143
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

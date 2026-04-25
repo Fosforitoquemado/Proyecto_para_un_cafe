@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="7_tipki"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_tefeu")
@@ -171,3 +172,7 @@ mesh = SubResource("ArrayMesh_tefeu")
 
 [node name="laptop" parent="." unique_id=1772112889 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.08945815, 0.9807792, 0.3897425, 1.0496691)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=310620138]
+stream = ExtResource("7_tipki")
+autoplay = true
