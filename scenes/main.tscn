@@ -142,7 +142,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cvj7x")
 
-[node name="Node3D" type="Node3D" unique_id=320117741]
+[node name="Main" type="Node3D" unique_id=320117741]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030609384]
 environment = SubResource("Environment_0xm2m")
@@ -155,7 +155,7 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.8, 0.7, 1.5)
 
-[node name="Control" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
+[node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
 [node name="mesa precaria(con coso)" parent="." unique_id=755773858 instance=ExtResource("7_85g3d")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
@@ -173,6 +173,8 @@ mesh = SubResource("ArrayMesh_tefeu")
 [node name="laptop" parent="." unique_id=1772112889 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.08945815, 0.9807792, 0.3897425, 1.0496691)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=310620138]
+[node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
+
+[node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
 stream = ExtResource("7_tipki")
 autoplay = true

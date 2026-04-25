@@ -15,7 +15,9 @@ extends Button
 #elementos auto
 @onready var autos_lista = {
 	"fiat 147": preload("res://scenes/147.tscn"),
-	"suran": preload("res://scenes/suran.tscn")
+	"suran": preload("res://scenes/autos/suran.tscn"),
+	"fiat doblo": preload("res://scenes/autos/fiat doblo.tscn"),
+	"ford escort": preload("res://scenes/autos/escort.tscn")
 }
 
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
@@ -44,7 +46,6 @@ extends Button
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
-
 var auto_dupe
 
 var active = false
@@ -70,18 +71,14 @@ func generate_VTV_papel():
 		#set_meta("Auto_ilegal_bool", false)
 		print("la vtv del papel es true")
 	else:
-		#intento de fake
-		var num = randi_range(1,12)
-		if num == int(VTV.text):
-			#true
-			vtv_papel.text = str(num)
-			#set_meta("Auto_ilegal_bool", false)
-			print("la vtv del papel es true")
-		else:
-			#fake
-			vtv_papel.text = str(num)
-			set_meta("Auto_ilegal_bool", true)
-			print("la vtv del papel es fake")
+		#fake
+		var num := randi_range(1, 12 - 1)
+		if num >= int(VTV.text):
+			num += 1
+		vtv_papel.text = str(num)
+		set_meta("Auto_ilegal_bool", true)
+		print("la vtv del papel es fake")
+
 func generate_patente() -> String:
 	#random patente
 	
@@ -112,7 +109,7 @@ func generate_papel_patente(patente):
 		papel_patente.text = patente
 		print("la patente del papel es verdadera")
 	else:
-		#intento de fake
+		#fake
 		print("la patente del papel es falsa")
 		set_meta("Auto_ilegal_bool", true)
 		
@@ -120,6 +117,7 @@ func generate_papel_patente(patente):
 		print("cantidad de errores: ",dificultad_papel)
 		
 		if dificultad_papel == 7:
+			#patente total mente distinta
 			var num_patente1 = randi_range(0,9)
 			var num_patente2 = randi_range(0,9)
 			var num_patente3 =  randi_range(0,9)
@@ -129,6 +127,7 @@ func generate_papel_patente(patente):
 			var patente_R = str(num_patente1,num_patente2,num_patente3," ",letras)
 			
 			papel_patente.text = patente_R
+			
 		else:
 			for i in range(dificultad_papel):
 				print(i)
@@ -136,12 +135,11 @@ func generate_papel_patente(patente):
 				# 0 es error en 1 numero, 1 es error en 1 letra
 				if error_tipo == 0:
 					var error_posicion = randi_range(0,2)
-					var num = randi_range(0,9)
 					posiciones_errores.erase(error_posicion)
+					#fake
+					var num := randi_range(0, 9 - 1)
 					if patente[error_posicion] == str(num):
-						i -= 1
-						print("paso")
-						pass
+						num += 1
 					var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
 					papel_patente.text = patente_error.insert(error_posicion,str(num))
 					patente = papel_patente.text
@@ -150,10 +148,9 @@ func generate_papel_patente(patente):
 					var error_posicion = randi_range(4,6)
 					var letra = generate_word(characters,1)
 					posiciones_errores.erase(error_posicion)
-					if patente[error_posicion] == letra:
-						i -= 1
-						print("paso")
-						pass
+					var num := randi_range(0, 9 - 1)
+					if patente[error_posicion] == str(num):
+						num += 1
 					var patente_error = patente.substr(0, error_posicion) + patente.substr(error_posicion + 1)
 					papel_patente.text = patente_error.insert(error_posicion,str(letra))
 					patente = papel_patente.text
@@ -181,18 +178,13 @@ func generate_color_papel(num_color):
 		#set_meta("Auto_ilegal_bool", true)
 		print("el color del papel es true")
 	else:
-		#intento de fake
-		var num = randi_range(0,4)
-		if num == num_color:
-			
-			color_papel.text = str(colors.keys()[num_color])
-			#set_meta("Auto_ilegal_bool", true)
-			print("el color del papel es true")
-		else:
-			
-			color_papel.text = str(colors.keys()[num])
-			set_meta("Auto_ilegal_bool", true)
-			print("el color del papel es falso")
+		#fake
+		var num := randi_range(0, 4 - 1)
+		if num >= num_color:
+			num += 1
+		color_papel.text = str(colors.keys()[num])
+		set_meta("Auto_ilegal_bool", true)
+		print("el color del papel es falso")
 	
 func _ready() -> void:
 	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)

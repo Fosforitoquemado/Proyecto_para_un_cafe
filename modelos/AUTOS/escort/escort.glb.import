@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8o5d7rtc735u"
-path="res://.godot/imported/fiat doblo.glb-5445af62a979923639e2e4a3b3821d97.scn"
+uid="uid://bgc0m0t3b2x8d"
+path="res://.godot/imported/escort.glb-767ea28b3151d99f896a71e3065bc7ee.scn"
 
 [deps]
 
-source_file="res://modelos/AUTOS/fiat doblo/fiat doblo.glb"
-dest_files=["res://.godot/imported/fiat doblo.glb-5445af62a979923639e2e4a3b3821d97.scn"]
+source_file="res://modelos/AUTOS/escort/escort.glb"
+dest_files=["res://.godot/imported/escort.glb-767ea28b3151d99f896a71e3065bc7ee.scn"]
 
 [params]
 

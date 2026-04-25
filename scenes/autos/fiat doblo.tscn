@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://drt10ng3s7m6v"]
 
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_8k4fm"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6sbx"]
 resource_name = "base auto"
 cull_mode = 2
@@ -157,6 +159,45 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wgd7n")
+
+[sub_resource type="Animation" id="Animation_b0jew"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -18.129066)
+
+[sub_resource type="Animation" id="Animation_c35m8"]
+resource_name = "ida"
+length = 3.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.55, 0, 3, 1, 0, 0.55, 20)
+
+[sub_resource type="Animation" id="Animation_qt2eu"]
+resource_name = "llegada"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.55, -45, 2, 1, 0, 0.55, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8k4fm"]
+_data = {
+&"RESET": SubResource("Animation_b0jew"),
+&"ida": SubResource("Animation_c35m8"),
+&"llegada": SubResource("Animation_qt2eu")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdiyl"]
 resource_name = "interior"
@@ -660,43 +701,123 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nhvyy")
 
-[node name="armazon" type="MeshInstance3D" unique_id=2035145152]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0)
-mesh = SubResource("ArrayMesh_4k3ng")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8k4fm"]
+load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
 
-[node name="interior" type="MeshInstance3D" parent="." unique_id=391970369]
-transform = Transform3D(0.985833, 0, 1.1752045e-07, 0, 0.985833, 0, -1.1752045e-07, 0, 0.985833, 0, 0, 0)
+[sub_resource type="FontFile" id="FontFile_bgstw"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/200/0/ascent = 0.0
+cache/0/200/0/descent = 0.0
+cache/0/200/0/underline_position = 0.0
+cache/0/200/0/underline_thickness = 0.0
+cache/0/200/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[node name="armazon" type="MeshInstance3D" unique_id=2053081838]
+transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 0, 0, -18.129066)
+mesh = SubResource("ArrayMesh_4k3ng")
+script = ExtResource("1_8k4fm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=89020418]
+libraries/ = SubResource("AnimationLibrary_8k4fm")
+autoplay = &"llegada"
+
+[node name="interior" type="MeshInstance3D" parent="." unique_id=1309438174]
+transform = Transform3D(0.98583305, 0, 1.1752046e-07, 0, 0.98583305, 0, -1.1752046e-07, 0, 0.98583305, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3axf1")
 
-[node name="costado" type="MeshInstance3D" parent="." unique_id=1637833580]
+[node name="costado" type="MeshInstance3D" parent="." unique_id=233045912]
 mesh = SubResource("ArrayMesh_mao3q")
 
-[node name="parrilla" type="MeshInstance3D" parent="." unique_id=786901493]
+[node name="parrilla" type="MeshInstance3D" parent="." unique_id=239785694]
 mesh = SubResource("ArrayMesh_qpiqa")
 
-[node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=714872376]
-transform = Transform3D(-5.645338e-07, 0, 0.44120908, 0, 0.44120908, 0, -0.44120908, 0, -5.645338e-07, -1.8033478, -0.84522074, -0.8197849)
+[node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=1950326615]
+transform = Transform3D(-1.9285862e-08, 0, -0.44120908, 0, 0.44120908, 0, 0.44120908, 0, -1.9285862e-08, -1.8033447, -0.8452207, -0.81978494)
 mesh = SubResource("ArrayMesh_7ynq5")
 
-[node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=2013241758]
-transform = Transform3D(0, 0, -0.44120908, 0, 0.44120908, 0, 0.44120908, 0, 0, -1.831244, -0.84522074, 0.82341033)
+[node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=834579091]
+transform = Transform3D(-1.9285862e-08, 0, -0.44120908, 0, 0.44120908, 0, 0.44120908, 0, -1.9285862e-08, -1.8312378, -0.8452207, 0.8234104)
 mesh = SubResource("ArrayMesh_u6wi1")
 
-[node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=834211069]
-transform = Transform3D(-5.645338e-07, 0, 0.44120908, 0, 0.44120908, 0, -0.44120908, 0, -5.645338e-07, 1.6013417, -0.7917514, -0.81086004)
+[node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=281183061]
+transform = Transform3D(-5.9258286e-07, 0, 0.44120908, 0, 0.44120908, 0, -0.44120908, 0, -5.9258286e-07, 1.6013336, -0.7917513, -0.81086004)
 mesh = SubResource("ArrayMesh_mucfr")
 
-[node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=1844611822]
-transform = Transform3D(0, 0, -0.44120908, 0, 0.44120908, 0, 0.44120908, 0, 0, 1.571749, -0.7917514, 0.8086441)
+[node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=1872001532]
+transform = Transform3D(-1.9285862e-08, 0, -0.44120908, 0, 0.44120908, 0, 0.44120908, 0, -1.9285862e-08, 1.5717468, -0.7917513, 0.8086442)
 mesh = SubResource("ArrayMesh_cg2rc")
 
-[node name="baul" type="MeshInstance3D" parent="." unique_id=1524600910]
+[node name="baul" type="MeshInstance3D" parent="." unique_id=710128499]
 mesh = SubResource("ArrayMesh_kfc7a")
 
-[node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=1208244710]
-transform = Transform3D(0, 0, -0.18683304, 0, 0.18683304, 0, 0.18683304, 0, 0, -0.63239336, -0.3899003, 0.47931218)
+[node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=2006229732]
+transform = Transform3D(0, 0, -0.18683305, 0, 0.18683305, 0, 0.18683305, 0, 0, -0.6324005, -0.38990033, 0.4793122)
 mesh = SubResource("ArrayMesh_dg0eg")
 
-[node name="asiento trasero" type="MeshInstance3D" parent="." unique_id=434236121]
-transform = Transform3D(0, 0, -0.18683304, 0, 0.18683304, 0, 0.18683304, 0, 0, 0.6659785, -0.34776914, -0.48013163)
+[node name="asiento trasero" type="MeshInstance3D" parent="." unique_id=1111553539]
+transform = Transform3D(0, 0, -0.18683305, 0, 0.18683305, 0, 0.18683305, 0, 0, 0.66596985, -0.34776902, -0.48013163)
 mesh = SubResource("ArrayMesh_cnuh1")
+
+[node name="patente_adelante" type="Label3D" parent="." unique_id=800450522]
+transform = Transform3D(-2.1855696e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855696e-08, -2.6230993, -0.57709986, -1.1465933e-07)
+text = "PBY 786"
+
+[node name="camara_patente_adelante" type="Node3D" parent="patente_adelante" unique_id=1324607462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3682022, 4.9357834)
+
+[node name="patente_atras" type="Label3D" parent="." unique_id=1028452970]
+transform = Transform3D(-1.7174866e-08, -0.05311707, 0.39645752, -4.6436424e-09, 0.39645752, 0.05311707, -0.4, -2.321821e-09, -1.7639408e-08, 2.2614307, -0.5711593, 9.885028e-08)
+text = "PBY 786"
+
+[node name="camara_patente_atras" type="Node3D" parent="patente_atras" unique_id=395209532]
+transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.6777312e-07, 0, -1.1111112, -6.699338e-07, 0.235641, 4.4367676)
+
+[node name="VTV" type="Sprite3D" parent="." unique_id=1575494265]
+transform = Transform3D(-6.556708e-10, 0.011861627, -0.009181602, 3.85494e-18, 0.009181602, 0.011861627, 0.015, 5.1848814e-10, -4.0134063e-10, -0.7963459, 0.55026376, 0.53831494)
+texture = SubResource("CompressedTexture2D_8k4fm")
+
+[node name="mes_VTV" type="Label3D" parent="VTV" unique_id=529907619]
+transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)
+pixel_size = 0.05
+shaded = true
+double_sided = false
+outline_render_priority = 0
+text = "12
+"
+font = SubResource("FontFile_bgstw")
+font_size = 70
+outline_size = 6
+
+[node name="camara_VTV" type="Node3D" parent="VTV" unique_id=1403149706]
+transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)

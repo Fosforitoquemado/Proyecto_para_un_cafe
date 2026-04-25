@@ -159,7 +159,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xtr1b")
 
-[sub_resource type="Animation" id="Animation_b0jew"]
+[sub_resource type="Animation" id="Animation_s8t4x"]
 length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -171,7 +171,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -18.129066)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("rueda_trasera_izq:rotation")
+tracks/1/path = NodePath("armazon/rueda_trasera_izq:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -183,7 +183,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rueda_delantera_izq:rotation")
+tracks/2/path = NodePath("armazon/rueda_delantera_izq:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -195,7 +195,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("rueda_delantera_der:rotation")
+tracks/3/path = NodePath("armazon/rueda_delantera_der:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -205,7 +205,7 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c35m8"]
+[sub_resource type="Animation" id="Animation_vid0a"]
 resource_name = "ida"
 length = 3.0
 tracks/0/type = "position_3d"
@@ -218,7 +218,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.3, 0, 3, 1, 0, 0.3, 20)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("rueda_trasera_izq:rotation")
+tracks/1/path = NodePath("armazon/rueda_trasera_izq:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -230,7 +230,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rueda_delantera_izq:rotation")
+tracks/2/path = NodePath("armazon/rueda_delantera_izq:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -242,7 +242,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("rueda_delantera_der:rotation")
+tracks/3/path = NodePath("armazon/rueda_delantera_der:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -252,7 +252,7 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_qt2eu"]
+[sub_resource type="Animation" id="Animation_50wp4"]
 resource_name = "llegada"
 length = 2.0
 tracks/0/type = "position_3d"
@@ -265,45 +265,45 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.3, -45, 2, 1, 0, 0.3, 0)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("rueda_trasera_izq:rotation")
+tracks/1/path = NodePath("armazon/rueda_trasera_izq:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(1.4666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(3.106686, -1.5707964, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rueda_delantera_izq:rotation")
+tracks/2/path = NodePath("armazon/rueda_delantera_izq:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.4666667, 2),
+"times": PackedFloat32Array(1.4666667, 1.9666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(3.106686, -1.5707964, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("rueda_delantera_der:rotation")
+tracks/3/path = NodePath("armazon/rueda_delantera_der:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(1.4666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(3.106686, -1.5707964, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iksjg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkwky"]
 _data = {
-&"RESET": SubResource("Animation_b0jew"),
-&"ida": SubResource("Animation_c35m8"),
-&"llegada": SubResource("Animation_qt2eu")
+&"RESET": SubResource("Animation_s8t4x"),
+&"ida": SubResource("Animation_vid0a"),
+&"llegada": SubResource("Animation_50wp4")
 }
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mkg2a"]
@@ -928,7 +928,7 @@ mesh = SubResource("ArrayMesh_dodaa")
 script = ExtResource("1_heyd4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=566517223]
-libraries/ = SubResource("AnimationLibrary_iksjg")
+libraries/ = SubResource("AnimationLibrary_pkwky")
 autoplay = &"llegada"
 
 [node name="bau" type="MeshInstance3D" parent="." unique_id=440252590]
