@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://clutt74fh6hcc"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_heyd4"]
+[ext_resource type="AudioStream" path="res://sonidos/Video-Project-2.wav" id="2_dcdox"]
+[ext_resource type="AudioStream" uid="uid://dcxhhqaptajcg" path="res://sonidos/BOCINA.wav" id="3_rl2ts"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrs3q"]
 resource_name = "color amr"
@@ -204,6 +206,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sonido suran/BOCINA:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("sonido suran/SURAN:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c35m8"]
 resource_name = "ida"
@@ -251,6 +277,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sonido suran/BOCINA:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
 resource_name = "llegada"
@@ -297,6 +335,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sonido suran/SURAN:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iksjg"]
@@ -999,3 +1049,11 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=1533769786]
 transform = Transform3D(33.33332, -1.1858461e-20, -1.3552527e-20, 0, 23.481613, -23.658504, 0, 23.658504, 23.481613, -1.3660316, -40.00309, 26.314621)
+
+[node name="sonido suran" type="Node3D" parent="." unique_id=149376803]
+
+[node name="SURAN" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1971485343]
+stream = ExtResource("2_dcdox")
+
+[node name="BOCINA" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1118819863]
+stream = ExtResource("3_rl2ts")
