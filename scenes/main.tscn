@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_tefeu")
@@ -178,3 +179,6 @@ transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.
 [node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
 stream = ExtResource("7_tipki")
 autoplay = true
+
+[node name="escortpolice" parent="." unique_id=741665342 instance=ExtResource("8_tipki")]
+transform = Transform3D(-0.49976787, 0, -0.015234453, 0, 0.5, 0, 0.015234453, 0, -0.49976787, 1.4056839, 0.4416868, -2.4626682)
