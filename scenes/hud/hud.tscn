@@ -37,7 +37,7 @@ text = "next"
 script = ExtResource("1_ahhtf")
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
-metadata/Auto_legal_bool = false
+metadata/Auto_ilegal_bool = false
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
 visible = false
@@ -223,7 +223,7 @@ anchor_right = 0.6736111
 anchor_bottom = 0.041666668
 grow_horizontal = 2
 mouse_filter = 2
-max_value = 30.0
+max_value = 20.0
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 

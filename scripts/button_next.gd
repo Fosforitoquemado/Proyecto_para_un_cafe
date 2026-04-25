@@ -13,7 +13,11 @@ extends Button
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
 
 #elementos auto
-@onready var auto = preload("res://scenes/car.tscn")
+@onready var autos_lista = {
+	"fiat 147": preload("res://scenes/147.tscn"),
+	"suran": preload("res://scenes/suran.tscn"),
+	"fiat doblo": preload("res://scenes/fiat doblo.tscn")
+}
 
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
 @onready var color_papel: Label3D = $"../papel/color_papel"
@@ -29,7 +33,7 @@ extends Button
 
 #valores in-game
 @onready var fallos : int = 0
-@onready var autos : int = 0
+@onready var autos_que_pasaron : int = 0
 
 @onready var colors = {
 	"rojo": "ff1b13",
@@ -41,8 +45,7 @@ extends Button
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
-var condicion_papel
-var condicion_auto
+
 var auto_dupe
 
 var active = false
@@ -65,7 +68,7 @@ func generate_VTV_papel():
 		#correcto
 		
 		vtv_papel.text = VTV.text
-		set_meta("Auto_legal_bool", true)
+		#set_meta("Auto_ilegal_bool", false)
 		print("la vtv del papel es true")
 	else:
 		#intento de fake
@@ -73,12 +76,12 @@ func generate_VTV_papel():
 		if num == int(VTV.text):
 			#true
 			vtv_papel.text = str(num)
-			set_meta("Auto_legal_bool", true)
+			#set_meta("Auto_ilegal_bool", false)
 			print("la vtv del papel es true")
 		else:
 			#fake
 			vtv_papel.text = str(num)
-			set_meta("Auto_legal_bool", false)
+			set_meta("Auto_ilegal_bool", true)
 			print("la vtv del papel es fake")
 func generate_patente() -> String:
 	#random patente
@@ -112,7 +115,7 @@ func generate_papel_patente(patente):
 	else:
 		#intento de fake
 		print("la patente del papel es falsa")
-		set_meta("Auto_legal_bool", false)
+		set_meta("Auto_ilegal_bool", true)
 		
 		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
@@ -163,7 +166,7 @@ func generate_color():
 	var materiall = auto_dupe.get_active_material(0)
 	materiall.albedo_color = Color(colors.values()[num_color])
 	auto_dupe.set_surface_override_material(0, materiall)
-	condicion_auto = colors.values()[num_color]
+	
 	node_main.add_child(auto_dupe)
 	auto_dupe.global_position = Vector3(0.2,0,-2.0)
 	return num_color
@@ -174,43 +177,46 @@ func generate_color_papel(num_color):
 	
 	if num_correct_paper <= probabilidad_color:
 		#correcto
-		condicion_papel = colors.values()[num_color]
+		
 		color_papel.text = str(colors.keys()[num_color])
-		set_meta("Auto_legal_bool", true)
+		#set_meta("Auto_ilegal_bool", true)
 		print("el color del papel es true")
 	else:
 		#intento de fake
 		var num = randi_range(0,4)
 		if num == num_color:
-			condicion_papel = colors.values()[num_color]
+			
 			color_papel.text = str(colors.keys()[num_color])
-			set_meta("Auto_legal_bool", true)
+			#set_meta("Auto_ilegal_bool", true)
 			print("el color del papel es true")
 		else:
-			condicion_papel = colors.values()[num]
+			
 			color_papel.text = str(colors.keys()[num])
-			set_meta("Auto_legal_bool", false)
+			set_meta("Auto_ilegal_bool", true)
 			print("el color del papel es falso")
 	
 func _ready() -> void:
 	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
-	autos_label.text = str("Autos: ",autos," / ",max_autos)
+	autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if fallos >= max_fallos:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	if autos >= max_autos:
+	if autos_que_pasaron >= max_autos:
 		get_tree().change_scene_to_file("res://scenes/victoria.tscn")
 	pass
 
 func _on_pressed() -> void:
 	if get_meta("Auto_on") == false:
 		set_meta("Auto_on", true)
-		set_meta("Auto_legal_bool", true)
+		set_meta("Auto_ilegal_bool", false)
 		
 		timer._start_timer()
+		
+		var num_auto_random = randi_range(0,autos_lista.size() - 1)
+		var auto = autos_lista.values()[num_auto_random]
 		
 		auto_dupe = auto.instantiate()
 		
@@ -227,9 +233,6 @@ func _on_pressed() -> void:
 		
 		visible = false
 		
-		if condicion_auto != condicion_papel:
-			set_meta("Auto_legal_bool", false)
-		
 		await get_tree().create_timer(0.2).timeout
 		
 		yes_no_menu.visible = true
@@ -245,28 +248,28 @@ func _on_yes_pressed() -> void:
 		timer._stop_timer()
 		yes_no_menu.visible = false
 		await get_tree().create_timer(3.0).timeout
-		autos += 1
-		if get_meta("Auto_legal_bool") == false:
+		autos_que_pasaron += 1
+		if get_meta("Auto_ilegal_bool") == true:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
-		autos_label.text = str("Autos: ",autos," / ",max_autos)
+		autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 		active = false
 	pass # Replace with function body.
 func _on_no_pressed() -> void:
 	if active == false:
 		active = true
 		timer._stop_timer()
-		if get_meta("Auto_legal_bool") == true:
+		if get_meta("Auto_ilegal_bool") == false:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		yes_no_menu.visible = false
 		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
-		autos_label.text = str("Autos: ",autos," / ",max_autos)
+		autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 		active = false
 	pass # Replace with function body.
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://wdiu4ny0onks" path="res://modelos/laptop/laptop.glb" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://wdiu4ny0onks" path="res://modelos/ESCRITORIO/laptop/laptop.glb" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
