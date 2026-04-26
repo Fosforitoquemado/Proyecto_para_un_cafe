@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://b3oed8uidnq81"]
 
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_5x5qu"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maq55"]
 resource_name = "carroceria"
 cull_mode = 2
@@ -858,6 +860,7 @@ cache/0/100/0/scale = 1.0
 [node name="armazon" type="MeshInstance3D" unique_id=232727401]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -18.129066)
 mesh = SubResource("ArrayMesh_ncup3")
+script = ExtResource("1_5x5qu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=476885642]
 libraries/ = SubResource("AnimationLibrary_etf3i")
