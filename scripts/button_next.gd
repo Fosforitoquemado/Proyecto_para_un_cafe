@@ -245,7 +245,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 		var mes_31 := [1,3,5,7,8,10,12]
 		var dia
 		var mes = randi_range(1,12)
-		if mes == 1:
+		if mes == 2:
 			dia = randi_range(1,28)
 		if mes in mes_30:
 			dia = randi_range(1,30)
@@ -275,7 +275,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				var mes_31 := [1,3,5,7,8,10,12]
 				var dia
 				var mes = randi_range(1,get_meta("Mes") - 1)
-				if mes == 1:
+				if mes == 2:
 					dia = randi_range(1,28)
 				if mes in mes_30:
 					dia = randi_range(1,30)
@@ -291,7 +291,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 			var mes_31 := [1,3,5,7,8,10,12]
 			var dia
 			var mes = randi_range(1,12)
-			if mes == 1:
+			if mes == 2:
 				dia = randi_range(1,28)
 			if mes in mes_30:
 				dia = randi_range(1,30)
