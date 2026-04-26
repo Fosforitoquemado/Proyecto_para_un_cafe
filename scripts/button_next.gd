@@ -228,7 +228,7 @@ func generate_modelo_cedula(num_auto, probabilidad):
 		print("el modelo de la cedula es verdad")
 	else:
 		#fake
-		var num := randi_range(0, autos_lista.size() - 1)
+		var num := randi_range(0, autos_lista.size() - 2)
 		if num >= num_auto:
 			num += 1
 		modelo_auto = autos_lista.keys()[num]
