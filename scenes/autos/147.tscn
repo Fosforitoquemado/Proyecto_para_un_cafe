@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://cgrwg2yo6nn78"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_c35m8"]
+[ext_resource type="AudioStream" uid="uid://dslkfhf5pfohr" path="res://sonidos/147-AUDIO.wav" id="2_1h8qw"]
+[ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bxkc"]
 resource_name = "base auto"
@@ -148,6 +150,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sonidos 147/yendose:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c35m8"]
 resource_name = "ida"
@@ -194,6 +208,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sonidos 147/yendose:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
@@ -1054,3 +1080,13 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=438690819]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
+
+[node name="sonidos 147" type="Node3D" parent="." unique_id=2044568057]
+
+[node name="LLEGANDO" type="AudioStreamPlayer3D" parent="sonidos 147" unique_id=1193464476]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+stream = ExtResource("2_1h8qw")
+autoplay = true
+
+[node name="yendose" type="AudioStreamPlayer3D" parent="sonidos 147" unique_id=1925451946]
+stream = ExtResource("3_y4wwx")
