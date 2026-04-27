@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://8fgsf38816vr" path="res://modelos/tren/tren.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
@@ -44,3 +45,6 @@ autoplay = true
 
 [node name="escortpolice" parent="." unique_id=741665342 instance=ExtResource("8_tipki")]
 transform = Transform3D(-0.49976787, 0, -0.015234453, 0, 0.5, 0, 0.015234453, 0, -0.49976787, 1.4056839, 0.4416868, -2.4626682)
+
+[node name="tren" parent="." unique_id=2054819532 instance=ExtResource("6_tefeu")]
+transform = Transform3D(0.013533348, 0, -0.4998168, 0, 0.5, 0, 0.4998168, 0, 0.013533348, -3.6498444, 0.96459806, -8.774746)
