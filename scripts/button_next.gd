@@ -9,7 +9,7 @@ class_name Boton_Primario
 @onready var camara_mesa: Node3D = $"../Camara_mesa"
 
 #compu
-@onready var pcsistema: PCStatic = $"../../PCSISTEMA" 
+@onready var pcsistema: PCStatic = $"../../PCSISTEMA"
 
 #elementos HUD
 @onready var hud: Control = $".."
