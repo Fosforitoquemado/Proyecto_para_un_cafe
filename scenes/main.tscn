@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/Street View 360flip.jpg" id="1_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/carnet_.png" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/panel_container.gd" id="2_choun"]
+[ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://8fgsf38816vr" path="res://modelos/tren/tren.glb" id="6_tefeu"]
@@ -20,10 +23,97 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ya4ey"]
+blend_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(0, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m1a1"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(315, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iioc1"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(630, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_567j1"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(945, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsgyl"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(0, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjjd2"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(315, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vblv"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(630, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccb21"]
+atlas = ExtResource("2_85g3d")
+region = Rect2(945, 475, 315, 245)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eb6dy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m1a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iioc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_567j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsgyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjjd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vblv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccb21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Main" type="Node3D" unique_id=320117741]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030609384]
 environment = SubResource("Environment_0xm2m")
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment" unique_id=191236862]
+visible = false
+material = SubResource("CanvasItemMaterial_ya4ey")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_choun")
+metadata/_edit_use_anchors_ = true
+
+[node name="carnet_" type="AnimatedSprite2D" parent="WorldEnvironment/PanelContainer" unique_id=1122934683]
+position = Vector2(577, 322)
+scale = Vector2(3.650794, 2.632653)
+sprite_frames = SubResource("SpriteFrames_eb6dy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/PanelContainer/carnet_" unique_id=81878420]
+stream = ExtResource("3_choun")
+volume_db = 6.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=633950107]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

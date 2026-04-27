@@ -16,6 +16,7 @@ class_name Boton_Primario
 @onready var fallos_label: Label = $"../Fallos"
 @onready var autos_label: Label = $"../Autos"
 @onready var timer: ProgressBar = $"../Timer"
+@onready var panel_container: PanelContainer = $"../../WorldEnvironment/PanelContainer"
 
 @onready var yes_no_menu: Control = $"../YES_NO_menu"
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
@@ -28,15 +29,39 @@ class_name Boton_Primario
 	"ford escort": preload("res://scenes/autos/escort.tscn")
 }
 
+@onready var Nombres_lista = [
+	"Tomás",
+	"Fede",
+	"Delfi",
+	"Nico",
+	"Benja",
+	"Juan"
+]
+
+@onready var apellidos_lista = [
+	"Martinez",
+	"Gonzales",
+	"Ferrero",
+	"Fort",
+	"Pereira"
+]
+
 #papel
 @onready var papel_patente: Label3D = $"../papel/papel_patente"
 @onready var color_papel: Label3D = $"../papel/color_papel"
 @onready var vtv_papel: Label3D = $"../papel/VTV_papel"
 
 #cedula
-@onready var dominio: Label3D = $"../cedula/Dominio"
-@onready var modelo: Label3D = $"../cedula/Modelo"
-@onready var vencimiento: Label3D = $"../cedula/Vencimiento"
+@onready var dominio_cedula: Label3D = $"../cedula/Dominio"
+@onready var modelo_cedula: Label3D = $"../cedula/Modelo"
+@onready var vencimiento_cedula: Label3D = $"../cedula/Vencimiento"
+
+#licencia
+@onready var numero_licencia: Label3D = $"../carnet/Numero_licencia"
+@onready var apellido_licencia: Label3D = $"../carnet/Apellido"
+@onready var nombre_licencia: Label3D = $"../carnet/Nombre"
+@onready var fecha_nacimiento_licencia: Label3D = $"../carnet/Fecha_Nacimiento"
+@onready var vencimiento_licencia: Label3D = $"../carnet/Vencimiento"
 
 #max valores
 @export var max_fallos : int = 999
@@ -62,6 +87,8 @@ class_name Boton_Primario
 	"verde": "1df428",
 	"violeta": "5510c7",
 	"naranja": "f67200",
+	"blanco": "dedede",
+	"negro": "05040b"
 }
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
@@ -195,7 +222,7 @@ func generate_papel_patente(patente, label3d, probabilidad):
 					print("error de letra: ", letra, " posicion: ", error_posicion)
 				#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
 func generate_color():
-	var num_color = randi_range(0,4)
+	var num_color = randi_range(0,colors.size() - 1)
 	#var materiall = auto_dupe.get_active_material(0).duplicate()
 	var materiall = auto_dupe.get_active_material(0)
 	materiall.albedo_color = Color(colors.values()[num_color])
@@ -217,7 +244,7 @@ func generate_color_papel(num_color):
 		print("el color del papel es true")
 	else:
 		#fake
-		var num := randi_range(0, 4 - 1)
+		var num := randi_range(0, colors.size() - 1)
 		if num >= num_color:
 			num += 1
 		color_papel.text = str(colors.keys()[num])
@@ -230,7 +257,7 @@ func generate_modelo_cedula(num_auto, probabilidad):
 	if num_correct_paper <= probabilidad:
 		#correcto
 		
-		modelo.text = modelo_auto
+		modelo_cedula.text = modelo_auto
 		#set_meta("Auto_ilegal_bool", false)
 		print("el modelo de la cedula es verdad")
 	else:
@@ -239,7 +266,7 @@ func generate_modelo_cedula(num_auto, probabilidad):
 		if num >= num_auto:
 			num += 1
 		modelo_auto = autos_lista.keys()[num]
-		modelo.text = modelo_auto
+		modelo_cedula.text = modelo_auto
 		set_meta("Auto_ilegal_bool", true)
 		print("el modelo de la cedula es fake")
 func generate_fecha_cedula(probabilidad, probabilidad_2026):
@@ -260,7 +287,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 			dia = randi_range(1,31)
 		var fecha_dia_mes = str(dia,"/",mes,"/20")
 		var anio = randi_range(27,34)
-		vencimiento.text = fecha_dia_mes + str(anio)
+		vencimiento_cedula.text = fecha_dia_mes + str(anio)
 		#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
 		#set_meta("Auto_ilegal_bool", false)
 		print("la fecha de la cedula esta bien")
@@ -275,7 +302,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				var mes = get_meta("Mes")
 				dia = randi_range(1,get_meta("Dia") - 1)
 				var fecha_dia_mes = str(dia,"/",mes,"/2026")
-				vencimiento.text = fecha_dia_mes
+				vencimiento_cedula.text = fecha_dia_mes
 				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
 				set_meta("Auto_ilegal_bool", true)
 				print("la fecha de la cedula esta mal (dia mal)")
@@ -291,7 +318,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				if mes in mes_31:
 					dia = randi_range(1,31)
 				var fecha_dia_mes = str(dia,"/",mes,"/2026")
-				vencimiento.text = fecha_dia_mes
+				vencimiento_cedula.text = fecha_dia_mes
 				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
 				set_meta("Auto_ilegal_bool", true)
 				print("la fecha de la cedula esta mal (el mes)")
@@ -309,10 +336,42 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				dia = randi_range(1,31)
 			var fecha_dia_mes = str(dia,"/",mes,"/20")
 			var anio = randi_range(14,25)
-			vencimiento.text = fecha_dia_mes + str(anio)
+			vencimiento_cedula.text = fecha_dia_mes + str(anio)
 			#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
 			set_meta("Auto_ilegal_bool", true)
 			print("la fecha de la cedula esta mal")
+func generate_numero_licencia():
+	#random numero_licencia
+	
+	var num = randi_range(00000001,99999999)
+	
+	numero_licencia.text = str(num)
+	
+	print(numero_licencia)
+	
+	return numero_licencia
+func generate_nombre():
+	var num_nombre = randi_range(0,Nombres_lista.size() - 1)
+	var nombre = Nombres_lista[num_nombre]
+	var num_correct_paper = randi_range(0,100)
+	#pcsistema.pc_control.set_modelo(modelo_auto)
+	#if num_correct_paper <= probabilidad:
+		#correcto
+		
+		#modelo_cedula.text = modelo_auto
+		#set_meta("Auto_ilegal_bool", false)
+		#print("el modelo de la cedula es verdad")
+	#else:
+		#fake
+		#var num := randi_range(0, autos_lista.size() - 2)
+		#if num >= num_auto:
+			#num += 1
+		#modelo_auto = autos_lista.keys()[num]
+		#set_meta("Auto_ilegal_bool", true)
+		#print("el modelo de la cedula es fake")
+func generate_apellido():
+	print("no")
+
 func _ready() -> void:
 	add_to_group("boton")
 	generate_fecha()
@@ -327,6 +386,19 @@ func _process(delta: float) -> void:
 	if autos_que_pasaron >= max_autos:
 		get_tree().change_scene_to_file("res://scenes/victoria.tscn")
 	pass
+
+var tiempo_transcurrido = 0
+
+func _physics_process(delta: float) -> void:
+	tiempo_transcurrido += delta
+	if tiempo_transcurrido > 1:
+		tiempo_transcurrido = 0
+		var num = randi_range(0, 1000)
+		if num == 69:
+			panel_container.visible = true
+			panel_container.star()
+		else:
+			pass
 
 func _on_pressed() -> void:
 	if get_meta("Auto_on") == false:
@@ -345,7 +417,7 @@ func _on_pressed() -> void:
 		#genero la patente del papel
 		generate_papel_patente(patente, papel_patente, probabilidad_patente_papel)
 		#genero la patente de la cedula azul
-		generate_papel_patente(patente, dominio, probabilidad_patente_cedula)
+		generate_papel_patente(patente, dominio_cedula, probabilidad_patente_cedula)
 		
 		var num_vtv = generate_VTV()
 		generate_VTV_auto(num_vtv)
@@ -357,7 +429,7 @@ func _on_pressed() -> void:
 		
 		visible = false
 		
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(0.2).timeout
 		
 		timer._start_timer()
 		yes_no_menu.visible = true

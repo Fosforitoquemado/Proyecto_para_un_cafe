@@ -932,6 +932,7 @@ transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08
 pixel_size = 0.05
 shaded = true
 double_sided = false
+no_depth_test = true
 outline_render_priority = 0
 text = "12
 "

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="5_mgtrf"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="6_n56i7"]
 [ext_resource type="PackedScene" uid="uid://wdiu4ny0onks" path="res://modelos/ESCRITORIO/laptop/laptop.glb" id="7_mq0y1"]
+[ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/3.png" id="8_nhd55"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
 font_size = 30
@@ -421,6 +422,7 @@ texture = ExtResource("3_c45xl")
 [node name="Dominio" type="Label3D" parent="cedula" unique_id=696255658]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.162247, 1.1, 0.002)
 shaded = true
+no_depth_test = true
 modulate = Color(0, 0, 0, 1)
 text = "123 abc
 "
@@ -431,6 +433,7 @@ horizontal_alignment = 0
 [node name="Modelo" type="Label3D" parent="cedula" unique_id=209521516]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.11532, -0.27674937, 0.002)
 shaded = true
+no_depth_test = true
 modulate = Color(0, 0, 0, 1)
 text = "base modelo"
 font_size = 35
@@ -440,8 +443,78 @@ horizontal_alignment = 0
 [node name="Vencimiento" type="Label3D" parent="cedula" unique_id=1214810843]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.12821, -1.8326354, 0.002)
 shaded = true
+no_depth_test = true
 modulate = Color(0, 0, 0, 1)
 text = "20/01/20XX"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="carnet" type="Sprite3D" parent="." unique_id=1527108386]
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 1.156896, 0.3993408, 1.6057663)
+visible = false
+texture = ExtResource("8_nhd55")
+
+[node name="Numero_licencia" type="Label3D" parent="carnet" unique_id=114450025]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.4250488, 1.4708405, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "12345678
+
+"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Apellido" type="Label3D" parent="carnet" unique_id=2032913760]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.378128, 0.08028412, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "Martinez
+"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Nombre" type="Label3D" parent="carnet" unique_id=429573262]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.3910217, -1.3283234, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "Mauro"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Fecha_Nacimiento" type="Label3D" parent="carnet" unique_id=54667289]
+transform = Transform3D(2, -7.1054274e-15, -5.0821977e-21, 7.1054274e-15, 2, 7.1054274e-15, -5.505714e-21, -7.1054274e-15, 2, -3.3910217, -2.882927, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "24/7/1985"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Vencimiento" type="Label3D" parent="carnet" unique_id=1770644239]
+transform = Transform3D(2, -7.1054274e-15, -6.7762636e-21, 7.1054274e-15, 2, 7.1054274e-15, -7.19978e-21, -7.1054274e-15, 2, 6.1674347, -2.882927, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "20/6/2026
+"
 font_size = 35
 outline_size = 1
 horizontal_alignment = 0
