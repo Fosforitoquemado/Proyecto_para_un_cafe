@@ -282,23 +282,11 @@ _data = {
 }
 
 [node name="MATE" type="Node3D" unique_id=2130085467]
+script = ExtResource("1_n7yvt")
 
 [node name="mate" type="MeshInstance3D" parent="." unique_id=1484088852]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5l73y")
-
-[node name="mate" type="Button" parent="mate" unique_id=2111898625]
-anchors_preset = -1
-anchor_left = 0.39600003
-anchor_top = 0.883
-anchor_right = 0.551
-anchor_bottom = 0.96500003
-offset_left = -0.1920166
-offset_top = -0.184021
-offset_right = 0.24798584
-offset_bottom = -0.32000732
-text = "TOMAR MATE "
-script = ExtResource("1_n7yvt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="mate" unique_id=270075302]
 libraries/ = SubResource("AnimationLibrary_vre0b")
@@ -306,5 +294,3 @@ libraries/ = SubResource("AnimationLibrary_vre0b")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="mate" unique_id=76209158]
 transform = Transform3D(0.7547096, 0, 0.656059, 0, 1, 0, -0.656059, 0, 0.7547096, -5.3358965, -1.9848094, -5.1845207)
 stream = ExtResource("2_dxybx")
-
-[connection signal="pressed" from="mate/mate" to="mate/mate" method="_on_pressed"]

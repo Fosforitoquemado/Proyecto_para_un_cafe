@@ -1,4 +1,5 @@
 extends Button
+class_name Boton_Primario
 
 @onready var node_main: Node3D = $"../.."
 
@@ -7,12 +8,14 @@ extends Button
 #posicion camara
 @onready var camara_mesa: Node3D = $"../Camara_mesa"
 
+#compu
+@onready var pcsistema: PCStatic = $"../../PCSISTEMA" 
 
 #elementos HUD
+@onready var hud: Control = $".."
 @onready var fallos_label: Label = $"../Fallos"
 @onready var autos_label: Label = $"../Autos"
 @onready var timer: ProgressBar = $"../Timer"
-@onready var fecha_label: Label = $"../Fecha"
 
 @onready var yes_no_menu: Control = $"../YES_NO_menu"
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
@@ -44,9 +47,9 @@ extends Button
 @export var probabilidad_patente_papel: int = 70
 @export var probabilidad_VTV: int = 70
 @export var probabilidad_patente_cedula: int = 70
-@export var probabilidad_modelo_cedula: int = 70
-@export var probabilidad_fecha_cedula: int = 100
-@export var probabilidad_fecha_cedula_2026: int = 50
+@export var probabilidad_modelo_cedula: int = 40
+@export var probabilidad_fecha_cedula: int = 40
+@export var probabilidad_fecha_cedula_2026: int = 30
 
 #valores in-game
 @onready var fallos : int = 0
@@ -80,6 +83,8 @@ func generate_fecha():
 	set_meta("Mes", mes)
 	set_meta("Dia", dia)
 	fecha = str(dia,"/",mes,"/2026")
+	await pcsistema.ready
+	pcsistema.pc_control.set_fecha(fecha)
 func generate_word(chars: String, length: int) -> String:
 	var word: String = ""
 	var n_char = chars.length()
@@ -90,25 +95,28 @@ func generate_word(chars: String, length: int) -> String:
 func generate_VTV():
 	var VTV = auto_dupe.find_child("mes_VTV")
 	var num = randi_range(1,12)
-	VTV.text = str(num)
-func generate_VTV_papel():
+	pcsistema.pc_control.set_vtv(str(num))
+	return num
+	#VTV.text = str(num)
+func generate_VTV_auto(num_vtv):
 	var VTV = auto_dupe.find_child("mes_VTV")
 	var num_correct_paper = randi_range(0,100)
-	
 	if num_correct_paper <= probabilidad_VTV:
 		#correcto
+		VTV.text = str(num_vtv)
+		#vtv_papel.text = VTV.text
 		
-		vtv_papel.text = VTV.text
 		#set_meta("Auto_ilegal_bool", false)
-		print("la vtv del papel es true")
+		print("la vtv del auto es true")
 	else:
 		#fake
 		var num := randi_range(1, 12 - 1)
 		if num >= int(VTV.text):
 			num += 1
-		vtv_papel.text = str(num)
+		VTV.text = str(num)
+		#vtv_papel.text = str(num)
 		set_meta("Auto_ilegal_bool", true)
-		print("la vtv del papel es fake")
+		print("la vtv del auto es fake")
 
 func generate_patente() -> String:
 	#random patente
@@ -134,7 +142,7 @@ func generate_patente() -> String:
 func generate_papel_patente(patente, label3d, probabilidad):
 	var num_correct_paper = randi_range(0,100)
 	var posiciones_errores = [0,1,2,4,5,6]
-	
+	pcsistema.pc_control.set_dominio(patente)
 	if num_correct_paper <= probabilidad:
 		#correcto
 		label3d.text = patente
@@ -158,7 +166,6 @@ func generate_papel_patente(patente, label3d, probabilidad):
 			var patente_R = str(num_patente1,num_patente2,num_patente3," ",letras)
 			
 			label3d.text = patente_R
-			
 		else:
 			for i in range(dificultad_papel):
 				print(i)
@@ -219,7 +226,7 @@ func generate_color_papel(num_color):
 func generate_modelo_cedula(num_auto, probabilidad):
 	var modelo_auto = autos_lista.keys()[num_auto]
 	var num_correct_paper = randi_range(0,100)
-	
+	pcsistema.pc_control.set_modelo(modelo_auto)
 	if num_correct_paper <= probabilidad:
 		#correcto
 		
@@ -254,6 +261,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 		var fecha_dia_mes = str(dia,"/",mes,"/20")
 		var anio = randi_range(27,34)
 		vencimiento.text = fecha_dia_mes + str(anio)
+		#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
 		#set_meta("Auto_ilegal_bool", false)
 		print("la fecha de la cedula esta bien")
 	else:
@@ -268,6 +276,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				dia = randi_range(1,get_meta("Dia") - 1)
 				var fecha_dia_mes = str(dia,"/",mes,"/2026")
 				vencimiento.text = fecha_dia_mes
+				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
 				set_meta("Auto_ilegal_bool", true)
 				print("la fecha de la cedula esta mal (dia mal)")
 			else:
@@ -283,6 +292,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 					dia = randi_range(1,31)
 				var fecha_dia_mes = str(dia,"/",mes,"/2026")
 				vencimiento.text = fecha_dia_mes
+				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
 				set_meta("Auto_ilegal_bool", true)
 				print("la fecha de la cedula esta mal (el mes)")
 		else:
@@ -300,11 +310,12 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 			var fecha_dia_mes = str(dia,"/",mes,"/20")
 			var anio = randi_range(14,25)
 			vencimiento.text = fecha_dia_mes + str(anio)
+			#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
 			set_meta("Auto_ilegal_bool", true)
 			print("la fecha de la cedula esta mal")
 func _ready() -> void:
+	add_to_group("boton")
 	generate_fecha()
-	fecha_label.text = fecha
 	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 	autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 	pass # Replace with function body.
@@ -322,15 +333,13 @@ func _on_pressed() -> void:
 		set_meta("Auto_on", true)
 		set_meta("Auto_ilegal_bool", false)
 		
-		timer._start_timer()
-		
 		var num_auto_random = randi_range(0,autos_lista.size() - 1)
 		var auto = autos_lista.values()[num_auto_random]
 		
 		auto_dupe = auto.instantiate()
 		
 		var num_color = generate_color()
-		generate_color_papel(num_color)
+		#generate_color_papel(num_color)
 		
 		var patente = generate_patente()
 		#genero la patente del papel
@@ -338,8 +347,8 @@ func _on_pressed() -> void:
 		#genero la patente de la cedula azul
 		generate_papel_patente(patente, dominio, probabilidad_patente_cedula)
 		
-		generate_VTV()
-		generate_VTV_papel()
+		var num_vtv = generate_VTV()
+		generate_VTV_auto(num_vtv)
 		
 		generate_modelo_cedula(num_auto_random, probabilidad_modelo_cedula)
 		
@@ -348,8 +357,9 @@ func _on_pressed() -> void:
 		
 		visible = false
 		
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(3.0).timeout
 		
+		timer._start_timer()
 		yes_no_menu.visible = true
 		
 	else:
@@ -396,37 +406,44 @@ func _on_inspeccion_pressed() -> void:
 	else:
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 		camera_3d.position = Vector3(1.8,0.7,1.5)
+		camera_3d.current = true
+		hud.visible = true
 		camera_3d.fov = 75
 		yes_no_menu.visible = true
 		inspeccion_menu.visible = false
 		set_meta("inspeccion_menu_on", false)
 	pass # Replace with function body.
 
-
 func _on_inspeccion_adelante_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(0),0)
 	camera_3d.position = auto_dupe.find_child("camara_patente_adelante").global_position
 	pass # Replace with function body.
-
 
 func _on_inspeccion_atras_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(180),0)
 	camera_3d.position = auto_dupe.find_child("camara_patente_atras").global_position
 	pass # Replace with function body.
 
-
 func _on_inspeccion_vtv_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(0),0)
 	camera_3d.position = auto_dupe.find_child("camara_VTV").global_position
 	pass # Replace with function body.
-
 
 func _on_inspeccion_mesa_pressed() -> void:
 	camera_3d.rotation = Vector3(deg_to_rad(-90),deg_to_rad(90),0)
 	camera_3d.position = camara_mesa.global_position
 	pass # Replace with function body.
 
-
 func _on_fov_slider_value_changed(value: float) -> void:
 	camera_3d.fov = 75 - value
+	pass # Replace with function body.
+
+func _on_inspeccion_compu_pressed() -> void:
+	hud.visible = false
+	camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
+	camera_3d.position = Vector3(1.8,0.7,1.5)
+	camera_3d.fov = 75
+	inspeccion_menu.visible = false
+	pcsistema.camara()
+	pcsistema.toggle_use()
 	pass # Replace with function body.

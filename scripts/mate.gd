@@ -1,6 +1,6 @@
-extends Button
+extends Node3D
 
-@onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var animation_player: AnimationPlayer = $mate/AnimationPlayer
 
 
 var active = true
@@ -8,13 +8,11 @@ var active = true
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_pressed() -> void:
+func _on_mate_pressed() -> void:
 	if active == true:
 		active = false
 		animation_player.play("TOMAR MATE")

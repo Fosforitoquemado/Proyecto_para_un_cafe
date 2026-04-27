@@ -162,12 +162,6 @@ grow_horizontal = 2
 mouse_filter = 1
 text = "next"
 script = ExtResource("1_ahhtf")
-probabilidad_color = 80
-probabilidad_patente_papel = 80
-probabilidad_patente_cedula = 100
-probabilidad_modelo_cedula = 80
-probabilidad_fecha_cedula = 70
-probabilidad_fecha_cedula_2026 = 40
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
 metadata/Auto_ilegal_bool = false
@@ -223,6 +217,19 @@ mouse_filter = 1
 text = "Inspeccion
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="mate" type="Button" parent="YES_NO_menu" unique_id=812176636]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39600003
+anchor_top = 0.883
+anchor_right = 0.551
+anchor_bottom = 0.96500003
+offset_left = -0.1920166
+offset_top = -0.184021
+offset_right = 0.24798584
+offset_bottom = -0.32000732
+text = "TOMAR MATE "
 
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
@@ -300,6 +307,19 @@ text = "Inspeccion_mesa
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="Inspeccion_compu" type="Button" parent="Inspeccion_menu" unique_id=1860477345]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6475694
+anchor_top = 0.6203704
+anchor_right = 0.8055557
+anchor_bottom = 0.7021605
+grow_vertical = 2
+text = "Inspeccion_compu
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="fov_slider" type="HSlider" parent="Inspeccion_menu" unique_id=1837691495]
 layout_mode = 0
 anchor_left = 0.7717014
@@ -308,13 +328,6 @@ anchor_right = 0.9826389
 anchor_bottom = 0.9305556
 max_value = 75.0
 script = ExtResource("2_0bx4p")
-metadata/_edit_use_anchors_ = true
-
-[node name="Fecha" type="Label" parent="." unique_id=1998746284]
-layout_mode = 0
-anchor_left = 0.1935764
-anchor_right = 0.2282986
-anchor_bottom = 0.03549383
 metadata/_edit_use_anchors_ = true
 
 [node name="Fallos" type="Label" parent="." unique_id=279618866]
@@ -362,6 +375,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="papel" type="MeshInstance3D" parent="." unique_id=228471103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.5)
+visible = false
 mesh = SubResource("PlaneMesh_ahhtf")
 
 [node name="papel_patente" type="Label3D" parent="papel" unique_id=181652647]
@@ -375,7 +389,7 @@ text = "color
 "
 
 [node name="VTV_papel" type="Label3D" parent="papel" unique_id=2133799788]
-transform = Transform3D(0.12967454, -0.14461865, 0.22862615, -0.008590255, 0.25120565, 0.16377385, -0.2703898, -0.07733753, 0.10444227, -0.099194884, 0.043077976, -0.57222325)
+transform = Transform3D(0.12967454, -0.14461865, 0.22862615, -0.008590255, 0.25120565, 0.16377385, -0.2703898, -0.07733753, 0.10444227, 0.09183383, 0.043077976, -0.018897772)
 shaded = true
 text = "VTV
 
@@ -389,7 +403,7 @@ anchor_right = 0.6736111
 anchor_bottom = 0.041666668
 grow_horizontal = 2
 mouse_filter = 2
-max_value = 70.0
+max_value = 60.0
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 
@@ -441,12 +455,14 @@ mesh = SubResource("ArrayMesh_go0ap")
 
 [node name="laptop" parent="." unique_id=552539788 instance=ExtResource("7_mq0y1")]
 transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.08945815, 0.9807792, 0.3897425, 1.0496691)
+visible = false
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="YES_NO_menu/yes" to="Button" method="_on_yes_pressed"]
 [connection signal="pressed" from="YES_NO_menu/no" to="Button" method="_on_no_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccion" to="Button" method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccion" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_pressed"]
+[connection signal="pressed" from="YES_NO_menu/mate" to="MATE" method="_on_mate_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver" to="Button" method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_atras" to="Button" method="_on_inspeccion_atras_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_atras" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_atras_pressed"]
@@ -456,4 +472,5 @@ transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_vtv_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa" to="Button" method="_on_inspeccion_mesa_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_mesa_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu" to="Button" method="_on_inspeccion_compu_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="Button" method="_on_fov_slider_value_changed"]

@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://b6pl4urg6wwi1"]
+
+[ext_resource type="Texture2D" uid="uid://b4nosooi581e2" path="res://texture/mapa/pc/para el cafe.png" id="1_0v6vg"]
+[ext_resource type="Script" uid="uid://dv5plpqqijdil" path="res://scripts/pc_control.gd" id="1_jgmss"]
+[ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/mapa/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
+[ext_resource type="Texture2D" uid="uid://ktrncrhlq68b" path="res://texture/mapa/pc/para el cafe (1).png" id="3_7mlyq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8kqmc"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8x6u"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgmss"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mlyq"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8x6u"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kqmc"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoye0"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5tti"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6gv5"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cio7"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ad5"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8y3j"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h07b"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpqog"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0nxl"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y06b7"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q8n8"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vllgf"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfbn"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i3c4"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(32, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jitcc"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(128, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8en1k"]
+atlas = ExtResource("2_y3tss")
+region = Rect2(64, 352, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3hfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgmss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mlyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8x6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kqmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoye0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5tti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6gv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cio7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ad5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8y3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h07b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpqog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0nxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y06b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q8n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vllgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i3c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jitcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8en1k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgmss"]
+font_size = 8
+
+[node name="PCControl" type="Control" unique_id=2128863822]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jgmss")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=454571506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_0v6vg")
+expand_mode = 1
+
+[node name="basedatos_img" type="TextureRect" parent="." unique_id=1561242220]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24305555
+anchor_top = 0.24228396
+anchor_right = 0.7465278
+anchor_bottom = 0.74382716
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_7mlyq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="fondo" type="Panel" parent="basedatos_img" unique_id=374319973]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.01724138
+anchor_top = -0.046153847
+anchor_right = 1.0172414
+anchor_bottom = 1.030769
+offset_bottom = 3.0517578e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Dominio" type="Label" parent="basedatos_img" unique_id=227789323]
+layout_mode = 0
+anchor_left = 0.112068966
+anchor_top = 0.4923077
+anchor_right = 0.3086207
+anchor_bottom = 0.5630769
+text = "ABC 123"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Modelo" type="Label" parent="basedatos_img" unique_id=755958289]
+layout_mode = 0
+anchor_left = 0.112068966
+anchor_top = 0.63076925
+anchor_right = 0.3086207
+anchor_bottom = 0.70153844
+text = "fiat doblo"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Vence" type="Label" parent="basedatos_img" unique_id=377555048]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.024137931
+anchor_top = 0.7661539
+anchor_right = 0.4482758
+anchor_bottom = 0.83692306
+text = "(esto no va, ver fecha a la derecha)"
+label_settings = SubResource("LabelSettings_8kqmc")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VTV" type="Label" parent="basedatos_img" unique_id=186501805]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6655173
+anchor_top = 0.5353846
+anchor_right = 0.86379313
+anchor_bottom = 0.83384615
+text = "6"
+label_settings = SubResource("LabelSettings_p8x6u")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Patente_line_edit" type="LineEdit" parent="basedatos_img" unique_id=2033147237]
+layout_mode = 0
+anchor_left = 0.40344828
+anchor_top = 0.16923077
+anchor_right = 0.5706897
+anchor_bottom = 0.2646154
+placeholder_text = "Patente ..."
+alignment = 1
+flat = true
+caret_blink = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=1437975147]
+top_level = true
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_o3hfw")
+autoplay = "default"
+frame_progress = 0.5463175
+offset = Vector2(16, 16)
+
+[node name="BaseDatos" type="Button" parent="." unique_id=644810559]
+layout_mode = 0
+anchor_left = 0.10763889
+anchor_top = 0.93364197
+anchor_right = 0.21961805
+anchor_bottom = 0.98919755
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="Button" parent="." unique_id=1752400995]
+layout_mode = 0
+anchor_left = 0.9661458
+anchor_top = 0.0061728396
+anchor_right = 0.9982639
+anchor_bottom = 0.054012347
+text = "exit
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Marco_Fecha" type="Panel" parent="." unique_id=2125773731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8767361
+anchor_top = 0.9305556
+anchor_right = 0.9921875
+anchor_bottom = 0.99228394
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha" type="Label" parent="Marco_Fecha" unique_id=2062909150]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015037594
+anchor_top = 0.05
+anchor_right = 0.9849624
+anchor_bottom = 0.95
+offset_right = -86.0
+offset_bottom = -24.0
+scale = Vector2(3, 3)
+text = "12/06/2026"
+label_settings = SubResource("LabelSettings_jgmss")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BaseDatos" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
