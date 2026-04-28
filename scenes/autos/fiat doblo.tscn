@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://drt10ng3s7m6v"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_8k4fm"]
+[ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
+[ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="3_keeyj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6sbx"]
 resource_name = "base auto"
@@ -169,6 +171,30 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -18.129066)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/bocina:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/motor fiat:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c35m8"]
 resource_name = "ida"
@@ -180,6 +206,18 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.55, 0, 3, 1, 0, 0.55, 20)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/bocina:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
 resource_name = "llegada"
@@ -191,6 +229,18 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.55, -45, 2, 1, 0, 0.55, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/motor fiat:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8k4fm"]
 _data = {
@@ -822,3 +872,11 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=1403149706]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=254621392]
+
+[node name="bocina" type="AudioStreamPlayer3D" parent="Node3D" unique_id=697822912]
+stream = ExtResource("2_bgstw")
+
+[node name="motor fiat" type="AudioStreamPlayer3D" parent="Node3D" unique_id=1819696062]
+stream = ExtResource("3_keeyj")
