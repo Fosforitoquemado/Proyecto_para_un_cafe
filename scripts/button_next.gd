@@ -77,7 +77,7 @@ class_name Boton_Primario
 @export var probabilidad_fecha_cedula: int = 40
 @export var probabilidad_fecha_cedula_2026: int = 30
 #licencia
-@export var probabilidad_numero_licencia: int = 0
+@export var probabilidad_numero_licencia: int = -1
 @export var probabilidad_nombre_licencia: int = 70
 @export var probabilidad_apellido_licencia: int = 70
 @export var probabilidad_nacimiento_licencia: int = 70
@@ -366,7 +366,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 func generate_numero_licencia(probabilidad):
 	#random numero_licencia
 	
-	var num = randi_range(00000001,99999999)
+	var num = randi_range(10000000,99999999)
 	pcsistema.pc_control.set_numero_licencia(str(num))
 	var num_correct_paper = randi_range(0,100)
 	var posiciones_errores = [0,1,2,4,5,6,7]
@@ -379,12 +379,13 @@ func generate_numero_licencia(probabilidad):
 		print("el numero de la licencia es fake")
 		set_meta("Auto_ilegal_bool", true)
 		
-		var dificultad_papel = randi_range(1,7)
+		#var dificultad_papel = randi_range(1,7)
+		var dificultad_papel = 6
 		print("cantidad de errores: ",dificultad_papel)
 		
 		if dificultad_papel == 7:
 			#numero totalmente distinta
-			var num_fake = randi_range(00000001,99999999)
+			var num_fake = randi_range(10000000,99999999)
 			
 			numero_licencia.text = str(num_fake)
 		else:
@@ -643,6 +644,7 @@ func _on_no_pressed() -> void:
 func _on_inspeccion_pressed() -> void:
 	if get_meta("inspeccion_menu_on") == false:
 		set_meta("inspeccion_menu_on", true)
+		yes_no_menu.visible = false
 		inspeccion_menu.visible = true
 		autos_label.visible = true
 		fallos_label.visible = true
