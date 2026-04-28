@@ -12,6 +12,10 @@ func _stop_timer():
 	tiempo_transcurrido = 0.0
 	value = tiempo_transcurrido
 
+func _reduce_timer():
+	if value >= 20:
+		value -= 20
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

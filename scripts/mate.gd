@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var animation_player: AnimationPlayer = $mate/AnimationPlayer
 
+@onready var timer: ProgressBar = $"../Timer"
 
 var active = true
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func _on_mate_pressed() -> void:
 		active = false
 		animation_player.play("TOMAR MATE")
 		await  get_tree().create_timer(4).timeout
+		timer._reduce_timer()
 		active = true
 		
 	pass # Replace with function body.

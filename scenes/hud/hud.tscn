@@ -337,6 +337,16 @@ max_value = 75.0
 script = ExtResource("2_0bx4p")
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="Inspeccion_menu" unique_id=305921886]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8585069
+anchor_top = 0.79012346
+anchor_right = 0.9019097
+anchor_bottom = 0.8256173
+text = "ZOOM"
+metadata/_edit_use_anchors_ = true
+
 [node name="Fallos" type="Label" parent="." unique_id=279618866]
 layout_mode = 1
 anchors_preset = -1
@@ -410,7 +420,7 @@ anchor_right = 0.6736111
 anchor_bottom = 0.041666668
 grow_horizontal = 2
 mouse_filter = 2
-max_value = 60.0
+max_value = 120.0
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 
@@ -451,8 +461,7 @@ outline_size = 1
 horizontal_alignment = 0
 
 [node name="carnet" type="Sprite3D" parent="." unique_id=1527108386]
-transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 1.156896, 0.3993408, 1.6057663)
-visible = false
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0.9347826, 0.39879048, 1.1193303)
 texture = ExtResource("8_nhd55")
 
 [node name="Numero_licencia" type="Label3D" parent="carnet" unique_id=114450025]

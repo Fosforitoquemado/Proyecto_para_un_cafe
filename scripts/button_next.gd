@@ -16,7 +16,7 @@ class_name Boton_Primario
 @onready var fallos_label: Label = $"../Fallos"
 @onready var autos_label: Label = $"../Autos"
 @onready var timer: ProgressBar = $"../Timer"
-@onready var panel_container: PanelContainer = $"../../WorldEnvironment/PanelContainer"
+@onready var sub_viewport_container: SubViewportContainer = $"../../WorldEnvironment/SubViewportContainer"
 
 @onready var yes_no_menu: Control = $"../YES_NO_menu"
 @onready var inspeccion_menu: Control = $"../Inspeccion_menu"
@@ -30,12 +30,12 @@ class_name Boton_Primario
 }
 
 @onready var Nombres_lista = [
-	"Tomás",
-	"Fede",
+	"Benja",
 	"Delfi",
 	"Nico",
-	"Benja",
-	"Juan"
+	"Fede",
+	"Juan",
+	"Tomás"
 ]
 
 @onready var apellidos_lista = [
@@ -43,7 +43,8 @@ class_name Boton_Primario
 	"Gonzales",
 	"Ferrero",
 	"Fort",
-	"Pereira"
+	"Pereira",
+	"miameee"
 ]
 
 #papel
@@ -75,6 +76,16 @@ class_name Boton_Primario
 @export var probabilidad_modelo_cedula: int = 40
 @export var probabilidad_fecha_cedula: int = 40
 @export var probabilidad_fecha_cedula_2026: int = 30
+#licencia
+@export var probabilidad_numero_licencia: int = 0
+@export var probabilidad_nombre_licencia: int = 70
+@export var probabilidad_apellido_licencia: int = 70
+@export var probabilidad_nacimiento_licencia: int = 70
+@export var probabilidad_nacimiento_licencia_19XX: int = 70
+@export var probabilidad_nacimiento_licencia_papeles_16: int = 70
+@export var probabilidad_vencimiento_licencia: int = 70
+@export var probabilidad_fecha_licencia_2026: int = 30
+
 
 #valores in-game
 @onready var fallos : int = 0
@@ -195,7 +206,6 @@ func generate_papel_patente(patente, label3d, probabilidad):
 			label3d.text = patente_R
 		else:
 			for i in range(dificultad_papel):
-				print(i)
 				var error_tipo = randi_range(0,1)
 				# 0 es error en 1 numero, 1 es error en 1 letra
 				if error_tipo == 0:
@@ -220,7 +230,6 @@ func generate_papel_patente(patente, label3d, probabilidad):
 					label3d.text = patente_error.insert(error_posicion,str(letra))
 					patente = label3d.text
 					print("error de letra: ", letra, " posicion: ", error_posicion)
-				#papel_patente.text = str(num_patente1,num_patente2,num_patente3," ",letras)
 func generate_color():
 	var num_color = randi_range(0,colors.size() - 1)
 	#var materiall = auto_dupe.get_active_material(0).duplicate()
@@ -240,7 +249,6 @@ func generate_color_papel(num_color):
 		#correcto
 		
 		color_papel.text = str(colors.keys()[num_color])
-		#set_meta("Auto_ilegal_bool", true)
 		print("el color del papel es true")
 	else:
 		#fake
@@ -258,7 +266,6 @@ func generate_modelo_cedula(num_auto, probabilidad):
 		#correcto
 		
 		modelo_cedula.text = modelo_auto
-		#set_meta("Auto_ilegal_bool", false)
 		print("el modelo de la cedula es verdad")
 	else:
 		#fake
@@ -269,12 +276,174 @@ func generate_modelo_cedula(num_auto, probabilidad):
 		modelo_cedula.text = modelo_auto
 		set_meta("Auto_ilegal_bool", true)
 		print("el modelo de la cedula es fake")
-func generate_fecha_cedula(probabilidad, probabilidad_2026):
+func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 	var num_correct_paper = randi_range(0,100)
 	var num_correct_paper_2026 = randi_range(0,100)
 	
+	var fecha_de_vencimiento
+	
+	#fecha correcto
+	var mes_30 := [4,6,9,11]
+	var mes_31 := [1,3,5,7,8,10,12]
+	var dia
+	var mes = randi_range(1,12)
+	if mes == 2:
+		dia = randi_range(1,28)
+	if mes in mes_30:
+		dia = randi_range(1,30)
+	if mes in mes_31:
+		dia = randi_range(1,31)
+	var fecha_dia_mes = str(dia,"/",mes,"/20")
+	var anio = randi_range(27,34)
+	label3d.text = fecha_dia_mes + str(anio)
+	fecha_de_vencimiento = fecha_dia_mes + str(anio)
+	print("la fecha de la cedula esta bien")
+	
 	if num_correct_paper <= probabilidad:
 		#correcto
+		var mes_30_ := [4,6,9,11]
+		var mes_31_ := [1,3,5,7,8,10,12]
+		var dia_
+		var mes_ = randi_range(1,12)
+		if mes_ == 2:
+			dia_ = randi_range(1,28)
+		if mes_ in mes_30_:
+			dia_ = randi_range(1,30)
+		if mes_ in mes_31_:
+			dia_ = randi_range(1,31)
+		var fecha_dia_mes_ = str(dia_,"/",mes_,"/20")
+		var anio_ = randi_range(27,34)
+		label3d.text = fecha_dia_mes_ + str(anio_)
+		print("la fecha de la cedula esta bien")
+	else:
+		if num_correct_paper_2026 <= probabilidad_2026:
+			#fake
+			var num_dia_o_mes = randi_range(0,100)
+			var probabilidad_dia = 50
+			if num_dia_o_mes <= probabilidad_dia:
+				#dia fake
+				var dia_
+				var mes_ = get_meta("Mes")
+				dia_ = randi_range(1,get_meta("Dia") - 1)
+				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
+				label3d.text = fecha_dia_mes_
+				set_meta("Auto_ilegal_bool", true)
+				print("la fecha de la cedula esta mal (dia mal)")
+			else:
+				var mes_30_ := [4,6,9,11]
+				var mes_31_ := [1,3,5,7,8,10,12]
+				var dia_
+				var mes_ = randi_range(1,get_meta("Mes") - 1)
+				if mes_ == 2:
+					dia_ = randi_range(1,28)
+				if mes_ in mes_30_:
+					dia_ = randi_range(1,30)
+				if mes_ in mes_31_:
+					dia_ = randi_range(1,31)
+				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
+				label3d.text = fecha_dia_mes_
+				set_meta("Auto_ilegal_bool", true)
+				print("la fecha de la cedula esta mal (el mes)")
+		else:
+			#fake
+			var mes_30_ := [4,6,9,11]
+			var mes_31_ := [1,3,5,7,8,10,12]
+			var dia_
+			var mes_ = randi_range(1,12)
+			if mes_ == 2:
+				dia_ = randi_range(1,28)
+			if mes_ in mes_30_:
+				dia_ = randi_range(1,30)
+			if mes_ in mes_31_:
+				dia_ = randi_range(1,31)
+			var fecha_dia_mes_ = str(dia_,"/",mes_,"/20")
+			var anio_ = randi_range(14,25)
+			label3d.text = fecha_dia_mes_ + str(anio_)
+			set_meta("Auto_ilegal_bool", true)
+			print("la fecha de la cedula esta mal")
+			
+	return fecha_de_vencimiento
+func generate_numero_licencia(probabilidad):
+	#random numero_licencia
+	
+	var num = randi_range(00000001,99999999)
+	pcsistema.pc_control.set_numero_licencia(str(num))
+	var num_correct_paper = randi_range(0,100)
+	var posiciones_errores = [0,1,2,4,5,6,7]
+	if num_correct_paper <= probabilidad:
+		#correcto
+		numero_licencia.text = str(num)
+		print("el numero de la licencia es verdadera")
+	else:
+		#fake
+		print("el numero de la licencia es fake")
+		set_meta("Auto_ilegal_bool", true)
+		
+		var dificultad_papel = randi_range(1,7)
+		print("cantidad de errores: ",dificultad_papel)
+		
+		if dificultad_papel == 7:
+			#numero totalmente distinta
+			var num_fake = randi_range(00000001,99999999)
+			
+			numero_licencia.text = str(num_fake)
+		else:
+			for i in range(dificultad_papel):
+				#numeros especificos diferentes
+				var error_posicion = randi_range(0,7)
+				posiciones_errores.erase(error_posicion)
+				var num_error := randi_range(0, 9 - 1)
+				if str(num)[error_posicion] == str(num_error):
+					num_error += 1
+				var patente_error = str(num).substr(0, error_posicion) + str(num).substr(error_posicion + 1)
+				numero_licencia.text = patente_error.insert(error_posicion,str(num_error))
+				print("error de numero: ", num, " posicion: ", error_posicion)
+	
+	return numero_licencia
+func generate_nombre(probabilidad):
+	var num_nombre = randi_range(0,Nombres_lista.size() - 1)
+	var nombre = Nombres_lista[num_nombre]
+	var num_correct_paper = randi_range(0,100)
+	pcsistema.pc_control.set_nombre(nombre)
+	if num_correct_paper <= probabilidad:
+		#correcto
+		
+		nombre_licencia.text = nombre
+		print("el nombre de la licencia es verdad")
+	else:
+		#fake
+		var num := randi_range(0, Nombres_lista.size() - 2)
+		if num >= num_nombre:
+			num += 1
+		nombre_licencia.text = Nombres_lista[num]
+		set_meta("Auto_ilegal_bool", true)
+		print("el nombre de la licencia es fake")
+func generate_apellido(probabilidad):
+	var num_nombre = randi_range(0,apellidos_lista.size() - 1)
+	var nombre = apellidos_lista[num_nombre]
+	var num_correct_paper = randi_range(0,100)
+	pcsistema.pc_control.set_apellido(nombre)
+	if num_correct_paper <= probabilidad:
+		#correcto
+		
+		apellido_licencia.text = nombre
+		print("el nombre de la licencia es verdad")
+	else:
+		#fake
+		var num := randi_range(0, apellidos_lista.size() - 2)
+		if num >= num_nombre:
+			num += 1
+		apellido_licencia.text = apellidos_lista[num]
+		set_meta("Auto_ilegal_bool", true)
+		print("el nombre de la licencia es fake")
+func generate_fecha_nacimiento(probabilidad, probabilidad_papeles_16, probabilidad_19XX):
+	var num_correct_paper = randi_range(0,100)
+	var num_correct_paper_papeles_16 = randi_range(0,100)
+	
+	var nacimiento
+	
+	var num_19XX = randi_range(0,100)
+	if num_19XX >= probabilidad_19XX:
 		var mes_30 := [4,6,9,11]
 		var mes_31 := [1,3,5,7,8,10,12]
 		var dia
@@ -285,15 +454,33 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 			dia = randi_range(1,30)
 		if mes in mes_31:
 			dia = randi_range(1,31)
-		var fecha_dia_mes = str(dia,"/",mes,"/20")
-		var anio = randi_range(27,34)
-		vencimiento_cedula.text = fecha_dia_mes + str(anio)
-		#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
-		#set_meta("Auto_ilegal_bool", false)
-		print("la fecha de la cedula esta bien")
+		var fecha_dia_mes = str(dia,"/",mes,"/19")
+		var anio = randi_range(60,99)
+		nacimiento = fecha_dia_mes + str(anio)
+		pcsistema.pc_control.set_fecha_nacimiento(nacimiento)
 	else:
-		if num_correct_paper_2026 <= probabilidad_2026:
-			#fake
+		var mes_30 := [4,6,9,11]
+		var mes_31 := [1,3,5,7,8,10,12]
+		var dia
+		var mes = randi_range(1,12)
+		if mes == 2:
+			dia = randi_range(1,28)
+		if mes in mes_30:
+			dia = randi_range(1,30)
+		if mes in mes_31:
+			dia = randi_range(1,31)
+		var fecha_dia_mes = str(dia,"/",mes,"/200")
+		var anio = randi_range(0,8)
+		nacimiento = fecha_dia_mes + str(anio)
+		pcsistema.pc_control.set_fecha_nacimiento(nacimiento)
+		
+	if num_correct_paper <= probabilidad:
+		#correcto
+		fecha_nacimiento_licencia.text = nacimiento
+		print("la fecha de nacimiento esta bien")
+	else:
+		if num_correct_paper_papeles_16 <= probabilidad_papeles_16:
+			#vas a tener que pedir papeles de los 16
 			var num_dia_o_mes = randi_range(0,100)
 			var probabilidad_dia = 50
 			if num_dia_o_mes <= probabilidad_dia:
@@ -301,11 +488,14 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 				var dia
 				var mes = get_meta("Mes")
 				dia = randi_range(1,get_meta("Dia") - 1)
-				var fecha_dia_mes = str(dia,"/",mes,"/2026")
-				vencimiento_cedula.text = fecha_dia_mes
-				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
+				var fecha_dia_mes = str(dia,"/",mes,"/20")
+				var anio = randi_range(9,10)
+				if anio == 9:
+					fecha_nacimiento_licencia.text = fecha_dia_mes + str(0) + str(anio)
+				else:
+					fecha_nacimiento_licencia.text = fecha_dia_mes + str(anio)
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la cedula esta mal (dia mal)")
+				print("la fecha de nacimiento hay que pedir papeles (dia mal)")
 			else:
 				var mes_30 := [4,6,9,11]
 				var mes_31 := [1,3,5,7,8,10,12]
@@ -317,11 +507,14 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 					dia = randi_range(1,30)
 				if mes in mes_31:
 					dia = randi_range(1,31)
-				var fecha_dia_mes = str(dia,"/",mes,"/2026")
-				vencimiento_cedula.text = fecha_dia_mes
-				#pcsistema.pc_control.set_vencimiento(fecha_dia_mes)
+				var fecha_dia_mes = str(dia,"/",mes,"/20")
+				var anio = randi_range(9,10)
+				if anio == 9:
+					fecha_nacimiento_licencia.text = fecha_dia_mes + str(0) + str(anio)
+				else:
+					fecha_nacimiento_licencia.text = fecha_dia_mes + str(anio)
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la cedula esta mal (el mes)")
+				print("la fecha de nacimiento hay que pedir papeles (dia mal)")
 		else:
 			#fake
 			var mes_30 := [4,6,9,11]
@@ -335,43 +528,10 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026):
 			if mes in mes_31:
 				dia = randi_range(1,31)
 			var fecha_dia_mes = str(dia,"/",mes,"/20")
-			var anio = randi_range(14,25)
-			vencimiento_cedula.text = fecha_dia_mes + str(anio)
-			#pcsistema.pc_control.set_vencimiento(fecha_dia_mes + str(anio))
+			var anio = randi_range(10,26)
+			fecha_nacimiento_licencia.text = fecha_dia_mes + str(anio)
 			set_meta("Auto_ilegal_bool", true)
-			print("la fecha de la cedula esta mal")
-func generate_numero_licencia():
-	#random numero_licencia
-	
-	var num = randi_range(00000001,99999999)
-	
-	numero_licencia.text = str(num)
-	
-	print(numero_licencia)
-	
-	return numero_licencia
-func generate_nombre():
-	var num_nombre = randi_range(0,Nombres_lista.size() - 1)
-	var nombre = Nombres_lista[num_nombre]
-	var num_correct_paper = randi_range(0,100)
-	#pcsistema.pc_control.set_modelo(modelo_auto)
-	#if num_correct_paper <= probabilidad:
-		#correcto
-		
-		#modelo_cedula.text = modelo_auto
-		#set_meta("Auto_ilegal_bool", false)
-		#print("el modelo de la cedula es verdad")
-	#else:
-		#fake
-		#var num := randi_range(0, autos_lista.size() - 2)
-		#if num >= num_auto:
-			#num += 1
-		#modelo_auto = autos_lista.keys()[num]
-		#set_meta("Auto_ilegal_bool", true)
-		#print("el modelo de la cedula es fake")
-func generate_apellido():
-	print("no")
-
+			print("la fecha de nacimiento esta mal")
 func _ready() -> void:
 	add_to_group("boton")
 	generate_fecha()
@@ -393,10 +553,10 @@ func _physics_process(delta: float) -> void:
 	tiempo_transcurrido += delta
 	if tiempo_transcurrido > 1:
 		tiempo_transcurrido = 0
-		var num = randi_range(0, 1000)
+		var num = randi_range(0, 500)
 		if num == 69:
-			panel_container.visible = true
-			panel_container.star()
+			sub_viewport_container.visible = true
+			sub_viewport_container.star()
 		else:
 			pass
 
@@ -424,7 +584,17 @@ func _on_pressed() -> void:
 		
 		generate_modelo_cedula(num_auto_random, probabilidad_modelo_cedula)
 		
-		generate_fecha_cedula(probabilidad_fecha_cedula, probabilidad_fecha_cedula_2026)
+		var fecha_vencimiento_cedula = generate_fecha_cedula(probabilidad_fecha_cedula, probabilidad_fecha_cedula_2026, vencimiento_cedula)
+		pcsistema.pc_control.set_vencimiento(fecha_vencimiento_cedula)
+		
+		generate_numero_licencia(probabilidad_numero_licencia)
+		generate_nombre(probabilidad_nombre_licencia)
+		generate_apellido(probabilidad_apellido_licencia)
+		generate_fecha_nacimiento(probabilidad_nacimiento_licencia, probabilidad_nacimiento_licencia_papeles_16, probabilidad_nacimiento_licencia_19XX)
+		var fecha_vencimiento_licencia = generate_fecha_cedula(probabilidad_fecha_cedula, probabilidad_fecha_licencia_2026, vencimiento_licencia)
+		pcsistema.pc_control.set_fecha_vencimiento(fecha_vencimiento_licencia)
+		
+		
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 		
 		visible = false
@@ -435,7 +605,7 @@ func _on_pressed() -> void:
 		yes_no_menu.visible = true
 		
 	else:
-		print("ya hay pasajero")
+		print("ya hay auto")
 		pass
 	
 func _on_yes_pressed() -> void:
@@ -473,8 +643,9 @@ func _on_no_pressed() -> void:
 func _on_inspeccion_pressed() -> void:
 	if get_meta("inspeccion_menu_on") == false:
 		set_meta("inspeccion_menu_on", true)
-		yes_no_menu.visible = false
 		inspeccion_menu.visible = true
+		autos_label.visible = true
+		fallos_label.visible = true
 	else:
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 		camera_3d.position = Vector3(1.8,0.7,1.5)
@@ -482,6 +653,8 @@ func _on_inspeccion_pressed() -> void:
 		hud.visible = true
 		camera_3d.fov = 75
 		yes_no_menu.visible = true
+		autos_label.visible = true
+		fallos_label.visible = true
 		inspeccion_menu.visible = false
 		set_meta("inspeccion_menu_on", false)
 	pass # Replace with function body.
@@ -511,7 +684,9 @@ func _on_fov_slider_value_changed(value: float) -> void:
 	pass # Replace with function body.
 
 func _on_inspeccion_compu_pressed() -> void:
-	hud.visible = false
+	yes_no_menu.visible = false
+	autos_label.visible = false
+	fallos_label.visible = false
 	camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 	camera_3d.position = Vector3(1.8,0.7,1.5)
 	camera_3d.fov = 75

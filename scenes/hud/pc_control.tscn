@@ -16,6 +16,10 @@ font_color = Color(0, 0, 0, 1)
 font_size = 70
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_eoye0"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgmss"]
 atlas = ExtResource("2_y3tss")
 region = Rect2(0, 0, 32, 32)
@@ -215,7 +219,7 @@ anchor_bottom = 1.030769
 offset_bottom = 3.0517578e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="Dominio" type="Label" parent="basedatos_img" unique_id=227789323]
+[node name="Dominio_cedula" type="Label" parent="basedatos_img" unique_id=227789323]
 layout_mode = 0
 anchor_left = 0.112068966
 anchor_top = 0.4923077
@@ -226,7 +230,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Modelo" type="Label" parent="basedatos_img" unique_id=755958289]
+[node name="Modelo_cedula" type="Label" parent="basedatos_img" unique_id=755958289]
 layout_mode = 0
 anchor_left = 0.112068966
 anchor_top = 0.63076925
@@ -244,7 +248,7 @@ anchor_left = -0.024137931
 anchor_top = 0.7661539
 anchor_right = 0.4482758
 anchor_bottom = 0.83692306
-text = "(esto no va, ver fecha a la derecha)"
+text = "12/6/2026"
 label_settings = SubResource("LabelSettings_8kqmc")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -258,6 +262,68 @@ anchor_right = 0.86379313
 anchor_bottom = 0.83384615
 text = "6"
 label_settings = SubResource("LabelSettings_p8x6u")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="numero_licencia" type="Label" parent="basedatos_img" unique_id=1690966623]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38965517
+anchor_top = 0.4923077
+anchor_right = 0.5862069
+anchor_bottom = 0.5630769
+text = "12345678"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="nombre_licencia" type="Label" parent="basedatos_img" unique_id=1400176272]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38965517
+anchor_top = 0.59076923
+anchor_right = 0.4862069
+anchor_bottom = 0.6430769
+text = "sebastian"
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="apellido_licencia" type="Label" parent="basedatos_img" unique_id=841059710]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48965517
+anchor_top = 0.59076923
+anchor_right = 0.5862069
+anchor_bottom = 0.6430769
+text = "laraignee"
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Nacimiento_licencia" type="Label" parent="basedatos_img" unique_id=414244865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38965517
+anchor_top = 0.6738461
+anchor_right = 0.5862069
+anchor_bottom = 0.7446154
+text = "12/6/2026"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Vencimiento_licencia" type="Label" parent="basedatos_img" unique_id=657380899]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38965517
+anchor_top = 0.77230763
+anchor_right = 0.5862069
+anchor_bottom = 0.84307694
+offset_top = 1.5258789e-05
+offset_bottom = 1.5258789e-05
+text = "12/6/2026"
+label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

@@ -24,9 +24,6 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ya4ey"]
-blend_mode = 1
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
 atlas = ExtResource("2_85g3d")
 region = Rect2(0, 230, 315, 245)
@@ -96,25 +93,31 @@ animations = [{
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030609384]
 environment = SubResource("Environment_0xm2m")
 
-[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment" unique_id=191236862]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=41285900]
 visible = false
-material = SubResource("CanvasItemMaterial_ya4ey")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 828.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_choun")
-metadata/_edit_use_anchors_ = true
 
-[node name="carnet_" type="AnimatedSprite2D" parent="WorldEnvironment/PanelContainer" unique_id=1122934683]
-position = Vector2(577, 322)
-scale = Vector2(3.650794, 2.632653)
+[node name="SubViewport" type="SubViewport" parent="WorldEnvironment/SubViewportContainer" unique_id=549970605]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1980, 1080)
+render_target_update_mode = 0
+
+[node name="carnet_" type="AnimatedSprite2D" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1122934683]
+position = Vector2(1002.5, 546.25)
+scale = Vector2(6.352381, 4.463265)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/PanelContainer/carnet_" unique_id=81878420]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/SubViewportContainer/SubViewport/carnet_" unique_id=81878420]
 stream = ExtResource("3_choun")
-volume_db = 6.0
+volume_db = 10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=633950107]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

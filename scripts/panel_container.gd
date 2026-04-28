@@ -1,7 +1,8 @@
-extends PanelContainer
+extends SubViewportContainer
 
-@onready var carnet_: AnimatedSprite2D = $carnet_
-@onready var audio_stream_player: AudioStreamPlayer = $carnet_/AudioStreamPlayer
+@onready var carnet_: AnimatedSprite2D = $SubViewport/carnet_
+@onready var audio_stream_player: AudioStreamPlayer = $SubViewport/carnet_/AudioStreamPlayer
+@onready var sub_viewport: SubViewport = $SubViewport
 
 func star():
 	carnet_.play("default")
@@ -11,6 +12,7 @@ func star():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sub_viewport.size = size
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
