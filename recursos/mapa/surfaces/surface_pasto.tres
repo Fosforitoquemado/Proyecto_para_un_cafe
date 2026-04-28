@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsbtlaoq5i0fh"]
+
+[ext_resource type="Texture2D" uid="uid://b7puwtl2r4jl1" path="res://modelos/EXTERIOR/mapa/planotexturas_Image_1.png" id="1_b3g5e"]
+
+[resource]
+resource_name = "Material.014"
+cull_mode = 2
+albedo_texture = ExtResource("1_b3g5e")

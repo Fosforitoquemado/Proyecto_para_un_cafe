@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bu1m5nestr7m2"]
+
+[resource]
+resource_name = "calle"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)

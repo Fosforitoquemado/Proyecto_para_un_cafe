@@ -13,8 +13,8 @@ func _stop_timer():
 	value = tiempo_transcurrido
 
 func _reduce_timer():
-	if value >= 20:
-		value -= 20
+	if tiempo_transcurrido >= 30:
+		tiempo_transcurrido -= 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,4 +29,3 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:
 		pass
-	pass

@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
 [ext_resource type="AudioStream" uid="uid://bc14jxuf5p8vn" path="res://sonidos/tren-pasando-y-tocando-bocina.wav" id="9_ya4ey"]
+[ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/fps_counter.gd" id="12_eb6dy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_tefeu")
@@ -125,7 +126,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1234503639]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.8, 0.7, 1.5)
+transform = Transform3D(0.18840982, 0, 0.9820905, 0, 1, 0, -0.9820905, 0, 0.18840982, 1.8, 0.7, 1.5)
 
 [node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
@@ -149,3 +150,10 @@ transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.1976791
 [node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
 stream = ExtResource("7_tipki")
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=324965815]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("12_eb6dy")

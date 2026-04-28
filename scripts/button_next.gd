@@ -28,6 +28,15 @@ class_name Boton_Primario
 	"fiat doblo": preload("res://scenes/autos/fiat doblo.tscn"),
 	"ford escort": preload("res://scenes/autos/escort.tscn")
 }
+@onready var colors = {
+	"rojo": "ff1b13",
+	"azul": "222bff",
+	"verde": "1df428",
+	"violeta": "5510c7",
+	"naranja": "f67200",
+	"blanco": "dedede",
+	"negro": "05040b"
+}
 
 @onready var Nombres_lista = [
 	"Benja",
@@ -53,11 +62,14 @@ class_name Boton_Primario
 @onready var vtv_papel: Label3D = $"../papel/VTV_papel"
 
 #cedula
+@onready var cedula: Sprite3D = $"../cedula"
+
 @onready var dominio_cedula: Label3D = $"../cedula/Dominio"
 @onready var modelo_cedula: Label3D = $"../cedula/Modelo"
 @onready var vencimiento_cedula: Label3D = $"../cedula/Vencimiento"
 
 #licencia
+@onready var carnet: Sprite3D = $"../carnet"
 @onready var numero_licencia: Label3D = $"../carnet/Numero_licencia"
 @onready var apellido_licencia: Label3D = $"../carnet/Apellido"
 @onready var nombre_licencia: Label3D = $"../carnet/Nombre"
@@ -73,11 +85,11 @@ class_name Boton_Primario
 @export var probabilidad_patente_papel: int = 70
 @export var probabilidad_VTV: int = 70
 @export var probabilidad_patente_cedula: int = 70
-@export var probabilidad_modelo_cedula: int = 40
+@export var probabilidad_modelo_cedula: int = 50
 @export var probabilidad_fecha_cedula: int = 40
 @export var probabilidad_fecha_cedula_2026: int = 30
-#licencia
-@export var probabilidad_numero_licencia: int = -1
+#probabilidades licencia
+@export var probabilidad_numero_licencia: int = 70
 @export var probabilidad_nombre_licencia: int = 70
 @export var probabilidad_apellido_licencia: int = 70
 @export var probabilidad_nacimiento_licencia: int = 70
@@ -92,15 +104,6 @@ class_name Boton_Primario
 @onready var autos_que_pasaron : int = 0
 @onready var fecha : String
 
-@onready var colors = {
-	"rojo": "ff1b13",
-	"azul": "222bff",
-	"verde": "1df428",
-	"violeta": "5510c7",
-	"naranja": "f67200",
-	"blanco": "dedede",
-	"negro": "05040b"
-}
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
@@ -600,10 +603,12 @@ func _on_pressed() -> void:
 		
 		visible = false
 		
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(3.0).timeout
 		
 		timer._start_timer()
 		yes_no_menu.visible = true
+		cedula.visible = true
+		carnet.visible = true
 		
 	else:
 		print("ya hay auto")
@@ -615,6 +620,8 @@ func _on_yes_pressed() -> void:
 		auto_dupe.irse()
 		timer._stop_timer()
 		yes_no_menu.visible = false
+		cedula.visible = false
+		carnet.visible = false
 		await get_tree().create_timer(3.0).timeout
 		autos_que_pasaron += 1
 		if get_meta("Auto_ilegal_bool") == true:
@@ -635,6 +642,8 @@ func _on_no_pressed() -> void:
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
 		yes_no_menu.visible = false
+		cedula.visible = false
+		carnet.visible = false
 		visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
