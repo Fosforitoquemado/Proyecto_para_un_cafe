@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dw2k67wgqodhe"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_jkdhv"]
+[ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_6kal8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h4b1"]
 resource_name = "pintura"
@@ -907,3 +908,6 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=32843606]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
+
+[node name="Humo" parent="." unique_id=952818553 instance=ExtResource("2_6kal8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531081, -0.5383153, -2.1824124)

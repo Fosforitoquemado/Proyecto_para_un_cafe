@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_8k4fm"]
 [ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
 [ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="3_keeyj"]
+[ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_c2ixj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6sbx"]
 resource_name = "base auto"
@@ -880,3 +881,6 @@ stream = ExtResource("2_bgstw")
 
 [node name="motor fiat" type="AudioStreamPlayer3D" parent="Node3D" unique_id=1819696062]
 stream = ExtResource("3_keeyj")
+
+[node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_c2ixj")]
+transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 2.2430654, -0.86701536, -0.5434237)

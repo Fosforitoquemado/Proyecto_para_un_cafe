@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0hvmp2fdgr3e"
-path="res://.godot/imported/suran (1).glb-5bce6460799a77c0bd89bcb305d1f616.scn"
+uid="uid://b74pve8i41n1r"
+path="res://.godot/imported/suran.glb-59d82576a2d0ccfc53ac376e7ed3a456.scn"
 
 [deps]
 
-source_file="res://modelos/AUTOS/suran/suran (1).glb"
-dest_files=["res://.godot/imported/suran (1).glb-5bce6460799a77c0bd89bcb305d1f616.scn"]
+source_file="res://modelos/AUTOS/suran/suran.glb"
+dest_files=["res://.godot/imported/suran.glb-59d82576a2d0ccfc53ac376e7ed3a456.scn"]
 
 [params]
 
