@@ -1,13 +1,24 @@
 [gd_scene format=4 uid="uid://3um1kb0drhgb"]
 
+[ext_resource type="Texture2D" uid="uid://ngj4mu0mg3t8" path="res://texture/hud/botones/14.png" id="1_558d4"]
 [ext_resource type="Script" uid="uid://b35wtp6w5yaiy" path="res://scripts/button_next.gd" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://doeaxarf0e3yg" path="res://scripts/fov_slider.gd" id="2_0bx4p"]
 [ext_resource type="Script" uid="uid://ckesx38dvngdo" path="res://scripts/timer.gd" id="2_cgeww"]
+[ext_resource type="Texture2D" uid="uid://b1h52refulq28" path="res://texture/hud/botones/16.png" id="2_go0ap"]
+[ext_resource type="Texture2D" uid="uid://mfundya3olt2" path="res://texture/hud/botones/17.png" id="3_8nkf1"]
 [ext_resource type="Texture2D" uid="uid://dj0p4pfglj3fy" path="res://texture/hud/1.png" id="3_c45xl"]
+[ext_resource type="Texture2D" uid="uid://cux5j4gdwjhj3" path="res://texture/hud/botones/18.png" id="4_558d4"]
+[ext_resource type="Texture2D" uid="uid://cm2jvp3nmjrtv" path="res://texture/hud/botones/19.png" id="5_4m1a1"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="5_mgtrf"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="6_n56i7"]
+[ext_resource type="Texture2D" uid="uid://ckdcxcgw0i7h2" path="res://texture/hud/botones/21.png" id="7_8vblv"]
 [ext_resource type="PackedScene" uid="uid://wdiu4ny0onks" path="res://modelos/ESCRITORIO/laptop/laptop.glb" id="7_mq0y1"]
+[ext_resource type="Texture2D" uid="uid://1pr8dvd78o07" path="res://texture/hud/botones/12.png" id="8_ccb21"]
 [ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/3.png" id="8_nhd55"]
+[ext_resource type="Texture2D" uid="uid://7ufbquat5v4g" path="res://texture/hud/botones/13.png" id="9_udak2"]
+[ext_resource type="Texture2D" uid="uid://blree6tiuiwlv" path="res://texture/hud/botones/20.png" id="10_7pnlf"]
+[ext_resource type="Texture2D" uid="uid://brkq83udlnbwq" path="res://texture/hud/botones/22.png" id="12_a0exy"]
+[ext_resource type="Texture2D" uid="uid://btw248el8md4v" path="res://texture/hud/botones/15.png" id="13_bluaa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
 font_size = 30
@@ -148,32 +159,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="." unique_id=710470278]
+[node name="Empezar" type="TextureRect" parent="." unique_id=273918986]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.46100003
-anchor_top = 0.15400001
-anchor_right = 0.53900003
-anchor_bottom = 0.22100002
-offset_left = 0.42797852
-offset_top = 0.20799255
-offset_right = -0.42803955
-offset_bottom = -0.20800781
+anchor_left = 0.421875
+anchor_top = 0.108024694
+anchor_right = 0.578125
+anchor_bottom = 0.26234567
+grow_horizontal = 2
+texture = ExtResource("1_558d4")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Empezar" unique_id=710470278]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_top = 0.14
+anchor_right = 0.9222222
+anchor_bottom = 0.86
 grow_horizontal = 2
 mouse_filter = 1
 text = "next"
 script = ExtResource("1_ahhtf")
-probabilidad_color = 80
-probabilidad_patente_papel = 80
-probabilidad_VTV = 80
-probabilidad_patente_cedula = 80
-probabilidad_modelo_cedula = 80
 probabilidad_fecha_cedula = 70
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
 metadata/Auto_ilegal_bool = false
 metadata/Mes = 0
 metadata/Dia = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
 visible = false
@@ -184,59 +200,97 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="yes" type="Button" parent="YES_NO_menu" unique_id=1948610653]
-modulate = Color(0.29158273, 0.9396508, 0.52764267, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.059027776
-anchor_top = 0.8842593
-anchor_right = 0.22395833
-anchor_bottom = 0.9660494
-grow_horizontal = 2
-grow_vertical = 2
-text = "APROBADO"
+[node name="Aprobado" type="TextureRect" parent="YES_NO_menu" unique_id=817028940]
+layout_mode = 0
+anchor_left = 0.052083332
+anchor_top = 0.84876543
+anchor_right = 0.20833333
+anchor_bottom = 1.0030864
+texture = ExtResource("2_go0ap")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="no" type="Button" parent="YES_NO_menu" unique_id=184277018]
-modulate = Color(0.8671932, 0, 0.13321015, 1)
+[node name="yes" type="Button" parent="YES_NO_menu/Aprobado" unique_id=1948610653]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.23003472
-anchor_top = 0.8842593
-anchor_right = 0.3949653
-anchor_bottom = 0.9660494
+anchor_left = 0.07169116
+anchor_top = 0.14705883
+anchor_right = 0.9374999
+anchor_bottom = 0.86274517
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Multar" type="TextureRect" parent="YES_NO_menu" unique_id=203564509]
+layout_mode = 0
+anchor_left = 0.19965278
+anchor_top = 0.84876543
+anchor_right = 0.35590276
+anchor_bottom = 1.0030864
+texture = ExtResource("3_8nkf1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="no" type="Button" parent="YES_NO_menu/Multar" unique_id=184277018]
+modulate = Color(0.87, 0, 0.13049968, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09444446
+anchor_top = 0.13
+anchor_right = 0.9222224
+anchor_bottom = 0.86
 grow_horizontal = 2
 grow_vertical = 2
 text = "MULTAR"
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion" type="Button" parent="YES_NO_menu" unique_id=381550042]
-modulate = Color(0, 0, 1, 1)
+[node name="Tomar_Mate" type="TextureRect" parent="YES_NO_menu" unique_id=828660464]
+layout_mode = 0
+anchor_left = 0.3472222
+anchor_top = 0.84876543
+anchor_right = 0.5034722
+anchor_bottom = 1.0030864
+texture = ExtResource("4_558d4")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mate" type="Button" parent="YES_NO_menu/Tomar_Mate" unique_id=812176636]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5555556
-anchor_top = 0.8842593
-anchor_right = 0.7135418
-anchor_bottom = 0.9660494
+anchor_left = 0.083333336
+anchor_top = 0.16
+anchor_right = 0.9111111
+anchor_bottom = 0.87
+text = "TOMAR MATE "
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccionar" type="TextureRect" parent="YES_NO_menu" unique_id=1187776531]
+layout_mode = 0
+anchor_left = 0.49479166
+anchor_top = 0.84876543
+anchor_right = 0.6510417
+anchor_bottom = 1.0030864
+texture = ExtResource("5_4m1a1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion" type="Button" parent="YES_NO_menu/Inspeccionar" unique_id=381550042]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.1500003
+anchor_right = 0.9166667
+anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion
 "
 metadata/_edit_use_anchors_ = true
-
-[node name="mate" type="Button" parent="YES_NO_menu" unique_id=812176636]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.39600003
-anchor_top = 0.883
-anchor_right = 0.551
-anchor_bottom = 0.96500003
-offset_left = -0.1920166
-offset_top = -0.184021
-offset_right = 0.24798584
-offset_bottom = -0.32000732
-text = "TOMAR MATE "
 
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
@@ -247,14 +301,146 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Inspeccion_volver" type="Button" parent="Inspeccion_menu" unique_id=706405334]
-modulate = Color(0, 0, 1, 1)
+[node name="Inspeccion_VTV2" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
+layout_mode = 0
+anchor_left = 0.8420139
+anchor_top = 0.15432099
+anchor_right = 0.9982639
+anchor_bottom = 0.30864197
+texture = ExtResource("13_bluaa")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_VTV" type="Button" parent="Inspeccion_menu/Inspeccion_VTV2" unique_id=381492510]
+modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5555556
-anchor_top = 0.8842593
-anchor_right = 0.7135418
-anchor_bottom = 0.9660494
+anchor_left = 0.08888889
+anchor_top = 0.15
+anchor_right = 0.9166667
+anchor_bottom = 0.87000006
+grow_horizontal = 2
+text = "Inspeccion_VTV
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_Delantera" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
+layout_mode = 0
+anchor_left = 0.8420139
+anchor_top = 0.2777778
+anchor_right = 0.9982639
+anchor_bottom = 0.43209878
+offset_top = -1.5258789e-05
+texture = ExtResource("9_udak2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_adelante" type="Button" parent="Inspeccion_menu/Inspeccion_Delantera" unique_id=1776988783]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.15
+anchor_right = 0.9111111
+anchor_bottom = 0.85
+grow_vertical = 2
+text = "Inspeccion_adela
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_Trasera" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
+layout_mode = 0
+anchor_left = 0.8420139
+anchor_top = 0.40123457
+anchor_right = 0.9982639
+anchor_bottom = 0.5555556
+offset_bottom = -3.0517578e-05
+texture = ExtResource("8_ccb21")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_atras" type="Button" parent="Inspeccion_menu/Inspeccion_Trasera" unique_id=643723193]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07777778
+anchor_top = 0.15
+anchor_right = 0.9166667
+anchor_bottom = 0.86
+grow_horizontal = 0
+grow_vertical = 2
+text = "Inspeccion_atras
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_compu2" type="TextureRect" parent="Inspeccion_menu" unique_id=44192735]
+layout_mode = 0
+anchor_left = 0.8420139
+anchor_top = 0.52469134
+anchor_right = 0.9982639
+anchor_bottom = 0.67901236
+texture = ExtResource("10_7pnlf")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_compu" type="Button" parent="Inspeccion_menu/Inspeccion_compu2" unique_id=1860477345]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08333337
+anchor_top = 0.15
+anchor_right = 0.9222222
+anchor_bottom = 0.86
+grow_vertical = 2
+text = "Inspeccion_compu
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_mesa2" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8420139
+anchor_top = 0.6481481
+anchor_right = 0.9982639
+anchor_bottom = 0.80246913
+offset_top = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_8vblv")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_mesa" type="Button" parent="Inspeccion_menu/Inspeccion_mesa2" unique_id=155525681]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_top = 0.16
+anchor_right = 0.9166667
+anchor_bottom = 0.86
+grow_vertical = 2
+text = "Inspeccion_mesa
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_volver2" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
+layout_mode = 0
+anchor_left = 0.8420139
+anchor_top = 0.77160496
+anchor_right = 0.9982639
+anchor_bottom = 0.9259259
+texture = ExtResource("12_a0exy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion_volver" type="Button" parent="Inspeccion_menu/Inspeccion_volver2" unique_id=706405334]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888885
+anchor_top = 0.15
+anchor_right = 0.9111111
+anchor_bottom = 0.8599999
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -262,72 +448,8 @@ text = "Inspeccion_volver
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_atras" type="Button" parent="Inspeccion_menu" unique_id=643723193]
-modulate = Color(0, 0, 1, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.84201366
-anchor_top = 0.45910493
-anchor_right = 1.0
-anchor_bottom = 0.54089504
-grow_horizontal = 0
-grow_vertical = 2
-text = "Inspeccion_atras
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccion_adelante" type="Button" parent="Inspeccion_menu" unique_id=1776988783]
-modulate = Color(0, 0, 1, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.45910493
-anchor_right = 0.15798627
-anchor_bottom = 0.54089504
-grow_vertical = 2
-text = "Inspeccion_adelante
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccion_VTV" type="Button" parent="Inspeccion_menu" unique_id=381492510]
-modulate = Color(0, 0, 1, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42274305
-anchor_top = 0.061728396
-anchor_right = 0.5807293
-anchor_bottom = 0.1435185
-grow_horizontal = 2
-text = "Inspeccion_VTV
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccion_mesa" type="Button" parent="Inspeccion_menu" unique_id=155525681]
-modulate = Color(0, 0, 1, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5564236
-anchor_top = 0.7839506
-anchor_right = 0.7144099
-anchor_bottom = 0.8657407
-grow_vertical = 2
-text = "Inspeccion_mesa
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccion_compu" type="Button" parent="Inspeccion_menu" unique_id=1860477345]
-modulate = Color(0, 0, 1, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6475694
-anchor_top = 0.6203704
-anchor_right = 0.8055557
-anchor_bottom = 0.7021605
-grow_vertical = 2
-text = "Inspeccion_compu
-"
-metadata/_edit_use_anchors_ = true
-
 [node name="fov_slider" type="HSlider" parent="Inspeccion_menu" unique_id=1837691495]
+visible = false
 layout_mode = 0
 anchor_left = 0.7717014
 anchor_top = 0.7839506
@@ -338,6 +460,7 @@ script = ExtResource("2_0bx4p")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Inspeccion_menu" unique_id=305921886]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8585069
@@ -421,11 +544,12 @@ anchor_bottom = 0.041666668
 grow_horizontal = 2
 mouse_filter = 2
 max_value = 120.0
+show_percentage = false
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 
 [node name="cedula" type="Sprite3D" parent="." unique_id=462194048]
-transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 1.042357, 0.4, 1.1208519)
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 1.1148582, 0.4, 1.2819325)
 visible = false
 transparent = false
 texture = ExtResource("3_c45xl")
@@ -461,8 +585,11 @@ font_size = 35
 outline_size = 1
 horizontal_alignment = 0
 
+[node name="Camara_mesa" type="Node3D" parent="cedula" unique_id=562541491]
+transform = Transform3D(-4.371138e-06, -5.6464205e-21, -100, -100, -4.371138e-06, 4.371138e-06, -4.371138e-06, 100, 1.9106854e-13, -1.1587067, 2.7668839, 36.645542)
+
 [node name="carnet" type="Sprite3D" parent="." unique_id=1527108386]
-transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0.9347826, 0.39879048, 1.1193303)
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 1.0026699, 0.39879048, 1.2804109)
 visible = false
 texture = ExtResource("8_nhd55")
 
@@ -530,9 +657,6 @@ font_size = 35
 outline_size = 1
 horizontal_alignment = 0
 
-[node name="Camara_mesa" type="Node3D" parent="." unique_id=562541491]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0146881, 0.8103659, 1.132439)
-
 [node name="mesa" parent="." unique_id=1106745123 instance=ExtResource("5_mgtrf")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
 
@@ -547,20 +671,20 @@ mesh = SubResource("ArrayMesh_go0ap")
 transform = Transform3D(0.08945815, 0, 0.17887774, 0, 0.2, 0, -0.17887774, 0, 0.08945815, 0.9807792, 0.3897425, 1.0496691)
 visible = false
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="YES_NO_menu/yes" to="Button" method="_on_yes_pressed"]
-[connection signal="pressed" from="YES_NO_menu/no" to="Button" method="_on_no_pressed"]
-[connection signal="pressed" from="YES_NO_menu/Inspeccion" to="Button" method="_on_inspeccion_pressed"]
-[connection signal="pressed" from="YES_NO_menu/Inspeccion" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_pressed"]
-[connection signal="pressed" from="YES_NO_menu/mate" to="MATE" method="_on_mate_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver" to="Button" method="_on_inspeccion_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_atras" to="Button" method="_on_inspeccion_atras_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_atras" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_atras_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_adelante" to="Button" method="_on_inspeccion_adelante_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_adelante" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_adelante_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV" to="Button" method="_on_inspeccion_vtv_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_vtv_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa" to="Button" method="_on_inspeccion_mesa_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_mesa_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu" to="Button" method="_on_inspeccion_compu_pressed"]
-[connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="Button" method="_on_fov_slider_value_changed"]
+[connection signal="pressed" from="Empezar/Button" to="Empezar/Button" method="_on_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="Empezar/Button" method="_on_yes_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Multar/no" to="Empezar/Button" method="_on_no_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="MATE" method="_on_mate_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="Empezar/Button" method="_on_inspeccion_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV2/Inspeccion_VTV" to="Empezar/Button" method="_on_inspeccion_vtv_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV2/Inspeccion_VTV" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_vtv_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera/Inspeccion_adelante" to="Empezar/Button" method="_on_inspeccion_adelante_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera/Inspeccion_adelante" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_adelante_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera/Inspeccion_atras" to="Empezar/Button" method="_on_inspeccion_atras_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera/Inspeccion_atras" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_atras_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu2/Inspeccion_compu" to="Empezar/Button" method="_on_inspeccion_compu_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa2/Inspeccion_mesa" to="Empezar/Button" method="_on_inspeccion_mesa_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa2/Inspeccion_mesa" to="Inspeccion_menu/fov_slider" method="_on_inspeccion_mesa_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver2/Inspeccion_volver" to="Empezar/Button" method="_on_inspeccion_pressed"]
+[connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="Empezar/Button" method="_on_fov_slider_value_changed"]

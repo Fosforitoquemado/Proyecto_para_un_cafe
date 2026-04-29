@@ -6,11 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://3um1kb0drhgb" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="6_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://8fgsf38816vr" path="res://modelos/tren/tren.glb" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa.gd" id="7_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
-[ext_resource type="AudioStream" uid="uid://bc14jxuf5p8vn" path="res://sonidos/tren-pasando-y-tocando-bocina.wav" id="9_ya4ey"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/fps_counter.gd" id="12_eb6dy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
@@ -112,9 +111,11 @@ size = Vector2i(1980, 1080)
 render_target_update_mode = 0
 
 [node name="carnet_" type="AnimatedSprite2D" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1122934683]
-position = Vector2(1002.5, 546.25)
-scale = Vector2(6.352381, 4.463265)
+position = Vector2(577, 329.25003)
+scale = Vector2(3.6507938, 2.6918366)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
+frame = 3
+frame_progress = 0.7514128
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/SubViewportContainer/SubViewport/carnet_" unique_id=81878420]
 stream = ExtResource("3_choun")
@@ -132,15 +133,10 @@ transform = Transform3D(0.18840982, 0, 0.9820905, 0, 1, 0, -0.9820905, 0, 0.1884
 
 [node name="mapa" parent="." unique_id=483872397 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.724, 0.07323456, 0)
+script = ExtResource("7_eb6dy")
 
 [node name="escortpolice" parent="." unique_id=741665342 instance=ExtResource("8_tipki")]
-transform = Transform3D(-0.49976787, 0, -0.015234453, 0, 0.5, 0, 0.015234453, 0, -0.49976787, 1.4056839, 0.4416868, -2.4626682)
-
-[node name="tren" parent="." unique_id=2054819532 instance=ExtResource("6_tefeu")]
-transform = Transform3D(0.013533348, 0, -0.4998168, 0, 0.5, 0, 0.4998168, 0, 0.013533348, -3.6498444, 0.96459806, -8.774746)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tren" unique_id=1683839007]
-stream = ExtResource("9_ya4ey")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.4056839, 0.4416868, -2.4626682)
 
 [node name="PCSISTEMA" parent="." unique_id=1435289206 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.19767919, 0, 0.030379813, 0.94867724, 0.3900208, 0.9915118)
@@ -152,8 +148,15 @@ stream = ExtResource("7_tipki")
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
+visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=324965815]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_left = 0.9652778
+anchor_top = 0.96450615
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("12_eb6dy")
+metadata/_edit_use_anchors_ = true

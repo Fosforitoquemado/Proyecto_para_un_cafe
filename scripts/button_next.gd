@@ -1,33 +1,37 @@
 extends Button
 class_name Boton_Primario
 
-@onready var node_main: Node3D = $"../.."
+@onready var node_main: Node3D = $"../../.."
 
-@onready var camera_3d: Camera3D = $"../../Camera3D"
+@onready var camera_3d: Camera3D = $"../../../Camera3D"
+
+@onready var empezar: TextureRect = $".."
 
 #posicion camara
-@onready var camara_mesa: Node3D = $"../Camara_mesa"
+@onready var camara_mesa: Node3D = $"../../cedula/Camara_mesa"
 
 #compu
-@onready var pcsistema: PCStatic = $"../../PCSISTEMA"
+@onready var pcsistema: PCStatic = $"../../../PCSISTEMA"
 
 #elementos HUD
-@onready var hud: Control = $".."
-@onready var fallos_label: Label = $"../Fallos"
-@onready var autos_label: Label = $"../Autos"
-@onready var timer: ProgressBar = $"../Timer"
-@onready var sub_viewport_container: SubViewportContainer = $"../../WorldEnvironment/SubViewportContainer"
+@onready var hud: Control = $"../.."
+@onready var fallos_label: Label = $"../../Fallos"
+@onready var autos_label: Label = $"../../Autos"
+@onready var timer: ProgressBar = $"../../Timer"
+@onready var sub_viewport_container: SubViewportContainer = $"../../../WorldEnvironment/SubViewportContainer"
 
-@onready var yes_no_menu: Control = $"../YES_NO_menu"
-@onready var inspeccion_menu: Control = $"../Inspeccion_menu"
+@onready var yes_no_menu: Control = $"../../YES_NO_menu"
+@onready var inspeccion_menu: Control = $"../../Inspeccion_menu"
 
 #elementos auto
 @onready var autos_lista = {
 	"fiat 147": preload("res://scenes/autos/147.tscn"),
 	"suran": preload("res://scenes/autos/suran.tscn"),
 	"fiat doblo": preload("res://scenes/autos/fiat doblo.tscn"),
-	"ford escort": preload("res://scenes/autos/escort.tscn")
+	"ford escort": preload("res://scenes/autos/escort.tscn"),
+	"c4 lunge": preload("res://scenes/autos/c_4_lunge.tscn")
 }
+
 @onready var colors = {
 	"rojo": "ff1b13",
 	"azul": "222bff",
@@ -57,45 +61,45 @@ class_name Boton_Primario
 ]
 
 #papel
-@onready var papel_patente: Label3D = $"../papel/papel_patente"
-@onready var color_papel: Label3D = $"../papel/color_papel"
-@onready var vtv_papel: Label3D = $"../papel/VTV_papel"
+@onready var papel_patente: Label3D = $"../../papel/papel_patente"
+@onready var color_papel: Label3D = $"../../papel/color_papel"
+@onready var vtv_papel: Label3D = $"../../papel/VTV_papel"
 
 #cedula
-@onready var cedula: Sprite3D = $"../cedula"
+@onready var cedula: Sprite3D = $"../../cedula"
 
-@onready var dominio_cedula: Label3D = $"../cedula/Dominio"
-@onready var modelo_cedula: Label3D = $"../cedula/Modelo"
-@onready var vencimiento_cedula: Label3D = $"../cedula/Vencimiento"
+@onready var dominio_cedula: Label3D = $"../../cedula/Dominio"
+@onready var modelo_cedula: Label3D = $"../../cedula/Modelo"
+@onready var vencimiento_cedula: Label3D = $"../../cedula/Vencimiento"
 
 #licencia
-@onready var carnet: Sprite3D = $"../carnet"
-@onready var numero_licencia: Label3D = $"../carnet/Numero_licencia"
-@onready var apellido_licencia: Label3D = $"../carnet/Apellido"
-@onready var nombre_licencia: Label3D = $"../carnet/Nombre"
-@onready var fecha_nacimiento_licencia: Label3D = $"../carnet/Fecha_Nacimiento"
-@onready var vencimiento_licencia: Label3D = $"../carnet/Vencimiento"
+@onready var carnet: Sprite3D = $"../../carnet"
+@onready var numero_licencia: Label3D = $"../../carnet/Numero_licencia"
+@onready var apellido_licencia: Label3D = $"../../carnet/Apellido"
+@onready var nombre_licencia: Label3D = $"../../carnet/Nombre"
+@onready var fecha_nacimiento_licencia: Label3D = $"../../carnet/Fecha_Nacimiento"
+@onready var vencimiento_licencia: Label3D = $"../../carnet/Vencimiento"
 
 #max valores
-@export var max_fallos : int = 999
-@export var max_autos: int = 10
+@export var max_fallos : int = 3
+@export var max_autos: int = 5
 
 #probabilidades
-@export var probabilidad_color: int = 70
-@export var probabilidad_patente_papel: int = 70
-@export var probabilidad_VTV: int = 70
-@export var probabilidad_patente_cedula: int = 70
-@export var probabilidad_modelo_cedula: int = 50
-@export var probabilidad_fecha_cedula: int = 40
+@export var probabilidad_color: int = 94
+@export var probabilidad_patente_papel: int = 94
+@export var probabilidad_VTV: int = 94
+@export var probabilidad_patente_cedula: int = 94
+@export var probabilidad_modelo_cedula: int = 94
+@export var probabilidad_fecha_cedula: int = 94
 @export var probabilidad_fecha_cedula_2026: int = 30
 #probabilidades licencia
-@export var probabilidad_numero_licencia: int = 70
-@export var probabilidad_nombre_licencia: int = 70
-@export var probabilidad_apellido_licencia: int = 70
-@export var probabilidad_nacimiento_licencia: int = 70
+@export var probabilidad_numero_licencia: int = 94
+@export var probabilidad_nombre_licencia: int = 94
+@export var probabilidad_apellido_licencia: int = 94
+@export var probabilidad_nacimiento_licencia: int = 94
 @export var probabilidad_nacimiento_licencia_19XX: int = 70
-@export var probabilidad_nacimiento_licencia_papeles_16: int = 70
-@export var probabilidad_vencimiento_licencia: int = 70
+@export var probabilidad_nacimiento_licencia_papeles_16: int = -1
+@export var probabilidad_vencimiento_licencia: int = 94
 @export var probabilidad_fecha_licencia_2026: int = 30
 
 
@@ -298,26 +302,12 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 		dia = randi_range(1,31)
 	var fecha_dia_mes = str(dia,"/",mes,"/20")
 	var anio = randi_range(27,34)
-	label3d.text = fecha_dia_mes + str(anio)
 	fecha_de_vencimiento = fecha_dia_mes + str(anio)
-	print("la fecha de la cedula esta bien")
 	
 	if num_correct_paper <= probabilidad:
 		#correcto
-		var mes_30_ := [4,6,9,11]
-		var mes_31_ := [1,3,5,7,8,10,12]
-		var dia_
-		var mes_ = randi_range(1,12)
-		if mes_ == 2:
-			dia_ = randi_range(1,28)
-		if mes_ in mes_30_:
-			dia_ = randi_range(1,30)
-		if mes_ in mes_31_:
-			dia_ = randi_range(1,31)
-		var fecha_dia_mes_ = str(dia_,"/",mes_,"/20")
-		var anio_ = randi_range(27,34)
-		label3d.text = fecha_dia_mes_ + str(anio_)
-		print("la fecha de la cedula esta bien")
+		label3d.text = fecha_de_vencimiento
+		print("la fecha de la ", label3d ," esta bien")
 	else:
 		if num_correct_paper_2026 <= probabilidad_2026:
 			#fake
@@ -331,7 +321,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
 				label3d.text = fecha_dia_mes_
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la cedula esta mal (dia mal)")
+				print("la fecha de la ", label3d ," esta mal (dia mal)")
 			else:
 				var mes_30_ := [4,6,9,11]
 				var mes_31_ := [1,3,5,7,8,10,12]
@@ -346,7 +336,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
 				label3d.text = fecha_dia_mes_
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la cedula esta mal (el mes)")
+				print("la fecha de la ", label3d ," esta mal (mes mal)")
 		else:
 			#fake
 			var mes_30_ := [4,6,9,11]
@@ -363,7 +353,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 			var anio_ = randi_range(14,25)
 			label3d.text = fecha_dia_mes_ + str(anio_)
 			set_meta("Auto_ilegal_bool", true)
-			print("la fecha de la cedula esta mal")
+			print("la fecha de la ", label3d ," esta mal")
 			
 	return fecha_de_vencimiento
 func generate_numero_licencia(probabilidad):
@@ -546,9 +536,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if fallos >= max_fallos:
-		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	if autos_que_pasaron >= max_autos:
-		get_tree().change_scene_to_file("res://scenes/victoria.tscn")
+		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
 	pass
 
 var tiempo_transcurrido = 0
@@ -557,7 +547,7 @@ func _physics_process(delta: float) -> void:
 	tiempo_transcurrido += delta
 	if tiempo_transcurrido > 1:
 		tiempo_transcurrido = 0
-		var num = randi_range(0, 500)
+		var num = randi_range(0, 1)
 		if num == 69:
 			sub_viewport_container.visible = true
 			sub_viewport_container.star()
@@ -579,8 +569,9 @@ func _on_pressed() -> void:
 		
 		var patente = generate_patente()
 		#genero la patente del papel
-		generate_papel_patente(patente, papel_patente, probabilidad_patente_papel)
+		#generate_papel_patente(patente, papel_patente, probabilidad_patente_papel)
 		#genero la patente de la cedula azul
+		
 		generate_papel_patente(patente, dominio_cedula, probabilidad_patente_cedula)
 		
 		var num_vtv = generate_VTV()
@@ -598,10 +589,9 @@ func _on_pressed() -> void:
 		var fecha_vencimiento_licencia = generate_fecha_cedula(probabilidad_fecha_cedula, probabilidad_fecha_licencia_2026, vencimiento_licencia)
 		pcsistema.pc_control.set_fecha_vencimiento(fecha_vencimiento_licencia)
 		
-		
 		camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
 		
-		visible = false
+		empezar.visible = false
 		
 		await get_tree().create_timer(3.0).timeout
 		
@@ -628,7 +618,7 @@ func _on_yes_pressed() -> void:
 			fallos += 1
 		auto_dupe.queue_free()
 		set_meta("Auto_on", false)
-		visible = true
+		empezar.visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 		active = false
@@ -644,7 +634,7 @@ func _on_no_pressed() -> void:
 		yes_no_menu.visible = false
 		cedula.visible = false
 		carnet.visible = false
-		visible = true
+		empezar.visible = true
 		fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 		autos_label.text = str("Autos: ",autos_que_pasaron," / ",max_autos)
 		active = false
@@ -653,6 +643,7 @@ func _on_no_pressed() -> void:
 func _on_inspeccion_pressed() -> void:
 	if get_meta("inspeccion_menu_on") == false:
 		set_meta("inspeccion_menu_on", true)
+		camera_3d.fov = 75
 		yes_no_menu.visible = false
 		inspeccion_menu.visible = true
 		autos_label.visible = true
@@ -673,21 +664,25 @@ func _on_inspeccion_pressed() -> void:
 func _on_inspeccion_adelante_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(0),0)
 	camera_3d.position = auto_dupe.find_child("camara_patente_adelante").global_position
+	camera_3d.fov = 75
 	pass # Replace with function body.
 
 func _on_inspeccion_atras_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(180),0)
 	camera_3d.position = auto_dupe.find_child("camara_patente_atras").global_position
+	camera_3d.fov = 75
 	pass # Replace with function body.
 
 func _on_inspeccion_vtv_pressed() -> void:
 	camera_3d.rotation = Vector3(0,deg_to_rad(0),0)
 	camera_3d.position = auto_dupe.find_child("camara_VTV").global_position
+	camera_3d.fov = 75
 	pass # Replace with function body.
 
 func _on_inspeccion_mesa_pressed() -> void:
 	camera_3d.rotation = Vector3(deg_to_rad(-90),deg_to_rad(90),0)
 	camera_3d.position = camara_mesa.global_position
+	camera_3d.fov = 40
 	pass # Replace with function body.
 
 func _on_fov_slider_value_changed(value: float) -> void:

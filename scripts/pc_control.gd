@@ -72,4 +72,6 @@ func _on_button_pressed() -> void:
 func _on_exit_pressed() -> void:
 	PCSISTEM.toggle_use()
 	PCSISTEM.exit()
+	basedatos_img.visible = false
+	basededatos_active = false
 	pass # Replace with function body.
