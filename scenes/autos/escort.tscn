@@ -6,7 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maq55"]
 resource_name = "carroceria"
 cull_mode = 2
-albedo_color = Color(0.48724553, 0.13133326, 0.096211225, 1)
+albedo_color = Color(0.12980437, 0.18455365, 0.29923508, 1)
 roughness = 0.5342857
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lafpt"]

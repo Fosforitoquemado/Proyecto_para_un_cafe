@@ -307,7 +307,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 	if num_correct_paper <= probabilidad:
 		#correcto
 		label3d.text = fecha_de_vencimiento
-		print("la fecha de la ", label3d ," esta bien")
+		print("la fecha de la ", label3d.name ," esta bien")
 	else:
 		if num_correct_paper_2026 <= probabilidad_2026:
 			#fake
@@ -321,7 +321,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
 				label3d.text = fecha_dia_mes_
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la ", label3d ," esta mal (dia mal)")
+				print("la fecha de la ", label3d.name ," esta mal (dia mal)")
 			else:
 				var mes_30_ := [4,6,9,11]
 				var mes_31_ := [1,3,5,7,8,10,12]
@@ -336,7 +336,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 				var fecha_dia_mes_ = str(dia_,"/",mes_,"/2026")
 				label3d.text = fecha_dia_mes_
 				set_meta("Auto_ilegal_bool", true)
-				print("la fecha de la ", label3d ," esta mal (mes mal)")
+				print("la fecha de la ", label3d.name ," esta mal (mes mal)")
 		else:
 			#fake
 			var mes_30_ := [4,6,9,11]
@@ -353,7 +353,7 @@ func generate_fecha_cedula(probabilidad, probabilidad_2026, label3d):
 			var anio_ = randi_range(14,25)
 			label3d.text = fecha_dia_mes_ + str(anio_)
 			set_meta("Auto_ilegal_bool", true)
-			print("la fecha de la ", label3d ," esta mal")
+			print("la fecha de la ", label3d.name ," esta mal")
 			
 	return fecha_de_vencimiento
 func generate_numero_licencia(probabilidad):

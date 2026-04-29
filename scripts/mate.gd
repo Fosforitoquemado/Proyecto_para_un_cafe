@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_mate_pressed() -> void:
-	if active == true:
+	if active == true and timer.value > 30:
 		active = false
 		animation_player.play("TOMAR MATE")
 		await  get_tree().create_timer(4).timeout
