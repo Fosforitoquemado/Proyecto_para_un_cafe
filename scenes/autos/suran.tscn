@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://clutt74fh6hcc"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_heyd4"]
-[ext_resource type="AudioStream" uid="uid://cfaiwxbwp7gu3" path="res://sonidos/Video-Project-2.wav" id="2_dcdox"]
-[ext_resource type="AudioStream" uid="uid://dcxhhqaptajcg" path="res://sonidos/BOCINA.wav" id="3_rl2ts"]
+[ext_resource type="AudioStream" uid="uid://cfaiwxbwp7gu3" path="res://sonidos/Suran/Video-Project-2.wav" id="2_dcdox"]
+[ext_resource type="AudioStream" uid="uid://dcxhhqaptajcg" path="res://sonidos/Suran/BOCINA.wav" id="3_rl2ts"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_pkwky"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrs3q"]
@@ -846,6 +846,7 @@ transform = Transform3D(33.33332, -1.1858461e-20, -1.3552527e-20, 0, 23.481613, 
 
 [node name="SURAN" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1971485343]
 stream = ExtResource("2_dcdox")
+autoplay = true
 
 [node name="BOCINA" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1118819863]
 stream = ExtResource("3_rl2ts")

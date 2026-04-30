@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://1txyqroo3yhe"]
 
 [ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mate.gd" id="1_n7yvt"]
-[ext_resource type="AudioStream" uid="uid://bbviutm3ms4vq" path="res://sonidos/trimmed_-WhatsApp-Ptt-2026-04-18-at-9.22.00-PM.wav" id="2_dxybx"]
+[ext_resource type="AudioStream" uid="uid://bbviutm3ms4vq" path="res://sonidos/Mate/trimmed_-WhatsApp-Ptt-2026-04-18-at-9.22.00-PM.wav" id="2_dxybx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bi87l"]
 resource_name = "Material.003"

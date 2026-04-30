@@ -1,7 +1,10 @@
 [gd_scene format=4 uid="uid://b3oed8uidnq81"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_5x5qu"]
+[ext_resource type="AudioStream" uid="uid://ccxaxsmdfubw" path="res://sonidos/Escort/escort-andando.wav" id="2_a4ns1"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_uxfpg"]
+[ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/Escort/escort-bocina.wav" id="3_he68n"]
+[ext_resource type="AudioStream" uid="uid://cclvoq6g8bxwe" path="res://sonidos/Escort/escort-arranque.wav" id="4_psyxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maq55"]
 resource_name = "carroceria"
@@ -264,6 +267,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/Bocina:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Arranque:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c35m8"]
 resource_name = "ida"
@@ -310,6 +337,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/Bocina:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Arranque:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_qt2eu"]
@@ -931,6 +982,19 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=484708162]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=365866129]
+
+[node name="Llegando" type="AudioStreamPlayer3D" parent="Node3D" unique_id=795342605]
+stream = ExtResource("2_a4ns1")
+volume_db = -13.458
+autoplay = true
+
+[node name="Bocina" type="AudioStreamPlayer3D" parent="Node3D" unique_id=1502850284]
+stream = ExtResource("3_he68n")
+
+[node name="Arranque" type="AudioStreamPlayer3D" parent="Node3D" unique_id=563668904]
+stream = ExtResource("4_psyxk")
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("2_uxfpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6231922, -0.6737343, -2.2823157)

@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa.gd" id="7_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
-[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/freesound_community-birds-19624.wav" id="10_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="10_ya4ey"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/fps_counter.gd" id="12_eb6dy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8fwnj2fwfc7m"
+path="res://.godot/imported/147 tirando cortes.mp3-052e195748f69ee5532afba80fe807ac.mp3str"
+
+[deps]
+
+source_file="res://sonidos/147/147 tirando cortes.mp3"
+dest_files=["res://.godot/imported/147 tirando cortes.mp3-052e195748f69ee5532afba80fe807ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

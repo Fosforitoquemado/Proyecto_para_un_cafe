@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://cgrwg2yo6nn78"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_c35m8"]
-[ext_resource type="AudioStream" uid="uid://dslkfhf5pfohr" path="res://sonidos/147-AUDIO.wav" id="2_1h8qw"]
-[ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
+[ext_resource type="AudioStream" uid="uid://dslkfhf5pfohr" path="res://sonidos/147/147-AUDIO.wav" id="2_1h8qw"]
+[ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/147/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_s8a8r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bxkc"]

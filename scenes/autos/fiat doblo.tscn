@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://drt10ng3s7m6v"]
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_8k4fm"]
-[ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
+[ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/Doblo/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
 [ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="3_keeyj"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_c2ixj"]
 

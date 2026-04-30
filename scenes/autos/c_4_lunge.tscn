@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_jkdhv"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_6kal8"]
+[ext_resource type="AudioStream" uid="uid://bstqx7r7mn3hc" path="res://sonidos/C4/c4-a-los-chapazos.wav" id="3_w7vny"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmb50"]
 resource_name = "pintura"
@@ -929,3 +930,12 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=1071410608]
 transform = Transform3D(33.33332, 0, 0, 0, 23.48161, -23.658504, 0, 23.658504, 23.48161, -1.3660393, -49.82547, 27.750229)
+
+[node name="C4 Sonido" type="Node3D" parent="." unique_id=13371106]
+
+[node name="Andando" type="AudioStreamPlayer3D" parent="C4 Sonido" unique_id=1805387616]
+stream = ExtResource("3_w7vny")
+volume_db = -5.981
+autoplay = true
+
+[node name="bocina" type="AudioStreamPlayer3D" parent="C4 Sonido" unique_id=975659616]
