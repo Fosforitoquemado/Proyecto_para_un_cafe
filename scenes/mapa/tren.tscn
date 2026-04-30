@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://xi05ajkh7d0t"]
 
-[ext_resource type="AudioStream" uid="uid://bc14jxuf5p8vn" path="res://sonidos/tren-pasando-y-tocando-bocina.wav" id="1_qwfdb"]
+[ext_resource type="AudioStream" uid="uid://bc14jxuf5p8vn" path="res://sonidos/bondi y tren/tren-pasando-y-tocando-bocina.wav" id="1_qwfdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4i84"]
 resource_name = "color tren"
@@ -541,4 +541,5 @@ autoplay = &"animacion"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1297081171]
 stream = ExtResource("1_qwfdb")
+volume_db = -17.944
 autoplay = true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch8oirj3nc74t"
+path="res://.godot/imported/c4 bocina.wav-c0243354c97f1361d37294f04a095a22.sample"
+
+[deps]
+
+source_file="res://sonidos/C4/c4 bocina.wav"
+dest_files=["res://.godot/imported/c4 bocina.wav-c0243354c97f1361d37294f04a095a22.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

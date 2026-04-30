@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://dsimhu6tr6ced"]
 
+[ext_resource type="AudioStream" uid="uid://du5nk3lt8135x" path="res://sonidos/bondi y tren/chiflido bondi.wav" id="1_8l5vt"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udt1o"]
 resource_name = "Material.002"
 cull_mode = 2
@@ -921,6 +923,18 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -6.3331275, 0.587211, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chiflido:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_8l5vt"]
 resource_name = "ida"
@@ -997,3 +1011,7 @@ mesh = SubResource("ArrayMesh_1c74s")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=171449208]
 libraries/ = SubResource("AnimationLibrary_73fhy")
 autoplay = &"ida"
+
+[node name="Chiflido" type="AudioStreamPlayer3D" parent="." unique_id=2058732557]
+stream = ExtResource("1_8l5vt")
+autoplay = true

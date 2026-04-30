@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_jkdhv"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_6kal8"]
 [ext_resource type="AudioStream" uid="uid://bstqx7r7mn3hc" path="res://sonidos/C4/c4-a-los-chapazos.wav" id="3_w7vny"]
+[ext_resource type="AudioStream" uid="uid://ch8oirj3nc74t" path="res://sonidos/C4/c4 bocina.wav" id="4_04xex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmb50"]
 resource_name = "pintura"
@@ -320,6 +321,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("C4 Sonido/bocina:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jkdhv"]
 resource_name = "ida"
@@ -366,6 +379,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(3.106686, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("C4 Sonido/bocina:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6kal8"]
@@ -939,3 +964,4 @@ volume_db = -5.981
 autoplay = true
 
 [node name="bocina" type="AudioStreamPlayer3D" parent="C4 Sonido" unique_id=975659616]
+stream = ExtResource("4_04xex")

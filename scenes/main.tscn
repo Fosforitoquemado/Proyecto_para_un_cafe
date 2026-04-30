@@ -145,6 +145,7 @@ transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.1976791
 
 [node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
 stream = ExtResource("10_ya4ey")
+volume_db = -7.298
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
