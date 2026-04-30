@@ -43,17 +43,17 @@ class_name Boton_Primario
 }
 
 @onready var Nombres_lista = [
-	"Benja",
-	"Delfi",
-	"Nico",
-	"Fede",
+	"Benjamín",
+	"Delfina",
+	"Nicolás",
+	"Federico",
 	"Juan",
 	"Tomás"
 ]
 
 @onready var apellidos_lista = [
 	"Martinez",
-	"Gonzales",
+	"Sánchez",
 	"Ferrero",
 	"Fort",
 	"Pereira",
@@ -85,21 +85,21 @@ class_name Boton_Primario
 @export var max_autos: int = 5
 
 #probabilidades
-@export var probabilidad_color: int = 94
-@export var probabilidad_patente_papel: int = 94
-@export var probabilidad_VTV: int = 94
-@export var probabilidad_patente_cedula: int = 94
-@export var probabilidad_modelo_cedula: int = 94
-@export var probabilidad_fecha_cedula: int = 94
+@export var probabilidad_color: int = 95
+@export var probabilidad_patente_papel: int = 95
+@export var probabilidad_VTV: int = 95
+@export var probabilidad_patente_cedula: int = 95
+@export var probabilidad_modelo_cedula: int = 95
+@export var probabilidad_fecha_cedula: int = 95
 @export var probabilidad_fecha_cedula_2026: int = 30
 #probabilidades licencia
-@export var probabilidad_numero_licencia: int = 94
-@export var probabilidad_nombre_licencia: int = 94
-@export var probabilidad_apellido_licencia: int = 94
-@export var probabilidad_nacimiento_licencia: int = 94
+@export var probabilidad_numero_licencia: int = 95
+@export var probabilidad_nombre_licencia: int = 95
+@export var probabilidad_apellido_licencia: int = 95
+@export var probabilidad_nacimiento_licencia: int = 95
 @export var probabilidad_nacimiento_licencia_19XX: int = 70
 @export var probabilidad_nacimiento_licencia_papeles_16: int = -1
-@export var probabilidad_vencimiento_licencia: int = 94
+@export var probabilidad_vencimiento_licencia: int = 95
 @export var probabilidad_fecha_licencia_2026: int = 30
 
 

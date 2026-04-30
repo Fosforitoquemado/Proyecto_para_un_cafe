@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://boyl4f3gotn5h"]
 
 [ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/button_quit.gd" id="2_is2bi"]
 [ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://texture/hud/menu.tres" id="2_y5i5w"]
 [ext_resource type="AudioStream" uid="uid://kqfrnc2jktuv" path="res://sonidos/SONIDO-MENU.wav" id="3_ygb62"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
-font_size = 70
 
 [node name="Node2D" type="Control" unique_id=2141301358]
 layout_mode = 3
@@ -32,21 +30,20 @@ text = "
 script = ExtResource("1_yqeox")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=1053020099]
+[node name="Button_quit" type="Button" parent="." unique_id=1423378273]
+z_index = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1101.0
-offset_top = -167.0
-offset_right = 1311.0
-offset_bottom = -67.0
+anchors_preset = -1
+anchor_left = 0.09982639
+anchor_top = 0.61728394
+anchor_right = 0.14496528
+anchor_bottom = 0.66512346
 grow_horizontal = 2
 grow_vertical = 2
-text = "MENU"
-label_settings = SubResource("LabelSettings_vjb58")
+text = "SALIR
+"
+script = ExtResource("2_is2bi")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1087707124]
 layout_mode = 1
@@ -65,3 +62,4 @@ volume_db = -10.286
 autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button_quit" to="Button_quit" method="_on_pressed"]

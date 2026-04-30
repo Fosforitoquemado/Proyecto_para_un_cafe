@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c5fnxdqyv1p4q"]
+
+[ext_resource type="Texture2D" uid="uid://b8bd312053p2b" path="res://texture/hud/tuto/tuto2.png" id="1_utpvf"]
+[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="2_chsew"]
+
+[node name="Tuto2" type="Control" unique_id=1553540432]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_chsew")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1738911515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_utpvf")
+expand_mode = 1
+
+[node name="jugar" type="Button" parent="." unique_id=498059954]
+self_modulate = Color(1, 1, 1, 0.92941177)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4634577
+anchor_right = 0.5397905
+anchor_bottom = 0.072530866
+grow_horizontal = 2
+text = "JUGAR
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://8fgsf38816vr"
-path="res://.godot/imported/tren.glb-adfd1699c35db46e6e6882c822d20ad0.scn"
+path="res://.godot/imported/tren.glb-8001bfa263bbf4821f3b50885d3c8105.scn"
 
 [deps]
 
-source_file="res://modelos/tren/tren.glb"
-dest_files=["res://.godot/imported/tren.glb-adfd1699c35db46e6e6882c822d20ad0.scn"]
+source_file="res://modelos/EXTERIOR/tren/tren.glb"
+dest_files=["res://.godot/imported/tren.glb-8001bfa263bbf4821f3b50885d3c8105.scn"]
 
 [params]
 

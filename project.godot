@@ -15,10 +15,6 @@ run/main_scene="uid://boyl4f3gotn5h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=100
 
-[display]
-
-window/size/mode=3
-
 [physics]
 
 3d/physics_engine="Jolt Physics"
