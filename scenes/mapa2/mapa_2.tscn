@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cr5rek3546jbo"]
+
+[ext_resource type="PackedScene" uid="uid://cl1x3yoabp5p7" path="res://scenes/mapa2/escenario.glb" id="1_33aw7"]
+[ext_resource type="PackedScene" uid="uid://bb8d8vbugii8s" path="res://modelos/AUTOS/147 terminado/147raul.glb" id="2_ey8f3"]
+
+[node name="mapa2" type="Node3D" unique_id=55082832]
+
+[node name="escenario" parent="." unique_id=1517250683 instance=ExtResource("1_33aw7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.8494103, 1.3340931, 2.1101503)
+
+[node name="147raul" parent="." unique_id=353694118 instance=ExtResource("2_ey8f3")]
+transform = Transform3D(0.026133431, 0, -0.79957306, 0, 0.8, 0, 0.79957306, 0, 0.026133431, -4.0024614, 1.6660533, 0.60825706)
