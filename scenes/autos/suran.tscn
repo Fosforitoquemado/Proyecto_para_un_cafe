@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://clutt74fh6hcc"]
 
-[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_heyd4"]
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_heyd4"]
 [ext_resource type="AudioStream" uid="uid://cfaiwxbwp7gu3" path="res://sonidos/Suran/Video-Project-2.wav" id="2_dcdox"]
 [ext_resource type="AudioStream" uid="uid://dcxhhqaptajcg" path="res://sonidos/Suran/BOCINA.wav" id="3_rl2ts"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_pkwky"]

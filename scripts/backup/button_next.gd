@@ -1,5 +1,5 @@
 extends Button
-class_name Boton_Primario
+class_name Boton_Primario_
 
 @onready var node_main: Node3D = $"../../.."
 
@@ -102,12 +102,10 @@ class_name Boton_Primario
 @export var probabilidad_vencimiento_licencia: int = 95
 @export var probabilidad_fecha_licencia_2026: int = 30
 
-
 #valores in-game
 @onready var fallos : int = 0
 @onready var autos_que_pasaron : int = 0
 @onready var fecha : String
-
 
 @onready var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 

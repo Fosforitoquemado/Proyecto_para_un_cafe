@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b3oed8uidnq81"]
 
-[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_5x5qu"]
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_5x5qu"]
 [ext_resource type="AudioStream" uid="uid://ccxaxsmdfubw" path="res://sonidos/Escort/escort-andando.wav" id="2_a4ns1"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_uxfpg"]
 [ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/Escort/escort-bocina.wav" id="3_he68n"]

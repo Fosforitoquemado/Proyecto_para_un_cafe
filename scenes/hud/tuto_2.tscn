@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5fnxdqyv1p4q"]
 
 [ext_resource type="Texture2D" uid="uid://b8bd312053p2b" path="res://texture/hud/tuto/tuto2.png" id="1_utpvf"]
-[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="2_chsew"]
+[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/hud/button.gd" id="2_chsew"]
 
 [node name="Tuto2" type="Control" unique_id=1553540432]
 layout_mode = 3

@@ -27,7 +27,7 @@ func exit():
 func set_fecha(fecha):
 	pc_control.set_fecha(fecha)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:

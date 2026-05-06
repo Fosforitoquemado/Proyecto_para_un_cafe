@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boyl4f3gotn5h"]
 
-[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/button.gd" id="1_yqeox"]
-[ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/button_quit.gd" id="2_is2bi"]
+[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/hud/button.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/hud/button_quit.gd" id="2_is2bi"]
 [ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://texture/hud/menu.tres" id="2_y5i5w"]
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
 

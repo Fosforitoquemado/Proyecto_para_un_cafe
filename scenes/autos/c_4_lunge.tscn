@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dw2k67wgqodhe"]
 
-[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/car.gd" id="1_jkdhv"]
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_jkdhv"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_6kal8"]
 [ext_resource type="AudioStream" uid="uid://bstqx7r7mn3hc" path="res://sonidos/C4/c4-a-los-chapazos.wav" id="3_w7vny"]
 [ext_resource type="AudioStream" uid="uid://ch8oirj3nc74t" path="res://sonidos/C4/c4 bocina.wav" id="4_04xex"]

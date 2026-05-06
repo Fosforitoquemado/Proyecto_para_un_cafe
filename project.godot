@@ -15,6 +15,14 @@ run/main_scene="uid://boyl4f3gotn5h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=100
 
+[autoload]
+
+GameManager="*uid://bfiohbx33ojvf"
+Utils="*uid://cy8dhrpqw4vdd"
+AutoGenerator="*uid://csicyh2kn4lwd"
+DocumentosGenerator="*uid://dsovnopsul6vn"
+CameraController="uid://cjgj80nq1rxrt"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,0 +1,58 @@
+extends Node
+
+@export var max_fallos := 3
+@export var max_autos := 5
+
+@export var sub_viewport_container: SubViewportContainer
+
+var fallos := 0
+var autos_pasados := 0
+
+var tiempo_transcurrido = 0
+
+var auto_dupe
+var auto_data: Dictionary
+
+func _physics_process(delta: float) -> void:
+	tiempo_transcurrido += delta
+	if tiempo_transcurrido > 1:
+		tiempo_transcurrido = 0
+		var num = randi_range(0, 300)
+		#if num == 69:
+		if num == 1:
+			if sub_viewport_container:
+				
+				sub_viewport_container.visible = true
+				sub_viewport_container.star()
+		else:
+			pass
+
+func generar_auto():
+	auto_data = AutoGenerator._generate_auto()
+	
+	var auto_modelo_info = auto_data["modelo_info"]
+	var color_info = auto_data["color_info"]
+	
+	auto_dupe = auto_modelo_info["auto"].instantiate()
+	var materiall = auto_dupe.get_active_material(0)
+	materiall.albedo_color = Color(color_info["color"])
+	auto_dupe.set_surface_override_material(0, materiall)
+	
+	add_child(auto_dupe)
+	auto_dupe.global_position = Vector3(0.2,0,-2.0)
+
+func reset():
+	fallos = 0
+	autos_pasados = 0
+
+func sumar_fallo():
+	fallos += 1
+
+func sumar_auto():
+	autos_pasados += 1
+
+func check_estado():
+	if fallos >= max_fallos:
+		get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
+	elif autos_pasados >= max_autos:
+		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
