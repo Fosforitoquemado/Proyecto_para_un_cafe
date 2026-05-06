@@ -2,16 +2,17 @@ extends Node3D
 class_name PCStatic
 
 var is_using:bool = true
-@onready var boton_primario:Boton_Primario
 
 @onready var camera_3d: Camera3D = $nodo_camara/Camera3D
 
 @onready var sub_viewport: SubViewport = $SubViewport
 @onready var pc_control: Control = $SubViewport/PCControl
 
+var UI_CONTROLLER
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	boton_primario = get_tree().get_first_node_in_group("boton")
+	UI_CONTROLLER = get_node("/root/Main/HUD")
 	pc_control.PCSISTEM = self
 	pass # Replace with function body.
 
@@ -22,7 +23,8 @@ func camara():
 	camera_3d.current = true
 func exit():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	boton_primario._on_inspeccion_pressed()
+	UI_CONTROLLER._on_inspeccion_pressed()
+	UI_CONTROLLER._on_inspeccion_volver_pressed()
 
 func set_fecha(fecha):
 	pc_control.set_fecha(fecha)

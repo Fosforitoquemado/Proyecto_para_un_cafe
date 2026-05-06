@@ -22,3 +22,7 @@ func _on_mate_pressed() -> void:
 		active = true
 		
 	pass # Replace with function body.
+
+
+func _on_pressed() -> void:
+	pass # Replace with function body.

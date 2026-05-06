@@ -550,7 +550,6 @@ anchor_right = 0.6319444
 anchor_bottom = 0.063271604
 grow_horizontal = 2
 mouse_filter = 2
-max_value = 120.0
 show_percentage = false
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
@@ -698,11 +697,12 @@ mesh = SubResource("ArrayMesh_go0ap")
 [connection signal="pressed" from="Empezar/Button" to="Empezar/Button" method="_on_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Multar/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="MATE" method="_on_mate_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="." method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV2/Inspeccion_VTV" to="." method="_on_inspeccion_vtv_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera/Inspeccion_adelante" to="." method="_on_inspeccion_adelante_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera/Inspeccion_atras" to="." method="_on_inspeccion_atras_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu2/Inspeccion_compu" to="Empezar/Button" method="_on_inspeccion_compu_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu2/Inspeccion_compu" to="." method="_on_inspeccion_compu_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa2/Inspeccion_mesa" to="." method="_on_inspeccion_mesa_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver2/Inspeccion_volver" to="." method="_on_inspeccion_volver_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]

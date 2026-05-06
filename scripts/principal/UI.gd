@@ -1,6 +1,8 @@
 extends Control
 class_name UIManager
 
+@onready var pcsistema: PCStatic = $"../PCSISTEMA"
+
 @onready var CameraController: Node = $"../CameraController"
 
 @export var autos_label: Label
@@ -138,6 +140,6 @@ func _on_inspeccion_compu_pressed() -> void:
 	###camera_3d.position = Vector3(1.8,0.7,1.5)
 	###camera_3d.fov = 75
 	inspeccion_menu.visible = false
-	###pcsistema.camara()
-	###pcsistema.toggle_use()
+	pcsistema.camara()
+	pcsistema.toggle_use()
 	pass # Replace with function body.
