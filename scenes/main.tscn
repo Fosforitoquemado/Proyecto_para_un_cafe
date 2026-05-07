@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa/mapa.gd" id="7_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_0ld40"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="10_ya4ey"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/fps_counter.gd" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="12_trceg"]
@@ -146,26 +147,14 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.4056839, 0.4416868, -
 [node name="PCSISTEMA" parent="." unique_id=1435289206 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.19767919, 0, 0.030379813, 0.94867724, 0.3900208, 0.9915118)
 
+[node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_0ld40")]
+
 [node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
 
 [node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
 stream = ExtResource("10_ya4ey")
 volume_db = -7.298
 autoplay = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
-visible = false
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=324965815]
-anchors_preset = -1
-anchor_left = 0.9652778
-anchor_top = 0.96450615
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("12_eb6dy")
-metadata/_edit_use_anchors_ = true
 
 [node name="AutoGenerator" type="Node" parent="." unique_id=1534333920]
 script = ExtResource("12_trceg")
@@ -180,23 +169,20 @@ sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
 [node name="DocumentosGenerator" type="Node" parent="." unique_id=190448855]
 script = ExtResource("16_jbj1t")
-Config = {
-"Probabilidad_apellido_licencia": 95.0,
-"Probabilidad_color": 95.0,
-"Probabilidad_fecha_cedula": 95.0,
-"Probabilidad_fecha_cedula_2026": 30.0,
-"Probabilidad_fecha_licencia_2026": 30.0,
-"Probabilidad_modelo_cedula": 95.0,
-"Probabilidad_nacimiento_16": 30.0,
-"Probabilidad_nacimineto_licencia": 95.0,
-"Probabilidad_nombre_licencia": 95.0,
-"Probabilidad_numero_licencia": 95.0,
-"Probabilidad_patente": 95.0,
-"Probabilidad_patente_cedula": 95.0,
-"Probabilidad_vencimiento_licencia": 95.0,
-"Probabilidad_vtv": 95.0
-}
 
 [node name="CameraController" type="Node" parent="." unique_id=1630672908 node_paths=PackedStringArray("camera")]
 script = ExtResource("17_muem4")
 camera = NodePath("../Camera3D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=324965815]
+anchors_preset = -1
+anchor_left = 0.9652778
+anchor_top = 0.96450615
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("12_eb6dy")
+metadata/_edit_use_anchors_ = true

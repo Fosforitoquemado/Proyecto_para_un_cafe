@@ -21,7 +21,10 @@ GameManager="*uid://bfiohbx33ojvf"
 Utils="*uid://cy8dhrpqw4vdd"
 AutoGenerator="*uid://csicyh2kn4lwd"
 DocumentosGenerator="*uid://dsovnopsul6vn"
-CameraController="uid://cjgj80nq1rxrt"
+
+[global_group]
+
+elementos_mesa=""
 
 [physics]
 

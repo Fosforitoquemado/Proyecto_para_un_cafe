@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://1txyqroo3yhe"]
 
-[ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mapa/mate.gd" id="1_n7yvt"]
 [ext_resource type="AudioStream" uid="uid://bbviutm3ms4vq" path="res://sonidos/Mate/trimmed_-WhatsApp-Ptt-2026-04-18-at-9.22.00-PM.wav" id="2_dxybx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bi87l"]
@@ -282,7 +281,6 @@ _data = {
 }
 
 [node name="MATE" type="Node3D" unique_id=2130085467]
-script = ExtResource("1_n7yvt")
 
 [node name="mate" type="MeshInstance3D" parent="." unique_id=1484088852]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)

@@ -5,6 +5,8 @@ class_name UIManager
 
 @onready var CameraController: Node = $"../CameraController"
 
+@onready var mate: Node3D = $"../Elementos_mesa/MATE"
+
 @export var autos_label: Label
 @export var fallos_label: Label
 
@@ -15,20 +17,7 @@ class_name UIManager
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
 
-@export var camara_mesa: Node3D
-#cedula
-@export var cedula: Sprite3D
-@export var dominio_cedula: Label3D
-@export var modelo_cedula: Label3D
-@export var vencimiento_cedula: Label3D
-
-#licencia
-@export var carnet: Sprite3D
-@export var numero_licencia: Label3D
-@export var apellido_licencia: Label3D
-@export var nombre_licencia: Label3D
-@export var fecha_nacimiento_licencia: Label3D
-@export var vencimiento_licencia: Label3D
+@onready var camara_mesa: Node3D = $"../Elementos_mesa/mesa/Camara_mesa"
 
 var active = false
 var auto_on = false
@@ -42,13 +31,9 @@ func update_ui(fallos, autos, max_fallos, max_autos):
 	autos_label.text = "Autos: %d / %d" % [autos, max_autos]
 
 func ver_documentos():
-	cedula.visible = true
-	carnet.visible = true
 	yes_no_menu.visible = true
 	
 func ocultar_documentos():
-	cedula.visible = false
-	carnet.visible = false
 	yes_no_menu.visible = false
 
 func _on_button_pressed() -> void:
@@ -142,4 +127,9 @@ func _on_inspeccion_compu_pressed() -> void:
 	inspeccion_menu.visible = false
 	pcsistema.camara()
 	pcsistema.toggle_use()
+	pass # Replace with function body.
+
+
+func _on_mate_pressed() -> void:
+	mate._on_mate_pressed()
 	pass # Replace with function body.

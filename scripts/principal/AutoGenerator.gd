@@ -132,4 +132,6 @@ func _generate_auto() -> Dictionary:
 		"fecha_cedula": fecha_cedula,
 		"fecha_licencia": fecha_licencia
 	}
+	_auto_data = data
+	print("AUTO GENERADO")
 	return data

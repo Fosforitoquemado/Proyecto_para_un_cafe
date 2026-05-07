@@ -28,6 +28,8 @@ func _physics_process(delta: float) -> void:
 			pass
 
 func generar_auto():
+	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
+	
 	auto_data = AutoGenerator._generate_auto()
 	
 	var auto_modelo_info = auto_data["modelo_info"]
@@ -42,6 +44,8 @@ func generar_auto():
 	
 	root.add_child(auto_dupe)
 	auto_dupe.global_position = Vector3(0.2,0,-2.0)
+	#mostrar elementos
+	elementos_mesa.mostrar_datos()
 
 func reset():
 	fallos = 0
