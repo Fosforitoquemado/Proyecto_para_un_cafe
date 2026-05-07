@@ -62,6 +62,7 @@ func _on_yes_pressed() -> void:
 		auto_on = false
 		empezar.visible = true
 		update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
+		GameManager.check_estado()
 		active = false
 	pass # Replace with function body.
 func _on_no_pressed() -> void:
@@ -75,6 +76,7 @@ func _on_no_pressed() -> void:
 		ocultar_documentos()
 		empezar.visible = true
 		update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
+		GameManager.check_estado()
 		active = false
 	pass # Replace with function body.
 
