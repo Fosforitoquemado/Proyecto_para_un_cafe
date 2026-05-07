@@ -30,18 +30,12 @@ func update_ui(fallos, autos, max_fallos, max_autos):
 	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
 	autos_label.text = "Autos: %d / %d" % [autos, max_autos]
 
-func ver_documentos():
-	yes_no_menu.visible = true
-	
-func ocultar_documentos():
-	yes_no_menu.visible = false
-
 func _on_button_pressed() -> void:
 	if auto_on == false:
 		auto_on = true
 		timer._start_timer()
 		GameManager.generar_auto()
-		ver_documentos()
+		yes_no_menu.visible = true
 		empezar.visible = false
 		CameraController.vista_normal()
 		
@@ -52,7 +46,7 @@ func _on_yes_pressed() -> void:
 		active = true
 		GameManager.auto_dupe.irse()
 		timer._stop_timer()
-		ocultar_documentos()
+		yes_no_menu.visible = false
 		await get_tree().create_timer(3.0).timeout
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
@@ -73,7 +67,7 @@ func _on_no_pressed() -> void:
 			GameManager.sumar_fallo()
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
-		ocultar_documentos()
+		yes_no_menu.visible = false
 		empezar.visible = true
 		update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
 		GameManager.check_estado()

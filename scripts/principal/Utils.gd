@@ -5,10 +5,12 @@ func chance(probabilidad: int) -> bool:
 	return randi_range(0, 100) <= probabilidad
  
 # 🔢 Número distinto (evita repetir uno específico)
-func random_excluding(min: int, max: int, exclude: int) -> int:
-	var num := randi_range(min, max)
-	if num == exclude:
-		num = min if num == max else num + 1
+func random_excluding(min:int, max:int, exclude:int) -> int:
+	var num := randi_range(min, max - 1)
+	
+	if num >= exclude:
+		num += 1
+		
 	return num
 
 # 🔤 String aleatorio

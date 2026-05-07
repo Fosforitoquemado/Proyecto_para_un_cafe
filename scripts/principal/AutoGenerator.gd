@@ -49,9 +49,11 @@ var _auto_data: Dictionary
 func generate_modelo():
 	var num_auto_random = randi_range(0,autos_lista.size() - 1)
 	var auto = autos_lista.values()[num_auto_random]
+	var nombre = autos_lista.keys()[num_auto_random]
 	var modelo_info = {
 		"auto": auto,
-		"num_auto": num_auto_random
+		"num_auto": num_auto_random,
+		"nombre":  nombre,
 	}
 
 	return modelo_info
@@ -74,28 +76,45 @@ func generate_patente() -> String:
 	var patente = str(num_patente1,num_patente2,num_patente3," ",letras)
 	
 	return patente
-func generate_VTV() -> int:
+func generate_VTV() -> Dictionary:
 	var vtv = randi_range(1,12)
-	return vtv
-func generate_numero_licencia() -> int:
+	var vtv_string = str(vtv)
+	var vtv_info = {
+		"vtv": vtv,
+		"vtv_string": vtv_string
+	}
+	return vtv_info
+func generate_numero_licencia() -> String:
 	#random numero_licencia
-	var num = randi_range(10000000,99999999)
+	var num = str(randi_range(10000000,99999999))
 	return num
-func generate_nombre() -> int:
-	var nombre = randi_range(0,Nombres_lista.size() - 1)
-	return nombre
-func generate_apellido() -> int:
-	var apellido = randi_range(0,apellidos_lista.size() - 1)
-	return apellido
+func generate_nombre() -> Dictionary:
+	var nombre_num = randi_range(0,Nombres_lista.size() - 1)
+	var nombre = Nombres_lista[nombre_num]
+	var nombre_info = {
+		"nombre_num": nombre_num,
+		"nombre": nombre
+	}
+	return nombre_info
+func generate_apellido() -> Dictionary:
+	var apellido_num = randi_range(0,apellidos_lista.size() - 1)
+	var apellido = apellidos_lista[apellido_num]
+	var apellido_info = {
+		"apellido_num": apellido_num,
+		"apellido": apellido
+	}
+	return apellido_info
 func generate_fecha_nacimiento() -> Dictionary:
 	var mes := randi_range(1, 12)
 	var dia := Utils.dias_en_mes(mes)
 	dia = randi_range(1, dia)
 	var anio := randi_range(1945, 2008)
+	var fecha_entera = str(dia,"/",mes,"/",anio)
 	var nacimiento = {
 		"dia": dia,
 		"mes": mes,
-		"anio": anio
+		"anio": anio,
+		"fecha_entera": fecha_entera
 	}
 	return nacimiento
 func generate_fecha_vencimiento() -> String:
@@ -109,9 +128,9 @@ func _generate_auto() -> Dictionary:
 	var patente = generate_patente()
 	var color_info = generate_color()
 	var modelo_info = generate_modelo()
-	var vtv = generate_VTV()
-	var nombre = generate_nombre()
-	var apellido = generate_apellido()
+	var vtv_info = generate_VTV()
+	var nombre_info = generate_nombre()
+	var apellido_info = generate_apellido()
 	var licencia = generate_numero_licencia()
 	var nacimiento = generate_fecha_nacimiento()
 	
@@ -122,13 +141,13 @@ func _generate_auto() -> Dictionary:
 	# RESULTADO
 	data = {
 		"patente": patente,
-		"nombre": nombre,
-		"apellido": apellido,
+		"nombre_info": nombre_info,
+		"apellido_info": apellido_info,
 		"nacimiento": nacimiento,
 		"color_info": color_info,
 		"modelo_info": modelo_info,
-		"vtv": vtv,
-		"N Licencia": licencia,
+		"vtv_info": vtv_info,
+		"numero_licencia": licencia,
 		"fecha_cedula": fecha_cedula,
 		"fecha_licencia": fecha_licencia
 	}

@@ -26,20 +26,25 @@ var pc_mouse_pos:Vector2 = Vector2.ZERO
 func update_cursor_pos():
 	cursor.position = pc_mouse_pos
 
+#fecha PC
+
 func set_fecha(func_fecha):
 	fecha.text = func_fecha
-#cedula
 
-func set_dominio(func_dominio):
-	dominio.text = func_dominio
-func set_vencimiento(func_vence):
-	vence.text = func_vence
-func set_modelo(func_modelo):
-	modelo.text = func_modelo
 #VTV
 
 func set_vtv(func_VTV):
 	vtv.text = func_VTV
+
+#cedula
+
+func set_dominio(func_dominio):
+	dominio.text = func_dominio
+func set_modelo(func_modelo):
+	modelo.text = func_modelo
+func set_vencimiento(func_vence):
+	vence.text = func_vence
+
 #licencia
 
 func set_numero_licencia(func_numero):

@@ -26,7 +26,8 @@ func mostrar_datos():
 	pc_control.set_fecha(datos_documentos["fecha_hoy"])
 	
 	#elementos_auto
-	GameManager.auto_dupe.find_child("mes_VTV").text = datos_documentos["vtv"]
+	GameManager.auto_dupe.find_child("mes_VTV").text = AutoGenerator._auto_data["vtv_info"]["vtv_string"]
+	pc_control.set_vtv(AutoGenerator._auto_data["vtv_info"]["vtv_string"])
 	GameManager.auto_dupe.find_child("patente_adelante").text = AutoGenerator._auto_data["patente"]
 	GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
 	
@@ -34,25 +35,25 @@ func mostrar_datos():
 	cedula.visible = true
 	
 	dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
-	pc_control.set_dominio(datos_documentos["patente_cedula"])
+	pc_control.set_dominio(AutoGenerator._auto_data["patente"])
 	modelo_cedula.text = datos_documentos["modelo_cedula"] #🎫🎫🎫
-	pc_control.set_modelo(datos_documentos["modelo_cedula"])
+	pc_control.set_modelo(AutoGenerator._auto_data["modelo_info"]["nombre"])
 	vencimiento_cedula.text = datos_documentos["fecha_cedula"] #🎫🎫🎫
-	pc_control.set_vencimiento(datos_documentos["fecha_cedula"])
+	pc_control.set_vencimiento(AutoGenerator._auto_data["fecha_cedula"])
 	
 	#licencia
 	licencia.visible = true
 	
 	numero_licencia.text = datos_documentos["numero_licencia"]#🎫🎫🎫
-	pc_control.set_numero_licencia(datos_documentos["numero_licencia"])
+	pc_control.set_numero_licencia(AutoGenerator._auto_data["numero_licencia"])
 	nombre_licencia.text = datos_documentos["nombre_licencia"]#🎫🎫🎫
-	pc_control.set_nombre(datos_documentos["nombre_licencia"])
+	pc_control.set_nombre(AutoGenerator._auto_data["nombre_info"]["nombre"])
 	apellido_licencia.text = datos_documentos["apellido_licencia"]#🎫🎫🎫
-	pc_control.set_apellido(datos_documentos["apellido_licencia"])
+	pc_control.set_apellido(AutoGenerator._auto_data["apellido_info"]["apellido"])
 	fecha_nacimiento_licencia.text = datos_documentos["nacimiento_licencia"]#🎫🎫🎫
-	pc_control.set_fecha_nacimiento(datos_documentos["nacimiento_licencia"])
+	pc_control.set_fecha_nacimiento(AutoGenerator._auto_data["nacimiento"]["fecha_entera"])
 	vencimiento_licencia.text = datos_documentos["fecha_licencia"]#🎫🎫🎫
-	pc_control.set_fecha_vencimiento(datos_documentos["fecha_licencia"])
+	pc_control.set_fecha_vencimiento(AutoGenerator._auto_data["fecha_licencia"])
 	
 	print("FINAL MOSTRAR DATOS")
 func datos_cedula():
