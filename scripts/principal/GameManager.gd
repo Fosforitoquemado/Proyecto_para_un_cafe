@@ -1,12 +1,13 @@
 extends Node
 
-@export var max_fallos := 3
+@export var max_fallos := 333
 @export var max_autos := 5
 
 @export var sub_viewport_container: SubViewportContainer
 
-var fallos := 0
-var autos_pasados := 0
+var fallos: int = 0
+var autos_pasados: int = 0
+var dinero_player: float = 100.0
 
 var tiempo_transcurrido = 0
 
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		tiempo_transcurrido = 0
 		var num = randi_range(0, 300)
 		#if num == 69:
-		if num == 1:
+		if num == -1:
 			if sub_viewport_container:
 				
 				sub_viewport_container.visible = true
@@ -57,6 +58,11 @@ func generar_auto():
 func reset():
 	fallos = 0
 	autos_pasados = 0
+
+func sumar_dinero_jugador(dinero):
+	print("dinero_antes: ",dinero_player)
+	dinero_player += dinero
+	print("dinero_ahora: ",dinero_player)
 
 func sumar_fallo():
 	fallos += 1

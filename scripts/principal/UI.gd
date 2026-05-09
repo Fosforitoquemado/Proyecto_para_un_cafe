@@ -7,8 +7,11 @@ class_name UIManager
 
 @onready var mate: Node3D = $"../Elementos_mesa/MATE"
 
+@onready var camara_mesa: Node3D = $"../Elementos_mesa/mesa/Camara_mesa"
+
 @export var autos_label: Label
 @export var fallos_label: Label
+@export var dinero: Label
 
 @export var empezar: TextureRect
 
@@ -17,18 +20,17 @@ class_name UIManager
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
 
-@onready var camara_mesa: Node3D = $"../Elementos_mesa/mesa/Camara_mesa"
-
 var active = false
 var auto_on = false
 var inspeccion_menu_active
 
 func _ready() -> void:
-	update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
+	update_ui()
 
-func update_ui(fallos, autos, max_fallos, max_autos):
-	fallos_label.text = str("Fallos: ",fallos," / ",max_fallos)
-	autos_label.text = "Autos: %d / %d" % [autos, max_autos]
+func update_ui():
+	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
+	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
+	dinero.text = str("Dinero: ",GameManager.dinero_player)
 
 func _on_button_pressed() -> void:
 	if auto_on == false:
@@ -50,12 +52,15 @@ func _on_yes_pressed() -> void:
 		await get_tree().create_timer(3.0).timeout
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
+			print("FALLASTE❌❌")
 		else:
+			GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
+			print("BIEN✅✅")
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
 		empezar.visible = true
-		update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
+		update_ui()
 		GameManager.check_estado()
 		active = false
 	pass # Replace with function body.
@@ -64,14 +69,38 @@ func _on_no_pressed() -> void:
 		active = true
 		timer._stop_timer()
 		if DocumentosGenerator.auto_ilegal == false:
+			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
+		else:
+			GameManager.sumar_dinero_jugador(50)
+			print("BIEN✅✅")
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
 		yes_no_menu.visible = false
 		empezar.visible = true
-		update_ui(GameManager.fallos,GameManager.autos_pasados,GameManager.max_fallos,GameManager.max_autos)
+		update_ui()
 		GameManager.check_estado()
 		active = false
+	pass # Replace with function body.
+
+func _on_coimear_pressed() -> void:
+	if active == false:
+		active = true
+		timer._stop_timer()
+		if DocumentosGenerator.auto_ilegal == false:
+			print("FALLASTE❌❌")
+			GameManager.sumar_fallo()
+		else:
+			GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"])
+			print("BIEN✅✅")
+		GameManager.auto_dupe.queue_free()
+		auto_on = false
+		yes_no_menu.visible = false
+		empezar.visible = true
+		update_ui()
+		GameManager.check_estado()
+		active = false
+	
 	pass # Replace with function body.
 
 func _on_inspeccion_pressed() -> void:
@@ -117,9 +146,6 @@ func _on_inspeccion_compu_pressed() -> void:
 	yes_no_menu.visible = false
 	autos_label.visible = false
 	fallos_label.visible = false
-	###camera_3d.rotation = Vector3(0,deg_to_rad(45),0)
-	###camera_3d.position = Vector3(1.8,0.7,1.5)
-	###camera_3d.fov = 75
 	inspeccion_menu.visible = false
 	pcsistema.camara()
 	pcsistema.toggle_use()

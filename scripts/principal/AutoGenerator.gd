@@ -120,6 +120,10 @@ func generate_fecha_nacimiento() -> Dictionary:
 func generate_fecha_vencimiento() -> String:
 	var vencimiento = Utils.generar_fecha(2027,2030)
 	return vencimiento
+func generate_dinero_coima() -> float:
+	var dinero_coima = randf_range(10,200)
+	dinero_coima = snapped(dinero_coima, 0.01)
+	return dinero_coima
 
 func _generate_auto() -> Dictionary:
 	var data = {}
@@ -133,6 +137,7 @@ func _generate_auto() -> Dictionary:
 	var apellido_info = generate_apellido()
 	var licencia = generate_numero_licencia()
 	var nacimiento = generate_fecha_nacimiento()
+	var dinero_coima = generate_dinero_coima()
 	
 	# DOCUMENTOS
 	var fecha_cedula = generate_fecha_vencimiento()
@@ -149,8 +154,10 @@ func _generate_auto() -> Dictionary:
 		"vtv_info": vtv_info,
 		"numero_licencia": licencia,
 		"fecha_cedula": fecha_cedula,
-		"fecha_licencia": fecha_licencia
+		"fecha_licencia": fecha_licencia,
+		"dinero_coima": dinero_coima
 	}
 	_auto_data = data
+	print(_auto_data)
 	print("AUTO GENERADO")
 	return data

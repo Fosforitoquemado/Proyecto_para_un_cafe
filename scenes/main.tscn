@@ -165,6 +165,7 @@ Autos = {
 
 [node name="GameManager" type="Node" parent="." unique_id=351716273 node_paths=PackedStringArray("sub_viewport_container")]
 script = ExtResource("18_y6deb")
+max_fallos = 999
 sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
 [node name="DocumentosGenerator" type="Node" parent="." unique_id=190448855]

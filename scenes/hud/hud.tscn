@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwcvgy08phqt" path="res://texture/hud/botones/18-artguru.png" id="4_udak2"]
 [ext_resource type="Texture2D" uid="uid://csi0dmxrm4f32" path="res://texture/hud/botones/para el cafe arte-artguru.png" id="5_7pnlf"]
 [ext_resource type="Texture2D" uid="uid://b3cowatwi7ihu" path="res://texture/hud/botones/3.png" id="6_a0exy"]
+[ext_resource type="Texture2D" uid="uid://cauuqebu207uq" path="res://texture/hud/botones/para_el_cafe_arte__coima.png" id="7_567j1"]
 [ext_resource type="Texture2D" uid="uid://btlt22tdt0t7p" path="res://texture/hud/botones/espero-artguru.png" id="7_bluaa"]
 [ext_resource type="Texture2D" uid="uid://b4lruq0quje4" path="res://texture/hud/botones/para el cafe arte (10)-artguru.png" id="8_bbrgr"]
 [ext_resource type="Texture2D" uid="uid://dp2r0fv653x1w" path="res://texture/hud/botones/para el cafe arte_7-artguru.png" id="9_3fmw6"]
@@ -22,7 +23,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer")]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero", "empezar", "inspeccion_menu", "yes_no_menu", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,26 +31,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_bluaa")
-autos_label = NodePath("Autos")
-fallos_label = NodePath("Fallos")
-empezar = NodePath("Empezar")
+autos_label = NodePath("Hud_Principal/Autos")
+fallos_label = NodePath("Hud_Principal/Fallos")
+dinero = NodePath("Hud_Principal/Dinero")
+empezar = NodePath("Hud_Principal/Empezar")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")
-timer = NodePath("Timer")
+timer = NodePath("Hud_Principal/Timer")
 
-[node name="Empezar" type="TextureRect" parent="." unique_id=273918986]
+[node name="Hud_Principal" type="Control" parent="." unique_id=265028241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Empezar" type="TextureRect" parent="Hud_Principal" unique_id=273918986]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.421875
-anchor_top = 0.108024694
-anchor_right = 0.578125
-anchor_bottom = 0.26234567
+anchor_left = 0.41666666
+anchor_top = 0.15432099
+anchor_right = 0.5729167
+anchor_bottom = 0.30864197
 grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_8vblv")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Empezar" unique_id=710470278]
+[node name="Button" type="Button" parent="Hud_Principal/Empezar" unique_id=710470278]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -62,6 +74,92 @@ mouse_filter = 1
 text = "next"
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Fallos" type="Label" parent="Hud_Principal" unique_id=279618866]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9140625
+anchor_right = 1.0
+anchor_bottom = 0.06481481
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "Fallos: "
+label_settings = SubResource("LabelSettings_5ysmq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Hud_Principal/Fallos" unique_id=1467160755]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99270076
+anchor_bottom = 1.0238096
+metadata/_edit_use_anchors_ = true
+
+[node name="Autos" type="Label" parent="Hud_Principal" unique_id=750532179]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.08680555
+anchor_bottom = 0.06481481
+text = "Autos: "
+label_settings = SubResource("LabelSettings_6fi6k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Hud_Principal/Autos" unique_id=248829330]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.071428575
+anchor_right = 1.05
+anchor_bottom = 0.9285714
+metadata/_edit_use_anchors_ = true
+
+[node name="Dinero" type="Label" parent="Hud_Principal" unique_id=816752989]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.067106485
+anchor_right = 0.1736111
+anchor_bottom = 0.13192135
+text = "Dinero: "
+label_settings = SubResource("LabelSettings_6fi6k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Hud_Principal/Dinero" unique_id=1968482304]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.071428575
+anchor_right = 0.9787234
+anchor_bottom = 0.9285714
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="ProgressBar" parent="Hud_Principal" unique_id=397951695]
+modulate = Color(18.892157, 15.898927, 0, 1)
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3810764
+anchor_right = 0.6171875
+anchor_bottom = 0.06944445
+grow_horizontal = 2
+mouse_filter = 2
+show_percentage = false
+script = ExtResource("2_cgeww")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_quit" type="Button" parent="Hud_Principal" unique_id=1523233337]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19965278
+anchor_top = 0.0030864198
+anchor_right = 0.32552084
+anchor_bottom = 0.063271604
+grow_horizontal = 2
+grow_vertical = 2
+text = "CERRAR EL JUEGO
+"
+script = ExtResource("20_ccb21")
 metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
@@ -172,11 +270,11 @@ anchor_left = 0.6336806
 anchor_top = 0.84876543
 anchor_right = 0.7899306
 anchor_bottom = 1.0030864
-texture = ExtResource("11_4vn1o")
+texture = ExtResource("7_567j1")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion" type="Button" parent="YES_NO_menu/Coima" unique_id=831935376]
+[node name="Coimear" type="Button" parent="YES_NO_menu/Coima" unique_id=831935376]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -372,78 +470,14 @@ offset_bottom = -51.433647
 text = "ZOOM"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button_quit" type="Button" parent="." unique_id=1523233337]
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.19878472
-anchor_top = -0.0015432099
-anchor_right = 0.30989584
-anchor_bottom = 0.06481482
-offset_left = -8.5
-offset_right = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "CERRAR EL JUEGO
-"
-script = ExtResource("20_ccb21")
-
-[node name="Fallos" type="Label" parent="." unique_id=279618866]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8810764
-anchor_right = 1.0
-anchor_bottom = 0.06481481
-grow_horizontal = 0
-size_flags_horizontal = 8
-text = "Fallos: "
-label_settings = SubResource("LabelSettings_5ysmq")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="Fallos" unique_id=1467160755]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.99270076
-anchor_bottom = 1.0238096
-metadata/_edit_use_anchors_ = true
-
-[node name="Autos" type="Label" parent="." unique_id=750532179]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.16319445
-anchor_bottom = 0.06481481
-text = "Autos: "
-label_settings = SubResource("LabelSettings_6fi6k")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="Autos" unique_id=248829330]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.071428575
-anchor_right = 0.9787234
-anchor_bottom = 0.9285714
-metadata/_edit_use_anchors_ = true
-
-[node name="Timer" type="ProgressBar" parent="." unique_id=397951695]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.36805555
-anchor_right = 0.6319444
-anchor_bottom = 0.063271604
-grow_horizontal = 2
-mouse_filter = 2
-show_percentage = false
-script = ExtResource("2_cgeww")
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Empezar/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Empezar/Button" to="Empezar/Button" method="_on_pressed"]
+[connection signal="pressed" from="Hud_Principal/Empezar/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Hud_Principal/Empezar/Button" to="Hud_Principal/Empezar/Button" method="_on_pressed"]
+[connection signal="pressed" from="Hud_Principal/Button_quit" to="Hud_Principal/Button_quit" method="_on_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Multar/no" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="." method="_on_mate_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="." method="_on_inspeccion_pressed"]
+[connection signal="pressed" from="YES_NO_menu/Coima/Coimear" to="." method="_on_coimear_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV2/Inspeccion_VTV" to="." method="_on_inspeccion_vtv_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera/Inspeccion_adelante" to="." method="_on_inspeccion_adelante_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera/Inspeccion_atras" to="." method="_on_inspeccion_atras_pressed"]
@@ -451,4 +485,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa2/Inspeccion_mesa" to="." method="_on_inspeccion_mesa_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver2/Inspeccion_volver" to="." method="_on_inspeccion_volver_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]
-[connection signal="pressed" from="Button_quit" to="Button_quit" method="_on_pressed"]
