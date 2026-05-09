@@ -118,7 +118,7 @@ func generate_fecha_nacimiento() -> Dictionary:
 	}
 	return nacimiento
 func generate_fecha_vencimiento() -> String:
-	var vencimiento = Utils.generar_fecha(2026,2030)
+	var vencimiento = Utils.generar_fecha(2027,2030)
 	return vencimiento
 
 func _generate_auto() -> Dictionary:

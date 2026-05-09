@@ -13,6 +13,13 @@ var tiempo_transcurrido = 0
 var auto_dupe
 var auto_data: Dictionary
 
+func _ready():
+	var textura_cursor = load("res://texture/hud/puntero.png")
+	Input.set_custom_mouse_cursor(
+		textura_cursor,
+		Input.CURSOR_ARROW,
+	)
+
 func _physics_process(delta: float) -> void:
 	tiempo_transcurrido += delta
 	if tiempo_transcurrido > 1:
@@ -60,5 +67,7 @@ func sumar_auto():
 func check_estado():
 	if fallos >= max_fallos:
 		get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
+		fallos = 0
 	elif autos_pasados >= max_autos:
 		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
+		autos_pasados = 0

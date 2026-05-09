@@ -149,8 +149,7 @@ func generate_VTV_auto(probabilidad):
 		auto_ilegal = true
 		print("la vtv del auto es fake: ", VTV)
 		return str(num)
-func generate_fecha_cedula(probabilidad, probabilidad_2026):
-	var fecha_de_vencimiento = auto_data["fecha_cedula"]
+func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento):
 	
 	if Utils.chance(probabilidad):
 		#correcto
@@ -291,6 +290,7 @@ func generate_color_papel(probabilidad):
 
 func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
+	auto_ilegal = false
 	var data = {}
 	
 	# BASE
@@ -300,14 +300,14 @@ func _generate_documentos() -> Dictionary:
 	# CEDULA
 	var patente_cedula = generate_papel_patente(Config["Probabilidad_patente_cedula"])
 	var modelo_cedula = generate_modelo_cedula(Config["Probabilidad_modelo_cedula"])
-	var fecha_cedula = generate_fecha_cedula(Config["Probabilidad_fecha_cedula"],Config["Probabilidad_fecha_cedula_2026"])
+	var fecha_cedula = generate_fecha_documento(Config["Probabilidad_fecha_cedula"],Config["Probabilidad_fecha_cedula_2026"],auto_data["fecha_cedula"])
 	
 	# LICENCIA
 	var nombre_licencia = generate_nombre(Config["Probabilidad_nombre_licencia"])
 	var apellido_licencia = generate_apellido(Config["Probabilidad_apellido_licencia"])
 	var numero_licencia = generate_numero_licencia(Config["Probabilidad_numero_licencia"])
 	var nacimiento_licencia = generate_fecha_nacimiento(Config["Probabilidad_nacimineto_licencia"],Config["Probabilidad_nacimiento_16"])
-	var fecha_licencia = generate_fecha_cedula(Config["Probabilidad_vencimiento_licencia"],Config["Probabilidad_fecha_licencia_2026"])
+	var fecha_licencia = generate_fecha_documento(Config["Probabilidad_vencimiento_licencia"],Config["Probabilidad_fecha_licencia_2026"],auto_data["fecha_licencia"])
 	
 	var fecha_hoy_string = str(fecha_hoy["dia"],"/",fecha_hoy["mes"],"/",fecha_hoy["anio"])
 	

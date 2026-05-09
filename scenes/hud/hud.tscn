@@ -165,6 +165,32 @@ text = "Inspeccion
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="Coima" type="TextureRect" parent="YES_NO_menu" unique_id=1681919718]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6336806
+anchor_top = 0.84876543
+anchor_right = 0.7899306
+anchor_bottom = 1.0030864
+texture = ExtResource("11_4vn1o")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion" type="Button" parent="YES_NO_menu/Coima" unique_id=831935376]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.1500003
+anchor_right = 0.9166667
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Inspeccion
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
 layout_mode = 1
@@ -385,8 +411,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Autos" type="Label" parent="." unique_id=750532179]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.17059702
-anchor_bottom = 0.12562872
+anchor_right = 0.16319445
+anchor_bottom = 0.06481481
 text = "Autos: "
 label_settings = SubResource("LabelSettings_6fi6k")
 metadata/_edit_use_anchors_ = true
@@ -396,8 +422,8 @@ z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.071428575
-anchor_right = 0.8599294
-anchor_bottom = 0.51592356
+anchor_right = 0.9787234
+anchor_bottom = 0.9285714
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="ProgressBar" parent="." unique_id=397951695]
