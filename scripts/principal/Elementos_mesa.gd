@@ -31,7 +31,7 @@ func mostrar_datos():
 	
 	#elementos_auto
 	if "vtv" in day.documentos_habilitados:
-		GameManager.auto_dupe.find_child("mes_VTV").text = AutoGenerator._auto_data["vtv_info"]["vtv_string"]
+		GameManager.auto_dupe.find_child("mes_VTV").text = datos_documentos["vtv"]
 		pc_control.set_vtv(AutoGenerator._auto_data["vtv_info"]["vtv_string"])
 		GameManager.auto_dupe.find_child("VTV").visible = true
 	

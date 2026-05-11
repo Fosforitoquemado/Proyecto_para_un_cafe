@@ -5,6 +5,7 @@ extends SubViewportContainer
 @onready var sub_viewport: SubViewport = $SubViewport
 
 func star():
+	visible = true
 	carnet_.play("default")
 	audio_stream_player.play()
 	await get_tree().create_timer(0.7).timeout

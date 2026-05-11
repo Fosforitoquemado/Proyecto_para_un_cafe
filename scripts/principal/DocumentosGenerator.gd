@@ -68,7 +68,7 @@ func generate_VTV_auto(probabilidad):
 			num += 1
 		print("AUTO_ILEGAL vtv = TRUE")
 		auto_ilegal = true
-		print("Vtv del auto es fake❌: ", VTV)
+		print("Vtv del auto es fake❌: ", num)
 		return str(num)
 func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento, fecha_hoy):
 	
