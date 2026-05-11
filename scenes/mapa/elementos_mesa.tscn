@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://dcj77sk8m5tqg"]
 
 [ext_resource type="Script" uid="uid://5nce5367vhab" path="res://scripts/principal/Elementos_mesa.gd" id="1_3m8vs"]
-[ext_resource type="Texture2D" uid="uid://dj0p4pfglj3fy" path="res://texture/hud/1.png" id="1_ngsru"]
-[ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/3.png" id="2_gtunt"]
+[ext_resource type="Texture2D" uid="uid://dj0p4pfglj3fy" path="res://texture/hud/documentos/1.png" id="1_ngsru"]
+[ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/documentos/3.png" id="2_gtunt"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="3_3m8vs"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="4_cjwlr"]
 [ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mapa/mate.gd" id="5_gtunt"]

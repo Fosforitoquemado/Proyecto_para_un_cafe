@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hosdpxt5jhkj"
-path="res://.godot/imported/para el cafe arte.png-613543892b23cb7b2f0b04283f97f31a.ctex"
+uid="uid://bfujvmt6ky4er"
+path="res://.godot/imported/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png-ebee41d5847374b0d6376539f5407d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/hud/para el cafe arte.png"
-dest_files=["res://.godot/imported/para el cafe arte.png-613543892b23cb7b2f0b04283f97f31a.ctex"]
+source_file="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png"
+dest_files=["res://.godot/imported/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png-ebee41d5847374b0d6376539f5407d16.ctex"]
 
 [params]
 

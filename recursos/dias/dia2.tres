@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://duwwwxluq6vgb"]
+
+[ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="1_hwjsw"]
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_koc8f"]
+[ext_resource type="Resource" uid="uid://dc0ogqndnepy6" path="res://recursos/dificultad/medium.tres" id="2_xth5d"]
+
+[resource]
+script = ExtResource("1_koc8f")
+nombre = "Martes"
+fecha_hoy = {
+"anio": 2026,
+"dia": 13,
+"mes": 6
+}
+documentos_habilitados = Array[String](["vtv", "cedula"])
+config = ExtResource("2_xth5d")
+autos_permitidos = ExtResource("1_hwjsw")
+tiempo_limite = 80.0
+metadata/_custom_type_script = "uid://dyyci053w374o"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AutoArrayResource" format=3 uid="uid://bh00ilbmrhnp4"]
+
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_hgb6h"]
+[ext_resource type="Script" uid="uid://ceffb7rekgtud" path="res://recursos/Scripts/AutoArrayResource.gd" id="2_6o6cr"]
+[ext_resource type="Resource" uid="uid://bfr5k2qex4v1g" path="res://recursos/autos/fiat_147.tres" id="2_l63jm"]
+[ext_resource type="Resource" uid="uid://cxbvci458k5d0" path="res://recursos/autos/Suran.tres" id="3_qu1bj"]
+[ext_resource type="Resource" uid="uid://b8n27038r3p0u" path="res://recursos/autos/fiat doblo.tres" id="4_au3m6"]
+[ext_resource type="Resource" uid="uid://bhirx2p5hdttn" path="res://recursos/autos/escort.tres" id="5_nl7rj"]
+[ext_resource type="Resource" uid="uid://c1n2viylsmflu" path="res://recursos/autos/c4 lunge.tres" id="6_2ni0d"]
+
+[resource]
+script = ExtResource("2_6o6cr")
+array = Array[ExtResource("1_hgb6h")]([ExtResource("2_l63jm"), ExtResource("3_qu1bj"), ExtResource("4_au3m6"), ExtResource("5_nl7rj"), ExtResource("6_2ni0d")])
+metadata/_custom_type_script = "uid://ceffb7rekgtud"

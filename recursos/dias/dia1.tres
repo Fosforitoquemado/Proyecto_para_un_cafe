@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://teeapc5tjcf"]
+
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_ffbgm"]
+[ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="1_kv1hv"]
+[ext_resource type="Resource" uid="uid://bke1e7fcsajtk" path="res://recursos/dificultad/easy.tres" id="2_1xgs8"]
+
+[resource]
+script = ExtResource("1_ffbgm")
+nombre = "Lunes"
+documentos_habilitados = Array[String](["vtv"])
+config = ExtResource("2_1xgs8")
+autos_permitidos = ExtResource("1_kv1hv")
+metadata/_custom_type_script = "uid://dyyci053w374o"

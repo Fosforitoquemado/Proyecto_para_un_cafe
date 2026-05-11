@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AutoResource" format=3 uid="uid://cxbvci458k5d0"]
+
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_aejjx"]
+[ext_resource type="PackedScene" uid="uid://clutt74fh6hcc" path="res://scenes/autos/suran.tscn" id="1_pemvx"]
+
+[resource]
+script = ExtResource("1_aejjx")
+nombre = "suran"
+escena = ExtResource("1_pemvx")
+metadata/_custom_type_script = "uid://cyy5656frxhf3"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktrncrhlq68b"
-path="res://.godot/imported/para el cafe (1).png-b784a9f7f930ea25b5979a8b94d320a0.ctex"
+uid="uid://bckibxvgdpq1w"
+path="res://.godot/imported/carnet_.png-b6f6a826da2620db841c88fc945134ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/mapa/pc/para el cafe (1).png"
-dest_files=["res://.godot/imported/para el cafe (1).png-b784a9f7f930ea25b5979a8b94d320a0.ctex"]
+source_file="res://texture/hud/otros/carnet_.png"
+dest_files=["res://.godot/imported/carnet_.png-b6f6a826da2620db841c88fc945134ab.ctex"]
 
 [params]
 

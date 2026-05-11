@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b6pl4urg6wwi1"]
 
 [ext_resource type="Script" uid="uid://dv5plpqqijdil" path="res://scripts/hud/pc_control.gd" id="1_jgmss"]
-[ext_resource type="Texture2D" uid="uid://hosdpxt5jhkj" path="res://texture/hud/para el cafe arte.png" id="2_7mlyq"]
-[ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/mapa/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
-[ext_resource type="Texture2D" uid="uid://ktrncrhlq68b" path="res://texture/mapa/pc/para el cafe (1).png" id="3_7mlyq"]
+[ext_resource type="Texture2D" uid="uid://hosdpxt5jhkj" path="res://texture/hud/pc/para el cafe arte.png" id="2_7mlyq"]
+[ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
+[ext_resource type="Texture2D" uid="uid://ktrncrhlq68b" path="res://texture/hud/pc/para el cafe (1).png" id="3_7mlyq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
 font_color = Color(0, 0, 0, 1)

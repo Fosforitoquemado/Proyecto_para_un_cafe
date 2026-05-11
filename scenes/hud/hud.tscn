@@ -46,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Empezar" type="TextureRect" parent="Hud_Principal" unique_id=273918986]
@@ -170,6 +171,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Aprobado" type="TextureRect" parent="YES_NO_menu" unique_id=817028940]
 layout_mode = 0
@@ -297,6 +299,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Inspeccion_VTV2" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
 layout_mode = 0

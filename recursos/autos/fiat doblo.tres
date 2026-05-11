@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AutoResource" format=3 uid="uid://b8n27038r3p0u"]
+
+[ext_resource type="PackedScene" uid="uid://drt10ng3s7m6v" path="res://scenes/autos/fiat doblo.tscn" id="1_7jqnm"]
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_bk72q"]
+
+[resource]
+script = ExtResource("1_bk72q")
+nombre = "fiat doblo"
+escena = ExtResource("1_7jqnm")
+metadata/_custom_type_script = "uid://cyy5656frxhf3"

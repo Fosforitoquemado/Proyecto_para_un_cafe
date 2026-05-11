@@ -1,13 +1,13 @@
 extends Node
 
 @export var max_fallos := 333
-@export var max_autos := 5
+@export var max_autos := 1
 
 @export var sub_viewport_container: SubViewportContainer
 
 var fallos: int = 0
 var autos_pasados: int = 0
-var dinero_player: float = 100.0
+var dinero_player
 
 var tiempo_transcurrido = 0
 
@@ -15,7 +15,9 @@ var auto_dupe
 var auto_data: Dictionary
 
 func _ready():
-	var textura_cursor = load("res://texture/hud/puntero.png")
+	var textura_cursor = load("res://texture/hud/otros/puntero.png")
+	var savedata = SaveLoad.contents_to_save
+	dinero_player = savedata.values()[1]
 	Input.set_custom_mouse_cursor(
 		textura_cursor,
 		Input.CURSOR_ARROW,
@@ -37,7 +39,6 @@ func _physics_process(delta: float) -> void:
 
 func generar_auto():
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
-	
 	auto_data = AutoGenerator._generate_auto()
 	
 	var auto_modelo_info = auto_data["modelo_info"]
@@ -75,5 +76,10 @@ func check_estado():
 		get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 		fallos = 0
 	elif autos_pasados >= max_autos:
+		SaveLoad.contents_to_save["dinero"] = dinero_player
+		var daymanager = get_tree().get_first_node_in_group("DayManager")
+		daymanager.sumar_dia()
+		SaveLoad.contents_to_save["day"] = daymanager.dia_actual
+		SaveLoad._save()
 		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
 		autos_pasados = 0

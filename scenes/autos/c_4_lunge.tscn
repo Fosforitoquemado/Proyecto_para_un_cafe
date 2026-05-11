@@ -924,6 +924,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.401, -0.424, -2.35645
 
 [node name="patente_adelante" type="Label3D" parent="." unique_id=272476773]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.292, 2.3374026)
+visible = false
 text = "PBY 932"
 
 [node name="camara_patente_adelante" type="Node3D" parent="patente_adelante" unique_id=1217455385]
@@ -931,6 +932,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3682022, 4.9357834)
 
 [node name="patente_atras" type="Label3D" parent="." unique_id=328510847]
 transform = Transform3D(-0.4, 0, -6.039832e-08, 0, 0.4, 0, 6.039832e-08, 0, -0.4, 0, -0.018999994, -2.3194056)
+visible = false
 text = "PBY 932"
 
 [node name="camara_patente_atras" type="Node3D" parent="patente_atras" unique_id=1786383760]
@@ -938,6 +940,7 @@ transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.677731
 
 [node name="VTV" type="Sprite3D" parent="." unique_id=1772297477]
 transform = Transform3D(0.01, 0, 0, 0, 0.004631259, 0.008862926, 0, -0.008862926, 0.004631259, 0.481, 0.57760566, 0.4813909)
+visible = false
 texture = SubResource("CompressedTexture2D_jkdhv")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=384906964]

@@ -1,5 +1,7 @@
 extends Node
 
+var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+
 # 🎲 Devuelve true con X% de probabilidad
 func chance(probabilidad: int) -> bool:
 	return randi_range(0, 100) <= probabilidad
@@ -14,10 +16,10 @@ func random_excluding(min:int, max:int, exclude:int) -> int:
 	return num
 
 # 🔤 String aleatorio
-func random_string(chars: String, length: int) -> String:
+func random_string(length: int) -> String:
 	var result := ""
 	for i in range(length):
-		result += chars[randi() % chars.length()]
+		result += characters[randi() % characters.length()]
 	return result
 
 # 📅 Generar fecha válida
@@ -57,7 +59,7 @@ func romper_patente(patente: String, errores := 1) -> String:
 			resultado = cambiar_char(resultado, pos, nuevo)
 		elif pos >= 4:
 			# letra
-			var nuevo = random_string("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 1)
+			var nuevo = random_string(1)
 			resultado = cambiar_char(resultado, pos, nuevo)
 	
 	return resultado

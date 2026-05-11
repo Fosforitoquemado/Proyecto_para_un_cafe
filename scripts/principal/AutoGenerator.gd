@@ -1,22 +1,14 @@
 extends Node
 
-@export var Autos: Dictionary
 @export var Colors: Dictionary
-@export var Nombres: Array
-@export var Apellidos: Array
 
-var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+@export var autos:AutoArrayResource = preload("res://recursos/ArrayAutos/TODOS.tres")
+@export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
+@export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
 
 #elementos auto
-@onready var autos_lista = {
-	"fiat 147": preload("res://scenes/autos/147.tscn"),
-	"suran": preload("res://scenes/autos/suran.tscn"),
-	"fiat doblo": preload("res://scenes/autos/fiat doblo.tscn"),
-	"ford escort": preload("res://scenes/autos/escort.tscn"),
-	"c4 lunge": preload("res://scenes/autos/c_4_lunge.tscn")
-}
 
-@onready var colors = {
+var colors = {
 	"rojo": "ff1b13",
 	"azul": "222bff",
 	"verde": "1df428",
@@ -26,30 +18,13 @@ var characters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 	"negro": "05040b"
 }
 
-@onready var Nombres_lista = [
-	"Benjamín",
-	"Delfina",
-	"Nicolás",
-	"Federico",
-	"Juan",
-	"Tomás"
-]
-
-@onready var apellidos_lista = [
-	"Martinez",
-	"Sánchez",
-	"Ferrero",
-	"Fort",
-	"Pereira",
-	"miameee"
-]
-
 var _auto_data: Dictionary
 
 func generate_modelo():
-	var num_auto_random = randi_range(0,autos_lista.size() - 1)
-	var auto = autos_lista.values()[num_auto_random]
-	var nombre = autos_lista.keys()[num_auto_random]
+	var num_auto_random = randi_range(0,autos.array.size() - 1)
+	var resource = autos.array[num_auto_random]
+	var auto = resource.escena
+	var nombre = resource.nombre
 	var modelo_info = {
 		"auto": auto,
 		"num_auto": num_auto_random,
@@ -72,7 +47,7 @@ func generate_patente() -> String:
 	var num_patente2 = randi_range(0,9)
 	var num_patente3 =  randi_range(0,9)
 	
-	var letras = Utils.random_string(characters,3)
+	var letras = Utils.random_string(3)
 	var patente = str(num_patente1,num_patente2,num_patente3," ",letras)
 	
 	return patente
@@ -89,16 +64,16 @@ func generate_numero_licencia() -> String:
 	var num = str(randi_range(10000000,99999999))
 	return num
 func generate_nombre() -> Dictionary:
-	var nombre_num = randi_range(0,Nombres_lista.size() - 1)
-	var nombre = Nombres_lista[nombre_num]
+	var nombre_num = randi_range(0,nombres.array.size() - 1)
+	var nombre = nombres.array[nombre_num]
 	var nombre_info = {
 		"nombre_num": nombre_num,
 		"nombre": nombre
 	}
 	return nombre_info
 func generate_apellido() -> Dictionary:
-	var apellido_num = randi_range(0,apellidos_lista.size() - 1)
-	var apellido = apellidos_lista[apellido_num]
+	var apellido_num = randi_range(0,apellidos.array.size() - 1)
+	var apellido = apellidos.array[apellido_num]
 	var apellido_info = {
 		"apellido_num": apellido_num,
 		"apellido": apellido

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ColoresResource" format=3 uid="uid://dybs0tr2h2jb0"]
+
+[ext_resource type="Script" uid="uid://dph6lpy3vfyif" path="res://recursos/Scripts/ColoresResource.gd" id="1_leylm"]
+
+[resource]
+script = ExtResource("1_leylm")
+dictionary = {
+"azul": "222bff",
+"blanco": "dedede",
+"naranja": "f67200",
+"negro": "05040b",
+"rojo": "ff1b13",
+"verde": "1df428",
+"violeta": "5510c7"
+}
+metadata/_custom_type_script = "uid://dph6lpy3vfyif"

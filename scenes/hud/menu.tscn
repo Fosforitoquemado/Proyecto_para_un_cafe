@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/hud/button_quit.gd" id="2_is2bi"]
 [ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://texture/hud/menu.tres" id="2_y5i5w"]
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
+[ext_resource type="Script" uid="uid://cku8mudlg2owy" path="res://scripts/hud/label_dia_menu.gd" id="5_o6fka"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_is2bi"]
+font_size = 36
 
 [node name="Node2D" type="Control" unique_id=2141301358]
 layout_mode = 3
@@ -60,6 +64,16 @@ expand_mode = 1
 stream = ExtResource("4_is2bi")
 volume_db = -36.529
 autoplay = true
+
+[node name="Label_dia" type="Label" parent="." unique_id=449898347]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 3.0
+offset_right = 107.0
+offset_bottom = 76.0
+text = "DIA: "
+label_settings = SubResource("LabelSettings_is2bi")
+script = ExtResource("5_o6fka")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button_quit" to="Button_quit" method="_on_pressed"]

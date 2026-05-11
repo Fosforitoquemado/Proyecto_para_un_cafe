@@ -842,6 +842,7 @@ mesh = SubResource("ArrayMesh_cnuh1")
 
 [node name="patente_adelante" type="Label3D" parent="." unique_id=800450522]
 transform = Transform3D(-2.1855696e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855696e-08, -2.6230993, -0.57709986, -1.1465933e-07)
+visible = false
 text = "PBY 786"
 
 [node name="camara_patente_adelante" type="Node3D" parent="patente_adelante" unique_id=1324607462]
@@ -849,6 +850,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3682022, 4.9357834)
 
 [node name="patente_atras" type="Label3D" parent="." unique_id=1028452970]
 transform = Transform3D(-1.7174866e-08, -0.05311707, 0.39645752, -4.6436424e-09, 0.39645752, 0.05311707, -0.4, -2.321821e-09, -1.7639408e-08, 2.2614307, -0.5711593, 9.885028e-08)
+visible = false
 text = "PBY 786"
 
 [node name="camara_patente_atras" type="Node3D" parent="patente_atras" unique_id=395209532]
@@ -856,6 +858,7 @@ transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.677731
 
 [node name="VTV" type="Sprite3D" parent="." unique_id=1575494265]
 transform = Transform3D(-6.556708e-10, 0.011861627, -0.009181602, 3.85494e-18, 0.009181602, 0.011861627, 0.015, 5.1848814e-10, -4.0134063e-10, -0.7963459, 0.55026376, 0.53831494)
+visible = false
 texture = SubResource("CompressedTexture2D_8k4fm")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=529907619]

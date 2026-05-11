@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AutoResource" format=3 uid="uid://c1n2viylsmflu"]
+
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_ku6fi"]
+[ext_resource type="PackedScene" uid="uid://dw2k67wgqodhe" path="res://scenes/autos/c_4_lunge.tscn" id="1_svtf1"]
+
+[resource]
+script = ExtResource("1_ku6fi")
+nombre = "c4 lunge"
+escena = ExtResource("1_svtf1")
+metadata/_custom_type_script = "uid://cyy5656frxhf3"

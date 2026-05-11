@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7wksxjg006s2"
-path="res://.godot/imported/puntero.png-5cb1bc54bfda600a4d0bf2290c394b5e.ctex"
+uid="uid://b4nosooi581e2"
+path="res://.godot/imported/para el cafe.png-edf6405b991f1e94f851d7fa01772cc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/hud/puntero.png"
-dest_files=["res://.godot/imported/puntero.png-5cb1bc54bfda600a4d0bf2290c394b5e.ctex"]
+source_file="res://texture/hud/pc/para el cafe.png"
+dest_files=["res://.godot/imported/para el cafe.png-edf6405b991f1e94f851d7fa01772cc0.ctex"]
 
 [params]
 

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Apellidosresources" format=3 uid="uid://dqkcavd3p4ym6"]
+
+[ext_resource type="Script" uid="uid://drun3000u3561" path="res://recursos/Scripts/ApellidosResources.gd" id="1_nsoii"]
+
+[resource]
+script = ExtResource("1_nsoii")
+array = Array[String](["Martinez", "Sánchez", "Ferrero", "Fort", "Pereira", "miameee"])
+metadata/_custom_type_script = "uid://drun3000u3561"

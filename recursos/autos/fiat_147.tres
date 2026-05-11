@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AutoResource" format=3 uid="uid://bfr5k2qex4v1g"]
+
+[ext_resource type="PackedScene" uid="uid://cgrwg2yo6nn78" path="res://scenes/autos/147.tscn" id="1_4wfpe"]
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="2_swub0"]
+
+[resource]
+script = ExtResource("2_swub0")
+nombre = "Fiat 147"
+escena = ExtResource("1_4wfpe")
+metadata/_custom_type_script = "uid://cyy5656frxhf3"

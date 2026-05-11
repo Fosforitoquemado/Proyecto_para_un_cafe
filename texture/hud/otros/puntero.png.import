@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj0p4pfglj3fy"
-path.s3tc="res://.godot/imported/1.png-445b8298ff504dbc191dbe7832b19857.s3tc.ctex"
+uid="uid://b7wksxjg006s2"
+path="res://.godot/imported/puntero.png-1ed2001e57ecaeb5a3944841a006742d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/hud/1.png"
-dest_files=["res://.godot/imported/1.png-445b8298ff504dbc191dbe7832b19857.s3tc.ctex"]
+source_file="res://texture/hud/otros/puntero.png"
+dest_files=["res://.godot/imported/puntero.png-1ed2001e57ecaeb5a3944841a006742d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
