@@ -23,7 +23,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero", "empezar", "inspeccion_menu", "yes_no_menu", "timer")]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_vertical = 2
 script = ExtResource("4_bluaa")
 autos_label = NodePath("Hud_Principal/Autos")
 fallos_label = NodePath("Hud_Principal/Fallos")
-dinero = NodePath("Hud_Principal/Dinero")
+dinero_label = NodePath("Hud_Principal/Dinero")
 empezar = NodePath("Hud_Principal/Empezar")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")

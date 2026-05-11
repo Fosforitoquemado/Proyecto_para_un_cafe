@@ -268,7 +268,7 @@ func _generate_documentos() -> Dictionary:
 	data.merge(data_extra)
 	print("DOCUMENTOS GENERADOS")
 	if auto_ilegal:
-		print("EL AUTO ES ILEGAL?: ", auto_ilegal," ❌🚗")
+		print("EL AUTO ES ILEGAL?: ILEGAL ❌🚗")
 	else:
-		print("EL AUTO ES ILEGAL?: ", auto_ilegal," ✅🚗")
+		print("EL AUTO ES ILEGAL?: LEGAL ✅🚗")
 	return data

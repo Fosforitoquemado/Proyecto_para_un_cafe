@@ -1,7 +1,7 @@
 extends Node
 
 @export var max_fallos := 333
-@export var max_autos := 1
+@export var max_autos := 5
 
 @export var sub_viewport_container: SubViewportContainer
 

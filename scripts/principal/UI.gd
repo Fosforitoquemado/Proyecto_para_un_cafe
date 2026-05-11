@@ -11,7 +11,7 @@ class_name UIManager
 
 @export var autos_label: Label
 @export var fallos_label: Label
-@export var dinero: Label
+@export var dinero_label: Label
 
 @export var empezar: TextureRect
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
-	dinero.text = str("Dinero: ",GameManager.dinero_player)
+	dinero_label.text = str("Dinero: ",GameManager.dinero_player)
 
 func _on_button_pressed() -> void:
 	if auto_on == false:
@@ -109,6 +109,7 @@ func _on_inspeccion_pressed() -> void:
 	inspeccion_menu.visible = true
 	autos_label.visible = true
 	fallos_label.visible = true
+	dinero_label.visible = true
 	pass # Replace with function body.
 
 func _on_inspeccion_adelante_pressed() -> void:
@@ -138,6 +139,7 @@ func _on_inspeccion_volver_pressed() -> void:
 	yes_no_menu.visible = true
 	autos_label.visible = true
 	fallos_label.visible = true
+	dinero_label.visible = true
 	inspeccion_menu.visible = false
 	inspeccion_menu_active = false
 	pass # Replace with function body.
@@ -146,6 +148,7 @@ func _on_inspeccion_compu_pressed() -> void:
 	yes_no_menu.visible = false
 	autos_label.visible = false
 	fallos_label.visible = false
+	dinero_label.visible = false
 	inspeccion_menu.visible = false
 	pcsistema.camara()
 	pcsistema.toggle_use()
