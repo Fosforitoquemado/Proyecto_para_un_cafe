@@ -23,6 +23,16 @@ func _ready():
 		Input.CURSOR_ARROW,
 	)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_down"):
+		print("dinerillo")
+		SaveLoad.contents_to_save["dinero"] = SaveLoad.contents_to_save.values()[1] + 1000
+		SaveLoad._save()
+	if event.is_action_pressed("ui_up"):
+		print("dia_up")
+		SaveLoad.contents_to_save["day"] = SaveLoad.contents_to_save.values()[0] + 1
+		SaveLoad._save()
+
 func _physics_process(delta: float) -> void:
 	tiempo_transcurrido += delta
 	if tiempo_transcurrido > 1:

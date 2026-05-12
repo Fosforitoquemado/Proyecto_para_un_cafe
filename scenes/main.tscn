@@ -124,8 +124,6 @@ render_target_update_mode = 0
 position = Vector2(577, 329.25003)
 scale = Vector2(3.6507938, 2.6918366)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
-frame = 3
-frame_progress = 0.7514128
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/SubViewportContainer/SubViewport/carnet_" unique_id=81878420]
 stream = ExtResource("3_choun")

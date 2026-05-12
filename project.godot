@@ -23,6 +23,10 @@ Utils="*uid://cy8dhrpqw4vdd"
 AutoGenerator="*uid://csicyh2kn4lwd"
 DocumentosGenerator="*uid://dsovnopsul6vn"
 
+[display]
+
+window/size/mode=3
+
 [global_group]
 
 elementos_mesa=""
