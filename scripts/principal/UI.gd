@@ -19,9 +19,12 @@ class_name UIManager
 @export var inspeccion_menu: Control
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
+@export var boton_baul: Button
 
 var active = false
 var auto_on = false
+var baul_abierto = false
+var baul_activo = false
 var inspeccion_menu_active
 
 func _ready() -> void:
@@ -113,19 +116,28 @@ func _on_inspeccion_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_inspeccion_adelante_pressed() -> void:
+	boton_baul.visible = false
+	if baul_abierto == true:
+		cerrar_baul()
 	CameraController.ver_patente_adelante(GameManager.auto_dupe.find_child("camara_patente_adelante").global_position)
 	pass # Replace with function body.
 
 func _on_inspeccion_atras_pressed() -> void:
-	
+	boton_baul.visible = true
 	CameraController.ver_patente_atras(GameManager.auto_dupe.find_child("camara_patente_atras").global_position)
 	pass # Replace with function body.
 
 func _on_inspeccion_vtv_pressed() -> void:
+	boton_baul.visible = false
+	if baul_abierto == true:
+		cerrar_baul()
 	CameraController.ver_vtv(GameManager.auto_dupe.find_child("camara_VTV").global_position)
 	pass # Replace with function body.
 
 func _on_inspeccion_mesa_pressed() -> void:
+	boton_baul.visible = false
+	if baul_abierto == true:
+		cerrar_baul()
 	CameraController.ver_escritorio(camara_mesa.global_position)
 	pass # Replace with function body.
 
@@ -134,6 +146,9 @@ func _on_fov_slider_value_changed(value: float) -> void:
 	pass # Replace with function body.
 
 func _on_inspeccion_volver_pressed() -> void:
+	boton_baul.visible = false
+	if baul_abierto == true:
+		cerrar_baul()
 	visible = true
 	CameraController.vista_normal()
 	yes_no_menu.visible = true
@@ -145,6 +160,8 @@ func _on_inspeccion_volver_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_inspeccion_compu_pressed() -> void:
+	if baul_abierto == true:
+		cerrar_baul()
 	yes_no_menu.visible = false
 	autos_label.visible = false
 	fallos_label.visible = false
@@ -157,4 +174,24 @@ func _on_inspeccion_compu_pressed() -> void:
 
 func _on_mate_pressed() -> void:
 	mate._on_mate_pressed()
+	pass # Replace with function body.
+
+func cerrar_baul():
+	baul_abierto = false
+	baul_activo = true
+	GameManager.auto_dupe.cerrar_baul()
+	await get_tree().create_timer(2).timeout
+	boton_baul.text = "abrir baul"
+	baul_activo = false
+
+func _on_abrir_baul_pressed() -> void:
+	if baul_abierto == false and not baul_activo:
+		baul_abierto = true
+		baul_activo = true
+		GameManager.auto_dupe.abrir_baul()
+		await get_tree().create_timer(2).timeout
+		boton_baul.text = "cerrar baul"
+		baul_activo = false
+	elif baul_abierto == true and not baul_activo:
+		cerrar_baul()
 	pass # Replace with function body.

@@ -139,7 +139,7 @@ transform = Transform3D(0.18840982, 0, 0.9820905, 0, 1, 0, -0.9820905, 0, 0.1884
 [node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
 [node name="mapa" parent="." unique_id=483872397 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.724, 0.07323456, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.724, -0.044935822, 0)
 script = ExtResource("7_eb6dy")
 
 [node name="escortpolice" parent="." unique_id=741665342 instance=ExtResource("8_tipki")]

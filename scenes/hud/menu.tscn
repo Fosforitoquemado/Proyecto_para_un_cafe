@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
 [ext_resource type="Script" uid="uid://cku8mudlg2owy" path="res://scripts/hud/label_dia_menu.gd" id="5_o6fka"]
 [ext_resource type="Script" uid="uid://p1iwwi6740bc" path="res://scripts/hud/reset_file.gd" id="6_tqpoc"]
-[ext_resource type="Script" uid="uid://b15djdsaw84y1" path="res://scenes/hud/label_dinero.gd" id="7_8uvrl"]
+[ext_resource type="Script" uid="uid://b15djdsaw84y1" path="res://scripts/hud/label_dinero.gd" id="7_8uvrl"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/panel_container.gd" id="9_fsiy4"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="10_fuxa7"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="11_jgfnl"]

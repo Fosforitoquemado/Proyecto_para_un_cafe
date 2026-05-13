@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://b8n27038r3p0u" path="res://recursos/autos/fiat doblo.tres" id="4_au3m6"]
 [ext_resource type="Resource" uid="uid://bhirx2p5hdttn" path="res://recursos/autos/escort.tres" id="5_nl7rj"]
 [ext_resource type="Resource" uid="uid://c1n2viylsmflu" path="res://recursos/autos/c4 lunge.tres" id="6_2ni0d"]
+[ext_resource type="Resource" uid="uid://luba3ny5cmt4" path="res://recursos/autos/sedan.tres" id="7_qu1bj"]
 
 [resource]
 script = ExtResource("2_6o6cr")
-array = Array[ExtResource("1_hgb6h")]([ExtResource("2_l63jm"), ExtResource("3_qu1bj"), ExtResource("4_au3m6"), ExtResource("5_nl7rj"), ExtResource("6_2ni0d")])
+array = Array[ExtResource("1_hgb6h")]([ExtResource("2_l63jm"), ExtResource("3_qu1bj"), ExtResource("4_au3m6"), ExtResource("5_nl7rj"), ExtResource("6_2ni0d"), ExtResource("7_qu1bj")])
 metadata/_custom_type_script = "uid://ceffb7rekgtud"

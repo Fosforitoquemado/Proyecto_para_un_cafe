@@ -23,7 +23,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer")]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +38,7 @@ empezar = NodePath("Hud_Principal/Empezar")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")
 timer = NodePath("Hud_Principal/Timer")
+boton_baul = NodePath("Inspeccion_menu/Baul_menu/abrir_baul")
 
 [node name="Hud_Principal" type="Control" parent="." unique_id=265028241]
 layout_mode = 1
@@ -301,7 +302,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Inspeccion_VTV2" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
+[node name="Inspeccion_VTV_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.15432099
@@ -311,7 +312,7 @@ texture = ExtResource("7_bluaa")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_VTV" type="Button" parent="Inspeccion_menu/Inspeccion_VTV2" unique_id=381492510]
+[node name="Inspeccion_VTV" type="Button" parent="Inspeccion_menu/Inspeccion_VTV_texture" unique_id=381492510]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -324,7 +325,7 @@ text = "Inspeccion_VTV
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_Delantera" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
+[node name="Inspeccion_Delantera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.2777778
@@ -335,7 +336,7 @@ texture = ExtResource("8_bbrgr")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_adelante" type="Button" parent="Inspeccion_menu/Inspeccion_Delantera" unique_id=1776988783]
+[node name="Inspeccion_Delantera" type="Button" parent="Inspeccion_menu/Inspeccion_Delantera_texture" unique_id=1776988783]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -348,7 +349,7 @@ text = "Inspeccion_adela
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_Trasera" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
+[node name="Inspeccion_Trasera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.40123457
@@ -359,7 +360,7 @@ texture = ExtResource("9_3fmw6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_atras" type="Button" parent="Inspeccion_menu/Inspeccion_Trasera" unique_id=643723193]
+[node name="Inspeccion_atras" type="Button" parent="Inspeccion_menu/Inspeccion_Trasera_texture" unique_id=643723193]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -373,7 +374,7 @@ text = "Inspeccion_atras
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_compu2" type="TextureRect" parent="Inspeccion_menu" unique_id=44192735]
+[node name="Inspeccion_compu_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=44192735]
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.52469134
@@ -383,7 +384,7 @@ texture = ExtResource("10_2dqaf")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_compu" type="Button" parent="Inspeccion_menu/Inspeccion_compu2" unique_id=1860477345]
+[node name="Inspeccion_compu" type="Button" parent="Inspeccion_menu/Inspeccion_compu_texture" unique_id=1860477345]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -396,7 +397,7 @@ text = "Inspeccion_compu
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_mesa2" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
+[node name="Inspeccion_mesa_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8420139
@@ -410,7 +411,7 @@ texture = ExtResource("11_4vn1o")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_mesa" type="Button" parent="Inspeccion_menu/Inspeccion_mesa2" unique_id=155525681]
+[node name="Inspeccion_mesa" type="Button" parent="Inspeccion_menu/Inspeccion_mesa_texture" unique_id=155525681]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -423,7 +424,7 @@ text = "Inspeccion_mesa
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_volver2" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
+[node name="Inspeccion_volver_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.77160496
@@ -433,7 +434,7 @@ texture = ExtResource("12_pjbv8")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Inspeccion_volver" type="Button" parent="Inspeccion_menu/Inspeccion_volver2" unique_id=706405334]
+[node name="Inspeccion_volver" type="Button" parent="Inspeccion_menu/Inspeccion_volver_texture" unique_id=706405334]
 modulate = Color(0, 0, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -473,6 +474,30 @@ offset_bottom = -51.433647
 text = "ZOOM"
 metadata/_edit_use_anchors_ = true
 
+[node name="Baul_menu" type="Control" parent="Inspeccion_menu" unique_id=2141576287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="abrir_baul" type="Button" parent="Inspeccion_menu/Baul_menu" unique_id=1918177016]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6866319
+anchor_top = 0.36265433
+anchor_right = 0.7977431
+anchor_bottom = 0.45679012
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "abrir baul"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Hud_Principal/Empezar/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Hud_Principal/Empezar/Button" to="Hud_Principal/Empezar/Button" method="_on_pressed"]
 [connection signal="pressed" from="Hud_Principal/Button_quit" to="Hud_Principal/Button_quit" method="_on_pressed"]
@@ -481,10 +506,11 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="." method="_on_mate_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="." method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Coima/Coimear" to="." method="_on_coimear_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV2/Inspeccion_VTV" to="." method="_on_inspeccion_vtv_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera/Inspeccion_adelante" to="." method="_on_inspeccion_adelante_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera/Inspeccion_atras" to="." method="_on_inspeccion_atras_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu2/Inspeccion_compu" to="." method="_on_inspeccion_compu_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa2/Inspeccion_mesa" to="." method="_on_inspeccion_mesa_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver2/Inspeccion_volver" to="." method="_on_inspeccion_volver_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="." method="_on_inspeccion_vtv_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="." method="_on_inspeccion_adelante_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="." method="_on_inspeccion_atras_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="." method="_on_inspeccion_compu_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="." method="_on_inspeccion_mesa_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="." method="_on_inspeccion_volver_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]
+[connection signal="pressed" from="Inspeccion_menu/Baul_menu/abrir_baul" to="." method="_on_abrir_baul_pressed"]

@@ -5,6 +5,11 @@ extends Node3D
 func irse():
 	animation_player.play("ida")
 
+func abrir_baul():
+	animation_player.play("abrir_baul")
+func cerrar_baul():
+	animation_player.play("cerrar_baul")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

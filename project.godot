@@ -27,6 +27,15 @@ DocumentosGenerator="*uid://dsovnopsul6vn"
 
 window/size/mode=3
 
+[file_customization]
+
+folder_colors={
+"res://modelos/": "yellow",
+"res://scenes/": "red",
+"res://scripts/": "purple",
+"res://sonidos/": "green"
+}
+
 [global_group]
 
 elementos_mesa=""
