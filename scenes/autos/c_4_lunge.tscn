@@ -821,7 +821,7 @@ transform = Transform3D(33.33332, 0, 0, 0, 23.48161, -23.658504, 0, 23.658504, 2
 
 [node name="Andando" type="AudioStreamPlayer3D" parent="C4 Sonido" unique_id=42250110]
 stream = ExtResource("3_w7vny")
-volume_db = -5.981
+volume_db = -14.552
 autoplay = true
 
 [node name="bocina" type="AudioStreamPlayer3D" parent="C4 Sonido" unique_id=2032242762]

@@ -847,9 +847,11 @@ transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506,
 
 [node name="bocina" type="AudioStreamPlayer3D" parent="sonidos" unique_id=1232546936]
 stream = ExtResource("2_bgstw")
+volume_db = -7.143
 
 [node name="motor fiat" type="AudioStreamPlayer3D" parent="sonidos" unique_id=1217991818]
 stream = ExtResource("3_keeyj")
+volume_db = -15.714
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_c2ixj")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.25289217, -0.48137438, -1.0028532)

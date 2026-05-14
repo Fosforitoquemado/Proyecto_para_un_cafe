@@ -541,5 +541,5 @@ autoplay = &"animacion"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1297081171]
 stream = ExtResource("1_qwfdb")
-volume_db = -17.944
+volume_db = -20.801
 autoplay = true

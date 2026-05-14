@@ -762,11 +762,12 @@ transform = Transform3D(33.33332, 0, 0, 0, 23.481611, -23.658504, 0, 23.658504, 
 
 [node name="SURAN" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1548912521]
 stream = ExtResource("2_dcdox")
-volume_db = -7.477
+volume_db = -13.191
 autoplay = true
 
 [node name="BOCINA" type="AudioStreamPlayer3D" parent="sonido suran" unique_id=1327785747]
 stream = ExtResource("3_rl2ts")
+volume_db = -5.714
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_pkwky")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21494737, -1.0228076)

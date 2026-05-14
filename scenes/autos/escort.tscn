@@ -825,14 +825,16 @@ transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506,
 
 [node name="Llegando" type="AudioStreamPlayer3D" parent="sonidos" unique_id=444264955]
 stream = ExtResource("2_a4ns1")
-volume_db = -13.458
+volume_db = -17.744
 autoplay = true
 
 [node name="Bocina" type="AudioStreamPlayer3D" parent="sonidos" unique_id=570060690]
 stream = ExtResource("3_he68n")
+volume_db = -17.143
 
 [node name="Arranque" type="AudioStreamPlayer3D" parent="sonidos" unique_id=1458980986]
 stream = ExtResource("4_psyxk")
+volume_db = -21.429
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("2_uxfpg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.30402023, -0.3321274, -1.1636277)

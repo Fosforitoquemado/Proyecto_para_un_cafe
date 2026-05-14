@@ -1002,4 +1002,5 @@ autoplay = &"ida"
 
 [node name="Chiflido" type="AudioStreamPlayer3D" parent="." unique_id=2058732557]
 stream = ExtResource("1_8l5vt")
+volume_db = -10.0
 autoplay = true
