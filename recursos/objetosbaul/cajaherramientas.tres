@@ -9,4 +9,6 @@ nombre = "Caja De Herramientas"
 escena = ExtResource("1_qf6ev")
 tamanio = "mediano"
 legal = true
+max_rotacion = -140
+min_rotacion = -220
 metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

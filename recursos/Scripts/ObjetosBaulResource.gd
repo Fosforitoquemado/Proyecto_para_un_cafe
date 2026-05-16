@@ -6,3 +6,5 @@ class_name ObjetoBaulResource
 @export var escena:PackedScene
 @export var tamanio:String
 @export var legal:bool
+@export var max_rotacion:int
+@export var min_rotacion:int

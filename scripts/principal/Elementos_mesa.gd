@@ -62,16 +62,20 @@ func mostrar_datos():
 		for objeto_data in datos_documentos["objeto_info"]["objetos"]:
 			var objeto_dupe = objeto_data["objeto"].instantiate()
 			var objeto_tamanio = objeto_data["tamanio"]
+			var rotacion = randi_range(objeto_data["min_rotacion"],objeto_data["max_rotacion"])
 			if objeto_tamanio == "grande":
 				GameManager.auto_dupe.find_child("nodo_baul_grande").add_child(objeto_dupe)
+				objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
 				#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_grande").position
 			elif objeto_tamanio == "mediano":
 				if ocupado == false:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_izq").add_child(objeto_dupe)
+					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
 					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_izq").position
 					ocupado = true
 				else:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_der").add_child(objeto_dupe)
+					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
 					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_der").position
 	#cedula
 	if "cedula" in day.documentos_habilitados:

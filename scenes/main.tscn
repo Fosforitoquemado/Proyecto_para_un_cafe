@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="6_o6xl0"]
 [ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa/mapa.gd" id="7_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_0ld40"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="10_ya4ey"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/fps_counter.gd" id="12_eb6dy"]
@@ -137,29 +136,19 @@ sprite_frames = SubResource("SpriteFrames_eb6dy")
 stream = ExtResource("3_choun")
 volume_db = 10.0
 
+[node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1234503639]
 transform = Transform3D(0.18840982, 0, 0.9820905, 0, 1, 0, -0.9820905, 0, 0.18840982, 1.8, 0.7, 1.5)
-
-[node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("3_sugp2")]
 
 [node name="mapa" parent="." unique_id=483872397 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.724, -0.044935822, 0)
 script = ExtResource("7_eb6dy")
 
-[node name="escortpolice" parent="." unique_id=741665342 instance=ExtResource("8_tipki")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.4056839, 0.4416868, -2.4626682)
-
 [node name="PCSISTEMA" parent="." unique_id=1435289206 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.19767919, 0, 0.030379813, 0.94867724, 0.3900208, 0.9915118)
 
 [node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_0ld40")]
-
-[node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
-
-[node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
-stream = ExtResource("10_ya4ey")
-volume_db = -7.298
-autoplay = true
 
 [node name="GameManager" type="Node" parent="." unique_id=351716273 node_paths=PackedStringArray("sub_viewport_container")]
 script = ExtResource("18_y6deb")
@@ -178,6 +167,13 @@ script = ExtResource("16_jbj1t")
 [node name="CameraController" type="Node" parent="." unique_id=1630672908 node_paths=PackedStringArray("camera")]
 script = ExtResource("17_muem4")
 camera = NodePath("../Camera3D")
+
+[node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
+
+[node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
+stream = ExtResource("10_ya4ey")
+volume_db = -7.298
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974449593]
 

@@ -29,6 +29,7 @@ folder_colors={
 "res://modelos/": "yellow",
 "res://scenes/": "red",
 "res://scenes/autos/": "yellow",
+"res://scenes/hud/": "green",
 "res://scenes/mapa/": "purple",
 "res://scripts/": "purple",
 "res://sonidos/": "green"

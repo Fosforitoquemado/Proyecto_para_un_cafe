@@ -9,4 +9,6 @@ nombre = "Cerveza"
 escena = ExtResource("1_p852p")
 tamanio = "mediano"
 legal = true
+max_rotacion = 50
+min_rotacion = -50
 metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

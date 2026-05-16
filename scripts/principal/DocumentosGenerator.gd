@@ -308,6 +308,8 @@ func generate_objetos_baul2(probabilidad, probabilidad_legal):
 		var objeto_escena = objeto_random.escena
 		var objeto_tamanio = objeto_random.tamanio
 		var objeto_nombre = objeto_random.nombre
+		var objeto_max_rotacion = objeto_random.max_rotacion
+		var objeto_min_rotacion = objeto_random.min_rotacion
 		# Actualizar estado
 		if objeto_tamanio == "grande":
 			hay_objeto_grande = true
@@ -324,7 +326,9 @@ func generate_objetos_baul2(probabilidad, probabilidad_legal):
 			"objeto": objeto_escena,
 			"tamanio": objeto_tamanio,
 			"nombre": objeto_nombre,
-			"legal": legal
+			"legal": legal,
+			"max_rotacion": objeto_max_rotacion,
+			"min_rotacion": objeto_min_rotacion
 		})
 		# Si salió grande → terminar
 		if hay_objeto_grande:

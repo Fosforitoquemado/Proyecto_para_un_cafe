@@ -9,4 +9,6 @@ nombre = "Bicicleta"
 escena = ExtResource("1_mtjq7")
 tamanio = "grande"
 legal = true
+max_rotacion = 90
+min_rotacion = 90
 metadata/_custom_type_script = "uid://bycbh2pqwvkcw"
