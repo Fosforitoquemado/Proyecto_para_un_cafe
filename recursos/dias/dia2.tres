@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="1_hwjsw"]
 [ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_koc8f"]
-[ext_resource type="Resource" uid="uid://dc0ogqndnepy6" path="res://recursos/dificultad/medium.tres" id="2_xth5d"]
+[ext_resource type="Resource" uid="uid://bke1e7fcsajtk" path="res://recursos/dificultad/easy.tres" id="2_hwjsw"]
 
 [resource]
 script = ExtResource("1_koc8f")
@@ -13,7 +13,7 @@ fecha_hoy = {
 "mes": 6
 }
 documentos_habilitados = Array[String](["vtv", "cedula"])
-config = ExtResource("2_xth5d")
+config = ExtResource("2_hwjsw")
 autos_permitidos = ExtResource("1_hwjsw")
 tiempo_limite = 80.0
 metadata/_custom_type_script = "uid://dyyci053w374o"

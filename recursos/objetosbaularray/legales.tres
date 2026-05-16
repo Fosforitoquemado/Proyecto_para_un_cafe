@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObjetoArrayResource" format=3 uid="uid://dt7ujyo3v0elv"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_rkqcq"]
+[ext_resource type="Script" uid="uid://bbpm18tctkjtt" path="res://recursos/Scripts/ObjetoArrayResource.gd" id="2_hhy15"]
+[ext_resource type="Resource" uid="uid://ddijkwbd50ee" path="res://recursos/objetosbaul/bici.tres" id="2_q23cp"]
+[ext_resource type="Resource" uid="uid://by6cbmq8buwsd" path="res://recursos/objetosbaul/cajaherramientas.tres" id="3_k140r"]
+[ext_resource type="Resource" uid="uid://puc6tekvwi35" path="res://recursos/objetosbaul/cerveza.tres" id="4_m84j6"]
+
+[resource]
+script = ExtResource("2_hhy15")
+array = Array[ExtResource("1_rkqcq")]([ExtResource("2_q23cp"), ExtResource("3_k140r"), ExtResource("4_m84j6")])
+metadata/_custom_type_script = "uid://bbpm18tctkjtt"

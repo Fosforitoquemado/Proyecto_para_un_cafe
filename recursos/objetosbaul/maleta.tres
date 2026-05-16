@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://dp162j7ub0w4f"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_bby0c"]
+[ext_resource type="PackedScene" uid="uid://bofhcusjrj5fi" path="res://scenes/ObjetosBaul/maleta.tscn" id="1_uoisl"]
+
+[resource]
+script = ExtResource("1_bby0c")
+nombre = "Maleta"
+escena = ExtResource("1_uoisl")
+tamanio = "grande"
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

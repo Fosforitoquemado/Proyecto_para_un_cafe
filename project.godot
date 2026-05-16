@@ -23,15 +23,13 @@ Utils="*uid://cy8dhrpqw4vdd"
 AutoGenerator="*uid://csicyh2kn4lwd"
 DocumentosGenerator="*uid://dsovnopsul6vn"
 
-[display]
-
-window/size/mode=3
-
 [file_customization]
 
 folder_colors={
 "res://modelos/": "yellow",
 "res://scenes/": "red",
+"res://scenes/autos/": "yellow",
+"res://scenes/mapa/": "purple",
 "res://scripts/": "purple",
 "res://sonidos/": "green"
 }
@@ -41,6 +39,19 @@ folder_colors={
 elementos_mesa=""
 DayManager=""
 
+[input]
+
+rueda_mouse_arriba={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+rueda_mouse_abajo={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -48,3 +59,4 @@ DayManager=""
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/decals/filter=0

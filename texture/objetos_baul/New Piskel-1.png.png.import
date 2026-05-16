@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg3d5g6buur2s"
-path="res://.godot/imported/para el cafe.png-010bedac897bdce573d056456f83695d.ctex"
+uid="uid://c6a5je0puee57"
+path="res://.godot/imported/New Piskel-1.png.png-52a6c3023858eb09918f0cdb8574043f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modelos/menu/para el cafe.png"
-dest_files=["res://.godot/imported/para el cafe.png-010bedac897bdce573d056456f83695d.ctex"]
+source_file="res://texture/objetos_baul/New Piskel-1.png.png"
+dest_files=["res://.godot/imported/New Piskel-1.png.png-52a6c3023858eb09918f0cdb8574043f.ctex"]
 
 [params]
 

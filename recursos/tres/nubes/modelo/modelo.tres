@@ -1,7 +1,7 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://cneapweuws1yh"]
 
-[ext_resource type="Material" uid="uid://ciwjqa27bpnsh" path="res://recursos/nubes/texture/texture.tres" id="1_vu3qp"]
-[ext_resource type="ArrayMesh" uid="uid://1u3d7bya4tn1" path="res://recursos/nubes/modelo/sombra.tres" id="2_nym3c"]
+[ext_resource type="Material" uid="uid://ciwjqa27bpnsh" path="res://recursos/tres/nubes/texture/texture.tres" id="1_vu3qp"]
+[ext_resource type="ArrayMesh" uid="uid://1u3d7bya4tn1" path="res://recursos/tres/nubes/modelo/sombra.tres" id="2_nym3c"]
 
 [resource]
 resource_name = "Untitled_Sphere_009"

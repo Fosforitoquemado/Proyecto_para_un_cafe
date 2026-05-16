@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://by6cbmq8buwsd"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_ndwkh"]
+[ext_resource type="PackedScene" uid="uid://dbxawvy48bp6w" path="res://scenes/ObjetosBaul/caja_herramientas.tscn" id="1_qf6ev"]
+
+[resource]
+script = ExtResource("1_ndwkh")
+nombre = "Caja De Herramientas"
+escena = ExtResource("1_qf6ev")
+tamanio = "mediano"
+legal = true
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

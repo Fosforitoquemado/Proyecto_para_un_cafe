@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://bbdq1co13vy3b"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_gq81t"]
+[ext_resource type="PackedScene" uid="uid://buyy5wotua1gx" path="res://scenes/ObjetosBaul/cadaver.tscn" id="1_wwq6j"]
+
+[resource]
+script = ExtResource("1_gq81t")
+nombre = "Cadaver"
+escena = ExtResource("1_wwq6j")
+tamanio = "grande"
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

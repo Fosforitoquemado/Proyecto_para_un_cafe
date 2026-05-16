@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cn27nwpubwqeq"]
 
-[ext_resource type="ArrayMesh" uid="uid://tp4getuugd34" path="res://recursos/mapa/modelo/modelo.tres" id="2_p106v"]
+[ext_resource type="ArrayMesh" uid="uid://tp4getuugd34" path="res://recursos/tres/mapa/modelo/modelo.tres" id="2_p106v"]
 [ext_resource type="Shader" uid="uid://k802f1uulchn" path="res://shaders/blur.gdshader" id="3_tfnl5"]
 [ext_resource type="PackedScene" uid="uid://dkp6ngblq3jcp" path="res://scenes/mapa/NUBE.tscn" id="8_6pxv8"]
 
@@ -13,17 +13,21 @@ shader_parameter/tint = Color(1, 1, 1, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_vt6gj"]
 material = SubResource("ShaderMaterial_k7lwh")
 flip_faces = true
-radius = 37.0
+radius = 35.0
 height = 60.0
 
 [node name="Mapa" type="Node3D" unique_id=101199151]
 
 [node name="Blur" type="MeshInstance3D" parent="." unique_id=952184407]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.54484, 0, -7.4235315)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.54484, 0, -13.606969)
 mesh = SubResource("SphereMesh_vt6gj")
 
 [node name="calle" type="MeshInstance3D" parent="." unique_id=1591849445]
 transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, 3.276)
+mesh = ExtResource("2_p106v")
+
+[node name="calle5" type="MeshInstance3D" parent="." unique_id=2101549216]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, 19.125)
 mesh = ExtResource("2_p106v")
 
 [node name="calle2" type="MeshInstance3D" parent="." unique_id=1593581710]

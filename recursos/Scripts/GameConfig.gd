@@ -15,3 +15,5 @@ class_name GameConfig
 @export_range(0,100) var probabilidad_patente_cedula:= 95
 @export_range(0,100) var probabilidad_fecha_licencia:= 95
 @export_range(0,100) var probabilidad_vtv:= 95
+@export_range(0,100) var probabilidad_objeto_baul:= 95
+@export_range(0,100) var probabilidad_objeto_baul_legal:= 50

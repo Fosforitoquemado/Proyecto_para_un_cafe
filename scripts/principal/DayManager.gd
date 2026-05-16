@@ -5,7 +5,7 @@ extends Node
 var dia_actual:int = SaveLoad.contents_to_save.values()[0]
 
 func sumar_dia():
-	if dia_actual < 2:
+	if dia_actual < 3:
 		dia_actual += 1
 	else:
 		pass

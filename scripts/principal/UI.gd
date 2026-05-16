@@ -185,6 +185,8 @@ func cerrar_baul():
 	baul_activo = false
 
 func _on_abrir_baul_pressed() -> void:
+	CameraController.ver_baul(GameManager.auto_dupe.find_child("camara_baul").global_position,GameManager.auto_dupe.find_child("camara_baul").rotation)
+	
 	if baul_abierto == false and not baul_activo:
 		baul_abierto = true
 		baul_activo = true

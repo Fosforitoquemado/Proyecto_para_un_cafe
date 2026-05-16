@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ub5fs")
-probabilidad_vtv = 50
+probabilidad_objeto_baul = 70
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

@@ -1,14 +1,14 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://tp4getuugd34"]
 
-[ext_resource type="Material" uid="uid://dsbtlaoq5i0fh" path="res://recursos/mapa/surfaces/surface_pasto.tres" id="1_hjf08"]
-[ext_resource type="Material" uid="uid://bu1m5nestr7m2" path="res://recursos/mapa/surfaces/surface_calle.tres" id="2_47x47"]
-[ext_resource type="Material" uid="uid://dlmw25r254wva" path="res://recursos/mapa/surfaces/surface_lineas_calle.tres" id="3_phpk1"]
-[ext_resource type="Material" uid="uid://b00ca3mqjcexs" path="res://recursos/mapa/surfaces/surface_calle_costado.tres" id="4_1iqs2"]
-[ext_resource type="Material" uid="uid://bce7ecr4pxyt5" path="res://recursos/mapa/surfaces/surface_pasto_2.tres" id="5_ix2kb"]
-[ext_resource type="Material" uid="uid://dfcu25ipvr45b" path="res://recursos/mapa/surfaces/surface_madera.tres" id="6_bdfsf"]
-[ext_resource type="Material" uid="uid://chbxgo1m7co80" path="res://recursos/mapa/surfaces/surface_piedra.tres" id="7_yl05c"]
-[ext_resource type="Material" uid="uid://comy7dibmbijd" path="res://recursos/mapa/surfaces/surface_peidra_2.tres" id="8_p7b1y"]
-[ext_resource type="ArrayMesh" uid="uid://c7xeghdkeob0m" path="res://recursos/mapa/modelo/shadow_mesh.tres" id="9_tvoq5"]
+[ext_resource type="Material" uid="uid://dsbtlaoq5i0fh" path="res://recursos/tres/mapa/surfaces/surface_pasto.tres" id="1_hjf08"]
+[ext_resource type="Material" uid="uid://bu1m5nestr7m2" path="res://recursos/tres/mapa/surfaces/surface_calle.tres" id="2_47x47"]
+[ext_resource type="Material" uid="uid://dlmw25r254wva" path="res://recursos/tres/mapa/surfaces/surface_lineas_calle.tres" id="3_phpk1"]
+[ext_resource type="Material" uid="uid://b00ca3mqjcexs" path="res://recursos/tres/mapa/surfaces/surface_calle_costado.tres" id="4_1iqs2"]
+[ext_resource type="Material" uid="uid://bce7ecr4pxyt5" path="res://recursos/tres/mapa/surfaces/surface_pasto_2.tres" id="5_ix2kb"]
+[ext_resource type="Material" uid="uid://dfcu25ipvr45b" path="res://recursos/tres/mapa/surfaces/surface_madera.tres" id="6_bdfsf"]
+[ext_resource type="Material" uid="uid://chbxgo1m7co80" path="res://recursos/tres/mapa/surfaces/surface_piedra.tres" id="7_yl05c"]
+[ext_resource type="Material" uid="uid://comy7dibmbijd" path="res://recursos/tres/mapa/surfaces/surface_peidra_2.tres" id="8_p7b1y"]
+[ext_resource type="ArrayMesh" uid="uid://c7xeghdkeob0m" path="res://recursos/tres/mapa/modelo/shadow_mesh.tres" id="9_tvoq5"]
 
 [resource]
 resource_name = "planotexturas_Plane"

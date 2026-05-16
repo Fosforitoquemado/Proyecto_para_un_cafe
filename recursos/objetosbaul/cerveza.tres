@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://puc6tekvwi35"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_cdpt3"]
+[ext_resource type="PackedScene" uid="uid://clumjkwpctxru" path="res://scenes/ObjetosBaul/cerveza.tscn" id="1_p852p"]
+
+[resource]
+script = ExtResource("1_cdpt3")
+nombre = "Cerveza"
+escena = ExtResource("1_p852p")
+tamanio = "mediano"
+legal = true
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

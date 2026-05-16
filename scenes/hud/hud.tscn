@@ -23,13 +23,14 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul")]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("4_bluaa")
 autos_label = NodePath("Hud_Principal/Autos")
 fallos_label = NodePath("Hud_Principal/Fallos")
@@ -450,6 +451,7 @@ text = "Inspeccion_volver
 metadata/_edit_use_anchors_ = true
 
 [node name="fov_slider" type="HSlider" parent="Inspeccion_menu" unique_id=1837691495]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.026909722

@@ -7,6 +7,8 @@ extends Node
 @export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
 @export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
 @export var colores:ColoresResource = preload("res://recursos/colores/colores.tres")
+@export var objetosbaullegales:ObjetoArrayResource = preload("res://recursos/objetosbaularray/legales.tres")
+@export var objetosbaulilegales:ObjetoArrayResource = preload("res://recursos/objetosbaularray/ilegales.tres")
 
 var auto_data: Dictionary
 var auto_ilegal: bool = false
@@ -27,7 +29,6 @@ func generate_modelo_cedula(probabilidad):
 		auto_ilegal = true
 		print("Modelo de la cedula es fake❌: ",modelo_)
 		return modelo_
-
 func generate_papel_patente(probabilidad):
 	var patente = auto_data["patente"]
 	if Utils.chance(probabilidad):
@@ -211,6 +212,127 @@ func generate_color_papel(probabilidad):
 		var num = Utils.random_excluding(0,colores.dictionary.size() - 1,color)
 		#print("Color del papel es fake❌")
 		return num
+func generate_objetos_baul(probabilidad,probabilidad_legal):
+	var objeto = auto_data["objeto_baul_info"]
+	var num_objeto = objeto["num_objeto"]
+	var nombre
+	#probabilidad de que no tenga un objeto
+	if Utils.chance(probabilidad):
+		#no se genera objeto
+		
+		print("No hay objeto en el baul📦")
+		#print("El objeto del baul es verdadero✅: ",objeto_)
+		return null
+	else:
+		var cantidaddeobjetos = randi_range(1,2)
+		print("CANTIDAD OBJETOS",cantidaddeobjetos)
+		#se genera objeto
+		var objeto_1
+		var tamanio_1
+		var objeto_2
+		var tamanio_2
+		for i in range(cantidaddeobjetos):
+			if Utils.chance(probabilidad_legal):
+				var num_objeto_random = randi_range(0,objetosbaullegales.array.size() - 1)
+				if i + 1 == 1:
+					objeto_1 = objetosbaullegales.array[num_objeto_random].escena
+					tamanio_1 = objetosbaullegales.array[num_objeto_random].tamanio
+					nombre = objetosbaullegales.array[num_objeto_random].nombre
+				else:
+					objeto_2 = objetosbaullegales.array[num_objeto_random].escena
+					tamanio_2 = objetosbaullegales.array[num_objeto_random].tamanio
+					nombre = objetosbaullegales.array[num_objeto_random].nombre
+				print("El objeto ",i," del baul es legal📦✅: ",nombre)
+			else:
+				var num_objeto_random = randi_range(0,objetosbaulilegales.array.size() - 1)
+				if i + 1 == 1:
+					objeto_1 = objetosbaulilegales.array[num_objeto_random].escena
+					tamanio_1 = objetosbaulilegales.array[num_objeto_random].tamanio
+					nombre = objetosbaulilegales.array[num_objeto_random].nombre
+				elif i + 1 == 2:
+					objeto_2 = objetosbaulilegales.array[num_objeto_random].escena
+					tamanio_2 = objetosbaulilegales.array[num_objeto_random].tamanio
+					nombre = objetosbaulilegales.array[num_objeto_random].nombre
+				auto_ilegal = true
+				print("AUTO_ILEGAL objeto = TRUE")
+				print("El objeto ",i," del baul es ilegal📦❌: ",nombre)
+		var objeto_info = {
+			"objeto1": objeto_1,
+			"tamanio1": tamanio_1,
+			"objeto2": objeto_2,
+			"tamanio2": tamanio_2,
+			"cantidad": cantidaddeobjetos
+		}
+		return objeto_info
+func generate_objetos_baul2(probabilidad, probabilidad_legal):
+	# Probabilidad de NO generar objetos
+	if Utils.chance(probabilidad):
+		print("No hay objeto en el baul📦")
+		return null
+	var objetos = []
+	# Estado del baúl
+	var hay_objeto_grande = false
+	var cantidad_medianos = 0
+	# Máximo intento de generación
+	var cantidad_intentos = randi_range(1, 2)
+	for i in range(cantidad_intentos):
+		var pool
+		var legal = true
+		# Elegir legal / ilegal
+		if Utils.chance(probabilidad_legal):
+			pool = objetosbaullegales.array
+		else:
+			pool = objetosbaulilegales.array
+			legal = false
+			auto_ilegal = true
+		if pool.is_empty():
+			continue
+		# Filtrar según espacio disponible
+		var pool_filtrada = []
+		for obj in pool:
+			# Si ya hay grande → no entra nada más
+			if hay_objeto_grande:
+				break
+			# Si ya hay 2 medianos → no entra nada más
+			if cantidad_medianos >= 2:
+				break
+			# Si ya hay medianos → bloquear grandes
+			if cantidad_medianos > 0 and obj.tamanio == "grande":
+				continue
+			pool_filtrada.append(obj)
+		# Si no quedó nada válido
+		if pool_filtrada.is_empty():
+			break
+		# Elegir objeto random válido
+		var objeto_random = pool_filtrada.pick_random()
+		var objeto_escena = objeto_random.escena
+		var objeto_tamanio = objeto_random.tamanio
+		var objeto_nombre = objeto_random.nombre
+		# Actualizar estado
+		if objeto_tamanio == "grande":
+			hay_objeto_grande = true
+		elif objeto_tamanio == "mediano":
+			cantidad_medianos += 1
+		# Debug
+		if legal:
+			print("Objeto ", i + 1, " legal📦✅: ", objeto_nombre)
+		else:
+			print("AUTO_ILEGAL objeto = TRUE")
+			print("Objeto ", i + 1, " ilegal📦❌: ", objeto_nombre)
+		# Guardar
+		objetos.append({
+			"objeto": objeto_escena,
+			"tamanio": objeto_tamanio,
+			"nombre": objeto_nombre,
+			"legal": legal
+		})
+		# Si salió grande → terminar
+		if hay_objeto_grande:
+			break
+	return {
+		"cantidad": objetos.size(),
+		"objetos": objetos
+	}
 
 func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
@@ -258,6 +380,13 @@ func _generate_documentos() -> Dictionary:
 		}
 		data.merge(data_licencia)
 	
+	if "objetos_baul" in day.documentos_habilitados:
+		var objeto_info = generate_objetos_baul2(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)
+		var data_baul = {
+		"objeto_info": objeto_info
+		}
+		data.merge(data_baul)
+	
 	var fecha_hoy_string = str(fecha_hoy["dia"],"/",fecha_hoy["mes"],"/",fecha_hoy["anio"])
 	
 	# RESULTADO
@@ -271,4 +400,5 @@ func _generate_documentos() -> Dictionary:
 		print("EL AUTO ES ILEGAL?: ILEGAL ❌🚗")
 	else:
 		print("EL AUTO ES ILEGAL?: LEGAL ✅🚗")
+	#print(data)
 	return data

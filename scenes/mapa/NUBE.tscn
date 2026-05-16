@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkp6ngblq3jcp"]
 
-[ext_resource type="ArrayMesh" uid="uid://cneapweuws1yh" path="res://recursos/nubes/modelo/modelo.tres" id="1_8rxhh"]
+[ext_resource type="ArrayMesh" uid="uid://cneapweuws1yh" path="res://recursos/tres/nubes/modelo/modelo.tres" id="1_8rxhh"]
 
 [node name="NUBES" type="Node3D" unique_id=596915490]
 

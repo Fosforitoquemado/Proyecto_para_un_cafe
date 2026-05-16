@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://i7q40yn2x2n6"
-path="res://.godot/imported/cuerpo.glb-bfd0a50278fb506ebe8fd21397efb898.scn"
+uid="uid://dsboe2gspkiow"
+path="res://.godot/imported/cerveza.glb-aa3ee83932d97238b64e67c1c59513e1.scn"
 
 [deps]
 
-source_file="res://modelos/menu/cuerpo.glb"
-dest_files=["res://.godot/imported/cuerpo.glb-bfd0a50278fb506ebe8fd21397efb898.scn"]
+source_file="res://modelos/objetos baul/cerveza.glb"
+dest_files=["res://.godot/imported/cerveza.glb-aa3ee83932d97238b64e67c1c59513e1.scn"]
 
 [params]
 

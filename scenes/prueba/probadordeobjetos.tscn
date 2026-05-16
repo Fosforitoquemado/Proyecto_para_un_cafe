@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cgkci48xvrdoh"]
+
+[ext_resource type="Script" uid="uid://di0j82mwinxr4" path="res://scripts/prueba/generadordeobjetos.gd" id="1_jdwfk"]
+[ext_resource type="PackedScene" uid="uid://cyn2w1nmhf226" path="res://scenes/autos/senda.tscn" id="3_jdwfk"]
+[ext_resource type="Script" uid="uid://dfbljt6yod44y" path="res://scenes/prueba/camara.gd" id="4_w68xr"]
+
+[node name="Node3D" type="Node3D" unique_id=1676231051]
+script = ExtResource("1_jdwfk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1483442966]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9268011, 0.928499, 0.9331358, 1)
+light_energy = 1.9
+shadow_enabled = true
+directional_shadow_max_distance = 10.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1666263055]
+script = ExtResource("4_w68xr")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1962667575]
+transform = Transform3D(-0.9995635, 0, 0.029544022, 0.0142352, 0.87626463, 0.48161983, -0.025888382, 0.48183015, -0.87588215, 0, 1.2343935, -1.8606077)
+
+[node name="Button" type="Button" parent="." unique_id=654817668]
+anchors_preset = -1
+anchor_right = 0.14409722
+anchor_bottom = 0.14660494
+mouse_filter = 1
+text = "abrirbaul"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="." unique_id=224209040]
+anchors_preset = -1
+anchor_left = 0.1623264
+anchor_top = 0.0030864198
+anchor_right = 0.3142361
+anchor_bottom = 0.14197531
+mouse_filter = 1
+text = "cerrarbaul"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=723713808]
+anchors_preset = -1
+anchor_left = 0.8098958
+anchor_top = 0.41820988
+anchor_right = 0.9401042
+anchor_bottom = 0.5123457
+mouse_filter = 1
+placeholder_text = "num del item"
+caret_blink = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="." unique_id=1660838999]
+anchors_preset = -1
+anchor_left = 0.5625
+anchor_top = 0.0061728396
+anchor_right = 0.7152778
+anchor_bottom = 0.14197531
+text = "random"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="." unique_id=1005813296]
+anchors_preset = -1
+anchor_left = 0.8237847
+anchor_top = 0.5694444
+anchor_right = 0.9244792
+anchor_bottom = 0.63271606
+offset_top = 3.0517578e-05
+text = "generar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Button" parent="." unique_id=787831368]
+anchors_preset = -1
+anchor_left = 0.8472222
+anchor_top = 0.66358024
+anchor_right = 0.8975694
+anchor_bottom = 0.71141976
+text = "borrar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="Button" parent="." unique_id=177114609]
+anchors_preset = -1
+anchor_left = 0.9079861
+anchor_top = 0.012345679
+anchor_right = 0.9904514
+anchor_bottom = 0.06635802
+text = "salir"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=2048462502]
+anchors_preset = -1
+anchor_left = 0.8203125
+anchor_top = 0.3580247
+anchor_right = 0.8550347
+anchor_bottom = 0.3935185
+text = "MAX:"
+metadata/_edit_use_anchors_ = true
+
+[node name="armazon" parent="." unique_id=288335695 instance=ExtResource("3_jdwfk")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="text_set" from="TextEdit" to="." method="_on_text_edit_text_set"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]

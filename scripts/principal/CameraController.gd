@@ -24,6 +24,9 @@ func ver_escritorio(pos):
 	camera.rotation = Vector3(deg_to_rad(-90),deg_to_rad(90),0)
 	camera.position = pos
 	camera.fov = 40
-	
+func ver_baul(pos,rot):
+	camera.rotation = rot#Vector3(0,deg_to_rad(180),0)
+	camera.position = pos
+	camera.fov = 75
 func update_fov(value):
 	camera.fov = 75 - value

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AutoResource" format=3 uid="uid://luba3ny5cmt4"]
 
 [ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_4u5yb"]
-[ext_resource type="PackedScene" uid="uid://cyn2w1nmhf226" path="res://scenes/autos/sedan.tscn" id="1_tkc1r"]
+[ext_resource type="PackedScene" uid="uid://cyn2w1nmhf226" path="res://scenes/autos/senda.tscn" id="1_tkc1r"]
 
 [resource]
 script = ExtResource("1_4u5yb")

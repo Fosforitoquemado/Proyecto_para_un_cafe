@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://0oldcl6oabm0"]
+
+[ext_resource type="Texture2D" uid="uid://dmbdm65kuaaoj" path="res://texture/hud/vignett/New Piskel.png" id="1_5gbg6"]
+[ext_resource type="Script" uid="uid://c00gm2xjvlty5" path="res://scripts/prueba/vignette.gd" id="2_bo3a4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gbg6"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(0, 0, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo3a4"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(180, 0, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sofhn"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(0, 100, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g74xc"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(180, 100, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8vrg"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(0, 200, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rd08"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(180, 200, 180, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awdtn"]
+atlas = ExtResource("1_5gbg6")
+region = Rect2(0, 300, 180, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awdtn"]
+animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_5gbg6")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_bo3a4")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_sofhn")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_g74xc")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_w8vrg")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_4rd08")
+}, {
+"duration": 3.2,
+"texture": SubResource("AtlasTexture_awdtn")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control" unique_id=1260335730]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="." unique_id=1796114348]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=275400043]
+modulate = Color(1, 1, 1, 0.3254902)
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_awdtn")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 6
+frame_progress = 1.0
+script = ExtResource("2_bo3a4")
+
+[connection signal="animation_finished" from="Control/AnimatedSprite2D" to="Control/AnimatedSprite2D" method="_on_animation_finished"]

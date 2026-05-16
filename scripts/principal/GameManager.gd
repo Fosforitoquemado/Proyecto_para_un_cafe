@@ -15,6 +15,7 @@ var auto_dupe
 var auto_data: Dictionary
 
 func _ready():
+	
 	var textura_cursor = load("res://texture/hud/otros/puntero.png")
 	var savedata = SaveLoad.contents_to_save
 	dinero_player = savedata.values()[1]
@@ -83,13 +84,15 @@ func sumar_auto():
 
 func check_estado():
 	if fallos >= max_fallos:
+		reset()
+		print("fallos",fallos,"max_fallos",max_fallos)
 		get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
-		fallos = 0
 	elif autos_pasados >= max_autos:
+		reset()
 		SaveLoad.contents_to_save["dinero"] = dinero_player
 		var daymanager = get_tree().get_first_node_in_group("DayManager")
 		daymanager.sumar_dia()
 		SaveLoad.contents_to_save["day"] = daymanager.dia_actual
 		SaveLoad._save()
+		print("fallos",fallos,"max_fallos",max_fallos)
 		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
-		autos_pasados = 0

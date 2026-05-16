@@ -658,6 +658,9 @@ cache/0/100/0/underline_position = 0.0
 cache/0/100/0/underline_thickness = 0.0
 cache/0/100/0/scale = 1.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_wxim7"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="armazon" type="MeshInstance3D" unique_id=923935965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 mesh = SubResource("ArrayMesh_acx4d")
@@ -704,6 +707,9 @@ text = "PBY 786"
 
 [node name="camara_patente_atras" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D/patente_atras" unique_id=1550342710]
 transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.6777312e-07, 0, -1.1111112, -6.699338e-07, 0.235641, 4.4367676)
+
+[node name="camara_baul" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D/patente_atras" unique_id=2135438032]
+transform = Transform3D(-1.1111112, 1.6940659e-21, 1.6777322e-07, -2.5410988e-21, 1.1111118, 1.5146129e-28, -1.6777322e-07, -2.6251956e-28, -1.1111112, -2.871434e-07, 0.8750453, 1.9016628)
 
 [node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=1259575106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16965435, 0.017146885, 0.1393432)
@@ -771,3 +777,24 @@ volume_db = -5.714
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_pkwky")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21494737, -1.0228076)
+
+[node name="nodo_baul_grande" type="Node3D" parent="." unique_id=1228191099]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -4.7683716e-07, 0.039804816, -0.8668861)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_grande" unique_id=628782699]
+visible = false
+mesh = SubResource("BoxMesh_wxim7")
+
+[node name="nodo_baul_mediano_izq" type="Node3D" parent="." unique_id=750965039]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, 0.2, 0.04, -0.867)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_izq" unique_id=368485755]
+visible = false
+mesh = SubResource("BoxMesh_wxim7")
+
+[node name="nodo_baul_mediano_der" type="Node3D" parent="." unique_id=1916269408]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -0.2, 0.04, -0.867)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=811201481]
+visible = false
+mesh = SubResource("BoxMesh_wxim7")

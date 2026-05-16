@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="16_yc10j"]
 [ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="17_jscy8"]
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="17_muem4"]
+[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="18_jscy8"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="18_y6deb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
@@ -100,6 +101,13 @@ animations = [{
 
 [node name="Main" type="Node3D" unique_id=320117741]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=172885002]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9268011, 0.928499, 0.9331358, 1)
+light_energy = 1.3
+shadow_enabled = true
+directional_shadow_max_distance = 24.5
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030609384]
 environment = SubResource("Environment_0xm2m")
 
@@ -128,10 +136,6 @@ sprite_frames = SubResource("SpriteFrames_eb6dy")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/SubViewportContainer/SubViewport/carnet_" unique_id=81878420]
 stream = ExtResource("3_choun")
 volume_db = 10.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=633950107]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1234503639]
 transform = Transform3D(0.18840982, 0, 0.9820905, 0, 1, 0, -0.9820905, 0, 0.18840982, 1.8, 0.7, 1.5)
@@ -163,14 +167,10 @@ sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
 [node name="DayManager" type="Node" parent="." unique_id=1435178026 groups=["DayManager"]]
 script = ExtResource("13_0ld40")
-dias = Array[ExtResource("14_gqmmt")]([ExtResource("15_yc10j"), ExtResource("16_yc10j"), ExtResource("17_jscy8")])
+dias = Array[ExtResource("14_gqmmt")]([ExtResource("15_yc10j"), ExtResource("16_yc10j"), ExtResource("17_jscy8"), ExtResource("18_jscy8")])
 
 [node name="AutoGenerator" type="Node" parent="." unique_id=1534333920]
 script = ExtResource("12_trceg")
-Colors = null
-autos = null
-nombres = null
-apellidos = null
 
 [node name="DocumentosGenerator" type="Node" parent="." unique_id=190448855]
 script = ExtResource("16_jbj1t")

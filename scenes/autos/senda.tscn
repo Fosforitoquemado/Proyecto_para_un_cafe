@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://cyn2w1nmhf226"]
 
-[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_042bu"]
-[ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_2qx2l"]
-[ext_resource type="Animation" uid="uid://ddj0kfkrtyjnx" path="res://recursos/animaciones/sedan/abrir_baul_senda.res" id="2_6q88j"]
-[ext_resource type="Animation" uid="uid://bvq4xjeypq36o" path="res://recursos/animaciones/sedan/cerrar_baul_senda.res" id="3_j0u8r"]
-[ext_resource type="Animation" uid="uid://cpmpmofpyayls" path="res://recursos/animaciones/sedan/ida_sedan.res" id="4_nct47"]
-[ext_resource type="Animation" uid="uid://bo1y6p0l8dmkp" path="res://recursos/animaciones/sedan/llegada_sedan.res" id="5_yqo8r"]
+[ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_yk4uj"]
+[ext_resource type="Animation" uid="uid://ddj0kfkrtyjnx" path="res://recursos/animaciones/sedan/abrir_baul_senda.res" id="2_qh0bn"]
+[ext_resource type="Animation" uid="uid://bvq4xjeypq36o" path="res://recursos/animaciones/sedan/cerrar_baul_senda.res" id="3_381td"]
+[ext_resource type="Animation" uid="uid://cpmpmofpyayls" path="res://recursos/animaciones/sedan/ida_sedan.res" id="4_yxh2x"]
+[ext_resource type="Animation" uid="uid://bo1y6p0l8dmkp" path="res://recursos/animaciones/sedan/llegada_sedan.res" id="5_3c6oy"]
+[ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_0dcif"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u5sf"]
 resource_name = "carroceria"
@@ -253,10 +253,10 @@ shadow_mesh = SubResource("ArrayMesh_me7hd")
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_147sc"]
 _data = {
-&"abrir_baul": ExtResource("2_6q88j"),
-&"cerrar_baul": ExtResource("3_j0u8r"),
-&"ida": ExtResource("4_nct47"),
-&"llegada": ExtResource("5_yqo8r")
+&"abrir_baul": ExtResource("2_qh0bn"),
+&"cerrar_baul": ExtResource("3_381td"),
+&"ida": ExtResource("4_yxh2x"),
+&"llegada": ExtResource("5_3c6oy")
 }
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l22fg"]
@@ -722,10 +722,13 @@ cache/0/100/0/underline_position = 0.0
 cache/0/100/0/underline_thickness = 0.0
 cache/0/100/0/scale = 1.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_cnjjv"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="armazon" type="MeshInstance3D" unique_id=288335695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 mesh = SubResource("ArrayMesh_omo5c")
-script = ExtResource("1_042bu")
+script = ExtResource("1_yk4uj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=133867579]
 libraries/ = SubResource("AnimationLibrary_147sc")
@@ -791,6 +794,9 @@ text = "PBY 786"
 [node name="camara_patente_atras" type="Node3D" parent="patente_atras" unique_id=332167869]
 transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.6777312e-07, 0, -1.1111112, -6.699338e-07, 0.235641, 4.4367676)
 
+[node name="camara_baul" type="Node3D" parent="patente_atras" unique_id=344199882]
+transform = Transform3D(-1.1111112, 3.950894e-08, -8.873853e-08, 0, 1.0150504, 0.45192957, 9.713642e-08, 0.45192957, -1.0150504, -1.99277e-07, 1.8236659, 1.3197479)
+
 [node name="VTV" type="Sprite3D" parent="." unique_id=238825068]
 transform = Transform3D(0.0049999384, -2.4792462e-05, -1.7221182e-06, 1.6823793e-05, 0.0031215781, 0.0039058246, -1.8291852e-05, -0.003905782, 0.0031216228, 0.30247942, 0.35666093, 0.26978704)
 visible = false
@@ -812,5 +818,26 @@ outline_size = 6
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=244103647]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
 
-[node name="Humo" parent="." unique_id=952818553 instance=ExtResource("2_2qx2l")]
+[node name="Humo" parent="." unique_id=952818553 instance=ExtResource("6_0dcif")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21180955, -1.133213)
+
+[node name="nodo_baul_grande" type="Node3D" parent="." unique_id=2022780775]
+transform = Transform3D(1, 0, -4.2632564e-14, -8.561534e-15, 0.97962785, -0.20082146, 4.1764047e-14, 0.20082146, 0.97962785, -4.7683716e-07, 0.03272581, -0.90525204)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_grande" unique_id=1797728003]
+visible = false
+mesh = SubResource("BoxMesh_cnjjv")
+
+[node name="nodo_baul_mediano_izq" type="Node3D" parent="." unique_id=324692839]
+transform = Transform3D(1, 0, -4.2632564e-14, -8.561534e-15, 0.97962785, -0.20082146, 4.1764047e-14, 0.20082146, 0.97962785, 0.2, 0.033, -0.905)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_izq" unique_id=1093976174]
+visible = false
+mesh = SubResource("BoxMesh_cnjjv")
+
+[node name="nodo_baul_mediano_der" type="Node3D" parent="." unique_id=210160113]
+transform = Transform3D(1, 0, -4.2632564e-14, -8.561534e-15, 0.97962785, -0.20082146, 4.1764047e-14, 0.20082146, 0.97962785, -0.2, 0.033, -0.905)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=706283688]
+visible = false
+mesh = SubResource("BoxMesh_cnjjv")

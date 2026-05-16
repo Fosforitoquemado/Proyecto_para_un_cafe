@@ -5,6 +5,7 @@ extends Node
 @export var autos:AutoArrayResource = preload("res://recursos/ArrayAutos/TODOS.tres")
 @export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
 @export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
+@export var objetosbaul:ObjetoArrayResource = preload("res://recursos/objetosbaularray/todos.tres")
 
 #elementos auto
 
@@ -30,7 +31,6 @@ func generate_modelo():
 		"num_auto": num_auto_random,
 		"nombre":  nombre,
 	}
-
 	return modelo_info
 func generate_color():
 	var num_color = randi_range(0,colors.size() - 1)
@@ -99,6 +99,17 @@ func generate_dinero_coima() -> float:
 	var dinero_coima = randf_range(10,200)
 	dinero_coima = snapped(dinero_coima, 0.01)
 	return dinero_coima
+func generate_objetos_baul():
+	var num_objeto_random = randi_range(0,objetosbaul.array.size() - 1)
+	var resource = objetosbaul.array[num_objeto_random]
+	var objeto = resource.escena
+	var nombre = resource.nombre
+	var modelo_info = {
+		"objeto": objeto,
+		"num_objeto": num_objeto_random,
+		"nombre":  nombre,
+	}
+	return modelo_info
 
 func _generate_auto() -> Dictionary:
 	var data = {}
@@ -113,6 +124,7 @@ func _generate_auto() -> Dictionary:
 	var licencia = generate_numero_licencia()
 	var nacimiento = generate_fecha_nacimiento()
 	var dinero_coima = generate_dinero_coima()
+	var objeto_baul_info = generate_objetos_baul()
 	
 	# DOCUMENTOS
 	var fecha_cedula = generate_fecha_vencimiento()
@@ -130,9 +142,10 @@ func _generate_auto() -> Dictionary:
 		"numero_licencia": licencia,
 		"fecha_cedula": fecha_cedula,
 		"fecha_licencia": fecha_licencia,
-		"dinero_coima": dinero_coima
+		"dinero_coima": dinero_coima,
+		"objeto_baul_info": objeto_baul_info
 	}
 	_auto_data = data
-	print(_auto_data)
+	#print(_auto_data)
 	print("AUTO GENERADO")
 	return data

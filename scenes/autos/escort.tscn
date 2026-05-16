@@ -731,6 +731,9 @@ cache/0/100/0/underline_position = 0.0
 cache/0/100/0/underline_thickness = 0.0
 cache/0/100/0/scale = 1.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_psyxk"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="armazon" type="MeshInstance3D" unique_id=231392578]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0)
 mesh = SubResource("ArrayMesh_ncup3")
@@ -800,6 +803,9 @@ text = "PBY 786"
 [node name="camara_patente_atras" type="Node3D" parent="patente_atras" unique_id=197824432]
 transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.6777312e-07, 0, -1.1111112, -6.699338e-07, 0.235641, 4.4367676)
 
+[node name="camara_baul" type="Node3D" parent="patente_atras" unique_id=731363333]
+transform = Transform3D(-1.1111102, 2.5140729e-08, -9.382654e-08, 1.4210855e-14, 1.0732499, 0.28757647, 9.713625e-08, 0.28757647, -1.0732499, -2.6066743e-07, 1.8281417, 1.721425)
+
 [node name="VTV" type="Sprite3D" parent="." unique_id=272029585]
 transform = Transform3D(0.006, 0, 0, 0, 0.0042266906, 0.004258531, 0, -0.004258531, 0.0042266906, 0.35033014, 0.27222756, 0.21522318)
 visible = false
@@ -838,3 +844,24 @@ volume_db = -21.429
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("2_uxfpg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.30402023, -0.3321274, -1.1636277)
+
+[node name="nodo_baul_grande" type="Node3D" parent="." unique_id=964813887]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -4.7683716e-07, -0.11040059, -0.9292313)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_grande" unique_id=1320991041]
+visible = false
+mesh = SubResource("BoxMesh_psyxk")
+
+[node name="nodo_baul_mediano_izq" type="Node3D" parent="." unique_id=1968338036]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, 0.2, -0.11, -0.929)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_izq" unique_id=1053022979]
+visible = false
+mesh = SubResource("BoxMesh_psyxk")
+
+[node name="nodo_baul_mediano_der" type="Node3D" parent="." unique_id=1103900665]
+transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -0.2, -0.11, -0.929)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=1482590738]
+visible = false
+mesh = SubResource("BoxMesh_psyxk")

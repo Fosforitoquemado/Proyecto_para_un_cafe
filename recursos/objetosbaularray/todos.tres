@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ObjetoArrayResource" format=3 uid="uid://4nxc7te5siqs"]
+
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_gyw0u"]
+[ext_resource type="Script" uid="uid://bbpm18tctkjtt" path="res://recursos/Scripts/ObjetoArrayResource.gd" id="2_e2i6h"]
+[ext_resource type="Resource" uid="uid://ddijkwbd50ee" path="res://recursos/objetosbaul/bici.tres" id="2_l5d2b"]
+[ext_resource type="Resource" uid="uid://bbdq1co13vy3b" path="res://recursos/objetosbaul/cadaver.tres" id="3_tlalq"]
+[ext_resource type="Resource" uid="uid://by6cbmq8buwsd" path="res://recursos/objetosbaul/cajaherramientas.tres" id="4_uwmbn"]
+[ext_resource type="Resource" uid="uid://puc6tekvwi35" path="res://recursos/objetosbaul/cerveza.tres" id="5_milr6"]
+[ext_resource type="Resource" uid="uid://dp162j7ub0w4f" path="res://recursos/objetosbaul/maleta.tres" id="6_xt68l"]
+
+[resource]
+script = ExtResource("2_e2i6h")
+array = Array[ExtResource("1_gyw0u")]([ExtResource("2_l5d2b"), ExtResource("3_tlalq"), ExtResource("4_uwmbn"), ExtResource("5_milr6"), ExtResource("6_xt68l")])
+metadata/_custom_type_script = "uid://bbpm18tctkjtt"
