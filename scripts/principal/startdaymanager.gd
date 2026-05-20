@@ -1,0 +1,48 @@
+extends Node
+
+@onready var camera_controller: Node = $"../CameraController"
+@onready var hud: UIManager = $"../HUD"
+
+@onready var tele: Node3D = $"../tele"
+@onready var tele_camara: Node3D = $"../tele/nodo_camara"
+
+@onready var day_manager: Node = $"../DayManager"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)
+	camera_controller.update_fov(60)
+	
+	var dia = day_manager.get_day()
+	
+	# CONTROL DE SEGURIDAD: Validamos que dialogostele no sea Nil y tenga la propiedad 'array'
+	if dia.dialogostele == null:
+		print_rich("[color=yellow]⚠️ ADVERTENCIA: El día actual no tiene ningún recurso de diálogos asignado en 'dialogostele'.[/color]")
+		hud.alternar_empezar_boton()
+		return
+	if not "array" in dia.dialogostele:
+		print_rich("[color=orange]⚠️ ADVERTENCIA: 'dialogostele' existe, pero no contiene una variable llamada 'array'.[/color]")
+		hud.alternar_empezar_boton()
+		return
+	# Si pasa los controles, el bucle corre sin peligro de crash
+	await get_tree().create_timer(1).timeout
+	
+	tele.prender_tele()
+	
+	await get_tree().create_timer(1).timeout
+	
+	for i in range(dia.dialogostele.array.size()):
+		var dialogo_actual = dia.dialogostele.array[i]
+		
+		tele.mostrar_mensaje(
+			dialogo_actual["texto"],
+			dialogo_actual["tamanio_font"],
+			dialogo_actual["tamanio_final"],
+			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_velocidad"]
+		)
+		
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 0.7
+		await get_tree().create_timer(tiempo_espera).timeout
+	tele.apagar_tele()
+	hud.alternar_empezar_boton()

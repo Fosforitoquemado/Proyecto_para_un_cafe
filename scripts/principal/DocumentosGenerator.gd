@@ -212,59 +212,7 @@ func generate_color_papel(probabilidad):
 		var num = Utils.random_excluding(0,colores.dictionary.size() - 1,color)
 		#print("Color del papel es fake❌")
 		return num
-func generate_objetos_baul(probabilidad,probabilidad_legal):
-	var objeto = auto_data["objeto_baul_info"]
-	var num_objeto = objeto["num_objeto"]
-	var nombre
-	#probabilidad de que no tenga un objeto
-	if Utils.chance(probabilidad):
-		#no se genera objeto
-		
-		print("No hay objeto en el baul📦")
-		#print("El objeto del baul es verdadero✅: ",objeto_)
-		return null
-	else:
-		var cantidaddeobjetos = randi_range(1,2)
-		print("CANTIDAD OBJETOS",cantidaddeobjetos)
-		#se genera objeto
-		var objeto_1
-		var tamanio_1
-		var objeto_2
-		var tamanio_2
-		for i in range(cantidaddeobjetos):
-			if Utils.chance(probabilidad_legal):
-				var num_objeto_random = randi_range(0,objetosbaullegales.array.size() - 1)
-				if i + 1 == 1:
-					objeto_1 = objetosbaullegales.array[num_objeto_random].escena
-					tamanio_1 = objetosbaullegales.array[num_objeto_random].tamanio
-					nombre = objetosbaullegales.array[num_objeto_random].nombre
-				else:
-					objeto_2 = objetosbaullegales.array[num_objeto_random].escena
-					tamanio_2 = objetosbaullegales.array[num_objeto_random].tamanio
-					nombre = objetosbaullegales.array[num_objeto_random].nombre
-				print("El objeto ",i," del baul es legal📦✅: ",nombre)
-			else:
-				var num_objeto_random = randi_range(0,objetosbaulilegales.array.size() - 1)
-				if i + 1 == 1:
-					objeto_1 = objetosbaulilegales.array[num_objeto_random].escena
-					tamanio_1 = objetosbaulilegales.array[num_objeto_random].tamanio
-					nombre = objetosbaulilegales.array[num_objeto_random].nombre
-				elif i + 1 == 2:
-					objeto_2 = objetosbaulilegales.array[num_objeto_random].escena
-					tamanio_2 = objetosbaulilegales.array[num_objeto_random].tamanio
-					nombre = objetosbaulilegales.array[num_objeto_random].nombre
-				auto_ilegal = true
-				print("AUTO_ILEGAL objeto = TRUE")
-				print("El objeto ",i," del baul es ilegal📦❌: ",nombre)
-		var objeto_info = {
-			"objeto1": objeto_1,
-			"tamanio1": tamanio_1,
-			"objeto2": objeto_2,
-			"tamanio2": tamanio_2,
-			"cantidad": cantidaddeobjetos
-		}
-		return objeto_info
-func generate_objetos_baul2(probabilidad, probabilidad_legal):
+func generate_objetos_baul(probabilidad, probabilidad_legal):
 	# Probabilidad de NO generar objetos
 	if Utils.chance(probabilidad):
 		print("No hay objeto en el baul📦")
@@ -385,7 +333,7 @@ func _generate_documentos() -> Dictionary:
 		data.merge(data_licencia)
 	
 	if "objetos_baul" in day.documentos_habilitados:
-		var objeto_info = generate_objetos_baul2(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)
+		var objeto_info = generate_objetos_baul(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)
 		var data_baul = {
 		"objeto_info": objeto_info
 		}

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://b1timtd6e0bm4"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_r0kj4"]
+
+[resource]
+script = ExtResource("1_r0kj4")
+texto = "te deseo suerte"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

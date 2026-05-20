@@ -39,24 +39,6 @@ func mostrar_datos():
 	GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
 	GameManager.auto_dupe.find_child("patente_atras").visible = true
 	
-	#if "objetos_baul" in day.documentos_habilitados and datos_documentos["objeto_info"] != null:
-		#var ocupado = false
-		#for i in range(datos_documentos["objeto_info"]["cantidad"]):
-			#print(i)
-			#var objeto_dupe = datos_documentos["objeto_info"][str("objeto",i + 1)].instantiate()
-			#var objeto_tamanio = datos_documentos["objeto_info"][str("tamanio",i + 1)]
-			##var nombre = objeto_tamanio["nombre"]
-		#
-			#GameManager.auto_dupe.add_child(objeto_dupe)
-			#if objeto_tamanio == "grande":
-				#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_grande").position
-			#elif objeto_tamanio == "mediano":
-				#if ocupado == false:
-					##if Utils.chance(50):
-					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_izq").position
-					#ocupado = true
-				#else:
-					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_der").position
 	if "objetos_baul" in day.documentos_habilitados and datos_documentos["objeto_info"] != null:
 		var ocupado = false
 		for objeto_data in datos_documentos["objeto_info"]["objetos"]:
@@ -66,17 +48,14 @@ func mostrar_datos():
 			if objeto_tamanio == "grande":
 				GameManager.auto_dupe.find_child("nodo_baul_grande").add_child(objeto_dupe)
 				objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
-				#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_grande").position
 			elif objeto_tamanio == "mediano":
 				if ocupado == false:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_izq").add_child(objeto_dupe)
 					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
-					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_izq").position
 					ocupado = true
 				else:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_der").add_child(objeto_dupe)
 					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
-					#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul_mediano_der").position
 	#cedula
 	if "cedula" in day.documentos_habilitados:
 		cedula.visible = true

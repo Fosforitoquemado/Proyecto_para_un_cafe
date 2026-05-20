@@ -1,0 +1,21 @@
+[gd_resource type="World3D" format=3 uid="uid://dgis22wra3jxq"]
+
+[sub_resource type="Environment" id="Environment_wbyja"]
+background_mode = 1
+background_color = Color(0.17288291, 0.13588244, 0.10925677, 1)
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_color = Color(0.94701326, 0.93119156, 0.88833475, 1)
+ambient_light_sky_contribution = 0.75
+ambient_light_energy = 3.85
+ssao_enabled = true
+ssao_intensity = 16.0
+ssao_detail = 0.0
+ssao_horizon = 0.0
+ssao_sharpness = 1.0
+adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 0.65
+
+[resource]
+environment = SubResource("Environment_wbyja")

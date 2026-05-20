@@ -21,3 +21,5 @@ class_name DayResource
 @export var tiempo_limite:float = 120.0
 
 @export var dinero_objetivo:int = 100
+
+@export var dialogostele:DialogosTeleResourceArray

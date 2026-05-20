@@ -110,8 +110,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8u5de")
 
+[sub_resource type="Animation" id="Animation_f83p8"]
+length = 0.001
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqf01"]
 _data = {
+&"RESET": SubResource("Animation_f83p8"),
 &"abrir_baul": ExtResource("1_uqf01"),
 &"cerrar_baul": ExtResource("2_f83p8"),
 &"ida": ExtResource("3_uqf01"),
@@ -893,7 +897,7 @@ text = "PBY 786"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3682022, 4.9357834)
 
 [node name="patente_atras" type="Label3D" parent="." unique_id=773899374]
-transform = Transform3D(-0.2, 0, -3.019916e-08, 0, 0.2, 0, 3.019916e-08, 0, -0.2, 0, 0.068629324, -1.1036011)
+transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 0, 0.066378355, -1.1036011)
 visible = false
 text = "PBY 786"
 

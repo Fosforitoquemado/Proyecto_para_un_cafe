@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://er58frah3o2u"]
+
+[ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="1_0l0sd"]
+[ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="2_2u5u6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(0, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m1a1"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(315, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iioc1"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(630, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_567j1"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(945, 230, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsgyl"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(0, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjjd2"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(315, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vblv"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(630, 475, 315, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccb21"]
+atlas = ExtResource("1_0l0sd")
+region = Rect2(945, 475, 315, 245)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tnes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m1a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iioc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_567j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsgyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjjd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vblv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccb21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="tele_control" type="Control" unique_id=1602817524]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1226929746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0l0sd")
+expand_mode = 1
+
+[node name="carnet_" type="AnimatedSprite2D" parent="." unique_id=1609032558]
+position = Vector2(651.19, 398.29)
+scale = Vector2(4.092, 2.289)
+sprite_frames = SubResource("SpriteFrames_6tnes")
+autoplay = "default"
+frame_progress = 0.68162733
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="carnet_" unique_id=1220541752]
+stream = ExtResource("2_2u5u6")
+volume_db = 10.0

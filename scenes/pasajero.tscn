@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://chal0714mc20w"]
 
-[ext_resource type="Script" uid="uid://df8wo01v0i8j8" path="res://scripts/mapa/pasajero.gd" id="1_g2e5i"]
 [ext_resource type="Texture2D" uid="uid://ce3a8w7m53rda" path="res://scenes/mapa2/Captura de pantalla 2026-04-25 045119.png" id="1_tlwg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt0v5"]
@@ -19,7 +18,6 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="Pasajero" type="MeshInstance3D" unique_id=1818023385]
 material_override = SubResource("StandardMaterial3D_jt0v5")
 mesh = SubResource("CapsuleMesh_g2e5i")
-script = ExtResource("1_g2e5i")
 
 [node name="nodo_papeles" type="Node3D" parent="." unique_id=1512298452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21805438, 0.20125982, 0)

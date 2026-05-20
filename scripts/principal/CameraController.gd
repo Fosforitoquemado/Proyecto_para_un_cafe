@@ -29,4 +29,4 @@ func ver_baul(pos,rot):
 	camera.position = pos
 	camera.fov = 75
 func update_fov(value):
-	camera.fov = 75 - value
+	camera.fov = value

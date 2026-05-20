@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="17_muem4"]
 [ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="18_jscy8"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="18_y6deb"]
+[ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="22_jscy8"]
+[ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="23_pm3ni"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_tefeu")
@@ -168,6 +170,9 @@ script = ExtResource("16_jbj1t")
 script = ExtResource("17_muem4")
 camera = NodePath("../Camera3D")
 
+[node name="tele" parent="." unique_id=1611947647 instance=ExtResource("22_jscy8")]
+transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.9368853, 0.39584702, 1.6672673)
+
 [node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
 
 [node name="Pajaros" type="AudioStreamPlayer" parent="Sonidos" unique_id=310620138]
@@ -187,3 +192,6 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("12_eb6dy")
 metadata/_edit_use_anchors_ = true
+
+[node name="Startdaymanager" type="Node" parent="." unique_id=1394303216]
+script = ExtResource("23_pm3ni")

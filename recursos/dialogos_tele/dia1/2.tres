@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://ctytnmtaoxrdt"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_ixbnp"]
+
+[resource]
+script = ExtResource("1_ixbnp")
+texto = "En este dia tan frio podemos ver que van a pasar muchos autos"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

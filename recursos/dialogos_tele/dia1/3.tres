@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://pnvqsgc4k7al"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_0fklj"]
+
+[resource]
+script = ExtResource("1_0fklj")
+texto = "solo por hoy tendras que revisar la vtv de los autos"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

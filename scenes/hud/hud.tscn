@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://feb8um1tupx7" path="res://texture/hud/botones/para el cafe arte (1)-artguru.png" id="1_8vblv"]
 [ext_resource type="Script" uid="uid://doeaxarf0e3yg" path="res://scripts/hud/fov_slider.gd" id="2_0bx4p"]
+[ext_resource type="Texture2D" uid="uid://cx52j75k5h8jf" path="res://texture/hud/botones/para el cafe arte (2)-artguru.png" id="2_567j1"]
 [ext_resource type="Script" uid="uid://ckesx38dvngdo" path="res://scripts/hud/timer.gd" id="2_cgeww"]
 [ext_resource type="Texture2D" uid="uid://ck5yedg224tvd" path="res://texture/hud/botones/17-artguru.png" id="3_ccb21"]
 [ext_resource type="Script" uid="uid://b48i6uqlyd7bh" path="res://scripts/principal/UI.gd" id="4_bluaa"]
@@ -23,7 +24,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "empezar", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "siguiente", "empezar", "hud_elementos", "Star_Day", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,16 +33,43 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_bluaa")
-autos_label = NodePath("Hud_Principal/Autos")
-fallos_label = NodePath("Hud_Principal/Fallos")
-dinero_label = NodePath("Hud_Principal/Dinero")
-empezar = NodePath("Hud_Principal/Empezar")
+autos_label = NodePath("Hud_elementos/Autos")
+fallos_label = NodePath("Hud_elementos/Fallos")
+dinero_label = NodePath("Hud_elementos/Dinero")
+siguiente = NodePath("Hud_elementos/Siguiente")
+empezar = NodePath("Start_day/Empezar")
+hud_elementos = NodePath("Hud_elementos")
+Star_Day = NodePath("Start_day")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")
-timer = NodePath("Hud_Principal/Timer")
+timer = NodePath("Hud_elementos/Timer")
 boton_baul = NodePath("Inspeccion_menu/Baul_menu/abrir_baul")
 
-[node name="Hud_Principal" type="Control" parent="." unique_id=265028241]
+[node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_quit" type="Button" parent="Hud_principal" unique_id=1523233337]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19965278
+anchor_top = 0.0030864198
+anchor_right = 0.32552084
+anchor_bottom = 0.074074075
+grow_horizontal = 2
+grow_vertical = 2
+text = "CERRAR EL JUEGO
+"
+script = ExtResource("20_ccb21")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hud_elementos" type="Control" parent="." unique_id=265028241]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +79,7 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Empezar" type="TextureRect" parent="Hud_Principal" unique_id=273918986]
+[node name="Siguiente" type="TextureRect" parent="Hud_elementos" unique_id=273918986]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.41666666
@@ -60,11 +88,11 @@ anchor_right = 0.5729167
 anchor_bottom = 0.30864197
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_8vblv")
+texture = ExtResource("2_567j1")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Hud_Principal/Empezar" unique_id=710470278]
+[node name="Button_siguiente" type="Button" parent="Hud_elementos/Siguiente" unique_id=710470278]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -79,7 +107,7 @@ metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Fallos" type="Label" parent="Hud_Principal" unique_id=279618866]
+[node name="Fallos" type="Label" parent="Hud_elementos" unique_id=279618866]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.9140625
@@ -91,7 +119,7 @@ text = "Fallos: "
 label_settings = SubResource("LabelSettings_5ysmq")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Hud_Principal/Fallos" unique_id=1467160755]
+[node name="Panel" type="Panel" parent="Hud_elementos/Fallos" unique_id=1467160755]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -99,7 +127,7 @@ anchor_right = 0.99270076
 anchor_bottom = 1.0238096
 metadata/_edit_use_anchors_ = true
 
-[node name="Autos" type="Label" parent="Hud_Principal" unique_id=750532179]
+[node name="Autos" type="Label" parent="Hud_elementos" unique_id=750532179]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.08680555
@@ -108,7 +136,7 @@ text = "Autos: "
 label_settings = SubResource("LabelSettings_6fi6k")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Hud_Principal/Autos" unique_id=248829330]
+[node name="Panel" type="Panel" parent="Hud_elementos/Autos" unique_id=248829330]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -117,7 +145,7 @@ anchor_right = 1.05
 anchor_bottom = 0.9285714
 metadata/_edit_use_anchors_ = true
 
-[node name="Dinero" type="Label" parent="Hud_Principal" unique_id=816752989]
+[node name="Dinero" type="Label" parent="Hud_elementos" unique_id=816752989]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.067106485
@@ -127,7 +155,7 @@ text = "Dinero: "
 label_settings = SubResource("LabelSettings_6fi6k")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Hud_Principal/Dinero" unique_id=1968482304]
+[node name="Panel" type="Panel" parent="Hud_elementos/Dinero" unique_id=1968482304]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -136,7 +164,7 @@ anchor_right = 0.9787234
 anchor_bottom = 0.9285714
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="ProgressBar" parent="Hud_Principal" unique_id=397951695]
+[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695]
 modulate = Color(18.892157, 15.898927, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 1
@@ -150,19 +178,40 @@ show_percentage = false
 script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button_quit" type="Button" parent="Hud_Principal" unique_id=1523233337]
-z_index = 1
+[node name="Start_day" type="Control" parent="." unique_id=233837449]
+visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.19965278
-anchor_top = 0.0030864198
-anchor_right = 0.32552084
-anchor_bottom = 0.063271604
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CERRAR EL JUEGO
-"
-script = ExtResource("20_ccb21")
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Empezar" type="TextureRect" parent="Start_day" unique_id=1819987408]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7387153
+anchor_top = 0.26234567
+anchor_right = 0.8949653
+anchor_bottom = 0.41666666
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_8vblv")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="button_empezar_dia" type="Button" parent="Start_day/Empezar" unique_id=1813715222]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.16
+anchor_right = 0.9111111
+anchor_bottom = 0.85
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
@@ -500,9 +549,9 @@ mouse_filter = 1
 text = "abrir baul"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Hud_Principal/Empezar/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Hud_Principal/Empezar/Button" to="Hud_Principal/Empezar/Button" method="_on_pressed"]
-[connection signal="pressed" from="Hud_Principal/Button_quit" to="Hud_Principal/Button_quit" method="_on_pressed"]
+[connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
+[connection signal="pressed" from="Hud_elementos/Siguiente/Button_siguiente" to="." method="_on_button_siguiente_pressed"]
+[connection signal="pressed" from="Start_day/Empezar/button_empezar_dia" to="." method="_on_button_empezar_dia_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Multar/no" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="." method="_on_mate_pressed"]

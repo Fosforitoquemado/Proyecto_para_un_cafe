@@ -13,9 +13,12 @@ class_name UIManager
 @export var fallos_label: Label
 @export var dinero_label: Label
 
+@export var siguiente: TextureRect
 @export var empezar: TextureRect
 
 #elementos HUD
+@export var hud_elementos: Control
+@export var Star_Day: Control
 @export var inspeccion_menu: Control
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
@@ -35,14 +38,13 @@ func update_ui():
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
 	dinero_label.text = str("Dinero: ",GameManager.dinero_player)
 
-func _on_button_pressed() -> void:
+func _on_button_siguiente_pressed() -> void:
 	if auto_on == false:
 		auto_on = true
 		timer._start_timer()
 		GameManager.generar_auto()
 		yes_no_menu.visible = true
-		empezar.visible = false
-		CameraController.vista_normal()
+		siguiente.visible = false
 		
 	pass # Replace with function body.
 
@@ -62,7 +64,7 @@ func _on_yes_pressed() -> void:
 			print("BIEN✅✅")
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
-		empezar.visible = true
+		siguiente.visible = true
 		update_ui()
 		GameManager.check_estado()
 		active = false
@@ -80,7 +82,7 @@ func _on_no_pressed() -> void:
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
 		yes_no_menu.visible = false
-		empezar.visible = true
+		siguiente.visible = true
 		update_ui()
 		GameManager.check_estado()
 		active = false
@@ -99,7 +101,7 @@ func _on_coimear_pressed() -> void:
 		GameManager.auto_dupe.queue_free()
 		auto_on = false
 		yes_no_menu.visible = false
-		empezar.visible = true
+		siguiente.visible = true
 		update_ui()
 		GameManager.check_estado()
 		active = false
@@ -171,7 +173,6 @@ func _on_inspeccion_compu_pressed() -> void:
 	pcsistema.toggle_use()
 	pass # Replace with function body.
 
-
 func _on_mate_pressed() -> void:
 	mate._on_mate_pressed()
 	pass # Replace with function body.
@@ -196,4 +197,14 @@ func _on_abrir_baul_pressed() -> void:
 		baul_activo = false
 	elif baul_abierto == true and not baul_activo:
 		cerrar_baul()
+	pass # Replace with function body.
+
+func alternar_empezar_boton():
+	Star_Day.visible = true
+
+func _on_button_empezar_dia_pressed() -> void:
+	Star_Day.visible = false
+	hud_elementos.visible = true
+	CameraController.vista_normal()
+	
 	pass # Replace with function body.
