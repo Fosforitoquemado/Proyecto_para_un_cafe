@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://cyttcdvxivw0e"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_bkeik"]
+
+[resource]
+script = ExtResource("1_bkeik")
+texto = "A partir de hoy, queda explícitamente prohibido circular sin posesión de la cédula física en regla."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

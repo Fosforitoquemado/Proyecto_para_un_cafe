@@ -105,8 +105,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 mesh = SubResource("ArrayMesh_u5p28")
 
 [node name="Decal" type="Decal" parent="." unique_id=381998063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022882435, -0.0038452148, -0.04534909)
-size = Vector3(0.3728264, 0.3, 0.8734131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022882435, -0.012356564, 0.026701001)
+size = Vector3(0.3728264, 0.21257934, 0.7081108)
 texture_albedo = ExtResource("1_envwd")
 albedo_mix = 0.3
 upper_fade = 0.9415021

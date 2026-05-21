@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://cibuqt22dw1qt"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_ckiai"]
+
+[resource]
+script = ExtResource("1_ckiai")
+texto = "A partir de un siniestro automovilístico reciente, se han implementado nuevas normas."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

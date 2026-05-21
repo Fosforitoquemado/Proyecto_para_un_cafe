@@ -6,6 +6,7 @@
 [ext_resource type="Animation" uid="uid://cpmpmofpyayls" path="res://recursos/animaciones/sedan/ida_sedan.res" id="4_yxh2x"]
 [ext_resource type="Animation" uid="uid://bo1y6p0l8dmkp" path="res://recursos/animaciones/sedan/llegada_sedan.res" id="5_3c6oy"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_0dcif"]
+[ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_qh0bn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u5sf"]
 resource_name = "carroceria"
@@ -680,9 +681,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_48qix")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ptxb6"]
-load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
-
 [sub_resource type="FontFile" id="FontFile_emxkw"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -800,7 +798,7 @@ transform = Transform3D(-1.1111112, 3.950894e-08, -8.873853e-08, 0, 1.0150504, 0
 [node name="VTV" type="Sprite3D" parent="." unique_id=238825068]
 transform = Transform3D(0.0049999384, -2.4792462e-05, -1.7221182e-06, 1.6823793e-05, 0.0031215781, 0.0039058246, -1.8291852e-05, -0.003905782, 0.0031216228, 0.30247942, 0.35666093, 0.26978704)
 visible = false
-texture = SubResource("CompressedTexture2D_ptxb6")
+texture = ExtResource("6_qh0bn")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=2131636777]
 transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)

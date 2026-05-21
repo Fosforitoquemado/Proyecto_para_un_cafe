@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://diqe4fm6twcab"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_rmaw4"]
+
+[resource]
+script = ExtResource("1_rmaw4")
+texto = "A partir de hoy, todo policía rutero de guardia dispone del permiso judicial para la inspección de baúles."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

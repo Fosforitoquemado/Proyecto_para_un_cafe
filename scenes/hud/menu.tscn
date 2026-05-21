@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/hud/button.gd" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/hud/button_quit.gd" id="2_is2bi"]
-[ext_resource type="Texture2D" uid="uid://cjasgwsnefn7e" path="res://recursos/tres/menu/menu.tres" id="2_y5i5w"]
 [ext_resource type="Script" uid="uid://ca30f1lvbv66f" path="res://scripts/hud/comprar.gd" id="3_tvaa7"]
+[ext_resource type="Texture2D" uid="uid://cg3d5g6buur2s" path="res://texture/hud/menu/para el cafe.png" id="4_fsiy4"]
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
 [ext_resource type="Script" uid="uid://cku8mudlg2owy" path="res://scripts/hud/label_dia_menu.gd" id="5_o6fka"]
 [ext_resource type="Script" uid="uid://p1iwwi6740bc" path="res://scripts/hud/reset_file.gd" id="6_tqpoc"]
@@ -143,7 +143,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_y5i5w")
+texture = ExtResource("4_fsiy4")
 expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127613637]

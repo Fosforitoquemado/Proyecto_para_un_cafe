@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/147/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
 [ext_resource type="Animation" uid="uid://ct6l6t55ugxft" path="res://recursos/animaciones/147/llegada_147.res" id="4_f83p8"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_s8a8r"]
+[ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_7udq0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruqxq"]
 resource_name = "base auto"
@@ -787,9 +788,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2cv8p")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f83p8"]
-load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
-
 [sub_resource type="FontFile" id="FontFile_7udq0"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -865,11 +863,11 @@ mesh = SubResource("ArrayMesh_7qb1i")
 mesh = SubResource("ArrayMesh_etls2")
 
 [node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=1076959561]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36302245, -0.20163095, 0.7086496)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, 0.36302245, -0.20163095, 0.7086496)
 mesh = SubResource("ArrayMesh_kx4m8")
 
 [node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=1531605656]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.36668354, -0.20163095, 0.69581735)
+transform = Transform3D(-1, 3.051007e-09, -8.736952e-08, 0, -0.99939084, -0.03489945, -8.742278e-08, -0.03489945, 0.99939084, -0.36668354, -0.20163095, 0.69581735)
 mesh = SubResource("ArrayMesh_tfesp")
 
 [node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=1893485636]
@@ -877,7 +875,7 @@ transform = Transform3D(-1, 0, -1.2795156e-06, 0, 1, 0, 1.2795156e-06, 0, -1, -0
 mesh = SubResource("ArrayMesh_utqec")
 
 [node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=2122736091]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36302245, -0.20163095, -0.70745546)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, 0.36302245, -0.20163095, -0.70745546)
 mesh = SubResource("ArrayMesh_y68sl")
 
 [node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=1928384860]
@@ -910,7 +908,7 @@ transform = Transform3D(-1.1111112, -7.7324735e-08, 6.5058515e-08, -1.7929391e-0
 [node name="VTV" type="Sprite3D" parent="." unique_id=1870316015]
 transform = Transform3D(0.005, 0, 0, 0, 0.0035222424, 0.0035487753, 0, -0.0035487753, 0.0035222424, 0.30247942, 0.41655487, 0.24880123)
 visible = false
-texture = SubResource("CompressedTexture2D_f83p8")
+texture = ExtResource("6_7udq0")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=419444261]
 transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)
@@ -942,6 +940,7 @@ volume_db = -7.143
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_s8a8r")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21494737, -1.0228076)
+emitting = false
 
 [node name="nodo_baul_grande" type="Node3D" parent="." unique_id=1574346284]
 transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -4.7683716e-07, -0.017205834, -0.8668861)

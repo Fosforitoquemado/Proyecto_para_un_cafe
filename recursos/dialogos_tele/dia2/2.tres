@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://dq478ml6dosft"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_85wrr"]
+
+[resource]
+script = ExtResource("1_85wrr")
+texto = "Para nuestros oyentes de Ruta, tenemos un aviso muy importante."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

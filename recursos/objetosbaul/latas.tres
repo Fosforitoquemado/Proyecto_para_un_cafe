@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://puc6tekvwi35"]
+
+[ext_resource type="PackedScene" uid="uid://clumjkwpctxru" path="res://scenes/ObjetosBaul/cerveza.tscn" id="1_anxlr"]
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="2_r5pbf"]
+
+[resource]
+script = ExtResource("2_r5pbf")
+nombre = "Latas"
+escena = ExtResource("1_anxlr")
+tamanio = "mediano"
+legal = true
+max_rotacion = 50
+min_rotacion = -50
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

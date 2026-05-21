@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://ce30x8p8no0oq"]
+
+[ext_resource type="PackedScene" uid="uid://dho5p75p13gn3" path="res://scenes/ObjetosBaul/kekelmes.tscn" id="1_su5de"]
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="1_uqyab"]
+
+[resource]
+script = ExtResource("1_uqyab")
+nombre = "Kekelmes"
+escena = ExtResource("1_su5de")
+tamanio = "mediano"
+legal = true
+max_rotacion = 45
+min_rotacion = -45
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

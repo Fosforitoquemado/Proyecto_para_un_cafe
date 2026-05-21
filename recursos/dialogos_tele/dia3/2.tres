@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://mcdparekfbft"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_ttea5"]
+
+[resource]
+script = ExtResource("1_ttea5")
+texto = "Hoy traemos nuevas noticias para la policía rutera."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

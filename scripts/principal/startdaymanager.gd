@@ -42,7 +42,7 @@ func _ready() -> void:
 			dialogo_actual["tiempo_velocidad"]
 		)
 		
-		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 0.7
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
 		await get_tree().create_timer(tiempo_espera).timeout
 	tele.apagar_tele()
 	hud.alternar_empezar_boton()

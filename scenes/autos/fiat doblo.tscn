@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="3_keeyj"]
 [ext_resource type="Animation" uid="uid://bhjjicoo4akib" path="res://recursos/animaciones/doblo/cerrar_baul_doblo.res" id="3_kgap0"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_c2ixj"]
+[ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_kgap0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6sbx"]
 resource_name = "base auto"
@@ -693,9 +694,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cnuh1")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8hei3"]
-load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
-
 [sub_resource type="FontFile" id="FontFile_8n7vc"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -831,7 +829,7 @@ transform = Transform3D(-1.1111112, 1.0153521e-08, -9.660434e-08, 0, 1.1050245, 
 [node name="VTV" type="Sprite3D" parent="." unique_id=742390643]
 transform = Transform3D(0.005, 0, 0, 0, 0.0030897786, 0.003931064, 0, -0.003931064, 0.0030897786, 0.27344072, 0.2755261, 0.3622072)
 visible = false
-texture = SubResource("CompressedTexture2D_8hei3")
+texture = ExtResource("6_kgap0")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=1853800331]
 transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)

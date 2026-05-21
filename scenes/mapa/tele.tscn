@@ -5,6 +5,7 @@
 [ext_resource type="World3D" uid="uid://dgis22wra3jxq" path="res://recursos/world3d_tele/new_world_3d_tele.tres" id="2_2dhgm"]
 [ext_resource type="PackedScene" uid="uid://er58frah3o2u" path="res://scenes/hud/tele_control.tscn" id="2_wbyja"]
 [ext_resource type="Shader" uid="uid://brfbus46lkn84" path="res://shaders/tele.gdshader" id="2_wep0l"]
+[ext_resource type="PackedScene" uid="uid://74d2y0jwqh5u" path="res://modelos/EXTERIOR/tele/banquito/mesita 2.glb" id="6_clvex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ka8gi"]
 resource_name = "tele"
@@ -366,7 +367,7 @@ transform = Transform3D(1, 0, 0, 0, 1.7853729, 0, 0, 0, 1, -10.235348, -0.308639
 mesh = SubResource("ArrayMesh_wep0l")
 
 [node name="Nodo_mensaje" type="Node3D" parent="." unique_id=128722860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3926866, 2.7070625, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3926866, 2.5010326, 0)
 
 [node name="mensaje" type="Label3D" parent="Nodo_mensaje" unique_id=233519604]
 visible = false
@@ -410,3 +411,6 @@ autowrap_mode = 2
 
 [node name="nodo_camara" type="Node3D" parent="." unique_id=1338139779]
 transform = Transform3D(-4.3711385e-08, 0.08715574, 0.9961946, 0, 0.9961947, -0.08715573, -0.9999999, -3.8096983e-09, -4.354505e-08, 4.1180415, 1.387683, 0)
+
+[node name="mesita 2" parent="." unique_id=1247178929 instance=ExtResource("6_clvex")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -2.618154, 0)

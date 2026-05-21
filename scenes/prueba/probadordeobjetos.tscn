@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgkci48xvrdoh"]
 
 [ext_resource type="Script" uid="uid://di0j82mwinxr4" path="res://scripts/prueba/generadordeobjetos.gd" id="1_jdwfk"]
-[ext_resource type="PackedScene" uid="uid://cyn2w1nmhf226" path="res://scenes/autos/senda.tscn" id="3_jdwfk"]
+[ext_resource type="PackedScene" uid="uid://dw2k67wgqodhe" path="res://scenes/autos/c_4_lunge.tscn" id="3_jdwfk"]
 [ext_resource type="Script" uid="uid://dfbljt6yod44y" path="res://scenes/prueba/camara.gd" id="4_w68xr"]
 
 [node name="Node3D" type="Node3D" unique_id=1676231051]
@@ -95,7 +95,7 @@ anchor_bottom = 0.3935185
 text = "MAX:"
 metadata/_edit_use_anchors_ = true
 
-[node name="armazon" parent="." unique_id=288335695 instance=ExtResource("3_jdwfk")]
+[node name="armazon" parent="." unique_id=1855353460 instance=ExtResource("3_jdwfk")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

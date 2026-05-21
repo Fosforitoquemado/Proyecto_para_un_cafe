@@ -12,7 +12,7 @@ extends Node3D
 var tiempo = 0.0
 
 var random = false
-var objeto_dupe
+var objetos = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -75,20 +75,26 @@ func _on_button_4_pressed() -> void:
 		var nombre = objetosbaul.array[num_objeto_random].nombre
 	
 		var objeto_tamanio = objetosbaul.array[num_objeto_random].tamanio
-		objeto_dupe = objeto.instantiate()
+		var objeto_dupe = objeto.instantiate()
+		objetos.append(objeto_dupe)
 	
 		print("El objeto se genero📦✅: ",nombre)
 		if objeto_tamanio == "grande":
 			nodo_baul_grande.add_child(objeto_dupe)
 		else:
 			nodo_baul_mediano.add_child(objeto_dupe)
-		print("El objeto se borro❌📦: ",nombre)
 	pass # Replace with function body.
 
 
 func _on_button_5_pressed() -> void:
-	if objeto_dupe:
-		objeto_dupe.queue_free()
+	for i in objetos:
+		i.queue_free()
+		print(objetos)
+		print("El objeto se borro❌📦")
+	objetos.clear()
+	print(objetos)
+		#objetos.all(queue_free)
+		
 	pass # Replace with function body.
 
 

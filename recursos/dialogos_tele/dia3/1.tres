@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://c65oje6l02553"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_mfmo5"]
+
+[resource]
+script = ExtResource("1_mfmo5")
+texto = "¡Buenos días, Argentina!"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

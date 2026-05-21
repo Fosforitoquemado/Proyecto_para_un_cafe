@@ -124,6 +124,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bs722")
 
 [node name="cerveza" type="Node3D" unique_id=17197570]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Cylinder_005" type="MeshInstance3D" parent="." unique_id=1718063391]
 mesh = SubResource("ArrayMesh_i7sam")

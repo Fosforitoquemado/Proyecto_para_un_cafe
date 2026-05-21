@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7puwtl2r4jl1"
 path.s3tc="res://.godot/imported/planotexturas_Image_1.png-34aa7c7576bb9e1ee2b9573d6c47c954.s3tc.ctex"
+path.etc2="res://.godot/imported/planotexturas_Image_1.png-34aa7c7576bb9e1ee2b9573d6c47c954.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://modelos/EXTERIOR/mapa/planotexturas_Image_1.png"
-dest_files=["res://.godot/imported/planotexturas_Image_1.png-34aa7c7576bb9e1ee2b9573d6c47c954.s3tc.ctex"]
+dest_files=["res://.godot/imported/planotexturas_Image_1.png-34aa7c7576bb9e1ee2b9573d6c47c954.s3tc.ctex", "res://.godot/imported/planotexturas_Image_1.png-34aa7c7576bb9e1ee2b9573d6c47c954.etc2.ctex"]
 
 [params]
 

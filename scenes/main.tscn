@@ -171,7 +171,7 @@ script = ExtResource("17_muem4")
 camera = NodePath("../Camera3D")
 
 [node name="tele" parent="." unique_id=1611947647 instance=ExtResource("22_jscy8")]
-transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.9368853, 0.39584702, 1.6672673)
+transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.9368853, 0.3010159, 1.6672673)
 
 [node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
 

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://batiefeevddnf"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_eima4"]
+
+[resource]
+script = ExtResource("1_eima4")
+texto = "¡Hasta la próxima!"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

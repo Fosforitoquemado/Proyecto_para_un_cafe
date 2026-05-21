@@ -6,6 +6,7 @@
 [ext_resource type="Animation" uid="uid://cq8307xoktfjk" path="res://recursos/animaciones/escort/llegada_escort.res" id="2_psyxk"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_uxfpg"]
 [ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/Escort/escort-bocina.wav" id="3_he68n"]
+[ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="4_it8kq"]
 [ext_resource type="AudioStream" uid="uid://cclvoq6g8bxwe" path="res://sonidos/Escort/escort-arranque.wav" id="4_psyxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maq55"]
@@ -689,9 +690,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_np8r0")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8nrfj"]
-load_path = "res://.godot/imported/5.png-da54092ab6a95a0beed3b0494535f8d3.s3tc.ctex"
-
 [sub_resource type="FontFile" id="FontFile_icrp4"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -809,7 +807,7 @@ transform = Transform3D(-1.1111102, 2.5140729e-08, -9.382654e-08, 1.4210855e-14,
 [node name="VTV" type="Sprite3D" parent="." unique_id=272029585]
 transform = Transform3D(0.006, 0, 0, 0, 0.0042266906, 0.004258531, 0, -0.004258531, 0.0042266906, 0.35033014, 0.27222756, 0.21522318)
 visible = false
-texture = SubResource("CompressedTexture2D_8nrfj")
+texture = ExtResource("4_it8kq")
 
 [node name="mes_VTV" type="Label3D" parent="VTV" unique_id=643916281]
 transform = Transform3D(0.99999887, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.4, -0.5, 0)

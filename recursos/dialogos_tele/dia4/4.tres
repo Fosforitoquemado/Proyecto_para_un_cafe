@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://bk117ju8dd732"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_v08dp"]
+
+[resource]
+script = ExtResource("1_v08dp")
+texto = "Este fue el consenso acordado en la Cámara de Diputados y será la normativa vigente a partir de ahora para una Argentina más segura."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"
