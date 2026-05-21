@@ -148,7 +148,7 @@ expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127613637]
 stream = ExtResource("4_is2bi")
-volume_db = -36.529
+volume_db = -28.257
 autoplay = true
 
 [node name="reset_file" type="Button" parent="." unique_id=1328065503]

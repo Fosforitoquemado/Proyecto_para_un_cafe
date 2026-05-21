@@ -7,6 +7,8 @@
 [ext_resource type="Animation" uid="uid://do15ph2c6n6nn" path="res://recursos/animaciones/F-100/llegada_F-100.res" id="4_lxeu1"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="5_k653v"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_lxeu1"]
+[ext_resource type="AudioStream" uid="uid://sn268bygnv2w" path="res://sonidos/F100/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav" id="7_f48eq"]
+[ext_resource type="AudioStream" uid="uid://b1vo3vvkdub7c" path="res://sonidos/F100/F100 Yendose.wav" id="8_kgl5m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdv7t"]
 resource_name = "Material.005"
@@ -223,8 +225,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k653v")
 
+[sub_resource type="Animation" id="Animation_y7olc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sonidos_F-100/Yendose F100:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ca8db"]
 _data = {
+&"RESET": SubResource("Animation_y7olc"),
 &"abrir_baul": ExtResource("1_nfpid"),
 &"cerrar_baul": ExtResource("2_k653v"),
 &"ida": ExtResource("3_ca8db"),
@@ -775,7 +793,7 @@ cache/0/100/0/scale = 1.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="armazon" type="MeshInstance3D" unique_id=345719991]
-transform = Transform3D(-0.9999993, -0.0005335718, 0.0011212792, -0.0005241276, 0.99996454, 0.008406187, -0.0011257246, 0.008405593, -0.9999641, 0, 0.36, 0)
+transform = Transform3D(-0.9999993, -0.0005335718, 0.0011212792, -0.0005241276, 0.99996454, 0.008406187, -0.0011257246, 0.008405593, -0.9999641, 0, 0.29, 0.034587264)
 mesh = SubResource("ArrayMesh_clibm")
 script = ExtResource("1_ca8db")
 
@@ -788,7 +806,7 @@ transform = Transform3D(-0.99920917, 2.27883e-08, 0.039760474, -0.003767014, 0.9
 mesh = SubResource("ArrayMesh_ft37w")
 
 [node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=1621675107]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.3788604, -0.07139456, -0.7844056)
+transform = Transform3D(0.9999998, 0, 0, 0, -0.99939084, -0.034899443, 0, 0.03489945, -0.99939066, 0.3788604, -0.07139456, -0.7844056)
 mesh = SubResource("ArrayMesh_xv4mb")
 
 [node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=812836162]
@@ -796,11 +814,11 @@ transform = Transform3D(1, -2.8194336e-11, -1.1641532e-10, -3.0013325e-11, 1, 0,
 mesh = SubResource("ArrayMesh_7eiuw")
 
 [node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=1848355031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38884178, -0.08456379, 0.69751924)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, -0.38884178, -0.08456379, 0.69751924)
 mesh = SubResource("ArrayMesh_8fywf")
 
 [node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=1759004109]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38853896, -0.074734, -0.77936006)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, -0.38853896, -0.074734, -0.77936006)
 mesh = SubResource("ArrayMesh_uyl3r")
 
 [node name="Armature" type="Node3D" parent="." unique_id=1085956008]
@@ -862,6 +880,15 @@ transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506,
 
 [node name="sonidos_F-100" type="Node3D" parent="." unique_id=1592500916]
 transform = Transform3D(-0.99999917, -0.00052412756, -0.0011257245, -0.0005335718, 0.99996454, 0.008405593, 0.001121279, 0.008406187, -0.999964, 0.00016261579, -0.31024894, -0.0026081032)
+
+[node name="Andando F100" type="AudioStreamPlayer3D" parent="sonidos_F-100" unique_id=711456340]
+stream = ExtResource("7_f48eq")
+volume_db = -20.589
+autoplay = true
+
+[node name="Yendose F100" type="AudioStreamPlayer3D" parent="sonidos_F-100" unique_id=282554857]
+stream = ExtResource("8_kgl5m")
+volume_db = -10.667
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("5_k653v")]
 transform = Transform3D(-0.49999958, -0.00026206378, -0.00056286226, -0.0002667859, 0.49998227, 0.0042027966, 0.0005606395, 0.0042030937, -0.499982, 0.32909897, -0.14478219, 1.1902573)

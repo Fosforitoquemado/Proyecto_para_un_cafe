@@ -7,6 +7,8 @@
 [ext_resource type="Animation" uid="uid://bo1y6p0l8dmkp" path="res://recursos/animaciones/sedan/llegada_sedan.res" id="5_3c6oy"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_0dcif"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_qh0bn"]
+[ext_resource type="AudioStream" uid="uid://ch276mgi76h7q" path="res://sonidos/Senda/senda acelerando.wav" id="7_381td"]
+[ext_resource type="AudioStream" uid="uid://bq454yoqv25gg" path="res://sonidos/Senda/Senda llegando.wav" id="7_yxh2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u5sf"]
 resource_name = "carroceria"
@@ -252,8 +254,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_me7hd")
 
+[sub_resource type="Animation" id="Animation_yxh2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sonido senda/Bocina:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_147sc"]
 _data = {
+&"RESET": SubResource("Animation_yxh2x"),
 &"abrir_baul": ExtResource("2_qh0bn"),
 &"cerrar_baul": ExtResource("3_381td"),
 &"ida": ExtResource("4_yxh2x"),
@@ -724,7 +742,7 @@ cache/0/100/0/scale = 1.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="armazon" type="MeshInstance3D" unique_id=288335695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 20)
 mesh = SubResource("ArrayMesh_omo5c")
 script = ExtResource("1_yk4uj")
 
@@ -753,11 +771,11 @@ skeleton = NodePath("..")
 mesh = SubResource("ArrayMesh_v3ay7")
 
 [node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=751891683]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.40513045, -0.20808633, 0.74470687)
+transform = Transform3D(-1, 3.051007e-09, -8.736952e-08, 0, -0.99939084, -0.03489945, -8.742278e-08, -0.03489945, 0.99939084, -0.40513045, -0.20808633, 0.74470687)
 mesh = SubResource("ArrayMesh_v0u3c")
 
 [node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=669718279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40692216, -0.2080861, 0.7584929)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, 0.40692216, -0.2080861, 0.7584929)
 mesh = SubResource("ArrayMesh_nnpej")
 
 [node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=739322540]
@@ -765,7 +783,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40071988, -0.2080861, -0.6
 mesh = SubResource("ArrayMesh_iu8tq")
 
 [node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=396491707]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3996248, -0.2080861, -0.6402593)
+transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, 0.3996248, -0.2080861, -0.6402593)
 mesh = SubResource("ArrayMesh_nw55v")
 
 [node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=531771161]
@@ -815,6 +833,18 @@ outline_size = 6
 
 [node name="camara_VTV" type="Node3D" parent="VTV" unique_id=244103647]
 transform = Transform3D(33.333324, 0, 0, 0, 23.481611, -23.658506, 0, 23.658506, 23.481611, -1.3660355, -34.035645, 40.03882)
+
+[node name="Sonido senda" type="Node3D" parent="." unique_id=1139267640]
+transform = Transform3D(1, -2.910383e-10, 1.891749e-10, -3.783498e-10, 1.0000001, -2.9802322e-08, 5.529728e-10, -2.9802322e-08, 1.0000001, -2.9802322e-08, -2.9802322e-08, 0)
+
+[node name="Andando, motor" type="AudioStreamPlayer3D" parent="Sonido senda" unique_id=1860199652]
+stream = ExtResource("7_yxh2x")
+volume_db = -21.333
+
+[node name="Bocina" type="AudioStreamPlayer3D" parent="Sonido senda" unique_id=1312508522]
+stream = ExtResource("7_381td")
+volume_db = -12.8
+autoplay = true
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("6_0dcif")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21180955, -1.133213)
