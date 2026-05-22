@@ -24,7 +24,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "siguiente", "empezar", "hud_elementos", "Star_Day", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "siguiente", "empezar", "skip_intro", "hud_elementos", "Star_Day_rect", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,8 +38,9 @@ fallos_label = NodePath("Hud_elementos/Fallos")
 dinero_label = NodePath("Hud_elementos/Dinero")
 siguiente = NodePath("Hud_elementos/Siguiente")
 empezar = NodePath("Start_day/Empezar")
+skip_intro = NodePath("Start_day/skip")
 hud_elementos = NodePath("Hud_elementos")
-Star_Day = NodePath("Start_day")
+Star_Day_rect = NodePath("Start_day/Empezar")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")
 timer = NodePath("Hud_elementos/Timer")
@@ -180,7 +181,6 @@ script = ExtResource("2_cgeww")
 metadata/_edit_use_anchors_ = true
 
 [node name="Start_day" type="Control" parent="." unique_id=233837449]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,6 +191,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Empezar" type="TextureRect" parent="Start_day" unique_id=1819987408]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7387153
@@ -213,6 +214,16 @@ anchor_top = 0.16
 anchor_right = 0.9111111
 anchor_bottom = 0.85
 mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="skip" type="Button" parent="Start_day" unique_id=1159546307]
+layout_mode = 0
+anchor_left = 0.9348958
+anchor_top = 0.92746913
+anchor_right = 0.9878472
+anchor_bottom = 0.97993827
+mouse_filter = 1
+text = "skip"
 metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
@@ -553,6 +564,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
 [connection signal="pressed" from="Hud_elementos/Siguiente/Button_siguiente" to="." method="_on_button_siguiente_pressed"]
 [connection signal="pressed" from="Start_day/Empezar/button_empezar_dia" to="." method="_on_button_empezar_dia_pressed"]
+[connection signal="pressed" from="Start_day/skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Multar/no" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="." method="_on_mate_pressed"]

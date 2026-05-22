@@ -8,6 +8,8 @@ extends Node
 
 @onready var day_manager: Node = $"../DayManager"
 
+var skip = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)
@@ -26,12 +28,12 @@ func _ready() -> void:
 		return
 	# Si pasa los controles, el bucle corre sin peligro de crash
 	await get_tree().create_timer(1).timeout
-	
 	tele.prender_tele()
-	
 	await get_tree().create_timer(1).timeout
-	
 	for i in range(dia.dialogostele.array.size()):
+		if skip == true:
+			tele.apagar_tele()
+			return
 		var dialogo_actual = dia.dialogostele.array[i]
 		
 		tele.mostrar_mensaje(
@@ -45,4 +47,5 @@ func _ready() -> void:
 		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
 		await get_tree().create_timer(tiempo_espera).timeout
 	tele.apagar_tele()
-	hud.alternar_empezar_boton()
+	if skip == false:
+		hud.alternar_empezar_boton()

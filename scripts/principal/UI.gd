@@ -4,6 +4,8 @@ class_name UIManager
 @onready var pcsistema: PCStatic = $"../PCSISTEMA"
 
 @onready var CameraController: Node = $"../CameraController"
+@onready var startdaymanager: Node = $"../Startdaymanager"
+
 
 @onready var mate: Node3D = $"../Elementos_mesa/MATE"
 
@@ -15,10 +17,11 @@ class_name UIManager
 
 @export var siguiente: TextureRect
 @export var empezar: TextureRect
+@export var skip_intro: Button
 
 #elementos HUD
 @export var hud_elementos: Control
-@export var Star_Day: Control
+@export var Star_Day_rect: TextureRect
 @export var inspeccion_menu: Control
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
@@ -200,11 +203,19 @@ func _on_abrir_baul_pressed() -> void:
 	pass # Replace with function body.
 
 func alternar_empezar_boton():
-	Star_Day.visible = true
+	Star_Day_rect.visible = true
+	skip_intro.visible = false
 
 func _on_button_empezar_dia_pressed() -> void:
-	Star_Day.visible = false
+	Star_Day_rect.visible = false
 	hud_elementos.visible = true
 	CameraController.vista_normal()
 	
+	pass # Replace with function body.
+
+
+func _on_skip_pressed() -> void:
+	Star_Day_rect.visible = true
+	skip_intro.visible = false
+	startdaymanager.skip = true
 	pass # Replace with function body.
