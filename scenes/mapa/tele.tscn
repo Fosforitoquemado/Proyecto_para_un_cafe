@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="8_xqq20"]
 [ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="9_2k1kc"]
 [ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="10_0kntb"]
+[ext_resource type="AudioStream" uid="uid://b23s6rm0lmrk2" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)5.wav" id="11_2k1kc"]
+[ext_resource type="AudioStream" uid="uid://bpbfhk6mdespo" path="res://sonidos/Tv/despedida/Sonido tele (mp3cut.net)saludo.wav" id="12_0kntb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ka8gi"]
 resource_name = "tele"
@@ -329,12 +331,19 @@ size = Vector2(2, 1)
 font_size = 20
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0l7pc"]
+playback_mode = 1
 random_pitch = 1.1892071
-streams_count = 4
+streams_count = 5
 stream_0/stream = ExtResource("7_8a7rx")
 stream_1/stream = ExtResource("8_xqq20")
 stream_2/stream = ExtResource("9_2k1kc")
 stream_3/stream = ExtResource("10_0kntb")
+stream_4/stream = ExtResource("11_2k1kc")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lyemu"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("12_0kntb")
 
 [node name="tele" type="Node3D" unique_id=1997209396]
 script = ExtResource("1_ue6a8")
@@ -427,5 +436,8 @@ transform = Transform3D(-4.3711385e-08, 0.08715574, 0.9961946, 0, 0.9961947, -0.
 [node name="mesita 2" parent="." unique_id=1247178929 instance=ExtResource("6_clvex")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -2.618154, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1794457830]
+[node name="soniditos" type="AudioStreamPlayer3D" parent="." unique_id=1794457830]
 stream = SubResource("AudioStreamRandomizer_0l7pc")
+
+[node name="despedida" type="AudioStreamPlayer3D" parent="." unique_id=1104475786]
+stream = SubResource("AudioStreamRandomizer_lyemu")

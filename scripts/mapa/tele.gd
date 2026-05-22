@@ -13,7 +13,8 @@ const tamaniolabel = 40
 
 @export var pixels_to_meters: float = 0.005
 
-@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var soniditos: AudioStreamPlayer3D = $soniditos
+@onready var despedida: AudioStreamPlayer3D = $despedida
 
 # 1. Definimos el ancho máximo en píxeles que permitiremos en X
 @export var letters_scale:int = 10
@@ -35,12 +36,14 @@ func prender_tele():
 	var tween = create_tween()
 	tween.tween_property(pantalla.material_overlay,"shader_parameter/global_alpha",0.2,0.15)
 
-func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_velocidad):
+func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_velocidad,array_final):
 	label_mensaje.text = ""
 	label_mensaje.label_settings.font_size = tamanio_font
 	
 	var tween = create_tween()
 	tween.tween_property(label_mensaje.label_settings,"font_size",tamanio_final,tiempo)
+	if array_final == true:
+		despedida.play()
 	for i in range(mensaje.length()):
 		label_mensaje.text += mensaje[i]
 		#if label_mensaje.text.length() * letters_scale < max_width_x:
@@ -56,12 +59,14 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_ve
 			var uno = randi_range(-35,35)
 			var dos = randi_range(-16,16)
 			mesh_instance_3d.rotation = Vector3(deg_to_rad(dos),deg_to_rad(uno),0)
-			audio_stream_player_3d.play()
+			if array_final == false:
+				soniditos.play()
 			#label_mensaje.ajustar_fuente()
 		
 		await  get_tree().create_timer(tiempo_velocidad).timeout
 	
 	print(mensaje)
+	
 	mesh_instance_3d.rotation = Vector3(0,0,0)
 
 func _ready() -> void:

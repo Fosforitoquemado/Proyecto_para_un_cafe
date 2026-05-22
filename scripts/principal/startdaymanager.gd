@@ -35,13 +35,18 @@ func _ready() -> void:
 			tele.apagar_tele()
 			return
 		var dialogo_actual = dia.dialogostele.array[i]
+		var array_final = false
+		if i == dia.dialogostele.array.size() - 1:
+			array_final = true
+		
 		
 		tele.mostrar_mensaje(
 			dialogo_actual["texto"],
 			dialogo_actual["tamanio_font"],
 			dialogo_actual["tamanio_final"],
 			dialogo_actual["tiempo"],
-			dialogo_actual["tiempo_velocidad"]
+			dialogo_actual["tiempo_velocidad"],
+			array_final
 		)
 		
 		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
