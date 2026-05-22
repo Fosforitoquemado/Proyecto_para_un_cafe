@@ -13,6 +13,8 @@ const tamaniolabel = 40
 
 @export var pixels_to_meters: float = 0.005
 
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 # 1. Definimos el ancho máximo en píxeles que permitiremos en X
 @export var letters_scale:int = 10
 @export var max_width_x: float = 400.0
@@ -54,6 +56,7 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_ve
 			var uno = randi_range(-35,35)
 			var dos = randi_range(-16,16)
 			mesh_instance_3d.rotation = Vector3(deg_to_rad(dos),deg_to_rad(uno),0)
+			audio_stream_player_3d.play()
 			#label_mensaje.ajustar_fuente()
 		
 		await  get_tree().create_timer(tiempo_velocidad).timeout
