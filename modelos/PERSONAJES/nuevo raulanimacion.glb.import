@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb8d8vbugii8s"
-path="res://.godot/imported/147raul.glb-a6869e5b2f113fc08963ea495b689a1b.scn"
+uid="uid://bmh2madlyg51d"
+path="res://.godot/imported/nuevo raulanimacion.glb-7aa2dc57f0aadc7bcbfa19846fe0ce91.scn"
 
 [deps]
 
-source_file="res://modelos/AUTOS/147 terminado/147raul.glb"
-dest_files=["res://.godot/imported/147raul.glb-a6869e5b2f113fc08963ea495b689a1b.scn"]
+source_file="res://modelos/PERSONAJES/nuevo raulanimacion.glb"
+dest_files=["res://.godot/imported/nuevo raulanimacion.glb-7aa2dc57f0aadc7bcbfa19846fe0ce91.scn"]
 
 [params]
 
