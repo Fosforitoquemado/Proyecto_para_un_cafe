@@ -793,7 +793,7 @@ cache/0/100/0/scale = 1.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="armazon" type="MeshInstance3D" unique_id=345719991]
-transform = Transform3D(-0.9999993, -0.0005335718, 0.0011212792, -0.0005241276, 0.99996454, 0.008406187, -0.0011257246, 0.008405593, -0.9999641, 0, 0.29, 0.034587264)
+transform = Transform3D(-0.9999992, -0.0005335728, 0.0011213938, -0.0005241277, 0.99996454, 0.008406187, -0.0011258393, 0.008405593, -0.999964, 0, 0.29, 0)
 mesh = SubResource("ArrayMesh_clibm")
 script = ExtResource("1_ca8db")
 
@@ -806,7 +806,7 @@ transform = Transform3D(-0.99920917, 2.27883e-08, 0.039760474, -0.003767014, 0.9
 mesh = SubResource("ArrayMesh_ft37w")
 
 [node name="rueda_delantera_der" type="MeshInstance3D" parent="." unique_id=1621675107]
-transform = Transform3D(0.9999998, 0, 0, 0, -0.99939084, -0.034899443, 0, 0.03489945, -0.99939066, 0.3788604, -0.07139456, -0.7844056)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.3788604, -0.07139456, -0.7844056)
 mesh = SubResource("ArrayMesh_xv4mb")
 
 [node name="rueda_trasera_der" type="MeshInstance3D" parent="." unique_id=812836162]
@@ -814,11 +814,11 @@ transform = Transform3D(1, -2.8194336e-11, -1.1641532e-10, -3.0013325e-11, 1, 0,
 mesh = SubResource("ArrayMesh_7eiuw")
 
 [node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=1848355031]
-transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, -0.38884178, -0.08456379, 0.69751924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38884178, -0.08456379, 0.69751924)
 mesh = SubResource("ArrayMesh_8fywf")
 
 [node name="rueda_delantera_izq" type="MeshInstance3D" parent="." unique_id=1759004109]
-transform = Transform3D(1, 0, 0, 0, -0.99939084, -0.03489945, 0, 0.03489945, -0.99939084, -0.38853896, -0.074734, -0.77936006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38853896, -0.074734, -0.77936006)
 mesh = SubResource("ArrayMesh_uyl3r")
 
 [node name="Armature" type="Node3D" parent="." unique_id=1085956008]
@@ -913,3 +913,6 @@ transform = Transform3D(-0.99999917, -0.00052412756, -0.0011257242, -0.000533572
 [node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=238149553]
 visible = false
 mesh = SubResource("BoxMesh_f48eq")
+
+[node name="nodo_personaje" type="Node3D" parent="." unique_id=1176710499]
+transform = Transform3D(-0.99999857, 0.0017453298, -8.707866e-08, 0.0017450625, 0.99984634, 0.01745241, 3.0547497e-05, 0.017452383, -0.9998478, -0.043812554, 0.1616283, -0.23697002)

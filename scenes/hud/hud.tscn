@@ -24,7 +24,7 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "siguiente", "empezar", "skip_intro", "hud_elementos", "Star_Day_rect", "inspeccion_menu", "yes_no_menu", "timer", "boton_baul") groups=["ui_manager"]]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "siguiente", "empezar", "skip_intro", "hud_elementos", "Star_Day_rect", "inspeccion_menu", "yes_no_menu", "timer", "baul_menu", "boton_baul") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,6 +44,7 @@ Star_Day_rect = NodePath("Start_day/Empezar")
 inspeccion_menu = NodePath("Inspeccion_menu")
 yes_no_menu = NodePath("YES_NO_menu")
 timer = NodePath("Hud_elementos/Timer")
+baul_menu = NodePath("Inspeccion_menu/Baul_menu")
 boton_baul = NodePath("Inspeccion_menu/Baul_menu/abrir_baul")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
@@ -54,19 +55,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Button_quit" type="Button" parent="Hud_principal" unique_id=1523233337]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19965278
-anchor_top = 0.0030864198
-anchor_right = 0.32552084
-anchor_bottom = 0.074074075
+anchor_left = 0.0026041667
+anchor_top = 0.13734567
+anchor_right = 0.12847222
+anchor_bottom = 0.1851852
 grow_horizontal = 2
 grow_vertical = 2
-text = "CERRAR EL JUEGO
-"
+text = "CERRAR EL JUEGO"
 script = ExtResource("20_ccb21")
 metadata/_edit_use_anchors_ = true
 
@@ -437,6 +438,7 @@ text = "Inspeccion_atras
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_compu_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=44192735]
+visible = false
 layout_mode = 0
 anchor_left = 0.8420139
 anchor_top = 0.52469134
@@ -538,6 +540,7 @@ text = "ZOOM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Baul_menu" type="Control" parent="Inspeccion_menu" unique_id=2141576287]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

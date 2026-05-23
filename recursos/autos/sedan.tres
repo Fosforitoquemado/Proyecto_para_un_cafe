@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_4u5yb")
-nombre = "sedan"
+nombre = "senda"
 escena = ExtResource("1_tkc1r")
 metadata/_custom_type_script = "uid://cyy5656frxhf3"

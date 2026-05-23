@@ -58,8 +58,6 @@ func mostrar_datos():
 					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
 	#cedula
 	if "cedula" in day.documentos_habilitados:
-		cedula.visible = true
-	
 		dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
 		pc_control.set_dominio(AutoGenerator._auto_data["patente"])
 		modelo_cedula.text = datos_documentos["modelo_cedula"] #🎫🎫🎫
@@ -69,8 +67,6 @@ func mostrar_datos():
 	
 	#licencia
 	if "licencia" in day.documentos_habilitados:
-		licencia.visible = true
-	
 		numero_licencia.text = datos_documentos["numero_licencia"]#🎫🎫🎫
 		pc_control.set_numero_licencia(AutoGenerator._auto_data["numero_licencia"])
 		nombre_licencia.text = datos_documentos["nombre_licencia"]#🎫🎫🎫
@@ -81,7 +77,29 @@ func mostrar_datos():
 		pc_control.set_fecha_nacimiento(AutoGenerator._auto_data["nacimiento"]["fecha_entera"])
 		vencimiento_licencia.text = datos_documentos["fecha_licencia"]#🎫🎫🎫
 		pc_control.set_fecha_vencimiento(AutoGenerator._auto_data["fecha_licencia"])
+	#papeles en la mano del personaje
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+		var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
+		var personaje_animator = personaje.find_child("AnimationPlayer")
 	
+	
+		await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length).timeout
+	
+		personaje_animator.play("dar_papeles")
+		await  get_tree().create_timer(personaje_animator.current_animation_length).timeout
+	
+		if "licencia" in day.documentos_habilitados:
+			licencia.visible = true
+		if "cedula" in day.documentos_habilitados:
+			cedula.visible = true
+	
+		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
+		cedula.global_position = nodo_papeles.global_position
+		licencia.global_position =  nodo_papeles.global_position
 	print("FINAL MOSTRAR DATOS")
+
+func ocultar_documentos():
+	licencia.visible = false
+	cedula.visible = false
 func datos_cedula():
 	print("hola")

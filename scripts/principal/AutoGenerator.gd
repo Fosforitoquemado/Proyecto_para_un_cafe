@@ -6,7 +6,7 @@ extends Node
 @export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
 @export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
 @export var objetosbaul:ObjetoArrayResource = preload("res://recursos/objetosbaularray/todos.tres")
-
+@export var personajes:PersonajesArrayResource = preload("res://recursos/Arraypersonajes/TODOS.tres")
 #elementos auto
 
 var colors = {
@@ -52,7 +52,8 @@ func generate_patente() -> String:
 	
 	return patente
 func generate_VTV() -> Dictionary:
-	var vtv = randi_range(1,12)
+	#le meti un parche en el documentosgenerator
+	var vtv = randi_range(6,12)
 	var vtv_string = str(vtv)
 	var vtv_info = {
 		"vtv": vtv,
@@ -110,11 +111,23 @@ func generate_objetos_baul():
 		"nombre":  nombre,
 	}
 	return modelo_info
+func generate_personaje():
+	var num_personaje_random = randi_range(0,personajes.array.size() - 1)
+	var resource = personajes.array[num_personaje_random]
+	var personaje = resource.escena
+	var nombre = resource.nombre
+	var modelo_info = {
+		"personaje": personaje,
+		"num_personaje": num_personaje_random,
+		"nombre":  nombre,
+	}
+	return modelo_info
 
 func _generate_auto() -> Dictionary:
 	var data = {}
 	
 	# BASE
+	var personaje = generate_personaje()
 	var patente = generate_patente()
 	var color_info = generate_color()
 	var modelo_info = generate_modelo()
@@ -132,6 +145,7 @@ func _generate_auto() -> Dictionary:
 	
 	# RESULTADO
 	data = {
+		"personaje_info": personaje,
 		"patente": patente,
 		"nombre_info": nombre_info,
 		"apellido_info": apellido_info,

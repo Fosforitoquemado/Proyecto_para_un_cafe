@@ -4,8 +4,9 @@ class_name UIManager
 @onready var pcsistema: PCStatic = $"../PCSISTEMA"
 
 @onready var CameraController: Node = $"../CameraController"
-@onready var startdaymanager: Node = $"../Startdaymanager"
+@onready var day_manager: Node = $"../DayManager"
 
+@onready var startdaymanager: Node = $"../Startdaymanager"
 
 @onready var mate: Node3D = $"../Elementos_mesa/MATE"
 
@@ -25,6 +26,7 @@ class_name UIManager
 @export var inspeccion_menu: Control
 @export var yes_no_menu: Control
 @export var timer: ProgressBar
+@export var baul_menu: Control
 @export var boton_baul: Button
 
 var active = false
@@ -35,6 +37,10 @@ var inspeccion_menu_active
 
 func _ready() -> void:
 	update_ui()
+	
+	var dia = day_manager.get_day()
+	if "objetos_baul" in dia.documentos_habilitados:
+		baul_menu.visible = true
 
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
@@ -54,10 +60,11 @@ func _on_button_siguiente_pressed() -> void:
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
-		GameManager.auto_dupe.irse()
+		GameManager.ida_auto()
 		timer._stop_timer()
 		yes_no_menu.visible = false
-		await get_tree().create_timer(3.0).timeout
+		var animator = GameManager.auto_dupe.find_child("AnimationPlayer")
+		await get_tree().create_timer(animator.current_animation_length).timeout
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
 			print("FALLASTE❌❌")
@@ -65,7 +72,6 @@ func _on_yes_pressed() -> void:
 			GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
 			print("BIEN✅✅")
-		GameManager.auto_dupe.queue_free()
 		auto_on = false
 		siguiente.visible = true
 		update_ui()
@@ -75,16 +81,18 @@ func _on_yes_pressed() -> void:
 func _on_no_pressed() -> void:
 	if active == false:
 		active = true
+		GameManager.ida_auto()
 		timer._stop_timer()
+		yes_no_menu.visible = false
+		var animator = GameManager.auto_dupe.find_child("AnimationPlayer")
+		await get_tree().create_timer(animator.current_animation_length).timeout
 		if DocumentosGenerator.auto_ilegal == false:
 			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
 		else:
 			GameManager.sumar_dinero_jugador(50)
 			print("BIEN✅✅")
-		GameManager.auto_dupe.queue_free()
 		auto_on = false
-		yes_no_menu.visible = false
 		siguiente.visible = true
 		update_ui()
 		GameManager.check_estado()
@@ -164,6 +172,16 @@ func _on_inspeccion_volver_pressed() -> void:
 	inspeccion_menu_active = false
 	pass # Replace with function body.
 
+func _ocultar_menu():
+	if baul_abierto == true:
+		cerrar_baul()
+	yes_no_menu.visible = false
+	autos_label.visible = false
+	fallos_label.visible = false
+	dinero_label.visible = false
+	inspeccion_menu.visible = false
+	
+
 func _on_inspeccion_compu_pressed() -> void:
 	if baul_abierto == true:
 		cerrar_baul()
@@ -172,8 +190,8 @@ func _on_inspeccion_compu_pressed() -> void:
 	fallos_label.visible = false
 	dinero_label.visible = false
 	inspeccion_menu.visible = false
-	pcsistema.camara()
-	pcsistema.toggle_use()
+	#pcsistema.camara()
+	#pcsistema.toggle_use()
 	pass # Replace with function body.
 
 func _on_mate_pressed() -> void:

@@ -64,8 +64,23 @@ func generar_auto():
 	
 	root.add_child(auto_dupe)
 	auto_dupe.global_position = Vector3(0.2,0,-2.0)
+	
+	var personaje_data = auto_data["personaje_info"]
+	var personaje = personaje_data["personaje"].instantiate()
+	var nodo_eprsonaje = auto_dupe.find_child("nodo_personaje")
+	nodo_eprsonaje.add_child(personaje)
+	
 	#mostrar elementos
 	elementos_mesa.mostrar_datos()
+
+func ida_auto():
+	auto_dupe.irse()
+	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
+	elementos_mesa.ocultar_documentos()
+	var animator = auto_dupe.find_child("AnimationPlayer")
+	await get_tree().create_timer(animator.current_animation_length).timeout
+	auto_dupe.queue_free()
+	
 
 func reset():
 	fallos = 0

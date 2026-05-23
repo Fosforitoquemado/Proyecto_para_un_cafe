@@ -2,8 +2,50 @@
 
 [ext_resource type="Script" uid="uid://dv5plpqqijdil" path="res://scripts/hud/pc_control.gd" id="1_jgmss"]
 [ext_resource type="Texture2D" uid="uid://hosdpxt5jhkj" path="res://texture/hud/pc/para el cafe arte.png" id="2_7mlyq"]
+[ext_resource type="Texture2D" uid="uid://g8qf76klod4f" path="res://texture/hud/pc/cargando.png" id="2_p8x6u"]
 [ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
 [ext_resource type="Texture2D" uid="uid://ktrncrhlq68b" path="res://texture/hud/pc/para el cafe (1).png" id="3_7mlyq"]
+
+[sub_resource type="Gradient" id="Gradient_p8x6u"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8kqmc"]
+gradient = SubResource("Gradient_p8x6u")
+
+[sub_resource type="Gradient" id="Gradient_8kqmc"]
+colors = PackedColorArray(0.15686275, 0.47058824, 0.627451, 1, 0.15571874, 0.46887863, 0.62560433, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eoye0"]
+gradient = SubResource("Gradient_8kqmc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3hfw"]
+atlas = ExtResource("2_p8x6u")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oauf"]
+atlas = ExtResource("2_p8x6u")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp0qh"]
+atlas = ExtResource("2_p8x6u")
+region = Rect2(0, 9, 9, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4tyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3hfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oauf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp0qh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
 font_color = Color(0, 0, 0, 1)
@@ -181,6 +223,52 @@ grow_vertical = 2
 script = ExtResource("1_jgmss")
 metadata/_edit_use_anchors_ = true
 
+[node name="apagado" type="TextureRect" parent="." unique_id=2146623088]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_8kqmc")
+
+[node name="cargando" type="TextureRect" parent="." unique_id=1711728665]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = SubResource("GradientTexture1D_eoye0")
+
+[node name="loading" type="AnimatedSprite2D" parent="cargando" unique_id=18447878]
+texture_filter = 1
+position = Vector2(575, 325)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_i4tyn")
+autoplay = "default"
+frame_progress = 0.7575729
+
+[node name="Label" type="Label" parent="cargando" unique_id=2098666226]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 49.29001
+offset_right = 43.5
+offset_bottom = 72.29001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Loading . . ."
+
 [node name="Fondo" type="TextureRect" parent="." unique_id=454571506]
 layout_mode = 1
 anchors_preset = 15
@@ -340,9 +428,73 @@ flat = true
 caret_blink = true
 metadata/_edit_use_anchors_ = true
 
+[node name="cargando" type="TextureRect" parent="basedatos_img" unique_id=820106928]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = SubResource("GradientTexture1D_eoye0")
+
+[node name="loading" type="AnimatedSprite2D" parent="basedatos_img/cargando" unique_id=1826199825]
+texture_filter = 1
+position = Vector2(290, 160)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_i4tyn")
+autoplay = "default"
+frame_progress = 0.29443476
+
+[node name="Label" type="Label" parent="basedatos_img/cargando" unique_id=184818179]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43965518
+anchor_top = 0.6276923
+anchor_right = 0.5596552
+anchor_bottom = 0.6843077
+offset_top = 1.5258789e-05
+offset_right = 17.399994
+offset_bottom = 4.600006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Loading . . ."
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="basedatos_img" unique_id=437047317]
+layout_mode = 0
+offset_left = -178.0
+offset_top = 449.0
+offset_right = -40.0
+offset_bottom = 482.0
+mouse_filter = 2
+
+[node name="label" type="Label" parent="basedatos_img/Panel" unique_id=1963276096]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 27.0
+text = "Base de datos"
+
+[node name="BaseDatos" type="Button" parent="basedatos_img/Panel" unique_id=234778930]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.030303637
+anchor_right = 0.9927536
+anchor_bottom = 1.0606066
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=1437975147]
 top_level = true
-z_index = 10
+z_index = 9
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o3hfw")
 autoplay = "default"
 frame_progress = 0.5463175
@@ -376,6 +528,7 @@ anchor_left = 0.8767361
 anchor_top = 0.9305556
 anchor_right = 0.9921875
 anchor_bottom = 0.99228394
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Fecha" type="Label" parent="Marco_Fecha" unique_id=2062909150]
@@ -394,5 +547,6 @@ text = "12/06/2026"
 label_settings = SubResource("LabelSettings_jgmss")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="BaseDatos" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="basedatos_img/Panel/BaseDatos" to="." method="_on_base_datos_pressed"]
+[connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

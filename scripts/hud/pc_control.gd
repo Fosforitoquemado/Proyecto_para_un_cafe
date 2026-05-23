@@ -10,6 +10,12 @@ extends Control
 @onready var vence: Label = $basedatos_img/Vence
 @onready var vtv: Label = $basedatos_img/VTV
 
+@onready var apagado: TextureRect = $apagado
+@onready var cargando: TextureRect = $cargando
+@onready var cargando_base_de_datos: TextureRect = $basedatos_img/cargando
+
+@export var tiempo_de_carga: int = 3
+
 #labels base de datos licencia
 @onready var numero_licencia: Label = $basedatos_img/numero_licencia
 @onready var nombre_licencia: Label = $basedatos_img/nombre_licencia
@@ -58,18 +64,27 @@ func set_fecha_nacimiento(func_fecha):
 func set_fecha_vencimiento(func_fecha):
 	fecha_de_vencimiento_licencia.text = func_fecha
 
-func _on_button_pressed() -> void:
+func apagar_cargando():
+	await get_tree().create_timer(tiempo_de_carga).timeout
+	cargando.visible = false
+
+func _on_base_datos_pressed() -> void:
 	if basededatos_active == true:
 		basedatos_img.visible = false
 		basededatos_active = false
+		cargando_base_de_datos.visible = true
 	else:
 		basedatos_img.visible = true
-		basededatos_active = true
+		await get_tree().create_timer(tiempo_de_carga).timeout
+		if PCSISTEM.is_using == false:
+			cargando_base_de_datos.visible = false
+			basededatos_active = true
 	pass # Replace with function body.
 
 func _on_exit_pressed() -> void:
 	PCSISTEM.toggle_use()
 	PCSISTEM.exit()
+	cargando.visible = true
 	basedatos_img.visible = false
 	basededatos_active = false
 	pass # Replace with function body.

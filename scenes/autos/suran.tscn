@@ -796,3 +796,6 @@ mesh = SubResource("BoxMesh_wxim7")
 
 [node name="camara_baul" type="Node3D" parent="." unique_id=2135438032]
 transform = Transform3D(-0.22222224, 0, -1.9427285e-08, 0, 0.22222237, 0, 1.9427285e-08, 0, -0.22222224, 5.684342e-14, 0.252649, -1.4590033)
+
+[node name="nodo_personaje" type="Node3D" parent="." unique_id=977082200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041794598, 0.10866079)

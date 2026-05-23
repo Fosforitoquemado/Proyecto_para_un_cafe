@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PersonajesArrayResource" format=3 uid="uid://b0lwv1i2yits1"]
+
+[ext_resource type="Script" uid="uid://b0is14tpnrnwv" path="res://recursos/Scripts/PersonajesResource.gd" id="1_ksq5g"]
+[ext_resource type="Resource" uid="uid://cm2835k2wcxim" path="res://recursos/personajes/personaje1.tres" id="2_iocfy"]
+[ext_resource type="Script" uid="uid://bdhd2ykr1amft" path="res://recursos/Scripts/PersonajesArrayResource.gd" id="3_vyjvr"]
+
+[resource]
+script = ExtResource("3_vyjvr")
+array = Array[ExtResource("1_ksq5g")]([ExtResource("2_iocfy")])
+metadata/_custom_type_script = "uid://bdhd2ykr1amft"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdocl25laheia" path="res://scripts/hud/pcsistema.gd" id="1_colfs"]
 [ext_resource type="PackedScene" uid="uid://b6pl4urg6wwi1" path="res://scenes/hud/pc_control.tscn" id="2_cdq6l"]
 [ext_resource type="Texture2D" uid="uid://b384c6svydmey" path="res://modelos/ESCRITORIO/laptop/laptop_Flag_of_Argentina.webp" id="2_colfs"]
+[ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/Pc_area3D.gd" id="4_76pq4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7ckq"]
 resource_name = "carcasa"
@@ -229,6 +230,9 @@ emission_texture = SubResource("ViewportTexture_cdq6l")
 [sub_resource type="PlaneMesh" id="PlaneMesh_76pq4"]
 size = Vector2(1.31, 0.85)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_colfs"]
+size = Vector3(1.4169846, 0.84633636, 0.7366314)
+
 [node name="PCSISTEMA" type="Node3D" unique_id=1435289206]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_colfs")
@@ -261,7 +265,7 @@ material_override = SubResource("StandardMaterial3D_colfs")
 mesh = SubResource("PlaneMesh_76pq4")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1102045228]
-size = Vector2i(1280, 720)
+size = Vector2i(1152, 648)
 
 [node name="PCControl" parent="SubViewport" unique_id=2128863822 instance=ExtResource("2_cdq6l")]
 
@@ -274,3 +278,11 @@ keep_aspect = 0
 projection = 1
 size = 0.3
 far = 239.96
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1190175803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056915283, 0.049331665, -0.012741089)
+script = ExtResource("4_76pq4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=40521767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009281162, 0.337574, -0.6296129)
+shape = SubResource("BoxShape3D_colfs")

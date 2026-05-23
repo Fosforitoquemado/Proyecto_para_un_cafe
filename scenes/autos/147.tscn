@@ -831,7 +831,7 @@ cache/0/100/0/scale = 1.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="armazon" type="MeshInstance3D" unique_id=438954590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 1)
 mesh = SubResource("ArrayMesh_doep7")
 script = ExtResource("1_c35m8")
 
@@ -962,3 +962,6 @@ transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -0.2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=587179693]
 visible = false
 mesh = SubResource("BoxMesh_f83p8")
+
+[node name="nodo_personaje" type="Node3D" parent="." unique_id=1602925967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07277715, -0.016612642)

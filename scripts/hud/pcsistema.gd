@@ -8,6 +8,8 @@ var is_using:bool = true
 @onready var sub_viewport: SubViewport = $SubViewport
 @onready var pc_control: Control = $SubViewport/PCControl
 
+@onready var apagado: TextureRect = $SubViewport/PCControl/apagado
+
 var UI_CONTROLLER
 
 # Called when the node enters the scene tree for the first time.
@@ -18,11 +20,17 @@ func _ready() -> void:
 
 func toggle_use():
 	is_using = !is_using
+	apagado.visible = !apagado.visible
+	print(is_using)
+	if is_using == false:
+		pc_control.apagar_cargando()
 func camara():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_3d.current = true
 func exit():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if pc_control.basededatos_active == true:
+		pc_control._on_base_datos_pressed()
 	UI_CONTROLLER._on_inspeccion_pressed()
 	UI_CONTROLLER._on_inspeccion_volver_pressed()
 

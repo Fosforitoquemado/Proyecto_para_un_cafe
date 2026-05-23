@@ -38,8 +38,7 @@ func _ready() -> void:
 		var array_final = false
 		if i == dia.dialogostele.array.size() - 1:
 			array_final = true
-		
-		
+			
 		tele.mostrar_mensaje(
 			dialogo_actual["texto"],
 			dialogo_actual["tamanio_font"],
@@ -52,5 +51,6 @@ func _ready() -> void:
 		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
 		await get_tree().create_timer(tiempo_espera).timeout
 	tele.apagar_tele()
+	
 	if skip == false:
 		hud.alternar_empezar_boton()

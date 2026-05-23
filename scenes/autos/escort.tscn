@@ -863,3 +863,6 @@ transform = Transform3D(1, 0, -4.2632564e-14, 0, 1, 0, 4.2632564e-14, 0, 1, -0.2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="nodo_baul_mediano_der" unique_id=1482590738]
 visible = false
 mesh = SubResource("BoxMesh_psyxk")
+
+[node name="nodo_personaje" type="Node3D" parent="." unique_id=1041569445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01872173, -0.06726843, 0.04852531)

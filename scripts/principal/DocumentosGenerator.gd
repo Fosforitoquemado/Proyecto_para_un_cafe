@@ -64,6 +64,7 @@ func generate_VTV_auto(probabilidad):
 		return str(VTV)
 	else:
 		#fake
+		
 		var num := randi_range(1, 12 - 1)
 		if num >= VTV:
 			num += 1
