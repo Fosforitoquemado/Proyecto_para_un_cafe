@@ -63,7 +63,7 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_ve
 				soniditos.play()
 			#label_mensaje.ajustar_fuente()
 		
-		await  get_tree().create_timer(tiempo_velocidad).timeout
+		await  get_tree().create_timer(tiempo_velocidad, false).timeout
 	
 	print(mensaje)
 	

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/fondo/Street View 360flip.jpg" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="2_85g3d"]
-[ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/panel_container.gd" id="2_choun"]
+[ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="2_choun"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="6_o6xl0"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_0ld40"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="10_ya4ey"]
-[ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/fps_counter.gd" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/pruebas_troll/fps_counter.gd" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="12_trceg"]
 [ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="13_0ld40"]
 [ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="14_gqmmt"]
@@ -101,6 +101,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node3D" unique_id=320117741]
+process_mode = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=172885002]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

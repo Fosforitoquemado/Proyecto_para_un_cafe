@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdocl25laheia" path="res://scripts/hud/pcsistema.gd" id="1_colfs"]
 [ext_resource type="PackedScene" uid="uid://b6pl4urg6wwi1" path="res://scenes/hud/pc_control.tscn" id="2_cdq6l"]
 [ext_resource type="Texture2D" uid="uid://b384c6svydmey" path="res://modelos/ESCRITORIO/laptop/laptop_Flag_of_Argentina.webp" id="2_colfs"]
-[ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/Pc_area3D.gd" id="4_76pq4"]
+[ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/interactuables/Pc_area3D.gd" id="4_76pq4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7ckq"]
 resource_name = "carcasa"

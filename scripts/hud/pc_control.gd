@@ -65,8 +65,14 @@ func set_fecha_vencimiento(func_fecha):
 	fecha_de_vencimiento_licencia.text = func_fecha
 
 func apagar_cargando():
-	await get_tree().create_timer(tiempo_de_carga).timeout
+	await get_tree().create_timer(tiempo_de_carga,false).timeout
 	cargando.visible = false
+
+func reset_pc():
+	cargando.visible = true
+	basedatos_img.visible = false
+	basededatos_active = false
+	cargando_base_de_datos.visible = true
 
 func _on_base_datos_pressed() -> void:
 	if basededatos_active == true:
@@ -75,7 +81,7 @@ func _on_base_datos_pressed() -> void:
 		cargando_base_de_datos.visible = true
 	else:
 		basedatos_img.visible = true
-		await get_tree().create_timer(tiempo_de_carga).timeout
+		await get_tree().create_timer(tiempo_de_carga,false).timeout
 		if PCSISTEM.is_using == false:
 			cargando_base_de_datos.visible = false
 			basededatos_active = true
@@ -84,7 +90,5 @@ func _on_base_datos_pressed() -> void:
 func _on_exit_pressed() -> void:
 	PCSISTEM.toggle_use()
 	PCSISTEM.exit()
-	cargando.visible = true
-	basedatos_img.visible = false
-	basededatos_active = false
+	reset_pc()
 	pass # Replace with function body.

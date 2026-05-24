@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bstqx7r7mn3hc" path="res://sonidos/C4/c4-a-los-chapazos.wav" id="3_w7vny"]
 [ext_resource type="AudioStream" uid="uid://ch8oirj3nc74t" path="res://sonidos/C4/c4 bocina.wav" id="4_04xex"]
 [ext_resource type="Animation" uid="uid://htouw6hn1xkr" path="res://recursos/animaciones/c4_lunge/llegada_c4.res" id="4_5xuue"]
+[ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_5xuue"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_bmtgt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuqsk"]
@@ -284,6 +285,9 @@ bind_count = 1
 bind/0/name = &"Bone"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, -9.408262e-17, -9.938432e-16, -9.938432e-16, -0.18764931, -0.98223615, -9.4082636e-17, 0.9822361, -0.18764931, 0.051439524, -0.9427589, -0.83382356)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cgbv0"]
+size = Vector3(0.7, 0.2, 0.04511719)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia0yp"]
 resource_name = "guarda barro"
@@ -753,6 +757,19 @@ bones/0/scale = Vector3(1, 0.99999994, 1)
 mesh = SubResource("ArrayMesh_vstd2")
 skin = SubResource("Skin_48ddu")
 skeleton = NodePath("..")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1748870971]
+transform = Transform3D(1, -9.938429e-16, -9.4082543e-17, -9.408265e-17, -0.18764912, 0.982236, -9.93843e-16, -0.98223597, -0.18764913, 0, 0, 0)
+bone_name = "Bone"
+bone_idx = 0
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment3D" unique_id=1829442488]
+transform = Transform3D(1, -9.4082504e-17, -9.938428e-16, -9.93843e-16, -0.18764915, -0.9822361, -9.408242e-17, 0.982236, -0.18764913, 0.060975075, 0.091967046, -0.033711433)
+script = ExtResource("6_5xuue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment3D/Area3D" unique_id=1155924689]
+transform = Transform3D(1, 0, 0, 0, 0.59274805, -0.8053701, 0, 0.8053701, 0.59274805, 0, 0.022100508, -0.01626587)
+shape = SubResource("BoxShape3D_cgbv0")
 
 [node name="rueda_trasera_izq" type="MeshInstance3D" parent="." unique_id=1119449249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38058016, -0.27480802, -0.7853222)

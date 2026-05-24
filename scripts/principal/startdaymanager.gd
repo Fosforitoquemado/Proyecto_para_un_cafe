@@ -27,9 +27,9 @@ func _ready() -> void:
 		hud.alternar_empezar_boton()
 		return
 	# Si pasa los controles, el bucle corre sin peligro de crash
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	tele.prender_tele()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	for i in range(dia.dialogostele.array.size()):
 		if skip == true:
 			tele.apagar_tele()
@@ -49,7 +49,7 @@ func _ready() -> void:
 		)
 		
 		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
-		await get_tree().create_timer(tiempo_espera).timeout
+		await get_tree().create_timer(tiempo_espera, false).timeout
 	tele.apagar_tele()
 	
 	if skip == false:

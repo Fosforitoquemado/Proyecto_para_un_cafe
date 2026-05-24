@@ -6,6 +6,7 @@
 [ext_resource type="Animation" uid="uid://cpmpmofpyayls" path="res://recursos/animaciones/sedan/ida_sedan.res" id="4_yxh2x"]
 [ext_resource type="Animation" uid="uid://bo1y6p0l8dmkp" path="res://recursos/animaciones/sedan/llegada_sedan.res" id="5_3c6oy"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_0dcif"]
+[ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_3c6oy"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_qh0bn"]
 [ext_resource type="AudioStream" uid="uid://ch276mgi76h7q" path="res://sonidos/Senda/senda acelerando.wav" id="7_381td"]
 [ext_resource type="AudioStream" uid="uid://bq454yoqv25gg" path="res://sonidos/Senda/Senda llegando.wav" id="7_yxh2x"]
@@ -304,6 +305,9 @@ bind_count = 1
 bind/0/name = &"Bone"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, -8.27084e-17, -7.5556377e-16, -7.5556377e-16, -0.21633932, -0.9763183, -8.2708426e-17, 0.97631824, -0.21633932, -7.443443e-16, -0.71760386, -0.7900569)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dcif"]
+size = Vector3(0.7821845, 0.32280254, 0.061969638)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_01ubk"]
 _surfaces = [{
@@ -766,6 +770,19 @@ bones/0/scale = Vector3(1, 0.99999994, 1)
 mesh = SubResource("ArrayMesh_l22fg")
 skin = SubResource("Skin_0g7bp")
 skeleton = NodePath("..")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1780371434]
+transform = Transform3D(1, -7.5556366e-16, -8.2708426e-17, -8.2708426e-17, -0.21633933, 0.9763182, -7.555637e-16, -0.9763181, -0.21633935, -3.601825e-17, -0.16221178, -0.19825888)
+bone_name = "Bone"
+bone_idx = 0
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment3D" unique_id=367935757]
+transform = Transform3D(1, -8.270844e-17, -7.5556377e-16, -7.555638e-16, -0.2163394, -0.9763184, -8.270844e-17, 0.97631836, -0.21633938, 0, -0.039764702, 0.1573351)
+script = ExtResource("6_3c6oy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment3D/Area3D" unique_id=1839466827]
+transform = Transform3D(1, 0, 0, 0, 0.15017378, -0.98865974, 0, 0.98865974, 0.15017378, -0.01173979, -0.22132128, -0.16586661)
+shape = SubResource("BoxShape3D_0dcif")
 
 [node name="interior" type="MeshInstance3D" parent="." unique_id=778679643]
 mesh = SubResource("ArrayMesh_v3ay7")

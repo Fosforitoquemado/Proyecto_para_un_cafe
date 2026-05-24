@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AutoArrayResource" format=3 uid="uid://cwaefxv1bagf0"]
+
+[ext_resource type="Script" uid="uid://cyy5656frxhf3" path="res://recursos/Scripts/AutoResource.gd" id="1_nouni"]
+[ext_resource type="Script" uid="uid://ceffb7rekgtud" path="res://recursos/Scripts/AutoArrayResource.gd" id="2_q7a44"]
+[ext_resource type="Resource" uid="uid://bfr5k2qex4v1g" path="res://recursos/autos/fiat_147.tres" id="2_q08l7"]
+
+[resource]
+script = ExtResource("2_q7a44")
+array = Array[ExtResource("1_nouni")]([ExtResource("2_q08l7")])
+metadata/_custom_type_script = "uid://ceffb7rekgtud"

@@ -12,16 +12,18 @@ var is_using:bool = true
 
 var UI_CONTROLLER
 
+var State_Machine
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UI_CONTROLLER = get_node("/root/Main/HUD")
+	State_Machine = UI_CONTROLLER.find_child("StateMachine")
 	pc_control.PCSISTEM = self
 	pass # Replace with function body.
 
 func toggle_use():
 	is_using = !is_using
 	apagado.visible = !apagado.visible
-	print(is_using)
 	if is_using == false:
 		pc_control.apagar_cargando()
 func camara():
@@ -29,10 +31,7 @@ func camara():
 	camera_3d.current = true
 func exit():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if pc_control.basededatos_active == true:
-		pc_control._on_base_datos_pressed()
-	UI_CONTROLLER._on_inspeccion_pressed()
-	UI_CONTROLLER._on_inspeccion_volver_pressed()
+	State_Machine.change_to("yes_no_menu")
 
 func set_fecha(fecha):
 	pc_control.set_fecha(fecha)
@@ -46,6 +45,7 @@ func _input(event: InputEvent) -> void:
 		
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("ui_cancel"):
+			pc_control.reset_pc()
 			toggle_use()
 			exit()
 			return

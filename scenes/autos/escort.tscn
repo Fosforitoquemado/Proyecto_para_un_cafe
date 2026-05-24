@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/Escort/escort-bocina.wav" id="3_he68n"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="4_it8kq"]
 [ext_resource type="AudioStream" uid="uid://cclvoq6g8bxwe" path="res://sonidos/Escort/escort-arranque.wav" id="4_psyxk"]
+[ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="4_qb532"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maq55"]
 resource_name = "carroceria"
@@ -295,6 +296,9 @@ bind_count = 1
 bind/0/name = &"Bone"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, -1.3111324e-16, -5.371128e-16, -5.371128e-16, -0.46075904, -0.8875253, -1.3111326e-16, 0.8875253, -0.46075904, -4.633886e-16, -0.3039486, -1.0092851)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8f6x"]
+size = Vector3(0.798664, 0.6006832, 0.061969638)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_674cw"]
 resource_name = "asiento"
@@ -757,6 +761,19 @@ bones/0/scale = Vector3(1, 0.9999999, 0.9999999)
 mesh = SubResource("ArrayMesh_61r65")
 skin = SubResource("Skin_sab61")
 skeleton = NodePath("..")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=346255698]
+transform = Transform3D(1, -5.3711264e-16, -1.3111324e-16, -1.3111324e-16, -0.4607591, 0.8875252, -5.371127e-16, -0.8875252, -0.4607591, 0, 0, 0)
+bone_name = "Bone"
+bone_idx = 0
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment3D" unique_id=1666219356]
+transform = Transform3D(1, -2.1175824e-22, -2.646978e-23, 2.1175824e-22, 1, 0, 0, 0, 1, 0, 0.4258405, 0.2444892)
+script = ExtResource("4_qb532")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment3D/Area3D" unique_id=1587100113]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0.0055877566, -0.18233418, -0.25391108)
+shape = SubResource("BoxShape3D_t8f6x")
 
 [node name="asiento adelante" type="MeshInstance3D" parent="." unique_id=584526233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23822452, -0.17404717, 0.093044996)
