@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PersonajesResource" format=3 uid="uid://bk507y4m770iq"]
+
+[ext_resource type="Script" uid="uid://b0is14tpnrnwv" path="res://recursos/Scripts/PersonajesResource.gd" id="1_iy1fd"]
+[ext_resource type="PackedScene" uid="uid://cupovq5f47x5a" path="res://scenes/personajes/minero.tscn" id="1_u2ihw"]
+
+[resource]
+script = ExtResource("1_iy1fd")
+nombre = "minero"
+escena = ExtResource("1_u2ihw")
+metadata/_custom_type_script = "uid://b0is14tpnrnwv"

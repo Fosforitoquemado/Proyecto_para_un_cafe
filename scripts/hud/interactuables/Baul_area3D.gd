@@ -20,21 +20,7 @@ func _input_event(camera, event, position, normal, shape_idx):
 		return
 	if event is InputEventMouseButton:
 		if event.pressed and hay_condicion == true:
-			print("hola")
 			var state_machine = uicontroller.find_child("StateMachine")
-			state_machine.change_to("auto_baul")
+			if state_machine.current_state.name == "auto_atras":
+				state_machine.change_to("auto_baul")
 			pass # Replace with function body.
-			#if abierto == false:
-				#animando = true
-				#anim.play("abrir")
-				#await anim.animation_finished
-				#animando = false
-				#abierto = true
-				#print("abierto")
-			#else:
-				#animando = true
-				#anim.play("cerrar")
-				#await anim.animation_finished
-				#animando = false
-				#abierto = false
-				#print("cerrado")
