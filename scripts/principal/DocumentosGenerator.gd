@@ -13,6 +13,8 @@ extends Node
 var auto_data: Dictionary
 var auto_ilegal: bool = false
 
+var ilegalidades: int = 0
+
 func generate_modelo_cedula(probabilidad):
 	var auto = auto_data["modelo_info"]
 	var num_auto = auto["num_auto"]
@@ -27,6 +29,7 @@ func generate_modelo_cedula(probabilidad):
 		var modelo_ = autos.array[fake_num_auto].nombre
 		print("AUTO_ILEGAL modelo = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		print("Modelo de la cedula es fake❌: ",modelo_)
 		return modelo_
 func generate_papel_patente(probabilidad):
@@ -39,6 +42,7 @@ func generate_papel_patente(probabilidad):
 		#fake
 		print("AUTO_ILEGAL patente = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
 			
@@ -70,6 +74,7 @@ func generate_VTV_auto(probabilidad):
 			num += 1
 		print("AUTO_ILEGAL vtv = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		print("Vtv del auto es fake❌: ", num)
 		return str(num)
 func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento, fecha_hoy):
@@ -81,6 +86,7 @@ func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimien
 	else:
 		print("AUTO_ILEGAL fecha documento = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		if Utils.chance(probabilidad_2026):
 			#fake
 			var probabilidad_dia = 50
@@ -115,6 +121,7 @@ func generate_numero_licencia(probabilidad):
 		# fake
 		print("AUTO_ILEGAL numero licencia = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		#var dificultad_papel = randi_range(1,7)
 		var dificultad_papel = 6
 		if dificultad_papel == 7:
@@ -144,6 +151,7 @@ func generate_nombre(probabilidad):
 		var fake_nombre = Utils.random_excluding(0,nombres.array.size() - 1,nombre)
 		print("AUTO_ILEGAL nombre = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		print("Nombre de la cedula es fake❌: ",nombres.array[fake_nombre])
 		return nombres.array[fake_nombre]
 func generate_apellido(probabilidad):
@@ -159,6 +167,7 @@ func generate_apellido(probabilidad):
 		var apellido_ = apellidos.array[fake_apellido_num]
 		print("AUTO_ILEGAL apellido = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		print("Apellido de la cedula es fake❌: ",apellido_)
 		return apellido_
 func generate_fecha_nacimiento(probabilidad, probabilidad_papeles_16):
@@ -172,6 +181,7 @@ func generate_fecha_nacimiento(probabilidad, probabilidad_papeles_16):
 	else:
 		print("AUTO_ILEGAL nacimiento = TRUE")
 		auto_ilegal = true
+		ilegalidades += 1
 		if Utils.chance(probabilidad_papeles_16):
 			#vas a tener que pedir papeles de los 16
 			var probabilidad_dia = 50
@@ -234,6 +244,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 			pool = objetosbaulilegales.array
 			legal = false
 			auto_ilegal = true
+			ilegalidades += 1
 		if pool.is_empty():
 			continue
 		# Filtrar según espacio disponible
@@ -290,6 +301,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
 	auto_ilegal = false
+	ilegalidades = 0
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	var day = daymanager.get_day()
 	var fecha_hoy = day.fecha_hoy
@@ -353,5 +365,6 @@ func _generate_documentos() -> Dictionary:
 		print("EL AUTO ES ILEGAL?: ILEGAL ❌🚗")
 	else:
 		print("EL AUTO ES ILEGAL?: LEGAL ✅🚗")
+	print("ILEGALIDADES ",ilegalidades)
 	#print(data)
 	return data

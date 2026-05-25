@@ -21,7 +21,6 @@ func enter() -> void:
 			await get_tree().create_timer(2, false).timeout
 			baul_activo = false
 			baul_menu.show()
-		pass # Replace with function body.
 		hud_inspeccion.show()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 

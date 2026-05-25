@@ -376,6 +376,7 @@ text = "Inspeccion
 metadata/_edit_use_anchors_ = true
 
 [node name="pc_location" type="Button" parent="YES_NO_menu" unique_id=1242503910]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -600,6 +601,20 @@ mouse_filter = 1
 text = "cerrar baul"
 metadata/_edit_use_anchors_ = true
 
+[node name="baul_location" type="Button" parent="Inspeccion_menu" unique_id=640414771]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3472222
+anchor_top = 0.41666666
+anchor_right = 0.6510417
+anchor_bottom = 0.57098764
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3
 script = ExtResource("18_udak2")
@@ -654,10 +669,12 @@ script = ExtResource("24_2dqaf")
 HUD = NodePath("../..")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
 
-[node name="auto_atras" type="Node" parent="StateMachine" unique_id=1606395021 node_paths=PackedStringArray("HUD", "hud_inspeccion")]
+[node name="auto_atras" type="Node" parent="StateMachine" unique_id=1606395021 node_paths=PackedStringArray("HUD", "hud_inspeccion", "baul_boton")]
 script = ExtResource("25_4vn1o")
+tutorial_scene = ExtResource("24_eiuad")
 HUD = NodePath("../..")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
+baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 
 [node name="auto_adelante" type="Node" parent="StateMachine" unique_id=91189218 node_paths=PackedStringArray("HUD", "hud_inspeccion")]
 script = ExtResource("26_pjbv8")
@@ -676,9 +693,11 @@ hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_menu = NodePath("../../Inspeccion_menu/Baul_menu")
 baul_boton = NodePath("../../Inspeccion_menu/Baul_menu/cerrar_baul")
 
-[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("hud_elementos")]
+[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("hud_elementos", "baul_boton")]
 script = ExtResource("29_pjbv8")
+tutorial_scene = ExtResource("24_eiuad")
 hud_elementos = NodePath("../../Hud_elementos")
+baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
 [connection signal="pressed" from="Hud_elementos/Siguiente/Button_siguiente" to="StateMachine/main_view" method="_on_button_siguiente_pressed"]

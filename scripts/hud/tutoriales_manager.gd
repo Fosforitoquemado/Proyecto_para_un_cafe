@@ -9,7 +9,17 @@ extends CanvasLayer
 
 # Estructura de datos para los pasos del tutorial
 var pasos: Array = []
+var posiciones: Array = []
 var paso_actual: int = 0
+
+var timer = false
+var tiempo = 0.0
+
+func _process(delta: float) -> void:
+	if timer == true:
+		tiempo += delta
+	if tiempo >= 3:
+		_on_siguiente_pressed()
 
 func _ready():
 	# Conectamos el botón de "Siguiente" para avanzar en el tutorial
@@ -17,16 +27,19 @@ func _ready():
 	panel_tutorial.hide() # Empezamos ocultos
 
 # Función para iniciar el tutorial desde tu juego
-func iniciar_tutorial(lista_de_pasos: Array):
+func iniciar_tutorial(lista_de_pasos: Array,lista_de_posicines: Array):
 	get_tree().paused = true
 	pasos = lista_de_pasos
+	posiciones = lista_de_posicines
 	paso_actual = 0
 	if pasos.size() > 0:
 		panel_tutorial.show()
 		mostrar_paso()
 
 func mostrar_paso():
+	timer = true
 	var datos_paso = pasos[paso_actual]
+	var datos_posiciones = posiciones[paso_actual]
 	texto_explicativo.text = datos_paso["texto"]
 	var boton_objetivo = datos_paso["nodo_boton"] as Button
 	
@@ -40,8 +53,17 @@ func mostrar_paso():
 		animated_sprite_2d.global_position = boton_objetivo.global_position + boton_objetivo.size / 2
 		
 		# Cálculo de la posición ideal (debajo del botón)
-		var posicion_final = posicion_pantalla_boton + Vector2(0, boton_objetivo.size.y + 10)
-		
+		var posicion_final
+		if datos_posiciones["direccion"] == "arriba":
+			posicion_final = posicion_pantalla_boton + Vector2(0, boton_objetivo.size.y - boton_objetivo.size.y * 2)
+		elif datos_posiciones["direccion"] == "abajo":
+			posicion_final = posicion_pantalla_boton + Vector2(0, boton_objetivo.size.y + 10)
+		elif datos_posiciones["direccion"] == "izq":
+			posicion_final = posicion_pantalla_boton + Vector2(-400, boton_objetivo.size.y - 100)
+		elif datos_posiciones["direccion"] == "der":
+			posicion_final = posicion_pantalla_boton + Vector2(400, boton_objetivo.size.y - 100)
+		elif datos_posiciones["direccion"] == "pixeles":
+			posicion_final = posicion_pantalla_boton + Vector2(boton_objetivo.size.x + datos_posiciones["pixeles_x"], boton_objetivo.size.y + datos_posiciones["pixeles_y"])
 		# --- LIMITAR A LOS BORDES DE LA PANTALLA ---
 		var limite_pantalla = get_viewport().get_visible_rect().size
 		
@@ -53,6 +75,8 @@ func mostrar_paso():
 		panel_tutorial.global_position = posicion_final
 func _on_siguiente_pressed():
 	paso_actual += 1
+	tiempo = 0.0
+	timer = false
 	if paso_actual < pasos.size():
 		mostrar_paso()
 	else:

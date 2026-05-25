@@ -9,7 +9,6 @@ extends UIState
 @export var coima: Button
 @export var pc: Button
 
-
 @export var HUD:Control
 @export var yes_no_menu: Control 
 @onready var state_machine: Node = $".."
@@ -53,8 +52,40 @@ func comenzar_guia():
 			"texto": "¡Este es el botón para coimear, cuando veas la oportunidad de cerrar un trato, hacelo"
 		}
 	]
+	var configuracion_posiciones = [
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "pixeles",
+			"pixeles_x": 0,
+			"pixeles_y": -150
+		},
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+	]
 	# Arrancamos el sistema
-	instancia_tutorial.iniciar_tutorial(configuracion_tutorial)
+	instancia_tutorial.iniciar_tutorial(configuracion_tutorial,configuracion_posiciones)
 
 func enter() -> void:
 	# Esperamos un momento o lo activamos cuando empiece la partida
@@ -119,11 +150,11 @@ func _on_coimear_pressed() -> void:
 		active = true
 		timer._stop_timer()
 		yes_no_menu.hide()
-		if DocumentosGenerator.auto_ilegal == false:
+		if DocumentosGenerator.ilegalidades <= 1:
 			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
 		else:
-			GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"])
+			GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			print("BIEN✅✅")
 		GameManager.auto_dupe.queue_free()
 		active = false

@@ -97,7 +97,7 @@ func generate_fecha_vencimiento() -> String:
 	var vencimiento = Utils.generar_fecha(2027,2030)
 	return vencimiento
 func generate_dinero_coima() -> float:
-	var dinero_coima = randf_range(10,200)
+	var dinero_coima = randf_range(10,100)
 	dinero_coima = snapped(dinero_coima, 0.01)
 	return dinero_coima
 func generate_objetos_baul():

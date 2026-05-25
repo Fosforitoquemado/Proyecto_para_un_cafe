@@ -40,8 +40,40 @@ func comenzar_guia():
 			"texto": "¡Este es el botón para volver al menu anterior"
 		}
 	]
+	var configuracion_posiciones = [
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "izq",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+	]
 	# Arrancamos el sistema
-	instancia_tutorial.iniciar_tutorial(configuracion_tutorial)
+	instancia_tutorial.iniciar_tutorial(configuracion_tutorial,configuracion_posiciones)
 
 func enter() -> void:
 	if hud_inspeccion:

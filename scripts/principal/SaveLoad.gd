@@ -7,8 +7,8 @@ var contents_to_save: Dictionary = {
 	"dinero": 0.0,
 	"tutorial_yes_no": false,
 	"tutorial_inspeccion": false,
-	"tutorial_computadora": false,
 	"tutorial_baul": false,
+	"tutorial_pc": false,
 	"new_data_to_save": false
 }
 

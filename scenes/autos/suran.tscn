@@ -664,7 +664,7 @@ cache/0/100/0/scale = 1.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="armazon" type="MeshInstance3D" unique_id=923935965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -45)
 mesh = SubResource("ArrayMesh_acx4d")
 script = ExtResource("1_heyd4")
 
