@@ -53,4 +53,5 @@ func _ready() -> void:
 	tele.apagar_tele()
 	
 	if skip == false:
-		hud.alternar_empezar_boton()
+		var state_machine = hud.find_child("StateMachine")
+		state_machine.change_to("main_view")

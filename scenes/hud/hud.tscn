@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://vp3jw4wwbiu7" path="res://scripts/hud/statemachine/inspeccion.gd" id="23_a0exy"]
 [ext_resource type="Script" uid="uid://c4n8hkjkjo5i5" path="res://scripts/hud/statemachine/mesa.gd" id="24_2dqaf"]
 [ext_resource type="Script" uid="uid://rpwmwj0pu04u" path="res://scripts/hud/statemachine/yes_no_menu.gd" id="24_bluaa"]
+[ext_resource type="PackedScene" uid="uid://5u6jdmye4ww6" path="res://scenes/hud/tutoriales_pop_up.tscn" id="24_eiuad"]
 [ext_resource type="Script" uid="uid://b2jjfucr2debt" path="res://scripts/hud/statemachine/auto_atras.gd" id="25_4vn1o"]
 [ext_resource type="Script" uid="uid://ctve1samo8ebc" path="res://scripts/hud/statemachine/auto_adelante.gd" id="26_pjbv8"]
 [ext_resource type="Script" uid="uid://7uwx8xnlpgtl" path="res://scripts/hud/statemachine/auto_vtv.gd" id="27_eiuad"]
@@ -374,6 +375,20 @@ text = "Inspeccion
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="pc_location" type="Button" parent="YES_NO_menu" unique_id=1242503910]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4965278
+anchor_top = 0.6018519
+anchor_right = 0.5034722
+anchor_bottom = 0.61419755
+offset_top = 19.99997
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
 layout_mode = 1
@@ -385,11 +400,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Inspeccion_VTV_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.8420139
-anchor_top = 0.15432099
+anchor_top = 0.2808642
 anchor_right = 0.9982639
-anchor_bottom = 0.30864197
+anchor_bottom = 0.4351852
 texture = ExtResource("7_bluaa")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -408,11 +424,12 @@ text = "Inspeccion_VTV
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_Delantera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.8420139
-anchor_top = 0.2777778
+anchor_top = 0.40432099
 anchor_right = 0.9982639
-anchor_bottom = 0.43209878
+anchor_bottom = 0.55864197
 offset_top = -1.5258789e-05
 texture = ExtResource("8_bbrgr")
 expand_mode = 1
@@ -432,11 +449,12 @@ text = "Inspeccion_adela
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_Trasera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.8420139
-anchor_top = 0.40123457
+anchor_top = 0.5277778
 anchor_right = 0.9982639
-anchor_bottom = 0.5555556
+anchor_bottom = 0.6820988
 offset_bottom = -3.0517578e-05
 texture = ExtResource("9_3fmw6")
 expand_mode = 1
@@ -608,12 +626,25 @@ hud_inspecion = NodePath("../../Inspeccion_menu")
 Star_Day_rect = NodePath("../../Start_day/Empezar")
 skip_intro = NodePath("../../Start_day/skip")
 
-[node name="inspeccion" type="Node" parent="StateMachine" unique_id=1568091112 node_paths=PackedStringArray("hud_inspeccion")]
+[node name="inspeccion" type="Node" parent="StateMachine" unique_id=1568091112 node_paths=PackedStringArray("hud_inspeccion", "vtv", "delante", "atras", "mesa", "volver")]
 script = ExtResource("23_a0exy")
+tutorial_scene = ExtResource("24_eiuad")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
+vtv = NodePath("../../Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV")
+delante = NodePath("../../Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera")
+atras = NodePath("../../Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras")
+mesa = NodePath("../../Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa")
+volver = NodePath("../../Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver")
 
-[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("HUD", "yes_no_menu", "timer")]
+[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("aprobado", "multar", "tomar_mate", "inspeccionar", "coima", "pc", "HUD", "yes_no_menu", "timer")]
 script = ExtResource("24_bluaa")
+tutorial_scene = ExtResource("24_eiuad")
+aprobado = NodePath("../../YES_NO_menu/Aprobado/yes")
+multar = NodePath("../../YES_NO_menu/Multar/no")
+tomar_mate = NodePath("../../YES_NO_menu/Tomar_Mate/mate")
+inspeccionar = NodePath("../../YES_NO_menu/Inspeccionar/Inspeccion")
+coima = NodePath("../../YES_NO_menu/Coima/Coimear")
+pc = NodePath("../../YES_NO_menu/pc_location")
 HUD = NodePath("../..")
 yes_no_menu = NodePath("../../YES_NO_menu")
 timer = NodePath("../../Hud_elementos/Timer")

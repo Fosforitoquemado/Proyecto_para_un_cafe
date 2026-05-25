@@ -1,11 +1,59 @@
 extends UIState
 
+@export var tutorial_scene: PackedScene
+
 @export var hud_inspeccion: Control 
 @onready var state_machine: Node = $".."
 
+@export var vtv: Button
+@export var delante: Button
+@export var atras: Button
+@export var mesa: Button
+@export var volver: Button
+
+var tutorial_hecho = false
+
+func comenzar_guia():
+	var instancia_tutorial = tutorial_scene.instantiate()
+	add_child(instancia_tutorial)
+	
+	# Definimos los pasos: qué botón explicar y qué decir
+	var configuracion_tutorial = [
+		{
+			"nodo_boton": vtv,
+			"texto": "¡Este es el botón para inspeccionar la vtv."
+		},
+		{
+			"nodo_boton": delante,
+			"texto": "¡Este es el botón para inspeccionar el auto adelante"
+		},
+		{
+			"nodo_boton": atras,
+			"texto": "¡Este es el botón para inspeccionar el auto atras"
+		},
+		{
+			"nodo_boton": mesa,
+			"texto": "¡Este es el botón para ver la mesa y los documentos"
+		},
+		{
+			"nodo_boton": volver,
+			"texto": "¡Este es el botón para volver al menu anterior"
+		}
+	]
+	# Arrancamos el sistema
+	instancia_tutorial.iniciar_tutorial(configuracion_tutorial)
+
 func enter() -> void:
 	if hud_inspeccion:
+		if tutorial_hecho == false:
+			var savedata = SaveLoad.contents_to_save
+			tutorial_hecho = savedata.values()[3]
 		hud_inspeccion.show()
+		if tutorial_hecho == false:
+			await  get_tree().create_timer(0.2).timeout
+			comenzar_guia()
+			SaveLoad.contents_to_save["tutorial_inspeccion"] = true
+			SaveLoad._save()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:

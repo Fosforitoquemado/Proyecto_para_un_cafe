@@ -16,12 +16,12 @@ func _ready() -> void:
 func spawnear_tren():
 	if active_tren:
 		var num = randi_range(30,180)
-		await get_tree().create_timer(num).timeout
+		await get_tree().create_timer(num, false).timeout
 		print("viene tren")
 		var tren_dupe = tren.instantiate()
 		node_main.add_child(tren_dupe)
 		#tren_dupe.global_position = Vector3(-3.65,0.9,-8.7)
-		await get_tree().create_timer(30).timeout
+		await get_tree().create_timer(30, false).timeout
 		tren_dupe.queue_free()
 		active_tren = true
 
@@ -29,12 +29,12 @@ func spawnear_bondi():
 		
 	if active_bondi:
 		var num = randi_range(20,60)
-		await get_tree().create_timer(num).timeout
+		await get_tree().create_timer(num, false).timeout
 		print("viene bondi")
 		var bondi_dupe = bondi.instantiate()
 		node_main.add_child(bondi_dupe)
 		#tren_dupe.global_position = Vector3(-3.65,0.9,-8.7)
-		await get_tree().create_timer(15).timeout
+		await get_tree().create_timer(15, false).timeout
 		bondi_dupe.queue_free()
 		active_bondi = true
 		

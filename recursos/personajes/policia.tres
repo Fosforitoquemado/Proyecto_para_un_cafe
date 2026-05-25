@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PersonajesResource" format=3 uid="uid://dphfwr7qe51sn"]
+
+[ext_resource type="Script" uid="uid://b0is14tpnrnwv" path="res://recursos/Scripts/PersonajesResource.gd" id="1_hl2qu"]
+[ext_resource type="PackedScene" uid="uid://blqipm3bfgt6" path="res://scenes/personajes/personaje_policia.tscn" id="1_s1nhw"]
+
+[resource]
+script = ExtResource("1_hl2qu")
+nombre = "policia"
+escena = ExtResource("1_s1nhw")
+metadata/_custom_type_script = "uid://b0is14tpnrnwv"

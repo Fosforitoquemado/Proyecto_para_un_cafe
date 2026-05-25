@@ -5,6 +5,10 @@ const  save_location = "user://SaveFile.json"
 var contents_to_save: Dictionary = {
 	"day": 0,
 	"dinero": 0.0,
+	"tutorial_yes_no": false,
+	"tutorial_inspeccion": false,
+	"tutorial_computadora": false,
+	"tutorial_baul": false,
 	"new_data_to_save": false
 }
 
@@ -21,9 +25,10 @@ func _load():
 		var file = FileAccess.open(save_location, FileAccess.READ)
 		var data = file.get_var()
 		file.close()
-		
-		var save_data = data.duplicate()
-		contents_to_save["day"] = save_data["day"]
-		contents_to_save["dinero"] = save_data["dinero"]
-		contents_to_save["new_data_to_save"] = save_data["new_data_to_save"]
-		return save_data
+		if data is Dictionary:
+			# Loop through your current default dictionary keys
+			for key in contents_to_save.keys():
+				# Only overwrite if the save file actually contains the key
+				if data.has(key):
+					contents_to_save[key] = data[key]
+		return contents_to_save

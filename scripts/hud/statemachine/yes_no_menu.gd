@@ -1,5 +1,15 @@
 extends UIState
 
+@export var tutorial_scene: PackedScene
+
+@export var aprobado: Button
+@export var multar: Button
+@export var tomar_mate: Button
+@export var inspeccionar: Button
+@export var coima: Button
+@export var pc: Button
+
+
 @export var HUD:Control
 @export var yes_no_menu: Control 
 @onready var state_machine: Node = $".."
@@ -10,10 +20,56 @@ extends UIState
 
 var active = false
 
+var tutorial_hecho = false
+
+func comenzar_guia():
+	var instancia_tutorial = tutorial_scene.instantiate()
+	add_child(instancia_tutorial)
+	
+	# Definimos los pasos: qué botón explicar y qué decir
+	var configuracion_tutorial = [
+		{
+			"nodo_boton": aprobado,
+			"texto": "¡Este es el botón de aprobado! Úsalo para dejar pasar autos."
+		},
+		{
+			"nodo_boton": multar,
+			"texto": "¡Este es el botón de multar! Úsalo para multar autos"
+		},
+		{
+			"nodo_boton": tomar_mate,
+			"texto": "¡Este es el botón para tomar mate, usalo cuando tu baara de tiempo pase el 30%"
+		},
+		{
+			"nodo_boton": pc,
+			"texto": "¡Este es la pc, clickeala cuadno quieras y necesites verificar informacion del vehiculo"
+		},
+		{
+			"nodo_boton": inspeccionar,
+			"texto": "¡Este es el botón de inspeccionar, usalo para revisar y avlidar los autos"
+		},
+		{
+			"nodo_boton": coima,
+			"texto": "¡Este es el botón para coimear, cuando veas la oportunidad de cerrar un trato, hacelo"
+		}
+	]
+	# Arrancamos el sistema
+	instancia_tutorial.iniciar_tutorial(configuracion_tutorial)
+
 func enter() -> void:
+	# Esperamos un momento o lo activamos cuando empiece la partida
+	if tutorial_hecho == false:
+		var savedata = SaveLoad.contents_to_save
+		tutorial_hecho = savedata.values()[2]
 	if yes_no_menu:
 		CameraController.vista_normal()
 		yes_no_menu.show()
+		
+		if tutorial_hecho == false:
+			await  get_tree().create_timer(0.2).timeout
+			comenzar_guia()
+			SaveLoad.contents_to_save["tutorial_yes_no"] = true
+			SaveLoad._save()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
