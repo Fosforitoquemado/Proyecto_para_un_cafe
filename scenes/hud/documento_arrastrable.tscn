@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://b6yrvuw6ut1do"]
+
+[ext_resource type="Script" uid="uid://covm3wwjhi8qt" path="res://scripts/hud/interactuables/documento_arrastrar.gd" id="1_nlv16"]
+[ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/documentos/3.png" id="2_1rns5"]
+[ext_resource type="Texture2D" uid="uid://4w0k6hos6u0v" path="res://texture/hud/documentos/3.jpg" id="3_jpjqs"]
+[ext_resource type="Texture2D" uid="uid://ndt0odh75b5" path="res://texture/hud/documentos/image-of-plastic-bag-texture.jpg" id="4_pro75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0w8f"]
+albedo_texture = ExtResource("2_1rns5")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("3_jpjqs")
+roughness = 0.5
+roughness_texture = ExtResource("4_pro75")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7e0sl"]
+size = Vector3(0.1, 0.01, 0.2)
+
+[node name="Documento" type="Area3D" unique_id=1073428540]
+script = ExtResource("1_nlv16")
+
+[node name="carnet" type="Sprite3D" parent="." unique_id=1022078144]
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_n0w8f")
+texture = ExtResource("2_1rns5")
+
+[node name="Numero_licencia" type="Label3D" parent="carnet" unique_id=1461454418]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.4250488, 1.4708405, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "12345678
+
+"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Apellido" type="Label3D" parent="carnet" unique_id=1263512062]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.378128, 0.08028412, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "Martinez
+"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Nombre" type="Label3D" parent="carnet" unique_id=1523258182]
+transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.3910217, -1.3283234, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "Mauro"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Fecha_Nacimiento" type="Label3D" parent="carnet" unique_id=1148887812]
+transform = Transform3D(2, -7.1054274e-15, -5.0821977e-21, 7.1054274e-15, 2, 7.1054274e-15, -5.505714e-21, -7.1054274e-15, 2, -3.3910217, -2.882927, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "24/7/1985"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Vencimiento" type="Label3D" parent="carnet" unique_id=346743978]
+transform = Transform3D(2, -7.1054274e-15, -6.7762636e-21, 7.1054274e-15, 2, 7.1054274e-15, -7.19978e-21, -7.1054274e-15, 2, 6.1674347, -2.882927, 0.040245056)
+shaded = true
+no_depth_test = true
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "20/6/2026
+"
+font_size = 35
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1485131522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011444092, -0.0010681152, 0.0006313324)
+shape = SubResource("BoxShape3D_7e0sl")

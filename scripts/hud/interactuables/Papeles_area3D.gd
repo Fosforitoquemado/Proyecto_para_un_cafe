@@ -20,8 +20,8 @@ func _input_event(camera, event, position, normal, shape_idx):
 			if state_machine.current_state.name == "yes_no_menu" or state_machine.current_state.name == "inspeccion":
 				ocupado = true
 				uicontroller.papeles_on = true
-				var cedula = elementos_mesa.find_child("cedula")
-				var carnet = elementos_mesa.find_child("carnet")
+				var cedula = elementos_mesa.find_child("Documento_cedula")
+				var carnet = elementos_mesa.find_child("Documento_carnet")
 				var tween = create_tween()
 				tween.tween_property(cedula,"global_position",Vector3(1.115,0.4,1.28),0.6)
 				var tween2 = create_tween()

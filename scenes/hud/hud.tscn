@@ -614,6 +614,28 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="pc_mesa" type="Control" parent="Inspeccion_menu" unique_id=1520868821]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button_ir_pc" type="Button" parent="Inspeccion_menu/pc_mesa" unique_id=817225726]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7378472
+anchor_top = 0.086419754
+anchor_right = 0.8107639
+anchor_bottom = 0.19135803
+grow_horizontal = 0
+mouse_filter = 1
+text = "ir a pc"
+metadata/_edit_use_anchors_ = true
+
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3
 script = ExtResource("18_udak2")
@@ -719,3 +741,4 @@ script = ExtResource("31_ncrl3")
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]
 [connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/pc_mesa/Button_ir_pc" to="StateMachine/mesa" method="_on_button_ir_pc_pressed"]

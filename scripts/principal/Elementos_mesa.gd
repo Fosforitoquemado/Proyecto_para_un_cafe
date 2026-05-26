@@ -7,13 +7,13 @@ extends Node3D
 @onready var day_manager: Node = $"../DayManager"
 
 #cedula
-@export var cedula: Sprite3D
+@export var cedula: Area3D
 @export var dominio_cedula: Label3D
 @export var modelo_cedula: Label3D
 @export var vencimiento_cedula: Label3D
 
 #licencia
-@export var licencia: Sprite3D
+@export var licencia: Area3D
 @export var numero_licencia: Label3D
 @export var apellido_licencia: Label3D
 @export var nombre_licencia: Label3D
