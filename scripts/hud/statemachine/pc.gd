@@ -2,7 +2,8 @@ extends UIState
 
 @export var tutorial_scene: PackedScene
 
-@export var hud_elementos: Control 
+@export var hud_elementos: Control
+@export var hud_inspeccion: Control
 @onready var state_machine: Node = $".."
 
 @export var baul_boton: Button
@@ -33,9 +34,10 @@ func comenzar_guia():
 func enter() -> void:
 	if tutorial_hecho == false:
 		var savedata = SaveLoad.contents_to_save
-		tutorial_hecho = savedata.values()[6]
+		tutorial_hecho = savedata.values()[5]
 	if hud_elementos:
 		hud_elementos.hide()
+		hud_inspeccion.hide()
 		if tutorial_hecho == false:
 			await get_tree().create_timer(3.2).timeout
 			comenzar_guia()

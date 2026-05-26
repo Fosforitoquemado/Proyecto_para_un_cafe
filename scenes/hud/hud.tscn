@@ -380,12 +380,10 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4965278
-anchor_top = 0.6018519
-anchor_right = 0.5034722
-anchor_bottom = 0.61419755
-offset_top = 19.99997
-offset_bottom = 20.0
+anchor_left = 0.5354731
+anchor_top = 0.63271606
+anchor_right = 0.5807292
+anchor_bottom = 0.64969134
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -693,10 +691,11 @@ hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_menu = NodePath("../../Inspeccion_menu/Baul_menu")
 baul_boton = NodePath("../../Inspeccion_menu/Baul_menu/cerrar_baul")
 
-[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("hud_elementos", "baul_boton")]
+[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("hud_elementos", "hud_inspeccion", "baul_boton")]
 script = ExtResource("29_pjbv8")
 tutorial_scene = ExtResource("24_eiuad")
 hud_elementos = NodePath("../../Hud_elementos")
+hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]

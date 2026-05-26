@@ -18,7 +18,7 @@ func _input_event(camera, event, position, normal, shape_idx):
 		if event.pressed and uicontroller.auto_on == true:
 			print("COMPUTADORA")
 			var state_machine = uicontroller.find_child("StateMachine")
-			if state_machine.current_state.name == "yes_no_menu":
+			if state_machine.current_state.name == "yes_no_menu" or state_machine.current_state.name == "inspeccion":
 				state_machine.change_to("pc")
 				pcsistema.camara()
 				pcsistema.toggle_use()

@@ -18,7 +18,7 @@ var tiempo = 0.0
 func _process(delta: float) -> void:
 	if timer == true:
 		tiempo += delta
-	if tiempo >= 3:
+	if tiempo >= 300:
 		_on_siguiente_pressed()
 
 func _ready():
