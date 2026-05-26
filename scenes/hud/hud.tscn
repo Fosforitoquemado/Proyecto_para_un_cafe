@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://7uwx8xnlpgtl" path="res://scripts/hud/statemachine/auto_vtv.gd" id="27_eiuad"]
 [ext_resource type="Script" uid="uid://dgygvt3hdcx3d" path="res://scripts/hud/statemachine/auto_baul.gd" id="28_4vn1o"]
 [ext_resource type="Script" uid="uid://c08ukm1ctupi5" path="res://scripts/hud/statemachine/pc.gd" id="29_pjbv8"]
+[ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="31_ncrl3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
 font_size = 30
@@ -697,6 +698,9 @@ tutorial_scene = ExtResource("24_eiuad")
 hud_elementos = NodePath("../../Hud_elementos")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_boton = NodePath("../../Inspeccion_menu/baul_location")
+
+[node name="Transicion" type="Node" parent="StateMachine" unique_id=854658723]
+script = ExtResource("31_ncrl3")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
 [connection signal="pressed" from="Hud_elementos/Siguiente/Button_siguiente" to="StateMachine/main_view" method="_on_button_siguiente_pressed"]

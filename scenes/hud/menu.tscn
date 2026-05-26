@@ -213,9 +213,21 @@ sprite_frames = SubResource("SpriteFrames_lgy3i")
 stream = ExtResource("11_jgfnl")
 volume_db = 10.0
 
+[node name="help" type="Button" parent="." unique_id=1141290441]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9382716
+anchor_right = 0.052083332
+anchor_bottom = 1.0
+grow_vertical = 0
+mouse_filter = 1
+text = "ayuda"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button_quit" to="Button_quit" method="_on_pressed"]
 [connection signal="pressed" from="comprar" to="comprar" method="_on_pressed"]
 [connection signal="pressed" from="reset_file" to="reset_file" method="_on_pressed"]
 [connection signal="pressed" from="reset_file" to="Label_dia" method="_on_reset_file_pressed"]
 [connection signal="pressed" from="reset_file" to="Label_dinero" method="_on_reset_file_pressed"]
+[connection signal="pressed" from="help" to="Button" method="_on_help_pressed"]

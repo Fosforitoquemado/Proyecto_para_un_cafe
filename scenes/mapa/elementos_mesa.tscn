@@ -277,7 +277,7 @@ horizontal_alignment = 0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
 
 [node name="Camara_mesa" type="Node3D" parent="mesa" unique_id=1782146927]
-transform = Transform3D(5, -5.3290705e-14, 5.3290705e-14, 5.3290705e-14, 5, 2.1175824e-21, -5.3290705e-14, 2.1175824e-21, 5, 0.22563839, 4.487377, 1.2603087)
+transform = Transform3D(5, -5.3290705e-14, 5.3290705e-14, 5.3290705e-14, 5, 2.1175824e-21, -5.3290705e-14, 2.1175824e-21, 5, 0.024297714, 4.487377, 1.2603087)
 
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("4_cjwlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)

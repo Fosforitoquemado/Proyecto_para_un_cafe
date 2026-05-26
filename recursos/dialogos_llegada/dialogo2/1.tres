@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://d0lfsh5pracco"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_jcnn3"]
+
+[resource]
+script = ExtResource("1_jcnn3")
+texto = "Buenas cavallero"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

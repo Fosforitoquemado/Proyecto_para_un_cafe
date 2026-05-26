@@ -20,11 +20,13 @@ func _ready() -> void:
 	# CONTROL DE SEGURIDAD: Validamos que dialogostele no sea Nil y tenga la propiedad 'array'
 	if dia.dialogostele == null:
 		print_rich("[color=yellow]⚠️ ADVERTENCIA: El día actual no tiene ningún recurso de diálogos asignado en 'dialogostele'.[/color]")
-		hud.alternar_empezar_boton()
+		var state_machine = hud.find_child("StateMachine")
+		state_machine.change_to("main_view")
 		return
 	if not "array" in dia.dialogostele:
 		print_rich("[color=orange]⚠️ ADVERTENCIA: 'dialogostele' existe, pero no contiene una variable llamada 'array'.[/color]")
-		hud.alternar_empezar_boton()
+		var state_machine = hud.find_child("StateMachine")
+		state_machine.change_to("main_view")
 		return
 	# Si pasa los controles, el bucle corre sin peligro de crash
 	await get_tree().create_timer(1, false).timeout

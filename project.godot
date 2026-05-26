@@ -32,6 +32,7 @@ window/size/mode=3
 folder_colors={
 "res://modelos/": "yellow",
 "res://recursos/Scripts/": "purple",
+"res://recursos/dialogos_llegada/dialogos_tres/": "blue",
 "res://scenes/": "red",
 "res://scenes/autos/": "yellow",
 "res://scenes/hud/": "green",

@@ -196,3 +196,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Startdaymanager" type="Node" parent="." unique_id=1394303216]
 script = ExtResource("23_pm3ni")
+
+[connection signal="auto_out" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_out"]
+[connection signal="auto_ready" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_ready"]

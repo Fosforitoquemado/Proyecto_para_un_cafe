@@ -10,6 +10,12 @@
 [ext_resource type="Animation" uid="uid://htouw6hn1xkr" path="res://recursos/animaciones/c4_lunge/llegada_c4.res" id="4_5xuue"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_5xuue"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_bmtgt"]
+[ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="11_yp3am"]
+[ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="12_ri5hm"]
+[ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="13_inmdt"]
+[ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="14_fhity"]
+[ext_resource type="AudioStream" uid="uid://b23s6rm0lmrk2" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)5.wav" id="15_wexor"]
+[ext_resource type="AudioStream" uid="uid://bpbfhk6mdespo" path="res://sonidos/Tv/despedida/Sonido tele (mp3cut.net)saludo.wav" id="16_0k6nf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuqsk"]
 resource_name = "pintura"
@@ -732,6 +738,38 @@ cache/0/100/0/scale = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_io0ef"]
 size = Vector3(0.1, 0.1, 0.1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ukqw3"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iifg2"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ukqw3")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_35730"]
+size = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmxws"]
+font_size = 20
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sf26b"]
+playback_mode = 1
+random_pitch = 1.1892071
+streams_count = 5
+stream_0/stream = ExtResource("11_yp3am")
+stream_1/stream = ExtResource("12_ri5hm")
+stream_2/stream = ExtResource("13_inmdt")
+stream_3/stream = ExtResource("14_fhity")
+stream_4/stream = ExtResource("15_wexor")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_daamh"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("16_0k6nf")
+
 [node name="armazon" type="MeshInstance3D" unique_id=1855353460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 mesh = SubResource("ArrayMesh_avusv")
@@ -877,3 +915,52 @@ mesh = SubResource("BoxMesh_io0ef")
 
 [node name="nodo_personaje" type="Node3D" parent="." unique_id=1841962248]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018890873, -0.019911975, 0.16137126)
+
+[node name="Nodo_mensaje" type="Node3D" parent="." unique_id=2058841781]
+transform = Transform3D(0.6, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.8, 0)
+
+[node name="mensaje" type="Label3D" parent="Nodo_mensaje" unique_id=1880182168]
+visible = false
+billboard = 1
+render_priority = 1
+text = "ULTIMA NOTICIA DE ULTIMA HORA"
+font_size = 52
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Nodo_mensaje" unique_id=1275080435]
+material_override = SubResource("StandardMaterial3D_iifg2")
+mesh = SubResource("QuadMesh_35730")
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=1748612032]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
+size = Vector2i(400, 100)
+render_target_update_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport2" unique_id=1873623063]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 63.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=1739910330]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=1389686289]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_kmxws")
+autowrap_mode = 2
+
+[node name="soniditos" type="AudioStreamPlayer3D" parent="." unique_id=1172389844]
+stream = SubResource("AudioStreamRandomizer_sf26b")
+
+[node name="despedida" type="AudioStreamPlayer3D" parent="." unique_id=1048464827]
+stream = SubResource("AudioStreamRandomizer_daamh")

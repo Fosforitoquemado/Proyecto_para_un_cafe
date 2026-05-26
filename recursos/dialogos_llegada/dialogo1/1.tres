@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://b8u3a376xbn7r"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_vgtc6"]
+
+[resource]
+script = ExtResource("1_vgtc6")
+texto = "¡buenos dias!"
+tamanio_final = 39
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

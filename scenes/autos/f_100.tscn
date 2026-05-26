@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_lxeu1"]
 [ext_resource type="AudioStream" uid="uid://sn268bygnv2w" path="res://sonidos/F100/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav" id="7_f48eq"]
 [ext_resource type="AudioStream" uid="uid://b1vo3vvkdub7c" path="res://sonidos/F100/F100 Yendose.wav" id="8_kgl5m"]
+[ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="11_uamw5"]
+[ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="12_ivv80"]
+[ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="13_p8ua5"]
+[ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="14_msilu"]
+[ext_resource type="AudioStream" uid="uid://b23s6rm0lmrk2" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)5.wav" id="15_jpqrj"]
+[ext_resource type="AudioStream" uid="uid://bpbfhk6mdespo" path="res://sonidos/Tv/despedida/Sonido tele (mp3cut.net)saludo.wav" id="16_bmmcm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdv7t"]
 resource_name = "Material.005"
@@ -796,6 +802,38 @@ cache/0/100/0/scale = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_f48eq"]
 size = Vector3(0.1, 0.1, 0.1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_hkpl3"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y44ex"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_hkpl3")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_1mlxh"]
+size = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k41by"]
+font_size = 20
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8kpgb"]
+playback_mode = 1
+random_pitch = 1.1892071
+streams_count = 5
+stream_0/stream = ExtResource("11_uamw5")
+stream_1/stream = ExtResource("12_ivv80")
+stream_2/stream = ExtResource("13_p8ua5")
+stream_3/stream = ExtResource("14_msilu")
+stream_4/stream = ExtResource("15_jpqrj")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oa5jy"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("16_bmmcm")
+
 [node name="armazon" type="MeshInstance3D" unique_id=345719991]
 transform = Transform3D(-0.9999992, -0.0005335728, 0.0011213938, -0.0005241277, 0.99996454, 0.008406187, -0.0011258393, 0.008405593, -0.999964, 0, 0.29, 0)
 mesh = SubResource("ArrayMesh_clibm")
@@ -932,3 +970,52 @@ mesh = SubResource("BoxMesh_f48eq")
 
 [node name="nodo_personaje" type="Node3D" parent="." unique_id=1176710499]
 transform = Transform3D(-0.99999857, 0.0017453298, -8.707866e-08, 0.0017450625, 0.99984634, 0.01745241, 3.0547497e-05, 0.017452383, -0.9998478, -0.043812554, 0.1616283, -0.23697002)
+
+[node name="Nodo_mensaje" type="Node3D" parent="." unique_id=1073091640]
+transform = Transform3D(0.6, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.8, 0)
+
+[node name="mensaje" type="Label3D" parent="Nodo_mensaje" unique_id=1457686522]
+visible = false
+billboard = 1
+render_priority = 1
+text = "ULTIMA NOTICIA DE ULTIMA HORA"
+font_size = 52
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Nodo_mensaje" unique_id=102762805]
+material_override = SubResource("StandardMaterial3D_y44ex")
+mesh = SubResource("QuadMesh_1mlxh")
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=536115452]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
+size = Vector2i(400, 100)
+render_target_update_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport2" unique_id=253492658]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 63.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=1984338419]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=1155970694]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_k41by")
+autowrap_mode = 2
+
+[node name="soniditos" type="AudioStreamPlayer3D" parent="." unique_id=1715747304]
+stream = SubResource("AudioStreamRandomizer_8kpgb")
+
+[node name="despedida" type="AudioStreamPlayer3D" parent="." unique_id=1168242850]
+stream = SubResource("AudioStreamRandomizer_oa5jy")

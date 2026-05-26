@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var hud: UIManager = $"../HUD"
 @onready var pcsistema: PCStatic = $"../PCSISTEMA"
 @onready var pc_control: Control = $"../PCSISTEMA/SubViewport/PCControl"
 
@@ -19,7 +20,13 @@ extends Node3D
 @export var fecha_nacimiento_licencia: Label3D
 @export var vencimiento_licencia: Label3D
 
+var personaje
+
 var datos_documentos
+
+signal auto_ready
+
+signal auto_out
 
 func mostrar_datos():
 	datos_documentos = DocumentosGenerator._generate_documentos()
@@ -78,28 +85,72 @@ func mostrar_datos():
 		vencimiento_licencia.text = datos_documentos["fecha_licencia"]#🎫🎫🎫
 		pc_control.set_fecha_vencimiento(AutoGenerator._auto_data["fecha_licencia"])
 	#papeles en la mano del personaje
+	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout
+	for i in range(GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size()):
+		#if skip == true:
+			#tele.apagar_tele()
+			#return
+		var dialogo_actual = GameManager.auto_data["dialogo_llegada_info"]["resource"].array[i]
+		var array_final = false
+		if GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size() - 1:
+			array_final = true
+			
+		GameManager.auto_dupe.mostrar_mensaje(
+			dialogo_actual["texto"],
+			dialogo_actual["tamanio_font"],
+			dialogo_actual["tamanio_final"],
+			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_velocidad"],
+			array_final
+		)
+		
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
+		await get_tree().create_timer(tiempo_espera, false).timeout
+	GameManager.auto_dupe.ocultar_mensaje()
 	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
-		var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
+		personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
 		var personaje_animator = personaje.find_child("AnimationPlayer")
-	
-	
-		await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length).timeout
-	
+		var num = randf_range(1.3,2.5)
+		personaje_animator.speed_scale = num
+		
 		personaje_animator.play("dar_papeles")
-		await  get_tree().create_timer(personaje_animator.current_animation_length).timeout
+		await  get_tree().create_timer(personaje_animator.current_animation_length / num, false).timeout
 	
 		if "licencia" in day.documentos_habilitados:
 			licencia.visible = true
 		if "cedula" in day.documentos_habilitados:
 			cedula.visible = true
-	
+			
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
+		
+	auto_ready.emit()
 	print("FINAL MOSTRAR DATOS")
 
 func ocultar_documentos():
+	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
+	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
+	if hud.papeles_on == true:
+		personaje_animator.play("dar_papeles")
+		await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
+		var tween = create_tween()
+		tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+		var tween2 = create_tween()
+		tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+		await personaje_animator.animation_finished
 	licencia.visible = false
 	cedula.visible = false
+	personaje_animator.play("agarrar papeles")
+	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
+	personaje_animator.play("manejando")
+	
+	GameManager.auto_dupe.irse()
+	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length,false).timeout
+	GameManager.auto_dupe.queue_free()
+	hud.papeles_on == false
+	auto_out.emit()
+	
+
 func datos_cedula():
 	print("hola")

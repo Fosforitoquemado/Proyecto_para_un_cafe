@@ -7,6 +7,7 @@ extends Node
 @export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
 @export var objetosbaul:ObjetoArrayResource = preload("res://recursos/objetosbaularray/todos.tres")
 @export var personajes:PersonajesArrayResource = preload("res://recursos/Arraypersonajes/TODOS.tres")
+@export var dialogo_llegada:DialogosGlobalArray = preload("res://recursos/dialogos_llegadaarray/TODOS.tres")
 #elementos auto
 
 var colors = {
@@ -122,12 +123,22 @@ func generate_personaje():
 		"nombre":  nombre,
 	}
 	return modelo_info
+func generate_dialogo_llegada():
+	var num_dialogo_random = randi_range(0,dialogo_llegada.array.size() - 1)
+	var resource = dialogo_llegada.array[num_dialogo_random]
+	print("RESOURCE",resource)
+	var dialogo_info = {
+		"resource": resource,
+		"num_dialogo": num_dialogo_random,
+	}
+	return dialogo_info
 
 func _generate_auto() -> Dictionary:
 	var data = {}
 	
 	# BASE
 	var personaje = generate_personaje()
+	var dialogo_llegada_info = generate_dialogo_llegada()
 	var patente = generate_patente()
 	var color_info = generate_color()
 	var modelo_info = generate_modelo()
@@ -146,6 +157,7 @@ func _generate_auto() -> Dictionary:
 	# RESULTADO
 	data = {
 		"personaje_info": personaje,
+		"dialogo_llegada_info": dialogo_llegada_info,
 		"patente": patente,
 		"nombre_info": nombre_info,
 		"apellido_info": apellido_info,

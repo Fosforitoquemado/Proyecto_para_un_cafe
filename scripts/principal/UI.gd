@@ -16,6 +16,8 @@ class_name UIManager
 @export var timer: ProgressBar
 
 var auto_on = false
+var auto_out = false
+var papeles_on = false
 
 func _ready() -> void:
 	update_ui()
@@ -25,7 +27,17 @@ func update_ui():
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
 	dinero_label.text = str("Dinero: ",GameManager.dinero_player)
 
-
 func _on_fov_slider_value_changed(value: float) -> void:
 	CameraController.update_fov(value)
+	pass # Replace with function body.
+
+func _on_elementos_mesa_auto_ready() -> void:
+	state_machine.change_to("yes_no_menu")
+	auto_on = true
+	pass # Replace with function body.
+
+
+func _on_elementos_mesa_auto_out() -> void:
+	state_machine.change_to("main_view")
+	auto_out = true
 	pass # Replace with function body.

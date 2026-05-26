@@ -97,10 +97,11 @@ func enter() -> void:
 		yes_no_menu.show()
 		
 		if tutorial_hecho == false:
-			await  get_tree().create_timer(0.2).timeout
+			await  get_tree().process_frame
 			comenzar_guia()
 			SaveLoad.contents_to_save["tutorial_yes_no"] = true
 			SaveLoad._save()
+		timer._start_timer()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
@@ -114,8 +115,6 @@ func _on_yes_pressed() -> void:
 		GameManager.ida_auto()
 		timer._stop_timer()
 		yes_no_menu.hide()
-		var animator = GameManager.auto_dupe.find_child("AnimationPlayer")
-		await get_tree().create_timer(animator.current_animation_length).timeout
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
 			print("FALLASTE❌❌")
@@ -124,8 +123,8 @@ func _on_yes_pressed() -> void:
 			GameManager.sumar_auto()
 			print("BIEN✅✅")
 		active = false
-		fsm.change_to("main_view")
-		
+		HUD.auto_out = false
+		state_machine.change_to("transicion")
 
 func _on_no_pressed() -> void:
 	if active == false:
@@ -134,8 +133,6 @@ func _on_no_pressed() -> void:
 		GameManager.ida_auto()
 		timer._stop_timer()
 		yes_no_menu.hide()
-		var animator = GameManager.auto_dupe.find_child("AnimationPlayer")
-		await get_tree().create_timer(animator.current_animation_length).timeout
 		if DocumentosGenerator.auto_ilegal == false:
 			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
@@ -143,11 +140,14 @@ func _on_no_pressed() -> void:
 			GameManager.sumar_dinero_jugador(50)
 			print("BIEN✅✅")
 		active = false
-		fsm.change_to("main_view")
+		HUD.auto_out = false
+		state_machine.change_to("transicion")
 
 func _on_coimear_pressed() -> void:
 	if active == false:
 		active = true
+		HUD.auto_on = false
+		GameManager.ida_auto()
 		timer._stop_timer()
 		yes_no_menu.hide()
 		if DocumentosGenerator.ilegalidades <= 1:
@@ -156,9 +156,9 @@ func _on_coimear_pressed() -> void:
 		else:
 			GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			print("BIEN✅✅")
-		GameManager.auto_dupe.queue_free()
 		active = false
-		fsm.change_to("main_view")
+		HUD.auto_out = false
+		state_machine.change_to("transicion")
 
 func _on_mate_pressed() -> void:
 	mate._on_mate_pressed()
@@ -168,7 +168,6 @@ func _on_mate_pressed() -> void:
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		fsm.change_to("Pause")
-
 
 func _on_inspeccion_pressed() -> void:
 	fsm.change_to("inspeccion")
