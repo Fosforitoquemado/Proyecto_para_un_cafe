@@ -129,21 +129,23 @@ func mostrar_datos():
 	print("FINAL MOSTRAR DATOS")
 
 func ocultar_documentos():
-	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
-	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
-	if hud.papeles_on == true:
-		personaje_animator.play("dar_papeles")
-		await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
-		var tween = create_tween()
-		tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
-		var tween2 = create_tween()
-		tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
-		await personaje_animator.animation_finished
-	licencia.visible = false
-	cedula.visible = false
-	personaje_animator.play("agarrar papeles")
-	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
-	personaje_animator.play("manejando")
+	var day = day_manager.get_day()
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
+		var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
+		if hud.papeles_on == true:
+			personaje_animator.play("dar_papeles")
+			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
+			var tween = create_tween()
+			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween2 = create_tween()
+			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			await personaje_animator.animation_finished
+		licencia.visible = false
+		cedula.visible = false
+		personaje_animator.play("agarrar papeles")
+		await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
+		personaje_animator.play("manejando")
 	
 	GameManager.auto_dupe.irse()
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length,false).timeout
