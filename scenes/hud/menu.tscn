@@ -91,7 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="." unique_id=1545100273]
-modulate = Color(0.7137255, 0.41568628, 0, 0)
+modulate = Color(0, 0, 0, 0.23529412)
 self_modulate = Color(1, 1, 1, 0.92941177)
 z_index = 1
 layout_mode = 1

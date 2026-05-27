@@ -11,11 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://b3cowatwi7ihu" path="res://texture/hud/botones/3.png" id="6_a0exy"]
 [ext_resource type="Texture2D" uid="uid://cauuqebu207uq" path="res://texture/hud/botones/para_el_cafe_arte__coima.png" id="7_567j1"]
 [ext_resource type="Texture2D" uid="uid://btlt22tdt0t7p" path="res://texture/hud/botones/espero-artguru.png" id="7_bluaa"]
+[ext_resource type="Script" uid="uid://ry550upi30ox" path="res://scripts/hud/animaciones_botones.gd" id="7_v3rms"]
 [ext_resource type="Texture2D" uid="uid://b4lruq0quje4" path="res://texture/hud/botones/para el cafe arte (10)-artguru.png" id="8_bbrgr"]
 [ext_resource type="Texture2D" uid="uid://dp2r0fv653x1w" path="res://texture/hud/botones/para el cafe arte_7-artguru.png" id="9_3fmw6"]
 [ext_resource type="Texture2D" uid="uid://sej1bra8w11n" path="res://texture/hud/botones/2.png" id="10_2dqaf"]
 [ext_resource type="Texture2D" uid="uid://cc60wgjfj6opu" path="res://texture/hud/botones/1.png" id="11_4vn1o"]
 [ext_resource type="Texture2D" uid="uid://btrjjfmtadljb" path="res://texture/hud/botones/23-artguru.png" id="12_pjbv8"]
+[ext_resource type="Texture2D" uid="uid://bmoi4kvo0oaho" path="res://texture/hud/pc/pc_go_arrow.png" id="18_rbny8"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="18_udak2"]
 [ext_resource type="Script" uid="uid://ustrhm87tr4g" path="res://scripts/hud/statemachine/main_view.gd" id="19_7pnlf"]
 [ext_resource type="Script" uid="uid://dlns8omfqc7cw" path="res://scripts/hud/statemachine/pause.gd" id="20_a0exy"]
@@ -37,6 +39,44 @@ font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
+
+[sub_resource type="Animation" id="Animation_v3rms"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bxlf6"]
+resource_name = "iluminado"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(5.0982413, 1, 0),
+"update": 0,
+"values": [Color(0.8848981, 0.8848981, 0.8848981, 1), Color(1.2237577, 1.2237577, 1.2237577, 1), Color(0.8848981, 0.8848981, 0.8848981, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yog28"]
+_data = {
+&"RESET": SubResource("Animation_v3rms"),
+&"iluminado": SubResource("Animation_bxlf6")
+}
 
 [node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "inspeccion_menu", "timer") groups=["ui_manager"]]
 layout_mode = 3
@@ -126,6 +166,7 @@ anchor_bottom = 0.86
 grow_horizontal = 2
 mouse_filter = 1
 text = "next"
+script = ExtResource("7_v3rms")
 metadata/Auto_on = false
 metadata/inspeccion_menu_on = false
 metadata/_edit_use_anchors_ = true
@@ -236,6 +277,7 @@ anchor_top = 0.16
 anchor_right = 0.9111111
 anchor_bottom = 0.85
 mouse_filter = 1
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="skip" type="Button" parent="Start_day" unique_id=1159546307]
@@ -279,6 +321,7 @@ anchor_right = 0.9374999
 anchor_bottom = 0.86274517
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Multar" type="TextureRect" parent="YES_NO_menu" unique_id=203564509]
@@ -302,6 +345,7 @@ anchor_bottom = 0.86
 grow_horizontal = 2
 grow_vertical = 2
 text = "MULTAR"
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Tomar_Mate" type="TextureRect" parent="YES_NO_menu" unique_id=828660464]
@@ -323,6 +367,7 @@ anchor_top = 0.16
 anchor_right = 0.9111111
 anchor_bottom = 0.87
 text = "TOMAR MATE "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccionar" type="TextureRect" parent="YES_NO_menu" unique_id=1187776531]
@@ -348,6 +393,7 @@ grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Coima" type="TextureRect" parent="YES_NO_menu" unique_id=1681919718]
@@ -374,6 +420,7 @@ grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="pc_location" type="Button" parent="YES_NO_menu" unique_id=1242503910]
@@ -421,6 +468,7 @@ anchor_bottom = 0.87000006
 grow_horizontal = 2
 text = "Inspeccion_VTV
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_Delantera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
@@ -446,6 +494,7 @@ anchor_bottom = 0.85
 grow_vertical = 2
 text = "Inspeccion_adela
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_Trasera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
@@ -472,6 +521,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Inspeccion_atras
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_compu_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=44192735]
@@ -496,6 +546,7 @@ anchor_bottom = 0.86
 grow_vertical = 2
 text = "Inspeccion_compu
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_mesa_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
@@ -523,6 +574,7 @@ anchor_bottom = 0.86
 grow_vertical = 2
 text = "Inspeccion_mesa
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_volver_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
@@ -548,6 +600,7 @@ grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion_volver
 "
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="fov_slider" type="HSlider" parent="Inspeccion_menu" unique_id=1837691495]
@@ -624,16 +677,35 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Button_ir_pc" type="Button" parent="Inspeccion_menu/pc_mesa" unique_id=817225726]
+[node name="arrow" type="TextureRect" parent="Inspeccion_menu/pc_mesa" unique_id=898891614]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7378472
-anchor_top = 0.086419754
-anchor_right = 0.8107639
-anchor_bottom = 0.19135803
+anchor_left = 0.7065972
+anchor_top = 0.038580246
+anchor_right = 0.8168403
+anchor_bottom = 0.22222222
+offset_right = 3.0
+offset_bottom = 11.0
+mouse_filter = 2
+texture = ExtResource("18_rbny8")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inspeccion_menu/pc_mesa/arrow" unique_id=247874845]
+libraries/ = SubResource("AnimationLibrary_yog28")
+autoplay = &"iluminado"
+
+[node name="Button_ir_pc" type="Button" parent="Inspeccion_menu/pc_mesa/arrow" unique_id=817225726]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2769231
+anchor_top = 0.23846154
+anchor_right = 0.86923075
+anchor_bottom = 0.83076924
 grow_horizontal = 0
 mouse_filter = 1
-text = "ir a pc"
+script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
@@ -725,20 +797,76 @@ baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 script = ExtResource("31_ncrl3")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
+[connection signal="focus_entered" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_mouse_exited"]
 [connection signal="pressed" from="Hud_elementos/Siguiente/Button_siguiente" to="StateMachine/main_view" method="_on_button_siguiente_pressed"]
+[connection signal="focus_entered" from="Start_day/Empezar/button_empezar_dia" to="Start_day/Empezar/button_empezar_dia" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Start_day/Empezar/button_empezar_dia" to="Start_day/Empezar/button_empezar_dia" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Start_day/Empezar/button_empezar_dia" to="Start_day/Empezar/button_empezar_dia" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start_day/Empezar/button_empezar_dia" to="Start_day/Empezar/button_empezar_dia" method="_on_mouse_exited"]
 [connection signal="pressed" from="Start_day/Empezar/button_empezar_dia" to="StateMachine/tele" method="_on_button_empezar_dia_pressed"]
 [connection signal="pressed" from="Start_day/skip" to="StateMachine/tele" method="_on_skip_pressed"]
+[connection signal="focus_entered" from="YES_NO_menu/Aprobado/yes" to="YES_NO_menu/Aprobado/yes" method="_on_focus_entered"]
+[connection signal="focus_exited" from="YES_NO_menu/Aprobado/yes" to="YES_NO_menu/Aprobado/yes" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="YES_NO_menu/Aprobado/yes" to="YES_NO_menu/Aprobado/yes" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/Aprobado/yes" to="YES_NO_menu/Aprobado/yes" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Aprobado/yes" to="StateMachine/yes_no_menu" method="_on_yes_pressed"]
+[connection signal="focus_entered" from="YES_NO_menu/Multar/no" to="YES_NO_menu/Multar/no" method="_on_focus_entered"]
+[connection signal="focus_exited" from="YES_NO_menu/Multar/no" to="YES_NO_menu/Multar/no" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="YES_NO_menu/Multar/no" to="YES_NO_menu/Multar/no" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/Multar/no" to="YES_NO_menu/Multar/no" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Multar/no" to="StateMachine/yes_no_menu" method="_on_no_pressed"]
+[connection signal="focus_entered" from="YES_NO_menu/Tomar_Mate/mate" to="YES_NO_menu/Tomar_Mate/mate" method="_on_focus_entered"]
+[connection signal="focus_exited" from="YES_NO_menu/Tomar_Mate/mate" to="YES_NO_menu/Tomar_Mate/mate" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="YES_NO_menu/Tomar_Mate/mate" to="YES_NO_menu/Tomar_Mate/mate" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/Tomar_Mate/mate" to="YES_NO_menu/Tomar_Mate/mate" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Tomar_Mate/mate" to="StateMachine/yes_no_menu" method="_on_mate_pressed"]
+[connection signal="focus_entered" from="YES_NO_menu/Inspeccionar/Inspeccion" to="YES_NO_menu/Inspeccionar/Inspeccion" method="_on_focus_entered"]
+[connection signal="focus_exited" from="YES_NO_menu/Inspeccionar/Inspeccion" to="YES_NO_menu/Inspeccionar/Inspeccion" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="YES_NO_menu/Inspeccionar/Inspeccion" to="YES_NO_menu/Inspeccionar/Inspeccion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/Inspeccionar/Inspeccion" to="YES_NO_menu/Inspeccionar/Inspeccion" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Inspeccionar/Inspeccion" to="StateMachine/yes_no_menu" method="_on_inspeccion_pressed"]
+[connection signal="focus_entered" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_focus_entered"]
+[connection signal="focus_exited" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Coima/Coimear" to="StateMachine/yes_no_menu" method="_on_coimear_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="StateMachine/inspeccion" method="_on_inspeccion_vtv_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Delantera_texture/Inspeccion_Delantera" to="StateMachine/inspeccion" method="_on_inspeccion_delantera_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_atras" to="StateMachine/inspeccion" method="_on_inspeccion_atras_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_compu_texture/Inspeccion_compu" to="StateMachine/inspeccion" method="_on_inspeccion_compu_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa" to="StateMachine/inspeccion" method="_on_inspeccion_mesa_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
 [connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]
 [connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/pc_mesa/Button_ir_pc" to="StateMachine/mesa" method="_on_button_ir_pc_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_exited"]
+[connection signal="pressed" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="StateMachine/mesa" method="_on_button_ir_pc_pressed"]
