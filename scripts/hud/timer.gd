@@ -13,9 +13,7 @@ func _stop_timer():
 	value = tiempo_transcurrido
 
 func _reduce_timer():
-	if tiempo_transcurrido >= 30:
-		tiempo_transcurrido -= 30
-
+	tiempo_transcurrido = clamp(((max_value * 40) / 100) - tiempo_transcurrido,0,max_value)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

@@ -5,6 +5,7 @@ class_name UIManager
 
 @onready var CameraController: Node = $"../CameraController"
 @onready var startdaymanager: Node = $"../Startdaymanager"
+@onready var day_manager: Node = $"../DayManager"
 
 @export var autos_label: Label
 @export var fallos_label: Label
@@ -15,12 +16,16 @@ class_name UIManager
 @export var inspeccion_menu: Control
 @export var timer: ProgressBar
 
+var dia
+
 var auto_on = false
 var auto_out = false
 var papeles_on = false
 
 func _ready() -> void:
 	update_ui()
+	dia = day_manager.get_day()
+	timer.max_value = dia.tiempo_limite
 
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)

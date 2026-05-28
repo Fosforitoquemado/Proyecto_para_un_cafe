@@ -15,15 +15,15 @@ const tamaniolabel = 40
 #@onready var mesh_instance_3d: MeshInstance3D = $SubViewport/MeshInstance3D
 @onready var mesh_instance_3d_texto: MeshInstance3D = $Nodo_mensaje/MeshInstance3D
 
-@onready var label_mensaje: Label = $SubViewport2/PanelContainer/MarginContainer/Label
+@onready var label_mensaje: Label = $Nodo_mensaje/SubViewport2/PanelContainer/MarginContainer/Label
 
-@onready var sub_viewport: SubViewport = $SubViewport2
-@onready var panel_container: PanelContainer = $SubViewport2/PanelContainer
+@onready var sub_viewport: SubViewport = $Nodo_mensaje/SubViewport2
+@onready var panel_container: PanelContainer = $Nodo_mensaje/SubViewport2/PanelContainer
 
 @export var pixels_to_meters: float = 0.005
 
-@onready var soniditos: AudioStreamPlayer3D = $soniditos
-@onready var despedida: AudioStreamPlayer3D = $despedida
+@onready var soniditos: AudioStreamPlayer3D = $Nodo_mensaje/soniditos
+@onready var despedida: AudioStreamPlayer3D = $Nodo_mensaje/despedida
 
 # 1. Definimos el ancho máximo en píxeles que permitiremos en X
 @export var letters_scale:int = 10

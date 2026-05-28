@@ -15,34 +15,33 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="." unique_id=511695061]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -224.0
-offset_right = 41.0
-offset_bottom = -201.0
+anchors_preset = -1
+anchor_left = 0.37890625
+anchor_top = 0.09799383
+anchor_right = 0.62109375
+anchor_bottom = 0.24614197
+offset_left = 98.5
+offset_top = 36.5
+offset_right = -98.5
+offset_bottom = -36.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ganaste"
 label_settings = SubResource("LabelSettings_dj4ih")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=1891771682]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
+anchors_preset = -1
+anchor_left = 0.41319445
+anchor_top = 0.4228395
+anchor_right = 0.5868056
+anchor_bottom = 0.5771605
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 text = "menu"
 script = ExtResource("1_imn5x")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

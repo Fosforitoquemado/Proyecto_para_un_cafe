@@ -5,6 +5,8 @@ extends Node3D
 @onready var pc_control: Control = $"../PCSISTEMA/SubViewport/PCControl"
 
 @onready var day_manager: Node = $"../DayManager"
+@onready var DocumentosGenerator: Node = $"../DocumentosGenerator"
+
 
 #cedula
 @export var cedula: Area3D
@@ -150,7 +152,7 @@ func ocultar_documentos():
 	GameManager.auto_dupe.irse()
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length,false).timeout
 	GameManager.auto_dupe.queue_free()
-	hud.papeles_on == false
+	hud.papeles_on = false
 	auto_out.emit()
 	
 

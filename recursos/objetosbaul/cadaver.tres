@@ -10,4 +10,5 @@ escena = ExtResource("1_wwq6j")
 tamanio = "grande"
 max_rotacion = 90
 min_rotacion = 90
+score = 150.0
 metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

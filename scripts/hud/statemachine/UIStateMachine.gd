@@ -28,7 +28,6 @@ func change_to(target_state_name: String) -> void:
 	if current_state:
 		_state_history.append(current_state.name)
 	if _state_history.size() > 5:
-		print("BORRADO")
 		_state_history.pop_front()
 	_change_state(target_state_name)
 
@@ -54,4 +53,4 @@ func _change_state(target_state_name: String) -> void:
 
 	current_state = states[target_key]
 	current_state.enter()
-	print("UI Estado: ", current_state.name, " | Historial restante: ", _state_history)
+	#print("UI Estado: ", current_state.name, " | Historial restante: ", _state_history)

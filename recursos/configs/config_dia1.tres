@@ -1,9 +1,8 @@
 [gd_resource type="Resource" script_class="GameConfig" format=3 uid="uid://bke1e7fcsajtk"]
 
-[ext_resource type="Script" uid="uid://bij3ao6vtfjge" path="res://recursos/Scripts/GameConfig.gd" id="1_ub5fs"]
+[ext_resource type="Script" uid="uid://bij3ao6vtfjge" path="res://recursos/Scripts/GameConfig.gd" id="1_3phjs"]
 
 [resource]
-script = ExtResource("1_ub5fs")
+script = ExtResource("1_3phjs")
 probabilidad_vtv = 50
-probabilidad_objeto_baul = 10
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

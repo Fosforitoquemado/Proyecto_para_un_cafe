@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 var active = false
 
 func _ready():
-	var pantalla = get_viewport_rect().size
+	var pantalla = get_viewport_rect().size / 6
 	var tex = sprite_frames.get_frame_texture("new_animation", 0)
 
 	scale = pantalla / tex.get_size()

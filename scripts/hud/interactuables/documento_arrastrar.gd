@@ -27,15 +27,16 @@ func _input_event(_camera: Camera3D, event: InputEvent, _position: Vector3, _nor
 			arrastrando = true
 			# Creamos el plano invisible orientado hacia la cámara a la altura actual del objeto
 			plano_arrastre = Plane(camara.project_ray_normal(event.position), global_position)
+			global_position.y = 0.5
 		else:
 			global_position.y = 0.4
 			arrastrando = false
-
 func _input(event: InputEvent) -> void:
 	# Si soltamos el clic en cualquier parte de la pantalla, dejamos de arrastrar
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		global_position.y = 0.4
 		arrastrando = false
-
+		
 	# Si nos estamos moviendo y el objeto está seleccionado
 	if event is InputEventMouseMotion and arrastrando:
 		_mover_objeto_a_posicion_raton(event.position)

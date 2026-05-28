@@ -1,19 +1,33 @@
 extends Node
 
-
+#daymanger
+@onready var day_manager: Node = $"../DayManager"
+var dia
 #elementos auto
-@export var config:GameConfig = preload("res://recursos/dificultad/easy.tres")
-@export var autos:AutoArrayResource = preload("res://recursos/ArrayAutos/TODOS.tres")
-@export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
-@export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
-@export var colores:ColoresResource = preload("res://recursos/colores/colores.tres")
-@export var objetosbaullegales:ObjetoArrayResource = preload("res://recursos/objetosbaularray/legales.tres")
-@export var objetosbaulilegales:ObjetoArrayResource = preload("res://recursos/objetosbaularray/ilegales.tres")
+var config:GameConfig
+var autos:AutoArrayResource
+var nombres:Nombresresources
+var apellidos:Apellidosresources
+var colores:ColoresResource
+var objetosbaullegales:ObjetoArrayResource
+var objetosbaulilegales:ObjetoArrayResource
 
 var auto_data: Dictionary
 var auto_ilegal: bool = false
 
 var ilegalidades: int = 0
+
+var score_auto: float = 200.0
+
+func _ready() -> void:
+	dia = day_manager.get_day()
+	config = dia.config
+	autos = dia.autos_permitidos
+	nombres = dia.nombres
+	apellidos = dia.apellidos
+	colores = dia.colores
+	objetosbaullegales = dia.objetosbaullegales
+	objetosbaulilegales = dia.objetosbaulilegales
 
 func generate_modelo_cedula(probabilidad):
 	var auto = auto_data["modelo_info"]
@@ -27,9 +41,9 @@ func generate_modelo_cedula(probabilidad):
 		#fake
 		var fake_num_auto = Utils.random_excluding(0,autos.array.size() - 1, num_auto)
 		var modelo_ = autos.array[fake_num_auto].nombre
-		print("AUTO_ILEGAL modelo = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		print("Modelo de la cedula es fake❌: ",modelo_)
 		return modelo_
 func generate_papel_patente(probabilidad):
@@ -43,6 +57,7 @@ func generate_papel_patente(probabilidad):
 		print("AUTO_ILEGAL patente = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		var dificultad_papel = randi_range(1,7)
 		print("cantidad de errores: ",dificultad_papel)
 			
@@ -57,6 +72,7 @@ func generate_papel_patente(probabilidad):
 			print("Patente del documento es fake❌: ",patente)
 			return patente
 		else:
+			score_auto += 300.0 / dificultad_papel
 			patente = Utils.romper_patente(patente,dificultad_papel)
 			print("Patente del documento es fake❌: ",patente)
 			return patente
@@ -75,6 +91,7 @@ func generate_VTV_auto(probabilidad):
 		print("AUTO_ILEGAL vtv = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		print("Vtv del auto es fake❌: ", num)
 		return str(num)
 func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento, fecha_hoy):
@@ -87,8 +104,10 @@ func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimien
 		print("AUTO_ILEGAL fecha documento = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		if Utils.chance(probabilidad_2026):
 			#fake
+			score_auto += 100.0
 			var probabilidad_dia = 50
 			if Utils.chance(probabilidad_dia):
 				#dia fake
@@ -122,14 +141,15 @@ func generate_numero_licencia(probabilidad):
 		print("AUTO_ILEGAL numero licencia = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
-		#var dificultad_papel = randi_range(1,7)
-		var dificultad_papel = 6
+		score_auto += 100.0
+		var dificultad_papel = randi_range(1,7)
 		if dificultad_papel == 7:
 			# numero totalmente distinto
 			var num_fake = str(randi_range(10000000,99999999))
 			print("Numero de licencia es fake❌: ",num_fake)
 			return num_fake
 		else:
+			score_auto += 300.0 / dificultad_papel
 			for i in range(dificultad_papel):
 				# posición diferente
 				var error_posicion = posiciones_errores.pick_random()
@@ -152,6 +172,7 @@ func generate_nombre(probabilidad):
 		print("AUTO_ILEGAL nombre = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		print("Nombre de la cedula es fake❌: ",nombres.array[fake_nombre])
 		return nombres.array[fake_nombre]
 func generate_apellido(probabilidad):
@@ -168,6 +189,7 @@ func generate_apellido(probabilidad):
 		print("AUTO_ILEGAL apellido = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		print("Apellido de la cedula es fake❌: ",apellido_)
 		return apellido_
 func generate_fecha_nacimiento(probabilidad, probabilidad_papeles_16):
@@ -182,9 +204,11 @@ func generate_fecha_nacimiento(probabilidad, probabilidad_papeles_16):
 		print("AUTO_ILEGAL nacimiento = TRUE")
 		auto_ilegal = true
 		ilegalidades += 1
+		score_auto += 100.0
 		if Utils.chance(probabilidad_papeles_16):
 			#vas a tener que pedir papeles de los 16
 			var probabilidad_dia = 50
+			score_auto += 100.0
 			if Utils.chance(probabilidad_dia):
 				#dia fake
 				var dia
@@ -245,6 +269,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 			legal = false
 			auto_ilegal = true
 			ilegalidades += 1
+			score_auto += 100.0
 		if pool.is_empty():
 			continue
 		# Filtrar según espacio disponible
@@ -270,6 +295,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 		var objeto_nombre = objeto_random.nombre
 		var objeto_max_rotacion = objeto_random.max_rotacion
 		var objeto_min_rotacion = objeto_random.min_rotacion
+		var objeto_score = objeto_random.score
 		# Actualizar estado
 		if objeto_tamanio == "grande":
 			hay_objeto_grande = true
@@ -279,6 +305,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 		if legal:
 			print("Objeto ", i + 1, " legal📦✅: ", objeto_nombre)
 		else:
+			score_auto += objeto_score
 			print("AUTO_ILEGAL objeto = TRUE")
 			print("Objeto ", i + 1, " ilegal📦❌: ", objeto_nombre)
 		# Guardar
@@ -302,6 +329,7 @@ func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
 	auto_ilegal = false
 	ilegalidades = 0
+	score_auto = 200.0
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	var day = daymanager.get_day()
 	var fecha_hoy = day.fecha_hoy
@@ -358,13 +386,18 @@ func _generate_documentos() -> Dictionary:
 	var data_extra = {
 		"color": color,
 		"fecha_hoy": fecha_hoy_string,
+		"ilegalidades": ilegalidades,
+		"auto_ilegal": auto_ilegal,
+		"score_auto": score_auto
 	}
 	data.merge(data_extra)
+	auto_data = data
 	print("DOCUMENTOS GENERADOS")
 	if auto_ilegal:
 		print("EL AUTO ES ILEGAL?: ILEGAL ❌🚗")
 	else:
 		print("EL AUTO ES ILEGAL?: LEGAL ✅🚗")
-	print("ILEGALIDADES ",ilegalidades)
+	print("ILEGALIDADES❌ ",ilegalidades)
+	print("SCORE_AUTO🎫 " , score_auto)
 	#print(data)
 	return data

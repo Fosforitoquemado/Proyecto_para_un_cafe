@@ -8,5 +8,6 @@ func _on_pressed() -> void:
 	SaveLoad.contents_to_save["tutorial_inspeccion"] = false
 	SaveLoad.contents_to_save["tutorial_pc"] = false
 	SaveLoad.contents_to_save["tutorial_baul"] = false
+	SaveLoad.contents_to_save["usos_mate"] = 3
 	SaveLoad._save()
 	pass # Replace with function body.

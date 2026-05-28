@@ -9,6 +9,7 @@ var contents_to_save: Dictionary = {
 	"tutorial_inspeccion": false,
 	"tutorial_baul": false,
 	"tutorial_pc": false,
+	"usos_mate": 3,
 	"new_data_to_save": false
 }
 

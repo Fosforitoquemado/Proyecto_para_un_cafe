@@ -1,6 +1,7 @@
 extends Resource
 class_name GameConfig
 
+@export var tiempo_de_carga: float = 3
 @export_range(0,100) var probabilidad_apellido_licencia:= 95
 @export_range(0,100) var probabilidad_color:= 95
 @export_range(0,100) var probabilidad_fecha_cedula:= 95

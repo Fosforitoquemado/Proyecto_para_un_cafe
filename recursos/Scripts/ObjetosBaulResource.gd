@@ -8,3 +8,4 @@ class_name ObjetoBaulResource
 @export var legal:bool
 @export var max_rotacion:int
 @export var min_rotacion:int
+@export var score:float

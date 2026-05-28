@@ -2,6 +2,8 @@ extends UIState
 
 @export var tutorial_scene: PackedScene
 
+@onready var DocumentosGenerator: Node = $"../../../DocumentosGenerator"
+
 @export var aprobado: Button
 @export var multar: Button
 @export var tomar_mate: Button
@@ -97,11 +99,11 @@ func enter() -> void:
 		yes_no_menu.show()
 		
 		if tutorial_hecho == false:
-			await  get_tree().process_frame
 			comenzar_guia()
 			SaveLoad.contents_to_save["tutorial_yes_no"] = true
 			SaveLoad._save()
 		timer._start_timer()
+		GameManager.empezar_dia()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
@@ -117,9 +119,12 @@ func _on_yes_pressed() -> void:
 		yes_no_menu.hide()
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
+			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
+			GameManager.sumar_auto()
 			print("FALLASTE❌❌")
 		else:
-			GameManager.sumar_dinero_jugador(50)
+			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
+			#GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
 			print("BIEN✅✅")
 		active = false
@@ -136,8 +141,12 @@ func _on_no_pressed() -> void:
 		if DocumentosGenerator.auto_ilegal == false:
 			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
+			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
+			GameManager.sumar_auto()
 		else:
-			GameManager.sumar_dinero_jugador(50)
+			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
+			#GameManager.sumar_dinero_jugador(50)
+			GameManager.sumar_auto()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false
@@ -153,8 +162,12 @@ func _on_coimear_pressed() -> void:
 		if DocumentosGenerator.ilegalidades <= 1:
 			print("FALLASTE❌❌")
 			GameManager.sumar_fallo()
+			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
+			GameManager.sumar_auto()
 		else:
-			GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
+			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * DocumentosGenerator.ilegalidades)
+			#GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
+			GameManager.sumar_auto()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false

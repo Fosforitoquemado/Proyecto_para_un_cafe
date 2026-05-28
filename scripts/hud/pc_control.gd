@@ -2,6 +2,8 @@ extends Control
 
 @onready var PCSISTEM:PCStatic
 
+@onready var day_manager: Node = $"../../../DayManager"
+
 @onready var cursor: AnimatedSprite2D = $Cursor
 
 @onready var fecha: Label = $Marco_Fecha/Fecha
@@ -14,8 +16,6 @@ extends Control
 @onready var cargando: TextureRect = $cargando
 @onready var cargando_base_de_datos: TextureRect = $basedatos_img/cargando
 
-@export var tiempo_de_carga: int = 3
-
 #labels base de datos licencia
 @onready var numero_licencia: Label = $basedatos_img/numero_licencia
 @onready var nombre_licencia: Label = $basedatos_img/nombre_licencia
@@ -27,7 +27,14 @@ extends Control
 
 var basededatos_active = false
 
+var tiempo_de_carga
+
 var pc_mouse_pos:Vector2 = Vector2.ZERO
+
+func _ready() -> void:
+	var dia = day_manager.get_day()
+	
+	tiempo_de_carga = dia.config["tiempo_de_carga"]
 
 func update_cursor_pos():
 	cursor.position = pc_mouse_pos
@@ -41,7 +48,6 @@ func set_fecha(func_fecha):
 
 func set_vtv(func_VTV):
 	vtv.text = func_VTV
-
 #cedula
 
 func set_dominio(func_dominio):

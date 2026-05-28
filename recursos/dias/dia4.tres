@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://ct7gde6f873a7"]
 
+[ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_w0s7w"]
 [ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="1_w1p7a"]
 [ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_wxuhl"]
-[ext_resource type="Resource" uid="uid://bke1e7fcsajtk" path="res://recursos/dificultad/easy.tres" id="2_ynb3g"]
+[ext_resource type="Resource" uid="uid://maysjvxlf55x" path="res://recursos/configs/config_dia4.tres" id="2_w1p7a"]
+[ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_rcg2m"]
 [ext_resource type="Resource" uid="uid://b72eh0sepeu5u" path="res://recursos/dialogostelearray/dia4.tres" id="3_w1p7a"]
+[ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_wmaeb"]
+[ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_irkqo"]
+[ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_3bruh"]
 
 [resource]
 script = ExtResource("1_wxuhl")
@@ -14,7 +19,12 @@ fecha_hoy = {
 "mes": 6
 }
 documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul"])
-config = ExtResource("2_ynb3g")
+config = ExtResource("2_w1p7a")
 autos_permitidos = ExtResource("1_w1p7a")
+nombres = ExtResource("6_wmaeb")
+apellidos = ExtResource("1_w0s7w")
+colores = ExtResource("3_rcg2m")
+objetosbaullegales = ExtResource("8_3bruh")
+objetosbaulilegales = ExtResource("7_irkqo")
 dialogostele = ExtResource("3_w1p7a")
 metadata/_custom_type_script = "uid://dyyci053w374o"

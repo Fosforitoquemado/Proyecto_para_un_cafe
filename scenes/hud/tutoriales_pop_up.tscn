@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bclape31f7kqa" path="res://scripts/hud/tutoriales_manager.gd" id="1_l2dqc"]
 [ext_resource type="Texture2D" uid="uid://cjy1u33qflfpq" path="res://texture/hud/tuto/aro/aro.png" id="2_bwom6"]
+[ext_resource type="Script" uid="uid://c00gm2xjvlty5" path="res://scripts/prueba/vignette.gd" id="3_bat1w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bat1w"]
 atlas = ExtResource("2_bwom6")
@@ -21,9 +22,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_buumu")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_bwom6"]
+frames = 2
+frame_1/duration = 1.0
 
 [node name="tutoriales_pop_up" type="CanvasLayer" unique_id=276354472]
 process_mode = 3
@@ -59,5 +64,15 @@ z_index = -1
 texture_filter = 1
 scale = Vector2(17.933334, 12.599999)
 sprite_frames = SubResource("SpriteFrames_nsidb")
-autoplay = "default"
-frame_progress = 0.18901798
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.8058635
+script = ExtResource("3_bat1w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=874873252]
+visible = false
+offset_left = -137.0
+offset_top = -69.0
+offset_right = 136.0
+offset_bottom = 62.0
+texture = SubResource("AnimatedTexture_bwom6")

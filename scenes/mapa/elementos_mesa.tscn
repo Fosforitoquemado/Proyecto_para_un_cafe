@@ -219,11 +219,12 @@ material_override = SubResource("StandardMaterial3D_4kc6s")
 texture = ExtResource("2_gtunt")
 
 [node name="Numero_licencia" type="Label3D" parent="Documento_carnet/carnet" unique_id=1627191122]
-transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.4250488, 1.4708405, 0.040245056)
+transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.502243, 1.4708405, 0.040245056)
 shaded = true
 render_priority = 1
 outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "12345678
 
 "
@@ -232,11 +233,12 @@ outline_size = 1
 horizontal_alignment = 0
 
 [node name="Apellido" type="Label3D" parent="Documento_carnet/carnet" unique_id=1679904478]
-transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.378128, 0.08028412, 0.040245056)
+transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.4553223, 0.08028412, 0.040245056)
 shaded = true
 render_priority = 1
 outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "Martinez
 "
 font_size = 35
@@ -244,33 +246,36 @@ outline_size = 1
 horizontal_alignment = 0
 
 [node name="Nombre" type="Label3D" parent="Documento_carnet/carnet" unique_id=408173751]
-transform = Transform3D(2, -7.1054274e-15, -4.2351647e-21, 7.1054274e-15, 2, 7.1054274e-15, -4.6586812e-21, -7.1054274e-15, 2, -3.3910217, -1.3283234, 0.040245056)
+transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.4681854, -1.3283234, 0.040245056)
 shaded = true
 render_priority = 1
 outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "Mauro"
 font_size = 35
 outline_size = 1
 horizontal_alignment = 0
 
 [node name="Fecha_Nacimiento" type="Label3D" parent="Documento_carnet/carnet" unique_id=314074013]
-transform = Transform3D(2, -7.1054274e-15, -5.0821977e-21, 7.1054274e-15, 2, 7.1054274e-15, -5.505714e-21, -7.1054274e-15, 2, -3.3910217, -2.882927, 0.040245056)
+transform = Transform3D(3, -5.684342e-13, -2.752857e-20, 5.684342e-13, 3, 5.684342e-13, -3.134022e-20, -5.684342e-13, 3, -4.4681854, -2.8829193, 0.040245056)
 shaded = true
 render_priority = 1
 outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "24/7/1985"
 font_size = 35
 outline_size = 1
 horizontal_alignment = 0
 
 [node name="Vencimiento" type="Label3D" parent="Documento_carnet/carnet" unique_id=687698931]
-transform = Transform3D(2, -7.1054274e-15, -6.7762636e-21, 7.1054274e-15, 2, 7.1054274e-15, -7.19978e-21, -7.1054274e-15, 2, 6.1674347, -2.882927, 0.040245056)
+transform = Transform3D(3, -5.684342e-13, -2.7105054e-20, 5.684342e-13, 3, 5.684342e-13, -3.3881318e-20, -5.684342e-13, 3, 5.0898895, -2.8829193, 0.040245056)
 shaded = true
 render_priority = 1
 outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "20/6/2026
 "
 font_size = 35
@@ -293,9 +298,10 @@ transparent = false
 texture = ExtResource("1_ngsru")
 
 [node name="Dominio" type="Label3D" parent="Documento_cedula/cedula" unique_id=160627232]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.162247, 1.1, 0.002)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.162247, 1.1, 0.002)
 shaded = true
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "123 abc
 "
 font_size = 35
@@ -303,18 +309,20 @@ outline_size = 1
 horizontal_alignment = 0
 
 [node name="Modelo" type="Label3D" parent="Documento_cedula/cedula" unique_id=1829758125]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.11532, -0.27674937, 0.002)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.11532, -0.27674937, 0.002)
 shaded = true
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "base modelo"
 font_size = 35
 outline_size = 1
 horizontal_alignment = 0
 
 [node name="Vencimiento" type="Label3D" parent="Documento_cedula/cedula" unique_id=1227872049]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.12821, -1.8326354, 0.002)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.12821, -1.8326354, 0.002)
 shaded = true
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "20/01/20XX"
 font_size = 35
 outline_size = 1

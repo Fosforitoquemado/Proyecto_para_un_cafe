@@ -12,6 +12,8 @@ var skip = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var state_machine = hud.find_child("StateMachine")
+	state_machine.change_to("tele")
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)
 	camera_controller.update_fov(60)
 	
@@ -20,12 +22,10 @@ func _ready() -> void:
 	# CONTROL DE SEGURIDAD: Validamos que dialogostele no sea Nil y tenga la propiedad 'array'
 	if dia.dialogostele == null:
 		print_rich("[color=yellow]⚠️ ADVERTENCIA: El día actual no tiene ningún recurso de diálogos asignado en 'dialogostele'.[/color]")
-		var state_machine = hud.find_child("StateMachine")
 		state_machine.change_to("main_view")
 		return
 	if not "array" in dia.dialogostele:
 		print_rich("[color=orange]⚠️ ADVERTENCIA: 'dialogostele' existe, pero no contiene una variable llamada 'array'.[/color]")
-		var state_machine = hud.find_child("StateMachine")
 		state_machine.change_to("main_view")
 		return
 	# Si pasa los controles, el bucle corre sin peligro de crash
@@ -55,5 +55,4 @@ func _ready() -> void:
 	tele.apagar_tele()
 	
 	if skip == false:
-		var state_machine = hud.find_child("StateMachine")
 		state_machine.change_to("main_view")

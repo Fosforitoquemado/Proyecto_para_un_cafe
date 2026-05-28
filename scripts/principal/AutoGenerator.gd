@@ -173,5 +173,5 @@ func _generate_auto() -> Dictionary:
 	}
 	_auto_data = data
 	#print(_auto_data)
-	print("AUTO GENERADO")
+	print("AUTO GENERADO🚗")
 	return data

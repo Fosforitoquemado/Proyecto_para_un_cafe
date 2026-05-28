@@ -15,7 +15,6 @@ func enter() -> void:
 		auto_on = false
 		siguiente.visible = true
 		HUD.update_ui()
-		GameManager.check_estado()
 		CameraController.vista_normal()
 		hud_elementos.show()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
