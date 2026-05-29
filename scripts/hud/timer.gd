@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		tiempo_transcurrido += delta
 		value = tiempo_transcurrido
 		if value == max_value:
-			GameManager.reset()
+			GameManager.finalizar_dia()
 			get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:
 		pass

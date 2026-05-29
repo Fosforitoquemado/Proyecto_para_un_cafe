@@ -7,7 +7,8 @@ extends Node3D
 @onready var day_manager: Node = $"../DayManager"
 @onready var DocumentosGenerator: Node = $"../DocumentosGenerator"
 
-
+@export var papel_multa: MeshInstance3D
+@export var dinero: MeshInstance3D
 #cedula
 @export var cedula: Area3D
 @export var dominio_cedula: Label3D
@@ -129,12 +130,14 @@ func mostrar_datos():
 		
 	auto_ready.emit()
 	print("FINAL MOSTRAR DATOS")
-
-func ocultar_documentos():
+#condicion (0 es se va normal), (1 es se va con multa) y (2 es se va coimeado)
+func ocultar_documentos(condicion):
 	var day = day_manager.get_day()
 	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 		var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
+		if  condicion == 1:
+			papel_multa.visible = true
 		if hud.papeles_on == true:
 			personaje_animator.play("dar_papeles")
 			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
@@ -142,19 +145,30 @@ func ocultar_documentos():
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
-			await personaje_animator.animation_finished
+		var tween3 = create_tween()
+		tween3.tween_property(papel_multa,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+		await personaje_animator.animation_finished
+		if condicion == 2:
+			dinero.visible = true
+			dinero.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
+			var tween = create_tween()
+			tween.tween_property(dinero,"global_position",Vector3(1.1,0.4,1.2),((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 		licencia.visible = false
 		cedula.visible = false
+		papel_multa.visible = false
 		personaje_animator.play("agarrar papeles")
 		await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
 		personaje_animator.play("manejando")
 	
 	GameManager.auto_dupe.irse()
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length,false).timeout
+	dinero.visible = false
 	GameManager.auto_dupe.queue_free()
 	hud.papeles_on = false
 	auto_out.emit()
 	
+func mostrar_multa():
+	papel_multa.visible = true
 
 func datos_cedula():
 	print("hola")

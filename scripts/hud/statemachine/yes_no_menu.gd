@@ -39,7 +39,7 @@ func comenzar_guia():
 		},
 		{
 			"nodo_boton": tomar_mate,
-			"texto": "¡Este es el botón para tomar mate, usalo cuando tu baara de tiempo pase el 30%"
+			"texto": "¡Este es el botón para tomar mate, usalo cuando tu barra de tiempo pase el 30%"
 		},
 		{
 			"nodo_boton": pc,
@@ -114,7 +114,7 @@ func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
 		HUD.auto_on = false
-		GameManager.ida_auto()
+		GameManager.ida_auto(0)
 		timer._stop_timer()
 		yes_no_menu.hide()
 		if DocumentosGenerator.auto_ilegal == true:
@@ -135,7 +135,7 @@ func _on_no_pressed() -> void:
 	if active == false:
 		active = true
 		HUD.auto_on = false
-		GameManager.ida_auto()
+		GameManager.ida_auto(1)
 		timer._stop_timer()
 		yes_no_menu.hide()
 		if DocumentosGenerator.auto_ilegal == false:
@@ -156,15 +156,16 @@ func _on_coimear_pressed() -> void:
 	if active == false:
 		active = true
 		HUD.auto_on = false
-		GameManager.ida_auto()
 		timer._stop_timer()
 		yes_no_menu.hide()
 		if DocumentosGenerator.ilegalidades <= 1:
 			print("FALLASTE❌❌")
+			GameManager.ida_auto(0)
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 			GameManager.sumar_auto()
 		else:
+			GameManager.ida_auto(2)
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * DocumentosGenerator.ilegalidades)
 			#GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			GameManager.sumar_auto()

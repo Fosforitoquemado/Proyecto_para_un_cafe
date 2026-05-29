@@ -10,9 +10,6 @@
 [ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mapa/mate.gd" id="5_gtunt"]
 [ext_resource type="Script" uid="uid://covm3wwjhi8qt" path="res://scripts/hud/interactuables/documento_arrastrar.gd" id="5_o6od5"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_o6od5"]
-size = Vector2(0.5, 0.3)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5adcd"]
 resource_name = "termo"
 cull_mode = 2
@@ -154,8 +151,20 @@ metallic_texture = ExtResource("4_o6od5")
 roughness = 0.57
 roughness_texture = ExtResource("4_4kc6s")
 
-[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia")]
+[sub_resource type="PlaneMesh" id="PlaneMesh_o6od5"]
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkqnu"]
+albedo_color = Color(0, 0.73001605, 9.62615e-07, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_37o8a"]
+material = SubResource("StandardMaterial3D_tkqnu")
+size = Vector2(0.1, 0.2)
+
+[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("papel_multa", "dinero", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia")]
 script = ExtResource("1_3m8vs")
+papel_multa = NodePath("papel")
+dinero = NodePath("dinero")
 cedula = NodePath("Documento_cedula")
 dominio_cedula = NodePath("Documento_cedula/cedula/Dominio")
 modelo_cedula = NodePath("Documento_cedula/cedula/Modelo")
@@ -166,28 +175,6 @@ apellido_licencia = NodePath("Documento_carnet/carnet/Apellido")
 nombre_licencia = NodePath("Documento_carnet/carnet/Nombre")
 fecha_nacimiento_licencia = NodePath("Documento_carnet/carnet/Fecha_Nacimiento")
 vencimiento_licencia = NodePath("Documento_carnet/carnet/Vencimiento")
-
-[node name="papel" type="MeshInstance3D" parent="." unique_id=2014521207]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.5)
-visible = false
-mesh = SubResource("PlaneMesh_o6od5")
-
-[node name="papel_patente" type="Label3D" parent="papel" unique_id=143029595]
-transform = Transform3D(-1.3113417e-08, -0.3, -1.3113417e-08, 0, -1.3113417e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, -0.14096877, 0.0009806752, 0)
-text = "patente
-"
-
-[node name="color_papel" type="Label3D" parent="papel" unique_id=1456571878]
-transform = Transform3D(-1.3113417e-08, -0.3, -2.9802322e-08, 0, -2.9802322e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, -0.053423405, 0.0029999912, 0)
-text = "color
-"
-
-[node name="VTV_papel" type="Label3D" parent="papel" unique_id=1202339533]
-transform = Transform3D(0.12967454, -0.14461865, 0.22862615, -0.008590255, 0.25120565, 0.16377385, -0.2703898, -0.07733753, 0.10444227, 0.09183383, 0.043077976, -0.018897772)
-shaded = true
-text = "VTV
-
-"
 
 [node name="mesa" parent="." unique_id=1106745123 instance=ExtResource("3_3m8vs")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
@@ -331,3 +318,32 @@ horizontal_alignment = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Documento_cedula" unique_id=443748750]
 transform = Transform3D(1, -3.5527137e-15, 3.5527137e-15, 3.5527137e-15, 1, 2.1175824e-22, -3.5527137e-15, 2.1175824e-22, 1, -0.00011444092, -0.0010681152, 0.0006312132)
 shape = SubResource("BoxShape3D_tkqnu")
+
+[node name="papel" type="MeshInstance3D" parent="." unique_id=2014521207]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.1656318, 0.40337554, 1.3723783)
+visible = false
+mesh = SubResource("PlaneMesh_o6od5")
+
+[node name="papel_patente" type="Label3D" parent="papel" unique_id=143029595]
+transform = Transform3D(-1.7484556e-08, -0.4, -1.7484556e-08, 0, -1.7484556e-08, 0.4, -0.4, 1.7484556e-08, 7.642742e-16, -0.090321064, 0.0009806752, 0)
+modulate = Color(1, 0.30588236, 0, 1)
+text = "MULTA"
+
+[node name="color_papel" type="Label3D" parent="papel" unique_id=1456571878]
+transform = Transform3D(-1.3113417e-08, -0.3, -2.9802322e-08, 0, -2.9802322e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, -0.053423405, 0.0029999912, 0)
+visible = false
+text = "color
+"
+
+[node name="VTV_papel" type="Label3D" parent="papel" unique_id=1202339533]
+transform = Transform3D(-1.3113411e-08, -0.2999999, -1.3113414e-08, 0, -1.3113412e-08, 0.29999995, -0.29999986, 1.3113412e-08, 5.7320557e-16, 0.09183383, 0.0005966425, -0.018897772)
+visible = false
+shaded = true
+text = "VTV
+
+"
+
+[node name="dinero" type="MeshInstance3D" parent="." unique_id=366982164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.4, 1.2)
+visible = false
+mesh = SubResource("PlaneMesh_37o8a")

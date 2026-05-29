@@ -5,8 +5,6 @@ extends Node
 
 @export var sub_viewport_container: SubViewportContainer
 
-var uicontroller
-
 var fallos: int = 0
 var autos_pasados: int = 0
 var dinero_player
@@ -34,19 +32,14 @@ func _ready():
 	)
 
 func _process(delta: float) -> void:
+	var uicontroller
+	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	if empezar_tiempo == true:
 		tiempo += delta
 	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false:
-		empezar_tiempo = false
-		var daymanager = get_tree().get_first_node_in_group("DayManager")
-		daymanager.sumar_dia()
-		SaveLoad.contents_to_save["dinero"] = dinero_player
-		SaveLoad.contents_to_save["day"] = daymanager.dia_actual
-		SaveLoad.contents_to_save["usos_mate"] = usos_mates
-		SaveLoad._save()
+		finalizar_dia()
 		print("fallos",fallos,"max_fallos",max_fallos)
 		get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")
-		reset()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_down"):
@@ -66,7 +59,6 @@ func _physics_process(delta: float) -> void:
 		#if num == 69:
 		if num == -1:
 			if sub_viewport_container:
-				
 				sub_viewport_container.visible = true
 				sub_viewport_container.star()
 		else:
@@ -75,9 +67,20 @@ func _physics_process(delta: float) -> void:
 func empezar_dia():
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	var dia = daymanager.get_day()
+	var uicontroller
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	tiempo_dia_total = dia.tiempo_dia
 	empezar_tiempo = true
+
+func finalizar_dia():
+	empezar_tiempo = false
+	var daymanager = get_tree().get_first_node_in_group("DayManager")
+	daymanager.sumar_dia()
+	SaveLoad.contents_to_save["dinero"] = dinero_player
+	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
+	SaveLoad.contents_to_save["usos_mate"] = usos_mates
+	SaveLoad._save()
+	reset()
 
 func generar_auto():
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
@@ -104,13 +107,15 @@ func generar_auto():
 	#mostrar elementos
 	elementos_mesa.mostrar_datos()
 
-func ida_auto():
+func ida_auto(condicion):
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
-	elementos_mesa.ocultar_documentos()
+	elementos_mesa.ocultar_documentos(condicion)
 
 func reset():
 	tiempo = 0.0
 	fallos = 0
+	var uicontroller
+	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	autos_pasados = 0
 
 func sumar_dinero_jugador(dinero):
