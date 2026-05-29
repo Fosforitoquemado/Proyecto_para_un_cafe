@@ -16,10 +16,10 @@ var timer = false
 var tiempo = 0.0
 
 func _process(delta: float) -> void:
-	if timer == true:
+	if timer:
 		tiempo += delta
-	if tiempo >= 3:
-		_on_siguiente_pressed()
+		if tiempo >= 3.0:
+			_on_siguiente_pressed()
 
 func _ready():
 	# Conectamos el botón de "Siguiente" para avanzar en el tutorial
@@ -28,12 +28,17 @@ func _ready():
 
 # Función para iniciar el tutorial desde tu juego
 func iniciar_tutorial(lista_de_pasos: Array,lista_de_posicines: Array):
-	get_tree().paused = true
+	GameManager.paused = true
 	pasos = lista_de_pasos
 	posiciones = lista_de_posicines
 	paso_actual = 0
 	if pasos.size() > 0:
 		panel_tutorial.show()
+		for paso in pasos:
+			var boton_objetivo = paso["nodo_boton"] as Button
+			if boton_objetivo.get_parent().is_class("TextureRect"):
+				var texture = boton_objetivo.get_parent()
+				texture.hide()
 		mostrar_paso()
 
 func mostrar_paso():
@@ -42,9 +47,8 @@ func mostrar_paso():
 	var datos_posiciones = posiciones[paso_actual]
 	texto_explicativo.text = datos_paso["texto"]
 	var boton_objetivo = datos_paso["nodo_boton"] as Button
-	
 	if boton_objetivo:
-		await get_tree().process_frame
+		
 		panel_tutorial.reset_size() 
 		
 		# Posición del botón en la pantalla
@@ -73,6 +77,10 @@ func mostrar_paso():
 		
 		# Asignamos la posición segura
 		panel_tutorial.global_position = posicion_final
+		
+	if boton_objetivo.get_parent().is_class("TextureRect"):
+		var texture = boton_objetivo.get_parent()
+		texture.show()
 func _on_siguiente_pressed():
 	paso_actual += 1
 	tiempo = 0.0
@@ -84,5 +92,8 @@ func _on_siguiente_pressed():
 
 func finalizar_tutorial():
 	panel_tutorial.hide()
-	get_tree().paused = false
+	pasos = []
+	posiciones= []
+	paso_actual = 0
+	GameManager.paused = false
 	queue_free() # Elimina el tutorial si ya terminó

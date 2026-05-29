@@ -40,14 +40,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.078431375, 0.078431375, 0.078431375, 0.3372549)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=519411617]
 anchors_preset = -1
 anchor_right = 0.078125
-anchor_bottom = 0.08950617
+anchor_bottom = 0.16049382
 offset_right = -50.0
-offset_bottom = -18.0
+offset_bottom = -63.999992
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
@@ -56,10 +57,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1960824261]
 z_index = 1
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+autowrap_mode = 2
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=150841394]
 z_index = 1
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "SIGUIENTE"
 

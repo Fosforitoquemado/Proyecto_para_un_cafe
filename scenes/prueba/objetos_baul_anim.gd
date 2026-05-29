@@ -5,7 +5,7 @@ extends Area3D
 var animando = false
 var abierto = false
 
-func _input_event(camera, event, position, normal, shape_idx):
+func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if animando:
 		return
 	if event is InputEventMouseButton:

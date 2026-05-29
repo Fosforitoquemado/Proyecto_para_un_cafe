@@ -52,6 +52,6 @@ func exit() -> void:
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
 func handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		fsm.change_to("pause")
+	if event.is_action_pressed("ui_cancel") and GameManager.paused == false:
+		fsm.change_to("Pause")
 	

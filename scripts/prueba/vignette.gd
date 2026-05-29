@@ -9,7 +9,7 @@ func _ready():
 	scale = pantalla / tex.get_size()
 	pass # Replace with function body.
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if active == true:
 		modulate.a -= 0.01
 

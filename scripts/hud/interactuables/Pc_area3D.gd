@@ -10,7 +10,7 @@ func _ready() -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	pass # Replace with function body.
 
-func _input_event(camera, event, position, normal, shape_idx):
+func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if ocupado:
 		return
 	if event is InputEventMouseButton:

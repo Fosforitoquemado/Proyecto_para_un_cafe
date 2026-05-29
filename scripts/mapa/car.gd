@@ -51,8 +51,8 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_ve
 		#print(mesh_instance_3d_texto.mesh.size)
 		#print("subviewport: ", sub_viewport.size)
 		if i % 2 == 0:
-			var uno = randi_range(-35,35)
-			var dos = randi_range(-16,16)
+			var _uno = randi_range(-35,35)
+			var _dos = randi_range(-16,16)
 			#mesh_instance_3d.rotation = Vector3(deg_to_rad(dos),deg_to_rad(uno),0)
 			if array_final == false:
 				soniditos.play()

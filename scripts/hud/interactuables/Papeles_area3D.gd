@@ -10,7 +10,7 @@ func _ready() -> void:
 	elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
 	pass # Replace with function body.
 
-func _input_event(camera, event, position, normal, shape_idx):
+func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if ocupado:
 		return
 	if event is InputEventMouseButton:

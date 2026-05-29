@@ -2,7 +2,7 @@ extends Node
 
 #daymanger
 @onready var day_manager: Node = $"../DayManager"
-var dia
+var dia_hoy
 #elementos auto
 var config:GameConfig
 var autos:AutoArrayResource
@@ -20,14 +20,14 @@ var ilegalidades: int = 0
 var score_auto: float = 200.0
 
 func _ready() -> void:
-	dia = day_manager.get_day()
-	config = dia.config
-	autos = dia.autos_permitidos
-	nombres = dia.nombres
-	apellidos = dia.apellidos
-	colores = dia.colores
-	objetosbaullegales = dia.objetosbaullegales
-	objetosbaulilegales = dia.objetosbaulilegales
+	dia_hoy = day_manager.get_day()
+	config = dia_hoy.config
+	autos = dia_hoy.autos_permitidos
+	nombres = dia_hoy.nombres
+	apellidos = dia_hoy.apellidos
+	colores = dia_hoy.colores
+	objetosbaullegales = dia_hoy.objetosbaullegales
+	objetosbaulilegales = dia_hoy.objetosbaulilegales
 
 func generate_modelo_cedula(probabilidad):
 	var auto = auto_data["modelo_info"]

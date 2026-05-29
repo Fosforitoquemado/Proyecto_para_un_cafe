@@ -91,13 +91,14 @@ func comenzar_guia():
 
 func enter() -> void:
 	# Esperamos un momento o lo activamos cuando empiece la partida
+	if fsm.debug == true:
+		print("ENTER yes_no_menu")
 	if tutorial_hecho == false:
 		var savedata = SaveLoad.contents_to_save
 		tutorial_hecho = savedata.values()[2]
 	if yes_no_menu:
 		CameraController.vista_normal()
 		yes_no_menu.show()
-		
 		if tutorial_hecho == false:
 			comenzar_guia()
 			SaveLoad.contents_to_save["tutorial_yes_no"] = true
@@ -107,6 +108,8 @@ func enter() -> void:
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
+	if fsm.debug == true:
+		print("EXIT yes no menu")
 	if yes_no_menu:
 		yes_no_menu.hide()
 
@@ -180,7 +183,7 @@ func _on_mate_pressed() -> void:
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
 func handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and GameManager.paused == false:
 		fsm.change_to("Pause")
 
 func _on_inspeccion_pressed() -> void:

@@ -5,6 +5,8 @@ extends Node
 
 @export var sub_viewport_container: SubViewportContainer
 
+var paused = false
+
 var fallos: int = 0
 var autos_pasados: int = 0
 var dinero_player
@@ -67,8 +69,6 @@ func _physics_process(delta: float) -> void:
 func empezar_dia():
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	var dia = daymanager.get_day()
-	var uicontroller
-	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	tiempo_dia_total = dia.tiempo_dia
 	empezar_tiempo = true
 
@@ -114,8 +114,6 @@ func ida_auto(condicion):
 func reset():
 	tiempo = 0.0
 	fallos = 0
-	var uicontroller
-	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	autos_pasados = 0
 
 func sumar_dinero_jugador(dinero):
