@@ -7,13 +7,17 @@ var tiempo_transcurrido: float = 0.0
 func _start_timer():
 	timer_bool = true
 
+func _pause_timer():
+	timer_bool = false
+
 func _stop_timer():
 	timer_bool = false
 	tiempo_transcurrido = 0.0
 	value = tiempo_transcurrido
 
-func _reduce_timer():
-	tiempo_transcurrido = clamp(((max_value * 40) / 100) - tiempo_transcurrido,0,max_value)
+func _reduce_timer(num):
+	tiempo_transcurrido -= num
+	tiempo_transcurrido = clamp(tiempo_transcurrido,0,tiempo_transcurrido)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

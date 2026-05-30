@@ -28,12 +28,15 @@ func _input_event(_camera: Camera3D, event: InputEvent, _position: Vector3, _nor
 			# Creamos el plano invisible orientado hacia la cámara a la altura actual del objeto
 			plano_arrastre = Plane(camara.project_ray_normal(event.position), global_position)
 			global_position.y = 0.5
+			print("AAAAAAAAAAAA")
 		else:
+			print("BBBBBBBBBBBBBBBB")
 			global_position.y = 0.4
 			arrastrando = false
 func _input(event: InputEvent) -> void:
 	# Si soltamos el clic en cualquier parte de la pantalla, dejamos de arrastrar
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+	var state_machine = uicontroller.find_child("StateMachine")
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and state_machine.current_state.name == "mesa":
 		global_position.y = 0.4
 		arrastrando = false
 		

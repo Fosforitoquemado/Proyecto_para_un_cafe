@@ -20,4 +20,15 @@ func exit() -> void:
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and GameManager.paused == false:
 		fsm.back()
-	
+
+
+func _on_button_quit_pressed() -> void:
+	get_tree().paused = false
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_button_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/hud/menu.tscn")
+	pass # Replace with function body.

@@ -151,6 +151,9 @@ script = ExtResource("7_eb6dy")
 [node name="PCSISTEMA" parent="." unique_id=1435289206 instance=ExtResource("6_o6xl0")]
 transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.19767919, 0, 0.030379813, 0.94867724, 0.3900208, 0.9915118)
 
+[node name="tele" parent="." unique_id=1611947647 instance=ExtResource("22_jscy8")]
+transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.9368853, 0.3010159, 1.6672673)
+
 [node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_0ld40")]
 
 [node name="GameManager" type="Node" parent="." unique_id=351716273 node_paths=PackedStringArray("sub_viewport_container")]
@@ -171,8 +174,8 @@ script = ExtResource("16_jbj1t")
 script = ExtResource("17_muem4")
 camera = NodePath("../Camera3D")
 
-[node name="tele" parent="." unique_id=1611947647 instance=ExtResource("22_jscy8")]
-transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.9368853, 0.3010159, 1.6672673)
+[node name="Startdaymanager" type="Node" parent="." unique_id=1394303216]
+script = ExtResource("23_pm3ni")
 
 [node name="Sonidos" type="Node3D" parent="." unique_id=992568608]
 
@@ -193,9 +196,6 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("12_eb6dy")
 metadata/_edit_use_anchors_ = true
-
-[node name="Startdaymanager" type="Node" parent="." unique_id=1394303216]
-script = ExtResource("23_pm3ni")
 
 [connection signal="auto_out" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_out"]
 [connection signal="auto_ready" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_ready"]

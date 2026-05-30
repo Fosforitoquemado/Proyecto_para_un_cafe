@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bujva2sokoioq"]
 
 [ext_resource type="Texture2D" uid="uid://feb8um1tupx7" path="res://texture/hud/botones/para el cafe arte (1)-artguru.png" id="1_8vblv"]
-[ext_resource type="Script" uid="uid://doeaxarf0e3yg" path="res://scripts/hud/fov_slider.gd" id="2_0bx4p"]
 [ext_resource type="Texture2D" uid="uid://cx52j75k5h8jf" path="res://texture/hud/botones/para el cafe arte (2)-artguru.png" id="2_567j1"]
 [ext_resource type="Script" uid="uid://ckesx38dvngdo" path="res://scripts/hud/timer.gd" id="2_cgeww"]
 [ext_resource type="Texture2D" uid="uid://ck5yedg224tvd" path="res://texture/hud/botones/17-artguru.png" id="3_ccb21"]
@@ -21,7 +20,6 @@
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="18_udak2"]
 [ext_resource type="Script" uid="uid://ustrhm87tr4g" path="res://scripts/hud/statemachine/main_view.gd" id="19_7pnlf"]
 [ext_resource type="Script" uid="uid://dlns8omfqc7cw" path="res://scripts/hud/statemachine/pause.gd" id="20_a0exy"]
-[ext_resource type="Script" uid="uid://dcblxl00b7kt8" path="res://scripts/hud/hud_main_menu/button_quit.gd" id="20_ccb21"]
 [ext_resource type="Script" uid="uid://c5vuvf2ar5rpn" path="res://scripts/hud/statemachine/tele.gd" id="21_bluaa"]
 [ext_resource type="Script" uid="uid://vp3jw4wwbiu7" path="res://scripts/hud/statemachine/inspeccion.gd" id="23_a0exy"]
 [ext_resource type="Script" uid="uid://c4n8hkjkjo5i5" path="res://scripts/hud/statemachine/mesa.gd" id="24_2dqaf"]
@@ -39,6 +37,9 @@ font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font_size = 30
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bxlf6"]
+blend_mode = 1
 
 [sub_resource type="Animation" id="Animation_v3rms"]
 length = 0.001
@@ -78,6 +79,12 @@ _data = {
 &"iluminado": SubResource("Animation_bxlf6")
 }
 
+[sub_resource type="Gradient" id="Gradient_yog28"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vyxmn"]
+gradient = SubResource("Gradient_yog28")
+
 [node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "inspeccion_menu", "timer") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
@@ -95,6 +102,7 @@ inspeccion_menu = NodePath("Inspeccion_menu")
 timer = NodePath("Hud_elementos/Timer")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
+process_mode = 3
 visible = false
 z_index = 1
 layout_mode = 1
@@ -118,7 +126,16 @@ anchor_bottom = 0.52391976
 grow_horizontal = 2
 grow_vertical = 2
 text = "CERRAR EL JUEGO"
-script = ExtResource("20_ccb21")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_menu" type="Button" parent="Hud_principal" unique_id=628712761]
+z_index = 1
+layout_mode = 0
+anchor_left = 0.43706596
+anchor_top = 0.54012346
+anchor_right = 0.56293404
+anchor_bottom = 0.587963
+text = "MENU"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Hud_principal" unique_id=1613842232]
@@ -438,6 +455,65 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="detecto_mouse_mate" type="Button" parent="YES_NO_menu" unique_id=1324224923]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6623264
+anchor_top = 0.4537037
+anchor_right = 0.7604167
+anchor_bottom = 0.75308645
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar_mate" type="ProgressBar" parent="YES_NO_menu" unique_id=1039663927]
+visible = false
+modulate = Color(0.074, 1.788, 2.055, 1)
+material = SubResource("CanvasItemMaterial_bxlf6")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7413194
+anchor_top = 0.40123457
+anchor_right = 0.7951389
+anchor_bottom = 0.70987654
+mouse_filter = 1
+max_value = 3.0
+value = 3.0
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="YES_NO_menu/ProgressBar_mate" unique_id=1494375241]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+anchor_top = 0.33
+anchor_right = 1.0
+anchor_bottom = 0.355
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="YES_NO_menu/ProgressBar_mate" unique_id=2082829101]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+anchor_top = 0.66
+anchor_right = 1.0
+anchor_bottom = 0.685
+metadata/_edit_use_anchors_ = true
+
+[node name="usos_mate_num" type="Label" parent="YES_NO_menu/ProgressBar_mate" unique_id=2051607038]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17741935
+anchor_top = 0.37
+anchor_right = 0.82258064
+anchor_bottom = 0.645
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.74577093, 0.08692504, 0.26426157, 0)
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
 visible = false
 layout_mode = 1
@@ -604,32 +680,6 @@ text = "Inspeccion_volver
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
-[node name="fov_slider" type="HSlider" parent="Inspeccion_menu" unique_id=1837691495]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.026909722
-anchor_top = 0.8194444
-anchor_right = 0.23784722
-anchor_bottom = 0.9660494
-max_value = 75.0
-script = ExtResource("2_0bx4p")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Inspeccion_menu/fov_slider" unique_id=305921886]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8585069
-anchor_top = 0.79012346
-anchor_right = 0.9019097
-anchor_bottom = 0.8256173
-offset_left = -108.61719
-offset_top = -71.06173
-offset_right = -69.16406
-offset_bottom = -51.433647
-text = "ZOOM"
-metadata/_edit_use_anchors_ = true
-
 [node name="Baul_menu" type="Control" parent="Inspeccion_menu" unique_id=2141576287]
 visible = false
 layout_mode = 1
@@ -707,6 +757,53 @@ mouse_filter = 1
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
+[node name="Tienda" type="Control" parent="." unique_id=105428497]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Tienda" unique_id=2074325200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_vyxmn")
+
+[node name="Panel" type="Panel" parent="Tienda" unique_id=2092071052]
+layout_mode = 0
+anchor_left = 0.026909722
+anchor_top = 0.032407407
+anchor_right = 0.4956597
+anchor_bottom = 0.9691358
+metadata/_edit_use_anchors_ = true
+
+[node name="comprar" type="Button" parent="Tienda/Panel" unique_id=1805056749]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.085667215
+anchor_right = 0.33703703
+anchor_bottom = 0.15511166
+text = "COMPRAR MATE"
+metadata/_edit_use_anchors_ = true
+
+[node name="mates_usos" type="Label" parent="Tienda/Panel" unique_id=416250616]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36481482
+anchor_top = 0.10543657
+anchor_right = 0.49444443
+anchor_bottom = 0.14332785
+text = "MATES: 0"
+metadata/_edit_use_anchors_ = true
+
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3
 script = ExtResource("18_udak2")
@@ -743,7 +840,7 @@ atras = NodePath("../../Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_at
 mesa = NodePath("../../Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa")
 volver = NodePath("../../Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver")
 
-[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("aprobado", "multar", "tomar_mate", "inspeccionar", "coima", "pc", "HUD", "yes_no_menu", "timer")]
+[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("aprobado", "multar", "tomar_mate", "inspeccionar", "coima", "pc", "HUD", "yes_no_menu", "timer", "progressbarmate")]
 script = ExtResource("24_bluaa")
 tutorial_scene = ExtResource("24_eiuad")
 aprobado = NodePath("../../YES_NO_menu/Aprobado/yes")
@@ -755,6 +852,9 @@ pc = NodePath("../../YES_NO_menu/pc_location")
 HUD = NodePath("../..")
 yes_no_menu = NodePath("../../YES_NO_menu")
 timer = NodePath("../../Hud_elementos/Timer")
+progressbarmate = NodePath("../../YES_NO_menu/ProgressBar_mate")
+
+[node name="tienda" type="Node" parent="StateMachine" unique_id=876734760]
 
 [node name="mesa" type="Node" parent="StateMachine" unique_id=1665428075 node_paths=PackedStringArray("HUD", "hud_inspeccion")]
 script = ExtResource("24_2dqaf")
@@ -795,7 +895,8 @@ baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 [node name="Transicion" type="Node" parent="StateMachine" unique_id=854658723]
 script = ExtResource("31_ncrl3")
 
-[connection signal="pressed" from="Hud_principal/Button_quit" to="Hud_principal/Button_quit" method="_on_pressed"]
+[connection signal="pressed" from="Hud_principal/Button_quit" to="StateMachine/pause" method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Hud_principal/Button_menu" to="StateMachine/pause" method="_on_button_menu_pressed"]
 [connection signal="focus_entered" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_mouse_entered"]
@@ -832,6 +933,8 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Coima/Coimear" to="StateMachine/yes_no_menu" method="_on_coimear_pressed"]
+[connection signal="mouse_entered" from="YES_NO_menu/detecto_mouse_mate" to="StateMachine/yes_no_menu" method="_on_detecto_mouse_mate_mouse_entered"]
+[connection signal="mouse_exited" from="YES_NO_menu/detecto_mouse_mate" to="StateMachine/yes_no_menu" method="_on_detecto_mouse_mate_mouse_exited"]
 [connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_mouse_entered"]
@@ -862,10 +965,10 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
-[connection signal="value_changed" from="Inspeccion_menu/fov_slider" to="." method="_on_fov_slider_value_changed"]
 [connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
 [connection signal="focus_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="StateMachine/mesa" method="_on_button_ir_pc_pressed"]
+[connection signal="pressed" from="Tienda/Panel/comprar" to="StateMachine/tienda" method="_on_comprar_pressed"]

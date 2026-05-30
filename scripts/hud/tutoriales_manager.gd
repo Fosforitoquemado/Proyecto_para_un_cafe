@@ -29,6 +29,7 @@ func _ready():
 # Función para iniciar el tutorial desde tu juego
 func iniciar_tutorial(lista_de_pasos: Array,lista_de_posicines: Array):
 	GameManager.paused = true
+	get_tree().paused = true
 	pasos = lista_de_pasos
 	posiciones = lista_de_posicines
 	paso_actual = 0
@@ -36,7 +37,7 @@ func iniciar_tutorial(lista_de_pasos: Array,lista_de_posicines: Array):
 		panel_tutorial.show()
 		for paso in pasos:
 			var boton_objetivo = paso["nodo_boton"] as Button
-			if boton_objetivo.get_parent().is_class("TextureRect"):
+			if boton_objetivo.get_parent().is_class("TextureRect") and boton_objetivo.is_class("Button"):
 				var texture = boton_objetivo.get_parent()
 				texture.hide()
 		mostrar_paso()
@@ -96,4 +97,5 @@ func finalizar_tutorial():
 	posiciones= []
 	paso_actual = 0
 	GameManager.paused = false
+	get_tree().paused = false
 	queue_free() # Elimina el tutorial si ya terminó

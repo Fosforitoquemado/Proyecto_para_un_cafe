@@ -11,11 +11,15 @@ extends UIState
 @export var coima: Button
 @export var pc: Button
 
+@export var porcentaje = 30
+
 @export var HUD:Control
 @export var yes_no_menu: Control 
-@onready var state_machine: Node = $".."
 @export var timer: ProgressBar
+@export var progressbarmate: ProgressBar
+@onready var usos_mate_num: Label = $"../../YES_NO_menu/ProgressBar_mate/usos_mate_num"
 @onready var mate: Node3D = $"../../../Elementos_mesa/MATE"
+@onready var state_machine: Node = $".."
 
 @onready var CameraController: Node = $"../../../CameraController"
 
@@ -98,6 +102,10 @@ func enter() -> void:
 		tutorial_hecho = savedata.values()[2]
 	if yes_no_menu:
 		CameraController.vista_normal()
+		
+		progressbarmate.value = GameManager.usos_mates
+		usos_mate_num.text = str(GameManager.usos_mates)
+		
 		yes_no_menu.show()
 		if tutorial_hecho == false:
 			comenzar_guia()
@@ -116,7 +124,6 @@ func exit() -> void:
 func _on_yes_pressed() -> void:
 	if active == false:
 		active = true
-		HUD.auto_on = false
 		GameManager.ida_auto(0)
 		timer._stop_timer()
 		yes_no_menu.hide()
@@ -137,7 +144,6 @@ func _on_yes_pressed() -> void:
 func _on_no_pressed() -> void:
 	if active == false:
 		active = true
-		HUD.auto_on = false
 		GameManager.ida_auto(1)
 		timer._stop_timer()
 		yes_no_menu.hide()
@@ -158,7 +164,6 @@ func _on_no_pressed() -> void:
 func _on_coimear_pressed() -> void:
 	if active == false:
 		active = true
-		HUD.auto_on = false
 		timer._stop_timer()
 		yes_no_menu.hide()
 		if DocumentosGenerator.ilegalidades <= 1:
@@ -178,7 +183,17 @@ func _on_coimear_pressed() -> void:
 		state_machine.change_to("transicion")
 
 func _on_mate_pressed() -> void:
-	mate._on_mate_pressed()
+	if active == false and timer.value >= ((timer.max_value * porcentaje) / 100) and GameManager.usos_mates > 0:
+		active = true
+		mate.tomar_mate()
+		timer._pause_timer()
+		await  get_tree().create_timer(4).timeout
+		timer._reduce_timer(((timer.max_value * porcentaje) / 100) * 1.5)
+		timer._start_timer()
+		GameManager.usos_mates -= 1
+		usos_mate_num.text = str(GameManager.usos_mates)
+		progressbarmate.value = GameManager.usos_mates
+		active = false
 	pass # Replace with function body.
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
@@ -188,4 +203,14 @@ func handle_input(event: InputEvent) -> void:
 
 func _on_inspeccion_pressed() -> void:
 	fsm.change_to("inspeccion")
+	pass # Replace with function body.
+
+
+func _on_detecto_mouse_mate_mouse_entered() -> void:
+	progressbarmate.show()
+	pass # Replace with function body.
+
+
+func _on_detecto_mouse_mate_mouse_exited() -> void:
+	progressbarmate.hide()
 	pass # Replace with function body.

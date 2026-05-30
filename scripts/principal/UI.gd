@@ -30,7 +30,7 @@ func _ready() -> void:
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
-	dinero_label.text = str("Dinero: ",GameManager.dinero_player)
+	dinero_label.text = str("Dinero: ",GameManager.dinero)
 
 func _on_fov_slider_value_changed(value: float) -> void:
 	CameraController.update_fov(value)
@@ -43,6 +43,8 @@ func _on_elementos_mesa_auto_ready() -> void:
 
 
 func _on_elementos_mesa_auto_out() -> void:
-	state_machine.change_to("main_view")
 	auto_out = true
+	auto_on = false
+	if GameManager.tiempo < GameManager.tiempo_dia_total:
+		state_machine.change_to("main_view")
 	pass # Replace with function body.

@@ -1,20 +1,10 @@
 extends UIState
 
-@export var HUD: Control
-@export var hud_elementos: Control 
 @onready var state_machine: Node = $".."
-@export var timer: ProgressBar
-@export var siguiente: TextureRect
-
-@onready var CameraController: Node = $"../../../CameraController"
-
-var auto_on = false
 
 func enter() -> void:
 	if fsm.debug == true:
 		print("ENTER TRANSCICION")
-	#if hud_elementos:
-		#HUD.update_ui()
 	pass
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 

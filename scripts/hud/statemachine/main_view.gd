@@ -8,11 +8,9 @@ extends UIState
 
 @onready var CameraController: Node = $"../../../CameraController"
 
-var auto_on = false
 
 func enter() -> void:
 	if hud_elementos:
-		auto_on = false
 		siguiente.visible = true
 		HUD.update_ui()
 		CameraController.vista_normal()
@@ -29,6 +27,5 @@ func handle_input(event: InputEvent) -> void:
 
 func _on_button_siguiente_pressed() -> void:
 	siguiente.visible = false
-	if auto_on == false:
-		GameManager.generar_auto()
+	GameManager.generar_auto()
 	state_machine.change_to("transicion")

@@ -26,5 +26,7 @@ apellidos = ExtResource("1_cee5e")
 colores = ExtResource("3_je3w7")
 objetosbaullegales = ExtResource("8_kp0a1")
 objetosbaulilegales = ExtResource("7_8765l")
+tiempo_limite = 20.0
+tiempo_dia = 5.0
 dialogostele = ExtResource("3_ntc1w")
 metadata/_custom_type_script = "uid://dyyci053w374o"
