@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://o0ylakfm4w6h"]
+
+[ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_hdh7h"]
+[ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="2_y12s0"]
+[ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_xn2sm"]
+[ext_resource type="Resource" uid="uid://maysjvxlf55x" path="res://recursos/configs/config_dia4.tres" id="4_1r7gt"]
+[ext_resource type="Resource" uid="uid://b72eh0sepeu5u" path="res://recursos/dialogostelearray/dia4.tres" id="5_xleqh"]
+[ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_2x1bk"]
+[ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_3e8kv"]
+[ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_1ed3b"]
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="9_lc5vw"]
+
+[resource]
+script = ExtResource("9_lc5vw")
+nombre = "viernes"
+fecha_hoy = {
+"anio": 2026,
+"dia": 15,
+"mes": 6
+}
+mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
+documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul"])
+config = ExtResource("4_1r7gt")
+autos_permitidos = ExtResource("2_y12s0")
+nombres = ExtResource("6_2x1bk")
+apellidos = ExtResource("1_hdh7h")
+colores = ExtResource("3_xn2sm")
+objetosbaullegales = ExtResource("8_1ed3b")
+objetosbaulilegales = ExtResource("7_3e8kv")
+tiempo_limite = 20.0
+dialogostele = ExtResource("5_xleqh")
+metadata/_custom_type_script = "uid://dyyci053w374o"

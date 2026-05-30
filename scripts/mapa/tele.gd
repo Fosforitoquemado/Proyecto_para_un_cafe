@@ -71,7 +71,6 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_ve
 
 func _ready() -> void:
 	panel_container.item_rect_changed.connect(_on_ui_size_changed)
-	
 	# Forzamos una actualización inicial
 	_on_ui_size_changed()
 

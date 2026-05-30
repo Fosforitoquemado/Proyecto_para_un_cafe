@@ -94,7 +94,6 @@ func _on_base_datos_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_exit_pressed() -> void:
-	PCSISTEM.toggle_use()
 	PCSISTEM.exit()
 	reset_pc()
 	pass # Replace with function body.

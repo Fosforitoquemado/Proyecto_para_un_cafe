@@ -1,7 +1,5 @@
 extends Area3D
 
-@onready var daymanager: Node = get_node("/root/Main/DayManager")
-
 var ocupado = false
 
 var hay_condicion = false
@@ -10,6 +8,7 @@ var uicontroller
 
 func _ready() -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
+	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	var dia = daymanager.get_day()
 	if "objetos_baul" in dia.documentos_habilitados:
 		hay_condicion = true

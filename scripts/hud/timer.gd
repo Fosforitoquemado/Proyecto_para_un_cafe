@@ -1,5 +1,9 @@
 extends ProgressBar
 
+@export var HUD:Control
+@export var statemachine:Node
+@export var yes_no_menu: UIState
+
 var timer_bool
 
 var tiempo_transcurrido: float = 0.0
@@ -27,8 +31,10 @@ func _process(delta: float) -> void:
 	if timer_bool == true:
 		tiempo_transcurrido += delta
 		value = tiempo_transcurrido
-		if value == max_value:
-			GameManager.finalizar_dia()
-			get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
+		if value == max_value and statemachine.processing == false:
+			statemachine.change_to("yes_no_menu")
+			yes_no_menu._on_yes_pressed()
+			#GameManager.finalizar_dia()
+			#get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:
 		pass

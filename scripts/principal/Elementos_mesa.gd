@@ -8,6 +8,7 @@ extends Node3D
 @onready var DocumentosGenerator: Node = $"../DocumentosGenerator"
 
 @export var papel_multa: MeshInstance3D
+@export var nodo_papel_multa: Node3D
 @export var dinero: MeshInstance3D
 #cedula
 @export var cedula: Area3D
@@ -221,7 +222,7 @@ func ocultar_docu_multa():
 	licencia.visible = false
 	cedula.visible = false
 	papel_multa.visible = false
-	papel_multa.global_position = Vector3(1.16,0.4,1.3)
+	papel_multa.global_position = nodo_papel_multa.global_position
 	personaje_animator.play("agarrar papeles")
 	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
 	personaje_animator.play("manejando")

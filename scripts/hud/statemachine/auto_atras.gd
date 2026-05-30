@@ -6,8 +6,6 @@ extends UIState
 @export var baul_boton: Button
 @onready var state_machine: Node = $".."
 
-@onready var daymanager: Node = get_node("/root/Main/DayManager")
-
 @onready var CameraController: Node = $"../../../CameraController"
 
 var tutorial_hecho = false
@@ -40,6 +38,7 @@ func enter() -> void:
 	if hud_inspeccion:
 		CameraController.ver_patente_atras(GameManager.auto_dupe.find_child("camara_patente_atras").global_position)
 		hud_inspeccion.show()
+		var daymanager = get_tree().get_first_node_in_group("DayManager")
 		var dia = daymanager.get_day()
 		if "objetos_baul" in dia.documentos_habilitados:
 			if tutorial_hecho == false:

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://5nce5367vhab" path="res://scripts/principal/Elementos_mesa.gd" id="1_3m8vs"]
 [ext_resource type="Texture2D" uid="uid://dj0p4pfglj3fy" path="res://texture/hud/documentos/1.png" id="1_ngsru"]
 [ext_resource type="Texture2D" uid="uid://cyg6iiyj4udyw" path="res://texture/hud/documentos/3.png" id="2_gtunt"]
-[ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="3_3m8vs"]
 [ext_resource type="Texture2D" uid="uid://ndt0odh75b5" path="res://texture/hud/documentos/image-of-plastic-bag-texture.jpg" id="4_4kc6s"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="4_cjwlr"]
 [ext_resource type="Texture2D" uid="uid://4w0k6hos6u0v" path="res://texture/hud/documentos/3.jpg" id="4_o6od5"]
@@ -161,9 +160,10 @@ albedo_color = Color(0, 0.73001605, 9.62615e-07, 1)
 material = SubResource("StandardMaterial3D_tkqnu")
 size = Vector2(0.1, 0.2)
 
-[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("papel_multa", "dinero", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia")]
+[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("papel_multa", "nodo_papel_multa", "dinero", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia")]
 script = ExtResource("1_3m8vs")
 papel_multa = NodePath("papel_multa")
+nodo_papel_multa = NodePath("nodo_papel")
 dinero = NodePath("dinero")
 cedula = NodePath("Documento_cedula")
 dominio_cedula = NodePath("Documento_cedula/cedula/Dominio")
@@ -176,11 +176,11 @@ nombre_licencia = NodePath("Documento_carnet/carnet/Nombre")
 fecha_nacimiento_licencia = NodePath("Documento_carnet/carnet/Fecha_Nacimiento")
 vencimiento_licencia = NodePath("Documento_carnet/carnet/Vencimiento")
 
-[node name="mesa" parent="." unique_id=1106745123 instance=ExtResource("3_3m8vs")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0420616, -0.13102007, 1.0414578)
+[node name="mesa" type="Node3D" parent="." unique_id=269711454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0420616, -0.13102007, 1.0414578)
 
-[node name="Camara_mesa" type="Node3D" parent="mesa" unique_id=1782146927]
-transform = Transform3D(5, -5.3290705e-14, 5.3290705e-14, 5.3290705e-14, 5, 2.1175824e-21, -5.3290705e-14, 2.1175824e-21, 5, 0.024297714, 4.487377, 1.2603087)
+[node name="Camara_mesa" type="Node3D" parent="mesa" unique_id=138829149]
+transform = Transform3D(5, -5.3290705e-14, 5.3290705e-14, 5.3290705e-14, 5, 2.1175824e-21, -5.3290705e-14, 2.1175824e-21, 5, 0, 0.8947719, 0.25186038)
 
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("4_cjwlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
@@ -195,10 +195,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90601134, 1.0276643)
 visible = false
 light_energy = 1.392
 
-[node name="Documento_carnet" type="Area3D" parent="." unique_id=1831466330]
+[node name="Documento_carnet" type="Area3D" parent="." unique_id=1831466330 node_paths=PackedStringArray("limite_minimo", "limite_maximo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.28)
 visible = false
 script = ExtResource("5_o6od5")
+limite_minimo = NodePath("../limite_min")
+limite_maximo = NodePath("../limite_max")
 
 [node name="carnet" type="Sprite3D" parent="Documento_carnet" unique_id=179539834]
 transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
@@ -273,10 +275,12 @@ horizontal_alignment = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011444092, -0.0010681152, 0.0006313324)
 shape = SubResource("BoxShape3D_tkqnu")
 
-[node name="Documento_cedula" type="Area3D" parent="." unique_id=1456492180]
+[node name="Documento_cedula" type="Area3D" parent="." unique_id=1456492180 node_paths=PackedStringArray("limite_minimo", "limite_maximo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.28)
 visible = false
 script = ExtResource("5_o6od5")
+limite_minimo = NodePath("../limite_min")
+limite_maximo = NodePath("../limite_max")
 
 [node name="cedula" type="Sprite3D" parent="Documento_cedula" unique_id=204014254]
 transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
@@ -347,3 +351,20 @@ text = "VTV
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.4, 1.2)
 visible = false
 mesh = SubResource("PlaneMesh_37o8a")
+
+[node name="limite_min" type="Node3D" parent="." unique_id=385454246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89, 0.6, 1.2)
+visible = false
+
+[node name="limite_max" type="Node3D" parent="." unique_id=1358302952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, 0.6, 1.35)
+visible = false
+
+[node name="nodo_cedula" type="Node3D" parent="." unique_id=357884736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.28)
+
+[node name="nodo_licencia" type="Node3D" parent="." unique_id=192848649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.28)
+
+[node name="nodo_papel" type="Node3D" parent="." unique_id=1372327591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16, 0.4, 1.3)

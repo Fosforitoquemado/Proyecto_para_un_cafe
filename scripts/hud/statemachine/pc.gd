@@ -8,6 +8,9 @@ extends UIState
 
 @export var baul_boton: Button
 
+@onready var pc_sistem: Node3D = $"../../../PCSISTEMA"
+@onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
+
 var tutorial_hecho = false
 
 func comenzar_guia():
@@ -48,6 +51,8 @@ func enter() -> void:
 func exit() -> void:
 	if hud_elementos:
 		hud_elementos.show()
+		pc_sistem.toggle_use()
+		pc_control.reset_pc()
 	pass
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)

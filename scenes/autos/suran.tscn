@@ -708,9 +708,6 @@ transform = Transform3D(-0.2, 2.6820107e-08, 9.226955e-09, -1.6985771e-08, -0.16
 visible = false
 text = "PBY 786"
 
-[node name="camara_patente_atras" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D/patente_atras" unique_id=1550342710]
-transform = Transform3D(-1.1111112, 0, 1.6777312e-07, 0, 1.1111112, 0, -1.6777312e-07, 0, -1.1111112, -6.699338e-07, 0.235641, 4.4367676)
-
 [node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment3D" unique_id=1108297971]
 transform = Transform3D(1, 1.3410053e-07, -1.9713057e-07, -7.1054274e-15, -0.8268256, -0.56245846, -2.3841858e-07, 0.5624584, -0.82682556, -3.7252903e-09, 0.14182103, -0.011151433)
 script = ExtResource("6_75p42")
@@ -814,3 +811,6 @@ volume_db = -5.714
 
 [node name="Humo" parent="." unique_id=952818553 instance=ExtResource("4_pkwky")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21494737, -1.0228076)
+
+[node name="camara_patente_atras" type="Node3D" parent="." unique_id=1550342710]
+transform = Transform3D(0.22222224, 1.97373e-15, 0, -9.86865e-16, 0.22222225, 1.4901247e-22, 0, 0, 0.22222224, 9.947598e-14, 0.12476814, -1.9660242)

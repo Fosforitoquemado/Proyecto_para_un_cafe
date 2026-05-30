@@ -15,12 +15,14 @@ func enter() -> void:
 	if hud_inspeccion:
 		CameraController.ver_baul(GameManager.auto_dupe.find_child("camara_baul").global_position,GameManager.auto_dupe.find_child("camara_baul").rotation)
 		if baul_abierto == false and not baul_activo:
+			state_machine.processing = true
 			baul_abierto = true
 			baul_activo = true
 			GameManager.auto_dupe.abrir_baul()
 			await get_tree().create_timer(2, false).timeout
 			baul_activo = false
 			baul_menu.show()
+			state_machine.processing = false
 		hud_inspeccion.show()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
@@ -29,19 +31,28 @@ func exit() -> void:
 		if baul_abierto == true and not baul_activo:
 			baul_abierto = false
 			baul_activo = true
+			hud_inspeccion.hide()
+			baul_menu.hide()
+			state_machine.processing = true
 			GameManager.auto_dupe.cerrar_baul()
 			await get_tree().create_timer(2, false).timeout
 			baul_activo = false
-			baul_menu.hide()
+			state_machine.processing = false
+			
 
 func _on_cerrar_baul_pressed() -> void:
-	if baul_abierto == true and not baul_activo:
-		baul_abierto = false
-		baul_activo = true
-		GameManager.auto_dupe.cerrar_baul()
-		await get_tree().create_timer(2, false).timeout
-		baul_activo = false
-		baul_menu.hide()
+	if hud_inspeccion:
+		if baul_abierto == true and not baul_activo:
+			baul_abierto = false
+			baul_activo = true
+			hud_inspeccion.hide()
+			baul_menu.hide()
+			state_machine.processing = true
+			GameManager.auto_dupe.cerrar_baul()
+			await get_tree().create_timer(2, false).timeout
+			baul_activo = false
+			state_machine.processing = false
+	state_machine.change_to("auto_atras")
 	pass # Replace with function body.
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)

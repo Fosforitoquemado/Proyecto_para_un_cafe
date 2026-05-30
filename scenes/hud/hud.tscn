@@ -245,7 +245,7 @@ anchor_right = 0.9787234
 anchor_bottom = 0.9285714
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695]
+[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "yes_no_menu")]
 modulate = Color(18.892157, 15.898927, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 1
@@ -257,6 +257,9 @@ grow_horizontal = 2
 mouse_filter = 2
 show_percentage = false
 script = ExtResource("2_cgeww")
+HUD = NodePath("../..")
+statemachine = NodePath("../../StateMachine")
+yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Start_day" type="Control" parent="." unique_id=233837449]
@@ -298,11 +301,12 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="skip" type="Button" parent="Start_day" unique_id=1159546307]
-layout_mode = 0
-anchor_left = 0.9348958
-anchor_top = 0.92746913
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8802083
+anchor_top = 0.8888889
 anchor_right = 0.9878472
-anchor_bottom = 0.97993827
+anchor_bottom = 0.9799384
 mouse_filter = 1
 text = "skip"
 metadata/_edit_use_anchors_ = true

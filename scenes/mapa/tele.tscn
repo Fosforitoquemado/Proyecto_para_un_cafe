@@ -435,6 +435,7 @@ transform = Transform3D(-4.3711385e-08, 0.08715574, 0.9961946, 0, 0.9961947, -0.
 
 [node name="mesita 2" parent="." unique_id=1247178929 instance=ExtResource("6_clvex")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -2.618154, 0)
+visible = false
 
 [node name="soniditos" type="AudioStreamPlayer3D" parent="." unique_id=1794457830]
 stream = SubResource("AudioStreamRandomizer_0l7pc")

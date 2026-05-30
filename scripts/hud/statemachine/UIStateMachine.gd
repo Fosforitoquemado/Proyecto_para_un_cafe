@@ -5,6 +5,8 @@ extends Node
 var current_state: UIState
 var states: Dictionary = {}
 
+var processing = false
+
 var debug = false
 
 # La pila que guardará los nombres de los estados anteriores

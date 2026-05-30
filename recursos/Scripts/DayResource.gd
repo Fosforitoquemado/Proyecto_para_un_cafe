@@ -9,7 +9,7 @@ class_name DayResource
 	"mes": 6,
 	"anio": 2026
 }
-@export var dificultad:int = 1
+@export var mapa: Array[String]
 
 @export var documentos_habilitados:Array[String]
 

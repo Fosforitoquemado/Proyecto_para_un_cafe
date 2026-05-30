@@ -10,14 +10,14 @@ var is_using:bool = true
 
 @onready var apagado: TextureRect = $SubViewport/PCControl/apagado
 
-var UI_CONTROLLER
+var uicontroller
 
 var State_Machine
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	UI_CONTROLLER = get_node("/root/Main/HUD")
-	State_Machine = UI_CONTROLLER.find_child("StateMachine")
+	uicontroller = get_tree().get_first_node_in_group("ui_manager")
+	State_Machine = uicontroller.find_child("StateMachine")
 	pc_control.PCSISTEM = self
 	pass # Replace with function body.
 
@@ -26,6 +26,8 @@ func toggle_use():
 	apagado.visible = !apagado.visible
 	if is_using == false:
 		pc_control.apagar_cargando()
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 func camara():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_3d.current = true
@@ -46,7 +48,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("ui_cancel"):
 			pc_control.reset_pc()
-			toggle_use()
 			exit()
 			return
 		else:

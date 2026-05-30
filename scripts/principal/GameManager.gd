@@ -88,7 +88,7 @@ func generar_auto():
 	materiall.albedo_color = Color(color_info["color"])
 	auto_dupe.set_surface_override_material(0, materiall)
 	
-	var root = get_node("/root/Main")
+	var root = get_tree().current_scene
 	
 	root.add_child(auto_dupe)
 	auto_dupe.global_position = Vector3(0.2,0,-2.0)

@@ -1,9 +1,10 @@
 extends Node
 @export var camera: Camera3D
+@export var nodo_camara:Node3D
 
 func vista_normal():
 	camera.rotation = Vector3(0,deg_to_rad(70),0)
-	camera.position = Vector3(1.8,0.7,1.5)
+	camera.position = nodo_camara.global_position
 	camera.current = true
 	camera.fov = 75
 

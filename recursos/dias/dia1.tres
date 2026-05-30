@@ -13,6 +13,7 @@
 [resource]
 script = ExtResource("1_ffbgm")
 nombre = "Lunes"
+mapa = Array[String](["res://scenes/mapa/main.tscn"])
 documentos_habilitados = Array[String](["vtv"])
 config = ExtResource("4_prlxf")
 autos_permitidos = ExtResource("1_kv1hv")

@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://boyl4f3gotn5h"]
 
 [ext_resource type="Script" uid="uid://bsrqodk2o4qql" path="res://scripts/hud/hud_main_menu/Main_Menu.gd" id="1_vwc6f"]
-[ext_resource type="Script" uid="uid://bpyk7nidfxj8t" path="res://scripts/hud/hud_main_menu/button_JUGAR.gd" id="1_yqeox"]
-[ext_resource type="Script" uid="uid://ca30f1lvbv66f" path="res://scripts/hud/hud_main_menu/comprar.gd" id="3_tvaa7"]
 [ext_resource type="Texture2D" uid="uid://cg3d5g6buur2s" path="res://texture/hud/menu/para el cafe.png" id="4_fsiy4"]
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
-[ext_resource type="Script" uid="uid://p1iwwi6740bc" path="res://scripts/hud/hud_main_menu/reset_file.gd" id="6_tqpoc"]
+[ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="7_fuxa7"]
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="8_jgfnl"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="9_fsiy4"]
+[ext_resource type="Resource" uid="uid://teeapc5tjcf" path="res://recursos/dias/dia1.tres" id="9_lgy3i"]
+[ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="10_42vat"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="10_fuxa7"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="11_jgfnl"]
+[ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="11_qwdmc"]
+[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="12_nhx83"]
+[ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="13_jgfnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_is2bi"]
 font_size = 36
@@ -91,7 +95,7 @@ script = ExtResource("1_vwc6f")
 label_dia = NodePath("Label_dia")
 label_dinero = NodePath("Label_dinero")
 
-[node name="Button" type="Button" parent="." unique_id=1545100273]
+[node name="jugar" type="Button" parent="." unique_id=1545100273]
 modulate = Color(0, 0, 0, 0.23529412)
 self_modulate = Color(1, 1, 1, 0.92941177)
 z_index = 1
@@ -105,7 +109,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "
 "
-script = ExtResource("1_yqeox")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_quit" type="Button" parent="." unique_id=1423378273]
@@ -132,26 +135,10 @@ anchor_bottom = 0.8055556
 offset_top = 3.0517578e-05
 mouse_filter = 1
 text = "COMPRAR: 2000"
-script = ExtResource("3_tvaa7")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1087707124]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("4_fsiy4")
-expand_mode = 1
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127613637]
-stream = ExtResource("4_is2bi")
-volume_db = -28.257
-autoplay = true
-
 [node name="reset_file" type="Button" parent="." unique_id=1328065503]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.082465276
@@ -159,10 +146,10 @@ anchor_top = 0.84876543
 anchor_right = 0.16666667
 anchor_bottom = 0.92746913
 text = "RESET SAVE"
-script = ExtResource("6_tqpoc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_dia" type="Label" parent="." unique_id=449898347]
+z_index = 1
 layout_mode = 0
 anchor_left = 0.021701388
 anchor_top = 0.0046296297
@@ -173,6 +160,7 @@ label_settings = SubResource("LabelSettings_is2bi")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_dinero" type="Label" parent="." unique_id=973752297]
+z_index = 1
 layout_mode = 0
 anchor_left = 0.021701388
 anchor_top = 0.097222224
@@ -183,6 +171,11 @@ offset_bottom = -6.0
 text = "DINERO: "
 label_settings = SubResource("LabelSettings_tvaa7")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127613637]
+stream = ExtResource("4_is2bi")
+volume_db = -28.257
+autoplay = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=202075853]
 visible = false
@@ -212,6 +205,7 @@ stream = ExtResource("11_jgfnl")
 volume_db = 10.0
 
 [node name="help" type="Button" parent="." unique_id=1141290441]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9382716
@@ -222,8 +216,24 @@ mouse_filter = 1
 text = "ayuda"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="Button_quit" to="Button" method="_on_button_quit_pressed"]
-[connection signal="pressed" from="comprar" to="comprar" method="_on_pressed"]
-[connection signal="pressed" from="reset_file" to="reset_file" method="_on_pressed"]
-[connection signal="pressed" from="help" to="Button" method="_on_help_pressed"]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1087707124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_fsiy4")
+expand_mode = 1
+
+[node name="DayManager" type="Node" parent="." unique_id=1224837832 groups=["DayManager"]]
+script = ExtResource("7_fuxa7")
+dias = Array[ExtResource("8_jgfnl")]([ExtResource("9_lgy3i"), ExtResource("10_42vat"), ExtResource("11_qwdmc"), ExtResource("12_nhx83"), ExtResource("13_jgfnl")])
+
+[connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Button_quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Button_quit" to="jugar" method="_on_button_quit_pressed"]
+[connection signal="pressed" from="comprar" to="." method="_on_comprar_pressed"]
+[connection signal="pressed" from="reset_file" to="." method="_on_reset_file_pressed"]
+[connection signal="pressed" from="help" to="." method="_on_help_pressed"]

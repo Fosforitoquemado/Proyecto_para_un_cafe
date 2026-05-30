@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://buyy5wotua1gx"]
 
-[ext_resource type="Texture2D" uid="uid://c6a5je0puee57" path="res://texture/objetos_baul/New Piskel-1.png.png" id="1_envwd"]
+[ext_resource type="Texture2D" uid="uid://c6a5je0puee57" path="res://texture/objetos_baul/cadaver/New Piskel-1.png.png" id="1_envwd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2xxh"]
 resource_name = "gris_claro"
