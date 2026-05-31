@@ -65,15 +65,13 @@ func handle_input(event: InputEvent) -> void:
 		fsm.change_to("Pause")
 
 func _on_comprar_pressed() -> void:
-	print(GameManager.usos_mates)
 	if GameManager.usos_mates < 3:
 		if GameManager.dinero >= 100:
 			GameManager.dinero -= 100
 			GameManager.usos_mates += 1
 			dinero.text = str("DINERO: ",GameManager.dinero)
 			mates_usos.text = str("MATES: ",GameManager.usos_mates)
-		
-		print("mate_comprado")
+			print("mate_comprado")
 	#GUARDAR AL SALIR
 	pass # Replace with function body.
 
@@ -84,5 +82,5 @@ func _on_siguiente_dia_pressed() -> void:
 	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
 	SaveLoad.contents_to_save["usos_mate"] = GameManager.usos_mates
 	SaveLoad._save()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file(daymanager.dias[SaveLoad.contents_to_save.values()[0]].mapa[0])
 	pass # Replace with function body.

@@ -33,7 +33,7 @@ func camara():
 	camera_3d.current = true
 func exit():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	State_Machine.change_to("yes_no_menu")
+	State_Machine.back()
 
 func set_fecha(fecha):
 	pc_control.set_fecha(fecha)

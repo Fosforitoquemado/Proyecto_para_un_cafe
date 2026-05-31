@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://dimy1tsw0bi6p"]
 
 [ext_resource type="Script" uid="uid://cdocl25laheia" path="res://scripts/hud/pcsistema.gd" id="1_colfs"]
-[ext_resource type="PackedScene" uid="uid://b6pl4urg6wwi1" path="res://scenes/hud/pc_control.tscn" id="2_cdq6l"]
+[ext_resource type="PackedScene" uid="uid://b6pl4urg6wwi1" path="res://scenes/hud/PC/pc_control.tscn" id="2_cdq6l"]
 [ext_resource type="Texture2D" uid="uid://b384c6svydmey" path="res://modelos/ESCRITORIO/laptop/laptop_Flag_of_Argentina.webp" id="2_colfs"]
 [ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/interactuables/Pc_area3D.gd" id="4_76pq4"]
+[ext_resource type="Texture2D" uid="uid://bet8suj5k3fwp" path="res://texture/hud/exclamacion/New Piskel-1.png" id="5_561fk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7ckq"]
 resource_name = "carcasa"
@@ -234,6 +235,17 @@ size = Vector2(1.31, 0.85)
 [sub_resource type="BoxShape3D" id="BoxShape3D_colfs"]
 size = Vector3(1.4169846, 0.84633636, 0.7366314)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sku50"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("5_561fk")
+texture_filter = 0
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tldnj"]
+
 [node name="PCSISTEMA" type="Node3D" unique_id=1435289206]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_colfs")
@@ -256,7 +268,7 @@ mesh = SubResource("ArrayMesh_flpse")
 transform = Transform3D(0.035466917, 0, 0, 0, 0.01321252, 0, 0, 0, 0.035466917, 0.62053835, 0.0077905753, -0.4085395)
 mesh = SubResource("ArrayMesh_md6q0")
 
-[node name="Empty_001" type="MeshInstance3D" parent="laptop" unique_id=1542171224]
+[node name="bandera" type="MeshInstance3D" parent="laptop" unique_id=1542171224]
 transform = Transform3D(0.062313247, 0, 0, 0, 0.062313247, 0, 0, 0, 0.062313247, -0.46450198, 0.021326836, 0.31138146)
 mesh = SubResource("ArrayMesh_15tic")
 
@@ -287,3 +299,9 @@ script = ExtResource("4_76pq4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=40521767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009281162, 0.337574, -0.6296129)
 shape = SubResource("BoxShape3D_colfs")
+
+[node name="exclamacion" type="MeshInstance3D" parent="." unique_id=1192823759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4627935, -1.0791268)
+visible = false
+material_override = SubResource("StandardMaterial3D_sku50")
+mesh = SubResource("QuadMesh_tldnj")

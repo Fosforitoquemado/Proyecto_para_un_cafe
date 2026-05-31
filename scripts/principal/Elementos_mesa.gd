@@ -7,9 +7,11 @@ extends Node3D
 @onready var day_manager: Node = $"../DayManager"
 @onready var DocumentosGenerator: Node = $"../DocumentosGenerator"
 
+@export var nodo_policia: Node3D
 @export var papel_multa: MeshInstance3D
 @export var nodo_papel_multa: Node3D
 @export var dinero: MeshInstance3D
+
 #cedula
 @export var cedula: Area3D
 @export var dominio_cedula: Label3D
@@ -196,6 +198,35 @@ func ocultar_docu_multa():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
+	if "objeto_info" in datos_documentos:
+		for objetos in datos_documentos["objeto_info"]["cantidad"]:
+			if datos_documentos["objeto_info"]["objetos"][objetos]["legal"] == false:
+				licencia.visible = false
+				cedula.visible = false
+				var pantalla_negra = hud.hud_elementos.find_child("pantalla_negro")
+				var sirenas = pantalla_negra.find_child("sirenas")
+				sirenas.play()
+				nodo_policia.show()
+				await get_tree().create_timer(1.5,false).timeout
+				pantalla_negra.show()
+				var tween = create_tween()
+				tween.tween_property(pantalla_negra,"modulate",Color(0.0, 0.0, 0.0, 1.0),3.0)
+				var tween2 = create_tween()
+				tween2.tween_property(sirenas,"volume_db",-30,3.5)
+				personaje_animator.play("manejando")
+				await get_tree().create_timer(4,false).timeout
+				GameManager.auto_dupe.queue_free()
+				nodo_policia.hide()
+				var tween3 = create_tween()
+				tween3.tween_property(pantalla_negra,"modulate",Color(0.0, 0.0, 0.0, 0.0),1.5)
+				await get_tree().create_timer(1.5,false).timeout
+				pantalla_negra.visible = false
+				pantalla_negra.modulate = Color(0.0, 0.0, 0.0, 0.0)
+				sirenas.stop()
+				sirenas.volume_db = 0
+				hud.papeles_on = false
+				auto_out.emit()
+				return
 	papel_multa.global_position = nodo_papel_multa.global_position
 	papel_multa.visible = true
 	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:

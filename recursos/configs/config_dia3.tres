@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_7k2ks")
+tiempo_de_carga = 2.0
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

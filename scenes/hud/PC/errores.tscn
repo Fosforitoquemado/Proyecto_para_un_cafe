@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ctos4hqrlbccv"]
+
+[node name="Label" type="Label" unique_id=2058772881]
+z_index = 1
+custom_minimum_size = Vector2(300, 50)
+anchors_preset = -1
+anchor_right = 0.26041666
+anchor_bottom = 0.07716049
+offset_right = -300.0
+offset_bottom = -50.0
+text = "LA VTV ESTABA MAL: ERA"
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=34448535]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=249911161]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 2

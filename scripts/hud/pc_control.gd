@@ -16,6 +16,10 @@ extends Control
 @onready var cargando: TextureRect = $cargando
 @onready var cargando_base_de_datos: TextureRect = $basedatos_img/cargando
 
+@onready var errores_auto_control: Control = $errores_auto_control
+@onready var exclamacion: MeshInstance3D = $"../../exclamacion"
+@export var errores_label:PackedScene
+
 #labels base de datos licencia
 @onready var numero_licencia: Label = $basedatos_img/numero_licencia
 @onready var nombre_licencia: Label = $basedatos_img/nombre_licencia
@@ -35,6 +39,9 @@ func _ready() -> void:
 	var dia = day_manager.get_day()
 	
 	tiempo_de_carga = dia.config["tiempo_de_carga"]
+	apagado.visible = true
+	cargando.visible = true
+	errores_auto_control.visible = false
 
 func update_cursor_pos():
 	cursor.position = pc_mouse_pos
@@ -80,6 +87,24 @@ func reset_pc():
 	basededatos_active = false
 	cargando_base_de_datos.visible = true
 
+func borrar_errores():
+	exclamacion.visible = false
+	errores_auto_control.visible = false
+	var vbox = errores_auto_control.find_child("VBoxContainer")
+	print("BORRAR")
+	if vbox.get_children() != null:
+		for i in vbox.get_children():
+			i.queue_free()
+
+func agregar_errores(errores):
+	exclamacion.visible = true
+	errores_auto_control.visible = true
+	for i in errores.size():
+		var errores_labels = errores_label.instantiate()
+		var vbox = errores_auto_control.find_child("VBoxContainer")
+		vbox.add_child(errores_labels)
+		errores_labels.text = errores[i]
+	
 func _on_base_datos_pressed() -> void:
 	if basededatos_active == true:
 		basedatos_img.visible = false
@@ -96,4 +121,9 @@ func _on_base_datos_pressed() -> void:
 func _on_exit_pressed() -> void:
 	PCSISTEM.exit()
 	reset_pc()
+	pass # Replace with function body.
+
+func _on_cerrar_errores_pressed() -> void:
+	exclamacion.visible = false
+	errores_auto_control.visible = false
 	pass # Replace with function body.

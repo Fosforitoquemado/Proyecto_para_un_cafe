@@ -2,6 +2,7 @@ extends UIState
 
 @export var tutorial_scene: PackedScene
 
+@export var HUD: Control
 @export var hud_elementos: Control
 @export var hud_inspeccion: Control
 @onready var state_machine: Node = $".."
@@ -10,6 +11,10 @@ extends UIState
 
 @onready var pc_sistem: Node3D = $"../../../PCSISTEMA"
 @onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
+
+@onready var CameraController: Node = $"../../../CameraController"
+
+var config:GameConfig
 
 var tutorial_hecho = false
 
@@ -42,13 +47,16 @@ func enter() -> void:
 		hud_elementos.hide()
 		hud_inspeccion.hide()
 		if tutorial_hecho == false:
-			await get_tree().create_timer(3.2).timeout
+			var dia_hoy = HUD.dia
+			config = dia_hoy.config
+			await get_tree().create_timer(config["tiempo_de_carga"]).timeout
 			comenzar_guia()
 			SaveLoad.contents_to_save["tutorial_pc"] = true
 			SaveLoad._save()
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
+	CameraController.vista_normal()
 	if hud_elementos:
 		hud_elementos.show()
 		pc_sistem.toggle_use()

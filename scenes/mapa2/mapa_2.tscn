@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_w6gyl"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="6_qig0w"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="7_564cm"]
-[ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="8_17n1j"]
+[ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PC/PCSISTEMA.tscn" id="8_17n1j"]
 [ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="9_w6gyl"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_djlwl"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="11_6xpnk"]

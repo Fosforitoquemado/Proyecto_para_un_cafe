@@ -21,6 +21,8 @@ extends UIState
 @onready var mate: Node3D = $"../../../Elementos_mesa/MATE"
 @onready var state_machine: Node = $".."
 
+@onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
+
 @onready var CameraController: Node = $"../../../CameraController"
 
 var active = false
@@ -131,6 +133,7 @@ func _on_yes_pressed() -> void:
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 			GameManager.sumar_auto()
+			pc_control.agregar_errores(DocumentosGenerator.auto_data["errores"])
 			print("FALLASTE❌❌")
 		else:
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
@@ -152,6 +155,7 @@ func _on_no_pressed() -> void:
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 			GameManager.sumar_auto()
+			pc_control.agregar_errores(["el auto tenia todo en regla ❌"])
 		else:
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
 			#GameManager.sumar_dinero_jugador(50)
@@ -172,6 +176,7 @@ func _on_coimear_pressed() -> void:
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 			GameManager.sumar_auto()
+			pc_control.agregar_errores([str("el auto tenia solo ",DocumentosGenerator.ilegalidades," ilegalidades ❌")])
 		else:
 			GameManager.ida_auto(2)
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * DocumentosGenerator.ilegalidades)

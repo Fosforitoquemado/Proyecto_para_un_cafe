@@ -123,7 +123,7 @@ func sumar_auto():
 
 func update_score(score_auto):
 	dinero += score_auto
-	print(dinero)
+	print("DINERO: ",dinero)
 
 #func check_estado():
 	#if fallos >= max_fallos:

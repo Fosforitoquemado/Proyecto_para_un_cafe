@@ -8,8 +8,11 @@ extends UIState
 
 @onready var CameraController: Node = $"../../../CameraController"
 
+@onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
 
 func enter() -> void:
+	if fsm.debug == true:
+		print("ENTER MAINVIEW")
 	if hud_elementos:
 		siguiente.visible = true
 		HUD.update_ui()
@@ -18,6 +21,8 @@ func enter() -> void:
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
+	if fsm.debug == true:
+		print("EXIT MAINVIEW")
 	pass
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
@@ -28,4 +33,5 @@ func handle_input(event: InputEvent) -> void:
 func _on_button_siguiente_pressed() -> void:
 	siguiente.visible = false
 	GameManager.generar_auto()
+	pc_control.borrar_errores()
 	state_machine.change_to("transicion")

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_8o72k"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa.tscn" id="6_i3fih"]
 [ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa/mapa.gd" id="7_t43ng"]
-[ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PCSISTEMA.tscn" id="8_eml83"]
+[ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PC/PCSISTEMA.tscn" id="8_eml83"]
 [ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="9_7jlpb"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_ibusj"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="11_64jfo"]
