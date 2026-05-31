@@ -2,21 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cwogv57yrcde4" path="res://scenes/hud/tienda.tscn" id="1_pewoi"]
 [ext_resource type="Script" uid="uid://jeuf670ycm8t" path="res://scripts/principal/finaldaymanager.gd" id="2_ld70g"]
-[ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="3_c0kyl"]
-[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="4_u6n1p"]
-[ext_resource type="Resource" uid="uid://teeapc5tjcf" path="res://recursos/dias/dia1.tres" id="5_bqucv"]
-[ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="6_q5rr0"]
-[ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="7_yd7g7"]
-[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="8_khrd2"]
-[ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="8_ld70g"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="3_aw76t"]
 
 [node name="Final_dia" type="Node3D" unique_id=1192115756]
 
 [node name="Finaldaymanager" type="Node" parent="." unique_id=703106954]
 script = ExtResource("2_ld70g")
 
-[node name="DayManager" type="Node" parent="." unique_id=526769328 groups=["DayManager"]]
-script = ExtResource("3_c0kyl")
-dias = Array[ExtResource("4_u6n1p")]([ExtResource("5_bqucv"), ExtResource("6_q5rr0"), ExtResource("7_yd7g7"), ExtResource("8_khrd2"), ExtResource("8_ld70g")])
-
 [node name="HUD_tienda" parent="." unique_id=1466224900 instance=ExtResource("1_pewoi")]
+
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("3_aw76t")]

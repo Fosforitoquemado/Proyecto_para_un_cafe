@@ -11,14 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="9_7jlpb"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_ibusj"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="11_64jfo"]
-[ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="12_6jm0g"]
-[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="13_dvjum"]
-[ext_resource type="Resource" uid="uid://teeapc5tjcf" path="res://recursos/dias/dia1.tres" id="14_c2exr"]
-[ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="15_1nbyg"]
-[ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="16_1hh7c"]
-[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="17_wbweu"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="12_rlnbf"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="18_3ukjb"]
-[ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="18_rjcwt"]
 [ext_resource type="Script" uid="uid://dsovnopsul6vn" path="res://scripts/principal/DocumentosGenerator.gd" id="19_c0oie"]
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="20_d72gd"]
 [ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="21_621pu"]
@@ -169,9 +163,7 @@ max_width_x = null
 script = ExtResource("11_64jfo")
 sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
-[node name="DayManager" type="Node" parent="." unique_id=1435178026 groups=["DayManager"]]
-script = ExtResource("12_6jm0g")
-dias = Array[ExtResource("13_dvjum")]([ExtResource("14_c2exr"), ExtResource("15_1nbyg"), ExtResource("16_1hh7c"), ExtResource("17_wbweu"), ExtResource("18_rjcwt")])
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("12_rlnbf")]
 
 [node name="AutoGenerator" type="Node" parent="." unique_id=1534333920]
 script = ExtResource("18_3ukjb")

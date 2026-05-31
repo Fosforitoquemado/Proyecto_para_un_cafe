@@ -48,24 +48,20 @@ func _process(delta: float) -> void:
 		tiempo = 0
 	pass
 
-
 func _on_button_pressed() -> void:
 	var armazon: MeshInstance3D = $armazon
 	armazon.abrir_baul()
 	pass # Replace with function body.
-
 
 func _on_button_2_pressed() -> void:
 	var armazon: MeshInstance3D = $armazon
 	armazon.cerrar_baul()
 	pass # Replace with function body.
 
-
 func _on_button_3_pressed() -> void:
 	random = !random
 	print(random)
 	pass # Replace with function body.
-
 
 func _on_button_4_pressed() -> void:
 	var num_objeto_random = int(text_edit.text)
@@ -83,6 +79,7 @@ func _on_button_4_pressed() -> void:
 			nodo_baul_grande.add_child(objeto_dupe)
 		else:
 			nodo_baul_mediano.add_child(objeto_dupe)
+	text_edit.text = ""
 	pass # Replace with function body.
 
 
@@ -92,6 +89,7 @@ func _on_button_5_pressed() -> void:
 		print(objetos)
 		print("El objeto se borro❌📦")
 	objetos.clear()
+	text_edit.text = ""
 	print(objetos)
 		#objetos.all(queue_free)
 		

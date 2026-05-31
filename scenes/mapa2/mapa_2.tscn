@@ -12,15 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="9_w6gyl"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_djlwl"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="11_6xpnk"]
-[ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="12_rus0w"]
-[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="13_amvbd"]
-[ext_resource type="Resource" uid="uid://teeapc5tjcf" path="res://recursos/dias/dia1.tres" id="14_th0gh"]
-[ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="15_a3sv8"]
-[ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="16_4h5y8"]
-[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="17_8rpkt"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="18_ia30t"]
 [ext_resource type="Script" uid="uid://dsovnopsul6vn" path="res://scripts/principal/DocumentosGenerator.gd" id="19_cleew"]
-[ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="19_djlwl"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="19_f7g05"]
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="20_ov8lq"]
 [ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="21_8m8ba"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="22_5yivt"]
@@ -1093,10 +1087,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013911605, -0.122502714)
 script = ExtResource("11_6xpnk")
 sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
-[node name="DayManager" type="Node" parent="." unique_id=762940198 groups=["DayManager"]]
-script = ExtResource("12_rus0w")
-dias = Array[ExtResource("13_amvbd")]([ExtResource("14_th0gh"), ExtResource("15_a3sv8"), ExtResource("16_4h5y8"), ExtResource("17_8rpkt"), ExtResource("19_djlwl")])
-
 [node name="AutoGenerator" type="Node" parent="." unique_id=837896002]
 script = ExtResource("18_ia30t")
 
@@ -1130,6 +1120,8 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("23_m3qsi")
 metadata/_edit_use_anchors_ = true
+
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("19_f7g05")]
 
 [connection signal="auto_out" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_out"]
 [connection signal="auto_ready" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_ready"]

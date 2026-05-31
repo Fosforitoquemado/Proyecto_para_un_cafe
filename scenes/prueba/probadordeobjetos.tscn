@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://di0j82mwinxr4" path="res://scripts/prueba/generadordeobjetos.gd" id="1_jdwfk"]
 [ext_resource type="PackedScene" uid="uid://dw2k67wgqodhe" path="res://scenes/autos/c_4_lunge.tscn" id="3_jdwfk"]
 [ext_resource type="Script" uid="uid://dfbljt6yod44y" path="res://scenes/prueba/camara.gd" id="4_w68xr"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="4_wsl8r"]
 
 [node name="Node3D" type="Node3D" unique_id=1676231051]
 script = ExtResource("1_jdwfk")
@@ -96,6 +97,8 @@ text = "MAX:"
 metadata/_edit_use_anchors_ = true
 
 [node name="armazon" parent="." unique_id=1855353460 instance=ExtResource("3_jdwfk")]
+
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("4_wsl8r")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

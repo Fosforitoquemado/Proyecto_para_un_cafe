@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://btjcj1d3c36v5"]
 
-[ext_resource type="PackedScene" uid="uid://dbxawvy48bp6w" path="res://scenes/ObjetosBaul/caja_herramientas.tscn" id="1_u310u"]
+[ext_resource type="PackedScene" uid="uid://dmolydf60a6bs" path="res://scenes/ObjetosBaul/caja_herramientasllena.tscn" id="1_u310u"]
 [ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="2_6y7mj"]
 
 [resource]
