@@ -6,8 +6,11 @@
 [ext_resource type="Resource" uid="uid://by6cbmq8buwsd" path="res://recursos/objetosbaul/cajaherramientas.tres" id="3_k140r"]
 [ext_resource type="Resource" uid="uid://puc6tekvwi35" path="res://recursos/objetosbaul/latas.tres" id="4_m84j6"]
 [ext_resource type="Resource" uid="uid://ce30x8p8no0oq" path="res://recursos/objetosbaul/kekelmes.tres" id="5_k140r"]
+[ext_resource type="Resource" uid="uid://btjcj1d3c36v5" path="res://recursos/objetosbaul/cajaherramientasllena.tres" id="6_tdm2w"]
+[ext_resource type="Resource" uid="uid://bpdqwdmslkdlk" path="res://recursos/objetosbaul/maletaotros2.tres" id="7_gm3te"]
+[ext_resource type="Resource" uid="uid://h4gbi2km2x1m" path="res://recursos/objetosbaul/maletaotros.tres" id="8_cf76q"]
 
 [resource]
 script = ExtResource("2_hhy15")
-array = Array[ExtResource("1_rkqcq")]([ExtResource("2_q23cp"), ExtResource("3_k140r"), ExtResource("4_m84j6"), ExtResource("5_k140r")])
+array = Array[ExtResource("1_rkqcq")]([ExtResource("2_q23cp"), ExtResource("3_k140r"), ExtResource("4_m84j6"), ExtResource("5_k140r"), ExtResource("6_tdm2w"), ExtResource("7_gm3te"), ExtResource("8_cf76q")])
 metadata/_custom_type_script = "uid://bbpm18tctkjtt"

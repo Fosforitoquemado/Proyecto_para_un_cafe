@@ -196,12 +196,12 @@ func ocultar_docu_multa():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
+	papel_multa.global_position = nodo_papel_multa.global_position
 	papel_multa.visible = true
 	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
 		if hud.papeles_on == true:
 			personaje_animator.play("dar_papeles")
 			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
-			print("ahora")
 			var tween = create_tween()
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()

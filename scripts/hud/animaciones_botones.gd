@@ -23,7 +23,6 @@ func _input(event: InputEvent) -> void:
 
 func _on_focus_entered() -> void:
 	if active_click == false:
-		print("activeclick true")
 		active_click = true
 		texture.position.y += 4
 	pass # Replace with function body.
@@ -31,7 +30,6 @@ func _on_focus_entered() -> void:
 
 func _on_focus_exited() -> void:
 	if active_click == true:
-		print("active click false")
 		active_click = false
 		texture.position.y -= 4
 	pass # Replace with function body.
@@ -40,7 +38,6 @@ func _on_focus_exited() -> void:
 func _on_mouse_entered() -> void:
 	if mouse == false:
 		mouse = true
-		print("mouse true")
 		texture.modulate = Color(0.735, 0.735, 0.735, 1.0)
 		texture.size.x += 9
 		texture.position.x -= 4.5
@@ -50,7 +47,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	if mouse == true:
 		mouse = false
-		print("mouse false")
 		texture.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		texture.size.x -= 9
 		texture.position.x += 4.5

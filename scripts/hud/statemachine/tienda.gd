@@ -67,15 +67,15 @@ func handle_input(event: InputEvent) -> void:
 func _on_comprar_pressed() -> void:
 	print(GameManager.usos_mates)
 	if GameManager.usos_mates < 3:
-		GameManager.usos_mates += 1
-		GameManager.dinero -= 100
-		dinero.text = str("DINERO: ",GameManager.dinero)
-		mates_usos.text = str("MATES: ",GameManager.usos_mates)
+		if GameManager.dinero >= 100:
+			GameManager.dinero -= 100
+			GameManager.usos_mates += 1
+			dinero.text = str("DINERO: ",GameManager.dinero)
+			mates_usos.text = str("MATES: ",GameManager.usos_mates)
 		
 		print("mate_comprado")
 	#GUARDAR AL SALIR
 	pass # Replace with function body.
-
 
 func _on_siguiente_dia_pressed() -> void:
 	var daymanager = get_tree().get_first_node_in_group("DayManager")

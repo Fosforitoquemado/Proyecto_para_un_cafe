@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://btjcj1d3c36v5"]
+
+[ext_resource type="PackedScene" uid="uid://dbxawvy48bp6w" path="res://scenes/ObjetosBaul/caja_herramientas.tscn" id="1_u310u"]
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="2_6y7mj"]
+
+[resource]
+script = ExtResource("2_6y7mj")
+nombre = "Caja De Herramientas llena"
+escena = ExtResource("1_u310u")
+tamanio = "mediano"
+legal = true
+max_rotacion = -140
+min_rotacion = -220
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

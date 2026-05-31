@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameConfig" format=3 uid="uid://bc4c4j1l27uhx"]
+
+[ext_resource type="Script" uid="uid://bij3ao6vtfjge" path="res://recursos/Scripts/GameConfig.gd" id="1_7177v"]
+
+[resource]
+script = ExtResource("1_7177v")
+tiempo_de_carga = 1.0
+probabilidad_objeto_baul = 5
+metadata/_custom_type_script = "uid://bij3ao6vtfjge"

@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_hdh7h"]
 [ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="2_y12s0"]
 [ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_xn2sm"]
-[ext_resource type="Resource" uid="uid://maysjvxlf55x" path="res://recursos/configs/config_dia4.tres" id="4_1r7gt"]
+[ext_resource type="Resource" uid="uid://bc4c4j1l27uhx" path="res://recursos/configs/config_dia5.tres" id="4_hdh7h"]
 [ext_resource type="Resource" uid="uid://b72eh0sepeu5u" path="res://recursos/dialogostelearray/dia4.tres" id="5_xleqh"]
 [ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_2x1bk"]
 [ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_3e8kv"]
@@ -20,7 +20,7 @@ fecha_hoy = {
 }
 mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
 documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul"])
-config = ExtResource("4_1r7gt")
+config = ExtResource("4_hdh7h")
 autos_permitidos = ExtResource("2_y12s0")
 nombres = ExtResource("6_2x1bk")
 apellidos = ExtResource("1_hdh7h")

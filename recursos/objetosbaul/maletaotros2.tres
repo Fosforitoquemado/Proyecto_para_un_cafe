@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ObjetoBaulResource" format=3 uid="uid://bpdqwdmslkdlk"]
+
+[ext_resource type="PackedScene" uid="uid://bofhcusjrj5fi" path="res://scenes/ObjetosBaul/maleta.tscn" id="1_163k3"]
+[ext_resource type="Script" uid="uid://bycbh2pqwvkcw" path="res://recursos/Scripts/ObjetosBaulResource.gd" id="2_famp3"]
+
+[resource]
+script = ExtResource("2_famp3")
+nombre = "Maletaotros"
+escena = ExtResource("1_163k3")
+tamanio = "grande"
+max_rotacion = 150
+min_rotacion = 40
+score = 100.0
+metadata/_custom_type_script = "uid://bycbh2pqwvkcw"

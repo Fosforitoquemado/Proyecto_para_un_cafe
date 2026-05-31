@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dmh6nyyduw74n"
-path="res://.godot/imported/maletas.glb-01591b6a5be434ae927e34cf33504a2d.scn"
+uid="uid://x73pw2sfl0ml"
+path="res://.godot/imported/MALETAotros.glb-268a1ac282ebd49825493ded034fc054.scn"
 
 [deps]
 
-source_file="res://modelos/objetos baul/maletas.glb"
-dest_files=["res://.godot/imported/maletas.glb-01591b6a5be434ae927e34cf33504a2d.scn"]
+source_file="res://modelos/objetos baul/MALETAotros.glb"
+dest_files=["res://.godot/imported/MALETAotros.glb-268a1ac282ebd49825493ded034fc054.scn"]
 
 [params]
 
