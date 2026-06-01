@@ -65,6 +65,10 @@ func generate_numero_licencia() -> String:
 	#random numero_licencia
 	var num = str(randi_range(10000000,99999999))
 	return num
+func generate_id_seguro() -> String:
+	#random numero_id_seguro
+	var num = str(randi_range(100,999),"-",randi_range(100,999))
+	return num
 func generate_nombre() -> Dictionary:
 	var nombre_num = randi_range(0,nombres.array.size() - 1)
 	var nombre = nombres.array[nombre_num]
@@ -146,6 +150,7 @@ func _generate_auto() -> Dictionary:
 	var nombre_info = generate_nombre()
 	var apellido_info = generate_apellido()
 	var licencia = generate_numero_licencia()
+	var id_seguro = generate_id_seguro()
 	var nacimiento = generate_fecha_nacimiento()
 	var dinero_coima = generate_dinero_coima()
 	var objeto_baul_info = generate_objetos_baul()
@@ -153,6 +158,7 @@ func _generate_auto() -> Dictionary:
 	# DOCUMENTOS
 	var fecha_cedula = generate_fecha_vencimiento()
 	var fecha_licencia = generate_fecha_vencimiento()
+	var fecha_seguro = generate_fecha_vencimiento()
 	
 	# RESULTADO
 	data = {
@@ -166,8 +172,10 @@ func _generate_auto() -> Dictionary:
 		"modelo_info": modelo_info,
 		"vtv_info": vtv_info,
 		"numero_licencia": licencia,
+		"id_seguro": id_seguro,
 		"fecha_cedula": fecha_cedula,
 		"fecha_licencia": fecha_licencia,
+		"fecha_seguro": fecha_seguro,
 		"dinero_coima": dinero_coima,
 		"objeto_baul_info": objeto_baul_info
 	}

@@ -18,3 +18,7 @@ class_name GameConfig
 @export_range(0,100) var probabilidad_vtv:= 95
 @export_range(0,100) var probabilidad_objeto_baul:= 95
 @export_range(0,100) var probabilidad_objeto_baul_legal:= 50
+@export_range(0,100) var probabilidad_nombre_seguro:= 95
+@export_range(0,100) var probabilidad_id_seguro:= 95
+@export_range(0,100) var probabilidad_fecha_seguro:= 95
+@export_range(0,100) var probabilidad_fecha_seguro_2026:= 30

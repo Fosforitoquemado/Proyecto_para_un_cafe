@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ndt0odh75b5" path="res://texture/hud/documentos/image-of-plastic-bag-texture.jpg" id="4_4kc6s"]
 [ext_resource type="PackedScene" uid="uid://1txyqroo3yhe" path="res://scenes/mapa/mate.tscn" id="4_cjwlr"]
 [ext_resource type="Texture2D" uid="uid://4w0k6hos6u0v" path="res://texture/hud/documentos/3.jpg" id="4_o6od5"]
+[ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/interactuables/termo_area3D.gd" id="4_tkqnu"]
 [ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mapa/mate.gd" id="5_gtunt"]
 [ext_resource type="Script" uid="uid://covm3wwjhi8qt" path="res://scripts/hud/interactuables/documento_arrastrar.gd" id="5_o6od5"]
+[ext_resource type="Texture2D" uid="uid://cbab0br7hqdv4" path="res://texture/hud/documentos/seguro.png" id="9_4kc6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5adcd"]
 resource_name = "termo"
@@ -131,12 +133,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cvj7x")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_37o8a"]
+size = Vector3(1, 6, 4)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kc6s"]
 albedo_texture = ExtResource("2_gtunt")
 metallic = 1.0
 metallic_specular = 1.0
 metallic_texture = ExtResource("4_o6od5")
-roughness = 0.5
+roughness = 0.09
 roughness_texture = ExtResource("4_4kc6s")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkqnu"]
@@ -147,8 +152,20 @@ albedo_texture = ExtResource("1_ngsru")
 metallic = 1.0
 metallic_specular = 1.0
 metallic_texture = ExtResource("4_o6od5")
-roughness = 0.57
+roughness = 0.1
 roughness_texture = ExtResource("4_4kc6s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37o8a"]
+transparency = 1
+albedo_texture = ExtResource("9_4kc6s")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("4_o6od5")
+roughness = 0.1
+roughness_texture = ExtResource("4_4kc6s")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovycv"]
+size = Vector3(0.056311034, 0.01, 0.088085935)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o6od5"]
 size = Vector2(0.3, 0.3)
@@ -197,7 +214,7 @@ _data = {
 &"policia": SubResource("Animation_4kc6s")
 }
 
-[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("nodo_policia", "papel_multa", "nodo_papel_multa", "dinero", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia")]
+[node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("nodo_policia", "papel_multa", "nodo_papel_multa", "dinero", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia", "seguro", "asegurado_seguro", "id_seguro", "vencimiento_seguro")]
 script = ExtResource("1_3m8vs")
 nodo_policia = NodePath("nodo_police")
 papel_multa = NodePath("papel_multa")
@@ -213,6 +230,10 @@ apellido_licencia = NodePath("Documento_carnet/carnet/Apellido")
 nombre_licencia = NodePath("Documento_carnet/carnet/Nombre")
 fecha_nacimiento_licencia = NodePath("Documento_carnet/carnet/Fecha_Nacimiento")
 vencimiento_licencia = NodePath("Documento_carnet/carnet/Vencimiento")
+seguro = NodePath("Documento_seguro")
+asegurado_seguro = NodePath("Documento_seguro/seguro/asegurado")
+id_seguro = NodePath("Documento_seguro/seguro/id")
+vencimiento_seguro = NodePath("Documento_seguro/seguro/vencimiento")
 
 [node name="mesa" type="Node3D" parent="." unique_id=269711454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0420616, -0.13102007, 1.0414578)
@@ -228,13 +249,22 @@ script = ExtResource("5_gtunt")
 transform = Transform3D(-0.024851099, 0, 0.054611564, 0, 0.06, 0, -0.054611564, 0, -0.024851099, 1.1575974, 0.39363158, 0.7614409)
 mesh = SubResource("ArrayMesh_4kc6s")
 
+[node name="Area3D" type="Area3D" parent="termo" unique_id=1453059286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056915283, 0.049331665, -0.012741089)
+priority = 1
+script = ExtResource("4_tkqnu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="termo/Area3D" unique_id=117316839]
+transform = Transform3D(0.99501383, 0, 0.09973651, 0, 1, 0, -0.09973651, 0, 0.99501383, -1.3042755, 2.8476353, 0.80115986)
+shape = SubResource("BoxShape3D_37o8a")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1830378853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90601134, 1.0276643)
 visible = false
 light_energy = 1.392
 
 [node name="Documento_carnet" type="Area3D" parent="." unique_id=1831466330 node_paths=PackedStringArray("limite_minimo", "limite_maximo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.3211343)
 visible = false
 script = ExtResource("5_o6od5")
 limite_minimo = NodePath("../limite_min")
@@ -248,8 +278,6 @@ texture = ExtResource("2_gtunt")
 [node name="Numero_licencia" type="Label3D" parent="Documento_carnet/carnet" unique_id=1627191122]
 transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.502243, 1.4708405, 0.040245056)
 shaded = true
-render_priority = 1
-outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "12345678
@@ -262,8 +290,6 @@ horizontal_alignment = 0
 [node name="Apellido" type="Label3D" parent="Documento_carnet/carnet" unique_id=1679904478]
 transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.4553223, 0.08028412, 0.040245056)
 shaded = true
-render_priority = 1
-outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "Martinez
@@ -275,8 +301,6 @@ horizontal_alignment = 0
 [node name="Nombre" type="Label3D" parent="Documento_carnet/carnet" unique_id=408173751]
 transform = Transform3D(3, -5.684342e-13, -2.879912e-20, 5.684342e-13, 3, 5.684342e-13, -3.006967e-20, -5.684342e-13, 3, -4.4681854, -1.3283234, 0.040245056)
 shaded = true
-render_priority = 1
-outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "Mauro"
@@ -287,8 +311,6 @@ horizontal_alignment = 0
 [node name="Fecha_Nacimiento" type="Label3D" parent="Documento_carnet/carnet" unique_id=314074013]
 transform = Transform3D(3, -5.684342e-13, -2.752857e-20, 5.684342e-13, 3, 5.684342e-13, -3.134022e-20, -5.684342e-13, 3, -4.4681854, -2.8829193, 0.040245056)
 shaded = true
-render_priority = 1
-outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "24/7/1985"
@@ -299,8 +321,6 @@ horizontal_alignment = 0
 [node name="Vencimiento" type="Label3D" parent="Documento_carnet/carnet" unique_id=687698931]
 transform = Transform3D(3, -5.684342e-13, -2.7105054e-20, 5.684342e-13, 3, 5.684342e-13, -3.3881318e-20, -5.684342e-13, 3, 5.0898895, -2.8829193, 0.040245056)
 shaded = true
-render_priority = 1
-outline_render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.39607844)
 text = "20/6/2026
@@ -314,7 +334,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011444092, -0.0010681152
 shape = SubResource("BoxShape3D_tkqnu")
 
 [node name="Documento_cedula" type="Area3D" parent="." unique_id=1456492180 node_paths=PackedStringArray("limite_minimo", "limite_maximo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.3211343)
 visible = false
 script = ExtResource("5_o6od5")
 limite_minimo = NodePath("../limite_min")
@@ -361,6 +381,59 @@ horizontal_alignment = 0
 transform = Transform3D(1, -3.5527137e-15, 3.5527137e-15, 3.5527137e-15, 1, 2.1175824e-22, -3.5527137e-15, 2.1175824e-22, 1, -0.00011444092, -0.0010681152, 0.0006312132)
 shape = SubResource("BoxShape3D_tkqnu")
 
+[node name="Documento_seguro" type="Area3D" parent="." unique_id=1976317555 node_paths=PackedStringArray("limite_minimo", "limite_maximo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0704873, 0.4, 1.1718816)
+visible = false
+script = ExtResource("5_o6od5")
+limite_minimo = NodePath("../limite_min")
+limite_maximo = NodePath("../limite_max")
+
+[node name="seguro" type="Sprite3D" parent="Documento_seguro" unique_id=1922497725]
+transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_37o8a")
+transparent = false
+texture = ExtResource("9_4kc6s")
+
+[node name="asegurado" type="Label3D" parent="Documento_seguro/seguro" unique_id=744376841]
+transform = Transform3D(3, -1.4210855e-13, -8.046813e-21, 1.4210855e-13, 3, 1.4210855e-13, -5.505714e-21, -1.4210855e-13, 3, -2.2490082, 0.7500076, 0.09967041)
+shaded = true
+render_priority = 1
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
+text = "FERNANDO
+"
+font_size = 15
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="id" type="Label3D" parent="Documento_seguro/seguro" unique_id=552994824]
+transform = Transform3D(3, -1.7053026e-13, -9.740879e-21, 1.7053026e-13, 3, 1.7053026e-13, -6.7762636e-21, -1.7053026e-13, 3, -2.3969421, 0.14980316, 0.099674225)
+shaded = true
+render_priority = 1
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
+text = "123456
+"
+font_size = 15
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="vencimiento" type="Label3D" parent="Documento_seguro/seguro" unique_id=562143047]
+transform = Transform3D(3, -2.1316282e-13, -1.2705494e-20, 2.1316282e-13, 3, 2.1316282e-13, -8.893846e-21, -2.1316282e-13, 3, -2.8796463, -0.33400726, 0.099674225)
+shaded = true
+render_priority = 1
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.78431374)
+text = "12/6/2024
+"
+font_size = 15
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Documento_seguro" unique_id=202859148]
+transform = Transform3D(1, -3.5527137e-15, 3.5527137e-15, 3.5527137e-15, 1, 2.1175824e-22, -3.5527137e-15, 2.1175824e-22, 1, -0.00080406666, -0.0010681152, 0.0005335808)
+shape = SubResource("BoxShape3D_ovycv")
+
 [node name="papel_multa" type="MeshInstance3D" parent="." unique_id=2014521207]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.16, 0.4, 1.3)
 visible = false
@@ -399,10 +472,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, 0.6, 1.35)
 visible = false
 
 [node name="nodo_cedula" type="Node3D" parent="." unique_id=357884736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.115, 0.4, 1.3211343)
 
 [node name="nodo_licencia" type="Node3D" parent="." unique_id=192848649]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 1.3211343)
+
+[node name="nodo_seguro" type="Node3D" parent="." unique_id=1742855837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0704873, 0.4, 1.1718816)
 
 [node name="nodo_papel" type="Node3D" parent="." unique_id=1372327591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16, 0.42, 1.3)
@@ -428,3 +504,6 @@ light_color = Color(0, 0, 1, 1)
 light_energy = 2.0
 light_specular = 7.519
 shadow_enabled = true
+
+[connection signal="mouse_entered" from="termo/Area3D" to="termo/Area3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="termo/Area3D" to="termo/Area3D" method="_on_mouse_exited"]

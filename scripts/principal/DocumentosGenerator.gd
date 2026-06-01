@@ -98,11 +98,11 @@ func generate_VTV_auto(probabilidad):
 		errores.append(str("Vtv del auto es fake❌: ", num))
 		print("Vtv del auto es fake❌: ", num)
 		return str(num)
-func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento, fecha_hoy):
+func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimiento, fecha_hoy, documento):
 	
 	if Utils.chance(probabilidad):
 		#correcto
-		print("Fecha del doucmento_x es verdadera✅: ",fecha_de_vencimiento)
+		print("Fecha en ",documento," es verdadera✅: ",fecha_de_vencimiento)
 		return fecha_de_vencimiento
 	else:
 		auto_ilegal = true
@@ -118,26 +118,26 @@ func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimien
 				var mes = fecha_hoy["mes"]
 				dia = randi_range(1,fecha_hoy["dia"] - 1)
 				var fecha_dia_mes_ = str(dia,"/",mes,"/2026")
-				errores.append(str("Fecha del documento_x es fake (dia mal)❌: ",fecha_dia_mes_))
-				print("Fecha del documento_x es fake (dia mal)❌: ",fecha_dia_mes_)
+				errores.append(str("Fecha en ",documento," es fake (dia mal)❌: ",fecha_dia_mes_))
+				print("Fecha en ",documento," es fake (dia mal)❌: ",fecha_dia_mes_)
 				return fecha_dia_mes_
 			else:
 				#mes fake
 				var mes = randi_range(1,fecha_hoy["mes"] - 1)
 				var dia := Utils.dias_en_mes(mes)
 				var fecha_dia_mes_ = str(dia,"/",mes,"/2026")
-				errores.append(str("Fecha del documento es fake (mes mal)❌: ", fecha_dia_mes_))
-				print("Fecha del documento es fake (mes mal)❌: ", fecha_dia_mes_)
+				errores.append(str("Fecha en ",documento," es fake (mes mal)❌: ", fecha_dia_mes_))
+				print("Fecha en ",documento," es fake (mes mal)❌: ", fecha_dia_mes_)
 				return fecha_dia_mes_
 		else:
 			#fake
 			var fecha_dia_mes_ = Utils.generar_fecha(2012,2025)
-			errores.append(str("Fecha del documento_x es fake❌: ",fecha_dia_mes_))
-			print("Fecha del documento_x es fake❌: ",fecha_dia_mes_)
+			errores.append(str("Fecha en ",documento," es fake❌: ",fecha_dia_mes_))
+			print("Fecha en ",documento," es fake❌: ",fecha_dia_mes_)
 			return fecha_dia_mes_
 func generate_numero_licencia(probabilidad):
 	var numero_licencia = auto_data["numero_licencia"]
-	var posiciones_errores = [0,1,2,4,5,6,7]
+	var posiciones_errores = [0,1,2,3,4,5,6,7]
 	if Utils.chance(probabilidad):
 		# correcto
 		print("Numero de licencia es verdadera✅: ",numero_licencia)
@@ -166,12 +166,43 @@ func generate_numero_licencia(probabilidad):
 			print("Numero de la licencia es fake❌, Real:", auto_data["numero_licencia"]," / Falsa:", numero_licencia)
 			print("Cantidad de errores en N licencia:",dificultad_papel)
 			return numero_licencia
-func generate_nombre(probabilidad):
+func generate_numero_id_seguro(probabilidad):
+	var id_seguro = auto_data["id_seguro"]
+	var posiciones_errores = [0,1,2,4,5,6,]
+	if Utils.chance(probabilidad):
+		# correcto
+		print("Numero de id del seguro es verdadera✅: ",id_seguro)
+		return id_seguro
+	else:
+		# fake
+		auto_ilegal = true
+		ilegalidades += 1
+		score_auto += 100.0
+		var dificultad_papel = randi_range(1,6)
+		if dificultad_papel == 6:
+			# numero totalmente distinto
+			var num_fake = str(randi_range(100,999),"-",randi_range(100,999))
+			errores.append(str("Numero de id del seguro es fake❌: ",num_fake))
+			print("Numero de id del seguro es fake❌: ",num_fake)
+			return num_fake
+		else:
+			score_auto += 300.0 / dificultad_papel
+			for i in range(dificultad_papel):
+				# posición diferente
+				var error_posicion = posiciones_errores.pick_random()
+				posiciones_errores.erase(error_posicion)
+				var num_error = Utils.random_excluding(0,9,int(id_seguro[error_posicion]))
+				id_seguro = Utils.cambiar_char(id_seguro,error_posicion,str(num_error))
+			errores.append(str("Numero de el id del seguro es fake❌, Real:", auto_data["id_seguro"]," / Falsa:", id_seguro))
+			print("Numero de el id del seguro es fake❌, Real:", auto_data["id_seguro"]," / Falsa:", id_seguro)
+			print("Cantidad de errores en id seguro:",dificultad_papel)
+			return id_seguro
+func generate_nombre(probabilidad, documento):
 	var nombre = auto_data["nombre_info"]["nombre_num"]
 	if Utils.chance(probabilidad):
 		#correcto
 		var nombre_ = nombres.array[nombre]
-		print("Nombre de la cedula es verdadera✅: ",nombre_)
+		print("Nombre en ",documento," es verdadera✅: ",nombre_)
 		return nombre_
 	else:
 		#fake
@@ -180,7 +211,7 @@ func generate_nombre(probabilidad):
 		ilegalidades += 1
 		score_auto += 100.0
 		errores.append(str("Nombre de la cedula es fake❌: ",nombres.array[fake_nombre]))
-		print("Nombre de la cedula es fake❌: ",nombres.array[fake_nombre])
+		print("Nombre en ",documento," es fake❌: ",nombres.array[fake_nombre])
 		return nombres.array[fake_nombre]
 func generate_apellido(probabilidad):
 	var apellido = auto_data["apellido_info"]["apellido_num"]
@@ -251,7 +282,6 @@ func generate_color_papel(probabilidad):
 		return color
 	else:
 		#fake
-		print("AUTO_ILEGAL color = TRUE")
 		#auto_ilegal = true
 		var num = Utils.random_excluding(0,colores.dictionary.size() - 1,color)
 		#print("Color del papel es fake❌")
@@ -315,7 +345,7 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 			print("Objeto ", i + 1, " legal📦✅: ", objeto_nombre)
 		else:
 			score_auto += objeto_score
-			errores.append(str("Objeto ", i + 1, " ilegal📦❌: ", objeto_nombre))
+			errores.append(str("El objeto ", i + 1, " es ilegal📦❌: ", objeto_nombre))
 			print("Objeto ", i + 1, " ilegal📦❌: ", objeto_nombre)
 		# Guardar
 		objetos.append({
@@ -359,7 +389,7 @@ func _generate_documentos() -> Dictionary:
 	if "cedula" in day.documentos_habilitados:
 		var patente_cedula = generate_papel_patente(config.probabilidad_patente_cedula)
 		var modelo_cedula = generate_modelo_cedula(config.probabilidad_modelo_cedula)
-		var fecha_cedula = generate_fecha_documento(config.probabilidad_fecha_cedula,config.probabilidad_fecha_cedula_2026,auto_data["fecha_cedula"],fecha_hoy)
+		var fecha_cedula = generate_fecha_documento(config.probabilidad_fecha_cedula,config.probabilidad_fecha_cedula_2026,auto_data["fecha_cedula"],fecha_hoy,"cedula")
 		var data_cedula = {
 		"patente_cedula": patente_cedula,
 		"modelo_cedula": modelo_cedula,
@@ -369,11 +399,11 @@ func _generate_documentos() -> Dictionary:
 	
 	# LICENCIA
 	if "licencia" in day.documentos_habilitados:
-		var nombre_licencia = generate_nombre(config.probabilidad_nombre_licencia)
+		var nombre_licencia = generate_nombre(config.probabilidad_nombre_licencia,"licencia")
 		var apellido_licencia = generate_apellido(config.probabilidad_apellido_licencia)
 		var numero_licencia = generate_numero_licencia(config.probabilidad_numero_licencia)
 		var nacimiento_licencia = generate_fecha_nacimiento(config.probabilidad_nacimineto_licencia,config.probabilidad_nacimiento_16)
-		var fecha_licencia = generate_fecha_documento(config.probabilidad_fecha_licencia,config.probabilidad_fecha_licencia_2026,auto_data["fecha_licencia"],fecha_hoy)
+		var fecha_licencia = generate_fecha_documento(config.probabilidad_fecha_licencia,config.probabilidad_fecha_licencia_2026,auto_data["fecha_licencia"],fecha_hoy,"licencia")
 		var data_licencia = {
 		"nombre_licencia": nombre_licencia,
 		"apellido_licencia": apellido_licencia,
@@ -382,6 +412,18 @@ func _generate_documentos() -> Dictionary:
 		"fecha_licencia": fecha_licencia,
 		}
 		data.merge(data_licencia)
+	
+	# SEGURO
+	if "seguro" in day.documentos_habilitados:
+		var asegurado_seguro = generate_nombre(config.probabilidad_nombre_seguro,"seguro")
+		var id_seguro = generate_numero_id_seguro(config.probabilidad_id_seguro)
+		var fecha_seguro = generate_fecha_documento(config.probabilidad_fecha_seguro,config.probabilidad_fecha_seguro_2026,auto_data["fecha_seguro"],fecha_hoy,"seguro")
+		var data_seguro = {
+		"asegurado_seguro": asegurado_seguro,
+		"id_seguro": id_seguro,
+		"fecha_seguro": fecha_seguro,
+		}
+		data.merge(data_seguro)
 	
 	if "objetos_baul" in day.documentos_habilitados:
 		var objeto_info = generate_objetos_baul(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)

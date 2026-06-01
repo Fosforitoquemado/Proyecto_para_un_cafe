@@ -38,10 +38,11 @@ func _input_event(_camera: Camera3D, event: InputEvent, _position: Vector3, _nor
 			arrastrando = true
 			# Creamos el plano invisible orientado hacia la cámara a la altura actual del objeto
 			plano_arrastre = Plane(camara.project_ray_normal(event.position), global_position)
-			global_position.y = limite_y + 0.1
-			print("AAAAAAAAAAAA")
+			if name == "Documento_seguro":
+				global_position.y = limite_y + 0.2
+			else:
+				global_position.y = limite_y + 0.1
 		else:
-			print("BBBBBBBBBBBBBBBB")
 			global_position.y = limite_y
 			arrastrando = false
 func _input(event: InputEvent) -> void:
@@ -71,7 +72,11 @@ func _mover_objeto_a_posicion_raton(pos_raton: Vector2) -> void:
 		var z_limitada = clamp(punto_interseccion.z, LIMITE_Z_MIN, LIMITE_Z_MAX)
 		
 		# 3. El eje Y lo dejamos libre según el plano de la cámara para que mantenga la altura correcta
-		var y_actual =  limite_y + 0.1
+		var y_actual
+		if name == "Documento_seguro":
+			y_actual =  limite_y + 0.2
+		else:
+			y_actual =  limite_y + 0.1
 		
 		# Movemos el objeto a la posición final calculada con los límites
 		global_position = Vector3(x_limitada, y_actual, z_limitada)

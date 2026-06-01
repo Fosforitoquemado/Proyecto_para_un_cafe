@@ -38,3 +38,9 @@ func _process(delta: float) -> void:
 			#get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:
 		pass
+	if value >= ((max_value * 80) / 100):
+		modulate = Color(1.0, 0.0, 0.0, 1.0)
+	elif value >= ((max_value * 50) / 100):
+		modulate = Color(1.0, 1.0, 0.0, 1.0)
+	else:
+		modulate = Color(0.0, 1.0, 0.0, 1.0)

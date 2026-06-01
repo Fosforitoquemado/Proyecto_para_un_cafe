@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x4adsdnrrkfk"
-path.s3tc="res://.godot/imported/CAJA DE HERRAMIENTAS3_TEXTURA MARIHUANA.png-adc29e7a56cc2c1fb0b69971e9ba99b9.s3tc.ctex"
-path.etc2="res://.godot/imported/CAJA DE HERRAMIENTAS3_TEXTURA MARIHUANA.png-adc29e7a56cc2c1fb0b69971e9ba99b9.etc2.ctex"
+uid="uid://cbab0br7hqdv4"
+path.s3tc="res://.godot/imported/seguro.png-8c556cc9d132ffc21663a48efb961c8a.s3tc.ctex"
+path.etc2="res://.godot/imported/seguro.png-8c556cc9d132ffc21663a48efb961c8a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "8356b5c04f9e5d4a8054729adf804553"
-}
 
 [deps]
 
-source_file="res://scenes/ObjetosBaul/caja de herramientas droga/CAJA DE HERRAMIENTAS3_TEXTURA MARIHUANA.png"
-dest_files=["res://.godot/imported/CAJA DE HERRAMIENTAS3_TEXTURA MARIHUANA.png-adc29e7a56cc2c1fb0b69971e9ba99b9.s3tc.ctex", "res://.godot/imported/CAJA DE HERRAMIENTAS3_TEXTURA MARIHUANA.png-adc29e7a56cc2c1fb0b69971e9ba99b9.etc2.ctex"]
+source_file="res://texture/hud/documentos/seguro.png"
+dest_files=["res://.godot/imported/seguro.png-8c556cc9d132ffc21663a48efb961c8a.s3tc.ctex", "res://.godot/imported/seguro.png-8c556cc9d132ffc21663a48efb961c8a.etc2.ctex"]
 
 [params]
 

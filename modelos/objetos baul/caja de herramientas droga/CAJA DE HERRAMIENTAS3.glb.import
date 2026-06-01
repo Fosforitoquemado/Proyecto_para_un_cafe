@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://qn5nrqlh8q4g"
-path="res://.godot/imported/CAJA DE HERRAMIENTAS3.glb-e3375737937cc2431fa5d2cf16afa371.scn"
+path="res://.godot/imported/CAJA DE HERRAMIENTAS3.glb-6b3fc9ba608f17829193a3c5ec60b835.scn"
 
 [deps]
 
-source_file="res://scenes/ObjetosBaul/caja de herramientas droga/CAJA DE HERRAMIENTAS3.glb"
-dest_files=["res://.godot/imported/CAJA DE HERRAMIENTAS3.glb-e3375737937cc2431fa5d2cf16afa371.scn"]
+source_file="res://modelos/objetos baul/caja de herramientas droga/CAJA DE HERRAMIENTAS3.glb"
+dest_files=["res://.godot/imported/CAJA DE HERRAMIENTAS3.glb-6b3fc9ba608f17829193a3c5ec60b835.scn"]
 
 [params]
 

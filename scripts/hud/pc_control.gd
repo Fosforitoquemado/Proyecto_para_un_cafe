@@ -5,11 +5,9 @@ extends Control
 @onready var day_manager: Node = $"../../../DayManager"
 
 @onready var cursor: AnimatedSprite2D = $Cursor
-
+#fecha pc
 @onready var fecha: Label = $Marco_Fecha/Fecha
-@onready var dominio: Label = $basedatos_img/Dominio_cedula
-@onready var modelo: Label = $basedatos_img/Modelo_cedula
-@onready var vence: Label = $basedatos_img/Vence
+
 @onready var vtv: Label = $basedatos_img/VTV
 
 @onready var apagado: TextureRect = $apagado
@@ -20,12 +18,22 @@ extends Control
 @onready var exclamacion: MeshInstance3D = $"../../exclamacion"
 @export var errores_label:PackedScene
 
+#labels base de datos cedula
+@onready var dominio: Label = $basedatos_img/Dominio_cedula
+@onready var modelo: Label = $basedatos_img/Modelo_cedula
+@onready var vence: Label = $basedatos_img/Vence
+
 #labels base de datos licencia
 @onready var numero_licencia: Label = $basedatos_img/numero_licencia
 @onready var nombre_licencia: Label = $basedatos_img/nombre_licencia
 @onready var apellido_licencia: Label = $basedatos_img/apellido_licencia
 @onready var fecha_de_nacimiento_licencia: Label = $basedatos_img/Fecha_De_Nacimiento_licencia
 @onready var fecha_de_vencimiento_licencia: Label = $basedatos_img/Fecha_De_Vencimiento_licencia
+
+#labels seguro
+@onready var nombre_seguro: Label = $basedatos_img/seguro_shit/nombre_seguro
+@onready var id_seguro: Label = $basedatos_img/seguro_shit/id_seguro
+@onready var fecha_seguro: Label = $basedatos_img/seguro_shit/fecha_seguro
 
 @onready var basedatos_img: TextureRect = $basedatos_img
 
@@ -57,25 +65,33 @@ func set_vtv(func_VTV):
 	vtv.text = func_VTV
 #cedula
 
-func set_dominio(func_dominio):
+func set_dominio_cedula(func_dominio):
 	dominio.text = func_dominio
-func set_modelo(func_modelo):
+func set_modelo_cedula(func_modelo):
 	modelo.text = func_modelo
-func set_vencimiento(func_vence):
+func set_vencimiento_cedula(func_vence):
 	vence.text = func_vence
 
 #licencia
 
 func set_numero_licencia(func_numero):
 	numero_licencia.text = func_numero
-func set_nombre(func_nombre):
+func set_nombre_licencia(func_nombre):
 	nombre_licencia.text = func_nombre
-func set_apellido(func_apellido):
+func set_apellido_licencia(func_apellido):
 	apellido_licencia.text = func_apellido
 func set_fecha_nacimiento(func_fecha):
 	fecha_de_nacimiento_licencia.text = func_fecha
 func set_fecha_vencimiento(func_fecha):
 	fecha_de_vencimiento_licencia.text = func_fecha
+
+#seguro
+func set_nombre_seguro(func_nombre):
+	nombre_seguro.text = func_nombre
+func set_id_seguro(func_id):
+	id_seguro.text = func_id
+func set_fecha_seguro(func_fecha):
+	fecha_seguro.text = func_fecha
 
 func apagar_cargando():
 	await get_tree().create_timer(tiempo_de_carga,false).timeout

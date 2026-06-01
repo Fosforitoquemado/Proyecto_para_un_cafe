@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://dq26y65oefjyi"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_h53tr"]
+
+[resource]
+script = ExtResource("1_h53tr")
+texto = "A partir de hoy, todos los vehiculos deberan tener su seguro fisico a disposición en todo momento."
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

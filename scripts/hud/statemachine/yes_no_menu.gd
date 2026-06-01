@@ -201,21 +201,17 @@ func _on_mate_pressed() -> void:
 		active = false
 	pass # Replace with function body.
 
+func _on_inspeccion_pressed() -> void:
+	fsm.change_to("inspeccion")
+	pass # Replace with function body.
+	
+func ocultar_progressbarmate():
+	progressbarmate.hide()
+	
+func mostrar_progressbarmate():
+	progressbarmate.show()
+
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and GameManager.paused == false:
 		fsm.change_to("Pause")
-
-func _on_inspeccion_pressed() -> void:
-	fsm.change_to("inspeccion")
-	pass # Replace with function body.
-
-
-func _on_detecto_mouse_mate_mouse_entered() -> void:
-	progressbarmate.show()
-	pass # Replace with function body.
-
-
-func _on_detecto_mouse_mate_mouse_exited() -> void:
-	progressbarmate.hide()
-	pass # Replace with function body.

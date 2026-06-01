@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://bbdq1co13vy3b" path="res://recursos/objetosbaul/cadaver.tres" id="2_3s4pk"]
 [ext_resource type="Script" uid="uid://bbpm18tctkjtt" path="res://recursos/Scripts/ObjetoArrayResource.gd" id="2_pibr5"]
 [ext_resource type="Resource" uid="uid://dp162j7ub0w4f" path="res://recursos/objetosbaul/maleta.tres" id="3_8k082"]
+[ext_resource type="Resource" uid="uid://c7m156rjpvva0" path="res://recursos/objetosbaul/cajaherramientasmarihuana.tres" id="4_8k082"]
 
 [resource]
 script = ExtResource("2_pibr5")
-array = Array[ExtResource("1_25rhg")]([ExtResource("2_3s4pk"), ExtResource("3_8k082")])
+array = Array[ExtResource("1_25rhg")]([ExtResource("2_3s4pk"), ExtResource("3_8k082"), ExtResource("4_8k082")])
 metadata/_custom_type_script = "uid://bbpm18tctkjtt"

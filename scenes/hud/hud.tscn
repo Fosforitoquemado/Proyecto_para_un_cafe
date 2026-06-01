@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b48i6uqlyd7bh" path="res://scripts/principal/UI.gd" id="4_bluaa"]
 [ext_resource type="Texture2D" uid="uid://ciwcvgy08phqt" path="res://texture/hud/botones/18-artguru.png" id="4_udak2"]
 [ext_resource type="Texture2D" uid="uid://csi0dmxrm4f32" path="res://texture/hud/botones/para el cafe arte-artguru.png" id="5_7pnlf"]
+[ext_resource type="Texture2D" uid="uid://blb6705yeqh3t" path="res://texture/hud/iconos_menus/mate.png" id="5_v3rms"]
 [ext_resource type="Texture2D" uid="uid://b3cowatwi7ihu" path="res://texture/hud/botones/3.png" id="6_a0exy"]
 [ext_resource type="Texture2D" uid="uid://cauuqebu207uq" path="res://texture/hud/botones/para_el_cafe_arte__coima.png" id="7_567j1"]
 [ext_resource type="Texture2D" uid="uid://btlt22tdt0t7p" path="res://texture/hud/botones/espero-artguru.png" id="7_bluaa"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://sej1bra8w11n" path="res://texture/hud/botones/2.png" id="10_2dqaf"]
 [ext_resource type="Texture2D" uid="uid://cc60wgjfj6opu" path="res://texture/hud/botones/1.png" id="11_4vn1o"]
 [ext_resource type="Texture2D" uid="uid://btrjjfmtadljb" path="res://texture/hud/botones/23-artguru.png" id="12_pjbv8"]
+[ext_resource type="Texture2D" uid="uid://deypvq8wy3wr" path="res://texture/hud/iconos_menus/baul abierto.png" id="17_rbny8"]
 [ext_resource type="Texture2D" uid="uid://bmoi4kvo0oaho" path="res://texture/hud/pc/pc_go_arrow.png" id="18_rbny8"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="18_udak2"]
 [ext_resource type="Script" uid="uid://ustrhm87tr4g" path="res://scripts/hud/statemachine/main_view.gd" id="19_7pnlf"]
@@ -265,7 +267,7 @@ anchor_bottom = 0.9285714
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "yes_no_menu")]
-modulate = Color(18.892157, 15.898927, 0, 1)
+modulate = Color(0, 18.892157, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -279,6 +281,24 @@ script = ExtResource("2_cgeww")
 HUD = NodePath("../..")
 statemachine = NodePath("../../StateMachine")
 yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
+metadata/_edit_use_anchors_ = true
+
+[node name="limite_mate" type="Panel" parent="Hud_elementos/Timer" unique_id=235279543]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+anchor_left = 0.30147058
+anchor_right = 0.3125
+anchor_bottom = 1.0222222
+metadata/_edit_use_anchors_ = true
+
+[node name="mate" type="TextureRect" parent="Hud_elementos/Timer" unique_id=79035619]
+layout_mode = 0
+anchor_left = 0.26102942
+anchor_right = 0.35661766
+anchor_bottom = 0.79999995
+texture = ExtResource("5_v3rms")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="Hud_elementos" unique_id=2071720164]
@@ -728,17 +748,36 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="cerrar_baul" type="Button" parent="Inspeccion_menu/Baul_menu" unique_id=1918177016]
+[node name="cerrarbaul" type="TextureRect" parent="Inspeccion_menu/Baul_menu" unique_id=423392433]
+layout_mode = 0
+anchor_left = 0.03125
+anchor_top = 0.25
+anchor_right = 0.21026236
+anchor_bottom = 0.42901236
+texture = ExtResource("17_rbny8")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Inspeccion_menu/Baul_menu/cerrarbaul" unique_id=2019082452]
+show_behind_parent = true
+layout_mode = 0
+anchor_left = 0.024245689
+anchor_top = 0.19827586
+anchor_right = 0.4994612
+anchor_bottom = 0.9655172
+metadata/_edit_use_anchors_ = true
+
+[node name="cerrar_baul" type="Button" parent="Inspeccion_menu/Baul_menu/cerrarbaul" unique_id=1918177016]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025173612
-anchor_top = 0.30864197
-anchor_right = 0.13628472
-anchor_bottom = 0.4027778
+anchor_left = -0.033943966
+anchor_top = 0.112068966
+anchor_right = 0.56734914
+anchor_bottom = 1.0344827
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-text = "cerrar baul"
 metadata/_edit_use_anchors_ = true
 
 [node name="baul_location" type="Button" parent="Inspeccion_menu" unique_id=640414771]
@@ -920,7 +959,7 @@ script = ExtResource("28_4vn1o")
 HUD = NodePath("../..")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_menu = NodePath("../../Inspeccion_menu/Baul_menu")
-baul_boton = NodePath("../../Inspeccion_menu/Baul_menu/cerrar_baul")
+baul_boton = NodePath("../../Inspeccion_menu/Baul_menu/cerrarbaul/cerrar_baul")
 
 [node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("HUD", "hud_elementos", "hud_inspeccion", "baul_boton")]
 script = ExtResource("29_pjbv8")
@@ -971,8 +1010,6 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="YES_NO_menu/Coima/Coimear" to="YES_NO_menu/Coima/Coimear" method="_on_mouse_exited"]
 [connection signal="pressed" from="YES_NO_menu/Coima/Coimear" to="StateMachine/yes_no_menu" method="_on_coimear_pressed"]
-[connection signal="mouse_entered" from="YES_NO_menu/detecto_mouse_mate" to="StateMachine/yes_no_menu" method="_on_detecto_mouse_mate_mouse_entered"]
-[connection signal="mouse_exited" from="YES_NO_menu/detecto_mouse_mate" to="StateMachine/yes_no_menu" method="_on_detecto_mouse_mate_mouse_exited"]
 [connection signal="focus_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" to="Inspeccion_menu/Inspeccion_VTV_texture/Inspeccion_VTV" method="_on_mouse_entered"]
@@ -1003,7 +1040,7 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
-[connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
+[connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrarbaul/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
 [connection signal="focus_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_entered"]

@@ -26,6 +26,12 @@ extends Node3D
 @export var fecha_nacimiento_licencia: Label3D
 @export var vencimiento_licencia: Label3D
 
+#seguro
+@export var seguro: Area3D
+@export var asegurado_seguro: Label3D
+@export var id_seguro: Label3D
+@export var vencimiento_seguro: Label3D
+
 var personaje
 
 var datos_documentos
@@ -72,24 +78,33 @@ func mostrar_datos():
 	#cedula
 	if "cedula" in day.documentos_habilitados:
 		dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
-		pc_control.set_dominio(AutoGenerator._auto_data["patente"])
+		pc_control.set_dominio_cedula(AutoGenerator._auto_data["patente"])
 		modelo_cedula.text = datos_documentos["modelo_cedula"] #🎫🎫🎫
-		pc_control.set_modelo(AutoGenerator._auto_data["modelo_info"]["nombre"])
+		pc_control.set_modelo_cedula(AutoGenerator._auto_data["modelo_info"]["nombre"])
 		vencimiento_cedula.text = datos_documentos["fecha_cedula"] #🎫🎫🎫
-		pc_control.set_vencimiento(AutoGenerator._auto_data["fecha_cedula"])
+		pc_control.set_vencimiento_cedula(AutoGenerator._auto_data["fecha_cedula"])
 	
 	#licencia
 	if "licencia" in day.documentos_habilitados:
 		numero_licencia.text = datos_documentos["numero_licencia"]#🎫🎫🎫
 		pc_control.set_numero_licencia(AutoGenerator._auto_data["numero_licencia"])
 		nombre_licencia.text = datos_documentos["nombre_licencia"]#🎫🎫🎫
-		pc_control.set_nombre(AutoGenerator._auto_data["nombre_info"]["nombre"])
+		pc_control.set_nombre_licencia(AutoGenerator._auto_data["nombre_info"]["nombre"])
 		apellido_licencia.text = datos_documentos["apellido_licencia"]#🎫🎫🎫
-		pc_control.set_apellido(AutoGenerator._auto_data["apellido_info"]["apellido"])
+		pc_control.set_apellido_licencia(AutoGenerator._auto_data["apellido_info"]["apellido"])
 		fecha_nacimiento_licencia.text = datos_documentos["nacimiento_licencia"]#🎫🎫🎫
 		pc_control.set_fecha_nacimiento(AutoGenerator._auto_data["nacimiento"]["fecha_entera"])
 		vencimiento_licencia.text = datos_documentos["fecha_licencia"]#🎫🎫🎫
 		pc_control.set_fecha_vencimiento(AutoGenerator._auto_data["fecha_licencia"])
+	
+	#seguro
+	if "seguro" in day.documentos_habilitados:
+		asegurado_seguro.text = datos_documentos["asegurado_seguro"] #🎫🎫🎫
+		pc_control.set_nombre_seguro(AutoGenerator._auto_data["nombre_info"]["nombre"])
+		id_seguro.text = datos_documentos["id_seguro"] #🎫🎫🎫
+		pc_control.set_id_seguro(AutoGenerator._auto_data["id_seguro"])
+		vencimiento_seguro.text = datos_documentos["fecha_seguro"] #🎫🎫🎫
+		pc_control.set_fecha_seguro(AutoGenerator._auto_data["fecha_seguro"])
 	#papeles en la mano del personaje
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout
 	for i in range(GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size()):
@@ -126,10 +141,12 @@ func mostrar_datos():
 			licencia.visible = true
 		if "cedula" in day.documentos_habilitados:
 			cedula.visible = true
-			
+		if "seguro" in day.documentos_habilitados:
+			seguro.visible = true
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
+		seguro.global_position = nodo_papeles.global_position
 		
 	auto_ready.emit()
 	print("FINAL MOSTRAR DATOS")
@@ -147,10 +164,13 @@ func ocultar_docu_bien():
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween3 = create_tween()
+			tween3.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 		if hud.papeles_on == true:
 			await personaje_animator.animation_finished
 		licencia.visible = false
 		cedula.visible = false
+		seguro.visible = false
 	personaje_animator.play("agarrar papeles")
 	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
 	personaje_animator.play("manejando")
@@ -174,11 +194,13 @@ func ocultar_docu_coima():
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween3 = create_tween()
+			tween3.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 		if hud.papeles_on == true:
 			await personaje_animator.animation_finished
 		licencia.visible = false
 		cedula.visible = false
-		papel_multa.visible = false
+		seguro.visible = false
 		dinero.visible = true
 		dinero.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
 		var tween4 = create_tween()
@@ -203,6 +225,7 @@ func ocultar_docu_multa():
 			if datos_documentos["objeto_info"]["objetos"][objetos]["legal"] == false:
 				licencia.visible = false
 				cedula.visible = false
+				seguro.visible = false
 				var pantalla_negra = hud.hud_elementos.find_child("pantalla_negro")
 				var sirenas = pantalla_negra.find_child("sirenas")
 				sirenas.play()
@@ -237,6 +260,8 @@ func ocultar_docu_multa():
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween4 = create_tween()
+			tween4.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween3 = create_tween()
 			tween3.tween_property(papel_multa,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 2.5))
 			await personaje_animator.animation_finished
@@ -252,6 +277,7 @@ func ocultar_docu_multa():
 		await personaje_animator.animation_finished
 	licencia.visible = false
 	cedula.visible = false
+	seguro.visible = false
 	papel_multa.visible = false
 	papel_multa.global_position = nodo_papel_multa.global_position
 	personaje_animator.play("agarrar papeles")
@@ -271,6 +297,3 @@ func ocultar_documentos(condicion):
 		ocultar_docu_multa()
 	elif condicion == 2:
 		ocultar_docu_coima()
-
-func datos_cedula():
-	print("hola")
