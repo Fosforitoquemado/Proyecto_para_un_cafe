@@ -49,7 +49,7 @@ func enter() -> void:
 		if tutorial_hecho == false:
 			var dia_hoy = HUD.dia
 			config = dia_hoy.config
-			await get_tree().create_timer(config["tiempo_de_carga"]).timeout
+			await get_tree().create_timer(config["tiempo_de_carga"] + 0.1).timeout
 			comenzar_guia()
 			SaveLoad.contents_to_save["tutorial_pc"] = true
 			SaveLoad._save()

@@ -211,6 +211,21 @@ func ocultar_progressbarmate():
 func mostrar_progressbarmate():
 	progressbarmate.show()
 
+func tiempo_fuera():
+	if active == false:
+		active = true
+		GameManager.ida_auto(0)
+		timer._stop_timer()
+		yes_no_menu.hide()
+		print("FALLASTE❌❌")
+		GameManager.sumar_fallo()
+		GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
+		GameManager.sumar_auto()
+		pc_control.agregar_errores(["el chofer se canso de esperar ❌"])
+		active = false
+		HUD.auto_out = false
+		state_machine.change_to("transicion")
+
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and GameManager.paused == false:

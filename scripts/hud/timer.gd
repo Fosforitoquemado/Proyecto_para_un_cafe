@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		value = tiempo_transcurrido
 		if value == max_value and statemachine.processing == false:
 			statemachine.change_to("yes_no_menu")
-			yes_no_menu._on_yes_pressed()
+			yes_no_menu.tiempo_fuera()
 			#GameManager.finalizar_dia()
 			#get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:

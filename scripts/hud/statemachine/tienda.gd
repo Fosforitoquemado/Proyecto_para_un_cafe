@@ -39,6 +39,7 @@ func enter() -> void:
 	# Esperamos un momento o lo activamos cuando empiece la partida
 	if fsm.debug == true:
 		print("ENTER tienda")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if tutorial_hecho == false:
 		var savedata = SaveLoad.contents_to_save
 		tutorial_hecho = savedata.values()[2]

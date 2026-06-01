@@ -50,6 +50,7 @@ func _ready() -> void:
 	apagado.visible = true
 	cargando.visible = true
 	errores_auto_control.visible = false
+	basedatos_img.visible = false
 
 func update_cursor_pos():
 	cursor.position = pc_mouse_pos
