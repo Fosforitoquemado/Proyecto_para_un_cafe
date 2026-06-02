@@ -1087,15 +1087,15 @@ script = ExtResource("1_bc874")
 transform = Transform3D(1.0000006, 3.7252903e-09, -3.7252903e-09, 4.628673e-06, 1, 0, 2.82377e-06, 0, 1, -0.021705449, 0.02197373, 0.019103765)
 shape = SubResource("BoxShape3D_8rewc")
 
-[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1178184202]
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=316263022]
 transform = Transform3D(0.60938, 0.26047626, 0.7488712, -1.15484e-07, 0.94449705, -0.32851985, -0.7928783, 0.20019335, 0.57555777, -9.473812e-09, 0.7614109, -0.028572774)
 bone_name = "Bone.003"
 bone_idx = 3
 
-[node name="nodo_alcholemia" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D2" unique_id=494511380]
-transform = Transform3D(0.99999994, 7.1054274e-15, 1.4210855e-14, -7.1054274e-15, 1.0000002, -2.9802322e-08, -1.4210855e-14, -2.9802322e-08, 1.0000001, 2.9802322e-08, 0.043145478, 0.124043554)
+[node name="nodo_alcholemia" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D2" unique_id=346344812]
+transform = Transform3D(0.9999998, 7.1054274e-15, 2.842171e-14, -7.1054274e-15, 1.0000002, -2.9802322e-08, -1.4210855e-14, -5.9604645e-08, 1.0000001, 5.9604645e-08, 0.06442863, 0.18523279)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D2/nodo_alcholemia" unique_id=407434020]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D2/nodo_alcholemia" unique_id=705458058]
 mesh = SubResource("BoxMesh_bc874")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=994364173]

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://covm3wwjhi8qt" path="res://scripts/hud/interactuables/documento_arrastrar.gd" id="5_o6od5"]
 [ext_resource type="Texture2D" uid="uid://cbab0br7hqdv4" path="res://texture/hud/documentos/seguro.png" id="9_4kc6s"]
 [ext_resource type="Script" uid="uid://sko0vdylua50" path="res://scripts/hud/interactuables/alcholometro_area3D.gd" id="11_37o8a"]
+[ext_resource type="PackedScene" uid="uid://cvqo21bh3wx7a" path="res://scenes/mapa/medidor_alcholemia.tscn" id="11_ovycv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5adcd"]
 resource_name = "termo"
@@ -215,11 +216,8 @@ _data = {
 &"policia": SubResource("Animation_4kc6s")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_tkqnu"]
-size = Vector3(0.1, 0.1, 0.1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_6aws0"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(0.11787109, 0.278479, 0.1)
 
 [node name="Elementos_mesa" type="Node3D" unique_id=440201251 node_paths=PackedStringArray("nodo_policia", "papel_multa", "nodo_papel_multa", "dinero", "medidor_alcohol", "num_alcholemia", "cedula", "dominio_cedula", "modelo_cedula", "vencimiento_cedula", "licencia", "numero_licencia", "apellido_licencia", "nombre_licencia", "fecha_nacimiento_licencia", "vencimiento_licencia", "seguro", "asegurado_seguro", "id_seguro", "vencimiento_seguro")]
 script = ExtResource("1_3m8vs")
@@ -515,13 +513,13 @@ light_specular = 7.519
 shadow_enabled = true
 
 [node name="nodo_alcholemia" type="Node3D" parent="." unique_id=665033224]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.45, 1.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74320364, 0.47037458, 1.6)
 
-[node name="medidor_alcholemia" type="MeshInstance3D" parent="." unique_id=782159847]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.45, 1.6)
-mesh = SubResource("BoxMesh_tkqnu")
+[node name="medidor_alcholemia" parent="." unique_id=905085542 instance=ExtResource("11_ovycv")]
+transform = Transform3D(-2.0066963e-08, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.0066963e-08, 0.74320364, 0.47037458, 1.6)
 
 [node name="Area3D" type="Area3D" parent="medidor_alcholemia" unique_id=204042183 node_paths=PackedStringArray("nodo_alcholemia", "medidor_alcholemia", "num_alcohol")]
+transform = Transform3D(-4.0133923e-06, 0, -10, 0, 10, 0, 10, 0, -4.0133923e-06, 0, 0, 0)
 priority = 1
 script = ExtResource("11_37o8a")
 nodo_alcholemia = NodePath("../../nodo_alcholemia")
@@ -529,11 +527,11 @@ medidor_alcholemia = NodePath("..")
 num_alcohol = NodePath("../num_alcohol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="medidor_alcholemia/Area3D" unique_id=869235843]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.008935571, -0.01411742, 0)
 shape = SubResource("BoxShape3D_6aws0")
 
 [node name="num_alcohol" type="Label3D" parent="medidor_alcholemia" unique_id=1134531436]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.04613775, 0.097890705, 0)
+transform = Transform3D(-2.006696e-06, 0, -5, 0, 5, 0, 5, 0, -2.006696e-06, 0, 0.97890663, 0.6701608)
 billboard = 1
 double_sided = false
 text = "..."

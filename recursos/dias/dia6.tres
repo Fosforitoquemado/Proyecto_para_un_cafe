@@ -3,8 +3,8 @@
 [ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_2k6ju"]
 [ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="2_r1h6p"]
 [ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_gacv0"]
-[ext_resource type="Resource" uid="uid://bc4c4j1l27uhx" path="res://recursos/configs/config_dia5.tres" id="4_ykdke"]
-[ext_resource type="Resource" uid="uid://wii6htdfc4ma" path="res://recursos/dialogostelearray/dia5.tres" id="5_m4uk0"]
+[ext_resource type="Resource" uid="uid://crqd75tkl8vlj" path="res://recursos/configs/config_dia6.tres" id="4_2k6ju"]
+[ext_resource type="Resource" uid="uid://f6kp6om3nmuq" path="res://recursos/dialogostelearray/dia6.tres" id="5_r1h6p"]
 [ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_cjyv4"]
 [ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_f6t46"]
 [ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_len3j"]
@@ -20,7 +20,7 @@ fecha_hoy = {
 }
 mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
 documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul", "seguro", "alcholemia"])
-config = ExtResource("4_ykdke")
+config = ExtResource("4_2k6ju")
 autos_permitidos = ExtResource("2_r1h6p")
 nombres = ExtResource("6_cjyv4")
 apellidos = ExtResource("1_2k6ju")
@@ -28,5 +28,5 @@ colores = ExtResource("3_gacv0")
 objetosbaullegales = ExtResource("8_len3j")
 objetosbaulilegales = ExtResource("7_f6t46")
 tiempo_limite = 100.0
-dialogostele = ExtResource("5_m4uk0")
+dialogostele = ExtResource("5_r1h6p")
 metadata/_custom_type_script = "uid://dyyci053w374o"

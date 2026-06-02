@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://cxgg1yr0xhe0t"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_54gfh"]
+
+[resource]
+script = ExtResource("1_54gfh")
+texto = "este sabado tan hermoso, la gente sale a festejar"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"
