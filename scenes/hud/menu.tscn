@@ -3,16 +3,10 @@
 [ext_resource type="Script" uid="uid://bsrqodk2o4qql" path="res://scripts/hud/hud_main_menu/Main_Menu.gd" id="1_vwc6f"]
 [ext_resource type="Texture2D" uid="uid://cg3d5g6buur2s" path="res://texture/hud/menu/para el cafe.png" id="4_fsiy4"]
 [ext_resource type="AudioStream" uid="uid://cttdhm10y8ihl" path="res://sonidos/Menu/Argentina - Himno nacional argentino (karaoplay.com).wav" id="4_is2bi"]
-[ext_resource type="Script" uid="uid://dwu21766mj2rw" path="res://scripts/principal/DayManager.gd" id="7_fuxa7"]
-[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="8_jgfnl"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="7_8uvrl"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="9_fsiy4"]
-[ext_resource type="Resource" uid="uid://teeapc5tjcf" path="res://recursos/dias/dia1.tres" id="9_lgy3i"]
-[ext_resource type="Resource" uid="uid://duwwwxluq6vgb" path="res://recursos/dias/dia2.tres" id="10_42vat"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="10_fuxa7"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="11_jgfnl"]
-[ext_resource type="Resource" uid="uid://bkpf20di1mp2f" path="res://recursos/dias/dia3.tres" id="11_qwdmc"]
-[ext_resource type="Resource" uid="uid://ct7gde6f873a7" path="res://recursos/dias/dia4.tres" id="12_nhx83"]
-[ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="13_jgfnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_is2bi"]
 font_size = 36
@@ -227,9 +221,7 @@ mouse_filter = 2
 texture = ExtResource("4_fsiy4")
 expand_mode = 1
 
-[node name="DayManager" type="Node" parent="." unique_id=1224837832 groups=["DayManager"]]
-script = ExtResource("7_fuxa7")
-dias = Array[ExtResource("8_jgfnl")]([ExtResource("9_lgy3i"), ExtResource("10_42vat"), ExtResource("11_qwdmc"), ExtResource("12_nhx83"), ExtResource("13_jgfnl")])
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("7_8uvrl")]
 
 [connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Button_quit" to="." method="_on_button_quit_pressed"]

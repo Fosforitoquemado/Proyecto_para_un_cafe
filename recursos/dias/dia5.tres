@@ -15,7 +15,7 @@ script = ExtResource("9_lc5vw")
 nombre = "viernes"
 fecha_hoy = {
 "anio": 2026,
-"dia": 15,
+"dia": 16,
 "mes": 6
 }
 mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
@@ -28,5 +28,6 @@ colores = ExtResource("3_xn2sm")
 objetosbaullegales = ExtResource("8_1ed3b")
 objetosbaulilegales = ExtResource("7_3e8kv")
 tiempo_limite = 100.0
+tiempo_dia = 10.0
 dialogostele = ExtResource("5_hdh7h")
 metadata/_custom_type_script = "uid://dyyci053w374o"

@@ -176,6 +176,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013911605, -0.122502714)
 script = ExtResource("11_6xpnk")
 sub_viewport_container = NodePath("../WorldEnvironment/SubViewportContainer")
 
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("19_f7g05")]
+
 [node name="AutoGenerator" type="Node" parent="." unique_id=837896002]
 script = ExtResource("18_ia30t")
 
@@ -209,8 +211,6 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("23_m3qsi")
 metadata/_edit_use_anchors_ = true
-
-[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("19_f7g05")]
 
 [connection signal="auto_out" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_out"]
 [connection signal="auto_ready" from="Elementos_mesa" to="HUD" method="_on_elementos_mesa_auto_ready"]

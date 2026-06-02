@@ -22,3 +22,4 @@ class_name GameConfig
 @export_range(0,100) var probabilidad_id_seguro:= 95
 @export_range(0,100) var probabilidad_fecha_seguro:= 95
 @export_range(0,100) var probabilidad_fecha_seguro_2026:= 30
+@export_range(0,100) var probabilidad_alcholemia:= 80

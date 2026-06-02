@@ -11,6 +11,8 @@ extends Node3D
 @export var papel_multa: MeshInstance3D
 @export var nodo_papel_multa: Node3D
 @export var dinero: MeshInstance3D
+@export var medidor_alcohol:MeshInstance3D
+@export var num_alcholemia:Label3D
 
 #cedula
 @export var cedula: Area3D
@@ -39,6 +41,16 @@ var datos_documentos
 signal auto_ready
 
 signal auto_out
+
+func _ready() -> void:
+	var day = day_manager.get_day()
+	if "alcholemia" in day.documentos_habilitados:
+		medidor_alcohol.visible = true
+	else:
+		medidor_alcohol.visible = false
+	cedula.visible = false
+	licencia.visible = false
+	seguro.visible = false
 
 func mostrar_datos():
 	datos_documentos = DocumentosGenerator._generate_documentos()
@@ -105,6 +117,7 @@ func mostrar_datos():
 		pc_control.set_id_seguro(AutoGenerator._auto_data["id_seguro"])
 		vencimiento_seguro.text = datos_documentos["fecha_seguro"] #🎫🎫🎫
 		pc_control.set_fecha_seguro(AutoGenerator._auto_data["fecha_seguro"])
+	
 	#papeles en la mano del personaje
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout
 	for i in range(GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size()):
@@ -291,6 +304,7 @@ func ocultar_docu_multa():
 	auto_out.emit()
 
 func ocultar_documentos(condicion):
+	num_alcholemia.text = "..." 
 	if condicion == 0:
 		ocultar_docu_bien()
 	elif condicion == 1:

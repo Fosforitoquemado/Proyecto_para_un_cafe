@@ -15,15 +15,12 @@ func _ready() -> void:
 	var state_machine = hud.find_child("StateMachine")
 	var dia = day_manager.get_day()
 	var dia_actual = day_manager.dia_actual
-	print(dia_actual)
-	#if dia_actual == 0:
+	print("DIA HOY: ",dia_actual)
+	
 	state_machine.change_to("tele")
-	#else:
-		#state_machine.change_to("tienda")
+	
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)
 	camera_controller.update_fov(60)
-	
-	
 	
 	# CONTROL DE SEGURIDAD: Validamos que dialogostele no sea Nil y tenga la propiedad 'array'
 	if dia.dialogostele == null:

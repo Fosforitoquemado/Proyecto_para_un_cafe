@@ -363,6 +363,23 @@ func generate_objetos_baul(probabilidad, probabilidad_legal):
 		"cantidad": objetos.size(),
 		"objetos": objetos
 	}
+func generate_alcholemia(probabilidad):
+	var alcholemia = 0.0
+	if Utils.chance(probabilidad):
+		#correcto
+		print("el grado de alcholemia es 0✅: ",alcholemia)
+		return str(alcholemia)
+	else:
+		#fake
+		
+		var num := randf_range(0.1,20.0)
+		num = snapped(num, 0.1)
+		auto_ilegal = true
+		ilegalidades += 1
+		score_auto += 100.0
+		errores.append(str("el porcentaje de alchol en sangre es mayor a 0❌: ", num))
+		print("el porcentaje de alchol en sangre es mayor a 0❌: ", num)
+		return str(num)
 
 func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
@@ -424,6 +441,13 @@ func _generate_documentos() -> Dictionary:
 		"fecha_seguro": fecha_seguro,
 		}
 		data.merge(data_seguro)
+	
+	if "alcholemia" in day.documentos_habilitados:
+		var alcholemia = generate_alcholemia(config.probabilidad_alcholemia)
+		var data_alcholemia = {
+		"alcholemia": alcholemia,
+		}
+		data.merge(data_alcholemia)
 	
 	if "objetos_baul" in day.documentos_habilitados:
 		var objeto_info = generate_objetos_baul(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)

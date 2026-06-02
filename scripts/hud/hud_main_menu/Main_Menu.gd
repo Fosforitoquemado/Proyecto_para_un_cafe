@@ -21,6 +21,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
+func _input(event: InputEvent) -> void:
+	var savedata = SaveLoad.contents_to_save
+	if event.is_action_pressed("ui_down"):
+		await get_tree().physics_frame
+		label_dinero.text = str("DINERO: ",savedata.values()[1])
+	if event.is_action_pressed("ui_up"):
+		await get_tree().physics_frame
+		label_dia.text = str("DIA: ",savedata.values()[0] + 1)
+
+
 func _on_reset_file_pressed() -> void:
 	SaveLoad.contents_to_save["dinero"] = 0
 	SaveLoad.contents_to_save["day"] = 0
