@@ -136,7 +136,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cvj7x")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37o8a"]
-size = Vector3(1, 6, 4)
+margin = 0.1
+size = Vector3(2, 6, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kc6s"]
 albedo_texture = ExtResource("2_gtunt")
@@ -262,7 +263,7 @@ priority = 1
 script = ExtResource("4_tkqnu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="termo/Area3D" unique_id=117316839]
-transform = Transform3D(0.99501383, 0, 0.09973651, 0, 1, 0, -0.09973651, 0, 0.99501383, -1.3042755, 2.8476353, 0.80115986)
+transform = Transform3D(-0.4146932, 0, -0.9099611, 0, 1, 0, 0.9099611, 0, -0.4146932, 0.012046814, 2.8476353, 0.39895153)
 shape = SubResource("BoxShape3D_37o8a")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1830378853]
