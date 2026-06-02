@@ -6,5 +6,6 @@
 script = ExtResource("1_7gayk")
 tiempo_de_carga = 1.0
 probabilidad_objeto_baul = 5
+probabilidad_nombre_seguro = 1
 probabilidad_alcholemia = 60
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

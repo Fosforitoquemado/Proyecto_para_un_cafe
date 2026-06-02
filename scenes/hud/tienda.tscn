@@ -78,7 +78,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Tienda1" unique_id=2074325200]
+[node name="fondo" type="TextureRect" parent="Tienda1" unique_id=2074325200]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,35 +87,56 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_vyxmn")
 
+[node name="listacontainer" type="VBoxContainer" parent="Tienda1" unique_id=79543492]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062310115
+anchor_top = 0.22900471
+anchor_right = 0.3227268
+anchor_bottom = 0.9212963
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Tienda1/listacontainer" unique_id=1478738185]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="comprar" type="Button" parent="Tienda1/listacontainer/Control" unique_id=1805056749]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.44666666
+offset_top = -5.0
+offset_bottom = 26.000004
+text = "COMPRAR MATE"
+metadata/_edit_use_anchors_ = true
+
+[node name="mates_usos" type="Label" parent="Tienda1/listacontainer/Control" unique_id=416250616]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.83333296
+offset_right = -1.5258789e-05
+offset_bottom = 23.0
+text = "MATES: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="coste_mate" type="Label" parent="Tienda1/listacontainer/Control" unique_id=1868252018]
+layout_mode = 0
+anchor_left = 0.79476666
+anchor_right = 1.1280993
+offset_bottom = 23.0
+text = "CUESTA: 100"
+metadata/_edit_use_anchors_ = true
+
 [node name="Panel" type="Panel" parent="Tienda1" unique_id=2092071052]
 layout_mode = 0
 anchor_left = 0.026909722
 anchor_top = 0.032407407
 anchor_right = 0.4956597
 anchor_bottom = 0.9691358
-mouse_filter = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="comprar" type="Button" parent="Tienda1/Panel" unique_id=1805056749]
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.08888889
-anchor_top = 0.085667215
-anchor_right = 0.33703703
-anchor_bottom = 0.15511166
-offset_bottom = 1.5258789e-05
-text = "COMPRAR MATE"
-metadata/_edit_use_anchors_ = true
-
-[node name="mates_usos" type="Label" parent="Tienda1/Panel" unique_id=416250616]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.36481482
-anchor_top = 0.10214168
-anchor_right = 0.49444443
-anchor_bottom = 0.14003295
-text = "MATES: 0"
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="siguiente_dia" type="Button" parent="Tienda1/Panel" unique_id=1204586111]
@@ -126,16 +147,6 @@ anchor_right = 2.0314815
 anchor_bottom = 0.9868204
 offset_right = -7.0
 text = "SIGUIENTE DIA"
-metadata/_edit_use_anchors_ = true
-
-[node name="coste_mate" type="Label" parent="Tienda1/Panel" unique_id=1868252018]
-layout_mode = 0
-anchor_left = 0.5537037
-anchor_top = 0.10378913
-anchor_right = 0.7314815
-anchor_bottom = 0.14168039
-offset_right = -56.0
-text = "CUESTA: 100"
 metadata/_edit_use_anchors_ = true
 
 [node name="dinero" type="Label" parent="Tienda1/Panel" unique_id=1172271538]
@@ -156,13 +167,14 @@ initial_state = NodePath("Transicion")
 script = ExtResource("22_4ftxs")
 hud_principal = NodePath("../../Hud_principal")
 
-[node name="tienda" type="Node" parent="StateMachine" unique_id=876734760 node_paths=PackedStringArray("comprar_mate", "HUD_tienda", "tienda", "coste_mate", "dinero")]
+[node name="tienda" type="Node" parent="StateMachine" unique_id=876734760 node_paths=PackedStringArray("comprar_mate", "mates_usos", "HUD_tienda", "tienda", "coste_mate", "dinero")]
 script = ExtResource("27_1fkab")
 tutorial_scene = ExtResource("25_78l3b")
-comprar_mate = NodePath("../../Tienda1/Panel/comprar")
+comprar_mate = NodePath("../../Tienda1/listacontainer/Control/comprar")
+mates_usos = NodePath("../../Tienda1/listacontainer/Control/mates_usos")
 HUD_tienda = NodePath("../..")
 tienda = NodePath("../../Tienda1")
-coste_mate = NodePath("../../Tienda1/Panel/coste_mate")
+coste_mate = NodePath("../../Tienda1/listacontainer/Control/coste_mate")
 dinero = NodePath("../../Tienda1/Panel/dinero")
 
 [node name="Transicion" type="Node" parent="StateMachine" unique_id=854658723]
@@ -170,5 +182,5 @@ script = ExtResource("34_5cxvk")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="StateMachine/pause" method="_on_button_quit_pressed"]
 [connection signal="pressed" from="Hud_principal/Button_menu" to="StateMachine/pause" method="_on_button_menu_pressed"]
-[connection signal="pressed" from="Tienda1/Panel/comprar" to="StateMachine/tienda" method="_on_comprar_pressed"]
+[connection signal="pressed" from="Tienda1/listacontainer/Control/comprar" to="StateMachine/tienda" method="_on_comprar_pressed"]
 [connection signal="pressed" from="Tienda1/Panel/siguiente_dia" to="StateMachine/tienda" method="_on_siguiente_dia_pressed"]

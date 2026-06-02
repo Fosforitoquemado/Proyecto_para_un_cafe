@@ -3,7 +3,7 @@ extends UIState
 @export var tutorial_scene: PackedScene
 
 @export var comprar_mate: Button
-@onready var mates_usos: Label = $"../../Tienda1/Panel/mates_usos"
+@export var mates_usos: Label
 @export var HUD_tienda:Control
 @export var tienda: Control
 @export var coste_mate: Label

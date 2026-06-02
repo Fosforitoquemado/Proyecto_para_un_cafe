@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cxprlhebwj2o4" path="res://texture/hud/tuto/tuto.png" id="1_cud8d"]
 [ext_resource type="Script" uid="uid://bsrqodk2o4qql" path="res://scripts/hud/hud_main_menu/Main_Menu.gd" id="1_mxlnh"]
+[ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="3_svv63"]
 
 [node name="Tuto1" type="Control" unique_id=1063729106]
 layout_mode = 3
@@ -29,6 +30,19 @@ anchor_top = 0.037037037
 anchor_right = 0.9644097
 anchor_bottom = 0.12654321
 text = "SIGUIENTE"
+metadata/_edit_use_anchors_ = true
+
+[node name="DayManager" parent="." unique_id=1707673262 instance=ExtResource("3_svv63")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1472973558]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.71875
+anchor_bottom = 1.6666666
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
