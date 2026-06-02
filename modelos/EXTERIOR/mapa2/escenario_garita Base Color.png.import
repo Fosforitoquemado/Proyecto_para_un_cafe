@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd4g7jfnl5qh"
-path.s3tc="res://.godot/imported/escenario_notas Base Color.png-aec1d5a8ae0ee71b9cc900104d3fa48a.s3tc.ctex"
-path.etc2="res://.godot/imported/escenario_notas Base Color.png-aec1d5a8ae0ee71b9cc900104d3fa48a.etc2.ctex"
+uid="uid://3m8o21dqy5sg"
+path.s3tc="res://.godot/imported/escenario_garita Base Color.png-3dc31643ae6e40516cee46584a26344e.s3tc.ctex"
+path.etc2="res://.godot/imported/escenario_garita Base Color.png-3dc31643ae6e40516cee46584a26344e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d38b193a389854fb19bf534eb842dbf1"
+"md5": "acb7978f9f554f3ed13e10fd2353fe3d"
 }
 
 [deps]
 
-source_file="res://scenes/mapa2/escenario_notas Base Color.png"
-dest_files=["res://.godot/imported/escenario_notas Base Color.png-aec1d5a8ae0ee71b9cc900104d3fa48a.s3tc.ctex", "res://.godot/imported/escenario_notas Base Color.png-aec1d5a8ae0ee71b9cc900104d3fa48a.etc2.ctex"]
+source_file="res://modelos/EXTERIOR/mapa2/escenario_garita Base Color.png"
+dest_files=["res://.godot/imported/escenario_garita Base Color.png-3dc31643ae6e40516cee46584a26344e.s3tc.ctex", "res://.godot/imported/escenario_garita Base Color.png-3dc31643ae6e40516cee46584a26344e.etc2.ctex"]
 
 [params]
 

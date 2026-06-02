@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cl1x3yoabp5p7"
-path="res://.godot/imported/escenario.glb-03c8570cfd7bfb9c1057b5f1c4619e15.scn"
+uid="uid://c3wnxcjm81tp6"
+path="res://.godot/imported/escenario.glb-fa71b0280fc931b7570e2d767a707802.scn"
 
 [deps]
 
-source_file="res://scenes/mapa2/escenario.glb"
-dest_files=["res://.godot/imported/escenario.glb-03c8570cfd7bfb9c1057b5f1c4619e15.scn"]
+source_file="res://modelos/EXTERIOR/mapa2/escenario.glb"
+dest_files=["res://.godot/imported/escenario.glb-fa71b0280fc931b7570e2d767a707802.scn"]
 
 [params]
 

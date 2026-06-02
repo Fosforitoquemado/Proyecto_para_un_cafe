@@ -242,7 +242,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0420616, -0.13102007, 1.041
 transform = Transform3D(5, -5.3290705e-14, 5.3290705e-14, 5.3290705e-14, 5, 2.1175824e-21, -5.3290705e-14, 2.1175824e-21, 5, 0, 0.8947719, 0.25186038)
 
 [node name="MATE" parent="." unique_id=2130085467 instance=ExtResource("4_cjwlr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.4947455, 0.81982994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0173966, 0.47002208, 0.81982994)
 script = ExtResource("5_gtunt")
 
 [node name="termo" type="MeshInstance3D" parent="." unique_id=1647160625]
@@ -464,11 +464,11 @@ visible = false
 mesh = SubResource("PlaneMesh_37o8a")
 
 [node name="limite_min" type="Node3D" parent="." unique_id=385454246]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89, 0.6, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92302155, 0.6, 1.1395185)
 visible = false
 
 [node name="limite_max" type="Node3D" parent="." unique_id=1358302952]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, 0.6, 1.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, 0.6, 1.4071699)
 visible = false
 
 [node name="nodo_cedula" type="Node3D" parent="." unique_id=357884736]

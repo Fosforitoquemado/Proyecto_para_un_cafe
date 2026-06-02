@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvtk3mpop113"
-path.s3tc="res://.godot/imported/escenario_blamco Base Color.png-93895bdc060f2465a883072d77d73373.s3tc.ctex"
-path.etc2="res://.godot/imported/escenario_blamco Base Color.png-93895bdc060f2465a883072d77d73373.etc2.ctex"
+uid="uid://1lw6i3aa8xxa"
+path.s3tc="res://.godot/imported/escenario_radio Base Color.png-ac615134a57a174f228466194ab7eed6.s3tc.ctex"
+path.etc2="res://.godot/imported/escenario_radio Base Color.png-ac615134a57a174f228466194ab7eed6.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "308c18a027527ac73ca22a92883233cb"
+"md5": "a55365a27263fa1c2034e3c4bc08bb85"
 }
 
 [deps]
 
-source_file="res://scenes/mapa2/escenario_blamco Base Color.png"
-dest_files=["res://.godot/imported/escenario_blamco Base Color.png-93895bdc060f2465a883072d77d73373.s3tc.ctex", "res://.godot/imported/escenario_blamco Base Color.png-93895bdc060f2465a883072d77d73373.etc2.ctex"]
+source_file="res://modelos/EXTERIOR/mapa2/escenario_radio Base Color.png"
+dest_files=["res://.godot/imported/escenario_radio Base Color.png-ac615134a57a174f228466194ab7eed6.s3tc.ctex", "res://.godot/imported/escenario_radio Base Color.png-ac615134a57a174f228466194ab7eed6.etc2.ctex"]
 
 [params]
 
