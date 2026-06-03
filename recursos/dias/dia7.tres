@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://bk3t1c5mjv08q"]
+
+[ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_necnp"]
+[ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="2_7uy76"]
+[ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_80pix"]
+[ext_resource type="Resource" uid="uid://c85rfxn7ujgpf" path="res://recursos/configs/config_dia7.tres" id="4_necnp"]
+[ext_resource type="Resource" uid="uid://cugddys3ml01l" path="res://recursos/Dialogos/dialogostelearray/dia7.tres" id="5_7uy76"]
+[ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_0ayo4"]
+[ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_pkoyk"]
+[ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_8ibv3"]
+[ext_resource type="Resource" uid="uid://b0lwv1i2yits1" path="res://recursos/Arraypersonajes/TODOS.tres" id="9_7uy76"]
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="9_jrh4p"]
+[ext_resource type="Resource" uid="uid://pmrc6vst4bmd" path="res://recursos/tiposdeautos/TODOS.tres" id="10_tj3i2"]
+
+[resource]
+script = ExtResource("9_jrh4p")
+nombre = "lunes"
+fecha_hoy = {
+"anio": 2026,
+"dia": 19,
+"mes": 6
+}
+mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
+documentos_habilitados = Array[String](["vtv", "patente_faltantes", "cedula", "licencia", "objetos_baul", "seguro", "alcholemia", "permiso"])
+config = ExtResource("4_necnp")
+autos_permitidos = ExtResource("2_7uy76")
+nombres = ExtResource("6_0ayo4")
+apellidos = ExtResource("1_necnp")
+personajes = ExtResource("9_7uy76")
+colores = ExtResource("3_80pix")
+objetosbaullegales = ExtResource("8_8ibv3")
+objetosbaulilegales = ExtResource("7_pkoyk")
+tiempo_limite = 100.0
+dialogostele = ExtResource("5_7uy76")
+tiposdeautos = ExtResource("10_tj3i2")
+metadata/_custom_type_script = "uid://dyyci053w374o"

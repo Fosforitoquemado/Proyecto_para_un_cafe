@@ -1,24 +1,25 @@
 extends Node
 
-@export var Colors: Dictionary
-
-@export var autos:AutoArrayResource = preload("res://recursos/ArrayAutos/TODOS.tres")
-@export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
-@export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
+#@export var autos:AutoArrayResource = preload("res://recursos/ArrayAutos/TODOS.tres")
+#@export var nombres:Nombresresources = preload("res://recursos/nombres/nombres.tres")
+#@export var apellidos:Apellidosresources = preload("res://recursos/apellidos/apellidos.tres")
 @export var objetosbaul:ObjetoArrayResource = preload("res://recursos/objetosbaularray/todos.tres")
-@export var personajes:PersonajesArrayResource = preload("res://recursos/Arraypersonajes/TODOS.tres")
-@export var dialogo_llegada:DialogosGlobalArray = preload("res://recursos/dialogos_llegadaarray/TODOS.tres")
-#elementos auto
+#@export var personajes:PersonajesArrayResource = preload("res://recursos/Arraypersonajes/TODOS.tres")
+@export var dialogo_llegada:DialogosGlobalArray = preload("res://recursos/Dialogos/dialogos_llegadaarray/TODOS.tres")
+@export var dialogo_ida_bien:DialogosGlobalArray = preload("res://recursos/Dialogos/dialogos_ida_bienarray/TODOS.tres")
+@export var dialogo_ida_multa:DialogosGlobalArray = preload("res://recursos/Dialogos/dialogos_ida_multaarray/TODOS.tres")
+@export var dialogo_ida_coima:DialogosGlobalArray = preload("res://recursos/Dialogos/dialogos_ida_coimaarray/TODOS.tres")
 
-var colors = {
-	"rojo": "ff1b13",
-	"azul": "222bff",
-	"verde": "1df428",
-	"violeta": "5510c7",
-	"naranja": "f67200",
-	"blanco": "dedede",
-	"negro": "05040b"
-}
+var autos:AutoArrayResource
+var nombres:Nombresresources
+var apellidos:Apellidosresources
+#var objetosbaul:ObjetoArrayResource
+var personajes:PersonajesArrayResource
+#var dialogo_llegada:DialogosGlobalArray
+#var dialogo_ida_bien:DialogosGlobalArray
+#var dialogo_ida_multa:DialogosGlobalArray
+#var dialogo_ida_coima:DialogosGlobalArray
+var colores:ColoresResource
 
 var _auto_data: Dictionary
 
@@ -27,15 +28,19 @@ func generate_modelo():
 	var resource = autos.array[num_auto_random]
 	var auto = resource.escena
 	var nombre = resource.nombre
+	var tipo_vehiculo = resource.tipo_vehiculo
+	var num_tipo = resource.num_tipo_vehiculo
 	var modelo_info = {
 		"auto": auto,
 		"num_auto": num_auto_random,
 		"nombre":  nombre,
+		"tipo_vehiculo": tipo_vehiculo,
+		"num_tipo_vehiculo": num_tipo,
 	}
 	return modelo_info
 func generate_color():
-	var num_color = randi_range(0,colors.size() - 1)
-	var color = colors.values()[num_color]
+	var num_color = randi_range(0,colores.dictionary.size() - 1)
+	var color = colores.dictionary.values()[num_color]
 	var color_info = {
 		"color": color,
 		"num_color": num_color
@@ -127,10 +132,34 @@ func generate_personaje():
 		"nombre":  nombre,
 	}
 	return modelo_info
+#Dialogos
 func generate_dialogo_llegada():
 	var num_dialogo_random = randi_range(0,dialogo_llegada.array.size() - 1)
 	var resource = dialogo_llegada.array[num_dialogo_random]
-	print("RESOURCE",resource)
+	var dialogo_info = {
+		"resource": resource,
+		"num_dialogo": num_dialogo_random,
+	}
+	return dialogo_info
+func generate_dialogo_ida_bien():
+	var num_dialogo_random = randi_range(0,dialogo_ida_bien.array.size() - 1)
+	var resource = dialogo_ida_bien.array[num_dialogo_random]
+	var dialogo_info = {
+		"resource": resource,
+		"num_dialogo": num_dialogo_random,
+	}
+	return dialogo_info
+func generate_dialogo_ida_multa():
+	var num_dialogo_random = randi_range(0,dialogo_ida_multa.array.size() - 1)
+	var resource = dialogo_ida_multa.array[num_dialogo_random]
+	var dialogo_info = {
+		"resource": resource,
+		"num_dialogo": num_dialogo_random,
+	}
+	return dialogo_info
+func generate_dialogo_ida_coima():
+	var num_dialogo_random = randi_range(0,dialogo_ida_coima.array.size() - 1)
+	var resource = dialogo_ida_coima.array[num_dialogo_random]
 	var dialogo_info = {
 		"resource": resource,
 		"num_dialogo": num_dialogo_random,
@@ -140,9 +169,20 @@ func generate_dialogo_llegada():
 func _generate_auto() -> Dictionary:
 	var data = {}
 	
+	var day_manager = get_tree().get_first_node_in_group("DayManager")
+	var dia = day_manager.get_day()
+	autos = dia.autos_permitidos
+	nombres = dia.nombres
+	apellidos = dia.apellidos
+	colores = dia.colores
+	personajes = dia.personajes
+	
 	# BASE
 	var personaje = generate_personaje()
 	var dialogo_llegada_info = generate_dialogo_llegada()
+	var dialogo_ida_bien_info = generate_dialogo_ida_bien()
+	var dialogo_ida_multa_info = generate_dialogo_ida_multa()
+	var dialogo_ida_coima_info = generate_dialogo_ida_coima()
 	var patente = generate_patente()
 	var color_info = generate_color()
 	var modelo_info = generate_modelo()
@@ -164,6 +204,9 @@ func _generate_auto() -> Dictionary:
 	data = {
 		"personaje_info": personaje,
 		"dialogo_llegada_info": dialogo_llegada_info,
+		"dialogo_ida_bien_info": dialogo_ida_bien_info,
+		"dialogo_ida_multa_info": dialogo_ida_multa_info,
+		"dialogo_ida_coima_info": dialogo_ida_coima_info,
 		"patente": patente,
 		"nombre_info": nombre_info,
 		"apellido_info": apellido_info,

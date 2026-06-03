@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://oocjjonmapra"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_8x2nl"]
+
+[resource]
+script = ExtResource("1_8x2nl")
+texto = "como medida provisional cada vehiculo debera posser un permiso vehicular"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

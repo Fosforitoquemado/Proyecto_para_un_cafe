@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://3dpqu0xf4eay"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_hfq26"]
+
+[resource]
+script = ExtResource("1_hfq26")
+texto = "tremenda estafa"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

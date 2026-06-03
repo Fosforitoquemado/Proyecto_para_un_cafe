@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogosTeleResourceArray" format=3 uid="uid://biemhqs6did0e"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_hir31"]
+[ext_resource type="Resource" uid="uid://3dpqu0xf4eay" path="res://recursos/Dialogos/dialogos_ida_coima/dialogo2/1.tres" id="2_ugop2"]
+[ext_resource type="Script" uid="uid://bo3tryj16pym" path="res://recursos/Scripts/DialogosTeleResourceArray.gd" id="3_ctsns"]
+
+[resource]
+script = ExtResource("3_ctsns")
+array = Array[ExtResource("1_hir31")]([ExtResource("2_ugop2")])
+metadata/_custom_type_script = "uid://bo3tryj16pym"

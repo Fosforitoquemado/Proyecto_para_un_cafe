@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogosTeleResourceArray" format=3 uid="uid://82bk1op5f1ta"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_u2rpc"]
+[ext_resource type="Resource" uid="uid://ddsmxoijhpk7s" path="res://recursos/Dialogos/dialogos_tele/dia1/1.tres" id="2_7q6wn"]
+[ext_resource type="Script" uid="uid://bo3tryj16pym" path="res://recursos/Scripts/DialogosTeleResourceArray.gd" id="2_issat"]
+[ext_resource type="Resource" uid="uid://ctytnmtaoxrdt" path="res://recursos/Dialogos/dialogos_tele/dia1/2.tres" id="3_5b4fd"]
+[ext_resource type="Resource" uid="uid://pnvqsgc4k7al" path="res://recursos/Dialogos/dialogos_tele/dia1/3.tres" id="4_cys05"]
+[ext_resource type="Resource" uid="uid://b1timtd6e0bm4" path="res://recursos/Dialogos/dialogos_tele/dia1/4.tres" id="5_st4sp"]
+[ext_resource type="Resource" uid="uid://xesswosr82vi" path="res://recursos/Dialogos/dialogos_tele/dia1/5.tres" id="6_ndfr4"]
+
+[resource]
+script = ExtResource("2_issat")
+array = Array[ExtResource("1_u2rpc")]([ExtResource("2_7q6wn"), ExtResource("3_5b4fd"), ExtResource("4_cys05"), ExtResource("5_st4sp"), ExtResource("6_ndfr4")])
+metadata/_custom_type_script = "uid://bo3tryj16pym"

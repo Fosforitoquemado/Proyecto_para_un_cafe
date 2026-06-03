@@ -35,6 +35,9 @@ extends Control
 @onready var id_seguro: Label = $basedatos_img/seguro_shit/id_seguro
 @onready var fecha_seguro: Label = $basedatos_img/seguro_shit/fecha_seguro
 
+#labels permiso
+@onready var tipo_vehiculo: Label = $basedatos_img/permiso_shit/tipo_vehiculo
+
 @onready var basedatos_img: TextureRect = $basedatos_img
 
 var basededatos_active = false
@@ -94,6 +97,10 @@ func set_id_seguro(func_id):
 func set_fecha_seguro(func_fecha):
 	fecha_seguro.text = func_fecha
 
+#permiso
+func set_permiso_tipo_vehiculo(func_tipo):
+	tipo_vehiculo.text = func_tipo
+
 func apagar_cargando():
 	await get_tree().create_timer(tiempo_de_carga,false).timeout
 	cargando.visible = false
@@ -108,7 +115,6 @@ func borrar_errores():
 	exclamacion.visible = false
 	errores_auto_control.visible = false
 	var vbox = errores_auto_control.find_child("VBoxContainer")
-	print("BORRAR")
 	if vbox.get_children() != null:
 		for i in vbox.get_children():
 			i.queue_free()

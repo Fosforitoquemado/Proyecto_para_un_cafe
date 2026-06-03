@@ -535,6 +535,19 @@ offset_right = 615.0
 offset_bottom = 226.0
 text = "XXXXXXXXXX"
 
+[node name="permiso_shit" type="Control" parent="basedatos_img" unique_id=1259545000]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tipo_vehiculo" type="Label" parent="basedatos_img/permiso_shit" unique_id=1732746613]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 21.0
+offset_right = 464.0
+offset_bottom = 44.0
+text = "XXXX"
+
 [node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=1437975147]
 top_level = true
 z_index = 9

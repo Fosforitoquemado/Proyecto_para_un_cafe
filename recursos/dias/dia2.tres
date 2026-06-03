@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_koc8f"]
 [ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_qrvh5"]
 [ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_2uexx"]
-[ext_resource type="Resource" uid="uid://digsl0dlbjm17" path="res://recursos/dialogostelearray/dia2.tres" id="3_xth5d"]
 [ext_resource type="Resource" uid="uid://2w5idv7rp5kn" path="res://recursos/configs/config_dia2.tres" id="4_ewh1j"]
+[ext_resource type="Resource" uid="uid://digsl0dlbjm17" path="res://recursos/Dialogos/dialogostelearray/dia2.tres" id="5_2uexx"]
 [ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_26i74"]
 [ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_4neg1"]
 [ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_d5pf8"]
+[ext_resource type="Resource" uid="uid://b0lwv1i2yits1" path="res://recursos/Arraypersonajes/TODOS.tres" id="9_ewh1j"]
+[ext_resource type="Resource" uid="uid://pmrc6vst4bmd" path="res://recursos/tiposdeautos/TODOS.tres" id="10_ewh1j"]
 
 [resource]
 script = ExtResource("1_koc8f")
@@ -24,9 +26,11 @@ config = ExtResource("4_ewh1j")
 autos_permitidos = ExtResource("1_hwjsw")
 nombres = ExtResource("6_26i74")
 apellidos = ExtResource("1_qrvh5")
+personajes = ExtResource("9_ewh1j")
 colores = ExtResource("3_2uexx")
 objetosbaullegales = ExtResource("8_d5pf8")
 objetosbaulilegales = ExtResource("7_4neg1")
 tiempo_limite = 80.0
-dialogostele = ExtResource("3_xth5d")
+dialogostele = ExtResource("5_2uexx")
+tiposdeautos = ExtResource("10_ewh1j")
 metadata/_custom_type_script = "uid://dyyci053w374o"

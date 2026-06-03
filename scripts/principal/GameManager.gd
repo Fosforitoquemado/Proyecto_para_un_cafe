@@ -69,8 +69,8 @@ func _physics_process(delta: float) -> void:
 
 func empezar_dia():
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
-	var dia = daymanager.get_day()
-	tiempo_dia_total = dia.tiempo_dia
+	var day = daymanager.get_day()
+	tiempo_dia_total = day.tiempo_dia
 	empezar_tiempo = true
 
 func finalizar_dia():

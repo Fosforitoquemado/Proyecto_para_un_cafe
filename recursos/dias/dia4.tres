@@ -5,10 +5,12 @@
 [ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="1_wxuhl"]
 [ext_resource type="Resource" uid="uid://maysjvxlf55x" path="res://recursos/configs/config_dia4.tres" id="2_w1p7a"]
 [ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_rcg2m"]
-[ext_resource type="Resource" uid="uid://b72eh0sepeu5u" path="res://recursos/dialogostelearray/dia4.tres" id="3_w1p7a"]
+[ext_resource type="Resource" uid="uid://b72eh0sepeu5u" path="res://recursos/Dialogos/dialogostelearray/dia4.tres" id="5_rcg2m"]
 [ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_wmaeb"]
 [ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_irkqo"]
 [ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_3bruh"]
+[ext_resource type="Resource" uid="uid://b0lwv1i2yits1" path="res://recursos/Arraypersonajes/TODOS.tres" id="9_wmaeb"]
+[ext_resource type="Resource" uid="uid://pmrc6vst4bmd" path="res://recursos/tiposdeautos/TODOS.tres" id="10_wmaeb"]
 
 [resource]
 script = ExtResource("1_wxuhl")
@@ -19,14 +21,16 @@ fecha_hoy = {
 "mes": 6
 }
 mapa = Array[String](["res://scenes/mapa/main.tscn"])
-documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul"])
+documentos_habilitados = Array[String](["vtv", "patente_faltantes", "cedula", "licencia", "objetos_baul"])
 config = ExtResource("2_w1p7a")
 autos_permitidos = ExtResource("1_w1p7a")
 nombres = ExtResource("6_wmaeb")
 apellidos = ExtResource("1_w0s7w")
+personajes = ExtResource("9_wmaeb")
 colores = ExtResource("3_rcg2m")
 objetosbaullegales = ExtResource("8_3bruh")
 objetosbaulilegales = ExtResource("7_irkqo")
 tiempo_limite = 20.0
-dialogostele = ExtResource("3_w1p7a")
+dialogostele = ExtResource("5_rcg2m")
+tiposdeautos = ExtResource("10_wmaeb")
 metadata/_custom_type_script = "uid://dyyci053w374o"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tiposdeautosresources" format=3 uid="uid://pmrc6vst4bmd"]
+
+[ext_resource type="Script" uid="uid://cfqlp1x260kpt" path="res://recursos/Scripts/tiposdeautosResources.gd" id="1_lgl62"]
+
+[resource]
+script = ExtResource("1_lgl62")
+array = Array[String](["auto", "camioneta"])
+metadata/_custom_type_script = "uid://cfqlp1x260kpt"

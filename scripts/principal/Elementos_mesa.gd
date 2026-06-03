@@ -34,6 +34,10 @@ extends Node3D
 @export var id_seguro: Label3D
 @export var vencimiento_seguro: Label3D
 
+#permiso
+@export var permiso: Area3D
+@export var tipo_vehiculo: Label3D
+
 var personaje
 
 var datos_documentos
@@ -51,6 +55,7 @@ func _ready() -> void:
 	cedula.visible = false
 	licencia.visible = false
 	seguro.visible = false
+	permiso.visible = false
 
 func mostrar_datos():
 	datos_documentos = DocumentosGenerator._generate_documentos()
@@ -65,11 +70,25 @@ func mostrar_datos():
 		pc_control.set_vtv(AutoGenerator._auto_data["vtv_info"]["vtv_string"])
 		GameManager.auto_dupe.find_child("VTV").visible = true
 	
-	GameManager.auto_dupe.find_child("patente_adelante").text = AutoGenerator._auto_data["patente"]
-	GameManager.auto_dupe.find_child("patente_adelante").visible = true
-	GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
-	GameManager.auto_dupe.find_child("patente_atras").visible = true
-	
+	#patentes del auto
+	if "patente_faltantes" in day.documentos_habilitados:
+		if datos_documentos["patente_faltante"] == "ninguna":
+			GameManager.auto_dupe.find_child("patente_adelante").text = AutoGenerator._auto_data["patente"]
+			GameManager.auto_dupe.find_child("patente_adelante").visible = true
+			GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
+			GameManager.auto_dupe.find_child("patente_atras").visible = true
+		elif datos_documentos["patente_faltante"] == "atras":
+			GameManager.auto_dupe.find_child("patente_adelante").text = AutoGenerator._auto_data["patente"]
+			GameManager.auto_dupe.find_child("patente_adelante").visible = true
+		elif datos_documentos["patente_faltante"] == "adelante":
+			GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
+			GameManager.auto_dupe.find_child("patente_atras").visible = true
+	else:
+		GameManager.auto_dupe.find_child("patente_adelante").text = AutoGenerator._auto_data["patente"]
+		GameManager.auto_dupe.find_child("patente_adelante").visible = true
+		GameManager.auto_dupe.find_child("patente_atras").text = AutoGenerator._auto_data["patente"]
+		GameManager.auto_dupe.find_child("patente_atras").visible = true
+	#objetos baul
 	if "objetos_baul" in day.documentos_habilitados and datos_documentos["objeto_info"] != null:
 		var ocupado = false
 		for objeto_data in datos_documentos["objeto_info"]["objetos"]:
@@ -118,7 +137,11 @@ func mostrar_datos():
 		vencimiento_seguro.text = datos_documentos["fecha_seguro"] #🎫🎫🎫
 		pc_control.set_fecha_seguro(AutoGenerator._auto_data["fecha_seguro"])
 	
-	#papeles en la mano del personaje
+	if "permiso" in day.documentos_habilitados:
+		tipo_vehiculo.text = datos_documentos["tipo_vehiculo"] #🎫🎫🎫
+		pc_control.set_permiso_tipo_vehiculo(AutoGenerator._auto_data["modelo_info"]["tipo_vehiculo"])
+	
+	#papeles en la mano del personaje y dialogos
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout
 	for i in range(GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size()):
 		#if skip == true:
@@ -142,7 +165,9 @@ func mostrar_datos():
 		await get_tree().create_timer(tiempo_espera, false).timeout
 	GameManager.auto_dupe.ocultar_mensaje()
 	personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
-	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+	
+	#hacer visibles los documentos al dar los papeles
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados or "seguro" in day.documentos_habilitados or "permiso" in day.documentos_habilitados:
 		var personaje_animator = personaje.find_child("AnimationPlayer")
 		var num = randf_range(1.3,2.5)
 		personaje_animator.speed_scale = num
@@ -156,6 +181,8 @@ func mostrar_datos():
 			cedula.visible = true
 		if "seguro" in day.documentos_habilitados:
 			seguro.visible = true
+		if "permiso" in day.documentos_habilitados:
+			permiso.visible = true
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
@@ -163,13 +190,12 @@ func mostrar_datos():
 		
 	auto_ready.emit()
 	print("FINAL MOSTRAR DATOS")
-#condicion (0 es se va normal), (1 es se va con multa) y (2 es se va coimeado)
 
 func ocultar_docu_bien():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
-	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados or "seguro" in day.documentos_habilitados or "permiso" in day.documentos_habilitados:
 		if hud.papeles_on == true:
 			personaje_animator.play("dar_papeles")
 			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
@@ -184,6 +210,7 @@ func ocultar_docu_bien():
 		licencia.visible = false
 		cedula.visible = false
 		seguro.visible = false
+		permiso.visible = false
 	personaje_animator.play("agarrar papeles")
 	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
 	personaje_animator.play("manejando")
@@ -199,7 +226,7 @@ func ocultar_docu_coima():
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
 	
-	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados or "seguro" in day.documentos_habilitados or "permiso" in day.documentos_habilitados:
 		if hud.papeles_on == true:
 			personaje_animator.play("dar_papeles")
 			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
@@ -214,6 +241,7 @@ func ocultar_docu_coima():
 		licencia.visible = false
 		cedula.visible = false
 		seguro.visible = false
+		permiso.visible = false
 		dinero.visible = true
 		dinero.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
 		var tween4 = create_tween()
@@ -233,7 +261,7 @@ func ocultar_docu_multa():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
-	if "objeto_info" in datos_documentos:
+	if datos_documentos["objeto_info"] != null:
 		for objetos in datos_documentos["objeto_info"]["cantidad"]:
 			if datos_documentos["objeto_info"]["objetos"][objetos]["legal"] == false:
 				licencia.visible = false
@@ -265,7 +293,7 @@ func ocultar_docu_multa():
 				return
 	papel_multa.global_position = nodo_papel_multa.global_position
 	papel_multa.visible = true
-	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados:
+	if "licencia" in day.documentos_habilitados or "cedula" in day.documentos_habilitados or "seguro" in day.documentos_habilitados or "permiso" in day.documentos_habilitados:
 		if hud.papeles_on == true:
 			personaje_animator.play("dar_papeles")
 			await  get_tree().create_timer((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 1.5,false).timeout
@@ -291,6 +319,7 @@ func ocultar_docu_multa():
 	licencia.visible = false
 	cedula.visible = false
 	seguro.visible = false
+	permiso.visible = false
 	papel_multa.visible = false
 	papel_multa.global_position = nodo_papel_multa.global_position
 	personaje_animator.play("agarrar papeles")
@@ -303,11 +332,37 @@ func ocultar_docu_multa():
 	hud.papeles_on = false
 	auto_out.emit()
 
+func dialogo_ida(pool):
+	for i in range(pool.array.size()):
+		#if skip == true:
+			#tele.apagar_tele()
+			#return
+		var dialogo_actual = pool.array[i]
+		var array_final = false
+		if pool.array.size() - 1:
+			array_final = true
+			
+		GameManager.auto_dupe.mostrar_mensaje(
+			dialogo_actual["texto"],
+			dialogo_actual["tamanio_font"],
+			dialogo_actual["tamanio_final"],
+			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_velocidad"],
+			array_final
+		)
+		
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
+		await get_tree().create_timer(tiempo_espera, false).timeout
+	GameManager.auto_dupe.ocultar_mensaje()
+#condicion (0 es se va normal), (1 es se va con multa) y (2 es se va coimeado)
 func ocultar_documentos(condicion):
 	num_alcholemia.text = "..." 
 	if condicion == 0:
 		ocultar_docu_bien()
+		dialogo_ida(GameManager.auto_data["dialogo_ida_bien_info"]["resource"])
 	elif condicion == 1:
 		ocultar_docu_multa()
+		dialogo_ida(GameManager.auto_data["dialogo_ida_multa_info"]["resource"])
 	elif condicion == 2:
 		ocultar_docu_coima()
+		dialogo_ida(GameManager.auto_data["dialogo_ida_coima_info"]["resource"])

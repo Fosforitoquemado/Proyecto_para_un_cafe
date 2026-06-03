@@ -7,6 +7,8 @@ extends CanvasLayer
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@export var tiempo_espera = 3.0
+
 # Estructura de datos para los pasos del tutorial
 var pasos: Array = []
 var posiciones: Array = []
@@ -15,11 +17,13 @@ var paso_actual: int = 0
 var timer = false
 var tiempo = 0.0
 
+
 func _process(delta: float) -> void:
-	if timer:
-		tiempo += delta
-		if tiempo >= 3.0:
-			_on_siguiente_pressed()
+	pass
+	#if timer:
+		#tiempo += delta
+		#if tiempo >= tiempo_espera:
+			#_on_siguiente_pressed()
 
 func _ready():
 	# Conectamos el botón de "Siguiente" para avanzar en el tutorial
@@ -82,6 +86,12 @@ func mostrar_paso():
 	if boton_objetivo.get_parent().is_class("TextureRect"):
 		var texture = boton_objetivo.get_parent()
 		texture.show()
+		
+	if datos_paso["automatico"] == true:
+		await get_tree().create_timer(tiempo_espera).timeout
+		_on_siguiente_pressed()
+	else:
+		pass
 func _on_siguiente_pressed():
 	paso_actual += 1
 	tiempo = 0.0

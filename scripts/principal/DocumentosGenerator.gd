@@ -6,6 +6,7 @@ var dia_hoy
 #elementos auto
 var config:GameConfig
 var autos:AutoArrayResource
+var tiposdeautos:tiposdeautosresources
 var nombres:Nombresresources
 var apellidos:Apellidosresources
 var colores:ColoresResource
@@ -24,6 +25,7 @@ func _ready() -> void:
 	dia_hoy = day_manager.get_day()
 	config = dia_hoy.config
 	autos = dia_hoy.autos_permitidos
+	tiposdeautos = dia_hoy.tiposdeautos
 	nombres = dia_hoy.nombres
 	apellidos = dia_hoy.apellidos
 	colores = dia_hoy.colores
@@ -80,6 +82,26 @@ func generate_papel_patente(probabilidad):
 			errores.append(str("Patente del documento es fake❌: ",patente))
 			print("Patente del documento es fake❌: ",patente)
 			return patente
+func generate_patente_faltante(probabilidad):
+	#random patente
+	var patente_faltante
+	if Utils.chance(probabilidad):
+		patente_faltante = "ninguna"
+		print("No falta ninguna patente✅🎫")
+	else:
+		auto_ilegal = true
+		ilegalidades += 1
+		score_auto += 100.0
+		
+		if Utils.chance(50):
+			patente_faltante = "atras"
+			errores.append("Falta la patente trasera❌")
+			print("Falta la patente trasera")
+		else:
+			patente_faltante = "adelante"
+			errores.append("Falta la patente trasera❌")
+			print("Falta la patente trasera")
+	return patente_faltante
 func generate_VTV_auto(probabilidad):
 	var VTV = auto_data["vtv_info"]["vtv"]
 	if Utils.chance(probabilidad):
@@ -377,9 +399,27 @@ func generate_alcholemia(probabilidad):
 		auto_ilegal = true
 		ilegalidades += 1
 		score_auto += 100.0
-		errores.append(str("el porcentaje de alchol en sangre es mayor a 0❌: ", num))
-		print("el porcentaje de alchol en sangre es mayor a 0❌: ", num)
+		errores.append(str("el porcentaje de alcohol en sangre es mayor a 0❌: ", num))
+		print("el porcentaje de alcohol en sangre es mayor a 0❌: ", num)
 		return str(num)
+func generate_tipo_permiso(probabilidad):
+	var tipo_vehiculo = auto_data["modelo_info"]["num_tipo_vehiculo"]
+	var num_tipo = tipo_vehiculo
+	if Utils.chance(probabilidad):
+		#correcto
+		tipo_vehiculo = tiposdeautos.array[num_tipo]
+		print("El tipo del auto es correcto✅: ",tipo_vehiculo)
+		return tipo_vehiculo
+	else:
+		#fake
+		var fake_tipo_num = Utils.random_excluding(0,tiposdeautos.array.size() - 1,num_tipo)
+		var tipo = tiposdeautos.array[fake_tipo_num]
+		auto_ilegal = true
+		ilegalidades += 1
+		score_auto += 100.0
+		errores.append(str("El tipo del auto es incorrecto❌, es: ",tipo,"🚗 era: ",tiposdeautos.array[tipo_vehiculo],"🚗"))
+		print("El tipo del auto es incorrecto❌, es: ",tipo,"🚗 era: ",tiposdeautos.array[tipo_vehiculo],"🚗")
+		return tipo
 
 func _generate_documentos() -> Dictionary:
 	auto_data = AutoGenerator._auto_data
@@ -395,6 +435,14 @@ func _generate_documentos() -> Dictionary:
 	# BASE
 	var color = generate_color_papel(config.probabilidad_color)
 	
+	#patentes faltantes
+	if "patente_faltantes" in day.documentos_habilitados:
+		var patente_faltante = generate_patente_faltante(config.probabilidad_patente_faltante)
+		var data_patente = {
+			"patente_faltante": patente_faltante
+		}
+		data.merge(data_patente)
+	#VTV
 	if "vtv" in day.documentos_habilitados:
 		var vtv = generate_VTV_auto(config.probabilidad_vtv)
 		var data_vtv = {
@@ -419,7 +467,7 @@ func _generate_documentos() -> Dictionary:
 		var nombre_licencia = generate_nombre(config.probabilidad_nombre_licencia,"licencia")
 		var apellido_licencia = generate_apellido(config.probabilidad_apellido_licencia)
 		var numero_licencia = generate_numero_licencia(config.probabilidad_numero_licencia)
-		var nacimiento_licencia = generate_fecha_nacimiento(config.probabilidad_nacimineto_licencia,config.probabilidad_nacimiento_16)
+		var nacimiento_licencia = generate_fecha_nacimiento(config.probabilidad_nacimineto_licencia,config.probabilidad_nacimiento_licencia_16)
 		var fecha_licencia = generate_fecha_documento(config.probabilidad_fecha_licencia,config.probabilidad_fecha_licencia_2026,auto_data["fecha_licencia"],fecha_hoy,"licencia")
 		var data_licencia = {
 		"nombre_licencia": nombre_licencia,
@@ -442,6 +490,7 @@ func _generate_documentos() -> Dictionary:
 		}
 		data.merge(data_seguro)
 	
+	#alcoholemia
 	if "alcholemia" in day.documentos_habilitados:
 		var alcholemia = generate_alcholemia(config.probabilidad_alcholemia)
 		var data_alcholemia = {
@@ -449,6 +498,7 @@ func _generate_documentos() -> Dictionary:
 		}
 		data.merge(data_alcholemia)
 	
+	#objetos del baul
 	if "objetos_baul" in day.documentos_habilitados:
 		var objeto_info = generate_objetos_baul(config.probabilidad_objeto_baul,config.probabilidad_objeto_baul_legal)
 		var data_baul = {
@@ -456,6 +506,15 @@ func _generate_documentos() -> Dictionary:
 		}
 		data.merge(data_baul)
 	
+	#permiso por tipo de vehiculo
+	if "permiso" in day.documentos_habilitados:
+		var tipo_vehiculo = generate_tipo_permiso(config.probabilidad_tipo_vehiculo)
+		var data_permiso = {
+		"tipo_vehiculo": tipo_vehiculo
+		}
+		data.merge(data_permiso)
+	
+	#fecha hoy en string
 	var fecha_hoy_string = str(fecha_hoy["dia"],"/",fecha_hoy["mes"],"/",fecha_hoy["anio"])
 	
 	# RESULTADO

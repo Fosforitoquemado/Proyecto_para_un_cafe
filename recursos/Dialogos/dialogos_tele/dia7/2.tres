@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://csqjwo4tjqbym"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_qitgq"]
+
+[resource]
+script = ExtResource("1_qitgq")
+texto = "Les desamos un gran comienzo de semana!, ayer, domingo hubireon varios casos de secuestros de vehiculos"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

@@ -26,6 +26,7 @@ func comenzar_guia():
 	var configuracion_tutorial = [
 		{
 			"nodo_boton": baul_boton,
+			"automatico": true,
 			"texto": "¡clickea la base de datos para checkear."
 		},
 	]

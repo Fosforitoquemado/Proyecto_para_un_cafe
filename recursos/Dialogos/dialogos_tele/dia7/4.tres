@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://com5t0ghh8y5g"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_m5jwf"]
+
+[resource]
+script = ExtResource("1_m5jwf")
+texto = "falsificaciones seran gravemente amonestadas"
+tiempo_velocidad = 0.06
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

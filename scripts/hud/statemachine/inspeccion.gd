@@ -21,22 +21,27 @@ func comenzar_guia():
 	var configuracion_tutorial = [
 		{
 			"nodo_boton": vtv,
+			"automatico": false,
 			"texto": "¡Este es el botón para inspeccionar la vtv."
 		},
 		{
 			"nodo_boton": delante,
-			"texto": "¡Este es el botón para inspeccionar el auto adelante"
+			"automatico": false,
+			"texto": "¡Este es el botón para inspeccionar el auto adelante, verifica que todos los vehiculos tengan sus patentes"
 		},
 		{
 			"nodo_boton": atras,
+			"automatico": false,
 			"texto": "¡Este es el botón para inspeccionar el auto atras"
 		},
 		{
 			"nodo_boton": mesa,
+			"automatico": false,
 			"texto": "¡Este es el botón para ver la mesa y los documentos"
 		},
 		{
 			"nodo_boton": volver,
+			"automatico": false,
 			"texto": "¡Este es el botón para volver al menu anterior"
 		}
 	]

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_6nck7")
-nombre = "Caja De Herramientas llena"
+nombre = "Caja De Herramientas llena de marihuana"
 escena = ExtResource("1_wcgfl")
 tamanio = "mediano"
 max_rotacion = -140

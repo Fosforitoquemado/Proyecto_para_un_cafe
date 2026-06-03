@@ -18,6 +18,7 @@ func comenzar_guia():
 	var configuracion_tutorial = [
 		{
 			"nodo_boton": baul_boton,
+			"automatico": false,
 			"texto": "¡clickea el baul para examinar su interior."
 		},
 	]

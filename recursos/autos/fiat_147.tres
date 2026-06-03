@@ -7,4 +7,5 @@
 script = ExtResource("2_swub0")
 nombre = "Fiat 147"
 escena = ExtResource("1_4wfpe")
+tipo_vehiculo = "auto"
 metadata/_custom_type_script = "uid://cyy5656frxhf3"

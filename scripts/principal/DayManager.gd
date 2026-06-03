@@ -4,7 +4,7 @@ extends Node
 
 var dia_actual:int = SaveLoad.contents_to_save.values()[0]
 
-var max_dia:int = 6
+var max_dia:int = dias.size()
 
 func sumar_dia():
 	if dia_actual < max_dia - 1:

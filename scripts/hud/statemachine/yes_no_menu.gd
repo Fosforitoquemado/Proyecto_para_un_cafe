@@ -37,26 +37,32 @@ func comenzar_guia():
 	var configuracion_tutorial = [
 		{
 			"nodo_boton": aprobado,
+			"automatico": false,
 			"texto": "¡Este es el botón de aprobado! Úsalo para dejar pasar autos."
 		},
 		{
 			"nodo_boton": multar,
+			"automatico": false,
 			"texto": "¡Este es el botón de multar! Úsalo para multar autos"
 		},
 		{
 			"nodo_boton": tomar_mate,
+			"automatico": false,
 			"texto": "¡Este es el botón para tomar mate, usalo cuando tu barra de tiempo pase el 30%"
 		},
 		{
 			"nodo_boton": pc,
+			"automatico": false,
 			"texto": "¡Este es la pc, clickeala cuadno quieras y necesites verificar informacion del vehiculo"
 		},
 		{
 			"nodo_boton": inspeccionar,
+			"automatico": false,
 			"texto": "¡Este es el botón de inspeccionar, usalo para revisar y avlidar los autos"
 		},
 		{
 			"nodo_boton": coima,
+			"automatico": false,
 			"texto": "¡Este es el botón para coimear, cuando veas la oportunidad de cerrar un trato, hacelo"
 		}
 	]

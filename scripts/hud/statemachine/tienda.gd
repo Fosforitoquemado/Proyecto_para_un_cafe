@@ -25,6 +25,7 @@ func comenzar_guia():
 	var configuracion_tutorial = [
 		{
 			"nodo_boton": comprar_mate,
+			"automatico": false,
 			"texto": "¡Este es el botón para comprar mates"
 		},
 	]

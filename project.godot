@@ -26,8 +26,15 @@ AutoGenerator="*uid://csicyh2kn4lwd"
 
 folder_colors={
 "res://modelos/": "yellow",
+"res://recursos/Dialogos/dialogos_ida_bienarray/": "purple",
+"res://recursos/Dialogos/dialogos_ida_coimaarray/": "purple",
+"res://recursos/Dialogos/dialogos_ida_multaarray/": "purple",
+"res://recursos/Dialogos/dialogos_llegada/": "pink",
+"res://recursos/Dialogos/dialogos_llegada/dialogos_tres/": "blue",
+"res://recursos/Dialogos/dialogos_llegadaarray/": "pink",
+"res://recursos/Dialogos/dialogos_tele/": "blue",
+"res://recursos/Dialogos/dialogostelearray/": "blue",
 "res://recursos/Scripts/": "purple",
-"res://recursos/dialogos_llegada/dialogos_tres/": "blue",
 "res://scenes/": "red",
 "res://scenes/autos/": "yellow",
 "res://scenes/hud/": "green",

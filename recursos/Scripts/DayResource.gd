@@ -17,6 +17,7 @@ class_name DayResource
 @export var autos_permitidos:AutoArrayResource
 @export var nombres:Nombresresources
 @export var apellidos:Apellidosresources
+@export var personajes:PersonajesArrayResource
 @export var colores:ColoresResource
 @export var objetosbaullegales:ObjetoArrayResource
 @export var objetosbaulilegales:ObjetoArrayResource
@@ -28,3 +29,5 @@ class_name DayResource
 @export var dinero_objetivo:float = 2000.0
 
 @export var dialogostele:DialogosTeleResourceArray
+
+@export var tiposdeautos:tiposdeautosresources
