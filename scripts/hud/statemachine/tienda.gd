@@ -8,6 +8,9 @@ extends UIState
 @export var tienda: Control
 @export var coste_mate: Label
 @export var dinero: Label
+@export var dinero_ganado_hoy: Label
+@export var autos_pasados: Label
+@export var autos_fallados: Label
 @onready var state_machine: Node = $".."
 
 var active = false
@@ -47,6 +50,10 @@ func enter() -> void:
 		mates_usos.text = str("MATES: ",GameManager.usos_mates)
 		coste_mate.text = str("CUESTA: ", 100)
 		dinero.text = str("DINERO: ",GameManager.dinero)
+		dinero_ganado_hoy.text = str("DINERO GANADO HOY: ",GameManager.dinero_ganado_hoy)
+		autos_pasados.text = str("AUTOS REVISADOS HOY: ",GameManager.autos_pasados)
+		autos_fallados.text = str("AUTOS FALLADOS: ",GameManager.fallos)
+		
 		tienda.show()
 		if tutorial_hecho == false:
 			comenzar_guia()
@@ -83,5 +90,6 @@ func _on_siguiente_dia_pressed() -> void:
 	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
 	SaveLoad.contents_to_save["usos_mate"] = GameManager.usos_mates
 	SaveLoad._save()
+	GameManager.reset()
 	get_tree().change_scene_to_file(daymanager.dias[SaveLoad.contents_to_save.values()[0]].mapa[0])
 	pass # Replace with function body.

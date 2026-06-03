@@ -87,6 +87,66 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_vyxmn")
 
+[node name="siguiente_dia" type="Button" parent="Tienda1/fondo" unique_id=1204586111]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8741319
+anchor_top = 0.8842593
+anchor_right = 0.9791667
+anchor_bottom = 0.9616891
+text = "SIGUIENTE DIA"
+metadata/_edit_use_anchors_ = true
+
+[node name="dinero" type="Label" parent="Tienda1/fondo" unique_id=1172271538]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8871528
+anchor_top = 0.027777778
+anchor_right = 0.9809028
+anchor_bottom = 0.08379096
+text = "DINERO: "
+metadata/_edit_use_anchors_ = true
+
+[node name="dinero_ganado_hoy" type="Label" parent="Tienda1/fondo" unique_id=67738603]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5086806
+anchor_top = 0.75308645
+anchor_right = 0.6666667
+anchor_bottom = 0.8090997
+offset_top = -3.0517578e-05
+text = "DINERO GANADO HOY: "
+metadata/_edit_use_anchors_ = true
+
+[node name="autos_revisados" type="Label" parent="Tienda1/fondo" unique_id=517673599]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5086806
+anchor_top = 0.7947531
+anchor_right = 0.6666667
+anchor_bottom = 0.8507682
+text = "AUTOS REVISADOS HOY: "
+metadata/_edit_use_anchors_ = true
+
+[node name="autos_errados" type="Label" parent="Tienda1/fondo" unique_id=874936145]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5086806
+anchor_top = 0.8410494
+anchor_right = 0.6666667
+anchor_bottom = 0.8970645
+text = "AUTOS FALLADOS: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Tienda1" unique_id=2092071052]
+layout_mode = 0
+anchor_left = 0.026909722
+anchor_top = 0.032407407
+anchor_right = 0.4956597
+anchor_bottom = 0.9691358
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="listacontainer" type="VBoxContainer" parent="Tienda1" unique_id=79543492]
 z_index = 1
 layout_mode = 1
@@ -130,34 +190,6 @@ offset_bottom = 23.0
 text = "CUESTA: 100"
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Tienda1" unique_id=2092071052]
-layout_mode = 0
-anchor_left = 0.026909722
-anchor_top = 0.032407407
-anchor_right = 0.4956597
-anchor_bottom = 0.9691358
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="siguiente_dia" type="Button" parent="Tienda1/Panel" unique_id=1204586111]
-layout_mode = 0
-anchor_left = 1.8074074
-anchor_top = 0.90939045
-anchor_right = 2.0314815
-anchor_bottom = 0.9868204
-offset_right = -7.0
-text = "SIGUIENTE DIA"
-metadata/_edit_use_anchors_ = true
-
-[node name="dinero" type="Label" parent="Tienda1/Panel" unique_id=1172271538]
-layout_mode = 0
-anchor_left = 1.8351852
-anchor_top = -0.0049423394
-anchor_right = 2.0259259
-anchor_bottom = 0.05107084
-text = "DINERO: "
-metadata/_edit_use_anchors_ = true
-
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3
 script = ExtResource("20_hj60v")
@@ -167,7 +199,7 @@ initial_state = NodePath("Transicion")
 script = ExtResource("22_4ftxs")
 hud_principal = NodePath("../../Hud_principal")
 
-[node name="tienda" type="Node" parent="StateMachine" unique_id=876734760 node_paths=PackedStringArray("comprar_mate", "mates_usos", "HUD_tienda", "tienda", "coste_mate", "dinero")]
+[node name="tienda" type="Node" parent="StateMachine" unique_id=876734760 node_paths=PackedStringArray("comprar_mate", "mates_usos", "HUD_tienda", "tienda", "coste_mate", "dinero", "dinero_ganado_hoy", "autos_pasados", "autos_fallados")]
 script = ExtResource("27_1fkab")
 tutorial_scene = ExtResource("25_78l3b")
 comprar_mate = NodePath("../../Tienda1/listacontainer/Control/comprar")
@@ -175,12 +207,15 @@ mates_usos = NodePath("../../Tienda1/listacontainer/Control/mates_usos")
 HUD_tienda = NodePath("../..")
 tienda = NodePath("../../Tienda1")
 coste_mate = NodePath("../../Tienda1/listacontainer/Control/coste_mate")
-dinero = NodePath("../../Tienda1/Panel/dinero")
+dinero = NodePath("../../Tienda1/fondo/dinero")
+dinero_ganado_hoy = NodePath("../../Tienda1/fondo/dinero_ganado_hoy")
+autos_pasados = NodePath("../../Tienda1/fondo/autos_revisados")
+autos_fallados = NodePath("../../Tienda1/fondo/autos_errados")
 
 [node name="Transicion" type="Node" parent="StateMachine" unique_id=854658723]
 script = ExtResource("34_5cxvk")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="StateMachine/pause" method="_on_button_quit_pressed"]
 [connection signal="pressed" from="Hud_principal/Button_menu" to="StateMachine/pause" method="_on_button_menu_pressed"]
+[connection signal="pressed" from="Tienda1/fondo/siguiente_dia" to="StateMachine/tienda" method="_on_siguiente_dia_pressed"]
 [connection signal="pressed" from="Tienda1/listacontainer/Control/comprar" to="StateMachine/tienda" method="_on_comprar_pressed"]
-[connection signal="pressed" from="Tienda1/Panel/siguiente_dia" to="StateMachine/tienda" method="_on_siguiente_dia_pressed"]

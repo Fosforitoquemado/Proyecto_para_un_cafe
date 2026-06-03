@@ -10,6 +10,7 @@ var paused = false
 var fallos: int = 0
 var autos_pasados: int = 0
 var dinero = 0
+var dinero_ganado_hoy = 0
 
 var max_mates: int = 3
 var usos_mates: int = 0
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	if empezar_tiempo == true:
 		tiempo += delta
-	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false:
+	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and empezar_tiempo:
 		finalizar_dia()
 		print("fallos",fallos,"max_fallos",max_fallos)
 		get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
@@ -74,7 +75,6 @@ func empezar_dia():
 
 func finalizar_dia():
 	empezar_tiempo = false
-	reset()
 
 func generar_auto():
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
@@ -107,13 +107,9 @@ func ida_auto(condicion):
 
 func reset():
 	tiempo = 0.0
+	dinero_ganado_hoy = 0
 	fallos = 0
 	autos_pasados = 0
-
-func sumar_dinero_jugador(dinero_):
-	print("dinero_antes: ",dinero)
-	dinero += dinero_
-	print("dinero_ahora: ",dinero)
 
 func sumar_fallo():
 	fallos += 1
@@ -123,6 +119,7 @@ func sumar_auto():
 
 func update_score(score_auto):
 	dinero += score_auto
+	dinero_ganado_hoy += score_auto
 	print("DINERO: ",dinero)
 
 #func check_estado():
