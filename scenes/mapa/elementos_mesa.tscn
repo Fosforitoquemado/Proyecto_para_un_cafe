@@ -9,7 +9,8 @@
 [ext_resource type="Script" uid="uid://bhfqvhyxxc2fp" path="res://scripts/hud/interactuables/termo_area3D.gd" id="4_tkqnu"]
 [ext_resource type="Script" uid="uid://dhjfs2ms0orqu" path="res://scripts/mapa/mate.gd" id="5_gtunt"]
 [ext_resource type="Script" uid="uid://covm3wwjhi8qt" path="res://scripts/hud/interactuables/documento_arrastrar.gd" id="5_o6od5"]
-[ext_resource type="Texture2D" uid="uid://cbab0br7hqdv4" path="res://texture/hud/documentos/seguro.png" id="9_4kc6s"]
+[ext_resource type="Texture2D" uid="uid://5grqhm4vo7rc" path="res://texture/hud/documentos/seguro (1).png" id="10_6aws0"]
+[ext_resource type="Texture2D" uid="uid://n3o351jxpt2o" path="res://texture/hud/documentos/permiso.png" id="11_6aws0"]
 [ext_resource type="Script" uid="uid://sko0vdylua50" path="res://scripts/hud/interactuables/alcholometro_area3D.gd" id="11_37o8a"]
 [ext_resource type="PackedScene" uid="uid://cvqo21bh3wx7a" path="res://scenes/mapa/medidor_alcholemia.tscn" id="11_ovycv"]
 
@@ -160,7 +161,7 @@ roughness_texture = ExtResource("4_4kc6s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37o8a"]
 transparency = 1
-albedo_texture = ExtResource("9_4kc6s")
+albedo_texture = ExtResource("10_6aws0")
 metallic = 1.0
 metallic_specular = 1.0
 metallic_texture = ExtResource("4_o6od5")
@@ -169,6 +170,21 @@ roughness_texture = ExtResource("4_4kc6s")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ovycv"]
 size = Vector3(0.056311034, 0.01, 0.088085935)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p5a8f"]
+load_path = "res://.godot/imported/3.jpg-6cbf4be655b7b6e0bc5f70ab506a155b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tq4tv"]
+load_path = "res://.godot/imported/image-of-plastic-bag-texture.jpg-98060801481bc133b91911a6f3bc1b8d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o77cx"]
+transparency = 1
+albedo_texture = ExtResource("11_6aws0")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = SubResource("CompressedTexture2D_p5a8f")
+roughness = 0.1
+roughness_texture = SubResource("CompressedTexture2D_tq4tv")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o6od5"]
 size = Vector2(0.3, 0.3)
@@ -400,41 +416,41 @@ limite_maximo = NodePath("../limite_max")
 transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_37o8a")
 transparent = false
-texture = ExtResource("9_4kc6s")
+texture = ExtResource("10_6aws0")
 
 [node name="asegurado" type="Label3D" parent="Documento_seguro/seguro" unique_id=744376841]
-transform = Transform3D(3, -1.4210855e-13, -8.046813e-21, 1.4210855e-13, 3, 1.4210855e-13, -5.505714e-21, -1.4210855e-13, 3, -2.2490082, 0.7500076, 0.09967041)
+transform = Transform3D(3, -1.9895197e-13, 2.1175824e-21, 1.9895197e-13, 3, 1.9895197e-13, -8.046813e-21, -1.9895197e-13, 3, -1.6472244, 0.5985489, 0.09967041)
 shaded = true
 render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "FERNANDO
 "
-font_size = 15
+font_size = 30
 outline_size = 1
 horizontal_alignment = 0
 
 [node name="id" type="Label3D" parent="Documento_seguro/seguro" unique_id=552994824]
-transform = Transform3D(3, -1.8474111e-13, -1.1011428e-20, 1.8474111e-13, 3, 1.8474111e-13, -7.6232965e-21, -1.8474111e-13, 3, -2.3969421, 0.18979645, 0.099674225)
+transform = Transform3D(3, -2.5579538e-13, 2.5410988e-21, 2.5579538e-13, 3, 2.5579538e-13, -1.0587912e-20, -2.5579538e-13, 3, -1.8567047, -0.28551483, 0.099674225)
 shaded = true
 render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "123456
 "
-font_size = 15
+font_size = 30
 outline_size = 1
 horizontal_alignment = 0
 
 [node name="vencimiento" type="Label3D" parent="Documento_seguro/seguro" unique_id=562143047]
-transform = Transform3D(3, -2.2737368e-13, -1.3976044e-20, 2.2737368e-13, 3, 2.2737368e-13, -9.740879e-21, -2.2737368e-13, 3, -2.8796463, -0.29401398, 0.099674225)
+transform = Transform3D(3, -2.7000624e-13, 6.7762636e-21, 2.7000624e-13, 3, 2.7000624e-13, -1.1011428e-20, -2.7000624e-13, 3, -2.6245804, -1.1315689, 0.099674225)
 shaded = true
 render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "12/6/2024
 "
-font_size = 15
+font_size = 30
 outline_size = 1
 horizontal_alignment = 0
 
@@ -449,31 +465,33 @@ limite_minimo = NodePath("../limite_min")
 limite_maximo = NodePath("../limite_max")
 
 [node name="permiso" type="Sprite3D" parent="Documento_permiso" unique_id=1298688082]
-transform = Transform3D(-4.3711387e-10, -0.01, -4.3711387e-10, 0, -4.3711387e-10, 0.01, -0.01, 4.3711387e-10, 1.9106855e-17, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_37o8a")
+transform = Transform3D(-6.119594e-10, -0.014, -6.119594e-10, 0, -6.119594e-10, 0.014, -0.014, 6.119594e-10, 2.6749597e-17, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o77cx")
 transparent = false
-texture = ExtResource("9_4kc6s")
+texture = ExtResource("11_6aws0")
 
 [node name="tipo_vehiculo" type="Label3D" parent="Documento_permiso/permiso" unique_id=825717468]
-transform = Transform3D(9.999999, -5.968559e-13, -5.0821977e-21, 5.968559e-13, 9.999999, 5.968559e-13, -2.7105054e-20, -5.968559e-13, 9.999999, -2.5358658, -0.40950012, 0.09967041)
+transform = Transform3D(1.9999999, -2.060574e-13, 7.6232965e-21, 2.060574e-13, 1.9999999, 2.060574e-13, -1.1011428e-20, -2.060574e-13, 1.9999999, 0.10556793, 0.31272125, 0.09967041)
 shaded = true
 render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "auto
 "
+font_size = 40
 outline_size = 1
 horizontal_alignment = 0
+uppercase = true
 
 [node name="vencimiento" type="Label3D" parent="Documento_permiso/permiso" unique_id=1938192431]
-transform = Transform3D(4.9999995, -4.689582e-13, 1.6940659e-20, 4.689582e-13, 4.9999995, 4.689582e-13, -1.9481758e-20, -4.689582e-13, 4.9999995, -2.7881012, -1.5721817, 0.099674225)
+transform = Transform3D(1.9999999, -2.1316282e-13, 7.6232965e-21, 2.1316282e-13, 1.9999999, 2.1316282e-13, -9.740879e-21, -2.1316282e-13, 1.9999999, 0.09302521, -0.6069107, 0.099674225)
 shaded = true
 render_priority = 1
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 0.78431374)
 text = "12/6/2024
 "
-font_size = 30
+font_size = 40
 outline_size = 1
 horizontal_alignment = 0
 

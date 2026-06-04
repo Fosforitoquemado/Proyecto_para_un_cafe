@@ -61,7 +61,6 @@ viewport_path = NodePath("SubViewport")
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 albedo_texture = SubResource("ViewportTexture_ue6a8")
-metallic = 1.0
 emission_enabled = true
 uv1_scale = Vector3(3.5, 3.5, 3.5)
 uv1_offset = Vector3(-0.2, 0, 0)

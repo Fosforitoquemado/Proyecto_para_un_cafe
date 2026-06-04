@@ -1,22 +1,22 @@
 [gd_scene format=4 uid="uid://bujva2sokoioq"]
 
-[ext_resource type="Texture2D" uid="uid://feb8um1tupx7" path="res://texture/hud/botones/para el cafe arte (1)-artguru.png" id="1_8vblv"]
-[ext_resource type="Texture2D" uid="uid://cx52j75k5h8jf" path="res://texture/hud/botones/para el cafe arte (2)-artguru.png" id="2_567j1"]
 [ext_resource type="Script" uid="uid://ckesx38dvngdo" path="res://scripts/hud/timer.gd" id="2_cgeww"]
-[ext_resource type="Texture2D" uid="uid://ck5yedg224tvd" path="res://texture/hud/botones/17-artguru.png" id="3_ccb21"]
+[ext_resource type="Texture2D" uid="uid://bb01ghfgqobvd" path="res://texture/hud/botones V2/21-artguru.png" id="2_v3rms"]
 [ext_resource type="Script" uid="uid://b48i6uqlyd7bh" path="res://scripts/principal/UI.gd" id="4_bluaa"]
-[ext_resource type="Texture2D" uid="uid://ciwcvgy08phqt" path="res://texture/hud/botones/18-artguru.png" id="4_udak2"]
-[ext_resource type="Texture2D" uid="uid://csi0dmxrm4f32" path="res://texture/hud/botones/para el cafe arte-artguru.png" id="5_7pnlf"]
 [ext_resource type="Texture2D" uid="uid://blb6705yeqh3t" path="res://texture/hud/iconos_menus/mate.png" id="5_v3rms"]
-[ext_resource type="Texture2D" uid="uid://b3cowatwi7ihu" path="res://texture/hud/botones/3.png" id="6_a0exy"]
-[ext_resource type="Texture2D" uid="uid://cauuqebu207uq" path="res://texture/hud/botones/para_el_cafe_arte__coima.png" id="7_567j1"]
-[ext_resource type="Texture2D" uid="uid://btlt22tdt0t7p" path="res://texture/hud/botones/espero-artguru.png" id="7_bluaa"]
+[ext_resource type="Texture2D" uid="uid://drluxh3pyhf1j" path="res://texture/hud/botones V2/20-artguru.png" id="6_v3rms"]
+[ext_resource type="Texture2D" uid="uid://buxg7gp5p08ag" path="res://texture/hud/botones V2/33-artguru.png" id="7_bxlf6"]
 [ext_resource type="Script" uid="uid://ry550upi30ox" path="res://scripts/hud/animaciones_botones.gd" id="7_v3rms"]
-[ext_resource type="Texture2D" uid="uid://b4lruq0quje4" path="res://texture/hud/botones/para el cafe arte (10)-artguru.png" id="8_bbrgr"]
-[ext_resource type="Texture2D" uid="uid://dp2r0fv653x1w" path="res://texture/hud/botones/para el cafe arte_7-artguru.png" id="9_3fmw6"]
+[ext_resource type="Texture2D" uid="uid://b2oflflwxjtnk" path="res://texture/hud/botones V2/32-artguru.png" id="8_yog28"]
+[ext_resource type="Texture2D" uid="uid://b0l8k00at7e11" path="res://texture/hud/botones V2/34.png" id="9_vyxmn"]
 [ext_resource type="Texture2D" uid="uid://sej1bra8w11n" path="res://texture/hud/botones/2.png" id="10_2dqaf"]
-[ext_resource type="Texture2D" uid="uid://cc60wgjfj6opu" path="res://texture/hud/botones/1.png" id="11_4vn1o"]
-[ext_resource type="Texture2D" uid="uid://btrjjfmtadljb" path="res://texture/hud/botones/23-artguru.png" id="12_pjbv8"]
+[ext_resource type="Texture2D" uid="uid://bbcevydtubsro" path="res://texture/hud/botones V2/35-artguru.png" id="10_t335x"]
+[ext_resource type="Texture2D" uid="uid://5ima6n2iaew4" path="res://texture/hud/botones V2/37-artguru.png" id="11_rrdev"]
+[ext_resource type="Texture2D" uid="uid://ds5f2pwmdnw6c" path="res://texture/hud/botones V2/24-artguru.png" id="12_2h4gs"]
+[ext_resource type="Texture2D" uid="uid://dcswogdkh1bdp" path="res://texture/hud/botones V2/15.png" id="13_o428i"]
+[ext_resource type="Texture2D" uid="uid://ceu8gibu48og1" path="res://texture/hud/botones V2/14.png" id="14_voexc"]
+[ext_resource type="Texture2D" uid="uid://bhnlhv2xdofrw" path="res://texture/hud/botones V2/36-artguru.png" id="16_k4jul"]
+[ext_resource type="Texture2D" uid="uid://o7anfgxgyhto" path="res://texture/hud/botones V2/38-artguru.png" id="17_7wrco"]
 [ext_resource type="Texture2D" uid="uid://deypvq8wy3wr" path="res://texture/hud/iconos_menus/baul abierto.png" id="17_rbny8"]
 [ext_resource type="Texture2D" uid="uid://bmoi4kvo0oaho" path="res://texture/hud/pc/pc_go_arrow.png" id="18_rbny8"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="18_udak2"]
@@ -182,7 +182,7 @@ anchor_right = 0.5729167
 anchor_bottom = 0.30864197
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_567j1")
+texture = ExtResource("2_v3rms")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -330,7 +330,7 @@ anchor_bottom = 0.41666666
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_8vblv")
+texture = ExtResource("6_v3rms")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -373,7 +373,7 @@ anchor_left = 0.052083332
 anchor_top = 0.84876543
 anchor_right = 0.20833333
 anchor_bottom = 1.0030864
-texture = ExtResource("3_ccb21")
+texture = ExtResource("7_bxlf6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -397,7 +397,7 @@ anchor_left = 0.19965278
 anchor_top = 0.84876543
 anchor_right = 0.35590276
 anchor_bottom = 1.0030864
-texture = ExtResource("4_udak2")
+texture = ExtResource("8_yog28")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -416,12 +416,15 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Tomar_Mate" type="TextureRect" parent="YES_NO_menu" unique_id=828660464]
-layout_mode = 0
-anchor_left = 0.3472222
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35069445
 anchor_top = 0.84876543
-anchor_right = 0.5034722
+anchor_right = 0.5069444
 anchor_bottom = 1.0030864
-texture = ExtResource("5_7pnlf")
+offset_left = -4.0
+offset_right = -4.0
+texture = ExtResource("9_vyxmn")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -438,12 +441,17 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccionar" type="TextureRect" parent="YES_NO_menu" unique_id=1187776531]
-layout_mode = 0
-anchor_left = 0.49479166
-anchor_top = 0.84876543
-anchor_right = 0.6510417
-anchor_bottom = 1.0030864
-texture = ExtResource("6_a0exy")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4982639
+anchor_top = 0.845679
+anchor_right = 0.6545139
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
+texture = ExtResource("10_t335x")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -466,11 +474,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Coima" type="TextureRect" parent="YES_NO_menu" unique_id=1681919718]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6336806
-anchor_top = 0.84876543
-anchor_right = 0.7899306
-anchor_bottom = 1.0030864
-texture = ExtResource("7_567j1")
+anchor_left = 0.6371528
+anchor_top = 0.8472222
+anchor_right = 0.7934028
+anchor_bottom = 1.0015432
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 6.0
+offset_bottom = 1.0
+texture = ExtResource("11_rrdev")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -583,7 +595,7 @@ anchor_top = 0.35493827
 anchor_right = 0.9982639
 anchor_bottom = 0.5092593
 offset_bottom = -3.0517578e-05
-texture = ExtResource("7_bluaa")
+texture = ExtResource("12_2h4gs")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -608,7 +620,7 @@ anchor_left = 0.8420139
 anchor_top = 0.47839507
 anchor_right = 0.9982639
 anchor_bottom = 0.63271606
-texture = ExtResource("8_bbrgr")
+texture = ExtResource("13_o428i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -634,7 +646,7 @@ anchor_top = 0.6018519
 anchor_right = 0.9982639
 anchor_bottom = 0.75617284
 offset_top = -3.0517578e-05
-texture = ExtResource("9_3fmw6")
+texture = ExtResource("14_voexc")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -687,7 +699,7 @@ anchor_right = 0.9982639
 anchor_bottom = 0.8796296
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("11_4vn1o")
+texture = ExtResource("16_k4jul")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -711,7 +723,7 @@ anchor_left = 0.8420139
 anchor_top = 0.84876543
 anchor_right = 0.9982639
 anchor_bottom = 1.0030864
-texture = ExtResource("12_pjbv8")
+texture = ExtResource("17_7wrco")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -802,9 +814,9 @@ mouse_filter = 2
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7509505
+anchor_left = 0.8524306
 anchor_top = 0.038580246
-anchor_right = 0.8637977
+anchor_right = 0.9652778
 anchor_bottom = 0.23919754
 mouse_filter = 2
 texture = ExtResource("18_rbny8")

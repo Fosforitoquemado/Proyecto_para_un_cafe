@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_v7l4f")
-array = Array[String](["Benjamín", "Federico", "Delfina", "Nicolás", "Juan", "Tomás"])
+array = Array[String](["Benjamín", "Federico", "Delfino", "Nicolás", "Juan", "Tomás"])
 metadata/_custom_type_script = "uid://vfvvqfhv0l7c"
