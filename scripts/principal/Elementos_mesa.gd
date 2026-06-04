@@ -37,6 +37,7 @@ extends Node3D
 #permiso
 @export var permiso: Area3D
 @export var tipo_vehiculo: Label3D
+@export var fecha_permiso: Label3D
 
 var personaje
 
@@ -138,9 +139,11 @@ func mostrar_datos():
 		pc_control.set_fecha_seguro(AutoGenerator._auto_data["fecha_seguro"])
 	
 	if "permiso" in day.documentos_habilitados:
-		tipo_vehiculo.text = datos_documentos["tipo_vehiculo"] #🎫🎫🎫
+		tipo_vehiculo.text = datos_documentos["tipo_vehiculo_permiso"] #🎫🎫🎫
 		pc_control.set_permiso_tipo_vehiculo(AutoGenerator._auto_data["modelo_info"]["tipo_vehiculo"])
-	
+		fecha_permiso.text = datos_documentos["fecha_permiso"] #🎫🎫🎫
+		pc_control.set_fecha_permiso(AutoGenerator._auto_data["fecha_permiso"])
+		
 	#papeles en la mano del personaje y dialogos
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout
 	for i in range(GameManager.auto_data["dialogo_llegada_info"]["resource"].array.size()):
@@ -187,6 +190,7 @@ func mostrar_datos():
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
 		seguro.global_position = nodo_papeles.global_position
+		permiso.global_position = nodo_papeles.global_position
 		
 	auto_ready.emit()
 	print("FINAL MOSTRAR DATOS")
@@ -205,6 +209,8 @@ func ocultar_docu_bien():
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween3 = create_tween()
 			tween3.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween4 = create_tween()
+			tween4.tween_property(permiso,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 		if hud.papeles_on == true:
 			await personaje_animator.animation_finished
 		licencia.visible = false
@@ -236,6 +242,8 @@ func ocultar_docu_coima():
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween3 = create_tween()
 			tween3.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween4 = create_tween()
+			tween4.tween_property(permiso,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 		if hud.papeles_on == true:
 			await personaje_animator.animation_finished
 		licencia.visible = false
@@ -301,10 +309,12 @@ func ocultar_docu_multa():
 			tween.tween_property(cedula,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween2 = create_tween()
 			tween2.tween_property(licencia,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
-			var tween4 = create_tween()
-			tween4.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			var tween3 = create_tween()
-			tween3.tween_property(papel_multa,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 2.5))
+			tween3.tween_property(seguro,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+			var tween4 = create_tween()
+			tween4.tween_property(papel_multa,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 2.5))
+			var tween5 = create_tween()
+			tween5.tween_property(permiso,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 			await personaje_animator.animation_finished
 		if hud.papeles_on == false:
 			var tween3 = create_tween()

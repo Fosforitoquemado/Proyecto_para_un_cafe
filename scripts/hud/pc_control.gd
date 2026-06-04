@@ -36,7 +36,8 @@ extends Control
 @onready var fecha_seguro: Label = $basedatos_img/seguro_shit/fecha_seguro
 
 #labels permiso
-@onready var tipo_vehiculo: Label = $basedatos_img/permiso_shit/tipo_vehiculo
+@onready var tipo_vehiculo_permiso: Label = $basedatos_img/permiso_shit/tipo_vehiculo
+@onready var fecha_permiso: Label = $basedatos_img/permiso_shit/vencimiento
 
 @onready var basedatos_img: TextureRect = $basedatos_img
 
@@ -99,7 +100,9 @@ func set_fecha_seguro(func_fecha):
 
 #permiso
 func set_permiso_tipo_vehiculo(func_tipo):
-	tipo_vehiculo.text = func_tipo
+	tipo_vehiculo_permiso.text = func_tipo
+func set_fecha_permiso(func_fecha):
+	fecha_permiso.text = func_fecha
 
 func apagar_cargando():
 	await get_tree().create_timer(tiempo_de_carga,false).timeout

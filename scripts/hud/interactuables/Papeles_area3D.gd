@@ -3,6 +3,7 @@ extends Area3D
 var position_licencia
 var position_cedula
 var position_seguro
+var position_permiso
 var position_documentos
 
 var ocupado = false
@@ -36,6 +37,7 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 				var cedula = elementos_mesa.find_child("Documento_cedula")
 				var carnet = elementos_mesa.find_child("Documento_carnet")
 				var seguro = elementos_mesa.find_child("Documento_seguro")
+				var permiso = elementos_mesa.find_child("Documento_permiso")
 				var num1 = snapped(randf_range(-0.12,0.12), 0.001)
 				var num2 = snapped(randf_range(-0.1,0.12), 0.001)
 				var tween = create_tween()
@@ -48,6 +50,10 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 				var num6 = snapped(randf_range(-0.12,0.12), 0.001)
 				var tween3 = create_tween()
 				tween3.tween_property(seguro,"global_position",Vector3(position_documentos.x + num5,position_documentos.y,position_documentos.z + num6),0.6)
+				var num7 = snapped(randf_range(-0.12,0.12), 0.001)
+				var num8 = snapped(randf_range(-0.12,0.12), 0.001)
+				var tween4 = create_tween()
+				tween4.tween_property(permiso,"global_position",Vector3(position_documentos.x + num7,position_documentos.y,position_documentos.z + num8),0.6)
 				var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
 				var personaje_animator:AnimationPlayer = personaje.find_child("AnimationPlayer")
 				personaje_animator.play("agarrar papeles")

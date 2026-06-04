@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dwisfve2xos38"]
 
 [ext_resource type="Script" uid="uid://davq41tpsao77" path="res://scripts/hud/interactuables/Papeles_area3D.gd" id="1_xmmjt"]
+[ext_resource type="Animation" uid="uid://cn6y8x33w8wwh" path="res://recursos/animaciones/personajes/hacer_test.res" id="2_ce7u3"]
+[ext_resource type="Animation" uid="uid://djawhal7cp32f" path="res://recursos/animaciones/personajes/stop_test.res" id="3_q7e3h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11r5h"]
 resource_name = "boca"
@@ -437,9 +439,6 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_mo5lt"]
 size = Vector3(0.10472107, 0.5439453, 0.24499512)
 
-[sub_resource type="BoxMesh" id="BoxMesh_xmmjt"]
-size = Vector3(0.1, 0.1, 0.1)
-
 [sub_resource type="Animation" id="Animation_4ms5y"]
 resource_name = "agarrar papeles"
 length = 2.5416667
@@ -709,7 +708,9 @@ tracks/11/keys = PackedFloat32Array(0, 1, 0.06962624, 0.0026508423, 0.019082418,
 _data = {
 &"agarrar papeles": SubResource("Animation_4ms5y"),
 &"dar_papeles": SubResource("Animation_2tg1p"),
-&"manejando": SubResource("Animation_dg1b6")
+&"hacer_test": ExtResource("2_ce7u3"),
+&"manejando": SubResource("Animation_dg1b6"),
+&"stop_test": ExtResource("3_q7e3h")
 }
 
 [node name="personaje" type="Node3D" unique_id=96713219]
@@ -745,7 +746,7 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, -2.384187e-07, -3.6564273e-08, 0.9881701, -0.1533616, 2.3559824e-07, 0.15336159, 0.98817015, 0, 0.25904775, 2.0372593e-14)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.25904775, 2.0372593e-14)
-bones/3/rotation = Quaternion(0.138292, 0.43480235, -0.07910051, 0.88632125)
+bones/3/rotation = Quaternion(0.15416308, 0.0033220167, -0.0006043912, 0.98803973)
 bones/3/scale = Vector3(1, 0.99999994, 1)
 bones/4/name = "Bone.004.L"
 bones/4/parent = -1
@@ -773,14 +774,14 @@ bones/7/parent = -1
 bones/7/rest = Transform3D(0.07219708, 0.99445105, -0.076515794, -0.9973902, 0.07194603, -0.0060362415, -0.00049773976, 0.0767519, 0.9970501, 0.17440772, 0.59824467, -0.02648098)
 bones/7/enabled = true
 bones/7/position = Vector3(0.17440772, 0.59824467, -0.02648098)
-bones/7/rotation = Quaternion(0.054403633, -0.054051742, -0.6790194, 0.7301036)
+bones/7/rotation = Quaternion(0.4241408, -0.31987306, -0.6155588, 0.58212817)
 bones/7/scale = Vector3(0.99999994, 1, 1)
 bones/8/name = "Bone.006.L"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.99847394, -0.055134863, 0.0031319116, 0.055095866, 0.99841595, 0.011408049, -0.0037559315, -0.011218086, 0.99992996, -3.0770025e-08, 0.264609, 1.094304e-08)
 bones/8/enabled = true
 bones/8/position = Vector3(-3.0770025e-08, 0.264609, 1.094304e-08)
-bones/8/rotation = Quaternion(0.17081031, -0.02646151, -0.14215158, 0.9746367)
+bones/8/rotation = Quaternion(0.30814114, -0.067507125, 0.013132118, 0.94885164)
 bones/8/scale = Vector3(0.99999994, 1, 0.99999994)
 bones/9/name = "Bone.007.L"
 bones/9/parent = 8
@@ -833,7 +834,7 @@ bones/15/rotation = Quaternion(0.06962621, 0.0026508465, 0.01908241, 0.9973871)
 bones/15/scale = Vector3(0.9999999, 1, 0.99999994)
 
 [node name="Bone_003" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1758538672]
-transform = Transform3D(0.60938, 0.26047626, 0.7488712, -1.15484e-07, 0.94449705, -0.32851985, -0.7928783, 0.20019335, 0.57555777, -9.473812e-09, 0.7614109, -0.028572774)
+transform = Transform3D(0.9999772, 0.0022185892, 0.006378218, -8.0050086e-08, 0.9444971, -0.32851988, -0.006753059, 0.32851234, 0.9444756, -9.473812e-09, 0.7614109, -0.028572774)
 bone_name = "Bone.003"
 bone_idx = 3
 
@@ -865,7 +866,7 @@ skin = SubResource("Skin_onqjw")
 skeleton = NodePath("..")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1986900770]
-transform = Transform3D(-0.2580867, 0.8492966, -0.4605282, -0.96445096, -0.25450593, 0.07113797, -0.056789935, 0.4625168, 0.8847897, 0.73744804, 0.5450165, 0.18196478)
+transform = Transform3D(-0.0871884, -0.15601256, -0.98389935, -0.9842365, -0.13906372, 0.10926901, -0.15387197, 0.9779167, -0.1414285, 0.23451419, 0.53610045, 0.55551577)
 bone_name = "Bone.007.L"
 bone_idx = 9
 
@@ -879,15 +880,12 @@ transform = Transform3D(1.0000006, 3.7252903e-09, -3.7252903e-09, 4.628673e-06, 
 shape = SubResource("BoxShape3D_mo5lt")
 
 [node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=180220146]
-transform = Transform3D(0.60938, 0.26047626, 0.7488712, -1.15484e-07, 0.94449705, -0.32851985, -0.7928783, 0.20019335, 0.57555777, -9.473812e-09, 0.7614109, -0.028572774)
+transform = Transform3D(0.9999772, 0.0022185892, 0.006378218, -8.0050086e-08, 0.9444971, -0.32851988, -0.006753059, 0.32851234, 0.9444756, -9.473812e-09, 0.7614109, -0.028572774)
 bone_name = "Bone.003"
 bone_idx = 3
 
 [node name="nodo_alcholemia" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D2" unique_id=1608765037]
 transform = Transform3D(0.9999998, 7.1054274e-15, 2.842171e-14, -7.1054274e-15, 1.0000002, -2.9802322e-08, -1.4210855e-14, -5.9604645e-08, 1.0000001, 5.9604645e-08, 0.06442863, 0.18523279)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D2/nodo_alcholemia" unique_id=1117189533]
-mesh = SubResource("BoxMesh_xmmjt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=535629163]
 libraries/ = SubResource("AnimationLibrary_usmwr")

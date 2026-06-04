@@ -199,6 +199,7 @@ func _generate_auto() -> Dictionary:
 	var fecha_cedula = generate_fecha_vencimiento()
 	var fecha_licencia = generate_fecha_vencimiento()
 	var fecha_seguro = generate_fecha_vencimiento()
+	var fecha_permiso = generate_fecha_vencimiento()
 	
 	# RESULTADO
 	data = {
@@ -219,6 +220,7 @@ func _generate_auto() -> Dictionary:
 		"fecha_cedula": fecha_cedula,
 		"fecha_licencia": fecha_licencia,
 		"fecha_seguro": fecha_seguro,
+		"fecha_permiso": fecha_permiso,
 		"dinero_coima": dinero_coima,
 		"objeto_baul_info": objeto_baul_info
 	}

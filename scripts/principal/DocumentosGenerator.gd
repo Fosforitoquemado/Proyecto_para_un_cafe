@@ -124,7 +124,7 @@ func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimien
 	
 	if Utils.chance(probabilidad):
 		#correcto
-		print("Fecha en ",documento," es verdadera✅: ",fecha_de_vencimiento)
+		print("Fecha de ",documento," es verdadera✅: ",fecha_de_vencimiento)
 		return fecha_de_vencimiento
 	else:
 		auto_ilegal = true
@@ -140,22 +140,22 @@ func generate_fecha_documento(probabilidad, probabilidad_2026,fecha_de_vencimien
 				var mes = fecha_hoy["mes"]
 				dia = randi_range(1,fecha_hoy["dia"] - 1)
 				var fecha_dia_mes_ = str(dia,"/",mes,"/2026")
-				errores.append(str("Fecha en ",documento," es fake (dia mal)❌: ",fecha_dia_mes_))
-				print("Fecha en ",documento," es fake (dia mal)❌: ",fecha_dia_mes_)
+				errores.append(str("Fecha de ",documento," es fake (dia mal)❌: ",fecha_dia_mes_))
+				print("Fecha de ",documento," es fake (dia mal)❌: ",fecha_dia_mes_)
 				return fecha_dia_mes_
 			else:
 				#mes fake
 				var mes = randi_range(1,fecha_hoy["mes"] - 1)
 				var dia := Utils.dias_en_mes(mes)
 				var fecha_dia_mes_ = str(dia,"/",mes,"/2026")
-				errores.append(str("Fecha en ",documento," es fake (mes mal)❌: ", fecha_dia_mes_))
-				print("Fecha en ",documento," es fake (mes mal)❌: ", fecha_dia_mes_)
+				errores.append(str("Fecha de ",documento," es fake (mes mal)❌: ", fecha_dia_mes_))
+				print("Fecha de ",documento," es fake (mes mal)❌: ", fecha_dia_mes_)
 				return fecha_dia_mes_
 		else:
 			#fake
 			var fecha_dia_mes_ = Utils.generar_fecha(2012,2025)
-			errores.append(str("Fecha en ",documento," es fake❌: ",fecha_dia_mes_))
-			print("Fecha en ",documento," es fake❌: ",fecha_dia_mes_)
+			errores.append(str("Fecha de ",documento," es fake❌: ",fecha_dia_mes_))
+			print("Fecha de ",documento," es fake❌: ",fecha_dia_mes_)
 			return fecha_dia_mes_
 func generate_numero_licencia(probabilidad):
 	var numero_licencia = auto_data["numero_licencia"]
@@ -508,9 +508,11 @@ func _generate_documentos() -> Dictionary:
 	
 	#permiso por tipo de vehiculo
 	if "permiso" in day.documentos_habilitados:
-		var tipo_vehiculo = generate_tipo_permiso(config.probabilidad_tipo_vehiculo)
+		var tipo_vehiculo_permiso = generate_tipo_permiso(config.probabilidad_tipo_vehiculo)
+		var fecha_permiso = generate_fecha_documento(config.probabilidad_fecha_permiso,config.probabilidad_fecha_permiso_2026,auto_data["fecha_permiso"],fecha_hoy,"permiso")
 		var data_permiso = {
-		"tipo_vehiculo": tipo_vehiculo
+		"tipo_vehiculo_permiso": tipo_vehiculo_permiso,
+		"fecha_permiso": fecha_permiso
 		}
 		data.merge(data_permiso)
 	

@@ -548,6 +548,14 @@ offset_right = 464.0
 offset_bottom = 44.0
 text = "XXXX"
 
+[node name="vencimiento" type="Label" parent="basedatos_img/permiso_shit" unique_id=433565621]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 38.705
+offset_right = 524.0
+offset_bottom = 61.705017
+text = "XXXXXXXXXX"
+
 [node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=1437975147]
 top_level = true
 z_index = 9

@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://blqipm3bfgt6"]
 
 [ext_resource type="Script" uid="uid://davq41tpsao77" path="res://scripts/hud/interactuables/Papeles_area3D.gd" id="1_bc874"]
+[ext_resource type="Animation" uid="uid://cn6y8x33w8wwh" path="res://recursos/animaciones/personajes/hacer_test.res" id="2_hnkuy"]
+[ext_resource type="Animation" uid="uid://djawhal7cp32f" path="res://recursos/animaciones/personajes/stop_test.res" id="3_5jvvh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4i3q"]
 resource_name = "LENTES"
@@ -627,9 +629,6 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_8rewc"]
 size = Vector3(0.10472107, 0.5439453, 0.24499512)
 
-[sub_resource type="BoxMesh" id="BoxMesh_bc874"]
-size = Vector3(0.1, 0.1, 0.1)
-
 [sub_resource type="Animation" id="Animation_4grg1"]
 resource_name = "agarrar papeles"
 length = 2.5416667
@@ -899,7 +898,9 @@ tracks/11/keys = PackedFloat32Array(0, 1, 0.06962624, 0.0026508423, 0.019082418,
 _data = {
 &"agarrar papeles": SubResource("Animation_4grg1"),
 &"dar_papeles": SubResource("Animation_beuof"),
-&"manejando": SubResource("Animation_5uvxo")
+&"hacer_test": ExtResource("2_hnkuy"),
+&"manejando": SubResource("Animation_5uvxo"),
+&"stop_test": ExtResource("3_5jvvh")
 }
 
 [node name="personaje" type="Node3D" unique_id=1244052447]
@@ -1094,9 +1095,6 @@ bone_idx = 3
 
 [node name="nodo_alcholemia" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D2" unique_id=346344812]
 transform = Transform3D(0.9999998, 7.1054274e-15, 2.842171e-14, -7.1054274e-15, 1.0000002, -2.9802322e-08, -1.4210855e-14, -5.9604645e-08, 1.0000001, 5.9604645e-08, 0.06442863, 0.18523279)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D2/nodo_alcholemia" unique_id=705458058]
-mesh = SubResource("BoxMesh_bc874")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=994364173]
 libraries/ = SubResource("AnimationLibrary_xigk5")

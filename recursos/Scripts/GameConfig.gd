@@ -32,3 +32,5 @@ class_name GameConfig
 @export_range(0,100) var probabilidad_alcholemia:= 95
 #permiso
 @export_range(0,100) var probabilidad_tipo_vehiculo:= 95
+@export_range(0,100) var probabilidad_fecha_permiso:= 95
+@export_range(0,100) var probabilidad_fecha_permiso_2026:= 95

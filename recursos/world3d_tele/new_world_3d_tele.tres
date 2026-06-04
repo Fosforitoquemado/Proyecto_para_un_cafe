@@ -2,8 +2,8 @@
 
 [sub_resource type="Environment" id="Environment_wbyja"]
 background_mode = 1
-background_color = Color(0.17288291, 0.13588244, 0.10925677, 1)
-background_energy_multiplier = 0.0
+background_color = Color(0.3762651, 0.31160396, 0.26139227, 1)
+background_energy_multiplier = 0.82
 ambient_light_source = 3
 ambient_light_color = Color(0.94701326, 0.93119156, 0.88833475, 1)
 ambient_light_sky_contribution = 0.75
