@@ -41,7 +41,6 @@ func _process(delta: float) -> void:
 		tiempo += delta
 	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and empezar_tiempo:
 		finalizar_dia()
-		print("fallos",fallos,"max_fallos",max_fallos)
 		get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
 
 func _input(event: InputEvent) -> void:

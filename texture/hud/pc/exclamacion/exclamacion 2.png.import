@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bet8suj5k3fwp"
-path.s3tc="res://.godot/imported/New Piskel-1.png-ba29bda4139459696fd3b77810df425d.s3tc.ctex"
-path.etc2="res://.godot/imported/New Piskel-1.png-ba29bda4139459696fd3b77810df425d.etc2.ctex"
+uid="uid://brg8bjodijbkf"
+path.s3tc="res://.godot/imported/exclamacion 2.png-3f514e9e76a2b919218a42cae888b721.s3tc.ctex"
+path.etc2="res://.godot/imported/exclamacion 2.png-3f514e9e76a2b919218a42cae888b721.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://texture/hud/exclamacion/New Piskel-1.png"
-dest_files=["res://.godot/imported/New Piskel-1.png-ba29bda4139459696fd3b77810df425d.s3tc.ctex", "res://.godot/imported/New Piskel-1.png-ba29bda4139459696fd3b77810df425d.etc2.ctex"]
+source_file="res://texture/hud/pc/exclamacion/exclamacion 2.png"
+dest_files=["res://.godot/imported/exclamacion 2.png-3f514e9e76a2b919218a42cae888b721.s3tc.ctex", "res://.godot/imported/exclamacion 2.png-3f514e9e76a2b919218a42cae888b721.etc2.ctex"]
 
 [params]
 

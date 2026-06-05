@@ -17,6 +17,7 @@ func _ready() -> void:
 	var dia_actual = day_manager.dia_actual
 	print("DIA HOY: ",dia_actual)
 	
+	hud.find_child("pantalla_negro").aclarar(3)
 	state_machine.change_to("tele")
 	
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)

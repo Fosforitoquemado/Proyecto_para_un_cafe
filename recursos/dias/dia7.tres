@@ -30,7 +30,6 @@ personajes = ExtResource("9_7uy76")
 colores = ExtResource("3_80pix")
 objetosbaullegales = ExtResource("8_8ibv3")
 objetosbaulilegales = ExtResource("7_pkoyk")
-tiempo_limite = 100.0
 dialogostele = ExtResource("5_7uy76")
 tiposdeautos = ExtResource("10_tj3i2")
 metadata/_custom_type_script = "uid://dyyci053w374o"

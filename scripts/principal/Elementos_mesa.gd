@@ -269,13 +269,13 @@ func ocultar_docu_multa():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
-	if datos_documentos["objeto_info"] != null:
+	if "objeto_info" in datos_documentos:
 		for objetos in datos_documentos["objeto_info"]["cantidad"]:
 			if datos_documentos["objeto_info"]["objetos"][objetos]["legal"] == false:
 				licencia.visible = false
 				cedula.visible = false
 				seguro.visible = false
-				var pantalla_negra = hud.hud_elementos.find_child("pantalla_negro")
+				var pantalla_negra = hud.find_child("pantalla_negro")
 				var sirenas = pantalla_negra.find_child("sirenas")
 				sirenas.play()
 				nodo_policia.show()
