@@ -17,7 +17,8 @@ func _ready() -> void:
 	var dia_actual = day_manager.dia_actual
 	print("DIA HOY: ",dia_actual)
 	
-	hud.find_child("pantalla_negro").aclarar(3)
+	hud.find_child("pantalla_negro").comienzo_dia(4,3)
+	await get_tree().create_timer(6.5,false).timeout
 	state_machine.change_to("tele")
 	
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)
@@ -49,12 +50,12 @@ func _ready() -> void:
 			dialogo_actual["texto"],
 			dialogo_actual["tamanio_font"],
 			dialogo_actual["tamanio_final"],
-			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_font"],
 			dialogo_actual["tiempo_velocidad"],
 			array_final
 		)
 		
-		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + dialogo_actual["tiempo_cambio_dialogo"]
 		await get_tree().create_timer(tiempo_espera, false).timeout
 	tele.apagar_tele()
 	

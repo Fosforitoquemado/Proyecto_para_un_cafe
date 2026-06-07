@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://di8cxr8b286aa"
-path="res://.godot/imported/alcholimetro.glb-bb4e794649557cd5ffdeb38fd5e40fec.scn"
+uid="uid://degwatuhw2l3a"
+path="res://.godot/imported/reloj.glb-d4e10d4242446632fb220243c854366c.scn"
 
 [deps]
 
-source_file="res://scripts/hud/interactuables/alcholimetro.glb"
-dest_files=["res://.godot/imported/alcholimetro.glb-bb4e794649557cd5ffdeb38fd5e40fec.scn"]
+source_file="res://modelos/ESCRITORIO/reloj/reloj.glb"
+dest_files=["res://.godot/imported/reloj.glb-d4e10d4242446632fb220243c854366c.scn"]
 
 [params]
 

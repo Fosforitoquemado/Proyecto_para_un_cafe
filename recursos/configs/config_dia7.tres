@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_jkgun")
 tiempo_de_carga = 1.0
+probabilidad_objeto_baul = 60
 probabilidad_tipo_vehiculo = 50
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

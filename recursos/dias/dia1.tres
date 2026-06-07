@@ -15,7 +15,7 @@
 [resource]
 script = ExtResource("1_ffbgm")
 nombre = "Lunes"
-mapa = Array[String](["res://scenes/mapa/main.tscn"])
+mapa = Array[String](["E:/proyectos github/Proyecto_para_un_cafe/scenes/mapa/mapa.tscn"])
 documentos_habilitados = Array[String](["vtv", "patente_faltantes"])
 config = ExtResource("4_prlxf")
 autos_permitidos = ExtResource("1_kv1hv")

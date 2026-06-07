@@ -10,7 +10,9 @@ extends Node3D
 @export var nodo_policia: Node3D
 @export var papel_multa: MeshInstance3D
 @export var nodo_papel_multa: Node3D
+@export var nodo_documentos:Node3D
 @export var dinero: MeshInstance3D
+@export var dinero_pack: Node3D
 @export var medidor_alcohol:MeshInstance3D
 @export var num_alcholemia:Label3D
 
@@ -46,6 +48,7 @@ var datos_documentos
 signal auto_ready
 
 signal auto_out
+
 
 func _ready() -> void:
 	var day = day_manager.get_day()
@@ -159,7 +162,7 @@ func mostrar_datos():
 			dialogo_actual["texto"],
 			dialogo_actual["tamanio_font"],
 			dialogo_actual["tamanio_final"],
-			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_font"],
 			dialogo_actual["tiempo_velocidad"],
 			array_final
 		)
@@ -250,10 +253,16 @@ func ocultar_docu_coima():
 		cedula.visible = false
 		seguro.visible = false
 		permiso.visible = false
-		dinero.visible = true
-		dinero.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
-		var tween4 = create_tween()
-		tween4.tween_property(dinero,"global_position",Vector3(1.1,0.4,1.2),((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+		if datos_documentos["score_auto"] > 499:
+			dinero_pack.visible = true
+			dinero_pack.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
+			var tween4 = create_tween()
+			tween4.tween_property(dinero_pack,"global_position",nodo_documentos.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
+		else:
+			dinero.visible = true
+			dinero.global_position = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles").global_position
+			var tween4 = create_tween()
+			tween4.tween_property(dinero,"global_position",nodo_documentos.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 3))
 	personaje_animator.play("agarrar papeles")
 	await  get_tree().create_timer(personaje_animator.current_animation_length / personaje_animator.speed_scale,false).timeout
 	personaje_animator.play("manejando")
@@ -261,6 +270,7 @@ func ocultar_docu_coima():
 	GameManager.auto_dupe.irse()
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length,false).timeout
 	dinero.visible = false
+	dinero_pack.visible = false
 	GameManager.auto_dupe.queue_free()
 	hud.papeles_on = false
 	auto_out.emit()
@@ -269,23 +279,24 @@ func ocultar_docu_multa():
 	var day = day_manager.get_day()
 	var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
 	var personaje_animator: AnimationPlayer = personaje.find_child("AnimationPlayer")
-	if "objeto_info" in datos_documentos:
+	if "objeto_info" in datos_documentos and datos_documentos["objeto_info"] != null:
 		for objetos in datos_documentos["objeto_info"]["cantidad"]:
 			if datos_documentos["objeto_info"]["objetos"][objetos]["legal"] == false:
 				licencia.visible = false
 				cedula.visible = false
 				seguro.visible = false
+				permiso.visible = false
 				var pantalla_negra = hud.find_child("pantalla_negro")
 				var sirenas = pantalla_negra.find_child("sirenas")
 				sirenas.play()
 				nodo_policia.show()
+				personaje_animator.play("manejando")
 				await get_tree().create_timer(1.5,false).timeout
 				pantalla_negra.show()
 				var tween = create_tween()
 				tween.tween_property(pantalla_negra,"modulate",Color(0.0, 0.0, 0.0, 1.0),3.0)
 				var tween2 = create_tween()
 				tween2.tween_property(sirenas,"volume_db",-30,3.5)
-				personaje_animator.play("manejando")
 				await get_tree().create_timer(4,false).timeout
 				GameManager.auto_dupe.queue_free()
 				nodo_policia.hide()
@@ -326,6 +337,7 @@ func ocultar_docu_multa():
 		var tween3 = create_tween()
 		tween3.tween_property(papel_multa,"global_position",nodo_papeles.global_position,((personaje_animator.current_animation_length / personaje_animator.speed_scale) / 2.5))
 		await personaje_animator.animation_finished
+	dialogo_ida(GameManager.auto_data["dialogo_ida_multa_info"]["resource"])
 	licencia.visible = false
 	cedula.visible = false
 	seguro.visible = false
@@ -356,14 +368,15 @@ func dialogo_ida(pool):
 			dialogo_actual["texto"],
 			dialogo_actual["tamanio_font"],
 			dialogo_actual["tamanio_final"],
-			dialogo_actual["tiempo"],
+			dialogo_actual["tiempo_font"],
 			dialogo_actual["tiempo_velocidad"],
 			array_final
 		)
 		
-		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
+		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + dialogo_actual["tiempo_cambio_dialogo"]
 		await get_tree().create_timer(tiempo_espera, false).timeout
-	GameManager.auto_dupe.ocultar_mensaje()
+	if GameManager.auto_dupe:
+		GameManager.auto_dupe.ocultar_mensaje()
 #condicion (0 es se va normal), (1 es se va con multa) y (2 es se va coimeado)
 func ocultar_documentos(condicion):
 	num_alcholemia.text = "..." 
@@ -372,7 +385,6 @@ func ocultar_documentos(condicion):
 		dialogo_ida(GameManager.auto_data["dialogo_ida_bien_info"]["resource"])
 	elif condicion == 1:
 		ocultar_docu_multa()
-		dialogo_ida(GameManager.auto_data["dialogo_ida_multa_info"]["resource"])
 	elif condicion == 2:
 		ocultar_docu_coima()
 		dialogo_ida(GameManager.auto_data["dialogo_ida_coima_info"]["resource"])

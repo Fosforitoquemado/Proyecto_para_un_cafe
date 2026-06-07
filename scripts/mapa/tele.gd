@@ -36,12 +36,12 @@ func prender_tele():
 	var tween = create_tween()
 	tween.tween_property(pantalla.material_overlay,"shader_parameter/global_alpha",0.2,0.15)
 
-func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo,tiempo_velocidad,array_final):
+func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo_font,tiempo_velocidad,array_final):
 	label_mensaje.text = ""
 	label_mensaje.label_settings.font_size = tamanio_font
 	
 	var tween = create_tween()
-	tween.tween_property(label_mensaje.label_settings,"font_size",tamanio_final,tiempo)
+	tween.tween_property(label_mensaje.label_settings,"font_size",tamanio_final,tiempo_font)
 	if array_final == true:
 		despedida.play()
 	for i in range(mensaje.length()):

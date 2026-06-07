@@ -14,13 +14,13 @@
 
 [resource]
 script = ExtResource("9_jij13")
-nombre = "sabado"
+nombre = "Sabado"
 fecha_hoy = {
 "anio": 2026,
 "dia": 17,
 "mes": 6
 }
-mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
+mapa = Array[String](["E:/proyectos github/Proyecto_para_un_cafe/scenes/mapa2/mapa_2.tscn"])
 documentos_habilitados = Array[String](["vtv", "patente_faltantes", "cedula", "licencia", "objetos_baul", "seguro", "alcholemia"])
 config = ExtResource("4_2k6ju")
 autos_permitidos = ExtResource("2_r1h6p")

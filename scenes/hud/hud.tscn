@@ -114,7 +114,10 @@ tags = {
 "title": "Sirena de la Policia de Argentina (Sonido) Kingvox SPMX"
 }
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "inspeccion_menu", "timer") groups=["ui_manager"]]
+[sub_resource type="LabelSettings" id="LabelSettings_bxlf6"]
+font_size = 25
+
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "yes_no_menu", "inspeccion_menu", "startday", "timer") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,7 +130,9 @@ autos_label = NodePath("Hud_elementos/Autos")
 fallos_label = NodePath("Hud_elementos/Fallos")
 dinero_label = NodePath("Hud_elementos/Dinero")
 hud_elementos = NodePath("Hud_elementos")
+yes_no_menu = NodePath("YES_NO_menu")
 inspeccion_menu = NodePath("Inspeccion_menu")
+startday = NodePath("Start_day")
 timer = NodePath("Hud_elementos/Timer")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
@@ -863,7 +868,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -875,6 +879,27 @@ script = ExtResource("6_bxlf6")
 
 [node name="sirenas" type="AudioStreamPlayer" parent="pantalla_negro" unique_id=1636504031]
 stream = SubResource("AudioStreamWAV_v3rms")
+
+[node name="dia" type="Label" parent="pantalla_negro" unique_id=860014635]
+visible = false
+top_level = true
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4201389
+anchor_top = 0.47299382
+anchor_right = 0.5798611
+anchor_bottom = 0.52700615
+offset_left = 72.0
+offset_top = 6.0
+offset_right = -72.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "HOLAAAAAAAA"
+label_settings = SubResource("LabelSettings_bxlf6")
+metadata/_edit_use_anchors_ = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3

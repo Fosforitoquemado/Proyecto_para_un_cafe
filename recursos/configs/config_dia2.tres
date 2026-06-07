@@ -5,4 +5,8 @@
 [resource]
 script = ExtResource("1_qsa1p")
 tiempo_de_carga = 0.5
+probabilidad_patente_cedula = 80
+probabilidad_fecha_cedula = 80
+probabilidad_modelo_cedula = 85
+probabilidad_vtv = 70
 metadata/_custom_type_script = "uid://bij3ao6vtfjge"

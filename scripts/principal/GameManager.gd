@@ -15,6 +15,7 @@ var dinero_ganado_hoy = 0
 var max_mates: int = 3
 var usos_mates: int = 0
 
+var dia_empezado = false
 var empezar_tiempo = false
 var tiempo_dia_total = 400.0
 var tiempo = 0.0
@@ -39,9 +40,12 @@ func _process(delta: float) -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	if empezar_tiempo == true:
 		tiempo += delta
-	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and empezar_tiempo:
-		finalizar_dia()
+	if tiempo >= tiempo_dia_total:
+		empezar_tiempo = false
+	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and dia_empezado == true:
+		dia_empezado = false
 		get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
+		
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_down"):
@@ -52,6 +56,10 @@ func _input(event: InputEvent) -> void:
 		print("dia_up")
 		SaveLoad.contents_to_save["day"] = SaveLoad.contents_to_save.values()[0] + 1
 		SaveLoad._save()
+	if event.is_action_pressed("ui_accept"):
+		Engine.time_scale = 20
+	elif event.is_action_released("ui_accept"):
+		Engine.time_scale = 1
 
 func _physics_process(delta: float) -> void:
 	tiempo_transcurrido_foxy += delta
@@ -71,9 +79,7 @@ func empezar_dia():
 	var day = daymanager.get_day()
 	tiempo_dia_total = day.tiempo_dia
 	empezar_tiempo = true
-
-func finalizar_dia():
-	empezar_tiempo = false
+	dia_empezado = true
 
 func generar_auto():
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
@@ -117,9 +123,19 @@ func sumar_auto():
 	autos_pasados += 1
 
 func update_score(score_auto):
-	dinero += score_auto
+	var dinero_inicial = dinero
+	var dinero_final = dinero + score_auto
+
+	var tween = create_tween()
+	tween.tween_method(actualizar_dinero, dinero_inicial, dinero_final, 0.5)
+	#dinero += score_auto
 	dinero_ganado_hoy += score_auto
 	print("DINERO: ",dinero)
+
+func actualizar_dinero(valor:float):
+	dinero = int(valor)
+	var hud = get_tree().get_first_node_in_group("ui_manager")
+	hud.update_ui()
 
 #func check_estado():
 	#if fallos >= max_fallos:

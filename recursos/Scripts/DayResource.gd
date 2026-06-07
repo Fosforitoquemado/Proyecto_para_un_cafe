@@ -22,9 +22,9 @@ class_name DayResource
 @export var objetosbaullegales:ObjetoArrayResource
 @export var objetosbaulilegales:ObjetoArrayResource
 
-@export var tiempo_limite:float = 120.0
+@export var tiempo_limite:float = 100.0
 
-@export var tiempo_dia:float = 400.0
+@export var tiempo_dia:float = 300.0
 
 @export var dinero_objetivo:float = 2000.0
 

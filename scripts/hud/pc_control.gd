@@ -8,40 +8,42 @@ extends Control
 #fecha pc
 @onready var fecha: Label = $Marco_Fecha/Fecha
 
-@onready var vtv: Label = $basedatos_img/VTV
+@export var vtv: Label
 
-@onready var apagado: TextureRect = $apagado
-@onready var cargando: TextureRect = $cargando
-@onready var cargando_base_de_datos: TextureRect = $basedatos_img/cargando
+@export var apagado: TextureRect
+@export var cargando: TextureRect
+@export var cargando_base_de_datos: TextureRect
 
-@onready var errores_auto_control: Control = $errores_auto_control
+@export var errores_auto_control: Control
 @onready var exclamacion: MeshInstance3D = $"../../exclamacion"
 @export var errores_label:PackedScene
 
 #labels base de datos cedula
-@onready var dominio: Label = $basedatos_img/Dominio_cedula
-@onready var modelo: Label = $basedatos_img/Modelo_cedula
-@onready var vence: Label = $basedatos_img/Vence
+@export var dominio: Label 
+@export var modelo: Label
+@export var vence: Label
 
 #labels base de datos licencia
-@onready var numero_licencia: Label = $basedatos_img/numero_licencia
-@onready var nombre_licencia: Label = $basedatos_img/nombre_licencia
-@onready var apellido_licencia: Label = $basedatos_img/apellido_licencia
-@onready var fecha_de_nacimiento_licencia: Label = $basedatos_img/Fecha_De_Nacimiento_licencia
-@onready var fecha_de_vencimiento_licencia: Label = $basedatos_img/Fecha_De_Vencimiento_licencia
+@export var numero_licencia: Label
+@export var nombre_licencia: Label
+@export var apellido_licencia: Label
+@export var fecha_de_nacimiento_licencia: Label
+@export var fecha_de_vencimiento_licencia: Label
 
 #labels seguro
-@onready var nombre_seguro: Label = $basedatos_img/seguro_shit/nombre_seguro
-@onready var id_seguro: Label = $basedatos_img/seguro_shit/id_seguro
-@onready var fecha_seguro: Label = $basedatos_img/seguro_shit/fecha_seguro
+@export var nombre_seguro: Label
+@export var id_seguro: Label
+@export var fecha_seguro: Label
 
 #labels permiso
-@onready var tipo_vehiculo_permiso: Label = $basedatos_img/permiso_shit/tipo_vehiculo
-@onready var fecha_permiso: Label = $basedatos_img/permiso_shit/vencimiento
+@export var tipo_vehiculo_permiso: Label
+@export var fecha_permiso: Label
 
-@onready var basedatos_img: TextureRect = $basedatos_img
+@export var basedatos_img: PanelContainer
 
 var basededatos_active = false
+
+@export var panel_windows:Array[DraggablePanelContainer]
 
 var tiempo_de_carga
 

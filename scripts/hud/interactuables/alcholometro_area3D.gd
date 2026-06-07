@@ -11,9 +11,12 @@ var position_medidor_alcholemia
 var ocupado = false
 
 var uicontroller
+var timer
 
 func _ready() -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
+	timer = uicontroller.get_node("Hud_elementos/Timer") 
+
 	position_medidor_alcholemia = nodo_alcholemia.global_position
 	pass # Replace with function body.
 
@@ -24,7 +27,7 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 		if event.pressed:
 			var state_machine = uicontroller.find_child("StateMachine")
 			if state_machine.current_state.name == "yes_no_menu" or state_machine.current_state.name == "inspeccion":
-				if uicontroller.papeles_on == true and num_alcohol.text != documentos_generator.auto_data["alcholemia"]:
+				if uicontroller.papeles_on == true and num_alcohol.text != documentos_generator.auto_data["alcholemia"] and timer.tiempo_transcurrido < timer.max_value - 8:
 					ocupado = true
 					var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
 					var animationplayermedidor:AnimationPlayer = medidor_alcholemia.find_child("AnimationPlayer")

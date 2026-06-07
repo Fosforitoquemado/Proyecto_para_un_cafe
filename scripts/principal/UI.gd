@@ -13,7 +13,9 @@ class_name UIManager
 
 #elementos HUD
 @export var hud_elementos: Control
+@export var yes_no_menu: Control
 @export var inspeccion_menu: Control
+@export var startday: Control
 @export var timer: ProgressBar
 
 var dia
@@ -26,6 +28,10 @@ func _ready() -> void:
 	update_ui()
 	dia = day_manager.get_day()
 	timer.max_value = dia.tiempo_limite
+	hud_elementos.hide()
+	inspeccion_menu.hide()
+	yes_no_menu.hide()
+	startday.hide()
 
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)

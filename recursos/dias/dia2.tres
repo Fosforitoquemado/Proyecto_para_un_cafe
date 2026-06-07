@@ -20,7 +20,7 @@ fecha_hoy = {
 "dia": 13,
 "mes": 6
 }
-mapa = Array[String](["res://scenes/mapa/main.tscn"])
+mapa = Array[String](["E:/proyectos github/Proyecto_para_un_cafe/scenes/mapa/mapa.tscn"])
 documentos_habilitados = Array[String](["vtv", "cedula"])
 config = ExtResource("4_ewh1j")
 autos_permitidos = ExtResource("1_hwjsw")

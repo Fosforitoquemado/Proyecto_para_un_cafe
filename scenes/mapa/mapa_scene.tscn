@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cn27nwpubwqeq"]
+
+[ext_resource type="ArrayMesh" uid="uid://tp4getuugd34" path="res://recursos/tres/mapa/modelo/modelo.tres" id="2_p106v"]
+[ext_resource type="Shader" uid="uid://j2000n5fn5pw" path="res://shaders/arboles.gdshader" id="3_dtod7"]
+[ext_resource type="Shader" uid="uid://k802f1uulchn" path="res://shaders/blur.gdshader" id="3_tfnl5"]
+[ext_resource type="PackedScene" uid="uid://ceuugsca2rd48" path="res://modelos/AUTOS/police/escortpolice.glb" id="4_24wre"]
+[ext_resource type="PackedScene" uid="uid://dkp6ngblq3jcp" path="res://scenes/mapa/NUBE.tscn" id="8_6pxv8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7lwh"]
+render_priority = 0
+shader = ExtResource("3_tfnl5")
+shader_parameter/blur_amount = 1.6000000760000002
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vt6gj"]
+material = SubResource("ShaderMaterial_k7lwh")
+flip_faces = true
+radius = 35.0
+height = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1dw7"]
+render_priority = 0
+shader = ExtResource("3_dtod7")
+shader_parameter/wind_speed = 1.5000000712500001
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_frequency = 0.9
+shader_parameter/albedo = Color(0.3372549, 0.34509805, 0.16470589, 1)
+shader_parameter/roughness = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ml2m4"]
+render_priority = 0
+shader = ExtResource("3_dtod7")
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_strength = 0.02
+shader_parameter/wind_frequency = 0.9
+shader_parameter/albedo = Color(0.337, 0.345, 0.165, 1)
+shader_parameter/roughness = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crek2"]
+render_priority = 0
+shader = ExtResource("3_dtod7")
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_strength = 0.02
+shader_parameter/wind_frequency = 0.9
+shader_parameter/albedo = Color(0.337, 0.345, 0.165, 1)
+shader_parameter/roughness = 0.8
+
+[node name="Mapa" type="Node3D" unique_id=101199151]
+
+[node name="Blur" type="MeshInstance3D" parent="." unique_id=952184407]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.54484, 0, -13.606969)
+mesh = SubResource("SphereMesh_vt6gj")
+
+[node name="calle" type="MeshInstance3D" parent="." unique_id=1591849445]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, 3.276)
+mesh = ExtResource("2_p106v")
+surface_material_override/4 = SubResource("ShaderMaterial_d1dw7")
+
+[node name="calle5" type="MeshInstance3D" parent="." unique_id=2101549216]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, 19.125)
+mesh = ExtResource("2_p106v")
+surface_material_override/4 = SubResource("ShaderMaterial_ml2m4")
+
+[node name="calle2" type="MeshInstance3D" parent="." unique_id=1593581710]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, -12.565)
+mesh = ExtResource("2_p106v")
+surface_material_override/4 = SubResource("ShaderMaterial_crek2")
+
+[node name="calle3" type="MeshInstance3D" parent="." unique_id=1104671668]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, -25.13)
+mesh = ExtResource("2_p106v")
+
+[node name="calle4" type="MeshInstance3D" parent="." unique_id=1513323064]
+transform = Transform3D(-3.9614825, 0, -1.2908149e-06, 0, 3.9614825, 0, 1.2908149e-06, 0, -3.9614825, -0.401, 0, -37.695)
+mesh = ExtResource("2_p106v")
+
+[node name="NUBES" parent="." unique_id=596915490 instance=ExtResource("8_6pxv8")]
+
+[node name="escortpolice" parent="." unique_id=1015932106 instance=ExtResource("4_24wre")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.0727468, 0.4416868, -2.4626682)

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://g8qf76klod4f" path="res://texture/hud/pc/cargando.png" id="2_p8x6u"]
 [ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
 [ext_resource type="Texture2D" uid="uid://dmlhcf60wp1j7" path="res://texture/hud/pc/para el cafe arte.jpg" id="5_2g4jo"]
+[ext_resource type="Script" uid="uid://dpn18nf2gnvy4" path="res://scripts/hud/draggable_panel.gd" id="7_50kaj"]
 
 [sub_resource type="Gradient" id="Gradient_p8x6u"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -55,12 +56,12 @@ font_color = Color(0, 0, 0, 1)
 font_size = 12
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_p8x6u"]
-font_size = 70
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_eoye0"]
 font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8x6u"]
+font_size = 70
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgmss"]
@@ -228,7 +229,7 @@ colors = PackedColorArray(0.10747976, 0.10747973, 0.10747973, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3cio7"]
 gradient = SubResource("Gradient_j6gv5")
 
-[node name="PCControl" type="Control" unique_id=2128863822]
+[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio", "modelo", "vence", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "panel_windows")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -236,7 +237,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jgmss")
+vtv = NodePath("PanelContainer_basededatos/basedatos_img/VTV")
+apagado = NodePath("apagado")
+cargando = NodePath("cargando")
+cargando_base_de_datos = NodePath("PanelContainer_basededatos/basedatos_img/cargando")
+errores_auto_control = NodePath("errores_auto_control")
 errores_label = ExtResource("2_2g4jo")
+dominio = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Dominio_cedula")
+modelo = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Modelo_cedula")
+vence = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Vence")
+numero_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/numero_licencia")
+nombre_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/nombre_licencia")
+apellido_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/apellido_licencia")
+fecha_de_nacimiento_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/Fecha_De_Nacimiento_licencia")
+fecha_de_vencimiento_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/Fecha_De_Vencimiento_licencia")
+nombre_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/nombre_seguro")
+id_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/id_seguro")
+fecha_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/fecha_seguro")
+tipo_vehiculo_permiso = NodePath("PanelContainer_basededatos/basedatos_img/permiso_shit/tipo_vehiculo")
+fecha_permiso = NodePath("PanelContainer_basededatos/basedatos_img/permiso_shit/vencimiento")
+basedatos_img = NodePath("PanelContainer_basededatos")
+panel_windows = [NodePath("PanelContainer_basededatos")]
 metadata/_edit_use_anchors_ = true
 
 [node name="apagado" type="TextureRect" parent="." unique_id=2146623088]
@@ -288,6 +309,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Loading . . ."
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=454571506]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -298,22 +320,29 @@ mouse_filter = 2
 texture = ExtResource("2_7mlyq")
 expand_mode = 1
 
-[node name="basedatos_img" type="TextureRect" parent="." unique_id=1561242220]
-z_index = 2
+[node name="PanelContainer_basededatos" type="PanelContainer" parent="." unique_id=1089494933]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24305555
-anchor_top = 0.24228396
+anchor_top = 0.24382716
 anchor_right = 0.7465278
-anchor_bottom = 0.74382716
+anchor_bottom = 0.7453704
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_50kaj")
+metadata/_edit_use_anchors_ = true
+
+[node name="basedatos_img" type="TextureRect" parent="PanelContainer_basededatos" unique_id=1561242220]
+z_index = -1
+layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("5_2g4jo")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="fondo" type="Panel" parent="basedatos_img" unique_id=374319973]
+[node name="fondo" type="Panel" parent="PanelContainer_basededatos/basedatos_img" unique_id=374319973]
 modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -323,119 +352,191 @@ anchor_top = -0.046153847
 anchor_right = 1.0172414
 anchor_bottom = 1.030769
 offset_bottom = 3.0517578e-05
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
 
-[node name="Dominio_cedula" type="Label" parent="basedatos_img" unique_id=227789323]
+[node name="cedula_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=294128314]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Dominio_cedula" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=227789323]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.112068966
-anchor_top = 0.40615386
-anchor_right = 0.3086207
-anchor_bottom = 0.47692308
-text = "XXX XXX"
+anchor_left = 2.240375
+anchor_top = 3.3
+anchor_right = 4.036925
+anchor_bottom = 3.945769
+text = "..."
 label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Modelo_cedula" type="Label" parent="basedatos_img" unique_id=755958289]
+[node name="Modelo_cedula" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=755958289]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.112068966
-anchor_top = 0.5446154
-anchor_right = 0.3086207
-anchor_bottom = 0.61538464
-text = "XXXX XXXXX"
+anchor_left = 1.875
+anchor_top = 4.425
+anchor_right = 4.4215517
+anchor_bottom = 5.0707693
+text = "..."
 label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Vence" type="Label" parent="basedatos_img" unique_id=377555048]
+[node name="Vence" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=377555048]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.024137931
-anchor_top = 0.68000007
-anchor_right = 0.4482758
-anchor_bottom = 0.75076926
-text = "XX/X/XXXX"
+anchor_left = 2.075
+anchor_top = 5.525
+anchor_right = 4.0974126
+anchor_bottom = 6.0207686
+text = "..."
 label_settings = SubResource("LabelSettings_8kqmc")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="VTV" type="Label" parent="basedatos_img" unique_id=186501805]
+[node name="licencia_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=1809356118]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="numero_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=1690966623]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.059375
+anchor_top = 3.3
+anchor_right = 8.059384
+anchor_bottom = 3.875
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="nombre_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=1400176272]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.65
+anchor_top = 4.15
+anchor_right = 6.9
+anchor_bottom = 4.5
+text = "..."
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="apellido_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=841059710]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.1
+anchor_top = 4.15
+anchor_right = 8.2
+anchor_bottom = 4.5
+text = "..."
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Nacimiento_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=414244865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.018
+anchor_top = 4.775
+anchor_right = 8.093004
+anchor_bottom = 5.35
+offset_left = -0.7200012
+offset_right = -0.7200012
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Vencimiento_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=657380899]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.97925
+anchor_top = 5.575
+anchor_right = 8.054255
+anchor_bottom = 6.15
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VTV" type="Label" parent="PanelContainer_basededatos/basedatos_img" unique_id=186501805]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6689656
 anchor_top = 0.4430769
 anchor_right = 0.86724144
 anchor_bottom = 0.74153847
-text = "X"
+text = "..."
 label_settings = SubResource("LabelSettings_p8x6u")
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="numero_licencia" type="Label" parent="basedatos_img" unique_id=1690966623]
+[node name="seguro_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=1844502554]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38965517
-anchor_top = 0.40615386
-anchor_right = 0.5862069
-anchor_bottom = 0.47692308
-text = "XXXXXXXX"
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -157.0
+offset_right = -280.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="nombre_seguro" type="Label" parent="PanelContainer_basededatos/basedatos_img/seguro_shit" unique_id=25503574]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 154.0
+offset_right = 611.0
+offset_bottom = 177.0
+text = "..."
+
+[node name="id_seguro" type="Label" parent="PanelContainer_basededatos/basedatos_img/seguro_shit" unique_id=899280153]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 177.0
+offset_right = 592.0
+offset_bottom = 200.0
+text = "..."
+
+[node name="fecha_seguro" type="Label" parent="PanelContainer_basededatos/basedatos_img/seguro_shit" unique_id=1731580681]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 203.0
+offset_right = 615.0
+offset_bottom = 226.0
+text = "..."
+
+[node name="permiso_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=1259545000]
+anchors_preset = 0
+offset_right = 583.0
+offset_bottom = 325.0
+mouse_filter = 2
+
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_basededatos/basedatos_img/permiso_shit" unique_id=1732746613]
+layout_mode = 0
+anchor_left = 0.72727275
+anchor_top = 0.064615384
+anchor_right = 0.79588336
+anchor_bottom = 0.13538462
+text = "..."
 metadata/_edit_use_anchors_ = true
 
-[node name="nombre_licencia" type="Label" parent="basedatos_img" unique_id=1400176272]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38965517
-anchor_top = 0.51076925
-anchor_right = 0.4862069
-anchor_bottom = 0.56307685
-text = "XXXXXXXX"
-label_settings = SubResource("LabelSettings_eoye0")
-horizontal_alignment = 1
+[node name="vencimiento" type="Label" parent="PanelContainer_basededatos/basedatos_img/permiso_shit" unique_id=433565621]
+layout_mode = 0
+anchor_left = 0.72727275
+anchor_top = 0.119092315
+anchor_right = 0.8987993
+anchor_bottom = 0.1898616
+text = "..."
 metadata/_edit_use_anchors_ = true
 
-[node name="apellido_licencia" type="Label" parent="basedatos_img" unique_id=841059710]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.48965517
-anchor_top = 0.51076925
-anchor_right = 0.5862069
-anchor_bottom = 0.56307685
-text = "XXXXXXX"
-label_settings = SubResource("LabelSettings_eoye0")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Fecha_De_Nacimiento_licencia" type="Label" parent="basedatos_img" unique_id=414244865]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38965517
-anchor_top = 0.58769226
-anchor_right = 0.5862069
-anchor_bottom = 0.6584615
-text = "XX/X/XXXX"
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Fecha_De_Vencimiento_licencia" type="Label" parent="basedatos_img" unique_id=657380899]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38965517
-anchor_top = 0.68615377
-anchor_right = 0.5862069
-anchor_bottom = 0.756923
-offset_top = 1.5258789e-05
-offset_bottom = 1.5258789e-05
-text = "XX/X/XXXX"
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="cargando" type="TextureRect" parent="basedatos_img" unique_id=820106928]
+[node name="cargando" type="TextureRect" parent="PanelContainer_basededatos/basedatos_img" unique_id=820106928]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -447,7 +548,7 @@ grow_vertical = 2
 mouse_filter = 0
 texture = SubResource("GradientTexture1D_eoye0")
 
-[node name="loading" type="AnimatedSprite2D" parent="basedatos_img/cargando" unique_id=1826199825]
+[node name="loading" type="AnimatedSprite2D" parent="PanelContainer_basededatos/basedatos_img/cargando" unique_id=1826199825]
 texture_filter = 1
 position = Vector2(290, 160)
 scale = Vector2(4, 4)
@@ -455,7 +556,7 @@ sprite_frames = SubResource("SpriteFrames_i4tyn")
 autoplay = "default"
 frame_progress = 0.29443476
 
-[node name="Label" type="Label" parent="basedatos_img/cargando" unique_id=184818179]
+[node name="Label" type="Label" parent="PanelContainer_basededatos/basedatos_img/cargando" unique_id=184818179]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -473,15 +574,21 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Loading . . ."
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="basedatos_img" unique_id=437047317]
-layout_mode = 0
-offset_left = -178.0
-offset_top = 449.0
-offset_right = -40.0
-offset_bottom = 482.0
+[node name="boton_base de datos" type="Panel" parent="." unique_id=437047317]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.30689654
+anchor_top = 1.3815385
+anchor_right = -0.19057709
+anchor_bottom = 1.4324644
+offset_left = 455.5448
+offset_top = -288.23694
+offset_right = 455.5448
+offset_bottom = -288.23694
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="label" type="Label" parent="basedatos_img/Panel" unique_id=1963276096]
+[node name="label" type="Label" parent="boton_base de datos" unique_id=1963276096]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 4.0
@@ -489,7 +596,7 @@ offset_right = 121.0
 offset_bottom = 27.0
 text = "Base de datos"
 
-[node name="BaseDatos" type="Button" parent="basedatos_img/Panel" unique_id=234778930]
+[node name="BaseDatos" type="Button" parent="boton_base de datos" unique_id=234778930]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -498,63 +605,6 @@ anchor_right = 0.9927536
 anchor_bottom = 1.0606066
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="seguro_shit" type="Control" parent="basedatos_img" unique_id=1844502554]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -280.0
-offset_top = -157.0
-offset_right = -280.0
-offset_bottom = -157.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="nombre_seguro" type="Label" parent="basedatos_img/seguro_shit" unique_id=25503574]
-layout_mode = 0
-offset_left = 521.0
-offset_top = 154.0
-offset_right = 611.0
-offset_bottom = 177.0
-text = "XXXXXXXXX"
-
-[node name="id_seguro" type="Label" parent="basedatos_img/seguro_shit" unique_id=899280153]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 177.0
-offset_right = 592.0
-offset_bottom = 200.0
-text = "XXXXXXX"
-
-[node name="fecha_seguro" type="Label" parent="basedatos_img/seguro_shit" unique_id=1731580681]
-layout_mode = 0
-offset_left = 515.0
-offset_top = 203.0
-offset_right = 615.0
-offset_bottom = 226.0
-text = "XXXXXXXXXX"
-
-[node name="permiso_shit" type="Control" parent="basedatos_img" unique_id=1259545000]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="tipo_vehiculo" type="Label" parent="basedatos_img/permiso_shit" unique_id=1732746613]
-layout_mode = 0
-offset_left = 424.0
-offset_top = 21.0
-offset_right = 464.0
-offset_bottom = 44.0
-text = "XXXX"
-
-[node name="vencimiento" type="Label" parent="basedatos_img/permiso_shit" unique_id=433565621]
-layout_mode = 0
-offset_left = 424.0
-offset_top = 38.705
-offset_right = 524.0
-offset_bottom = 61.705017
-text = "XXXXXXXXXX"
 
 [node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=1437975147]
 top_level = true
@@ -684,7 +734,7 @@ anchor_bottom = 0.37037036
 offset_bottom = 1.5258789e-05
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="basedatos_img/Panel/BaseDatos" to="." method="_on_base_datos_pressed"]
+[connection signal="pressed" from="boton_base de datos/BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="errores_auto_control/Label/cerrar_errores" to="." method="_on_cerrar_errores_pressed"]

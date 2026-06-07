@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://cwogv57yrcde4"]
 
 [ext_resource type="Script" uid="uid://bnrf43mc8uea3" path="res://scripts/principal/UI_Tienda.gd" id="1_1nyp6"]
+[ext_resource type="Texture2D" uid="uid://d1blk3xumqjiu" path="res://texture/hud/final/pantalla_final.png" id="2_1nyp6"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="20_hj60v"]
 [ext_resource type="Script" uid="uid://dlns8omfqc7cw" path="res://scripts/hud/statemachine/pause.gd" id="22_4ftxs"]
 [ext_resource type="PackedScene" uid="uid://5u6jdmye4ww6" path="res://scenes/hud/tutoriales_pop_up.tscn" id="25_78l3b"]
 [ext_resource type="Script" uid="uid://bvg6fqur086aj" path="res://scripts/hud/statemachine/tienda.gd" id="27_1fkab"]
 [ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="34_5cxvk"]
-
-[sub_resource type="Gradient" id="Gradient_yog28"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vyxmn"]
-gradient = SubResource("Gradient_yog28")
 
 [node name="HUD_tienda" type="Control" unique_id=1466224900 groups=["ui_manager"]]
 layout_mode = 3
@@ -85,35 +80,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture1D_vyxmn")
+texture = ExtResource("2_1nyp6")
+expand_mode = 1
 
 [node name="siguiente_dia" type="Button" parent="Tienda1/fondo" unique_id=1204586111]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8741319
-anchor_top = 0.8842593
-anchor_right = 0.9791667
-anchor_bottom = 0.9616891
-text = "SIGUIENTE DIA"
+anchor_left = 0.8342014
+anchor_top = 0.91049385
+anchor_right = 0.9861111
+anchor_bottom = 0.9879237
 metadata/_edit_use_anchors_ = true
 
 [node name="dinero" type="Label" parent="Tienda1/fondo" unique_id=1172271538]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8871528
-anchor_top = 0.027777778
-anchor_right = 0.9809028
-anchor_bottom = 0.08379096
+anchor_left = 0.5807292
+anchor_top = 0.16358025
+anchor_right = 0.9192708
+anchor_bottom = 0.40895063
 text = "DINERO: "
 metadata/_edit_use_anchors_ = true
 
 [node name="dinero_ganado_hoy" type="Label" parent="Tienda1/fondo" unique_id=67738603]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5086806
-anchor_top = 0.75308645
-anchor_right = 0.6666667
-anchor_bottom = 0.8090997
+anchor_left = 0.5477431
+anchor_top = 0.5848766
+anchor_right = 0.7057292
+anchor_bottom = 0.64088976
 offset_top = -3.0517578e-05
 text = "DINERO GANADO HOY: "
 metadata/_edit_use_anchors_ = true
@@ -121,30 +117,21 @@ metadata/_edit_use_anchors_ = true
 [node name="autos_revisados" type="Label" parent="Tienda1/fondo" unique_id=517673599]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5086806
-anchor_top = 0.7947531
-anchor_right = 0.6666667
-anchor_bottom = 0.8507682
+anchor_left = 0.5477431
+anchor_top = 0.6265432
+anchor_right = 0.7135417
+anchor_bottom = 0.68255836
 text = "AUTOS REVISADOS HOY: "
 metadata/_edit_use_anchors_ = true
 
 [node name="autos_errados" type="Label" parent="Tienda1/fondo" unique_id=874936145]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5086806
-anchor_top = 0.8410494
-anchor_right = 0.6666667
-anchor_bottom = 0.8970645
+anchor_left = 0.5477431
+anchor_top = 0.6728395
+anchor_right = 0.7057292
+anchor_bottom = 0.72885466
 text = "AUTOS FALLADOS: "
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="Tienda1" unique_id=2092071052]
-layout_mode = 0
-anchor_left = 0.026909722
-anchor_top = 0.032407407
-anchor_right = 0.4956597
-anchor_bottom = 0.9691358
-mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="listacontainer" type="VBoxContainer" parent="Tienda1" unique_id=79543492]
