@@ -22,6 +22,8 @@ var tiempo = 0.0
 
 var tiempo_transcurrido_foxy = 0
 
+var dia
+
 var auto_dupe
 var auto_data: Dictionary
 
@@ -42,10 +44,20 @@ func _process(delta: float) -> void:
 		tiempo += delta
 	if tiempo >= tiempo_dia_total:
 		empezar_tiempo = false
-	if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and dia_empezado == true:
-		dia_empezado = false
-		get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
-		
+	if uicontroller:
+		if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and dia_empezado == true:
+			if dinero >= dia.dinero_objetivo:
+				dia_empezado = false
+				var pantalla_negra = uicontroller.find_child("pantalla_negro")
+				pantalla_negra.oscurecer(4)
+				await get_tree().create_timer(5).timeout
+				get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
+			else:
+				dia_empezado = false
+				var pantalla_negra = uicontroller.find_child("pantalla_negro")
+				pantalla_negra.oscurecer(4)
+				await get_tree().create_timer(5).timeout
+				get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_down"):
@@ -76,8 +88,8 @@ func _physics_process(delta: float) -> void:
 
 func empezar_dia():
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
-	var day = daymanager.get_day()
-	tiempo_dia_total = day.tiempo_dia
+	dia = daymanager.get_day()
+	tiempo_dia_total = dia.tiempo_dia
 	empezar_tiempo = true
 	dia_empezado = true
 
@@ -100,6 +112,9 @@ func generar_auto():
 	
 	var personaje_data = auto_data["personaje_info"]
 	var personaje = personaje_data["personaje"].instantiate()
+	var torso = personaje.find_child("TORSO")
+	var material_personaje = torso.get_active_material(1)
+	material_personaje.albedo_color = Color(personaje_data["color"])
 	var nodo_personaje = auto_dupe.find_child("nodo_personaje")
 	nodo_personaje.add_child(personaje)
 	
@@ -136,18 +151,3 @@ func actualizar_dinero(valor:float):
 	dinero = int(valor)
 	var hud = get_tree().get_first_node_in_group("ui_manager")
 	hud.update_ui()
-
-#func check_estado():
-	#if fallos >= max_fallos:
-		#reset()
-		#print("fallos",fallos,"max_fallos",max_fallos)
-		#get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
-	#elif autos_pasados >= max_autos:
-		#reset()
-		#var daymanager = get_tree().get_first_node_in_group("DayManager")
-		#daymanager.sumar_dia()
-		#SaveLoad.contents_to_save["dinero"] = dinero_player
-		#SaveLoad.contents_to_save["day"] = daymanager.dia_actual
-		#SaveLoad._save()
-		#print("fallos",fallos,"max_fallos",max_fallos)
-		#get_tree().change_scene_to_file("res://scenes/hud/victoria.tscn")

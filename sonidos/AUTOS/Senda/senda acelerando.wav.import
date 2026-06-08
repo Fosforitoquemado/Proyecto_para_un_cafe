@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ch276mgi76h7q"
-path="res://.godot/imported/senda acelerando.wav-5a94b4ba4541927c79f32ce90512bbb4.sample"
+path="res://.godot/imported/senda acelerando.wav-296a843c192c9b4661d2ca87fe88ef28.sample"
 
 [deps]
 
-source_file="res://sonidos/Senda/senda acelerando.wav"
-dest_files=["res://.godot/imported/senda acelerando.wav-5a94b4ba4541927c79f32ce90512bbb4.sample"]
+source_file="res://sonidos/AUTOS/Senda/senda acelerando.wav"
+dest_files=["res://.godot/imported/senda acelerando.wav-296a843c192c9b4661d2ca87fe88ef28.sample"]
 
 [params]
 

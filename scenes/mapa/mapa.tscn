@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://dsovnopsul6vn" path="res://scripts/principal/DocumentosGenerator.gd" id="14_x3o8j"]
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="15_5q1hd"]
 [ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="16_i036v"]
-[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="17_36xy6"]
+[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/AUTOS/Doblo/freesound_community-birds-19624.wav" id="17_36xy6"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/pruebas_troll/fps_counter.gd" id="18_xd8lr"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="19_t5xcp"]
 [ext_resource type="PackedScene" uid="uid://74d2y0jwqh5u" path="res://modelos/EXTERIOR/tele/banquito/mesita 2.glb" id="20_jjms2"]
@@ -24,12 +24,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
 panorama = ExtResource("1_p3wn2")
 
-[sub_resource type="Sky" id="Sky_pm3ni"]
+[sub_resource type="Sky" id="Sky_p3wn2"]
 sky_material = SubResource("PanoramaSkyMaterial_o6xl0")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
-sky = SubResource("Sky_pm3ni")
+sky = SubResource("Sky_p3wn2")
 tonemap_mode = 2
 glow_enabled = true
 

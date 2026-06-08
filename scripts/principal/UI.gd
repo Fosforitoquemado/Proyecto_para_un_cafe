@@ -37,7 +37,10 @@ func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
 	dinero_label.text = str("Dinero: ",GameManager.dinero)
-
+	if GameManager.dinero < 0:
+		dinero_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	else:
+		dinero_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 func _on_fov_slider_value_changed(value: float) -> void:
 	CameraController.update_fov(value)
 	pass # Replace with function body.

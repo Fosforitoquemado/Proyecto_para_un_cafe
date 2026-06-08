@@ -34,6 +34,8 @@
 [ext_resource type="Script" uid="uid://dgygvt3hdcx3d" path="res://scripts/hud/statemachine/auto_baul.gd" id="28_4vn1o"]
 [ext_resource type="Script" uid="uid://c08ukm1ctupi5" path="res://scripts/hud/statemachine/pc.gd" id="29_pjbv8"]
 [ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="31_ncrl3"]
+[ext_resource type="AudioStream" uid="uid://cg0mqu4ixvfef" path="res://sonidos/HUD/ERROR/Error.wav" id="35_yog28"]
+[ext_resource type="AudioStream" uid="uid://dg8ibayhphcmb" path="res://sonidos/HUD/Acierto/Pickup.wav" id="36_vyxmn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
 font_size = 30
@@ -867,7 +869,6 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -990,6 +991,16 @@ baul_boton = NodePath("../../Inspeccion_menu/baul_location")
 
 [node name="transicion" type="Node" parent="StateMachine" unique_id=854658723]
 script = ExtResource("31_ncrl3")
+
+[node name="Sonidos" type="Node" parent="." unique_id=833533592]
+
+[node name="Error" type="AudioStreamPlayer" parent="Sonidos" unique_id=1719553838]
+stream = ExtResource("35_yog28")
+volume_db = 8.283
+pitch_scale = 1.67
+
+[node name="acierto" type="AudioStreamPlayer" parent="Sonidos" unique_id=1628905244]
+stream = ExtResource("36_vyxmn")
 
 [connection signal="pressed" from="Hud_principal/Button_quit" to="StateMachine/pause" method="_on_button_quit_pressed"]
 [connection signal="pressed" from="Hud_principal/Button_menu" to="StateMachine/pause" method="_on_button_menu_pressed"]

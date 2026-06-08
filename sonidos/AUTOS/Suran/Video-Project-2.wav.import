@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cfaiwxbwp7gu3"
-path="res://.godot/imported/Video-Project-2.wav-f95be52992409bb0c6197b0f41091224.sample"
+path="res://.godot/imported/Video-Project-2.wav-0ce96806746ff8f33efc7ea93b3f6a26.sample"
 
 [deps]
 
-source_file="res://sonidos/Suran/Video-Project-2.wav"
-dest_files=["res://.godot/imported/Video-Project-2.wav-f95be52992409bb0c6197b0f41091224.sample"]
+source_file="res://sonidos/AUTOS/Suran/Video-Project-2.wav"
+dest_files=["res://.godot/imported/Video-Project-2.wav-0ce96806746ff8f33efc7ea93b3f6a26.sample"]
 
 [params]
 

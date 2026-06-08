@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sn268bygnv2w"
+path="res://.godot/imported/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav-332d02bc73d210b821887a94e2f87eb9.sample"
+
+[deps]
+
+source_file="res://sonidos/AUTOS/F100/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav"
+dest_files=["res://.godot/imported/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav-332d02bc73d210b821887a94e2f87eb9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

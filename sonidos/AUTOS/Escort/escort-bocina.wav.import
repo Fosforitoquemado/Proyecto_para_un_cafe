@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d32qdqmy2ss56"
-path="res://.godot/imported/escort-bocina.wav-309bbdf7769dfa8175b578994cea2720.sample"
+path="res://.godot/imported/escort-bocina.wav-bbf13e066be5fe8ebd378aecee0bcadc.sample"
 
 [deps]
 
-source_file="res://sonidos/Escort/escort-bocina.wav"
-dest_files=["res://.godot/imported/escort-bocina.wav-309bbdf7769dfa8175b578994cea2720.sample"]
+source_file="res://sonidos/AUTOS/Escort/escort-bocina.wav"
+dest_files=["res://.godot/imported/escort-bocina.wav-bbf13e066be5fe8ebd378aecee0bcadc.sample"]
 
 [params]
 

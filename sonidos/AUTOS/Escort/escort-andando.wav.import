@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccxaxsmdfubw"
-path="res://.godot/imported/escort-andando.wav-551547ec79add2cfcfe887ecf18c1fda.sample"
+path="res://.godot/imported/escort-andando.wav-cacdd256be273d037b0ae2fa40ede2a9.sample"
 
 [deps]
 
-source_file="res://sonidos/Escort/escort-andando.wav"
-dest_files=["res://.godot/imported/escort-andando.wav-551547ec79add2cfcfe887ecf18c1fda.sample"]
+source_file="res://sonidos/AUTOS/Escort/escort-andando.wav"
+dest_files=["res://.godot/imported/escort-andando.wav-cacdd256be273d037b0ae2fa40ede2a9.sample"]
 
 [params]
 

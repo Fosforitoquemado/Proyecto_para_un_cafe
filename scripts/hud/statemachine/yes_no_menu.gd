@@ -19,6 +19,9 @@ extends UIState
 @export var progressbarmate: ProgressBar
 @onready var usos_mate_num: Label = $"../../YES_NO_menu/ProgressBar_mate/usos_mate_num"
 @onready var mate: Node3D = $"../../../Elementos_mesa/MATE"
+@onready var error: AudioStreamPlayer = $"../../Sonidos/Error"
+@onready var acierto: AudioStreamPlayer = $"../../Sonidos/acierto"
+
 @onready var state_machine: Node = $".."
 
 @onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
@@ -141,10 +144,12 @@ func _on_yes_pressed() -> void:
 			GameManager.sumar_auto()
 			pc_control.agregar_errores(DocumentosGenerator.auto_data["errores"])
 			print("FALLASTE❌❌")
+			error.play()
 		else:
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
 			#GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
+			acierto.play()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false
@@ -158,6 +163,7 @@ func _on_no_pressed() -> void:
 		yes_no_menu.hide()
 		if DocumentosGenerator.auto_ilegal == false:
 			print("FALLASTE❌❌")
+			error.play()
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 			GameManager.sumar_auto()
@@ -166,6 +172,7 @@ func _on_no_pressed() -> void:
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"])
 			#GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
+			acierto.play()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false
@@ -178,6 +185,7 @@ func _on_coimear_pressed() -> void:
 		yes_no_menu.hide()
 		if DocumentosGenerator.ilegalidades <= 1:
 			print("FALLASTE❌❌")
+			error.play()
 			GameManager.ida_auto(0)
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
@@ -188,6 +196,7 @@ func _on_coimear_pressed() -> void:
 			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * DocumentosGenerator.ilegalidades)
 			#GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			GameManager.sumar_auto()
+			acierto.play()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false
@@ -224,6 +233,7 @@ func tiempo_fuera():
 		timer._stop_timer()
 		yes_no_menu.hide()
 		print("FALLASTE❌❌")
+		error.play()
 		GameManager.sumar_fallo()
 		GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
 		GameManager.sumar_auto()

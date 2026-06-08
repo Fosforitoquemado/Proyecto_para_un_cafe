@@ -126,10 +126,13 @@ func generate_personaje():
 	var resource = personajes.array[num_personaje_random]
 	var personaje = resource.escena
 	var nombre = resource.nombre
+	var num_color = randi_range(0,colores.dictionary.size() - 1)
+	var color = colores.dictionary.values()[num_color]
 	var modelo_info = {
 		"personaje": personaje,
 		"num_personaje": num_personaje_random,
 		"nombre":  nombre,
+		"color": color,
 	}
 	return modelo_info
 #Dialogos

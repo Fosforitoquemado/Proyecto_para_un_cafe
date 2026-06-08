@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="19_f7g05"]
 [ext_resource type="Script" uid="uid://cjgj80nq1rxrt" path="res://scripts/principal/CameraController.gd" id="20_ov8lq"]
 [ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="21_8m8ba"]
-[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/Doblo/freesound_community-birds-19624.wav" id="22_5yivt"]
+[ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/AUTOS/Doblo/freesound_community-birds-19624.wav" id="22_5yivt"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/pruebas_troll/fps_counter.gd" id="23_m3qsi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_al4ve"]

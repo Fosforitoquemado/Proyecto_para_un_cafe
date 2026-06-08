@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_c35m8"]
 [ext_resource type="Animation" uid="uid://c50w31lvvlaux" path="res://recursos/animaciones/147/abrir_baul_147.res" id="1_uqf01"]
-[ext_resource type="AudioStream" uid="uid://dslkfhf5pfohr" path="res://sonidos/147/147-AUDIO.wav" id="2_1h8qw"]
+[ext_resource type="AudioStream" uid="uid://dslkfhf5pfohr" path="res://sonidos/AUTOS/147/147-AUDIO.wav" id="2_1h8qw"]
 [ext_resource type="Animation" uid="uid://enuru2npoq7n" path="res://recursos/animaciones/147/cerrar_baul_147.res" id="2_f83p8"]
 [ext_resource type="Animation" uid="uid://dv4b5x5l6ubd6" path="res://recursos/animaciones/147/ida_147.res" id="3_uqf01"]
-[ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/147/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
+[ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/AUTOS/147/147-parado-y-alejandose_2.wav" id="3_y4wwx"]
 [ext_resource type="Animation" uid="uid://ct6l6t55ugxft" path="res://recursos/animaciones/147/llegada_147.res" id="4_f83p8"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="4_s8a8r"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_0b446"]

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_5x5qu"]
 [ext_resource type="Animation" uid="uid://b5rybtm0jacdw" path="res://recursos/animaciones/escort/ida_escort.res" id="1_he68n"]
-[ext_resource type="AudioStream" uid="uid://ccxaxsmdfubw" path="res://sonidos/Escort/escort-andando.wav" id="2_a4ns1"]
+[ext_resource type="AudioStream" uid="uid://ccxaxsmdfubw" path="res://sonidos/AUTOS/Escort/escort-andando.wav" id="2_a4ns1"]
 [ext_resource type="Animation" uid="uid://cq8307xoktfjk" path="res://recursos/animaciones/escort/llegada_escort.res" id="2_psyxk"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="2_uxfpg"]
-[ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/Escort/escort-bocina.wav" id="3_he68n"]
+[ext_resource type="AudioStream" uid="uid://d32qdqmy2ss56" path="res://sonidos/AUTOS/Escort/escort-bocina.wav" id="3_he68n"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="4_it8kq"]
-[ext_resource type="AudioStream" uid="uid://cclvoq6g8bxwe" path="res://sonidos/Escort/escort-arranque.wav" id="4_psyxk"]
+[ext_resource type="AudioStream" uid="uid://cclvoq6g8bxwe" path="res://sonidos/AUTOS/Escort/escort-arranque.wav" id="4_psyxk"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="4_qb532"]
 [ext_resource type="PackedScene" uid="uid://cpy6lqle4hmut" path="res://scenes/hud/nodo_mensaje.tscn" id="6_t8f6x"]
 

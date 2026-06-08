@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b1vo3vvkdub7c"
-path="res://.godot/imported/F100 Yendose.wav-fce8b4deb8031aa290dcabbe07260f01.sample"
+path="res://.godot/imported/F100 Yendose.wav-48f826a5254f259c889dbe72816ddcab.sample"
 
 [deps]
 
-source_file="res://sonidos/F100/F100 Yendose.wav"
-dest_files=["res://.godot/imported/F100 Yendose.wav-fce8b4deb8031aa290dcabbe07260f01.sample"]
+source_file="res://sonidos/AUTOS/F100/F100 Yendose.wav"
+dest_files=["res://.godot/imported/F100 Yendose.wav-48f826a5254f259c889dbe72816ddcab.sample"]
 
 [params]
 

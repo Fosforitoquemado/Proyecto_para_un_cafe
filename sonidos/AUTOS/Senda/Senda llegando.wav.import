@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bq454yoqv25gg"
-path="res://.godot/imported/Senda llegando.wav-04689608bafdb53c358b47bf5004c1ce.sample"
+path="res://.godot/imported/Senda llegando.wav-5c812173d2a27bb1e84f12a7484d1fda.sample"
 
 [deps]
 
-source_file="res://sonidos/Senda/Senda llegando.wav"
-dest_files=["res://.godot/imported/Senda llegando.wav-04689608bafdb53c358b47bf5004c1ce.sample"]
+source_file="res://sonidos/AUTOS/Senda/Senda llegando.wav"
+dest_files=["res://.godot/imported/Senda llegando.wav-5c812173d2a27bb1e84f12a7484d1fda.sample"]
 
 [params]
 

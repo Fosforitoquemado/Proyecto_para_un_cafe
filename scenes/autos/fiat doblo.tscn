@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8ky8rxh2w23b" path="res://scripts/mapa/car.gd" id="1_8k4fm"]
 [ext_resource type="Animation" uid="uid://b4qhfopnmnmey" path="res://recursos/animaciones/doblo/ida_doblo.res" id="1_8mu5x"]
-[ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/Doblo/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
+[ext_resource type="AudioStream" uid="uid://giwmtocg6wx0" path="res://sonidos/AUTOS/Doblo/freesound_community-car-horn-beep-beep-two-beeps-honk-honk-6188-_1_.wav" id="2_bgstw"]
 [ext_resource type="Animation" uid="uid://dsbgm48yjy2o2" path="res://recursos/animaciones/doblo/llegada_doblo.res" id="2_cvks7"]
 [ext_resource type="Animation" uid="uid://caw2se168lu6g" path="res://recursos/animaciones/doblo/abrir_baul_doblo.res" id="2_mjggl"]
 [ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="3_keeyj"]

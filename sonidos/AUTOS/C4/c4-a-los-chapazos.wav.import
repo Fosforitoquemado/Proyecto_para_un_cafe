@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bstqx7r7mn3hc"
-path="res://.godot/imported/c4-a-los-chapazos.wav-1c90b79773daf025780b938ded4b0711.sample"
+path="res://.godot/imported/c4-a-los-chapazos.wav-b44e2c77c19ce9e6caacc0fc08609b93.sample"
 
 [deps]
 
-source_file="res://sonidos/C4/c4-a-los-chapazos.wav"
-dest_files=["res://.godot/imported/c4-a-los-chapazos.wav-1c90b79773daf025780b938ded4b0711.sample"]
+source_file="res://sonidos/AUTOS/C4/c4-a-los-chapazos.wav"
+dest_files=["res://.godot/imported/c4-a-los-chapazos.wav-b44e2c77c19ce9e6caacc0fc08609b93.sample"]
 
 [params]
 

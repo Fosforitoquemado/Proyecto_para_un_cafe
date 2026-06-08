@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dcxhhqaptajcg"
-path="res://.godot/imported/BOCINA.wav-e32d8eed684e2a8d4a9c3465f5f4db84.sample"
+path="res://.godot/imported/BOCINA.wav-4c897a7f85599eeb44473f974903b4a3.sample"
 
 [deps]
 
-source_file="res://sonidos/Suran/BOCINA.wav"
-dest_files=["res://.godot/imported/BOCINA.wav-e32d8eed684e2a8d4a9c3465f5f4db84.sample"]
+source_file="res://sonidos/AUTOS/Suran/BOCINA.wav"
+dest_files=["res://.godot/imported/BOCINA.wav-4c897a7f85599eeb44473f974903b4a3.sample"]
 
 [params]
 

@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_0dcif"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_3c6oy"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_qh0bn"]
-[ext_resource type="AudioStream" uid="uid://ch276mgi76h7q" path="res://sonidos/Senda/senda acelerando.wav" id="7_381td"]
-[ext_resource type="AudioStream" uid="uid://bq454yoqv25gg" path="res://sonidos/Senda/Senda llegando.wav" id="7_yxh2x"]
+[ext_resource type="AudioStream" uid="uid://ch276mgi76h7q" path="res://sonidos/AUTOS/Senda/senda acelerando.wav" id="7_381td"]
+[ext_resource type="AudioStream" uid="uid://bq454yoqv25gg" path="res://sonidos/AUTOS/Senda/Senda llegando.wav" id="7_yxh2x"]
 [ext_resource type="PackedScene" uid="uid://cpy6lqle4hmut" path="res://scenes/hud/nodo_mensaje.tscn" id="8_0dcif"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u5sf"]

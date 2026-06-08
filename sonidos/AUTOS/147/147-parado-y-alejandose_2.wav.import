@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yy6ovy6mh0v1"
-path="res://.godot/imported/147-parado-y-alejandose_2.wav-5c79ad9c075c9eafc0b23b5f9c3e7724.sample"
+path="res://.godot/imported/147-parado-y-alejandose_2.wav-be223da74bce5b33f78878d33a9fb2af.sample"
 
 [deps]
 
-source_file="res://sonidos/147/147-parado-y-alejandose_2.wav"
-dest_files=["res://.godot/imported/147-parado-y-alejandose_2.wav-5c79ad9c075c9eafc0b23b5f9c3e7724.sample"]
+source_file="res://sonidos/AUTOS/147/147-parado-y-alejandose_2.wav"
+dest_files=["res://.godot/imported/147-parado-y-alejandose_2.wav-be223da74bce5b33f78878d33a9fb2af.sample"]
 
 [params]
 

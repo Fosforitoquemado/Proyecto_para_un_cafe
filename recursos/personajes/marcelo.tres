@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PersonajesResource" format=3 uid="uid://b8gvkrb7434yt"]
+
+[ext_resource type="PackedScene" uid="uid://ji358c0hw1gp" path="res://scenes/personajes/marcelo.tscn" id="1_qqmia"]
+[ext_resource type="Script" uid="uid://b0is14tpnrnwv" path="res://recursos/Scripts/PersonajesResource.gd" id="2_2olew"]
+
+[resource]
+script = ExtResource("2_2olew")
+nombre = "marcelo"
+escena = ExtResource("1_qqmia")
+metadata/_custom_type_script = "uid://b0is14tpnrnwv"
