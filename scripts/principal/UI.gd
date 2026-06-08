@@ -22,6 +22,7 @@ var dia
 
 var auto_on = false
 var auto_out = false
+var auto_called = false
 var papeles_on = false
 
 func _ready() -> void:
@@ -54,6 +55,7 @@ func _on_elementos_mesa_auto_ready() -> void:
 func _on_elementos_mesa_auto_out() -> void:
 	auto_out = true
 	auto_on = false
+	auto_called = false
 	if GameManager.tiempo < GameManager.tiempo_dia_total:
 		state_machine.change_to("main_view")
 	pass # Replace with function body.

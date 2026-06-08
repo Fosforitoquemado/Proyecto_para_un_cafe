@@ -45,18 +45,18 @@ func _process(delta: float) -> void:
 	if tiempo >= tiempo_dia_total:
 		empezar_tiempo = false
 	if uicontroller:
-		if tiempo >= tiempo_dia_total and uicontroller.auto_on == false and dia_empezado == true:
+		if tiempo >= tiempo_dia_total and uicontroller.auto_called == false and dia_empezado == true:
 			if dinero >= dia.dinero_objetivo:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
-				await get_tree().create_timer(5).timeout
+				await get_tree().create_timer(4).timeout
 				get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
 			else:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
-				await get_tree().create_timer(5).timeout
+				await get_tree().create_timer(4).timeout
 				get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
 
 func _input(event: InputEvent) -> void:

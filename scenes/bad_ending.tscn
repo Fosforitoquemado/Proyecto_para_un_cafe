@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_0r2o1"]
 [ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="6_anxh3"]
 [ext_resource type="Script" uid="uid://cn8h18xfunroa" path="res://scripts/hud/hud_main_menu/button_game_over.gd" id="8_nq1b3"]
+[ext_resource type="AudioStream" uid="uid://bt1vl0jgd4c8e" path="res://sonidos/bad_ending/viento.wav" id="9_nq1b3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qon42"]
 panorama = ExtResource("1_6s2g6")
@@ -236,5 +237,10 @@ grow_vertical = 2
 text = "menu"
 script = ExtResource("8_nq1b3")
 metadata/_edit_use_anchors_ = true
+
+[node name="viento" type="AudioStreamPlayer" parent="." unique_id=704307967]
+stream = ExtResource("9_nq1b3")
+volume_db = -8.0
+autoplay = true
 
 [connection signal="pressed" from="game_over/Button" to="game_over/Button" method="_on_pressed"]

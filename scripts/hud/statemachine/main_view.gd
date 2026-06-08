@@ -32,6 +32,7 @@ func handle_input(event: InputEvent) -> void:
 
 func _on_button_siguiente_pressed() -> void:
 	siguiente.visible = false
+	HUD.auto_called = true
 	GameManager.generar_auto()
 	pc_control.borrar_errores()
 	state_machine.change_to("transicion")

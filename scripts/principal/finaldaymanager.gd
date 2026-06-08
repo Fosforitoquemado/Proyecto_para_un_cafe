@@ -11,6 +11,8 @@ func _ready() -> void:
 	var state_machine = tienda.find_child("StateMachine")
 	var dia = day_manager.get_day()
 	var dia_actual = day_manager.dia_actual
+	var pantalla_negra = tienda.find_child("pantalla_negro")
+	pantalla_negra.aclarar(2)
 	await get_tree().process_frame
 	state_machine.change_to("tienda")
 	# CONTROL DE SEGURIDAD: Validamos que dialogostele no sea Nil y tenga la propiedad 'array'

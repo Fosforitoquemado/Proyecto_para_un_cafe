@@ -1,7 +1,10 @@
 extends TextureRect
 
-@onready var hud: UIManager = $".."
+@export var hud:Control
 @onready var dia: Label = $dia
+
+func _ready() -> void:
+	visible = true
 
 func oscurecer(tiempo):
 	show()

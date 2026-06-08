@@ -12,6 +12,7 @@ var dia
 
 var auto_on = false
 var auto_out = false
+var auto_called = false
 var papeles_on = false
 
 func _ready() -> void:
