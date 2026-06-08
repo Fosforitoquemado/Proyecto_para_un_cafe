@@ -185,7 +185,6 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Hud_elementos" type="Control" parent="." unique_id=265028241]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -287,11 +286,15 @@ modulate = Color(0, 18.892157, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3810764
-anchor_right = 0.6171875
-anchor_bottom = 0.06944445
-grow_horizontal = 2
+anchor_left = 0.9548611
+anchor_top = 0.38580248
+anchor_right = 0.9878472
+anchor_bottom = 0.6944444
+offset_bottom = 3.0517578e-05
+grow_horizontal = 0
+grow_vertical = 2
 mouse_filter = 2
+fill_mode = 3
 show_percentage = false
 script = ExtResource("2_cgeww")
 HUD = NodePath("../..")
@@ -299,22 +302,29 @@ statemachine = NodePath("../../StateMachine")
 yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
 metadata/_edit_use_anchors_ = true
 
+[node name="mate" type="TextureRect" parent="Hud_elementos/Timer" unique_id=79035619]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.118421055
+anchor_top = 0.23005
+anchor_right = 0.9078953
+anchor_bottom = 0.38004982
+offset_top = 78.990005
+offset_right = -2.2888184e-05
+offset_bottom = 83.990036
+texture = ExtResource("5_v3rms")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="limite_mate" type="Panel" parent="Hud_elementos/Timer" unique_id=235279543]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-anchor_left = 0.30147058
-anchor_right = 0.3125
-anchor_bottom = 1.0222222
-metadata/_edit_use_anchors_ = true
-
-[node name="mate" type="TextureRect" parent="Hud_elementos/Timer" unique_id=79035619]
-layout_mode = 0
-anchor_left = 0.26102942
-anchor_right = 0.35661766
-anchor_bottom = 0.79999995
-texture = ExtResource("5_v3rms")
-expand_mode = 1
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.30400002
+offset_top = 80.0
+offset_bottom = 80.0
 metadata/_edit_use_anchors_ = true
 
 [node name="fondo" type="TextureRect" parent="Hud_elementos/Timer" unique_id=77058186]
@@ -462,14 +472,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccionar" type="TextureRect" parent="YES_NO_menu" unique_id=1187776531]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4982639
-anchor_top = 0.845679
-anchor_right = 0.6545139
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 2.0
-offset_right = -4.0
-offset_bottom = 2.0
+anchor_left = 0.052083332
+anchor_top = 0.20061728
+anchor_right = 0.20833333
+anchor_bottom = 0.354938
 texture = ExtResource("10_t335x")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -493,14 +499,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Coima" type="TextureRect" parent="YES_NO_menu" unique_id=1681919718]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6371528
-anchor_top = 0.8472222
-anchor_right = 0.7934028
-anchor_bottom = 1.0015432
-offset_left = 6.0
-offset_top = 1.0
-offset_right = 6.0
-offset_bottom = 1.0
+anchor_left = 0.49479166
+anchor_top = 0.84876543
+anchor_right = 0.6510417
+anchor_bottom = 1.0030864
 texture = ExtResource("11_rrdev")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -607,7 +609,6 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_menu" type="Control" parent="." unique_id=2071500266]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -619,10 +620,10 @@ mouse_filter = 2
 [node name="Inspeccion_VTV_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8420139
-anchor_top = 0.35493827
-anchor_right = 0.9982639
-anchor_bottom = 0.5092593
+anchor_left = 0.21788195
+anchor_top = 0.06481481
+anchor_right = 0.37413195
+anchor_bottom = 0.21913585
 offset_bottom = -3.0517578e-05
 texture = ExtResource("12_2h4gs")
 expand_mode = 1
@@ -645,10 +646,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_Delantera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8420139
-anchor_top = 0.47839507
-anchor_right = 0.9982639
-anchor_bottom = 0.63271606
+anchor_left = 0.21788195
+anchor_top = 0.18827161
+anchor_right = 0.37413195
+anchor_bottom = 0.3425926
 texture = ExtResource("13_o428i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -670,10 +671,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_Trasera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8420139
-anchor_top = 0.6018519
-anchor_right = 0.9982639
-anchor_bottom = 0.75617284
+anchor_left = 0.21788195
+anchor_top = 0.31172845
+anchor_right = 0.37413195
+anchor_bottom = 0.46604937
 offset_top = -3.0517578e-05
 texture = ExtResource("14_voexc")
 expand_mode = 1
@@ -722,10 +723,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_mesa_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8420139
-anchor_top = 0.72530866
-anchor_right = 0.9982639
-anchor_bottom = 0.8796296
+anchor_left = 0.21788195
+anchor_top = 0.4351852
+anchor_right = 0.37413195
+anchor_bottom = 0.58950615
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("16_k4jul")
@@ -747,11 +748,13 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_volver_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
-layout_mode = 0
-anchor_left = 0.8420139
-anchor_top = 0.84876543
-anchor_right = 0.9982639
-anchor_bottom = 1.0030864
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21788195
+anchor_top = 0.55864197
+anchor_right = 0.37413195
+anchor_bottom = 0.712963
 texture = ExtResource("17_7wrco")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -768,6 +771,33 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion_volver
+"
+script = ExtResource("7_v3rms")
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccionar" type="TextureRect" parent="Inspeccion_menu" unique_id=1840112436]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052083332
+anchor_top = 0.20061728
+anchor_right = 0.20833333
+anchor_bottom = 0.354938
+texture = ExtResource("10_t335x")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inspeccion" type="Button" parent="Inspeccion_menu/Inspeccionar" unique_id=1800599027]
+modulate = Color(0, 0, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08888889
+anchor_top = 0.1500003
+anchor_right = 0.9166667
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Inspeccion
 "
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -869,6 +899,7 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164 node_paths=PackedStringArray("hud")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1071,6 +1102,11 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
+[connection signal="focus_entered" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_mouse_exited"]
+[connection signal="pressed" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="StateMachine/inspeccion" method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrarbaul/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
 [connection signal="focus_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_exited"]
