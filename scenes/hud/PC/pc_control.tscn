@@ -257,10 +257,6 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("11_l7fmd")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_eoye0"]
-font_size = 10
-font_color = Color(0, 0, 0, 1)
-
 [node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio", "modelo", "vence", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "panel_windows")]
 layout_mode = 3
 anchors_preset = 15
@@ -832,7 +828,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="nombre_licencia2" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=949737508]
+[node name="nombre_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=949737508]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.353125
@@ -843,33 +839,27 @@ offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2511.003
 offset_bottom = -1530.0001
+text = "..."
 label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="nombre_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=2012181133]
+[node name="apellido_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=2032655172]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 5.65
-anchor_top = 4.15
-anchor_right = 6.9
-anchor_bottom = 4.5
+anchor_left = 6.56875
+anchor_top = 3.8075
+anchor_right = 8.568759
+anchor_bottom = 4.3825
+offset_left = -1939.0
+offset_top = -1320.0
+offset_right = -2511.003
+offset_bottom = -1530.0001
 text = "..."
-label_settings = SubResource("LabelSettings_eoye0")
+label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="apellido_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=449271090]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 7.1
-anchor_top = 4.15
-anchor_right = 8.2
-anchor_bottom = 4.5
-text = "..."
-label_settings = SubResource("LabelSettings_eoye0")
-horizontal_alignment = 1
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Fecha_De_Nacimiento_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=1852400088]

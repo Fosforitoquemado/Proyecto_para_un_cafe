@@ -132,7 +132,15 @@ func agregar_errores(errores):
 		var vbox = errores_auto_control.find_child("VBoxContainer")
 		vbox.add_child(errores_labels)
 		errores_labels.text = errores[i]
-	
+
+func ajustar_texto(label: Label):
+	var font_size = 32
+	label.label_settings.font_size = font_size
+
+	while label.get_minimum_size().x > label.size.x and font_size > 8:
+		font_size -= 1
+		label.label_settings.font_size = font_size
+
 func _on_base_datos_pressed() -> void:
 	if basededatos_active == true:
 		basedatos_img.visible = false
