@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktrncrhlq68b"
-path="res://.godot/imported/para el cafe (1).png-da0153fdfedc68430655677f817f5b4b.ctex"
+uid="uid://ntxpo2mo37yc"
+path="res://.godot/imported/14.png-eedcd53b3def5dd1ce451473c792cddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/hud/pc/para el cafe (1).png"
-dest_files=["res://.godot/imported/para el cafe (1).png-da0153fdfedc68430655677f817f5b4b.ctex"]
+source_file="res://texture/hud/pc/ventanas/14.png"
+dest_files=["res://.godot/imported/14.png-eedcd53b3def5dd1ce451473c792cddd.ctex"]
 
 [params]
 

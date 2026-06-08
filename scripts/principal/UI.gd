@@ -13,6 +13,7 @@ class_name UIManager
 
 #elementos HUD
 @export var hud_elementos: Control
+@export var hud_principal: Control
 @export var yes_no_menu: Control
 @export var inspeccion_menu: Control
 @export var startday: Control
@@ -30,6 +31,7 @@ func _ready() -> void:
 	dia = day_manager.get_day()
 	timer.max_value = dia.tiempo_limite
 	hud_elementos.hide()
+	hud_principal.hide()
 	inspeccion_menu.hide()
 	yes_no_menu.hide()
 	startday.hide()

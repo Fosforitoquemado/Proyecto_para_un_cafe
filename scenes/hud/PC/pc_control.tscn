@@ -5,8 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://hosdpxt5jhkj" path="res://texture/hud/pc/para el cafe arte.png" id="2_7mlyq"]
 [ext_resource type="Texture2D" uid="uid://g8qf76klod4f" path="res://texture/hud/pc/cargando.png" id="2_p8x6u"]
 [ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
-[ext_resource type="Texture2D" uid="uid://dmlhcf60wp1j7" path="res://texture/hud/pc/para el cafe arte.jpg" id="5_2g4jo"]
+[ext_resource type="Texture2D" uid="uid://dmlhcf60wp1j7" path="res://texture/hud/pc/ventanas/para el cafe arte.jpg" id="5_2g4jo"]
 [ext_resource type="Script" uid="uid://dpn18nf2gnvy4" path="res://scripts/hud/draggable_panel.gd" id="7_50kaj"]
+[ext_resource type="Texture2D" uid="uid://cyd7h5vuwj1b8" path="res://texture/hud/pc/ventanas/New Piskel.png" id="8_s5248"]
+[ext_resource type="Texture2D" uid="uid://ntxpo2mo37yc" path="res://texture/hud/pc/ventanas/14.png" id="9_0v4kl"]
+[ext_resource type="Texture2D" uid="uid://bdf2rs5huwlpf" path="res://texture/hud/pc/ventanas/10.png" id="10_8tnld"]
+[ext_resource type="FontFile" uid="uid://dlv26o8ojswth" path="res://fonts/pixeloid-font/PixeloidSans-lxa3y.ttf" id="11_l7fmd"]
+[ext_resource type="Texture2D" uid="uid://bbedbs56tj1h4" path="res://texture/hud/pc/ventanas/13.png" id="12_q8nfh"]
+[ext_resource type="Texture2D" uid="uid://bff7hitsvbiyq" path="res://texture/hud/pc/ventanas/11.png" id="13_i1ayw"]
+[ext_resource type="Texture2D" uid="uid://bcmosg4tk8c8r" path="res://texture/hud/pc/ventanas/12.png" id="14_js1vk"]
 
 [sub_resource type="Gradient" id="Gradient_p8x6u"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -48,21 +55,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_8kqmc"]
-font_size = 12
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_eoye0"]
-font_size = 10
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_p8x6u"]
-font_size = 70
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgmss"]
 atlas = ExtResource("2_y3tss")
@@ -229,6 +221,46 @@ colors = PackedColorArray(0.10747976, 0.10747973, 0.10747973, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3cio7"]
 gradient = SubResource("Gradient_j6gv5")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxn6l"]
+atlas = ExtResource("8_s5248")
+region = Rect2(0, 1, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x0me"]
+atlas = ExtResource("8_s5248")
+region = Rect2(0, 12, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gg5t"]
+atlas = ExtResource("8_s5248")
+region = Rect2(11, 1, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11jh6"]
+atlas = ExtResource("8_s5248")
+region = Rect2(22, 1, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04bk8"]
+atlas = ExtResource("8_s5248")
+region = Rect2(11, 12, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4no20"]
+atlas = ExtResource("8_s5248")
+region = Rect2(22, 12, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxcnt"]
+atlas = ExtResource("8_s5248")
+region = Rect2(0, 23, 11, 9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8x6u"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
+font = ExtResource("11_l7fmd")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eoye0"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
 [node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio", "modelo", "vence", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "panel_windows")]
 layout_mode = 3
 anchors_preset = 15
@@ -237,20 +269,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jgmss")
-vtv = NodePath("PanelContainer_basededatos/basedatos_img/VTV")
+vtv = NodePath("PanelContainer_VTV/TextureRect/VTV")
 apagado = NodePath("apagado")
 cargando = NodePath("cargando")
 cargando_base_de_datos = NodePath("PanelContainer_basededatos/basedatos_img/cargando")
 errores_auto_control = NodePath("errores_auto_control")
 errores_label = ExtResource("2_2g4jo")
-dominio = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Dominio_cedula")
-modelo = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Modelo_cedula")
-vence = NodePath("PanelContainer_basededatos/basedatos_img/cedula_shit/Vence")
-numero_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/numero_licencia")
-nombre_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/nombre_licencia")
-apellido_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/apellido_licencia")
-fecha_de_nacimiento_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/Fecha_De_Nacimiento_licencia")
-fecha_de_vencimiento_licencia = NodePath("PanelContainer_basededatos/basedatos_img/licencia_shit/Fecha_De_Vencimiento_licencia")
+dominio = NodePath("")
+modelo = NodePath("")
+vence = NodePath("")
+numero_licencia = NodePath("")
+nombre_licencia = NodePath("")
+apellido_licencia = NodePath("")
+fecha_de_nacimiento_licencia = NodePath("")
+fecha_de_vencimiento_licencia = NodePath("")
 nombre_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/nombre_seguro")
 id_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/id_seguro")
 fecha_seguro = NodePath("PanelContainer_basededatos/basedatos_img/seguro_shit/fecha_seguro")
@@ -321,6 +353,7 @@ texture = ExtResource("2_7mlyq")
 expand_mode = 1
 
 [node name="PanelContainer_basededatos" type="PanelContainer" parent="." unique_id=1089494933]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 3
 layout_mode = 1
@@ -360,120 +393,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Dominio_cedula" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=227789323]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.240375
-anchor_top = 3.3
-anchor_right = 4.036925
-anchor_bottom = 3.945769
-text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Modelo_cedula" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=755958289]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.875
-anchor_top = 4.425
-anchor_right = 4.4215517
-anchor_bottom = 5.0707693
-text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Vence" type="Label" parent="PanelContainer_basededatos/basedatos_img/cedula_shit" unique_id=377555048]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.075
-anchor_top = 5.525
-anchor_right = 4.0974126
-anchor_bottom = 6.0207686
-text = "..."
-label_settings = SubResource("LabelSettings_8kqmc")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="licencia_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=1809356118]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
-
-[node name="numero_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=1690966623]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 6.059375
-anchor_top = 3.3
-anchor_right = 8.059384
-anchor_bottom = 3.875
-text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="nombre_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=1400176272]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 5.65
-anchor_top = 4.15
-anchor_right = 6.9
-anchor_bottom = 4.5
-text = "..."
-label_settings = SubResource("LabelSettings_eoye0")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="apellido_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=841059710]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 7.1
-anchor_top = 4.15
-anchor_right = 8.2
-anchor_bottom = 4.5
-text = "..."
-label_settings = SubResource("LabelSettings_eoye0")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Fecha_De_Nacimiento_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=414244865]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 6.018
-anchor_top = 4.775
-anchor_right = 8.093004
-anchor_bottom = 5.35
-offset_left = -0.7200012
-offset_right = -0.7200012
-text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Fecha_De_Vencimiento_licencia" type="Label" parent="PanelContainer_basededatos/basedatos_img/licencia_shit" unique_id=657380899]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 5.97925
-anchor_top = 5.575
-anchor_right = 8.054255
-anchor_bottom = 6.15
-text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="VTV" type="Label" parent="PanelContainer_basededatos/basedatos_img" unique_id=186501805]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6689656
-anchor_top = 0.4430769
-anchor_right = 0.86724144
-anchor_bottom = 0.74153847
-text = "..."
-label_settings = SubResource("LabelSettings_p8x6u")
-horizontal_alignment = 1
 
 [node name="seguro_shit" type="Control" parent="PanelContainer_basededatos/basedatos_img" unique_id=1844502554]
 layout_mode = 1
@@ -733,6 +657,272 @@ anchor_right = 0.3359375
 anchor_bottom = 0.37037036
 offset_bottom = 1.5258789e-05
 metadata/_edit_use_anchors_ = true
+
+[node name="Errores_icon" type="TextureRect" parent="." unique_id=473370627]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 62.0
+offset_right = 222.0
+offset_bottom = 98.0
+texture = SubResource("AtlasTexture_bxn6l")
+
+[node name="VTV_icon" type="TextureRect" parent="." unique_id=810743276]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 110.0
+offset_right = 222.0
+offset_bottom = 146.0
+texture = SubResource("AtlasTexture_4x0me")
+
+[node name="Cedula_icon" type="TextureRect" parent="." unique_id=679574845]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 153.0
+offset_right = 222.0
+offset_bottom = 189.0
+texture = SubResource("AtlasTexture_2gg5t")
+
+[node name="Licencia_icon" type="TextureRect" parent="." unique_id=1007312870]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 197.0
+offset_right = 222.0
+offset_bottom = 233.0
+texture = SubResource("AtlasTexture_11jh6")
+
+[node name="Seguro_icon" type="TextureRect" parent="." unique_id=1401685721]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 242.0
+offset_right = 222.0
+offset_bottom = 278.0
+texture = SubResource("AtlasTexture_04bk8")
+
+[node name="Permiso_icon" type="TextureRect" parent="." unique_id=1915018876]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 284.0
+offset_right = 222.0
+offset_bottom = 320.0
+texture = SubResource("AtlasTexture_4no20")
+
+[node name="Instrucciones_icon" type="TextureRect" parent="." unique_id=365363424]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 331.0
+offset_right = 222.0
+offset_bottom = 367.0
+texture = SubResource("AtlasTexture_dxcnt")
+
+[node name="PanelContainer_VTV" type="PanelContainer" parent="." unique_id=1692584162]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 125.0
+offset_right = 770.0
+offset_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_VTV" unique_id=34372040]
+layout_mode = 2
+texture = ExtResource("9_0v4kl")
+expand_mode = 1
+
+[node name="VTV" type="Label" parent="PanelContainer_VTV/TextureRect" unique_id=1512144638]
+layout_mode = 0
+offset_top = 188.0
+offset_right = 320.0
+offset_bottom = 284.0
+text = "..."
+label_settings = SubResource("LabelSettings_p8x6u")
+horizontal_alignment = 1
+
+[node name="PanelContainer_cedula" type="PanelContainer" parent="." unique_id=1295903964]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 125.0
+offset_right = 770.0
+offset_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_cedula" unique_id=588323047]
+layout_mode = 2
+texture = ExtResource("10_8tnld")
+expand_mode = 1
+
+[node name="Dominio_cedula" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=395616634]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.4310002
+anchor_top = 3.72
+anchor_right = 4.2275496
+anchor_bottom = 4.3657694
+offset_left = -716.92004
+offset_top = -1320.0
+offset_right = -1091.8159
+offset_bottom = -1528.3077
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Modelo_cedula" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=1560029330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.4310002
+anchor_top = 3.86
+anchor_right = 4.2275496
+anchor_bottom = 4.5057693
+offset_left = -716.92004
+offset_top = -1320.0
+offset_right = -1091.8159
+offset_bottom = -1528.3077
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Vence" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=157430525]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.4310002
+anchor_top = 3.9825
+anchor_right = 4.2275496
+anchor_bottom = 4.628269
+offset_left = -716.92004
+offset_top = -1320.0
+offset_right = -1091.8159
+offset_bottom = -1528.3077
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer_licencia" type="PanelContainer" parent="." unique_id=803623721]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 125.0
+offset_right = 770.0
+offset_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_licencia" unique_id=198292075]
+layout_mode = 2
+texture = ExtResource("12_q8nfh")
+expand_mode = 1
+
+[node name="numero_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=186197611]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.340625
+anchor_top = 3.72
+anchor_right = 8.340634
+anchor_bottom = 4.295
+offset_left = -1939.0
+offset_top = -1320.0
+offset_right = -2429.003
+offset_bottom = -1530.0001
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="nombre_licencia2" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=949737508]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.353125
+anchor_top = 3.8075
+anchor_right = 8.353134
+anchor_bottom = 4.3825
+offset_left = -1939.0
+offset_top = -1320.0
+offset_right = -2511.003
+offset_bottom = -1530.0001
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="nombre_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=2012181133]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.65
+anchor_top = 4.15
+anchor_right = 6.9
+anchor_bottom = 4.5
+text = "..."
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="apellido_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=449271090]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.1
+anchor_top = 4.15
+anchor_right = 8.2
+anchor_bottom = 4.5
+text = "..."
+label_settings = SubResource("LabelSettings_eoye0")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Nacimiento_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=1852400088]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.018
+anchor_top = 4.775
+anchor_right = 8.093004
+anchor_bottom = 5.35
+offset_left = -0.7200012
+offset_right = -0.7200012
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fecha_De_Vencimiento_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=757720937]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.97925
+anchor_top = 5.575
+anchor_right = 8.054255
+anchor_bottom = 6.15
+text = "..."
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer_seguro" type="PanelContainer" parent="." unique_id=169928930]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 125.0
+offset_right = 770.0
+offset_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_seguro" unique_id=1132128165]
+layout_mode = 2
+texture = ExtResource("13_i1ayw")
+expand_mode = 1
+
+[node name="PanelContainer_permiso" type="PanelContainer" parent="." unique_id=379585947]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 125.0
+offset_right = 770.0
+offset_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_permiso" unique_id=317193137]
+layout_mode = 2
+texture = ExtResource("14_js1vk")
+expand_mode = 1
 
 [connection signal="pressed" from="boton_base de datos/BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
