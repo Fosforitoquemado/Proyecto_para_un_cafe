@@ -53,6 +53,12 @@ var basededatos_active = false
 
 var tiempo_de_carga
 
+@onready var fsm: Node = $StateMachine
+@export var libro_container:PanelContainer
+@onready var libro_guia: AnimatedSprite2D = $PanelContainer_instrucciones/libro_guia
+
+
+var busy: bool = false
 var pag_number = 1
 var min_pag_number = 1
 var max_pag_number = 3
@@ -177,4 +183,39 @@ func _on_exit_pressed() -> void:
 func _on_cerrar_errores_pressed() -> void:
 	exclamacion.visible = false
 	errores_auto_control.visible = false
+	pass # Replace with function body.
+
+
+func _on_button_flecha_derecha_pressed() -> void:
+	if pag_number < max_pag_number and not busy:
+		busy = true
+		libro_container.find_child(str("pag", pag_number)).hide()
+		pag_number += 1
+			
+		# Animación de pasar página hacia adelante
+		libro_guia.play("default")
+		
+		await libro_guia.animation_finished
+			
+		# Cambiamos al estado de la nueva página
+		fsm.change_to(str("pag", pag_number))
+		busy = false
+	pass # Replace with function body.
+
+
+func _on_button_flecha_izquierda_pressed() -> void:
+	if pag_number > min_pag_number and not busy:
+		busy = true
+		libro_container.find_child(str("pag", pag_number)).hide()
+		pag_number -= 1
+		
+		# Animación de pasar página hacia atrás (reversa)
+		libro_guia.play("default",-1,true)
+		# Si la animación va en reversa, a veces necesitas reproducirla desde el final
+		# libro_guia.frame = libro_guia.sprite_frames.get_frame_count("default") - 1
+		
+		await libro_guia.animation_finished
+		
+		fsm.change_to(str("pag", pag_number))
+		busy = false
 	pass # Replace with function body.

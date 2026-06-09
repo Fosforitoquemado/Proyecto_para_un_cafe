@@ -452,7 +452,7 @@ animations = [{
 font = ExtResource("11_l7fmd")
 font_size = 18
 
-[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows")]
+[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows", "libro_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -486,6 +486,7 @@ icono_licencia = NodePath("Iconos/Licencia_icon")
 icono_seguro = NodePath("Iconos/Seguro_icon")
 icono_permiso = NodePath("Iconos/Permiso_icon")
 panel_windows = [NodePath("PanelContainer_basededatos")]
+libro_container = NodePath("PanelContainer_instrucciones")
 metadata/_edit_use_anchors_ = true
 
 [node name="apagado" type="TextureRect" parent="." unique_id=2146623088]
@@ -1556,7 +1557,6 @@ offset_right = 6.8333435
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_instrucciones" type="PanelContainer" parent="." unique_id=1436091547]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 405.0
@@ -1571,8 +1571,6 @@ texture_filter = 1
 position = Vector2(230, 252)
 scale = Vector2(18, 18)
 sprite_frames = SubResource("SpriteFrames_02xrk")
-frame = 1
-frame_progress = 0.3522906
 
 [node name="Cerrar" type="Label" parent="PanelContainer_instrucciones/libro_guia" unique_id=1059344209]
 anchors_preset = -1
@@ -1666,12 +1664,12 @@ offset_top = -1.0
 offset_right = 6.5
 offset_bottom = 7.0
 
-[node name="Pag1" type="Control" parent="PanelContainer_instrucciones" unique_id=615833987]
+[node name="pag1" type="Control" parent="PanelContainer_instrucciones" unique_id=615833987]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/Pag1" unique_id=266725105]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=266725105]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1687,7 +1685,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/Pag1" unique_id=1063517875]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=1063517875]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1704,12 +1702,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Pag2" type="Control" parent="PanelContainer_instrucciones" unique_id=768419671]
+[node name="pag2" type="Control" parent="PanelContainer_instrucciones" unique_id=768419671]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/Pag2" unique_id=846715137]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag2" unique_id=846715137]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1725,7 +1723,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/Pag2" unique_id=1956661081]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag2" unique_id=1956661081]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1742,12 +1740,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Pag3" type="Control" parent="PanelContainer_instrucciones" unique_id=29459305]
+[node name="pag3" type="Control" parent="PanelContainer_instrucciones" unique_id=29459305]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/Pag3" unique_id=693699640]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag3" unique_id=693699640]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1763,7 +1761,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/Pag3" unique_id=717370161]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag3" unique_id=717370161]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1936,20 +1934,17 @@ initial_state = NodePath("pag1")
 [node name="transicion" type="Node" parent="StateMachine" unique_id=1680704605]
 script = ExtResource("18_q8nfh")
 
-[node name="pag1" type="Node" parent="StateMachine" unique_id=20227254 node_paths=PackedStringArray("page", "PCCONTROL")]
+[node name="pag1" type="Node" parent="StateMachine" unique_id=20227254 node_paths=PackedStringArray("page")]
 script = ExtResource("21_2gg5t")
-page = NodePath("../../PanelContainer_instrucciones/Pag1")
-PCCONTROL = NodePath("../..")
+page = NodePath("../../PanelContainer_instrucciones/pag1")
 
-[node name="pag2" type="Node" parent="StateMachine" unique_id=1617530427 node_paths=PackedStringArray("page", "PCCONTROL")]
+[node name="pag2" type="Node" parent="StateMachine" unique_id=1617530427 node_paths=PackedStringArray("page")]
 script = ExtResource("21_2gg5t")
-page = NodePath("../../PanelContainer_instrucciones/Pag2")
-PCCONTROL = NodePath("../..")
+page = NodePath("../../PanelContainer_instrucciones/pag2")
 
-[node name="pag3" type="Node" parent="StateMachine" unique_id=573442771 node_paths=PackedStringArray("page", "PCCONTROL")]
+[node name="pag3" type="Node" parent="StateMachine" unique_id=573442771 node_paths=PackedStringArray("page")]
 script = ExtResource("21_2gg5t")
-page = NodePath("../../PanelContainer_instrucciones/Pag3")
-PCCONTROL = NodePath("../..")
+page = NodePath("../../PanelContainer_instrucciones/pag3")
 
 [connection signal="pressed" from="Iconos/Errores_icon/boton_icono" to="Iconos/Errores_icon" method="_on_boton_icono_pressed"]
 [connection signal="pressed" from="Iconos/VTV_icon/boton_icono" to="Iconos/VTV_icon" method="_on_boton_icono_pressed"]
@@ -1965,8 +1960,8 @@ PCCONTROL = NodePath("../..")
 [connection signal="pressed" from="PanelContainer_seguro/TextureRect/Label/cerrar_" to="PanelContainer_seguro" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="PanelContainer_permiso/TextureRect/Label/cerrar_" to="PanelContainer_permiso" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/Cerrar/cerrar_" to="PanelContainer_instrucciones" method="_on_cerrar__pressed"]
-[connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_derecha/Button_flecha_derecha" to="StateMachine/pag1" method="_on_button_flecha_derecha_pressed"]
-[connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_izquierda/Button_flecha_izquierda" to="StateMachine/pag1" method="_on_button_flecha_izquierda_pressed"]
+[connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_derecha/Button_flecha_derecha" to="." method="_on_button_flecha_derecha_pressed"]
+[connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_izquierda/Button_flecha_izquierda" to="." method="_on_button_flecha_izquierda_pressed"]
 [connection signal="pressed" from="boton_base de datos/BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
