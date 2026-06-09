@@ -17,10 +17,6 @@ func _ready() -> void:
 		label_dinero.text = str("DINERO: ",savedata.values()[1])
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _input(event: InputEvent) -> void:
 	var savedata = SaveLoad.contents_to_save
 	if event.is_action_pressed("ui_down"):

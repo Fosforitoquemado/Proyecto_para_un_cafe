@@ -7,7 +7,7 @@ var states: Dictionary = {}
 
 var processing = false
 
-var debug = false
+var debug = true
 
 # La pila que guardará los nombres de los estados anteriores
 var _state_history: Array[String] = []

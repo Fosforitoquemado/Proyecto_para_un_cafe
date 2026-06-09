@@ -113,39 +113,31 @@ func mostrar_datos():
 	#cedula
 	if "cedula" in day.documentos_habilitados:
 		dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
-		pc_control.set_dominio_cedula(AutoGenerator._auto_data["patente"])
 		modelo_cedula.text = datos_documentos["modelo_cedula"] #🎫🎫🎫
-		pc_control.set_modelo_cedula(AutoGenerator._auto_data["modelo_info"]["nombre"])
 		vencimiento_cedula.text = datos_documentos["fecha_cedula"] #🎫🎫🎫
-		pc_control.set_vencimiento_cedula(AutoGenerator._auto_data["fecha_cedula"])
+		pc_control.set_cedula(AutoGenerator._auto_data["patente"],AutoGenerator._auto_data["modelo_info"]["nombre"],AutoGenerator._auto_data["fecha_cedula"])
 	
 	#licencia
 	if "licencia" in day.documentos_habilitados:
 		numero_licencia.text = datos_documentos["numero_licencia"]#🎫🎫🎫
-		pc_control.set_numero_licencia(AutoGenerator._auto_data["numero_licencia"])
 		nombre_licencia.text = datos_documentos["nombre_licencia"]#🎫🎫🎫
-		pc_control.set_nombre_licencia(AutoGenerator._auto_data["nombre_info"]["nombre"])
 		apellido_licencia.text = datos_documentos["apellido_licencia"]#🎫🎫🎫
-		pc_control.set_apellido_licencia(AutoGenerator._auto_data["apellido_info"]["apellido"])
 		fecha_nacimiento_licencia.text = datos_documentos["nacimiento_licencia"]#🎫🎫🎫
-		pc_control.set_fecha_nacimiento(AutoGenerator._auto_data["nacimiento"]["fecha_entera"])
 		vencimiento_licencia.text = datos_documentos["fecha_licencia"]#🎫🎫🎫
-		pc_control.set_fecha_vencimiento(AutoGenerator._auto_data["fecha_licencia"])
+		pc_control.set_licencia(AutoGenerator._auto_data["numero_licencia"],AutoGenerator._auto_data["nombre_info"]["nombre"],AutoGenerator._auto_data["apellido_info"]["apellido"],
+		AutoGenerator._auto_data["nacimiento"]["fecha_entera"],AutoGenerator._auto_data["fecha_licencia"])
 	
 	#seguro
 	if "seguro" in day.documentos_habilitados:
 		asegurado_seguro.text = datos_documentos["asegurado_seguro"] #🎫🎫🎫
-		pc_control.set_nombre_seguro(AutoGenerator._auto_data["nombre_info"]["nombre"])
 		id_seguro.text = datos_documentos["id_seguro"] #🎫🎫🎫
-		pc_control.set_id_seguro(AutoGenerator._auto_data["id_seguro"])
 		vencimiento_seguro.text = datos_documentos["fecha_seguro"] #🎫🎫🎫
-		pc_control.set_fecha_seguro(AutoGenerator._auto_data["fecha_seguro"])
+		pc_control.set_seguro(AutoGenerator._auto_data["nombre_info"]["nombre"],AutoGenerator._auto_data["id_seguro"],AutoGenerator._auto_data["fecha_seguro"])
 	
 	if "permiso" in day.documentos_habilitados:
 		tipo_vehiculo.text = datos_documentos["tipo_vehiculo_permiso"] #🎫🎫🎫
-		pc_control.set_permiso_tipo_vehiculo(AutoGenerator._auto_data["modelo_info"]["tipo_vehiculo"])
 		fecha_permiso.text = datos_documentos["fecha_permiso"] #🎫🎫🎫
-		pc_control.set_fecha_permiso(AutoGenerator._auto_data["fecha_permiso"])
+		pc_control.set_permiso(AutoGenerator._auto_data["modelo_info"]["tipo_vehiculo"],AutoGenerator._auto_data["fecha_permiso"])
 		
 	#papeles en la mano del personaje y dialogos
 	await  get_tree().create_timer(GameManager.auto_dupe.find_child("AnimationPlayer").current_animation_length + 0.5, false).timeout

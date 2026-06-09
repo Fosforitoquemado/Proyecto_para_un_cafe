@@ -8,6 +8,8 @@ var is_focused:bool = false
 
 var game_rect:ColorRect
 
+@export var default_pos:Vector2
+
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		for x in get_parent().panel_windows:
@@ -27,3 +29,9 @@ func _gui_input(event: InputEvent) -> void:
 		var viewport_size = get_viewport().size
 		position.x = clamp(position.x,0,viewport_size.x - size.x)
 		position.y = clamp(position.y,0,viewport_size.y - size.y - 30.0)
+
+
+func _on_cerrar__pressed() -> void:
+	visible = false
+	position = default_pos
+	pass # Replace with function body.

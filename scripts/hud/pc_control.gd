@@ -18,12 +18,12 @@ extends Control
 @onready var exclamacion: MeshInstance3D = $"../../exclamacion"
 @export var errores_label:PackedScene
 
-#labels base de datos cedula
-@export var dominio: Label 
-@export var modelo: Label
-@export var vence: Label
+#labels cedula
+@export var dominio_cedula: Label 
+@export var modelo_cedula: Label
+@export var vence_cedula: Label
 
-#labels base de datos licencia
+#labels licencia
 @export var numero_licencia: Label
 @export var nombre_licencia: Label
 @export var apellido_licencia: Label
@@ -41,11 +41,21 @@ extends Control
 
 @export var basedatos_img: PanelContainer
 
+@export var icono_vtv:TextureRect
+@export var icono_cedula:TextureRect
+@export var icono_licencia:TextureRect
+@export var icono_seguro:TextureRect
+@export var icono_permiso:TextureRect
+
 var basededatos_active = false
 
 @export var panel_windows:Array[DraggablePanelContainer]
 
 var tiempo_de_carga
+
+var pag_number = 1
+var min_pag_number = 1
+var max_pag_number = 3
 
 var pc_mouse_pos:Vector2 = Vector2.ZERO
 
@@ -53,6 +63,21 @@ func _ready() -> void:
 	var dia = day_manager.get_day()
 	
 	tiempo_de_carga = dia.config["tiempo_de_carga"]
+	icono_vtv.hide()
+	icono_cedula.hide()
+	icono_licencia.hide()
+	icono_seguro.hide()
+	icono_permiso.hide()
+	if "vtv" in dia.documentos_habilitados:
+		icono_vtv.show()
+	if "cedula" in dia.documentos_habilitados:
+		icono_cedula.show()
+	if "licencia" in dia.documentos_habilitados:
+		icono_licencia.show()
+	if "seguro" in dia.documentos_habilitados:
+		icono_seguro.show()
+	if "permiso" in dia.documentos_habilitados:
+		icono_permiso.show()
 	apagado.visible = true
 	cargando.visible = true
 	errores_auto_control.visible = false
@@ -62,49 +87,39 @@ func update_cursor_pos():
 	cursor.position = pc_mouse_pos
 
 #fecha PC
-
 func set_fecha(func_fecha):
 	fecha.text = func_fecha
 
 #VTV
-
 func set_vtv(func_VTV):
 	vtv.text = func_VTV
+	
 #cedula
-
-func set_dominio_cedula(func_dominio):
-	dominio.text = func_dominio
-func set_modelo_cedula(func_modelo):
-	modelo.text = func_modelo
-func set_vencimiento_cedula(func_vence):
-	vence.text = func_vence
+func set_cedula(func_dominio,func_modelo,func_vence):
+	dominio_cedula.text = func_dominio
+	modelo_cedula.text = func_modelo
+	vence_cedula.text = func_vence
 
 #licencia
-
-func set_numero_licencia(func_numero):
+func set_licencia(func_numero,func_nombre,func_apellido,func_fecha_nacimiento,func_fecha_vencimiento):
 	numero_licencia.text = func_numero
-func set_nombre_licencia(func_nombre):
+	
 	nombre_licencia.text = func_nombre
-func set_apellido_licencia(func_apellido):
+	
 	apellido_licencia.text = func_apellido
-func set_fecha_nacimiento(func_fecha):
-	fecha_de_nacimiento_licencia.text = func_fecha
-func set_fecha_vencimiento(func_fecha):
-	fecha_de_vencimiento_licencia.text = func_fecha
+	fecha_de_nacimiento_licencia.text = func_fecha_nacimiento
+	fecha_de_vencimiento_licencia.text = func_fecha_vencimiento
 
 #seguro
-func set_nombre_seguro(func_nombre):
+func set_seguro(func_nombre,func_id,func_fecha_vencimiento):
 	nombre_seguro.text = func_nombre
-func set_id_seguro(func_id):
 	id_seguro.text = func_id
-func set_fecha_seguro(func_fecha):
-	fecha_seguro.text = func_fecha
+	fecha_seguro.text = func_fecha_vencimiento
 
 #permiso
-func set_permiso_tipo_vehiculo(func_tipo):
+func set_permiso(func_tipo,func_fecha_vencimiento):
 	tipo_vehiculo_permiso.text = func_tipo
-func set_fecha_permiso(func_fecha):
-	fecha_permiso.text = func_fecha
+	fecha_permiso.text = func_fecha_vencimiento
 
 func apagar_cargando():
 	await get_tree().create_timer(tiempo_de_carga,false).timeout

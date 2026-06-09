@@ -31,12 +31,10 @@ func handle_input(event: InputEvent) -> void:
 		fsm.back()
 		pass
 
-
 func _on_button_quit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().quit()
 	pass # Replace with function body.
-
 
 func _on_button_menu_pressed() -> void:
 	get_tree().paused = false
@@ -44,7 +42,6 @@ func _on_button_menu_pressed() -> void:
 	GameManager.empezar_tiempo = false
 	GameManager.reset()
 	pass # Replace with function body.
-
 
 func _on_button_resume_pressed() -> void:
 	if back_ready == false:
