@@ -16,8 +16,8 @@ func _ready() -> void:
 	var dia = day_manager.get_day()
 	var dia_actual = day_manager.dia_actual
 	print("DIA HOY: ",dia_actual)
-	
 	hud.find_child("pantalla_negro").comienzo_dia(4,3)
+	GameManager.cargar_dia()
 	await get_tree().create_timer(6.5,false).timeout
 	state_machine.change_to("tele")
 	

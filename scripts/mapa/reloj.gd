@@ -5,7 +5,6 @@ extends MeshInstance3D
 @export var alarma:AudioStreamPlayer3D
 @export var sprite:AnimatedSprite3D
 
-
 @export var hora_inicio := 6
 @export var hora_fin := 17
 
@@ -17,9 +16,9 @@ var ready_ = true
 func _ready() -> void:
 	duracion_dia = GameManager.tiempo_dia_total # segundos reales
 	hora_actual = hora_inicio
+	print("HORAAAAAA",reloj_label.text)
 
 func _process(delta):
-	
 	# Calculamos el porcentaje de progreso del día (va de 0.0 a 1.0)
 	var progreso: float = clamp(GameManager.tiempo / GameManager.tiempo_dia_total, 0.0, 1.0)
 	

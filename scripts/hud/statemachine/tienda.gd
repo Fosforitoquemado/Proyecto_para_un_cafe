@@ -91,6 +91,5 @@ func _on_siguiente_dia_pressed() -> void:
 	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
 	SaveLoad.contents_to_save["usos_mate"] = GameManager.usos_mates
 	SaveLoad._save()
-	GameManager.reset()
 	get_tree().change_scene_to_file(daymanager.dias[SaveLoad.contents_to_save.values()[0]].mapa[0])
 	pass # Replace with function body.

@@ -19,6 +19,10 @@ class_name UIManager
 @export var startday: Control
 @export var timer: ProgressBar
 
+#termo
+@export var usos_mate_num:Label
+@export var progressbarmate:ProgressBar
+
 var dia
 
 var auto_on = false
@@ -27,18 +31,24 @@ var auto_called = false
 var papeles_on = false
 
 func _ready() -> void:
-	update_ui()
-	dia = day_manager.get_day()
-	timer.max_value = dia.tiempo_limite
 	hud_elementos.hide()
 	hud_principal.hide()
 	inspeccion_menu.hide()
 	yes_no_menu.hide()
 	startday.hide()
+	update_ui()
 
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
+	#termo
+	usos_mate_num.text = str(GameManager.usos_mates)
+	progressbarmate.value = GameManager.usos_mates
+	#reloj
+	dia = day_manager.get_day()
+	timer.max_value = dia.tiempo_limite
+	#dinero
+	print("DINEROO",GameManager.dinero)
 	dinero_label.text = str("Dinero: ",GameManager.dinero)
 	if GameManager.dinero < 0:
 		dinero_label.modulate = Color(1.0, 0.0, 0.0, 1.0)

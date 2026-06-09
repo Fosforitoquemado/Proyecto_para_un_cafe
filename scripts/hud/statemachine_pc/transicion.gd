@@ -1,16 +1,21 @@
 extends UIState
 
+@onready var pc_control: Control = $"../.."
 @onready var state_machine: Node = $".."
+@onready var libro_guia: AnimatedSprite2D = $"../../PanelContainer_instrucciones/libro_guia"
 
 func enter() -> void:
 	if fsm.debug == true:
 		print("ENTER TRANSCICION")
+	await libro_guia.animation_finished
+	state_machine.change_to(str("pag", pc_control.pag_number))
 	pass
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick
 
 func exit() -> void:
 	if fsm.debug == true:
 		print("EXIT trancision")
+	pc_control.busy = false
 	pass
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)

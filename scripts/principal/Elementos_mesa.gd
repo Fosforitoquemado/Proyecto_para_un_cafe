@@ -49,7 +49,6 @@ signal auto_ready
 
 signal auto_out
 
-
 func _ready() -> void:
 	var day = day_manager.get_day()
 	if "alcholemia" in day.documentos_habilitados:

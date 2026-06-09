@@ -40,7 +40,6 @@ func _on_button_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/hud/menu.tscn")
 	GameManager.empezar_tiempo = false
-	GameManager.reset()
 	pass # Replace with function body.
 
 func _on_button_resume_pressed() -> void:

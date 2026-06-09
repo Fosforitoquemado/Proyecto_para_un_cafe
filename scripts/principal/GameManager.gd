@@ -29,9 +29,6 @@ var auto_data: Dictionary
 
 func _ready():
 	var textura_cursor = load("res://texture/hud/otros/puntero.png")
-	var savedata = SaveLoad.contents_to_save
-	dinero = savedata.values()[1]
-	usos_mates = savedata.values()[6]
 	Input.set_custom_mouse_cursor(
 		textura_cursor,
 		Input.CURSOR_ARROW,
@@ -46,17 +43,19 @@ func _process(delta: float) -> void:
 		empezar_tiempo = false
 	if uicontroller:
 		if tiempo >= tiempo_dia_total and uicontroller.auto_called == false and dia_empezado == true:
-			if dinero >= dia.dinero_objetivo:
+			if dinero_ganado_hoy >= dia.dinero_objetivo:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
 				await get_tree().create_timer(4).timeout
+				reset()
 				get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
 			else:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
 				await get_tree().create_timer(4).timeout
+				reset()
 				get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
 
 func _input(event: InputEvent) -> void:
@@ -87,11 +86,24 @@ func _physics_process(delta: float) -> void:
 			pass
 
 func empezar_dia():
+	empezar_tiempo = true
+	dia_empezado = true
+
+func cargar_dia():
+	#tengo en cuanta las condiciones del dia
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	dia = daymanager.get_day()
 	tiempo_dia_total = dia.tiempo_dia
-	empezar_tiempo = true
-	dia_empezado = true
+	#cargo las cosas guardadas
+	var savedata = SaveLoad.contents_to_save
+	print(savedata)
+	dinero = savedata.values()[1]
+	usos_mates = savedata.values()[6]
+	var uicontroller
+	uicontroller = get_tree().get_first_node_in_group("ui_manager")
+	uicontroller.update_ui()
+	reset()
+
 
 func generar_auto():
 	var elementos_mesa = get_tree().get_first_node_in_group("elementos_mesa")
@@ -145,7 +157,7 @@ func update_score(score_auto):
 	tween.tween_method(actualizar_dinero, dinero_inicial, dinero_final, 0.5)
 	#dinero += score_auto
 	dinero_ganado_hoy += score_auto
-	print("DINERO: ",dinero)
+	print("DINERO SUMADO: ",dinero)
 
 func actualizar_dinero(valor:float):
 	dinero = int(valor)
