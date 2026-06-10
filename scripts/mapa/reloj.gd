@@ -39,5 +39,5 @@ func _process(delta):
 		alarma.play()
 		sprite.show()
 		sprite.play("default")
-		await get_tree().create_timer(alarma.stream.get_length() + 2).timeout 
+		await get_tree().create_timer(alarma.stream.get_length() + 2, false).timeout 
 		sprite.hide()

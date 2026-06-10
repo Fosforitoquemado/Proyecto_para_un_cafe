@@ -43,7 +43,7 @@ func enter() -> void:
 		var dia = daymanager.get_day()
 		if "objetos_baul" in dia.documentos_habilitados:
 			if tutorial_hecho == false:
-				await  get_tree().create_timer(0.2).timeout
+				await  get_tree().create_timer(0.2,false).timeout
 				comenzar_guia()
 				SaveLoad.contents_to_save["tutorial_baul"] = true
 				SaveLoad._save()

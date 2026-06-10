@@ -591,7 +591,7 @@ func _on_pressed() -> void:
 		
 		empezar.visible = false
 		
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0,false).timeout
 		
 		timer._start_timer()
 		yes_no_menu.visible = true
@@ -610,7 +610,7 @@ func _on_yes_pressed() -> void:
 		yes_no_menu.visible = false
 		cedula.visible = false
 		carnet.visible = false
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0,false).timeout
 		autos_que_pasaron += 1
 		if get_meta("Auto_ilegal_bool") == true:
 			fallos += 1

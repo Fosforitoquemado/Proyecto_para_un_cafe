@@ -19,6 +19,9 @@ class_name UIManager
 @export var startday: Control
 @export var timer: ProgressBar
 
+#
+@export var sub_viewport_menu: SubViewport
+
 #termo
 @export var usos_mate_num:Label
 @export var progressbarmate:ProgressBar
@@ -41,6 +44,7 @@ func _ready() -> void:
 func update_ui():
 	fallos_label.text = str("Fallos: ",GameManager.fallos," / ",GameManager.max_fallos)
 	autos_label.text = "Autos: %d / %d" % [GameManager.autos_pasados, GameManager.max_autos]
+	sub_viewport_menu.size = get_viewport_rect().size
 	#termo
 	usos_mate_num.text = str(GameManager.usos_mates)
 	progressbarmate.value = GameManager.usos_mates

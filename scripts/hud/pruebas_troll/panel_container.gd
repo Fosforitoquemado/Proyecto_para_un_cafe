@@ -8,7 +8,7 @@ func star():
 	visible = true
 	carnet_.play("default")
 	audio_stream_player.play()
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.7,false).timeout
 	get_tree().quit()
 
 # Called when the node enters the scene tree for the first time.

@@ -9,10 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="11_jgfnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_is2bi"]
-font_size = 36
+font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvaa7"]
-font_size = 31
+font_size = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
 atlas = ExtResource("10_fuxa7")
@@ -77,6 +77,9 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8uvrl"]
+font_size = 30
 
 [node name="MainMenu" type="Control" unique_id=2141301358 node_paths=PackedStringArray("label_dia", "label_dinero")]
 layout_mode = 3
@@ -145,11 +148,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label_dia" type="Label" parent="." unique_id=449898347]
 z_index = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.021701388
 anchor_top = 0.0046296297
-anchor_right = 0.09288195
-anchor_bottom = 0.11728395
+anchor_right = 0.12760417
+anchor_bottom = 0.085185185
 text = "DIA: "
 label_settings = SubResource("LabelSettings_is2bi")
 metadata/_edit_use_anchors_ = true
@@ -245,19 +249,24 @@ grow_vertical = 2
 text = "NO"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="reset_confirmacion" unique_id=2120914531]
+[node name="Label" type="Label" parent="reset_confirmacion" unique_id=845827207]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4409722
-anchor_top = 0.42354164
-anchor_right = 0.5590278
-anchor_bottom = 0.4590355
+anchor_left = 0.44244793
+anchor_top = 0.4195988
+anchor_right = 0.5575521
+anchor_bottom = 0.45848766
+offset_left = 12.166626
+offset_top = 1.833313
+offset_right = -12.166626
+offset_bottom = -1.8333435
 grow_horizontal = 2
 grow_vertical = 2
-text = "Borrar la partida?"
+text = "Borrar partida?"
+label_settings = SubResource("LabelSettings_8uvrl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="reset_confirmacion/Label" unique_id=1745172139]
+[node name="Panel" type="Panel" parent="reset_confirmacion/Label" unique_id=1429256278]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -265,7 +274,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1087707124]
 layout_mode = 1

@@ -1,4 +1,4 @@
-extends Node3D
+extends Node
 
 @export var HUD:Control
 @export var game_over:Control
@@ -7,9 +7,9 @@ extends Node3D
 func _ready() -> void:
 	var pantalla_negra = HUD.find_child("pantalla_negro")
 	pantalla_negra.aclarar(3)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3,false).timeout
 	animationplayer.play("new_animation")
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.5,false).timeout
 	game_over.visible = true
 	var tween = create_tween()
 	tween.tween_property(game_over,"modulate",Color(1.0, 1.0, 1.0, 1.0),2.0)

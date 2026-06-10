@@ -88,7 +88,7 @@ func mostrar_paso():
 		texture.show()
 		
 	if datos_paso["automatico"] == true:
-		await get_tree().create_timer(tiempo_espera).timeout
+		await get_tree().create_timer(tiempo_espera, false).timeout
 		_on_siguiente_pressed()
 	else:
 		pass

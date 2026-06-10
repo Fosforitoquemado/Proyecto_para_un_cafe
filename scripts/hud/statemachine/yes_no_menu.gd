@@ -207,7 +207,7 @@ func _on_mate_pressed() -> void:
 		active = true
 		mate.tomar_mate()
 		timer._pause_timer()
-		await  get_tree().create_timer(4).timeout
+		await  get_tree().create_timer(4,false).timeout
 		timer._reduce_timer(((timer.max_value * porcentaje) / 100) * 1.5)
 		timer._start_timer()
 		GameManager.usos_mates -= 1

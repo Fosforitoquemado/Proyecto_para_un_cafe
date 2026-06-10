@@ -34,7 +34,7 @@ func generar():
 	
 	nodo_baul_grande.add_child(objeto_dupe)
 	#objeto_dupe.position = GameManager.auto_dupe.find_child("nodo_baul").position
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2,false).timeout
 	objeto_dupe.queue_free()
 	print("El objeto se borro❌📦: ",nombre)
 	return objeto
