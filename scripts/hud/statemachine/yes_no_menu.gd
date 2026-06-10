@@ -56,12 +56,12 @@ func comenzar_guia():
 		{
 			"nodo_boton": pc,
 			"automatico": false,
-			"texto": "¡Este es la pc, clickeala cuadno quieras y necesites verificar informacion del vehiculo"
+			"texto": "¡Este es la pc, clickeala cuando quieras y necesites verificar informacion del vehiculo"
 		},
 		{
 			"nodo_boton": inspeccionar,
 			"automatico": false,
-			"texto": "¡Este es el botón de inspeccionar, usalo para revisar y avlidar los autos"
+			"texto": "¡Este es el botón de inspeccionar, usalo para revisar y validar los autos"
 		},
 		{
 			"nodo_boton": coima,

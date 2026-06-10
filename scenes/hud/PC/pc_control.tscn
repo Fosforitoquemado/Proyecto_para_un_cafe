@@ -452,7 +452,7 @@ animations = [{
 font = ExtResource("11_l7fmd")
 font_size = 18
 
-[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows", "libro_container")]
+[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -486,7 +486,6 @@ icono_licencia = NodePath("Iconos/Licencia_icon")
 icono_seguro = NodePath("Iconos/Seguro_icon")
 icono_permiso = NodePath("Iconos/Permiso_icon")
 panel_windows = [NodePath("PanelContainer_basededatos")]
-libro_container = NodePath("PanelContainer_instrucciones")
 metadata/_edit_use_anchors_ = true
 
 [node name="apagado" type="TextureRect" parent="." unique_id=2146623088]
@@ -1573,7 +1572,6 @@ scale = Vector2(18, 18)
 sprite_frames = SubResource("SpriteFrames_02xrk")
 
 [node name="Cerrar" type="Label" parent="PanelContainer_instrucciones/libro_guia" unique_id=1059344209]
-anchors_preset = -1
 offset_left = 10.0
 offset_top = -12.0
 offset_right = 20.0
@@ -1696,7 +1694,7 @@ offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
 offset_bottom = 13.0
-text = "En el dia 1 tu objetivo es detectar las irregularidades con los documentos y conductores"
+text = "En el dia 1 tu objetivo es detectar las irregularidades en la vtv"
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -1734,7 +1732,7 @@ offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
 offset_bottom = 13.0
-text = "En el dia 2 te sopla lALSLSAL gosgkogksogg kgosk gokosg okgokgg okgsogkogsogog"
+text = "En el dia 2 tu objetivo es detectar las irregularidades con las cedulas y los conductores "
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -1772,7 +1770,171 @@ offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
 offset_bottom = 13.0
-text = "En el dia 3 te sopla lALSLSAL gosgkogksogg kgosk gokosg okgokgg okgsogkogsogog"
+text = "En el dia 3 tu objetivo es detectar las irregularidades con las licencias e identificaciones vehiculares"
+label_settings = SubResource("LabelSettings_g05ue")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pag4" type="Control" parent="PanelContainer_instrucciones" unique_id=1744320450]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag4" unique_id=396664073]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.21666667
+anchor_right = 0.10583153
+anchor_bottom = 0.21666667
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "QUE HACER EL DIA 4"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag4" unique_id=2047878156]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.27222222
+anchor_right = 0.10583153
+anchor_bottom = 0.27222222
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "En el dia 4 tu objetivo es detectar si hay irregularidades en los baules de los autos"
+label_settings = SubResource("LabelSettings_g05ue")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pag5" type="Control" parent="." unique_id=799026087]
+visible = false
+anchors_preset = 0
+offset_left = 405.0
+offset_top = 21.0
+offset_right = 405.0
+offset_bottom = 21.0
+mouse_filter = 2
+
+[node name="tipo_vehiculo" type="Label" parent="pag5" unique_id=1179074317]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.21666667
+anchor_right = 0.10583153
+anchor_bottom = 0.21666667
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "QUE HACER EL DIA 5"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo2" type="Label" parent="pag5" unique_id=193593039]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.27222222
+anchor_right = 0.10583153
+anchor_bottom = 0.27222222
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "En el dia 5 tu objetivo es comprobar que todos los conductores porten el seguro fisico para poder circular"
+label_settings = SubResource("LabelSettings_g05ue")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pag6" type="Control" parent="." unique_id=266204748]
+visible = false
+anchors_preset = 0
+offset_left = 810.0
+offset_top = 42.0
+offset_right = 810.0
+offset_bottom = 42.0
+mouse_filter = 2
+
+[node name="tipo_vehiculo" type="Label" parent="pag6" unique_id=253131036]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.21666667
+anchor_right = 0.10583153
+anchor_bottom = 0.21666667
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "QUE HACER EL DIA 6"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo2" type="Label" parent="pag6" unique_id=1184832415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.27222222
+anchor_right = 0.10583153
+anchor_bottom = 0.27222222
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "En el dia 6 tu objetivo es comprobar que todos los conductores conduzcan sin alcohol en sangre"
+label_settings = SubResource("LabelSettings_g05ue")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pag7" type="Control" parent="." unique_id=920279752]
+visible = false
+anchors_preset = 0
+offset_left = 1215.0
+offset_top = 63.0
+offset_right = 1215.0
+offset_bottom = 63.0
+mouse_filter = 2
+
+[node name="tipo_vehiculo" type="Label" parent="pag7" unique_id=1817587601]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.21666667
+anchor_right = 0.10583153
+anchor_bottom = 0.21666667
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "QUE HACER EL DIA 7"
+label_settings = SubResource("LabelSettings_7mlyq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo2" type="Label" parent="pag7" unique_id=854921820]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10583153
+anchor_top = 0.27222222
+anchor_right = 0.10583153
+anchor_bottom = 0.27222222
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 158.0
+offset_bottom = 13.0
+text = "En el dia 6 tu objetivo es comprobar que todos los conductores porten el permiso de cirulacion vehicular"
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
 autowrap_mode = 2
