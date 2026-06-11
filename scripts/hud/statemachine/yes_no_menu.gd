@@ -50,7 +50,7 @@ func comenzar_guia():
 		{
 			"nodo_boton": multar,
 			"automatico": false,
-			"texto": "¡Este es el botón de multar! Úsalo para multar autos con documentos erroneos"
+			"texto": "¡Este es el botón de multar! Úsalo para multar autos con documentos erroneos, te restaran palta por cada auto erroneamente procesado"
 		},
 		{
 			"nodo_boton": tomar_mate,
@@ -196,7 +196,7 @@ func _on_coimear_pressed() -> void:
 			error.play()
 			GameManager.ida_auto(0)
 			GameManager.sumar_fallo()
-			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
+			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] * 2)
 			GameManager.sumar_auto()
 			pc_control.agregar_errores([str("el auto tenia solo ",DocumentosGenerator.ilegalidades," ilegalidades ❌")])
 		else:

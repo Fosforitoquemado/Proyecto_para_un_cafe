@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_kdrwi")
 texto = "si les gusto nuestro juego siganos en itch.io por favor, muchas gracias :)"
+tiempo_velocidad = 0.02
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

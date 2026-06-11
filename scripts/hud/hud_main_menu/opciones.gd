@@ -50,11 +50,11 @@ func _on_button_reiniciar_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	SaveLoad.contents_to_save["vsync"] = 0
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-	SaveLoad.contents_to_save["volumen"] = 2.5
+	SaveLoad.contents_to_save["volumen"] = 0.25
 	var bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(
 		bus_index,
-		linear_to_db(2.5))
+		linear_to_db(0.25))
 	SaveLoad._save()
 	update_ui()
 	pass # Replace with function body.

@@ -1480,7 +1480,7 @@ texture = ExtResource("12_xrjht")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "sub_viewport", "yes_no_menu")]
+[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "yes_no_menu")]
 self_modulate = Color(0.21960784, 0.92156863, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -1496,7 +1496,6 @@ show_percentage = false
 script = ExtResource("2_cgeww")
 HUD = NodePath("../..")
 statemachine = NodePath("../../StateMachine")
-sub_viewport = NodePath("")
 yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
 metadata/_edit_use_anchors_ = true
 
@@ -2122,9 +2121,9 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-max_value = 5.0
-step = 0.5
-value = 5.0
+max_value = 0.5
+step = 0.005
+value = 0.25
 
 [node name="Button_reiniciar" type="Button" parent="opciones" unique_id=685928294]
 layout_mode = 1

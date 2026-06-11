@@ -59,7 +59,6 @@ func update_ui():
 	dia = day_manager.get_day()
 	timer.max_value = dia.tiempo_limite
 	#dinero
-	print("DINEROO",GameManager.dinero)
 	dinero_label.text = str("Plata: ",GameManager.dinero)
 	
 	#opciones

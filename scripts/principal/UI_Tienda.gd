@@ -16,11 +16,7 @@ var auto_called = false
 var papeles_on = false
 
 func _ready() -> void:
-	update_ui()
 	dia = day_manager.get_day()
-
-func update_ui():
-	pass
 
 func _on_elementos_mesa_auto_ready() -> void:
 	state_machine.change_to("yes_no_menu")

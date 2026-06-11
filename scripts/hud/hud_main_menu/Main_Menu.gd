@@ -48,7 +48,8 @@ func _ready() -> void:
 			linear_to_db(SaveLoad.contents_to_save.values()[10])
 		)
 	print("screen ",DisplayServer.window_get_mode(),"vsync ",DisplayServer.window_get_vsync_mode(),"volumen ",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
-	configuracion.hide()
+	if configuracion:
+		configuracion.hide()
 	if label_dia:
 		var savedata = SaveLoad.contents_to_save
 		label_dia.text = str("DIA: ",savedata.values()[0] + 1)
@@ -157,7 +158,5 @@ func _on_configuracion_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_record_pressed() -> void:
-	SaveLoad.contents_to_save["day"] = 7
-	SaveLoad._save()
-	get_tree().change_scene_to_file(day_manager.dias[SaveLoad.contents_to_save.values()[0]].mapa[0])
+	get_tree().change_scene_to_file(day_manager.dias[7].mapa[0])
 	pass # Replace with function body.

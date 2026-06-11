@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbu3bfmvyv6rm" path="res://texture/hud/pausa/resume.png" id="5_uorlw"]
 [ext_resource type="Texture2D" uid="uid://wqhcw4a1fxno" path="res://texture/hud/pausa/salir.png" id="6_6ikqo"]
 [ext_resource type="Texture2D" uid="uid://c36xbm4a80pxw" path="res://texture/hud/pausa/menu.png" id="7_jjtl3"]
+[ext_resource type="FontFile" uid="uid://dlv26o8ojswth" path="res://fonts/pixeloid-font/PixeloidSans-lxa3y.ttf" id="9_6ikqo"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="20_hj60v"]
 [ext_resource type="Script" uid="uid://dlns8omfqc7cw" path="res://scripts/hud/statemachine/pause.gd" id="22_4ftxs"]
 [ext_resource type="PackedScene" uid="uid://5u6jdmye4ww6" path="res://scenes/hud/tutoriales_pop_up.tscn" id="25_78l3b"]
@@ -1010,6 +1011,25 @@ tags = {
 [sub_resource type="LabelSettings" id="LabelSettings_u1kh3"]
 font_size = 25
 
+[sub_resource type="LabelSettings" id="LabelSettings_jjtl3"]
+font = ExtResource("9_6ikqo")
+font_size = 83
+
+[sub_resource type="LabelSettings" id="LabelSettings_t68sd"]
+font = ExtResource("9_6ikqo")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ikqo"]
+font = ExtResource("9_6ikqo")
+font_size = 49
+
+[sub_resource type="LabelSettings" id="LabelSettings_vurb8"]
+font = ExtResource("9_6ikqo")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7eal"]
+font_size = 28
+
 [node name="HUD_tienda" type="Control" unique_id=1466224900 groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
@@ -1242,6 +1262,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Label" type="Label" parent="Tienda1" unique_id=827369191]
+z_index = 1
+layout_mode = 0
+offset_left = 73.0
+offset_top = 900.0
+offset_right = 931.0
+offset_bottom = 1002.0
+text = "GRACIAS POR JUGAR"
+label_settings = SubResource("LabelSettings_jjtl3")
+
 [node name="fondo" type="TextureRect" parent="Tienda1" unique_id=2074325200]
 layout_mode = 1
 anchors_preset = 15
@@ -1264,6 +1294,7 @@ anchor_bottom = 0.9879237
 metadata/_edit_use_anchors_ = true
 
 [node name="dinero" type="Label" parent="Tienda1/fondo" unique_id=1172271538]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5807292
@@ -1271,37 +1302,42 @@ anchor_top = 0.16358025
 anchor_right = 0.9192708
 anchor_bottom = 0.40895063
 text = "DINERO: "
+label_settings = SubResource("LabelSettings_t68sd")
 metadata/_edit_use_anchors_ = true
 
 [node name="dinero_ganado_hoy" type="Label" parent="Tienda1/fondo" unique_id=67738603]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5477431
-anchor_top = 0.5848766
-anchor_right = 0.7057292
-anchor_bottom = 0.64088976
+anchor_left = 0.61041665
+anchor_top = 0.1527778
+anchor_right = 0.896875
+anchor_bottom = 0.33888888
 offset_top = -3.0517578e-05
 text = "DINERO GANADO HOY: "
+label_settings = SubResource("LabelSettings_6ikqo")
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="autos_revisados" type="Label" parent="Tienda1/fondo" unique_id=517673599]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5477431
-anchor_top = 0.6265432
-anchor_right = 0.7135417
-anchor_bottom = 0.68255836
+anchor_left = 0.5416667
+anchor_top = 0.57222223
+anchor_right = 0.74791664
+anchor_bottom = 0.62823737
 text = "AUTOS REVISADOS HOY: "
+label_settings = SubResource("LabelSettings_vurb8")
 metadata/_edit_use_anchors_ = true
 
 [node name="autos_errados" type="Label" parent="Tienda1/fondo" unique_id=874936145]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5477431
-anchor_top = 0.6728395
-anchor_right = 0.7057292
-anchor_bottom = 0.72885466
+anchor_left = 0.5416667
+anchor_top = 0.6342593
+anchor_right = 0.70104164
+anchor_bottom = 0.69027436
 text = "AUTOS FALLADOS: "
+label_settings = SubResource("LabelSettings_vurb8")
 metadata/_edit_use_anchors_ = true
 
 [node name="listacontainer" type="VBoxContainer" parent="Tienda1" unique_id=79543492]
@@ -1322,8 +1358,8 @@ mouse_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.44666666
-offset_top = -5.0
-offset_bottom = 26.000004
+offset_top = 6.0
+offset_bottom = 37.000015
 text = "COMPRAR MATE"
 metadata/_edit_use_anchors_ = true
 
@@ -1335,14 +1371,17 @@ anchor_right = 0.83333296
 offset_right = -1.5258789e-05
 offset_bottom = 23.0
 text = "MATES: 0"
+label_settings = SubResource("LabelSettings_d7eal")
 metadata/_edit_use_anchors_ = true
 
 [node name="coste_mate" type="Label" parent="Tienda1/listacontainer/Control" unique_id=1868252018]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.79476666
 anchor_right = 1.1280993
 offset_bottom = 23.0
 text = "CUESTA: 100"
+label_settings = SubResource("LabelSettings_d7eal")
 metadata/_edit_use_anchors_ = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
