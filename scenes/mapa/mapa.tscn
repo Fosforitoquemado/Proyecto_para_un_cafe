@@ -3,7 +3,7 @@
 [ext_resource type="Environment" uid="uid://c71aaf43jsj8q" path="res://recursos/cielo/mapa1.tres" id="1_p3wn2"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="2_okm07"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="3_f1toh"]
-[ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="4_v0gbs"]
+[ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="4_p3wn2"]
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_wfprg"]
 [ext_resource type="PackedScene" uid="uid://cn27nwpubwqeq" path="res://scenes/mapa/mapa_scene.tscn" id="6_f1evb"]
 [ext_resource type="Script" uid="uid://ch2dwosyet5tf" path="res://scripts/mapa/mapa.gd" id="7_ohftx"]
@@ -121,7 +121,7 @@ scale = Vector2(3.6507938, 2.6918366)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldEnvironment/SubViewportContainer/SubViewport/carnet_" unique_id=81878420]
-stream = ExtResource("4_v0gbs")
+stream = ExtResource("4_p3wn2")
 volume_db = 10.0
 
 [node name="HUD" parent="." unique_id=1466224900 instance=ExtResource("5_wfprg")]

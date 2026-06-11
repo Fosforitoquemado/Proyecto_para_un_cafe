@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://er58frah3o2u"]
 
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="1_0l0sd"]
-[ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="2_2u5u6"]
+[ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="2_2u5u6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
 atlas = ExtResource("1_0l0sd")
