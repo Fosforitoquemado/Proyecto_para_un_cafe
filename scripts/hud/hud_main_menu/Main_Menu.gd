@@ -158,5 +158,7 @@ func _on_configuracion_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_record_pressed() -> void:
+	SaveLoad.contents_to_save["day"] = 7
+	SaveLoad._save()
 	get_tree().change_scene_to_file(day_manager.dias[7].mapa[0])
 	pass # Replace with function body.
