@@ -5,7 +5,9 @@
 [ext_resource type="World3D" uid="uid://dgis22wra3jxq" path="res://recursos/world3d_tele/new_world_3d_tele.tres" id="2_2dhgm"]
 [ext_resource type="PackedScene" uid="uid://er58frah3o2u" path="res://scenes/hud/tele_control.tscn" id="2_wbyja"]
 [ext_resource type="Shader" uid="uid://brfbus46lkn84" path="res://shaders/tele.gdshader" id="2_wep0l"]
+[ext_resource type="FontFile" uid="uid://b34byr2pgl0mb" path="res://fonts/roadster/ROADSTER.ttf" id="6_0kntb"]
 [ext_resource type="PackedScene" uid="uid://74d2y0jwqh5u" path="res://modelos/EXTERIOR/tele/banquito/mesita 2.glb" id="6_clvex"]
+[ext_resource type="Texture2D" uid="uid://vsdfav036kvp" path="res://texture/hud/hud principal/iconos_menus/globo_de_texto (1).png" id="7_0l7pc"]
 [ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="7_8a7rx"]
 [ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="8_xqq20"]
 [ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="9_2k1kc"]
@@ -1310,8 +1312,17 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_4bevh"]
 size = Vector2(2, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyemu"]
+texture = ExtResource("7_0l7pc")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_ue6a8"]
-font_size = 20
+font = ExtResource("6_0kntb")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0l7pc"]
 playback_mode = 1
@@ -1554,6 +1565,7 @@ visible = false
 billboard = 1
 render_priority = 1
 text = "ULTIMA NOTICIA DE ULTIMA HORA"
+font = ExtResource("6_0kntb")
 font_size = 52
 vertical_alignment = 2
 autowrap_mode = 2
@@ -1568,24 +1580,27 @@ transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 gui_disable_input = true
-size = Vector2i(400, 100)
+size = Vector2i(800, 200)
 render_target_update_mode = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="SubViewport2" unique_id=812330053]
 visible = false
-custom_minimum_size = Vector2(400, 0)
-offset_right = 400.0
-offset_bottom = 63.0
+custom_minimum_size = Vector2(800, 0)
+offset_right = 800.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lyemu")
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=1173554957]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 57
+theme_override_constants/margin_bottom = 65
 
 [node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=1630754376]
 layout_mode = 2
+size_flags_vertical = 0
+text = "Hoal como estas esto es un mensaje de prueba loo omagayd"
 label_settings = SubResource("LabelSettings_ue6a8")
 autowrap_mode = 2
 

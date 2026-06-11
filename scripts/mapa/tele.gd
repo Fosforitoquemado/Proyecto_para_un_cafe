@@ -18,7 +18,7 @@ const tamaniolabel = 40
 
 # 1. Definimos el ancho máximo en píxeles que permitiremos en X
 @export var letters_scale:int = 10
-@export var max_width_x: float = 400.0
+@export var max_width_x: float = 800.0
 
 func apagar_tele():
 	panel_container.visible = false
@@ -63,7 +63,7 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo_font,tiem
 				soniditos.play()
 			#label_mensaje.ajustar_fuente()
 		
-		await  get_tree().create_timer(tiempo_velocidad, false).timeout
+		await get_tree().create_timer(tiempo_velocidad, false).timeout
 	
 	print(mensaje)
 	

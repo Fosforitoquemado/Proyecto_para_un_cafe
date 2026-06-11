@@ -2,7 +2,10 @@ extends ProgressBar
 
 @export var HUD:Control
 @export var statemachine:Node
+@export var sub_viewport:SubViewport
 @export var yes_no_menu: UIState
+
+@onready var termo: MeshInstance3D = $"../../../../Elementos_mesa/termo"
 
 var timer_bool
 
@@ -38,9 +41,14 @@ func _process(delta: float) -> void:
 			#get_tree().change_scene_to_file("res://scenes/hud/game_over.tscn")
 	else:
 		pass
+	#var material_termo = termo.get_active_material(4)
+	
 	if value >= ((max_value * 80) / 100):
-		modulate = Color(1.0, 0.0, 0.0, 1.0)
+		self_modulate = Color(1.0, 0.0, 0.0, 1.0)
+		#material_termo.albedo_texture = sub_viewport.get_texture()
 	elif value >= ((max_value * 50) / 100):
-		modulate = Color(1.0, 1.0, 0.0, 1.0)
+		self_modulate = Color(1.0, 1.0, 0.0, 1.0)
+		#material_termo.albedo_texture = sub_viewport.get_texture()
 	else:
-		modulate = Color(0.0, 1.0, 0.0, 1.0)
+		self_modulate = Color(0.342, 1.0, 0.0, 1.0)
+		#material_termo.albedo_texture = sub_viewport.get_texture()

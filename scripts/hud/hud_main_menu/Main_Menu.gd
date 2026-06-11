@@ -2,15 +2,35 @@ extends Control
 
 @export var label_dia: Label
 @export var label_dinero: Label
+@export var comprar_boton:TextureRect
+@export var jugar_boton:TextureRect
+@export var reset_boton:TextureRect
+@export var quit_boton:TextureRect
+@export var configurar:TextureRect
+@export var ayuda:TextureRect
+
+@export var animationplayer:AnimationPlayer
 
 @onready var sub_viewport_container: SubViewportContainer = $"SubViewportContainer"
 @onready var reset_confirmacion: Control = $reset_confirmacion
 
 @onready var day_manager: Node = $DayManager
 
+var botones_index = 0
+var botones = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if jugar_boton:
+		jugar_boton.show()
+		botones.append(jugar_boton)
+		botones.append(comprar_boton)
+		botones.append(reset_boton)
+		botones.append(configurar)
+		botones.append(ayuda)
+		botones.append(quit_boton)
+	
 	if label_dia:
 		var savedata = SaveLoad.contents_to_save
 		label_dia.text = str("DIA: ",savedata.values()[0] + 1)
@@ -19,6 +39,21 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	var savedata = SaveLoad.contents_to_save
+	
+	if event.is_action_pressed("rueda_mouse_arriba"):
+		if botones_index < botones.size() - 1:
+			botones[botones_index].hide()
+			botones_index += 1
+			animationplayer.play("new_animation_2")
+			await get_tree().create_timer(animationplayer.get_animation("new_animation").length).timeout
+			botones[botones_index].show()
+	if event.is_action_pressed("rueda_mouse_abajo"):
+		if botones_index > 0:
+			botones[botones_index].hide()
+			botones_index -= 1
+			animationplayer.play("new_animation")
+			await get_tree().create_timer(animationplayer.get_animation("new_animation").length).timeout
+			botones[botones_index].show()
 	if event.is_action_pressed("ui_down"):
 		await get_tree().physics_frame
 		label_dinero.text = str("DINERO: ",savedata.values()[1])
@@ -75,4 +110,7 @@ func _on_help_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/hud/menu.tscn")
+	pass # Replace with function body.
+
+func _on_configuracion_pressed() -> void:
 	pass # Replace with function body.

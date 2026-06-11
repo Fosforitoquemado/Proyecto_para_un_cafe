@@ -53,7 +53,7 @@ func update_ui():
 	timer.max_value = dia.tiempo_limite
 	#dinero
 	print("DINEROO",GameManager.dinero)
-	dinero_label.text = str("Dinero: ",GameManager.dinero)
+	dinero_label.text = str("Plata: ",GameManager.dinero)
 	if GameManager.dinero < 0:
 		dinero_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	else:
@@ -66,7 +66,6 @@ func _on_elementos_mesa_auto_ready() -> void:
 	state_machine.change_to("yes_no_menu")
 	auto_on = true
 	pass # Replace with function body.
-
 
 func _on_elementos_mesa_auto_out() -> void:
 	auto_out = true

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7xcc6teh6whs"
-path="res://.godot/imported/termo.glb-8c9fe847b5b50b0f3ca81d2492f091a0.scn"
+uid="uid://dyxjsvj2stlc7"
+path="res://.godot/imported/rueda.glb-e40386a145552e2007cd03a53bc860cc.scn"
 
 [deps]
 
-source_file="res://modelos/ESCRITORIO/termo/termo.glb"
-dest_files=["res://.godot/imported/termo.glb-8c9fe847b5b50b0f3ca81d2492f091a0.scn"]
+source_file="res://modelos/MISC/rueda.glb"
+dest_files=["res://.godot/imported/rueda.glb-e40386a145552e2007cd03a53bc860cc.scn"]
 
 [params]
 

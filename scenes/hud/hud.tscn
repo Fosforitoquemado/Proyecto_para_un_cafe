@@ -6,25 +6,28 @@
 [ext_resource type="Script" uid="uid://b48i6uqlyd7bh" path="res://scripts/principal/UI.gd" id="4_bluaa"]
 [ext_resource type="Texture2D" uid="uid://dbu3bfmvyv6rm" path="res://texture/hud/pausa/resume.png" id="5_k4jul"]
 [ext_resource type="AudioStream" uid="uid://yy6ovy6mh0v1" path="res://sonidos/AUTOS/147/147-parado-y-alejandose_2.wav" id="5_kokcj"]
-[ext_resource type="Texture2D" uid="uid://blb6705yeqh3t" path="res://texture/hud/iconos_menus/mate.png" id="5_v3rms"]
 [ext_resource type="Texture2D" uid="uid://wqhcw4a1fxno" path="res://texture/hud/pausa/salir.png" id="6_7wrco"]
 [ext_resource type="Script" uid="uid://djrwbhm186dot" path="res://scripts/hud/pantalla_negro.gd" id="6_bxlf6"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="6_r6i85"]
 [ext_resource type="Texture2D" uid="uid://drluxh3pyhf1j" path="res://texture/hud/botones V2/20-artguru.png" id="6_v3rms"]
 [ext_resource type="Texture2D" uid="uid://buxg7gp5p08ag" path="res://texture/hud/botones V2/33-artguru.png" id="7_bxlf6"]
 [ext_resource type="Texture2D" uid="uid://c36xbm4a80pxw" path="res://texture/hud/pausa/menu.png" id="7_kokcj"]
+[ext_resource type="Texture2D" uid="uid://di3efu05802bb" path="res://texture/hud/pausa/opciones.png" id="7_r6i85"]
 [ext_resource type="Script" uid="uid://ry550upi30ox" path="res://scripts/hud/animaciones_botones.gd" id="7_v3rms"]
 [ext_resource type="Texture2D" uid="uid://b2oflflwxjtnk" path="res://texture/hud/botones V2/32-artguru.png" id="8_yog28"]
 [ext_resource type="Texture2D" uid="uid://b0l8k00at7e11" path="res://texture/hud/botones V2/34.png" id="9_vyxmn"]
 [ext_resource type="Texture2D" uid="uid://sej1bra8w11n" path="res://texture/hud/botones/2.png" id="10_2dqaf"]
 [ext_resource type="Texture2D" uid="uid://bbcevydtubsro" path="res://texture/hud/botones V2/35-artguru.png" id="10_t335x"]
+[ext_resource type="FontFile" uid="uid://dlv26o8ojswth" path="res://fonts/pixeloid-font/PixeloidSans-lxa3y.ttf" id="11_p5ytw"]
 [ext_resource type="Texture2D" uid="uid://5ima6n2iaew4" path="res://texture/hud/botones V2/37-artguru.png" id="11_rrdev"]
 [ext_resource type="Texture2D" uid="uid://ds5f2pwmdnw6c" path="res://texture/hud/botones V2/24-artguru.png" id="12_2h4gs"]
+[ext_resource type="Texture2D" uid="uid://3qtuve2qglxe" path="res://texture/hud/hud principal/dinero_fondo.png" id="12_xrjht"]
 [ext_resource type="Texture2D" uid="uid://dcswogdkh1bdp" path="res://texture/hud/botones V2/15.png" id="13_o428i"]
+[ext_resource type="Texture2D" uid="uid://blb6705yeqh3t" path="res://texture/hud/hud principal/iconos_menus/mate.png" id="14_p5ytw"]
 [ext_resource type="Texture2D" uid="uid://ceu8gibu48og1" path="res://texture/hud/botones V2/14.png" id="14_voexc"]
 [ext_resource type="Texture2D" uid="uid://bhnlhv2xdofrw" path="res://texture/hud/botones V2/36-artguru.png" id="16_k4jul"]
 [ext_resource type="Texture2D" uid="uid://o7anfgxgyhto" path="res://texture/hud/botones V2/38-artguru.png" id="17_7wrco"]
-[ext_resource type="Texture2D" uid="uid://deypvq8wy3wr" path="res://texture/hud/iconos_menus/baul abierto.png" id="17_rbny8"]
+[ext_resource type="Texture2D" uid="uid://deypvq8wy3wr" path="res://texture/hud/hud principal/iconos_menus/baul abierto.png" id="17_rbny8"]
 [ext_resource type="Texture2D" uid="uid://bmoi4kvo0oaho" path="res://texture/hud/pc/pc_go_arrow.png" id="18_rbny8"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="18_udak2"]
 [ext_resource type="Script" uid="uid://ustrhm87tr4g" path="res://scripts/hud/statemachine/main_view.gd" id="19_7pnlf"]
@@ -36,10 +39,12 @@
 [ext_resource type="PackedScene" uid="uid://5u6jdmye4ww6" path="res://scenes/hud/tutoriales_pop_up.tscn" id="24_eiuad"]
 [ext_resource type="Script" uid="uid://b2jjfucr2debt" path="res://scripts/hud/statemachine/auto_atras.gd" id="25_4vn1o"]
 [ext_resource type="Script" uid="uid://ctve1samo8ebc" path="res://scripts/hud/statemachine/auto_adelante.gd" id="26_pjbv8"]
+[ext_resource type="FontFile" uid="uid://b34byr2pgl0mb" path="res://fonts/roadster/ROADSTER.ttf" id="27_7wrco"]
 [ext_resource type="Script" uid="uid://7uwx8xnlpgtl" path="res://scripts/hud/statemachine/auto_vtv.gd" id="27_eiuad"]
 [ext_resource type="Script" uid="uid://dgygvt3hdcx3d" path="res://scripts/hud/statemachine/auto_baul.gd" id="28_4vn1o"]
 [ext_resource type="Script" uid="uid://c08ukm1ctupi5" path="res://scripts/hud/statemachine/pc.gd" id="29_pjbv8"]
 [ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="31_ncrl3"]
+[ext_resource type="Script" uid="uid://bcxrone8yn4fb" path="res://scripts/hud/statemachine/opciones.gd" id="33_kokcj"]
 [ext_resource type="AudioStream" uid="uid://cg0mqu4ixvfef" path="res://sonidos/HUD/ERROR/Error.wav" id="35_yog28"]
 [ext_resource type="AudioStream" uid="uid://dg8ibayhphcmb" path="res://sonidos/HUD/Acierto/Pickup.wav" id="36_vyxmn"]
 
@@ -1024,14 +1029,17 @@ font_size = 30
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_tqp1p"]
-font_size = 65
+font = ExtResource("11_p5ytw")
+font_size = 38
+outline_size = 4
+outline_color = Color(0, 0, 0, 0.554)
 
-[sub_resource type="Gradient" id="Gradient_yog28"]
+[sub_resource type="Gradient" id="Gradient_p5ytw"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.3403393, 0.34033933, 0.3403393, 1)
+colors = PackedColorArray(0, 0, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vyxmn"]
-gradient = SubResource("Gradient_yog28")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xrjht"]
+gradient = SubResource("Gradient_p5ytw")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bxlf6"]
 blend_mode = 1
@@ -1100,6 +1108,7 @@ tags = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_bxlf6"]
+font = ExtResource("27_7wrco")
 font_size = 53
 
 [node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "hud_principal", "yes_no_menu", "inspeccion_menu", "startday", "timer", "sub_viewport_menu", "usos_mate_num", "progressbarmate") groups=["ui_manager"]]
@@ -1143,10 +1152,10 @@ modulate = Color(1, 1, 1, 0)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24652778
-anchor_top = 0.22685185
-anchor_right = 0.3185764
-anchor_bottom = 0.33641976
+anchor_left = 0.2015625
+anchor_top = 0.11388889
+anchor_right = 0.27361113
+anchor_bottom = 0.2234568
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1156,10 +1165,22 @@ modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3012153
-anchor_top = 0.38580248
-anchor_right = 0.3715278
-anchor_bottom = 0.5092593
+anchor_left = 0.25677082
+anchor_top = 0.2537037
+anchor_right = 0.32708332
+anchor_bottom = 0.3771605
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_options" type="Button" parent="Hud_principal" unique_id=1631462563]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34895834
+anchor_top = 0.3675926
+anchor_right = 0.41927084
+anchor_bottom = 0.49104935
+text = "OPTIONS"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_quit" type="Button" parent="Hud_principal" unique_id=1523233337]
@@ -1168,10 +1189,10 @@ modulate = Color(1, 1, 1, 0)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.39149305
-anchor_top = 0.4830247
-anchor_right = 0.46614584
-anchor_bottom = 0.6419753
+anchor_left = 0.44427082
+anchor_top = 0.48333332
+anchor_right = 0.5189236
+anchor_bottom = 0.6422839
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1280,16 +1301,20 @@ volume_db = -7.143
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3139605, -0.21494737, -1.0228076)
 
 [node name="resume" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=498592409]
-transform = Transform3D(-2.6226832e-09, 0.06, -2.6226832e-09, 0, -2.6226832e-09, -0.06, -0.06, -2.6226832e-09, 1.1464113e-16, 0.40532422, 0.26257664, -0.7078155)
+transform = Transform3D(-2.6226832e-09, 0.06, -2.6226832e-09, 0, -2.6226832e-09, -0.06, -0.06, -2.6226832e-09, 1.1464113e-16, 0.405, 0.358, -0.643)
 texture_albedo = ExtResource("5_k4jul")
 
-[node name="quit" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=1701315564]
-transform = Transform3D(-3.059797e-09, 0.07, -3.059797e-09, 0, -3.059797e-09, -0.07, -0.07, -3.059797e-09, 1.3374798e-16, 0.405, 0.021, -0.922)
-texture_albedo = ExtResource("6_7wrco")
-
 [node name="menu" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=393178481]
-transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.133, -0.791)
+transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.243, -0.721)
 texture_albedo = ExtResource("7_kokcj")
+
+[node name="opciones" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=897199174]
+transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.133, -0.851)
+texture_albedo = ExtResource("7_r6i85")
+
+[node name="quit" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=1701315564]
+transform = Transform3D(-3.059797e-09, 0.07, -3.059797e-09, 0, -3.059797e-09, -0.07, -0.07, -3.059797e-09, 1.3374798e-16, 0.405, 0.021, -1.002)
+texture_albedo = ExtResource("6_7wrco")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Hud_principal/SubViewport" unique_id=1620730413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.195, 0.635, 0.077)
@@ -1381,83 +1406,76 @@ metadata/_edit_use_anchors_ = true
 [node name="Dinero" type="Label" parent="Hud_elementos" unique_id=816752989]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.22552083
-anchor_bottom = 0.10277778
-text = "Dinero: "
+anchor_left = 0.030208332
+anchor_top = 0.13148148
+anchor_right = 0.09427083
+anchor_bottom = 0.20555556
+text = "Plata:"
 label_settings = SubResource("LabelSettings_tqp1p")
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Hud_elementos/Dinero" unique_id=1968482304]
-z_index = -1
+[node name="fondo_dinero" type="TextureRect" parent="Hud_elementos/Dinero" unique_id=1532169232]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.071428575
-anchor_right = 1.1316397
-anchor_bottom = 0.9285714
+anchor_left = -0.5691057
+anchor_top = -0.7
+anchor_right = 2.682927
+anchor_bottom = 1.175
+offset_top = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_xrjht")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "yes_no_menu")]
-modulate = Color(0, 18.892157, 0, 1)
-self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+[node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "sub_viewport", "yes_no_menu")]
+self_modulate = Color(0.24269372, 1, 0, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.9079861
-anchor_top = 0.3330247
-anchor_right = 0.9409722
-anchor_bottom = 0.64166665
-offset_left = -0.33337402
-offset_top = -0.666687
-offset_right = 46.333374
-offset_bottom = 166.0
-grow_horizontal = 0
+anchor_left = 0.034375
+anchor_top = 0.3962963
+anchor_right = 1.034375
+anchor_bottom = 1.3962963
+offset_right = -1770.0
+offset_bottom = -680.0
+grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+value = 29.11
 fill_mode = 3
 show_percentage = false
 script = ExtResource("2_cgeww")
 HUD = NodePath("../..")
 statemachine = NodePath("../../StateMachine")
+sub_viewport = NodePath("../SubViewport")
 yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
 metadata/_edit_use_anchors_ = true
 
-[node name="mate" type="TextureRect" parent="Hud_elementos/Timer" unique_id=79035619]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10932646
-anchor_top = 0.46401992
-anchor_right = 0.89880073
-anchor_bottom = 0.61401975
-offset_top = 78.990005
-offset_right = -2.2888184e-05
-offset_bottom = 83.990036
-texture = ExtResource("5_v3rms")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="SubViewport" type="SubViewport" parent="Hud_elementos" unique_id=1760314307]
+size = Vector2i(100, 300)
 
-[node name="limite_mate" type="Panel" parent="Hud_elementos/Timer" unique_id=235279543]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.009094596
-anchor_top = 0.53397
-anchor_right = 0.9909054
-anchor_bottom = 0.53796995
-offset_left = 0.00037401915
-offset_top = 78.34003
-offset_right = 0.00037384033
-offset_bottom = 78.34003
-metadata/_edit_use_anchors_ = true
-
-[node name="fondo" type="TextureRect" parent="Hud_elementos/Timer" unique_id=77058186]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
+[node name="TextureRect" type="TextureRect" parent="Hud_elementos/SubViewport" unique_id=208319167]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource("GradientTexture1D_vyxmn")
+offset_left = -78.0
+offset_right = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_xrjht")
+
+[node name="mate" type="TextureRect" parent="Hud_elementos" unique_id=2140123962]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 649.0
+offset_right = 501.0
+offset_bottom = 1197.0
+scale = Vector2(0.16000003, 0.16000003)
+texture = ExtResource("14_p5ytw")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Start_day" type="Control" parent="." unique_id=233837449]
 visible = false
@@ -1594,10 +1612,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccionar" type="TextureRect" parent="YES_NO_menu" unique_id=1187776531]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.052083332
-anchor_top = 0.20061728
-anchor_right = 0.20833333
-anchor_bottom = 0.354938
+anchor_left = 0.8276042
+anchor_top = 0.83518517
+anchor_right = 0.9838542
+anchor_bottom = 0.9895059
 texture = ExtResource("10_t335x")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1743,11 +1761,12 @@ mouse_filter = 2
 [node name="Inspeccion_VTV_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1320466142]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21788195
-anchor_top = 0.06481481
-anchor_right = 0.37413195
-anchor_bottom = 0.21913585
-offset_bottom = -3.0517578e-05
+anchor_left = 0.8255208
+anchor_top = 0.32962963
+anchor_right = 0.9817708
+anchor_bottom = 0.4839507
+offset_left = 3.0
+offset_right = 3.0
 texture = ExtResource("12_2h4gs")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1769,10 +1788,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_Delantera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1114757195]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21788195
-anchor_top = 0.18827161
-anchor_right = 0.37413195
-anchor_bottom = 0.3425926
+anchor_left = 0.8255208
+anchor_top = 0.45308644
+anchor_right = 0.9817708
+anchor_bottom = 0.6074074
+offset_left = 3.0
+offset_right = 3.0
 texture = ExtResource("13_o428i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1794,11 +1815,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_Trasera_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1206056157]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21788195
-anchor_top = 0.31172845
-anchor_right = 0.37413195
-anchor_bottom = 0.46604937
-offset_top = -3.0517578e-05
+anchor_left = 0.8255208
+anchor_top = 0.5765433
+anchor_right = 0.9817708
+anchor_bottom = 0.73086417
+offset_left = 3.0
+offset_right = 3.0
 texture = ExtResource("14_voexc")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1846,10 +1868,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccion_mesa_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1828131110]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21788195
-anchor_top = 0.4351852
-anchor_right = 0.37413195
-anchor_bottom = 0.58950615
+anchor_left = 0.8255208
+anchor_top = 0.7
+anchor_right = 0.9817708
+anchor_bottom = 0.85432094
+offset_left = 3.0
+offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("16_k4jul")
@@ -1901,10 +1925,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Inspeccionar" type="TextureRect" parent="Inspeccion_menu" unique_id=1840112436]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.052083332
-anchor_top = 0.20061728
-anchor_right = 0.20833333
-anchor_bottom = 0.354938
+anchor_left = 0.82708335
+anchor_top = 0.83518517
+anchor_right = 0.98333335
+anchor_bottom = 0.9895059
 texture = ExtResource("10_t335x")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -2021,6 +2045,61 @@ mouse_filter = 1
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
+[node name="opciones" type="Control" parent="." unique_id=2034249252]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="opciones" unique_id=950766386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36979166
+anchor_top = 0.3611111
+anchor_right = 0.6302083
+anchor_bottom = 0.6388889
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="modo_pantalla" type="OptionButton" parent="opciones/VBoxContainer" unique_id=1210828280]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Pantalla Completa"
+popup/item_0/id = 0
+popup/item_1/text = "Pantalla Fullscreen"
+popup/item_1/id = 1
+
+[node name="vsync" type="OptionButton" parent="opciones/VBoxContainer" unique_id=1782049225]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Vsync on"
+popup/item_0/id = 0
+popup/item_1/text = "Vsync off"
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="opciones/VBoxContainer" unique_id=921697355]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="opciones/VBoxContainer/HBoxContainer" unique_id=33652734]
+layout_mode = 2
+text = "SONIDO"
+
+[node name="slider_opciones" type="HSlider" parent="opciones/VBoxContainer/HBoxContainer" unique_id=405451797]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 10.0
+step = 0.5
+value = 10.0
+
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164 node_paths=PackedStringArray("hud")]
 process_mode = 3
 visible = false
@@ -2030,6 +2109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("GradientTexture1D_rbny8")
 script = ExtResource("6_bxlf6")
 hud = NodePath("..")
@@ -2084,6 +2164,15 @@ script = ExtResource("20_a0exy")
 hud_principal = NodePath("../../Hud_principal")
 animationplayer = NodePath("../../Hud_principal/SubViewport/armazon/AnimationPlayer")
 pantalla_negro = NodePath("../../pantalla_negro")
+
+[node name="menu_opciones" type="Node" parent="StateMachine" unique_id=1605085283 node_paths=PackedStringArray("hud_opciones", "pantalla", "vsync", "slider_opciones")]
+process_mode = 3
+script = ExtResource("33_kokcj")
+tutorial_scene = ExtResource("24_eiuad")
+hud_opciones = NodePath("../../opciones")
+pantalla = NodePath("../../opciones/VBoxContainer/modo_pantalla")
+vsync = NodePath("../../opciones/VBoxContainer/vsync")
+slider_opciones = NodePath("../../opciones/VBoxContainer/HBoxContainer/slider_opciones")
 
 [node name="tele" type="Node" parent="StateMachine" unique_id=1011358244 node_paths=PackedStringArray("hud_principal", "hud_elementos", "hud_startday", "hud_yes_no", "hud_inspecion", "Star_Day_rect", "skip_intro")]
 script = ExtResource("21_bluaa")
@@ -2161,6 +2250,7 @@ script = ExtResource("31_ncrl3")
 
 [connection signal="pressed" from="Hud_principal/Button_resume" to="StateMachine/pause" method="_on_button_resume_pressed"]
 [connection signal="pressed" from="Hud_principal/Button_menu" to="StateMachine/pause" method="_on_button_menu_pressed"]
+[connection signal="pressed" from="Hud_principal/Button_options" to="StateMachine/pause" method="_on_button_options_pressed"]
 [connection signal="pressed" from="Hud_principal/Button_quit" to="StateMachine/pause" method="_on_button_quit_pressed"]
 [connection signal="focus_entered" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Hud_elementos/Siguiente/Button_siguiente" to="Hud_elementos/Siguiente/Button_siguiente" method="_on_focus_exited"]
@@ -2239,3 +2329,6 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="StateMachine/mesa" method="_on_button_ir_pc_pressed"]
+[connection signal="item_selected" from="opciones/VBoxContainer/modo_pantalla" to="StateMachine/menu_opciones" method="_on_modo_pantalla_item_selected"]
+[connection signal="item_selected" from="opciones/VBoxContainer/vsync" to="StateMachine/menu_opciones" method="_on_vsync_item_selected"]
+[connection signal="drag_ended" from="opciones/VBoxContainer/HBoxContainer/slider_opciones" to="StateMachine/menu_opciones" method="_on_slider_opciones_drag_ended"]

@@ -29,7 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # 1. FUNCIÓN PÚBLICA: Para avanzar a un menú nuevo
 func change_to(target_state_name: String) -> void:
 	# Si ya hay un estado activo, lo guardamos en el historial antes de ir al nuevo
-	if current_state:
+	if current_state and current_state.name != "pause" and current_state.name != "menu_opciones":
 		_state_history.append(current_state.name)
 	if _state_history.size() > 5:
 		_state_history.pop_front()

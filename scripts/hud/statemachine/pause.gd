@@ -26,7 +26,7 @@ func exit() -> void:
 
 # Ejemplo de transición por input (ej: presionar Start/Esc para pausar)
 func handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and GameManager.paused == false and back_ready == false:
+	if event.is_action_pressed("ui_cancel") and back_ready == false:
 		back_ready = true
 		animationplayer.play("atras")
 		#aca puedo no usar false
@@ -62,4 +62,15 @@ func _on_button_resume_pressed() -> void:
 		#aca puedo no usar false
 		await get_tree().create_timer(animationplayer.get_animation("atras").length).timeout 
 		fsm.back()
+	pass # Replace with function body.
+
+
+func _on_button_options_pressed() -> void:
+	GameManager.paused = true
+	if back_ready == false:
+		back_ready = true
+		animationplayer.play("atras")
+		#aca puedo no usar false
+		await get_tree().create_timer(animationplayer.get_animation("atras").length).timeout 
+		fsm.change_to("menu_opciones")
 	pass # Replace with function body.

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cpy6lqle4hmut"]
 
+[ext_resource type="FontFile" uid="uid://b34byr2pgl0mb" path="res://fonts/roadster/ROADSTER.ttf" id="1_5211o"]
 [ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="1_a8sky"]
 [ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="2_5211o"]
+[ext_resource type="Texture2D" uid="uid://vsdfav036kvp" path="res://texture/hud/hud principal/iconos_menus/globo_de_texto (1).png" id="2_y3uaa"]
 [ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="3_y3uaa"]
 [ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="4_ca1v3"]
 [ext_resource type="AudioStream" uid="uid://b23s6rm0lmrk2" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)5.wav" id="5_flmli"]
@@ -21,8 +23,17 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_g7ujn"]
 size = Vector2(2, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_b2g3j"]
-font_size = 20
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca1v3"]
+texture = ExtResource("2_y3uaa")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_flmli"]
+font = ExtResource("1_5211o")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wcats"]
 playback_mode = 1
@@ -47,6 +58,7 @@ visible = false
 billboard = 1
 render_priority = 1
 text = "ULTIMA NOTICIA DE ULTIMA HORA"
+font = ExtResource("1_5211o")
 font_size = 52
 vertical_alignment = 2
 autowrap_mode = 2
@@ -55,31 +67,34 @@ autowrap_mode = 2
 material_override = SubResource("StandardMaterial3D_d6ua7")
 mesh = SubResource("QuadMesh_g7ujn")
 
-[node name="SubViewport2" type="SubViewport" parent="." unique_id=132098603]
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=267113383]
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 gui_disable_input = true
-size = Vector2i(400, 100)
+size = Vector2i(800, 200)
 render_target_update_mode = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="SubViewport2" unique_id=2089406657]
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport2" unique_id=916982996]
 visible = false
-custom_minimum_size = Vector2(400, 0)
-offset_right = 400.0
-offset_bottom = 63.0
+custom_minimum_size = Vector2(800, 0)
+offset_right = 800.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ca1v3")
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=705338826]
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=1885090200]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 57
+theme_override_constants/margin_bottom = 65
 
-[node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=2100157818]
+[node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=487349216]
 layout_mode = 2
-label_settings = SubResource("LabelSettings_b2g3j")
+size_flags_vertical = 0
+text = "Hoal como estas esto es un mensaje de prueba loo omagayd"
+label_settings = SubResource("LabelSettings_flmli")
 autowrap_mode = 2
 
 [node name="soniditos" type="AudioStreamPlayer3D" parent="." unique_id=1300258244]

@@ -15,7 +15,7 @@ var timer
 
 func _ready() -> void:
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
-	timer = uicontroller.get_node("Hud_elementos/Timer") 
+	timer = uicontroller.get_node("Hud_elementos/SubViewport/Timer")
 
 	position_medidor_alcholemia = nodo_alcholemia.global_position
 	pass # Replace with function body.

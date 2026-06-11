@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w58qkim583q6"]
 
-[ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/fondo/Street View 360flip.jpg" id="1_p3wn2"]
+[ext_resource type="Environment" uid="uid://c71aaf43jsj8q" path="res://recursos/cielo/mapa1.tres" id="1_p3wn2"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="2_okm07"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="3_f1toh"]
 [ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="4_v0gbs"]
@@ -20,18 +20,6 @@
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/pruebas_troll/fps_counter.gd" id="18_xd8lr"]
 [ext_resource type="PackedScene" uid="uid://dwgq8lbswib6h" path="res://modelos/ESCRITORIO/mesa/mesa precaria(con coso).glb" id="19_t5xcp"]
 [ext_resource type="PackedScene" uid="uid://74d2y0jwqh5u" path="res://modelos/EXTERIOR/tele/banquito/mesita 2.glb" id="20_jjms2"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
-panorama = ExtResource("1_p3wn2")
-
-[sub_resource type="Sky" id="Sky_p3wn2"]
-sky_material = SubResource("PanoramaSkyMaterial_o6xl0")
-
-[sub_resource type="Environment" id="Environment_0xm2m"]
-background_mode = 2
-sky = SubResource("Sky_p3wn2")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
 atlas = ExtResource("3_f1toh")
@@ -108,7 +96,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 24.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030609384]
-environment = SubResource("Environment_0xm2m")
+environment = ExtResource("1_p3wn2")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=41285900]
 visible = false

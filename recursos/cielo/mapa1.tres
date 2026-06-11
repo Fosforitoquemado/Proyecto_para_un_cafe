@@ -1,0 +1,15 @@
+[gd_resource type="Environment" format=3 uid="uid://c71aaf43jsj8q"]
+
+[ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/fondo/Street View 360flip.jpg" id="1_ppb08"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
+panorama = ExtResource("1_ppb08")
+
+[sub_resource type="Sky" id="Sky_p3wn2"]
+sky_material = SubResource("PanoramaSkyMaterial_o6xl0")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_p3wn2")
+tonemap_mode = 2
+glow_enabled = true
