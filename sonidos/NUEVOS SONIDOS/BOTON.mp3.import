@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i7ysef6skkg0"
+path="res://.godot/imported/BOTON.mp3-3ed867c80fae8799787e72e10c19d28b.mp3str"
+
+[deps]
+
+source_file="res://sonidos/NUEVOS SONIDOS/BOTON.mp3"
+dest_files=["res://.godot/imported/BOTON.mp3-3ed867c80fae8799787e72e10c19d28b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
