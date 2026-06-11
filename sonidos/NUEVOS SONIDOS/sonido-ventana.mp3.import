@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m4v8gmbchoqf"
+path="res://.godot/imported/sonido-ventana.mp3-9ff45d939cab56c498367a4d7bf801eb.mp3str"
+
+[deps]
+
+source_file="res://sonidos/NUEVOS SONIDOS/sonido-ventana.mp3"
+dest_files=["res://.godot/imported/sonido-ventana.mp3-9ff45d939cab56c498367a4d7bf801eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

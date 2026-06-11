@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qgtd284trmdu"
+path="res://.godot/imported/error.mp3-095737445b29a59ce8626a17a0a4b01e.mp3str"
+
+[deps]
+
+source_file="res://sonidos/NUEVOS SONIDOS/error.mp3"
+dest_files=["res://.godot/imported/error.mp3-095737445b29a59ce8626a17a0a4b01e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

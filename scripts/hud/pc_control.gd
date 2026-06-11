@@ -59,7 +59,7 @@ var tiempo_de_carga
 var busy: bool = false
 var pag_number = 1
 var min_pag_number = 1
-var max_pag_number = 3
+var max_pag_number = 7
 
 var pc_mouse_pos:Vector2 = Vector2.ZERO
 
