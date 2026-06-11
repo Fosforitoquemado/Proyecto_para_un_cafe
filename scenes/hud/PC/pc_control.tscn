@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dv5plpqqijdil" path="res://scripts/hud/pc_control.gd" id="1_jgmss"]
 [ext_resource type="PackedScene" uid="uid://ctos4hqrlbccv" path="res://scenes/hud/PC/errores.tscn" id="2_2g4jo"]
-[ext_resource type="Texture2D" uid="uid://hosdpxt5jhkj" path="res://texture/hud/pc/para el cafe arte.png" id="2_7mlyq"]
 [ext_resource type="Texture2D" uid="uid://g8qf76klod4f" path="res://texture/hud/pc/cargando.png" id="2_p8x6u"]
 [ext_resource type="Texture2D" uid="uid://bfujvmt6ky4er" path="res://texture/hud/pc/arrow-cb396dc0-ezgif.com-gif-to-sprite-converter.png" id="2_y3tss"]
+[ext_resource type="Texture2D" uid="uid://er6k1nd6dmon" path="res://texture/hud/pc/para el cafe arte 2.png" id="4_bxn6l"]
 [ext_resource type="Texture2D" uid="uid://dmlhcf60wp1j7" path="res://texture/hud/pc/ventanas/para el cafe arte.jpg" id="5_2g4jo"]
 [ext_resource type="Script" uid="uid://beftgd4vb8l35" path="res://scripts/hud/hud_in_game/icons.gd" id="6_8tnld"]
 [ext_resource type="Script" uid="uid://dpn18nf2gnvy4" path="res://scripts/hud/hud_in_game/draggable_panel.gd" id="7_50kaj"]
@@ -545,7 +545,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_7mlyq")
+texture = ExtResource("4_bxn6l")
 expand_mode = 1
 
 [node name="Iconos" type="Control" parent="." unique_id=383303726]
@@ -1556,6 +1556,7 @@ offset_right = 6.8333435
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_instrucciones" type="PanelContainer" parent="." unique_id=1436091547]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 405.0
@@ -1963,6 +1964,7 @@ mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BaseDatos" type="Button" parent="." unique_id=644810559]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1

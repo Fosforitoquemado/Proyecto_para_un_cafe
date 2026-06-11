@@ -15,7 +15,6 @@ func _ready() -> void:
 	tween.tween_property(game_over,"modulate",Color(1.0, 1.0, 1.0, 1.0),2.0)
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

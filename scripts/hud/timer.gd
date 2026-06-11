@@ -5,8 +5,6 @@ extends ProgressBar
 @export var sub_viewport:SubViewport
 @export var yes_no_menu: UIState
 
-@onready var termo: MeshInstance3D = $"../../../../Elementos_mesa/termo"
-
 var timer_bool
 
 var tiempo_transcurrido: float = 0.0

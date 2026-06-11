@@ -21,6 +21,7 @@ SaveLoad="*uid://myivfx11n6nf"
 GameManager="*uid://bfiohbx33ojvf"
 Utils="*uid://cy8dhrpqw4vdd"
 AutoGenerator="*uid://csicyh2kn4lwd"
+AudioManager="*uid://136i2rnickbg"
 
 [display]
 

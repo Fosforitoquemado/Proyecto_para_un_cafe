@@ -48,14 +48,12 @@ func _process(delta: float) -> void:
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
 				await get_tree().create_timer(4,false).timeout
-				reset()
 				get_tree().change_scene_to_file("res://scenes/final_dia.tscn")
 			else:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
 				await get_tree().create_timer(4,false).timeout
-				reset()
 				get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
 
 func _input(event: InputEvent) -> void:

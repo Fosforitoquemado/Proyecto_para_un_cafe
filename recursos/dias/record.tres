@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://c5fiir3igbjlw"]
+
+[ext_resource type="Resource" uid="uid://dqkcavd3p4ym6" path="res://recursos/apellidos/apellidos.tres" id="1_mo6j8"]
+[ext_resource type="Resource" uid="uid://bh00ilbmrhnp4" path="res://recursos/ArrayAutos/TODOS.tres" id="2_3qgyc"]
+[ext_resource type="Resource" uid="uid://dybs0tr2h2jb0" path="res://recursos/colores/colores.tres" id="3_138fn"]
+[ext_resource type="Resource" uid="uid://c85rfxn7ujgpf" path="res://recursos/configs/config_dia7.tres" id="4_kfbv3"]
+[ext_resource type="Resource" uid="uid://dbrr6pstsk3tt" path="res://recursos/Dialogos/dialogostelearray/record.tres" id="5_mo6j8"]
+[ext_resource type="Resource" uid="uid://dlauin8xdd1vs" path="res://recursos/nombres/nombres.tres" id="6_gvhnp"]
+[ext_resource type="Resource" uid="uid://3uug0jihb52e" path="res://recursos/objetosbaularray/ilegales.tres" id="7_aqchd"]
+[ext_resource type="Resource" uid="uid://dt7ujyo3v0elv" path="res://recursos/objetosbaularray/legales.tres" id="8_ilyf5"]
+[ext_resource type="Resource" uid="uid://b0lwv1i2yits1" path="res://recursos/Arraypersonajes/TODOS.tres" id="9_384kf"]
+[ext_resource type="Script" uid="uid://dyyci053w374o" path="res://recursos/Scripts/DayResource.gd" id="10_0pxrv"]
+[ext_resource type="Resource" uid="uid://pmrc6vst4bmd" path="res://recursos/tiposdeautos/TODOS.tres" id="11_o6gc2"]
+
+[resource]
+script = ExtResource("10_0pxrv")
+nombre = "Jueves"
+fecha_hoy = {
+"anio": 2026,
+"dia": 11,
+"mes": 6
+}
+mapa = Array[String](["res://scenes/mapa2/mapa_2.tscn"])
+documentos_habilitados = Array[String](["vtv", "cedula", "licencia", "objetos_baul"])
+config = ExtResource("4_kfbv3")
+autos_permitidos = ExtResource("2_3qgyc")
+nombres = ExtResource("6_gvhnp")
+apellidos = ExtResource("1_mo6j8")
+personajes = ExtResource("9_384kf")
+colores = ExtResource("3_138fn")
+objetosbaullegales = ExtResource("8_ilyf5")
+objetosbaulilegales = ExtResource("7_aqchd")
+dialogostele = ExtResource("5_mo6j8")
+tiposdeautos = ExtResource("11_o6gc2")
+metadata/_custom_type_script = "uid://dyyci053w374o"

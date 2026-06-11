@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="5_3vhhu"]
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_w6gyl"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="6_qig0w"]
-[ext_resource type="AudioStream" uid="uid://bnef56h2ipw7u" path="res://sonidos/carnet_.wav" id="7_564cm"]
+[ext_resource type="AudioStream" uid="uid://b522xeqcws3xd" path="res://sonidos/auto-frenando-y-apagando-el-motor.wav" id="7_564cm"]
 [ext_resource type="Texture2D" uid="uid://1lw6i3aa8xxa" path="res://modelos/EXTERIOR/mapa2/escenario_radio Base Color.png" id="7_a3sv8"]
 [ext_resource type="Texture2D" uid="uid://d1oosrnigbabd" path="res://modelos/EXTERIOR/mapa2/escenario_otra cosa Base Color.png" id="8_4h5y8"]
 [ext_resource type="PackedScene" uid="uid://dimy1tsw0bi6p" path="res://scenes/hud/PC/PCSISTEMA.tscn" id="8_17n1j"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cu3aujvg4frx2" path="res://modelos/EXTERIOR/mapa2/escenario_lapicero.png" id="15_m3qsi"]
 [ext_resource type="Texture2D" uid="uid://2l5kr2sv3lya" path="res://modelos/EXTERIOR/mapa2/escenario_libreta.png" id="16_reg5l"]
 [ext_resource type="Texture2D" uid="uid://buqv855lycbwf" path="res://modelos/EXTERIOR/mapa2/escenario_documentos.png" id="17_oak8d"]
+[ext_resource type="Script" uid="uid://bt8bs0rjxaeup" path="res://scripts/mapa/luz_garita.gd" id="18_a3sv8"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="18_ia30t"]
 [ext_resource type="Script" uid="uid://dsovnopsul6vn" path="res://scripts/principal/DocumentosGenerator.gd" id="19_cleew"]
 [ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="19_f7g05"]
@@ -1372,6 +1373,7 @@ mesh = SubResource("ArrayMesh_ymq1t")
 [node name="OmniLight3D" type="OmniLight3D" parent="mapa_cosas/mapa2/radio" unique_id=1064279965]
 transform = Transform3D(3.9056795, 0, 1.1368684e-13, 0, 2.8719423, 0, -1.1368684e-13, 0, 3.9056795, -6.710212, 9.144907, 9.9604645)
 light_color = Color(0.9999992, 0.98791295, 0.7040726, 1)
+script = ExtResource("18_a3sv8")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="mapa_cosas/mapa2" unique_id=868495259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9501033, -0.364026, -18.689121)
@@ -1447,7 +1449,7 @@ transform = Transform3D(0.18840984, 0, 0.98209053, 0, 1, 0, -0.98209053, 0, 0.18
 transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.19767919, 0, 0.030379813, 0.879085, 0.4248134, 0.8867793)
 
 [node name="tele" parent="." unique_id=1997209396 instance=ExtResource("9_w6gyl")]
-transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.72023547, 1.0030001, 1.5771519)
+transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.7505155, 1.0030001, 1.5771519)
 
 [node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_djlwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032149434, -0.122502714)

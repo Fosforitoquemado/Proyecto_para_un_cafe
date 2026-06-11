@@ -141,9 +141,6 @@ transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.1976791
 
 [node name="tele" parent="." unique_id=1611947647 instance=ExtResource("9_5posd")]
 transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.98357636, 0.3077581, 1.6657909)
-pixels_to_meters = null
-letters_scale = null
-max_width_x = null
 
 [node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_86csk")]
 

@@ -43,10 +43,13 @@
 [ext_resource type="Script" uid="uid://7uwx8xnlpgtl" path="res://scripts/hud/statemachine/auto_vtv.gd" id="27_eiuad"]
 [ext_resource type="Script" uid="uid://dgygvt3hdcx3d" path="res://scripts/hud/statemachine/auto_baul.gd" id="28_4vn1o"]
 [ext_resource type="Script" uid="uid://c08ukm1ctupi5" path="res://scripts/hud/statemachine/pc.gd" id="29_pjbv8"]
+[ext_resource type="AudioStream" uid="uid://qgtd284trmdu" path="res://sonidos/NUEVOS SONIDOS/error.mp3" id="31_i6gk6"]
 [ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="31_ncrl3"]
+[ext_resource type="AudioStream" uid="uid://dxx04cewj0uqx" path="res://sonidos/NUEVOS SONIDOS/auto aprobado.mp3" id="32_6bs1m"]
 [ext_resource type="Script" uid="uid://bcxrone8yn4fb" path="res://scripts/hud/statemachine/opciones.gd" id="33_kokcj"]
-[ext_resource type="AudioStream" uid="uid://cg0mqu4ixvfef" path="res://sonidos/HUD/ERROR/Error.wav" id="35_yog28"]
-[ext_resource type="AudioStream" uid="uid://dg8ibayhphcmb" path="res://sonidos/HUD/Acierto/Pickup.wav" id="36_vyxmn"]
+[ext_resource type="AudioStream" uid="uid://b6b58abyb518b" path="res://sonidos/NUEVOS SONIDOS/cash.mp3" id="33_tqp1p"]
+[ext_resource type="AudioStream" uid="uid://ya87p67v6kuq" path="res://sonidos/NUEVOS SONIDOS/multado.mp3" id="34_dyquw"]
+[ext_resource type="AudioStream" uid="uid://f6cd7hfqk0t6" path="res://sonidos/NUEVOS SONIDOS/SELLO (mp3cut.net).wav" id="35_68vtf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pb7mj"]
 viewport_path = NodePath("Hud_principal/SubViewport")
@@ -1034,12 +1037,19 @@ font_size = 38
 outline_size = 4
 outline_color = Color(0, 0, 0, 0.554)
 
-[sub_resource type="Gradient" id="Gradient_p5ytw"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_dyquw"]
+offsets = PackedFloat32Array(0.46090534)
+colors = PackedColorArray(0.072842635, 0.072842635, 0.072842635, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_xrjht"]
-gradient = SubResource("Gradient_p5ytw")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_68vtf"]
+gradient = SubResource("Gradient_dyquw")
+
+[sub_resource type="Gradient" id="Gradient_i6gk6"]
+offsets = PackedFloat32Array(0.5802469)
+colors = PackedColorArray(0, 0, 0, 0.39100003)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6bs1m"]
+gradient = SubResource("Gradient_i6gk6")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bxlf6"]
 blend_mode = 1
@@ -1089,6 +1099,24 @@ _data = {
 &"iluminado": SubResource("Animation_bxlf6")
 }
 
+[sub_resource type="Gradient" id="Gradient_6bs1m"]
+offsets = PackedFloat32Array(0.51028806)
+colors = PackedColorArray(0.70384187, 0.31602886, 0.31036404, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tqp1p"]
+gradient = SubResource("Gradient_6bs1m")
+
+[sub_resource type="Gradient" id="Gradient_tqp1p"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.79199904, 0.79199916, 0.7919989, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_68vtf"]
+gradient = SubResource("Gradient_tqp1p")
+fill_from = Vector2(0.7863248, 0.6196581)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nk882"]
+font_size = 47
+
 [sub_resource type="Gradient" id="Gradient_vyxmn"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0, 0, 1)
@@ -1111,7 +1139,7 @@ tags = {
 font = ExtResource("27_7wrco")
 font_size = 53
 
-[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "hud_principal", "yes_no_menu", "inspeccion_menu", "startday", "timer", "sub_viewport_menu", "usos_mate_num", "progressbarmate") groups=["ui_manager"]]
+[node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "hud_principal", "yes_no_menu", "inspeccion_menu", "opciones_menu", "startday", "timer", "sub_viewport_menu", "usos_mate_num", "progressbarmate", "slider_volumen", "modo_pantalla", "vsync") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1127,11 +1155,15 @@ hud_elementos = NodePath("Hud_elementos")
 hud_principal = NodePath("Hud_principal")
 yes_no_menu = NodePath("YES_NO_menu")
 inspeccion_menu = NodePath("Inspeccion_menu")
+opciones_menu = NodePath("opciones")
 startday = NodePath("Start_day")
 timer = NodePath("Hud_elementos/Timer")
 sub_viewport_menu = NodePath("Hud_principal/SubViewport")
 usos_mate_num = NodePath("YES_NO_menu/ProgressBar_mate/usos_mate_num")
 progressbarmate = NodePath("YES_NO_menu/ProgressBar_mate")
+slider_volumen = NodePath("opciones/VBoxContainer/HBoxContainer/slider_opciones")
+modo_pantalla = NodePath("opciones/VBoxContainer/modo_pantalla")
+vsync = NodePath("opciones/VBoxContainer/vsync")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
 process_mode = 3
@@ -1325,6 +1357,7 @@ omni_range = 0.95
 omni_attenuation = -10.0
 
 [node name="Hud_elementos" type="Control" parent="." unique_id=265028241]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1415,16 +1448,32 @@ label_settings = SubResource("LabelSettings_tqp1p")
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="fondo_dinero2" type="TextureRect" parent="Hud_elementos/Dinero" unique_id=536725166]
+self_modulate = Color(0.16206557, 0.1620656, 0.16206557, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5691057
+anchor_top = -0.6288125
+anchor_right = 2.682927
+anchor_bottom = 1.8711876
+offset_left = 2.0
+offset_top = -4.6949997
+offset_right = 12.0
+offset_bottom = 5.3049927
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_xrjht")
+expand_mode = 1
+
 [node name="fondo_dinero" type="TextureRect" parent="Hud_elementos/Dinero" unique_id=1532169232]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.5691057
-anchor_top = -0.7
+anchor_top = -0.6288125
 anchor_right = 2.682927
-anchor_bottom = 1.175
-offset_top = 16.0
-offset_bottom = 16.0
+anchor_bottom = 1.8711876
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_xrjht")
@@ -1432,50 +1481,54 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="ProgressBar" parent="Hud_elementos" unique_id=397951695 node_paths=PackedStringArray("HUD", "statemachine", "sub_viewport", "yes_no_menu")]
-self_modulate = Color(0.24269372, 1, 0, 1)
+self_modulate = Color(0.21960784, 0.92156863, 0, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.034375
+anchor_left = 0.052604165
 anchor_top = 0.3962963
-anchor_right = 1.034375
-anchor_bottom = 1.3962963
-offset_right = -1770.0
-offset_bottom = -680.0
+anchor_right = 0.09375
+anchor_bottom = 0.76666665
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-value = 29.11
 fill_mode = 3
 show_percentage = false
 script = ExtResource("2_cgeww")
 HUD = NodePath("../..")
 statemachine = NodePath("../../StateMachine")
-sub_viewport = NodePath("../SubViewport")
+sub_viewport = NodePath("")
 yes_no_menu = NodePath("../../StateMachine/yes_no_menu")
 metadata/_edit_use_anchors_ = true
 
-[node name="SubViewport" type="SubViewport" parent="Hud_elementos" unique_id=1760314307]
-size = Vector2i(100, 300)
-
-[node name="TextureRect" type="TextureRect" parent="Hud_elementos/SubViewport" unique_id=208319167]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_right = 78.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_xrjht")
-
-[node name="mate" type="TextureRect" parent="Hud_elementos" unique_id=2140123962]
+[node name="TextureRect" type="TextureRect" parent="Hud_elementos/Timer" unique_id=1007967206]
+show_behind_parent = true
 layout_mode = 0
-offset_left = 109.0
-offset_top = 649.0
-offset_right = 501.0
-offset_bottom = 1197.0
+offset_left = -5.0
+offset_right = 85.0
+offset_bottom = 400.0
+texture = SubResource("GradientTexture1D_68vtf")
+expand_mode = 1
+
+[node name="mate" type="TextureRect" parent="Hud_elementos/Timer" unique_id=2140123962]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 221.0
+offset_right = 400.0
+offset_bottom = 769.0
 scale = Vector2(0.16000003, 0.16000003)
 texture = ExtResource("14_p5ytw")
 expand_mode = 1
+
+[node name="Barra_abajo" type="TextureRect" parent="Hud_elementos" unique_id=1518753106]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8518519
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture1D_6bs1m")
+metadata/_edit_use_anchors_ = true
 
 [node name="Start_day" type="Control" parent="." unique_id=233837449]
 visible = false
@@ -1613,9 +1666,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8276042
-anchor_top = 0.83518517
+anchor_top = 0.84876573
 anchor_right = 0.9838542
-anchor_bottom = 0.9895059
+anchor_bottom = 1.0030864
 texture = ExtResource("10_t335x")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1895,13 +1948,12 @@ script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Inspeccion_volver_texture" type="TextureRect" parent="Inspeccion_menu" unique_id=1300110961]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21788195
-anchor_top = 0.55864197
-anchor_right = 0.37413195
-anchor_bottom = 0.712963
+anchor_left = 0.82708335
+anchor_top = 0.84876573
+anchor_right = 0.98333335
+anchor_bottom = 1.0030868
 texture = ExtResource("17_7wrco")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1918,33 +1970,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Inspeccion_volver
-"
-script = ExtResource("7_v3rms")
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccionar" type="TextureRect" parent="Inspeccion_menu" unique_id=1840112436]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.82708335
-anchor_top = 0.83518517
-anchor_right = 0.98333335
-anchor_bottom = 0.9895059
-texture = ExtResource("10_t335x")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Inspeccion" type="Button" parent="Inspeccion_menu/Inspeccionar" unique_id=1800599027]
-modulate = Color(0, 0, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.08888889
-anchor_top = 0.1500003
-anchor_right = 0.9166667
-anchor_bottom = 0.85
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-text = "Inspeccion
 "
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -2095,10 +2120,92 @@ text = "SONIDO"
 [node name="slider_opciones" type="HSlider" parent="opciones/VBoxContainer/HBoxContainer" unique_id=405451797]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
-max_value = 10.0
+max_value = 5.0
 step = 0.5
-value = 10.0
+value = 5.0
+
+[node name="Button_reiniciar" type="Button" parent="opciones" unique_id=685928294]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "reiniciar"
+
+[node name="TextureRect" type="TextureRect" parent="opciones" unique_id=1069786618]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_tqp1p")
+
+[node name="TextureRect2" type="TextureRect" parent="opciones" unique_id=1916590171]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_68vtf")
+
+[node name="TextureRect3" type="TextureRect" parent="opciones" unique_id=813646015]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 292.0
+offset_right = 778.0
+offset_bottom = 356.0
+rotation = 0.13341281
+mouse_filter = 2
+texture = ExtResource("7_r6i85")
+
+[node name="Button_atras" type="Button" parent="opciones" unique_id=1752413539]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = 0.6088542
+anchor_top = 0.275
+anchor_right = 0.6265625
+anchor_bottom = 0.31666666
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="opciones/Button_atras" unique_id=1299561184]
+self_modulate = Color(0.80699587, 0.39336935, 0.38384208, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.22222222
+anchor_right = 1.1
+anchor_bottom = 1.0555556
+text = "X"
+label_settings = SubResource("LabelSettings_nk882")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164 node_paths=PackedStringArray("hud")]
 process_mode = 3
@@ -2140,12 +2247,21 @@ metadata/_edit_use_anchors_ = true
 [node name="Sonidos" type="Node" parent="." unique_id=833533592]
 
 [node name="Error" type="AudioStreamPlayer" parent="Sonidos" unique_id=1719553838]
-stream = ExtResource("35_yog28")
-volume_db = 8.283
-pitch_scale = 1.67
+stream = ExtResource("31_i6gk6")
+volume_db = 3.421
 
 [node name="acierto" type="AudioStreamPlayer" parent="Sonidos" unique_id=1628905244]
-stream = ExtResource("36_vyxmn")
+stream = ExtResource("32_6bs1m")
+
+[node name="cash" type="AudioStreamPlayer" parent="Sonidos" unique_id=1316413356]
+stream = ExtResource("33_tqp1p")
+
+[node name="multado" type="AudioStreamPlayer" parent="Sonidos" unique_id=87110596]
+stream = ExtResource("34_dyquw")
+
+[node name="sello" type="AudioStreamPlayer" parent="Sonidos" unique_id=292309411]
+stream = ExtResource("35_68vtf")
+volume_db = -11.632
 
 [node name="StateMachine" type="Node" parent="." unique_id=839052089 node_paths=PackedStringArray("initial_state")]
 process_mode = 3
@@ -2165,10 +2281,11 @@ hud_principal = NodePath("../../Hud_principal")
 animationplayer = NodePath("../../Hud_principal/SubViewport/armazon/AnimationPlayer")
 pantalla_negro = NodePath("../../pantalla_negro")
 
-[node name="menu_opciones" type="Node" parent="StateMachine" unique_id=1605085283 node_paths=PackedStringArray("hud_opciones", "pantalla", "vsync", "slider_opciones")]
+[node name="menu_opciones" type="Node" parent="StateMachine" unique_id=1605085283 node_paths=PackedStringArray("HUD", "hud_opciones", "pantalla", "vsync", "slider_opciones")]
 process_mode = 3
 script = ExtResource("33_kokcj")
 tutorial_scene = ExtResource("24_eiuad")
+HUD = NodePath("../..")
 hud_opciones = NodePath("../../opciones")
 pantalla = NodePath("../../opciones/VBoxContainer/modo_pantalla")
 vsync = NodePath("../../opciones/VBoxContainer/vsync")
@@ -2318,11 +2435,6 @@ script = ExtResource("31_ncrl3")
 [connection signal="mouse_entered" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" method="_on_mouse_exited"]
 [connection signal="pressed" from="Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver" to="StateMachine/inspeccion" method="_on_inspeccion_volver_pressed"]
-[connection signal="focus_entered" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_focus_entered"]
-[connection signal="focus_exited" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_focus_exited"]
-[connection signal="mouse_entered" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="Inspeccion_menu/Inspeccionar/Inspeccion" method="_on_mouse_exited"]
-[connection signal="pressed" from="Inspeccion_menu/Inspeccionar/Inspeccion" to="StateMachine/inspeccion" method="_on_inspeccion_pressed"]
 [connection signal="pressed" from="Inspeccion_menu/Baul_menu/cerrarbaul/cerrar_baul" to="StateMachine/auto_baul" method="_on_cerrar_baul_pressed"]
 [connection signal="focus_entered" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" to="Inspeccion_menu/pc_mesa/arrow/Button_ir_pc" method="_on_focus_exited"]
@@ -2332,3 +2444,5 @@ script = ExtResource("31_ncrl3")
 [connection signal="item_selected" from="opciones/VBoxContainer/modo_pantalla" to="StateMachine/menu_opciones" method="_on_modo_pantalla_item_selected"]
 [connection signal="item_selected" from="opciones/VBoxContainer/vsync" to="StateMachine/menu_opciones" method="_on_vsync_item_selected"]
 [connection signal="drag_ended" from="opciones/VBoxContainer/HBoxContainer/slider_opciones" to="StateMachine/menu_opciones" method="_on_slider_opciones_drag_ended"]
+[connection signal="pressed" from="opciones/Button_reiniciar" to="StateMachine/menu_opciones" method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="opciones/Button_atras" to="StateMachine/menu_opciones" method="_on_button_atras_pressed"]

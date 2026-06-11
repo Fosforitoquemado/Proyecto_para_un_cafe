@@ -10,7 +10,10 @@ var contents_to_save: Dictionary = {
 	"tutorial_baul": false,
 	"tutorial_pc": false,
 	"usos_mate": 3,
-	"new_data_to_save": false
+	"new_data_to_save": false,
+	"pantalla_modo": 0,
+	"vsync" : 0,
+	"volumen": 5.0,
 }
 
 func _ready() -> void:

@@ -16,6 +16,7 @@ class_name UIManager
 @export var hud_principal: Control
 @export var yes_no_menu: Control
 @export var inspeccion_menu: Control
+@export var opciones_menu:Control
 @export var startday: Control
 @export var timer: ProgressBar
 
@@ -25,6 +26,11 @@ class_name UIManager
 #termo
 @export var usos_mate_num:Label
 @export var progressbarmate:ProgressBar
+
+#opciones
+@export var slider_volumen:HSlider
+@export var modo_pantalla:OptionButton
+@export var vsync:OptionButton
 
 var dia
 
@@ -37,6 +43,7 @@ func _ready() -> void:
 	hud_elementos.hide()
 	hud_principal.hide()
 	inspeccion_menu.hide()
+	opciones_menu.hide()
 	yes_no_menu.hide()
 	startday.hide()
 	update_ui()
@@ -54,10 +61,16 @@ func update_ui():
 	#dinero
 	print("DINEROO",GameManager.dinero)
 	dinero_label.text = str("Plata: ",GameManager.dinero)
+	
+	#opciones
+	modo_pantalla.select(SaveLoad.contents_to_save.values()[8])
+	vsync.select(SaveLoad.contents_to_save.values()[9])
+	slider_volumen.value = SaveLoad.contents_to_save.values()[10]
+	
 	if GameManager.dinero < 0:
-		dinero_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+		dinero_label.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
 	else:
-		dinero_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		dinero_label.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 func _on_fov_slider_value_changed(value: float) -> void:
 	CameraController.update_fov(value)
 	pass # Replace with function body.

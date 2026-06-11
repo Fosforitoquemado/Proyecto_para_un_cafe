@@ -17,7 +17,6 @@ var paso_actual: int = 0
 var timer = false
 var tiempo = 0.0
 
-
 func _process(delta: float) -> void:
 	pass
 	#if timer:
@@ -87,9 +86,11 @@ func mostrar_paso():
 		var texture = boton_objetivo.get_parent()
 		texture.show()
 		
+	print(datos_paso["automatico"])
 	if datos_paso["automatico"] == true:
-		await get_tree().create_timer(tiempo_espera, false).timeout
+		await get_tree().create_timer(tiempo_espera).timeout
 		_on_siguiente_pressed()
+		print("awaited")
 	else:
 		pass
 func _on_siguiente_pressed():

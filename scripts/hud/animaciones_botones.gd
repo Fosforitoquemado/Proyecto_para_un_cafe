@@ -22,6 +22,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_focus_entered() -> void:
 	if active_click == false:
+		AudioManager.play_click()
 		active_click = true
 		texture.position.y += 4
 	pass # Replace with function body.

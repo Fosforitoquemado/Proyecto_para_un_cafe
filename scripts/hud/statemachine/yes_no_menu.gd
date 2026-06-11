@@ -19,8 +19,12 @@ extends UIState
 @export var progressbarmate: ProgressBar
 @onready var usos_mate_num: Label = $"../../YES_NO_menu/ProgressBar_mate/usos_mate_num"
 @onready var mate: Node3D = $"../../../Elementos_mesa/MATE"
+
 @onready var error: AudioStreamPlayer = $"../../Sonidos/Error"
 @onready var acierto: AudioStreamPlayer = $"../../Sonidos/acierto"
+@onready var cash: AudioStreamPlayer = $"../../Sonidos/cash"
+@onready var multado: AudioStreamPlayer = $"../../Sonidos/multado"
+@onready var sello: AudioStreamPlayer = $"../../Sonidos/sello"
 
 @onready var state_machine: Node = $".."
 
@@ -41,17 +45,17 @@ func comenzar_guia():
 		{
 			"nodo_boton": aprobado,
 			"automatico": false,
-			"texto": "¡Este es el botón de aprobado! Úsalo para dejar pasar autos."
+			"texto": "¡Este es el botón de aprobado! Úsalo para dejar pasar autos que no tengan fallos!, te pagaran por cada auto correctamente procesado."
 		},
 		{
 			"nodo_boton": multar,
 			"automatico": false,
-			"texto": "¡Este es el botón de multar! Úsalo para multar autos"
+			"texto": "¡Este es el botón de multar! Úsalo para multar autos con documentos erroneos"
 		},
 		{
 			"nodo_boton": tomar_mate,
 			"automatico": false,
-			"texto": "¡Este es el botón para tomar mate, usalo cuando tu barra de tiempo pase el 30%"
+			"texto": "¡Este es el botón para tomar mate, usalo cuando tu barra de tiempo pase el 30% y recude la barra de tiempo"
 		},
 		{
 			"nodo_boton": pc,
@@ -59,14 +63,14 @@ func comenzar_guia():
 			"texto": "¡Este es la pc, clickeala cuando quieras y necesites verificar informacion del vehiculo"
 		},
 		{
+			"nodo_boton": coima,
+			"automatico": false,
+			"texto": "¡Este es el botón para coimear, cuando un vehiculo tenga 2 o mas errores aprovechalo para ganar mas plata"
+		},
+		{
 			"nodo_boton": inspeccionar,
 			"automatico": false,
 			"texto": "¡Este es el botón de inspeccionar, usalo para revisar y validar los autos"
-		},
-		{
-			"nodo_boton": coima,
-			"automatico": false,
-			"texto": "¡Este es el botón para coimear, cuando veas la oportunidad de cerrar un trato, hacelo"
 		}
 	]
 	var configuracion_posiciones = [
@@ -138,6 +142,7 @@ func _on_yes_pressed() -> void:
 		GameManager.ida_auto(0)
 		timer._stop_timer()
 		yes_no_menu.hide()
+		sello.play()
 		if DocumentosGenerator.auto_ilegal == true:
 			GameManager.sumar_fallo()
 			GameManager.update_score(-DocumentosGenerator.auto_data["score_auto"] / 2)
@@ -161,6 +166,7 @@ func _on_no_pressed() -> void:
 		GameManager.ida_auto(1)
 		timer._stop_timer()
 		yes_no_menu.hide()
+		sello.play()
 		if DocumentosGenerator.auto_ilegal == false:
 			print("FALLASTE❌❌")
 			error.play()
@@ -173,6 +179,7 @@ func _on_no_pressed() -> void:
 			#GameManager.sumar_dinero_jugador(50)
 			GameManager.sumar_auto()
 			acierto.play()
+			multado.play()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false
@@ -183,6 +190,7 @@ func _on_coimear_pressed() -> void:
 		active = true
 		timer._stop_timer()
 		yes_no_menu.hide()
+		sello.play()
 		if DocumentosGenerator.ilegalidades <= 1:
 			print("FALLASTE❌❌")
 			error.play()
@@ -197,6 +205,7 @@ func _on_coimear_pressed() -> void:
 			#GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			GameManager.sumar_auto()
 			acierto.play()
+			cash.play()
 			print("BIEN✅✅")
 		active = false
 		HUD.auto_out = false

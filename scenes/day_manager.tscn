@@ -9,7 +9,8 @@
 [ext_resource type="Resource" uid="uid://o0ylakfm4w6h" path="res://recursos/dias/dia5.tres" id="7_0xgs2"]
 [ext_resource type="Resource" uid="uid://42lfxbbws25n" path="res://recursos/dias/dia6.tres" id="8_22gff"]
 [ext_resource type="Resource" uid="uid://bk3t1c5mjv08q" path="res://recursos/dias/dia7.tres" id="9_vlr5s"]
+[ext_resource type="Resource" uid="uid://c5fiir3igbjlw" path="res://recursos/dias/record.tres" id="10_vuiu1"]
 
 [node name="DayManager" type="Node" unique_id=1707673262 groups=["DayManager"]]
 script = ExtResource("1_tghls")
-dias = Array[ExtResource("2_22gff")]([ExtResource("3_vlr5s"), ExtResource("4_vuiu1"), ExtResource("5_evaq0"), ExtResource("6_a3rl2"), ExtResource("7_0xgs2"), ExtResource("8_22gff"), ExtResource("9_vlr5s")])
+dias = Array[ExtResource("2_22gff")]([ExtResource("3_vlr5s"), ExtResource("4_vuiu1"), ExtResource("5_evaq0"), ExtResource("6_a3rl2"), ExtResource("7_0xgs2"), ExtResource("8_22gff"), ExtResource("9_vlr5s"), ExtResource("10_vuiu1")])

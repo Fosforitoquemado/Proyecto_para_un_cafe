@@ -86,7 +86,8 @@ func _on_comprar_pressed() -> void:
 
 func _on_siguiente_dia_pressed() -> void:
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
-	daymanager.sumar_dia()
+	if daymanager.dia_actual < 7:
+		daymanager.sumar_dia()
 	SaveLoad.contents_to_save["dinero"] = GameManager.dinero
 	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
 	SaveLoad.contents_to_save["usos_mate"] = GameManager.usos_mates

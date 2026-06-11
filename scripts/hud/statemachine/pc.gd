@@ -27,7 +27,7 @@ func comenzar_guia():
 		{
 			"nodo_boton": baul_boton,
 			"automatico": true,
-			"texto": "¡clickea la base de datos para checkear."
+			"texto": "¡clickea los accesos directos para validar informacion,(instrucciones.EXE puede ayudarte)."
 		},
 	]
 	var configuracion_posiciones = [

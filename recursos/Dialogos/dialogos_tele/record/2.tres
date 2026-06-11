@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://bmyqi4a4laa1b"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_kdrwi"]
+
+[resource]
+script = ExtResource("1_kdrwi")
+texto = "si les gusto nuestro juego siganos en itch.io por favor, muchas gracias :)"
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

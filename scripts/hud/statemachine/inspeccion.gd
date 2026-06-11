@@ -100,11 +100,6 @@ func _on_inspeccion_volver_pressed() -> void:
 	fsm.change_to("yes_no_menu")
 	pass # Replace with function body.
 
-func _on_inspeccion_pressed() -> void:
-	hud_inspeccion.hide()
-	fsm.change_to("yes_no_menu")
-	pass # Replace with function body.
-
 func _on_inspeccion_atras_pressed() -> void:
 	fsm.change_to("auto_atras")
 	pass # Replace with function body.

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://74d2y0jwqh5u" path="res://modelos/EXTERIOR/tele/banquito/mesita 2.glb" id="6_clvex"]
 [ext_resource type="Texture2D" uid="uid://vsdfav036kvp" path="res://texture/hud/hud principal/iconos_menus/globo_de_texto (1).png" id="7_0l7pc"]
 [ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="7_8a7rx"]
+[ext_resource type="FontFile" uid="uid://bw742iw3gni3o" path="res://fonts/Perfect DOS VGA 437.ttf" id="8_lyemu"]
 [ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="8_xqq20"]
 [ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="9_2k1kc"]
 [ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="10_0kntb"]
@@ -1320,7 +1321,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 20.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ue6a8"]
-font = ExtResource("6_0kntb")
+font = ExtResource("8_lyemu")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
 
@@ -1587,7 +1588,7 @@ render_target_update_mode = 4
 visible = false
 custom_minimum_size = Vector2(800, 0)
 offset_right = 800.0
-offset_bottom = 200.0
+offset_bottom = 184.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lyemu")
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport2/PanelContainer" unique_id=1173554957]
@@ -1600,7 +1601,6 @@ theme_override_constants/margin_bottom = 65
 [node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=1630754376]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Hoal como estas esto es un mensaje de prueba loo omagayd"
 label_settings = SubResource("LabelSettings_ue6a8")
 autowrap_mode = 2
 

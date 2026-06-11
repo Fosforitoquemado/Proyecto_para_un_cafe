@@ -11,14 +11,10 @@ const tamaniolabel = 40
 @onready var sub_viewport: SubViewport = $SubViewport2
 @onready var panel_container: PanelContainer = $SubViewport2/PanelContainer
 
-@export var pixels_to_meters: float = 0.005
+@export var pixels_to_meters: float = 0.004
 
 @onready var soniditos: AudioStreamPlayer3D = $soniditos
 @onready var despedida: AudioStreamPlayer3D = $despedida
-
-# 1. Definimos el ancho máximo en píxeles que permitiremos en X
-@export var letters_scale:int = 10
-@export var max_width_x: float = 800.0
 
 func apagar_tele():
 	panel_container.visible = false
@@ -46,15 +42,6 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo_font,tiem
 		despedida.play()
 	for i in range(mensaje.length()):
 		label_mensaje.text += mensaje[i]
-		#if label_mensaje.text.length() * letters_scale < max_width_x:
-			#panel_container.size.x = label_mensaje.text.length() * letters_scale
-			#print("panel: ", panel_container.size)
-		#else:
-			#panel_container.size.x = max_width_x
-		#sub_viewport.size.x = panel_container.size.x
-		#mesh_instance_3d_texto.mesh.size.y = panel_container.size.y * pixels_to_meters
-		#print(mesh_instance_3d_texto.mesh.size)
-		#print("subviewport: ", sub_viewport.size)
 		if i % 2 == 0:
 			var uno = randi_range(-35,35)
 			var dos = randi_range(-16,16)
@@ -72,7 +59,7 @@ func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo_font,tiem
 func _ready() -> void:
 	panel_container.item_rect_changed.connect(_on_ui_size_changed)
 	# Forzamos una actualización inicial
-	_on_ui_size_changed()
+	#_on_ui_size_changed()
 
 func _on_ui_size_changed() -> void:
 	# 1. Obtenemos el tamaño mínimo que requiere la UI para mostrar todo el texto
