@@ -1814,16 +1814,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="pag5" type="Control" parent="." unique_id=799026087]
+[node name="pag5" type="Control" parent="PanelContainer_instrucciones" unique_id=799026087]
 visible = false
-anchors_preset = 0
-offset_left = 405.0
-offset_top = 21.0
-offset_right = 405.0
-offset_bottom = 21.0
+layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="pag5" unique_id=1179074317]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag5" unique_id=1179074317]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1839,7 +1835,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="pag5" unique_id=193593039]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag5" unique_id=193593039]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1856,16 +1852,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="pag6" type="Control" parent="." unique_id=266204748]
+[node name="pag6" type="Control" parent="PanelContainer_instrucciones" unique_id=266204748]
 visible = false
-anchors_preset = 0
-offset_left = 810.0
-offset_top = 42.0
-offset_right = 810.0
-offset_bottom = 42.0
+layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="pag6" unique_id=253131036]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag6" unique_id=253131036]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1881,7 +1873,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="pag6" unique_id=1184832415]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag6" unique_id=1184832415]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1898,16 +1890,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="pag7" type="Control" parent="." unique_id=920279752]
+[node name="pag7" type="Control" parent="PanelContainer_instrucciones" unique_id=920279752]
 visible = false
-anchors_preset = 0
-offset_left = 1215.0
-offset_top = 63.0
-offset_right = 1215.0
-offset_bottom = 63.0
+layout_mode = 2
 mouse_filter = 2
 
-[node name="tipo_vehiculo" type="Label" parent="pag7" unique_id=1817587601]
+[node name="tipo_vehiculo" type="Label" parent="PanelContainer_instrucciones/pag7" unique_id=1817587601]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1923,7 +1911,7 @@ label_settings = SubResource("LabelSettings_7mlyq")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tipo_vehiculo2" type="Label" parent="pag7" unique_id=854921820]
+[node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag7" unique_id=854921820]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
@@ -1934,7 +1922,7 @@ offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
 offset_bottom = 13.0
-text = "En el dia 6 tu objetivo es comprobar que todos los conductores porten el permiso de cirulacion vehicular"
+text = "En el dia 7 tu objetivo es comprobar que todos los conductores porten el permiso de cirulacion vehicular"
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2107,6 +2095,22 @@ page = NodePath("../../PanelContainer_instrucciones/pag2")
 [node name="pag3" type="Node" parent="StateMachine" unique_id=573442771 node_paths=PackedStringArray("page")]
 script = ExtResource("21_2gg5t")
 page = NodePath("../../PanelContainer_instrucciones/pag3")
+
+[node name="pag4" type="Node" parent="StateMachine" unique_id=305089541 node_paths=PackedStringArray("page")]
+script = ExtResource("21_2gg5t")
+page = NodePath("../../PanelContainer_instrucciones/pag4")
+
+[node name="pag5" type="Node" parent="StateMachine" unique_id=1544187763 node_paths=PackedStringArray("page")]
+script = ExtResource("21_2gg5t")
+page = NodePath("../../PanelContainer_instrucciones/pag5")
+
+[node name="pag6" type="Node" parent="StateMachine" unique_id=356003403 node_paths=PackedStringArray("page")]
+script = ExtResource("21_2gg5t")
+page = NodePath("../../PanelContainer_instrucciones/pag6")
+
+[node name="pag7" type="Node" parent="StateMachine" unique_id=112891559 node_paths=PackedStringArray("page")]
+script = ExtResource("21_2gg5t")
+page = NodePath("../../PanelContainer_instrucciones/pag7")
 
 [connection signal="pressed" from="Iconos/Errores_icon/boton_icono" to="Iconos/Errores_icon" method="_on_boton_icono_pressed"]
 [connection signal="pressed" from="Iconos/VTV_icon/boton_icono" to="Iconos/VTV_icon" method="_on_boton_icono_pressed"]
