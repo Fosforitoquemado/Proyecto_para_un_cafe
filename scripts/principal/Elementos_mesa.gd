@@ -16,6 +16,8 @@ extends Node3D
 @export var medidor_alcohol:MeshInstance3D
 @export var num_alcholemia:Label3D
 
+@onready var guia_mano: PackedScene = preload("res://scenes/recursos/guia_papel_mano.tscn")
+
 #cedula
 @export var cedula: Area3D
 @export var dominio_cedula: Label3D
@@ -109,6 +111,7 @@ func mostrar_datos():
 				else:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_der").add_child(objeto_dupe)
 					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
+		GameManager.auto_dupe.baul_parpadear()
 	#cedula
 	if "cedula" in day.documentos_habilitados:
 		dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
@@ -181,6 +184,8 @@ func mostrar_datos():
 		if "permiso" in day.documentos_habilitados:
 			permiso.visible = true
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
+		var guia_dupe = guia_mano.instantiate()
+		nodo_papeles.add_child(guia_dupe)
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
 		seguro.global_position = nodo_papeles.global_position

@@ -18,7 +18,7 @@ func _ready() -> void:
 	hora_actual = hora_inicio
 	print("HORAAAAAA",reloj_label.text)
 
-func _process(delta):
+func _process(_delta):
 	# Calculamos el porcentaje de progreso del día (va de 0.0 a 1.0)
 	var progreso: float = clamp(GameManager.tiempo / GameManager.tiempo_dia_total, 0.0, 1.0)
 	

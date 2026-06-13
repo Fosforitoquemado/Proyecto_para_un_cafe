@@ -57,6 +57,8 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 				var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
 				var personaje_animator:AnimationPlayer = personaje.find_child("AnimationPlayer")
 				personaje_animator.play("agarrar papeles")
+				personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles/guia_papeles").queue_free()
+				
 				await personaje_animator.animation_finished
 				personaje_animator.play("manejando")
 				

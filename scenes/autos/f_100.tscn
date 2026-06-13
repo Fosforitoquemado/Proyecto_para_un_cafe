@@ -4,10 +4,12 @@
 [ext_resource type="Animation" uid="uid://cp4u5yfb2b445" path="res://recursos/animaciones/F-100/abrir_baul_f100.res" id="1_nfpid"]
 [ext_resource type="Animation" uid="uid://bqkjcav21dy7o" path="res://recursos/animaciones/F-100/cerrar_baul_f100.res" id="2_k653v"]
 [ext_resource type="Animation" uid="uid://ds14rms11eypb" path="res://recursos/animaciones/F-100/ida_F-100.res" id="3_ca8db"]
+[ext_resource type="Animation" uid="uid://ba5875sslyucy" path="res://recursos/animaciones/generales/baul_parpadeando.res" id="3_o5jmb"]
 [ext_resource type="Animation" uid="uid://do15ph2c6n6nn" path="res://recursos/animaciones/F-100/llegada_F-100.res" id="4_lxeu1"]
 [ext_resource type="PackedScene" uid="uid://b6ngqqvs7xsjj" path="res://scenes/autos/aditivos/humo/humo_stilizado.tscn" id="5_k653v"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_kgl5m"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_lxeu1"]
+[ext_resource type="Material" uid="uid://dwf5elmjiaws0" path="res://recursos/metariales/baul.tres" id="7_6hhon"]
 [ext_resource type="AudioStream" uid="uid://sn268bygnv2w" path="res://sonidos/AUTOS/F100/FORD F100 6 CILINDROS PURO SONIDO 221 NAFTA TC #ford #f100 #truck #puresound_[cut_4sec].wav" id="7_f48eq"]
 [ext_resource type="AudioStream" uid="uid://b1vo3vvkdub7c" path="res://sonidos/AUTOS/F100/F100 Yendose.wav" id="8_kgl5m"]
 [ext_resource type="PackedScene" uid="uid://cpy6lqle4hmut" path="res://scenes/hud/nodo_mensaje.tscn" id="8_y7olc"]
@@ -249,6 +251,11 @@ _data = {
 &"cerrar_baul": ExtResource("2_k653v"),
 &"ida": ExtResource("3_ca8db"),
 &"llegada": ExtResource("4_lxeu1")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5jmb"]
+_data = {
+&"baul_parpadeando": ExtResource("3_o5jmb")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_056w7"]
@@ -806,6 +813,9 @@ script = ExtResource("1_ca8db")
 libraries/ = SubResource("AnimationLibrary_ca8db")
 autoplay = &"llegada"
 
+[node name="baul_animator" type="AnimationPlayer" parent="." unique_id=1696926709]
+libraries/ = SubResource("AnimationLibrary_o5jmb")
+
 [node name="Armature" type="Node3D" parent="." unique_id=1085956008]
 transform = Transform3D(-0.9999992, -0.0005241276, -0.0011257246, -0.0005335719, 0.9999646, 0.008405594, 0.001121279, 0.008406187, -0.9999641, 0.0012818698, 0.015894264, 1.1507839)
 
@@ -819,6 +829,7 @@ bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
 [node name="baul" type="MeshInstance3D" parent="Armature/Skeleton3D" unique_id=914434875]
+material_overlay = ExtResource("7_6hhon")
 mesh = SubResource("ArrayMesh_sdjas")
 skin = SubResource("Skin_02rj4")
 skeleton = NodePath("..")

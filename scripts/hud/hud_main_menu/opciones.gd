@@ -59,7 +59,7 @@ func _on_button_reiniciar_pressed() -> void:
 	update_ui()
 	pass # Replace with function body.
 
-func _on_slider_opciones_drag_ended(value_changed: bool) -> void:
+func _on_slider_opciones_drag_ended(_value_changed: bool) -> void:
 	var bus_index = AudioServer.get_bus_index("Master")
 	
 	# Convertir 0-100 a decibeles

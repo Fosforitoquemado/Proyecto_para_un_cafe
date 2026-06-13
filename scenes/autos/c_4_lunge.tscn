@@ -5,11 +5,13 @@
 [ext_resource type="Animation" uid="uid://cwqq071bkybvg" path="res://recursos/animaciones/c4_lunge/abrir_baul_c4.res" id="2_io0ef"]
 [ext_resource type="Animation" uid="uid://cyquxqj8yi5aa" path="res://recursos/animaciones/c4_lunge/cerrar_baul_c4.res" id="3_5xuue"]
 [ext_resource type="Animation" uid="uid://bvglbvd3urefg" path="res://recursos/animaciones/c4_lunge/ida_c4.res" id="3_bmtgt"]
+[ext_resource type="Animation" uid="uid://ba5875sslyucy" path="res://recursos/animaciones/generales/baul_parpadeando.res" id="3_h2ia0"]
 [ext_resource type="AudioStream" uid="uid://bstqx7r7mn3hc" path="res://sonidos/AUTOS/C4/c4-a-los-chapazos.wav" id="3_w7vny"]
 [ext_resource type="AudioStream" uid="uid://ch8oirj3nc74t" path="res://sonidos/AUTOS/C4/c4 bocina.wav" id="4_04xex"]
 [ext_resource type="Animation" uid="uid://htouw6hn1xkr" path="res://recursos/animaciones/c4_lunge/llegada_c4.res" id="4_5xuue"]
 [ext_resource type="Script" uid="uid://c7xqr7av0g617" path="res://scripts/hud/interactuables/Baul_area3D.gd" id="6_5xuue"]
 [ext_resource type="Texture2D" uid="uid://qpaoq0bbafkm" path="res://texture/hud/documentos/5.png" id="6_bmtgt"]
+[ext_resource type="Material" uid="uid://dwf5elmjiaws0" path="res://recursos/metariales/baul.tres" id="6_ti6cj"]
 [ext_resource type="PackedScene" uid="uid://cpy6lqle4hmut" path="res://scenes/hud/nodo_mensaje.tscn" id="8_cgbv0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuqsk"]
@@ -258,6 +260,11 @@ _data = {
 &"cerrar_baul": ExtResource("3_5xuue"),
 &"ida": ExtResource("3_bmtgt"),
 &"llegada": ExtResource("4_5xuue")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2ia0"]
+_data = {
+&"baul_parpadeando": ExtResource("3_h2ia0")
 }
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vstd2"]
@@ -742,6 +749,9 @@ script = ExtResource("1_jkdhv")
 libraries/ = SubResource("AnimationLibrary_ti6cj")
 autoplay = &"llegada"
 
+[node name="baul_animator" type="AnimationPlayer" parent="." unique_id=1831891092]
+libraries/ = SubResource("AnimationLibrary_h2ia0")
+
 [node name="Armature" type="Node3D" parent="." unique_id=1679146386]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.04977807, 0.18095183, -1.0682087)
 
@@ -755,6 +765,7 @@ bones/0/rotation = Quaternion(-0.7706002, 3.5294754e-16, 3.529475e-16, 0.6373189
 bones/0/scale = Vector3(1, 0.99999994, 1)
 
 [node name="baul" type="MeshInstance3D" parent="Armature/Skeleton3D" unique_id=778682022]
+material_overlay = ExtResource("6_ti6cj")
 mesh = SubResource("ArrayMesh_vstd2")
 skin = SubResource("Skin_48ddu")
 skeleton = NodePath("..")

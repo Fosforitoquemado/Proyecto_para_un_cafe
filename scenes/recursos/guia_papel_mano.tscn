@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dsxpsq5vg5rf8"]
+
+[ext_resource type="Texture2D" uid="uid://dx4vbq5k421xo" path="res://texture/hud/tuto/flecha_bordenegro.png" id="1_gilfs"]
+[ext_resource type="FontFile" uid="uid://dlv26o8ojswth" path="res://fonts/pixeloid-font/PixeloidSans-lxa3y.ttf" id="2_n3ckb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gilfs"]
+atlas = ExtResource("1_gilfs")
+region = Rect2(0, 0, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ckb"]
+atlas = ExtResource("1_gilfs")
+region = Rect2(12, 0, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1pwt"]
+atlas = ExtResource("1_gilfs")
+region = Rect2(0, 13, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va38g"]
+atlas = ExtResource("1_gilfs")
+region = Rect2(0, 26, 12, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6ox6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gilfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ckb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1pwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va38g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va38g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="guia_papeles" type="AnimatedSprite3D" unique_id=1308050710]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.53, 0, -0.475)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_v6ox6")
+autoplay = "default"
+frame = 3
+frame_progress = 0.49371174
+
+[node name="Label3D" type="Label3D" parent="." unique_id=882129446]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+offset = Vector2(200, 100)
+billboard = 1
+double_sided = false
+texture_filter = 0
+render_priority = 1
+text = "Recibir Papeles!"
+font = ExtResource("2_n3ckb")

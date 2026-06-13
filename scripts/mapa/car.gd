@@ -1,14 +1,19 @@
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var baul_animator: AnimationPlayer = $baul_animator
 
 func irse():
 	animation_player.play("ida")
 
 func abrir_baul():
+	baul_animator.stop()
 	animation_player.play("abrir_baul")
 func cerrar_baul():
 	animation_player.play("cerrar_baul")
+
+func baul_parpadear():
+	baul_animator.play("baul_parpadeando")
 
 const tamaniolabel = 40
 

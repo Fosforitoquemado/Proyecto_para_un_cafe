@@ -30,7 +30,7 @@ func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		fsm.change_to("Pause")
 
-func _on_slider_opciones_drag_ended(value_changed: bool) -> void:
+func _on_slider_opciones_drag_ended(_value_changed: bool) -> void:
 	var bus_index = AudioServer.get_bus_index("Master")
 	
 	# Convertir 0-100 a decibeles

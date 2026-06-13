@@ -17,7 +17,7 @@ var paso_actual: int = 0
 var timer = false
 var tiempo = 0.0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	#if timer:
 		#tiempo += delta

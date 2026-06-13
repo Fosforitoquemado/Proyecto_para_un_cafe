@@ -1167,7 +1167,6 @@ vsync = NodePath("opciones/VBoxContainer/vsync")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
 process_mode = 3
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1197,10 +1196,10 @@ modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25677082
-anchor_top = 0.2537037
-anchor_right = 0.32708332
-anchor_bottom = 0.3771605
+anchor_left = 0.35052082
+anchor_top = 0.3962963
+anchor_right = 0.42083332
+anchor_bottom = 0.5197531
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_options" type="Button" parent="Hud_principal" unique_id=1631462563]
@@ -1208,10 +1207,10 @@ modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.34895834
-anchor_top = 0.3675926
-anchor_right = 0.41927084
-anchor_bottom = 0.49104935
+anchor_left = 0.25833333
+anchor_top = 0.2462963
+anchor_right = 0.32864583
+anchor_bottom = 0.36975306
 text = "OPTIONS"
 metadata/_edit_use_anchors_ = true
 
@@ -1337,11 +1336,11 @@ transform = Transform3D(-2.6226832e-09, 0.06, -2.6226832e-09, 0, -2.6226832e-09,
 texture_albedo = ExtResource("5_k4jul")
 
 [node name="menu" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=393178481]
-transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.243, -0.721)
+transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.118, -0.861)
 texture_albedo = ExtResource("7_kokcj")
 
 [node name="opciones" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=897199174]
-transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.133, -0.851)
+transform = Transform3D(-3.496911e-09, 0.08, -3.496911e-09, 0, -3.496911e-09, -0.08, -0.08, -3.496911e-09, 1.5285484e-16, 0.405, 0.233, -0.716)
 texture_albedo = ExtResource("7_r6i85")
 
 [node name="quit" type="Decal" parent="Hud_principal/SubViewport/armazon" unique_id=1701315564]
