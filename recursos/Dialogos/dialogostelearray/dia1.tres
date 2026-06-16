@@ -7,9 +7,8 @@
 [ext_resource type="Resource" uid="uid://pnvqsgc4k7al" path="res://recursos/Dialogos/dialogos_tele/dia1/3.tres" id="4_cys05"]
 [ext_resource type="Resource" uid="uid://b1timtd6e0bm4" path="res://recursos/Dialogos/dialogos_tele/dia1/4.tres" id="5_st4sp"]
 [ext_resource type="Resource" uid="uid://xesswosr82vi" path="res://recursos/Dialogos/dialogos_tele/dia1/5.tres" id="6_ndfr4"]
-[ext_resource type="Resource" uid="uid://desdrixbeanhd" path="res://recursos/Dialogos/dialogos_tele/prueba/prueba.tres" id="6_ocp67"]
 
 [resource]
 script = ExtResource("2_issat")
-array = Array[ExtResource("1_u2rpc")]([ExtResource("2_7q6wn"), ExtResource("3_5b4fd"), ExtResource("4_cys05"), ExtResource("5_st4sp"), ExtResource("6_ocp67"), ExtResource("6_ndfr4")])
+array = Array[ExtResource("1_u2rpc")]([ExtResource("2_7q6wn"), ExtResource("3_5b4fd"), ExtResource("4_cys05"), ExtResource("5_st4sp"), ExtResource("6_ndfr4")])
 metadata/_custom_type_script = "uid://bo3tryj16pym"

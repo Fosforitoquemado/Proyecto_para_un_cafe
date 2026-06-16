@@ -18,7 +18,8 @@ func _ready() -> void:
 	print("DIA HOY: ",dia_actual)
 	hud.find_child("pantalla_negro").comienzo_dia(4,3)
 	GameManager.cargar_dia()
-	await get_tree().create_timer(6.5,false).timeout
+	hud.find_child("pantalla_negro").mostrar_objetivo(4,3)
+	await get_tree().create_timer(7.5,false).timeout
 	state_machine.change_to("tele")
 	
 	camera_controller.ver_baul(tele_camara.global_position, tele_camara.global_rotation)

@@ -19,8 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://cofo5sobt4ikx" path="res://texture/hud/pc/flecha_bordenegro.png" id="16_bxn6l"]
 [ext_resource type="Texture2D" uid="uid://bmoi4kvo0oaho" path="res://texture/hud/pc/pc_go_arrow.png" id="17_4x0me"]
 [ext_resource type="Script" uid="uid://cp746wt0wbm7" path="res://scripts/hud/statemachine/UIStateMachine.gd" id="17_q8nfh"]
+[ext_resource type="Texture2D" uid="uid://c517e81g4fpwm" path="res://texture/hud/pc/explicacion/pag1/Captura de pantalla 2026-06-16 172933.png" id="18_4x0me"]
 [ext_resource type="Script" uid="uid://bsvhxyimj67pq" path="res://scripts/hud/statemachine_pc/transicion.gd" id="18_q8nfh"]
+[ext_resource type="Texture2D" uid="uid://dy6vxc2saxttt" path="res://texture/hud/pc/explicacion/pag1/Captura de pantalla 2026-06-16 172957.png" id="19_4no20"]
+[ext_resource type="Texture2D" uid="uid://u3wrqn7y2084" path="res://texture/hud/pc/explicacion/pag1/Captura de pantalla 2026-06-16 173019.png" id="20_dxcnt"]
 [ext_resource type="Script" uid="uid://bchrn4b7g5d3x" path="res://scripts/hud/statemachine_pc/pag_1.gd" id="21_2gg5t"]
+[ext_resource type="Texture2D" uid="uid://buxg7gp5p08ag" path="res://texture/hud/botones V2/33-artguru.png" id="21_lto5n"]
+[ext_resource type="Texture2D" uid="uid://b2oflflwxjtnk" path="res://texture/hud/botones V2/32-artguru.png" id="22_5a46f"]
 
 [sub_resource type="Gradient" id="Gradient_p8x6u"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -63,13 +68,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bxn6l"]
+font = ExtResource("11_l7fmd")
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxn6l"]
 atlas = ExtResource("8_s5248")
 region = Rect2(0, 1, 11, 9)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s5248"]
 font = ExtResource("11_l7fmd")
-font_size = 9
+font_size = 14
 outline_size = 1
 outline_color = Color(0.7917869, 0, 0, 1)
 
@@ -86,7 +96,7 @@ region = Rect2(0, 12, 11, 9)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l7fmd"]
 font = ExtResource("11_l7fmd")
-font_size = 9
+font_size = 15
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gg5t"]
 atlas = ExtResource("8_s5248")
@@ -128,6 +138,17 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mlyq"]
 font = ExtResource("11_l7fmd")
+font_size = 29
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4no20"]
+font = ExtResource("11_l7fmd")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxcnt"]
+font = ExtResource("11_l7fmd")
+font_size = 23
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tnld"]
@@ -293,6 +314,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_g05ue"]
 font = ExtResource("11_l7fmd")
+font_size = 25
 font_color = Color(0.3515629, 0.3515629, 0.35156283, 1)
 outline_size = 2
 outline_color = Color(0.2784093, 0.2784093, 0.2784093, 0.45800003)
@@ -450,7 +472,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_jgmss"]
 font = ExtResource("11_l7fmd")
-font_size = 18
+font_size = 29
 
 [node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows")]
 layout_mode = 3
@@ -513,7 +535,7 @@ texture = SubResource("GradientTexture1D_eoye0")
 
 [node name="loading" type="AnimatedSprite2D" parent="cargando" unique_id=18447878]
 texture_filter = 1
-position = Vector2(575, 325)
+position = Vector2(990, 540)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_i4tyn")
 autoplay = "default"
@@ -522,19 +544,18 @@ frame_progress = 0.7575729
 [node name="Label" type="Label" parent="cargando" unique_id=2098666226]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = 49.29001
-offset_right = 43.5
-offset_bottom = 72.29001
+anchors_preset = -1
+anchor_left = 0.49583334
+anchor_top = 0.5453704
+anchor_right = 0.54114586
+anchor_bottom = 0.56666666
+offset_top = -6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Loading . . ."
+label_settings = SubResource("LabelSettings_bxn6l")
+metadata/_edit_use_anchors_ = true
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=454571506]
 z_index = -1
@@ -565,11 +586,14 @@ anchor_left = 0.2951389
 anchor_top = 0.31635803
 anchor_right = 0.33333334
 anchor_bottom = 0.37191358
+offset_left = 319.3333
+offset_top = 238.33331
+offset_right = 319.3333
+offset_bottom = 238.33328
 mouse_filter = 2
 texture = SubResource("AtlasTexture_bxn6l")
 script = ExtResource("6_8tnld")
 panel = NodePath("../../PanelContainer_Errores")
-metadata/_edit_use_anchors_ = true
 
 [node name="boton_icono" type="Button" parent="Iconos/Errores_icon" unique_id=1435019689]
 show_behind_parent = true
@@ -577,10 +601,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -611,15 +635,21 @@ expand_mode = 1
 
 [node name="VTV_icon" type="TextureRect" parent="Iconos" unique_id=810743276 node_paths=PackedStringArray("panel")]
 texture_filter = 1
-layout_mode = 0
-offset_left = 410.0
-offset_top = 205.0
-offset_right = 454.0
-offset_bottom = 241.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21354167
+anchor_top = 0.18981482
+anchor_right = 0.2517361
+anchor_bottom = 0.24537034
+offset_left = 256.0
+offset_top = 238.0
+offset_right = 256.0
+offset_bottom = 238.00003
 mouse_filter = 2
 texture = SubResource("AtlasTexture_4x0me")
 script = ExtResource("6_8tnld")
 panel = NodePath("../../PanelContainer_VTV")
+metadata/_edit_use_anchors_ = true
 
 [node name="boton_icono" type="Button" parent="Iconos/VTV_icon" unique_id=497386458]
 show_behind_parent = true
@@ -627,10 +657,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.333313
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -661,10 +691,10 @@ expand_mode = 1
 [node name="Cedula_icon" type="TextureRect" parent="Iconos" unique_id=679574845 node_paths=PackedStringArray("panel")]
 texture_filter = 1
 layout_mode = 0
-offset_left = 480.0
-offset_top = 205.0
-offset_right = 524.0
-offset_bottom = 241.0
+offset_left = 772.0
+offset_top = 443.0
+offset_right = 845.3333
+offset_bottom = 503.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_2gg5t")
 script = ExtResource("6_8tnld")
@@ -676,10 +706,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.333313
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -710,10 +740,10 @@ expand_mode = 1
 [node name="Licencia_icon" type="TextureRect" parent="Iconos" unique_id=1007312870 node_paths=PackedStringArray("panel")]
 texture_filter = 1
 layout_mode = 0
-offset_left = 550.0
-offset_top = 205.0
-offset_right = 594.0
-offset_bottom = 241.0
+offset_left = 885.0
+offset_top = 443.0
+offset_right = 958.3333
+offset_bottom = 503.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_11jh6")
 script = ExtResource("6_8tnld")
@@ -725,10 +755,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -759,10 +789,10 @@ expand_mode = 1
 [node name="Seguro_icon" type="TextureRect" parent="Iconos" unique_id=1401685721 node_paths=PackedStringArray("panel")]
 texture_filter = 1
 layout_mode = 0
-offset_left = 620.0
-offset_top = 205.0
-offset_right = 664.0
-offset_bottom = 241.0
+offset_left = 997.0
+offset_top = 443.0
+offset_right = 1070.3333
+offset_bottom = 503.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_04bk8")
 script = ExtResource("6_8tnld")
@@ -774,10 +804,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -807,11 +837,16 @@ expand_mode = 1
 
 [node name="Permiso_icon" type="TextureRect" parent="Iconos" unique_id=1915018876 node_paths=PackedStringArray("panel")]
 texture_filter = 1
-layout_mode = 0
-offset_left = 690.0
-offset_top = 205.0
-offset_right = 734.0
-offset_bottom = 241.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.359375
+anchor_top = 0.18981482
+anchor_right = 0.38229167
+anchor_bottom = 0.22314815
+offset_left = 426.0
+offset_top = 238.0
+offset_right = 455.33325
+offset_bottom = 262.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_4no20")
 script = ExtResource("6_8tnld")
@@ -823,10 +858,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -857,10 +892,10 @@ expand_mode = 1
 [node name="Instrucciones_icon" type="TextureRect" parent="Iconos" unique_id=365363424 node_paths=PackedStringArray("panel")]
 texture_filter = 1
 layout_mode = 0
-offset_left = 1076.0
-offset_top = 549.0
-offset_right = 1120.0
-offset_bottom = 585.0
+offset_left = 1762.0
+offset_top = 908.0
+offset_right = 1835.3333
+offset_bottom = 968.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_dxcnt")
 script = ExtResource("6_8tnld")
@@ -872,10 +907,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -987,8 +1022,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -539.0
 offset_top = -258.0
-offset_right = -109.0
-offset_bottom = 243.0
+offset_right = 91.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_50kaj")
@@ -1000,16 +1035,16 @@ mouse_filter = 2
 
 [node name="errores_auto" type="TextureRect" parent="PanelContainer_Errores/errores_auto_control" unique_id=1174094929]
 layout_mode = 0
-offset_right = 430.0
-offset_bottom = 501.0
+offset_right = 630.0
+offset_bottom = 600.0
 texture = SubResource("GradientTexture1D_p5tti")
 
 [node name="errores_auto2" type="TextureRect" parent="PanelContainer_Errores/errores_auto_control" unique_id=1739656128]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
-offset_right = 416.0
-offset_bottom = 482.2116
+offset_right = 615.0
+offset_bottom = 585.0
 texture = SubResource("GradientTexture1D_3cio7")
 
 [node name="errores" type="RichTextLabel" parent="PanelContainer_Errores/errores_auto_control" unique_id=692304517]
@@ -1019,6 +1054,8 @@ offset_left = 35.725
 offset_top = 24.895
 offset_right = 114.72509
 offset_bottom = 52.895008
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 34
 text = "ERRORES: "
 fit_content = true
 autowrap_mode = 0
@@ -1026,26 +1063,24 @@ autowrap_mode = 0
 [node name="Label" type="Label" parent="PanelContainer_Errores/errores_auto_control" unique_id=780321996]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.38020834
-anchor_top = 0.12191358
-anchor_right = 0.41493055
-anchor_bottom = 0.1574074
-offset_left = 230.51038
-offset_top = -40.078705
-offset_right = 230.51038
-offset_bottom = -34.861107
+anchor_left = 0.9047619
+anchor_top = -0.0016666921
+anchor_right = 0.96984124
+anchor_bottom = 0.14999998
+theme_override_font_sizes/font_size = 66
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="cerrar_errores" type="Button" parent="PanelContainer_Errores/errores_auto_control/Label" unique_id=98237739]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2
-anchor_top = -0.04347826
-anchor_right = 0.825
+anchor_left = -0.41666615
+anchor_top = -0.043478258
+anchor_right = 1.6250005
 anchor_bottom = 1.0869565
 metadata/_edit_use_anchors_ = true
 
@@ -1059,10 +1094,10 @@ offset_bottom = 176.0
 [node name="PanelContainer_VTV" type="PanelContainer" parent="." unique_id=1692584162]
 visible = false
 layout_mode = 0
-offset_left = 450.0
-offset_top = 125.0
-offset_right = 770.0
-offset_bottom = 525.0
+offset_left = 702.0
+offset_top = 185.0
+offset_right = 1222.0
+offset_bottom = 785.0
 script = ExtResource("7_50kaj")
 default_pos = Vector2(450, 125)
 
@@ -1074,10 +1109,10 @@ expand_mode = 1
 
 [node name="VTV" type="Label" parent="PanelContainer_VTV/TextureRect" unique_id=1512144638]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 189.0
-offset_right = 232.0
-offset_bottom = 285.0
+offset_left = 195.0
+offset_top = 304.0
+offset_right = 335.0
+offset_bottom = 400.0
 text = "..."
 label_settings = SubResource("LabelSettings_p8x6u")
 horizontal_alignment = 1
@@ -1097,12 +1132,14 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="PanelContainer_VTV/TextureRect" unique_id=543610343]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.004999981
-anchor_right = 0.98472214
-anchor_bottom = 0.07146218
-offset_bottom = -3.584877
+anchor_left = 0.9096154
+anchor_top = -0.024999993
+anchor_right = 0.996047
+anchor_bottom = 0.14784594
+offset_right = -3.944458
+offset_bottom = -12.7075615
 theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 66
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1122,10 +1159,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PanelContainer_cedula" type="PanelContainer" parent="." unique_id=1295903964]
 visible = false
 layout_mode = 0
-offset_left = 450.0
-offset_top = 125.0
-offset_right = 770.0
-offset_bottom = 525.0
+offset_left = 702.0
+offset_top = 185.0
+offset_right = 1222.0
+offset_bottom = 785.0
 script = ExtResource("7_50kaj")
 default_pos = Vector2(450, 125)
 
@@ -1138,10 +1175,10 @@ expand_mode = 1
 [node name="Dominio_cedula" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=395616634]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 2.4310002
-anchor_top = 3.72
-anchor_right = 4.2275496
-anchor_bottom = 4.3657694
+anchor_left = 1.3460001
+anchor_top = 2.61
+anchor_right = 3.1425493
+anchor_bottom = 3.2557693
 offset_left = -716.92004
 offset_top = -1320.0
 offset_right = -1091.8159
@@ -1154,10 +1191,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Modelo_cedula" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=1560029330]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 2.4310002
-anchor_top = 3.86
-anchor_right = 4.2275496
-anchor_bottom = 4.5057693
+anchor_left = 1.3460001
+anchor_top = 2.7499998
+anchor_right = 3.1425493
+anchor_bottom = 3.3957694
 offset_left = -716.92004
 offset_top = -1320.0
 offset_right = -1091.8159
@@ -1170,10 +1207,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Vence" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=157430525]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 2.4310002
-anchor_top = 3.9825
-anchor_right = 4.2275496
-anchor_bottom = 4.628269
+anchor_left = 1.3460001
+anchor_top = 2.8725
+anchor_right = 3.1425493
+anchor_bottom = 3.518269
 offset_left = -716.92004
 offset_top = -1320.0
 offset_right = -1091.8159
@@ -1198,12 +1235,14 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="PanelContainer_cedula/TextureRect" unique_id=1858049858]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.004999981
-anchor_right = 0.98472214
-anchor_bottom = 0.07146218
-offset_bottom = -3.584877
+anchor_left = 0.9269231
+anchor_top = -0.02666666
+anchor_right = 1.0114317
+anchor_bottom = 0.14784592
+offset_right = -3.944458
+offset_bottom = -16.707558
 theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 64
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1214,22 +1253,19 @@ modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2
-anchor_top = -0.04347826
-anchor_right = 0.825
-anchor_bottom = 1.0869565
-offset_left = -8.222229
-offset_top = -1.9999923
-offset_right = 6.8333435
+anchor_left = -0.6646179
+anchor_top = -0.09858595
+anchor_right = 1.4953837
+anchor_bottom = 1.0869564
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_licencia" type="PanelContainer" parent="." unique_id=803623721]
 visible = false
 layout_mode = 0
-offset_left = 450.0
-offset_top = 125.0
-offset_right = 770.0
-offset_bottom = 525.0
+offset_left = 702.0
+offset_top = 185.0
+offset_right = 1222.0
+offset_bottom = 785.0
 script = ExtResource("7_50kaj")
 default_pos = Vector2(450, 125)
 
@@ -1242,10 +1278,10 @@ expand_mode = 1
 [node name="numero_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=186197611]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.340625
-anchor_top = 3.72
-anchor_right = 8.340634
-anchor_bottom = 4.295
+anchor_left = 3.7096155
+anchor_top = 2.6116667
+anchor_right = 5.709625
+anchor_bottom = 3.1866665
 offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2429.003
@@ -1258,16 +1294,16 @@ metadata/_edit_use_anchors_ = true
 [node name="nombre_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=949737508]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.353125
-anchor_top = 3.8075
-anchor_right = 8.353134
-anchor_bottom = 4.3825
+anchor_left = 3.6788461
+anchor_top = 2.7116666
+anchor_right = 5.6788554
+anchor_bottom = 3.2866664
 offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2511.003
 offset_bottom = -1530.0001
 text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
+label_settings = SubResource("LabelSettings_4no20")
 horizontal_alignment = 1
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1275,16 +1311,16 @@ metadata/_edit_use_anchors_ = true
 [node name="apellido_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=2032655172]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.56875
-anchor_top = 3.8075
-anchor_right = 8.568759
-anchor_bottom = 4.3825
+anchor_left = 3.8944712
+anchor_top = 2.7116666
+anchor_right = 5.8944807
+anchor_bottom = 3.2866664
 offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2511.003
 offset_bottom = -1530.0001
 text = "..."
-label_settings = SubResource("LabelSettings_7mlyq")
+label_settings = SubResource("LabelSettings_dxcnt")
 horizontal_alignment = 1
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -1292,10 +1328,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Fecha_De_Nacimiento_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=259141596]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.35
-anchor_top = 3.9
-anchor_right = 8.350009
-anchor_bottom = 4.4750004
+anchor_left = 3.7189903
+anchor_top = 2.7916667
+anchor_right = 5.719
+anchor_bottom = 3.366667
 offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2441.468
@@ -1309,10 +1345,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Fecha_De_Vencimiento_licencia" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=917148543]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.35
-anchor_top = 3.9975
-anchor_right = 8.350009
-anchor_bottom = 4.5725
+anchor_left = 3.7189903
+anchor_top = 2.8891666
+anchor_right = 5.719
+anchor_bottom = 3.4641676
 offset_left = -1939.0
 offset_top = -1320.0
 offset_right = -2440.003
@@ -1338,12 +1374,13 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="PanelContainer_licencia/TextureRect" unique_id=2006375448]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.004999981
-anchor_right = 0.98472214
-anchor_bottom = 0.07146218
+anchor_left = 0.9115385
+anchor_top = -0.018333327
+anchor_right = 0.99038464
+anchor_bottom = 0.13930812
 offset_bottom = -3.584877
 theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 66
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1366,10 +1403,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PanelContainer_seguro" type="PanelContainer" parent="." unique_id=169928930]
 visible = false
 layout_mode = 0
-offset_left = 450.0
-offset_top = 125.0
-offset_right = 770.0
-offset_bottom = 525.0
+offset_left = 702.0
+offset_top = 185.0
+offset_right = 1222.0
+offset_bottom = 785.0
 script = ExtResource("7_50kaj")
 default_pos = Vector2(450, 125)
 
@@ -1442,12 +1479,13 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="PanelContainer_seguro/TextureRect" unique_id=1820017472]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.004999981
-anchor_right = 0.98472214
-anchor_bottom = 0.07146218
+anchor_left = 0.9153846
+anchor_top = -0.024999993
+anchor_right = 0.99423075
+anchor_bottom = 0.13264146
 offset_bottom = -3.584877
 theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 66
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1470,10 +1508,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PanelContainer_permiso" type="PanelContainer" parent="." unique_id=379585947]
 visible = false
 layout_mode = 0
-offset_left = 450.0
-offset_top = 125.0
-offset_right = 770.0
-offset_bottom = 525.0
+offset_left = 702.0
+offset_top = 185.0
+offset_right = 1222.0
+offset_bottom = 785.0
 script = ExtResource("7_50kaj")
 default_pos = Vector2(450, 125)
 
@@ -1530,12 +1568,13 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="PanelContainer_permiso/TextureRect" unique_id=1896936693]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.004999981
-anchor_right = 0.98472214
-anchor_bottom = 0.07146218
+anchor_left = 0.91923076
+anchor_top = -0.024999993
+anchor_right = 0.9980769
+anchor_bottom = 0.13264146
 offset_bottom = -3.584877
 theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 66
 text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1546,60 +1585,33 @@ modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2
-anchor_top = -0.04347826
-anchor_right = 0.825
+anchor_left = -0.17373767
+anchor_top = -0.08347811
+anchor_right = 1.3636378
 anchor_bottom = 1.0869565
-offset_left = -8.222229
-offset_top = -1.9999923
-offset_right = 6.8333435
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_instrucciones" type="PanelContainer" parent="." unique_id=1436091547]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 405.0
-offset_top = 21.0
-offset_right = 868.0
-offset_bottom = 561.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2421875
+anchor_top = 0.014814815
+anchor_right = 0.728125
+anchor_bottom = 0.98333335
 script = ExtResource("7_50kaj")
-default_pos = Vector2(450, 125)
+default_pos = Vector2(465, 16)
+metadata/_edit_use_anchors_ = true
 
 [node name="libro_guia" type="AnimatedSprite2D" parent="PanelContainer_instrucciones" unique_id=291515109]
 texture_filter = 1
-position = Vector2(230, 252)
-scale = Vector2(18, 18)
+position = Vector2(476, 480)
+scale = Vector2(35, 35)
 sprite_frames = SubResource("SpriteFrames_02xrk")
 
-[node name="Cerrar" type="Label" parent="PanelContainer_instrucciones/libro_guia" unique_id=1059344209]
-offset_left = 10.0
-offset_top = -12.0
-offset_right = 20.0
-offset_bottom = 11.0
-scale = Vector2(0.09, 0.09)
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
-text = "X"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="cerrar_" type="Button" parent="PanelContainer_instrucciones/libro_guia/Cerrar" unique_id=1141799849]
-modulate = Color(1, 1, 1, 0)
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = -0.04347826
-anchor_right = 0.825
-anchor_bottom = 1.0869565
-offset_left = -8.222229
-offset_top = -1.9999923
-offset_right = 6.8333435
-metadata/_edit_use_anchors_ = true
-
 [node name="flecha_derecha" type="TextureRect" parent="PanelContainer_instrucciones/libro_guia" unique_id=949542096]
+z_index = 1
 offset_left = 7.0
 offset_top = 8.0
 offset_right = 12.0
@@ -1631,6 +1643,7 @@ offset_right = 6.5
 offset_bottom = 7.0
 
 [node name="flecha_izquierda" type="TextureRect" parent="PanelContainer_instrucciones/libro_guia" unique_id=1179282308]
+z_index = 1
 offset_left = -12.0
 offset_top = 8.0
 offset_right = -7.0
@@ -1664,7 +1677,6 @@ offset_right = 6.5
 offset_bottom = 7.0
 
 [node name="pag1" type="Control" parent="PanelContainer_instrucciones" unique_id=615833987]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 
@@ -1673,8 +1685,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
 anchor_top = 0.21666667
-anchor_right = 0.10583153
-anchor_bottom = 0.21666667
+anchor_right = 0.2851018
+anchor_bottom = 0.23040153
 offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
@@ -1689,17 +1701,69 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10583153
 anchor_top = 0.27222222
-anchor_right = 0.10583153
-anchor_bottom = 0.27222222
+anchor_right = 0.29796353
+anchor_bottom = 0.41108987
 offset_left = -10.0
 offset_top = -7.0
 offset_right = 158.0
 offset_bottom = 13.0
-text = "En el dia 1 tu objetivo es detectar las irregularidades en la vtv"
+text = "En el dia 1 tu objetivo es detectar las irregularidades en la vtv (tiene que coincidir con informacion de la pc, y no estar vencida (del 5 para atras = vencido)"
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer_instrucciones/pag1" unique_id=957549303]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55734193
+anchor_top = 0.2753346
+anchor_right = 0.91961414
+anchor_bottom = 0.5114723
+mouse_filter = 2
+texture = ExtResource("18_4x0me")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer_instrucciones/pag1" unique_id=474275922]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 555.0
+offset_right = 423.0
+offset_bottom = 850.0
+mouse_filter = 2
+texture = ExtResource("19_4no20")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer_instrucciones/pag1" unique_id=323510611]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 619.0
+offset_right = 852.0
+offset_bottom = 862.0
+mouse_filter = 2
+texture = ExtResource("20_dxcnt")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer_instrucciones/pag1" unique_id=1981591839]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 527.0
+offset_right = 764.0
+offset_bottom = 624.0
+mouse_filter = 2
+texture = ExtResource("21_lto5n")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="PanelContainer_instrucciones/pag1" unique_id=1600963842]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 186.0
+offset_right = 769.0
+offset_bottom = 283.0
+mouse_filter = 2
+texture = ExtResource("22_5a46f")
+expand_mode = 1
 
 [node name="pag2" type="Control" parent="PanelContainer_instrucciones" unique_id=768419671]
 visible = false
@@ -1929,6 +1993,41 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Control" type="Control" parent="PanelContainer_instrucciones" unique_id=1029070471]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Cerrar" type="Label" parent="PanelContainer_instrucciones/Control" unique_id=1059344209]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8949625
+anchor_top = 0.03537285
+anchor_right = 0.9817792
+anchor_bottom = 0.20650096
+offset_right = -25.0
+offset_bottom = -55.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9034514, 0.28575712, 0.28256223, 1)
+theme_override_font_sizes/font_size = 90
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="cerrar_" type="Button" parent="PanelContainer_instrucciones/Control/Cerrar" unique_id=1141799849]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025089756
+anchor_top = -0.04347826
+anchor_right = 1.2956983
+anchor_bottom = 1.0869565
+offset_left = -8.222229
+offset_top = -1.9999923
+offset_right = 6.8333435
+metadata/_edit_use_anchors_ = true
+
 [node name="boton_base de datos" type="Panel" parent="." unique_id=437047317]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
@@ -1981,6 +2080,7 @@ anchors_preset = -1
 anchor_left = 0.9444444
 anchor_right = 1.0
 anchor_bottom = 0.055555556
+theme_override_font_sizes/font_size = 40
 text = "exit
 "
 metadata/_edit_use_anchors_ = true
@@ -2010,12 +2110,12 @@ texture_filter = 1
 texture_repeat = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.030075192
-anchor_top = 0.2
-anchor_right = 1.5789474
-anchor_bottom = 1.35
-offset_right = -86.0
-offset_bottom = -24.0
+anchor_left = 0.04360903
+anchor_top = 0.21000032
+anchor_right = 1.0164664
+anchor_bottom = 0.8220007
+offset_right = -22.649994
+offset_bottom = -4.799999
 scale = Vector2(1.05, 1.05)
 text = "12/06/2026"
 label_settings = SubResource("LabelSettings_jgmss")
@@ -2023,16 +2123,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=269187007]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 606.0
-offset_right = 145.0
-offset_bottom = 615.0
-scale = Vector2(4, 4)
+offset_left = 171.0
+offset_top = 1007.0
+offset_right = 1171.0
+offset_bottom = 1072.0
 columns = 15
 
 [node name="Errores_icon" type="TextureRect" parent="GridContainer" unique_id=1523520080]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 texture = SubResource("AtlasTexture_bxn6l")
 
@@ -2043,10 +2144,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.25
-offset_top = -1.25
-offset_right = -1.25
-offset_bottom = -1.25
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -2127,9 +2228,9 @@ page = NodePath("../../PanelContainer_instrucciones/pag7")
 [connection signal="pressed" from="PanelContainer_licencia/TextureRect/Label/cerrar_" to="PanelContainer_licencia" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="PanelContainer_seguro/TextureRect/Label/cerrar_" to="PanelContainer_seguro" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="PanelContainer_permiso/TextureRect/Label/cerrar_" to="PanelContainer_permiso" method="_on_cerrar__pressed"]
-[connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/Cerrar/cerrar_" to="PanelContainer_instrucciones" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_derecha/Button_flecha_derecha" to="." method="_on_button_flecha_derecha_pressed"]
 [connection signal="pressed" from="PanelContainer_instrucciones/libro_guia/flecha_izquierda/Button_flecha_izquierda" to="." method="_on_button_flecha_izquierda_pressed"]
+[connection signal="pressed" from="PanelContainer_instrucciones/Control/Cerrar/cerrar_" to="PanelContainer_instrucciones" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="boton_base de datos/BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

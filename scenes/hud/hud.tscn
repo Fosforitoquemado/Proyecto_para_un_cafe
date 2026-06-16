@@ -43,6 +43,7 @@
 [ext_resource type="Script" uid="uid://7uwx8xnlpgtl" path="res://scripts/hud/statemachine/auto_vtv.gd" id="27_eiuad"]
 [ext_resource type="Script" uid="uid://dgygvt3hdcx3d" path="res://scripts/hud/statemachine/auto_baul.gd" id="28_4vn1o"]
 [ext_resource type="Script" uid="uid://c08ukm1ctupi5" path="res://scripts/hud/statemachine/pc.gd" id="29_pjbv8"]
+[ext_resource type="AudioStream" uid="uid://d0vxrr3vhjya1" path="res://sonidos/HUD/stomp/stamp cortado.wav" id="31_6bs1m"]
 [ext_resource type="AudioStream" uid="uid://qgtd284trmdu" path="res://sonidos/NUEVOS SONIDOS/error.mp3" id="31_i6gk6"]
 [ext_resource type="Script" uid="uid://bgjke33t44lhr" path="res://scripts/hud/statemachine/transicion.gd" id="31_ncrl3"]
 [ext_resource type="AudioStream" uid="uid://dxx04cewj0uqx" path="res://sonidos/NUEVOS SONIDOS/auto aprobado.mp3" id="32_6bs1m"]
@@ -1139,6 +1140,12 @@ tags = {
 font = ExtResource("27_7wrco")
 font_size = 53
 
+[sub_resource type="LabelSettings" id="LabelSettings_dyquw"]
+font = ExtResource("27_7wrco")
+font_size = 40
+outline_size = 3
+outline_color = Color(1, 0.9593466, 0.32086813, 1)
+
 [node name="Hud" type="Control" unique_id=1466224900 node_paths=PackedStringArray("autos_label", "fallos_label", "dinero_label", "hud_elementos", "hud_principal", "yes_no_menu", "inspeccion_menu", "opciones_menu", "startday", "timer", "sub_viewport_menu", "usos_mate_num", "progressbarmate", "slider_volumen", "modo_pantalla", "vsync") groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 15
@@ -2207,7 +2214,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164 node_paths=PackedStringArray("hud")]
 process_mode = 3
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2223,7 +2229,6 @@ hud = NodePath("..")
 stream = SubResource("AudioStreamWAV_v3rms")
 
 [node name="dia" type="Label" parent="pantalla_negro" unique_id=860014635]
-visible = false
 top_level = true
 layout_mode = 1
 anchors_preset = -1
@@ -2240,6 +2245,26 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "HOLAAAAAAAA"
 label_settings = SubResource("LabelSettings_bxlf6")
+metadata/_edit_use_anchors_ = true
+
+[node name="stomp" type="AudioStreamPlayer" parent="pantalla_negro" unique_id=189607430]
+stream = ExtResource("31_6bs1m")
+
+[node name="objetivo" type="Label" parent="pantalla_negro" unique_id=862036204]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43229166
+anchor_top = 0.5756528
+anchor_right = 0.5677083
+anchor_bottom = 0.6247269
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "objetivo: 1000"
+label_settings = SubResource("LabelSettings_dyquw")
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Sonidos" type="Node" parent="." unique_id=833533592]

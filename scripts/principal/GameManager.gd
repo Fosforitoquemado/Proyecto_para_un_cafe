@@ -10,6 +10,7 @@ var paused = false
 var fallos: int = 0
 var autos_pasados: int = 0
 var dinero = 0
+var dinero_objetivo = 0
 var dinero_ganado_hoy = 0
 
 var max_mates: int = 3
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 		empezar_tiempo = false
 	if uicontroller:
 		if tiempo >= tiempo_dia_total and uicontroller.auto_called == false and dia_empezado == true:
-			if dinero_ganado_hoy >= dia.dinero_objetivo:
+			if dinero_ganado_hoy >= dinero_objetivo:
 				dia_empezado = false
 				var pantalla_negra = uicontroller.find_child("pantalla_negro")
 				pantalla_negra.oscurecer(4)
@@ -92,6 +93,7 @@ func cargar_dia():
 	var daymanager = get_tree().get_first_node_in_group("DayManager")
 	dia = daymanager.get_day()
 	tiempo_dia_total = dia.tiempo_dia
+	dinero_objetivo = dia.dinero_objetivo
 	#cargo las cosas guardadas
 	var savedata = SaveLoad.contents_to_save
 	print(savedata)

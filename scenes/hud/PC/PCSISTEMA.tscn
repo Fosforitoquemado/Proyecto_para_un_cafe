@@ -278,7 +278,7 @@ material_override = SubResource("StandardMaterial3D_colfs")
 mesh = SubResource("PlaneMesh_76pq4")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1102045228]
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 
 [node name="PCControl" parent="SubViewport" unique_id=2128863822 instance=ExtResource("2_cdq6l")]
 
