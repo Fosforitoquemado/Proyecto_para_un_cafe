@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_m5jwf")
 texto = "falsificaciones seran gravemente amonestadas"
-tiempo_velocidad = 0.06
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

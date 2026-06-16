@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_xx88u")
 texto = "ninguna cantidad de alcohol en sangre va a ser tolerada, multas van a ser aplicadas"
-tiempo_velocidad = 0.06
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

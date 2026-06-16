@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogosTeleResource" format=3 uid="uid://desdrixbeanhd"]
+
+[ext_resource type="Script" uid="uid://ckuavikngjvdt" path="res://recursos/Scripts/DialogosTeleResource.gd" id="1_o5ap5"]
+
+[resource]
+script = ExtResource("1_o5ap5")
+texto = "esto es una prueba jajsajk esto es una oprueba esto es una prueba jajsajk esto es una oprueba v esto es una prueba jajsajk esto es una oprueba esto es una prueba jajsajk esto es una oprueba"
+tiempo_cambio_dialogo = 999.0
+metadata/_custom_type_script = "uid://ckuavikngjvdt"

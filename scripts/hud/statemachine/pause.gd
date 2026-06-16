@@ -14,6 +14,7 @@ func enter() -> void:
 	if GameManager.paused == false:
 		get_tree().paused = true
 	if hud_principal:
+		pantalla_negro.aclarar(0.1)
 		hud_principal.show()
 		animationplayer.play("move")
 	# Aquí podrías poner el foco en el primer botón para soporte de joystick

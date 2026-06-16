@@ -34,40 +34,27 @@ const tamaniolabel = 40
 @export var letters_scale:int = 10
 @export var max_width_x: float = 400.0
 
+var hablando = false
+var hablando_final = false
+
 func mostrar_mensaje(mensaje: String,tamanio_font,tamanio_final,tiempo_font,tiempo_velocidad,array_final):
+	#label_mensaje.text = ""
+	hablando = true
 	panel_container.visible = true
-	
-	label_mensaje.text = ""
-	label_mensaje.label_settings.font_size = tamanio_font
-	
-	var tween = create_tween()
-	tween.tween_property(label_mensaje.label_settings,"font_size",tamanio_final,tiempo_font)
 	if array_final == true:
 		despedida.play()
-	for i in range(mensaje.length()):
-		label_mensaje.text += mensaje[i]
-		#if label_mensaje.text.length() * letters_scale < max_width_x:
-			#panel_container.size.x = label_mensaje.text.length() * letters_scale
-			#print("panel: ", panel_container.size)
-		#else:
-			#panel_container.size.x = max_width_x
-		#sub_viewport.size.x = panel_container.size.x
-		#mesh_instance_3d_texto.mesh.size.y = panel_container.size.y * pixels_to_meters
-		#print(mesh_instance_3d_texto.mesh.size)
-		#print("subviewport: ", sub_viewport.size)
-		if i % 2 == 0:
-			var _uno = randi_range(-35,35)
-			var _dos = randi_range(-16,16)
-			#mesh_instance_3d.rotation = Vector3(deg_to_rad(dos),deg_to_rad(uno),0)
-			if array_final == false:
-				soniditos.play()
-			#label_mensaje.ajustar_fuente()
+	label_mensaje.label_settings.font_size = tamanio_font
+	label_mensaje.visible_characters = 0
+	label_mensaje.text = mensaje
+	var tween = create_tween()
+	tween.tween_property(label_mensaje.label_settings,"font_size",tamanio_final,tiempo_font)
+	var tween2 = create_tween()
+	tween2.tween_property(label_mensaje,"visible_characters",mensaje.length(),tiempo_velocidad)
 		
-		await  get_tree().create_timer(tiempo_velocidad, false).timeout
-	
+	await get_tree().create_timer(tiempo_velocidad,false).timeout
 	print(mensaje)
-	
-	#mesh_instance_3d.rotation = Vector3(0,0,0)
+	hablando = false
+	hablando_final = false
 
 func ocultar_mensaje():
 	panel_container.visible = false

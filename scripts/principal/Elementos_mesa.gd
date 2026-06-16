@@ -161,7 +161,7 @@ func mostrar_datos():
 			array_final
 		)
 		
-		var tiempo_espera = (dialogo_actual["texto"].length() * dialogo_actual["tiempo_velocidad"]) + 1.5
+		var tiempo_espera = dialogo_actual["tiempo_velocidad"] * 2
 		await get_tree().create_timer(tiempo_espera, false).timeout
 	GameManager.auto_dupe.ocultar_mensaje()
 	personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")

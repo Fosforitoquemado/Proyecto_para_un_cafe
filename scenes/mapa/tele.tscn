@@ -169,9 +169,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mwjb6")
 
-[sub_resource type="BoxMesh" id="BoxMesh_wbyja"]
-size = Vector3(1, 3, 2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rj4c"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -1366,11 +1363,6 @@ visible = false
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.038432, 1.2627649, 0)
 fov = 46.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport" unique_id=59119715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.840683, 0.87331593, 0)
-visible = false
-mesh = SubResource("BoxMesh_wbyja")
-
 [node name="globo" type="MeshInstance3D" parent="SubViewport" unique_id=1806789972]
 transform = Transform3D(0.19999997, -3.4969112e-08, 0, 3.4969105e-08, 0.2, 0, 0, 0, 0.20000002, -7.211844, 0.11422384, 1.4458475)
 mesh = SubResource("ArrayMesh_2dhgm")
@@ -1601,6 +1593,7 @@ theme_override_constants/margin_bottom = 65
 [node name="Label" type="Label" parent="SubViewport2/PanelContainer/MarginContainer" unique_id=1630754376]
 layout_mode = 2
 size_flags_vertical = 0
+text = "hola como estas ajjasjakass"
 label_settings = SubResource("LabelSettings_ue6a8")
 autowrap_mode = 2
 
