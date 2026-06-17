@@ -314,7 +314,14 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_g05ue"]
 font = ExtResource("11_l7fmd")
-font_size = 25
+font_size = 22
+font_color = Color(0.3515629, 0.3515629, 0.35156283, 1)
+outline_size = 2
+outline_color = Color(0.2784093, 0.2784093, 0.2784093, 0.45800003)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lto5n"]
+font = ExtResource("11_l7fmd")
+font_size = 53
 font_color = Color(0.3515629, 0.3515629, 0.35156283, 1)
 outline_size = 2
 outline_color = Color(0.2784093, 0.2784093, 0.2784093, 0.45800003)
@@ -1592,7 +1599,6 @@ anchor_bottom = 1.0869565
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_instrucciones" type="PanelContainer" parent="." unique_id=1436091547]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -1699,17 +1705,27 @@ metadata/_edit_use_anchors_ = true
 [node name="tipo_vehiculo2" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=1063517875]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.10583153
-anchor_top = 0.27222222
-anchor_right = 0.29796353
-anchor_bottom = 0.41108987
-offset_left = -10.0
-offset_top = -7.0
-offset_right = 158.0
-offset_bottom = 13.0
-text = "En el dia 1 tu objetivo es detectar las irregularidades en la vtv (tiene que coincidir con informacion de la pc, y no estar vencida (del 5 para atras = vencido)"
+anchor_left = 0.095391184
+anchor_top = 0.2543021
+anchor_right = 0.4675875
+anchor_bottom = 0.5475568
+offset_bottom = -69.744446
+text = "En el dia 1 tu objetivo es detectar las irregularidades en la vtv (el numero en la vtv es el mes y este esta vencido si el mes ya paso (5 = vencido) y tambien el numero debe coincidir con la informacion en la PC."
 label_settings = SubResource("LabelSettings_g05ue")
 horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo3" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=1256076796]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10718111
+anchor_top = 0.5
+anchor_right = 0.47937742
+anchor_bottom = 0.79325473
+offset_bottom = -69.744446
+text = "EJEMPLO: datos de PC ⬇️ "
+label_settings = SubResource("LabelSettings_g05ue")
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -1764,6 +1780,34 @@ offset_bottom = 283.0
 mouse_filter = 2
 texture = ExtResource("22_5a46f")
 expand_mode = 1
+
+[node name="tipo_vehiculo4" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=30852383]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6891747
+anchor_top = 0.28202677
+anchor_right = 0.7942122
+anchor_bottom = 0.34799236
+offset_right = -27.0
+offset_bottom = -4.0
+text = "⬇️ "
+label_settings = SubResource("LabelSettings_lto5n")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="tipo_vehiculo5" type="Label" parent="PanelContainer_instrucciones/pag1" unique_id=719303880]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68167204
+anchor_top = 0.5946463
+anchor_right = 0.78670955
+anchor_bottom = 0.66061187
+offset_right = -27.0
+offset_bottom = -4.0
+text = "⬇️ "
+label_settings = SubResource("LabelSettings_lto5n")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="pag2" type="Control" parent="PanelContainer_instrucciones" unique_id=768419671]
 visible = false
