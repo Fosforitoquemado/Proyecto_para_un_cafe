@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://er6k1nd6dmon" path="res://texture/hud/pc/para el cafe arte 2.png" id="4_bxn6l"]
 [ext_resource type="Texture2D" uid="uid://dmlhcf60wp1j7" path="res://texture/hud/pc/ventanas/para el cafe arte.jpg" id="5_2g4jo"]
 [ext_resource type="Script" uid="uid://beftgd4vb8l35" path="res://scripts/hud/hud_in_game/icons.gd" id="6_8tnld"]
+[ext_resource type="Texture2D" uid="uid://brecjmlr7fe8v" path="res://texture/hud/pc/apagado.png" id="6_lto5n"]
+[ext_resource type="Texture2D" uid="uid://ctjfcanmo73m3" path="res://texture/hud/pc/perfil.png" id="7_5a46f"]
 [ext_resource type="Script" uid="uid://dpn18nf2gnvy4" path="res://scripts/hud/hud_in_game/draggable_panel.gd" id="7_50kaj"]
 [ext_resource type="Texture2D" uid="uid://cyd7h5vuwj1b8" path="res://texture/hud/pc/ventanas/New Piskel.png" id="8_s5248"]
 [ext_resource type="Texture2D" uid="uid://ntxpo2mo37yc" path="res://texture/hud/pc/ventanas/14.png" id="9_0v4kl"]
@@ -70,8 +72,30 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_bxn6l"]
 font = ExtResource("11_l7fmd")
+font_size = 47
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_g05ue"]
+offsets = PackedFloat32Array(0.5349794)
+colors = PackedColorArray(0.32484582, 0.53275836, 0.99999183, 0.83800006)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wey08"]
+gradient = SubResource("Gradient_g05ue")
+
+[sub_resource type="Gradient" id="Gradient_1o5nn"]
+offsets = PackedFloat32Array(0.5349794)
+colors = PackedColorArray(0.03719814, 0.2845293, 0.9999184, 0.83800006)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fwf0s"]
+gradient = SubResource("Gradient_1o5nn")
+
+[sub_resource type="Gradient" id="Gradient_02xrk"]
+offsets = PackedFloat32Array(0.5349794)
+colors = PackedColorArray(0.00037158144, 0.040312488, 0.27711654, 0.83800006)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mhud3"]
+gradient = SubResource("Gradient_02xrk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxn6l"]
 atlas = ExtResource("8_s5248")
@@ -481,7 +505,7 @@ animations = [{
 font = ExtResource("11_l7fmd")
 font_size = 29
 
-[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows")]
+[node name="PCControl" type="Control" unique_id=2128863822 node_paths=PackedStringArray("vtv", "apagado", "cargando", "cargando_base_de_datos", "menu_windows", "errores_auto_control", "dominio_cedula", "modelo_cedula", "vence_cedula", "numero_licencia", "nombre_licencia", "apellido_licencia", "fecha_de_nacimiento_licencia", "fecha_de_vencimiento_licencia", "nombre_seguro", "id_seguro", "fecha_seguro", "tipo_vehiculo_permiso", "fecha_permiso", "basedatos_img", "panel_isntrucciones", "icono_vtv", "icono_cedula", "icono_licencia", "icono_seguro", "icono_permiso", "panel_windows")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -493,6 +517,7 @@ vtv = NodePath("PanelContainer_VTV/TextureRect/VTV")
 apagado = NodePath("apagado")
 cargando = NodePath("cargando")
 cargando_base_de_datos = NodePath("PanelContainer_basededatos/basedatos_img/cargando")
+menu_windows = NodePath("windows")
 errores_auto_control = NodePath("PanelContainer_Errores")
 errores_label = ExtResource("2_2g4jo")
 dominio_cedula = NodePath("PanelContainer_cedula/TextureRect/Dominio_cedula")
@@ -509,6 +534,7 @@ fecha_seguro = NodePath("PanelContainer_seguro/TextureRect/fecha_seguro")
 tipo_vehiculo_permiso = NodePath("PanelContainer_permiso/TextureRect/tipo_vehiculo")
 fecha_permiso = NodePath("PanelContainer_permiso/TextureRect/vencimiento")
 basedatos_img = NodePath("PanelContainer_basededatos")
+panel_isntrucciones = NodePath("PanelContainer_instrucciones")
 icono_vtv = NodePath("Iconos/VTV_icon")
 icono_cedula = NodePath("Iconos/Cedula_icon")
 icono_licencia = NodePath("Iconos/Licencia_icon")
@@ -542,8 +568,8 @@ texture = SubResource("GradientTexture1D_eoye0")
 
 [node name="loading" type="AnimatedSprite2D" parent="cargando" unique_id=18447878]
 texture_filter = 1
-position = Vector2(990, 540)
-scale = Vector2(7, 7)
+position = Vector2(990, 504)
+scale = Vector2(22.833336, 22.833336)
 sprite_frames = SubResource("SpriteFrames_i4tyn")
 autoplay = "default"
 frame_progress = 0.7575729
@@ -552,10 +578,10 @@ frame_progress = 0.7575729
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.49583334
-anchor_top = 0.5453704
-anchor_right = 0.54114586
-anchor_bottom = 0.56666666
+anchor_left = 0.45885417
+anchor_top = 0.57962966
+anchor_right = 0.60260415
+anchor_bottom = 0.6333333
 offset_top = -6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
@@ -576,11 +602,109 @@ mouse_filter = 2
 texture = ExtResource("4_bxn6l")
 expand_mode = 1
 
+[node name="windows" type="Control" parent="." unique_id=1344066513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="windows" unique_id=742307983]
+layout_mode = 0
+anchor_left = 0.0026041667
+anchor_top = 0.64074075
+anchor_right = 0.17708333
+anchor_bottom = 0.9157407
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_wey08")
+
+[node name="TextureRect2" type="TextureRect" parent="windows/TextureRect" unique_id=1308350023]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03880597
+anchor_top = 0.026936026
+anchor_right = 0.9641791
+anchor_bottom = 0.969697
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_fwf0s")
+
+[node name="TextureRect3" type="TextureRect" parent="windows/TextureRect" unique_id=328633789]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03880597
+anchor_top = 0.83838385
+anchor_right = 0.9641791
+anchor_bottom = 0.969697
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_mhud3")
+
+[node name="TextureRect" type="TextureRect" parent="windows/TextureRect" unique_id=112224642]
+texture_filter = 1
+layout_mode = 0
+anchor_left = 0.8477612
+anchor_top = 0.8518519
+anchor_right = 0.9522388
+anchor_bottom = 0.969697
+offset_top = -1.5258789e-05
+mouse_filter = 2
+texture = ExtResource("6_lto5n")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="windows/TextureRect/TextureRect" unique_id=93642513]
+self_modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_lto5n")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="windows/TextureRect" unique_id=401646135]
+texture_filter = 1
+layout_mode = 0
+anchor_left = 0.06268657
+anchor_top = 0.84175086
+anchor_right = 0.17313433
+anchor_bottom = 0.96633
+mouse_filter = 2
+texture = ExtResource("7_5a46f")
+expand_mode = 1
+
+[node name="apagar_pc" type="Button" parent="windows/TextureRect" unique_id=849453519]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8447761
+anchor_top = 0.83838385
+anchor_right = 0.9641791
+anchor_bottom = 0.97643095
+focus_mode = 1
+theme_override_font_sizes/font_size = 40
+metadata/_edit_use_anchors_ = true
+
 [node name="Iconos" type="Control" parent="." unique_id=383303726]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -615,6 +739,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Errores_icon" unique_id=2035862786]
 layout_mode = 1
@@ -671,6 +796,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/VTV_icon" unique_id=225273147]
 layout_mode = 1
@@ -720,6 +846,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Cedula_icon" unique_id=397506969]
 layout_mode = 1
@@ -769,6 +896,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Licencia_icon" unique_id=1878070509]
 layout_mode = 1
@@ -818,6 +946,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Seguro_icon" unique_id=1330357999]
 layout_mode = 1
@@ -872,6 +1001,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Permiso_icon" unique_id=172719366]
 layout_mode = 1
@@ -921,6 +1051,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="Iconos/Instrucciones_icon" unique_id=356161448]
 layout_mode = 1
@@ -1089,6 +1220,7 @@ anchor_left = -0.41666615
 anchor_top = -0.043478258
 anchor_right = 1.6250005
 anchor_bottom = 1.0869565
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer_Errores/errores_auto_control" unique_id=1524719205]
@@ -1161,6 +1293,7 @@ anchor_left = -0.5400024
 anchor_top = -0.13043444
 anchor_right = 1.4400024
 anchor_bottom = 1.0869564
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_cedula" type="PanelContainer" parent="." unique_id=1295903964]
@@ -1264,6 +1397,7 @@ anchor_left = -0.6646179
 anchor_top = -0.09858595
 anchor_right = 1.4953837
 anchor_bottom = 1.0869564
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_licencia" type="PanelContainer" parent="." unique_id=803623721]
@@ -1405,6 +1539,7 @@ anchor_bottom = 1.0869565
 offset_left = -8.222229
 offset_top = -1.9999923
 offset_right = 6.8333435
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_seguro" type="PanelContainer" parent="." unique_id=169928930]
@@ -1510,6 +1645,7 @@ anchor_bottom = 1.0869565
 offset_left = -8.222229
 offset_top = -1.9999923
 offset_right = 6.8333435
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_permiso" type="PanelContainer" parent="." unique_id=379585947]
@@ -1596,9 +1732,11 @@ anchor_left = -0.17373767
 anchor_top = -0.08347811
 anchor_right = 1.3636378
 anchor_bottom = 1.0869565
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer_instrucciones" type="PanelContainer" parent="." unique_id=1436091547]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -2070,6 +2208,7 @@ anchor_bottom = 1.0869565
 offset_left = -8.222229
 offset_top = -1.9999923
 offset_right = 6.8333435
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="boton_base de datos" type="Panel" parent="." unique_id=437047317]
@@ -2115,15 +2254,19 @@ anchor_left = 0.4435764
 anchor_top = 0.4722222
 anchor_right = 0.5555556
 anchor_bottom = 0.5277778
+focus_mode = 1
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="exit" type="Button" parent="." unique_id=1752400995]
+[node name="boton_windows" type="Button" parent="." unique_id=1752400995]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.9444444
-anchor_right = 1.0
-anchor_bottom = 0.055555556
+anchor_left = 0.0015625
+anchor_top = 0.92407405
+anchor_right = 0.07395833
+anchor_bottom = 0.99722224
+focus_mode = 1
 theme_override_font_sizes/font_size = 40
 text = "exit
 "
@@ -2195,6 +2338,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
+focus_mode = 1
 
 [node name="nombre" type="Label" parent="GridContainer/Errores_icon" unique_id=649424578]
 visible = false
@@ -2259,6 +2403,7 @@ page = NodePath("../../PanelContainer_instrucciones/pag6")
 script = ExtResource("21_2gg5t")
 page = NodePath("../../PanelContainer_instrucciones/pag7")
 
+[connection signal="pressed" from="windows/TextureRect/apagar_pc" to="." method="_on_apagar_pc_pressed"]
 [connection signal="pressed" from="Iconos/Errores_icon/boton_icono" to="Iconos/Errores_icon" method="_on_boton_icono_pressed"]
 [connection signal="pressed" from="Iconos/VTV_icon/boton_icono" to="Iconos/VTV_icon" method="_on_boton_icono_pressed"]
 [connection signal="pressed" from="Iconos/Cedula_icon/boton_icono" to="Iconos/Cedula_icon" method="_on_boton_icono_pressed"]
@@ -2277,4 +2422,4 @@ page = NodePath("../../PanelContainer_instrucciones/pag7")
 [connection signal="pressed" from="PanelContainer_instrucciones/Control/Cerrar/cerrar_" to="PanelContainer_instrucciones" method="_on_cerrar__pressed"]
 [connection signal="pressed" from="boton_base de datos/BaseDatos" to="." method="_on_base_datos_pressed"]
 [connection signal="pressed" from="BaseDatos" to="." method="_on_base_datos_pressed"]
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="boton_windows" to="." method="_on_boton_windows_pressed"]

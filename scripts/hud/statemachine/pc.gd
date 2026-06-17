@@ -8,6 +8,8 @@ extends UIState
 @onready var state_machine: Node = $".."
 
 @export var baul_boton: Button
+@export var pc_exit: Button
+@export var pc_instrucciones: Button
 
 @onready var pc_sistem: Node3D = $"../../../PCSISTEMA"
 @onready var pc_control: Control = $"../../../PCSISTEMA/SubViewport/PCControl"
@@ -29,10 +31,30 @@ func comenzar_guia():
 			"automatico": true,
 			"texto": "¡clickea los accesos directos para validar informacion,(instrucciones.EXE puede ayudarte)."
 		},
+		{
+			"nodo_boton": pc_instrucciones,
+			"automatico": true,
+			"texto": "¡clickea el exe de instrucciones si necesitas ayuda."
+		},
+		{
+			"nodo_boton": pc_exit,
+			"automatico": true,
+			"texto": "¡usa el menu lake city para salir de la pc."
+		},
 	]
 	var configuracion_posiciones = [
 		{
 			"direccion": "abajo",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "arriba",
+			"pixeles_x": -100,
+			"pixeles_y": 100
+		},
+		{
+			"direccion": "arriba",
 			"pixeles_x": 100,
 			"pixeles_y": 100
 		},

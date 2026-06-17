@@ -312,6 +312,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -359,6 +360,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -406,6 +408,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -453,6 +456,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -500,6 +504,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -547,6 +552,7 @@ anchor_right = 0.9713761
 anchor_bottom = 0.68487394
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("3_fsiy4")
 metadata/_edit_use_anchors_ = true
 
@@ -644,6 +650,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 text = "reiniciar"
 
 [node name="TextureRect" type="TextureRect" parent="opciones" unique_id=1756116950]
@@ -698,6 +705,7 @@ anchor_left = 0.6088542
 anchor_top = 0.275
 anchor_right = 0.6265625
 anchor_bottom = 0.31666666
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="opciones/Button_atras" unique_id=999178059]
@@ -732,6 +740,7 @@ anchor_right = 0.4774304
 anchor_bottom = 0.52391976
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 text = "SI"
 metadata/_edit_use_anchors_ = true
 
@@ -744,6 +753,7 @@ anchor_right = 0.5815972
 anchor_bottom = 0.52391976
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 text = "NO"
 metadata/_edit_use_anchors_ = true
 

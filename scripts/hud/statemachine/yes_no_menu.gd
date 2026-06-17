@@ -10,6 +10,7 @@ extends UIState
 @export var inspeccionar: Button
 @export var coima: Button
 @export var pc: Button
+@export var reloj: Button
 
 @export var porcentaje = 30
 
@@ -53,6 +54,11 @@ func comenzar_guia():
 			"texto": "¡Este es el botón de multar! Úsalo para multar autos con documentos erroneos, te restaran palta por cada auto erroneamente procesado"
 		},
 		{
+			"nodo_boton": reloj,
+			"automatico": false,
+			"texto": "¡Este es el reloj, cuando llegue a las 17:00 va a sonar y habra concluido el dia!"
+		},
+		{
 			"nodo_boton": tomar_mate,
 			"automatico": false,
 			"texto": "¡Este es el botón para tomar mate, usalo cuando tu barra de tiempo pase el 30% y recude la barra de tiempo"
@@ -74,6 +80,11 @@ func comenzar_guia():
 		}
 	]
 	var configuracion_posiciones = [
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
 		{
 			"direccion": "arriba",
 			"pixeles_x": 100,
@@ -201,7 +212,7 @@ func _on_coimear_pressed() -> void:
 			pc_control.agregar_errores([str("el auto tenia solo ",DocumentosGenerator.ilegalidades," ilegalidades ❌")])
 		else:
 			GameManager.ida_auto(2)
-			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * DocumentosGenerator.ilegalidades)
+			GameManager.update_score(DocumentosGenerator.auto_data["score_auto"] * 2)#DocumentosGenerator.ilegalidades)
 			#GameManager.sumar_dinero_jugador(AutoGenerator._auto_data["dinero_coima"] * DocumentosGenerator.ilegalidades)
 			GameManager.sumar_auto()
 			acierto.play()

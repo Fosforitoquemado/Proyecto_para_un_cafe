@@ -1174,6 +1174,7 @@ vsync = NodePath("opciones/VBoxContainer/vsync")
 
 [node name="Hud_principal" type="Control" parent="." unique_id=1747685538]
 process_mode = 3
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1196,6 +1197,7 @@ anchor_right = 0.27361113
 anchor_bottom = 0.2234568
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_menu" type="Button" parent="Hud_principal" unique_id=628712761]
@@ -1207,6 +1209,7 @@ anchor_left = 0.35052082
 anchor_top = 0.3962963
 anchor_right = 0.42083332
 anchor_bottom = 0.5197531
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_options" type="Button" parent="Hud_principal" unique_id=1631462563]
@@ -1218,6 +1221,7 @@ anchor_left = 0.25833333
 anchor_top = 0.2462963
 anchor_right = 0.32864583
 anchor_bottom = 0.36975306
+focus_mode = 1
 text = "OPTIONS"
 metadata/_edit_use_anchors_ = true
 
@@ -1233,6 +1237,7 @@ anchor_right = 0.5189236
 anchor_bottom = 0.6422839
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Hud_principal" unique_id=1613842232]
@@ -1395,6 +1400,7 @@ anchor_top = 0.14
 anchor_right = 0.9222222
 anchor_bottom = 0.86
 grow_horizontal = 2
+focus_mode = 1
 mouse_filter = 1
 text = "next"
 script = ExtResource("7_v3rms")
@@ -1569,6 +1575,7 @@ anchor_left = 0.08888889
 anchor_top = 0.16
 anchor_right = 0.9111111
 anchor_bottom = 0.85
+focus_mode = 1
 mouse_filter = 1
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -1580,12 +1587,12 @@ anchor_left = 0.8802083
 anchor_top = 0.8888889
 anchor_right = 0.9878472
 anchor_bottom = 0.9799384
+focus_mode = 1
 mouse_filter = 1
 text = "skip"
 metadata/_edit_use_anchors_ = true
 
 [node name="YES_NO_menu" type="Control" parent="." unique_id=972755676]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1615,6 +1622,7 @@ anchor_right = 0.9374999
 anchor_bottom = 0.86274517
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
@@ -1638,6 +1646,7 @@ anchor_right = 0.9222224
 anchor_bottom = 0.86
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 text = "MULTAR"
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -1663,6 +1672,7 @@ anchor_left = 0.083333336
 anchor_top = 0.16
 anchor_right = 0.9111111
 anchor_bottom = 0.87
+focus_mode = 1
 text = "TOMAR MATE "
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -1688,6 +1698,7 @@ anchor_right = 0.9166667
 anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 mouse_filter = 1
 text = "Inspeccion
 "
@@ -1715,14 +1726,27 @@ anchor_right = 0.9166667
 anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 mouse_filter = 1
 text = "Inspeccion
 "
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
 
+[node name="reloj_location" type="Button" parent="YES_NO_menu" unique_id=1227883710]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44739583
+anchor_top = 0.70555556
+anchor_right = 0.49265188
+anchor_bottom = 0.7225308
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="pc_location" type="Button" parent="YES_NO_menu" unique_id=1242503910]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -1734,17 +1758,7 @@ offset_left = -0.86499023
 offset_right = -0.86499023
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="detecto_mouse_mate" type="Button" parent="YES_NO_menu" unique_id=1324224923]
-visible = false
-modulate = Color(0, 0, 0, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6623264
-anchor_top = 0.4537037
-anchor_right = 0.7604167
-anchor_bottom = 0.75308645
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar_mate" type="ProgressBar" parent="YES_NO_menu" unique_id=1039663927]
@@ -1838,6 +1852,7 @@ anchor_top = 0.15
 anchor_right = 0.9166667
 anchor_bottom = 0.87000006
 grow_horizontal = 2
+focus_mode = 1
 text = "Inspeccion_VTV
 "
 script = ExtResource("7_v3rms")
@@ -1865,6 +1880,7 @@ anchor_top = 0.15
 anchor_right = 0.9111111
 anchor_bottom = 0.85
 grow_vertical = 2
+focus_mode = 1
 text = "Inspeccion_adela
 "
 script = ExtResource("7_v3rms")
@@ -1893,6 +1909,7 @@ anchor_right = 0.9166667
 anchor_bottom = 0.86
 grow_horizontal = 0
 grow_vertical = 2
+focus_mode = 1
 text = "Inspeccion_atras
 "
 script = ExtResource("7_v3rms")
@@ -1918,6 +1935,7 @@ anchor_top = 0.15
 anchor_right = 0.9222222
 anchor_bottom = 0.86
 grow_vertical = 2
+focus_mode = 1
 text = "Inspeccion_compu
 "
 script = ExtResource("7_v3rms")
@@ -1947,6 +1965,7 @@ anchor_top = 0.16
 anchor_right = 0.9166667
 anchor_bottom = 0.86
 grow_vertical = 2
+focus_mode = 1
 text = "Inspeccion_mesa
 "
 script = ExtResource("7_v3rms")
@@ -1973,6 +1992,7 @@ anchor_right = 0.9111111
 anchor_bottom = 0.8599999
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 mouse_filter = 1
 text = "Inspeccion_volver
 "
@@ -2019,10 +2039,12 @@ anchor_right = 0.56734914
 anchor_bottom = 1.0344827
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="baul_location" type="Button" parent="Inspeccion_menu" unique_id=640414771]
+visible = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -2033,6 +2055,37 @@ anchor_right = 0.6510417
 anchor_bottom = 0.57098764
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pc_intrucciones" type="Button" parent="Inspeccion_menu" unique_id=632542171]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8359375
+anchor_top = 0.74814814
+anchor_right = 0.90729165
+anchor_bottom = 0.8509259
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="pc_exit" type="Button" parent="Inspeccion_menu" unique_id=991355740]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.8185185
+anchor_right = 0.12604167
+anchor_bottom = 0.92129624
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
@@ -2071,6 +2124,7 @@ anchor_top = 0.23846154
 anchor_right = 0.86923075
 anchor_bottom = 0.83076924
 grow_horizontal = 0
+focus_mode = 1
 mouse_filter = 1
 script = ExtResource("7_v3rms")
 metadata/_edit_use_anchors_ = true
@@ -2144,6 +2198,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 text = "reiniciar"
 
 [node name="TextureRect" type="TextureRect" parent="opciones" unique_id=1069786618]
@@ -2197,6 +2252,7 @@ anchor_left = 0.6088542
 anchor_top = 0.275
 anchor_right = 0.6265625
 anchor_bottom = 0.31666666
+focus_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="opciones/Button_atras" unique_id=1299561184]
@@ -2214,6 +2270,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pantalla_negro" type="TextureRect" parent="." unique_id=2071720164 node_paths=PackedStringArray("hud")]
 process_mode = 3
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2334,7 +2391,7 @@ atras = NodePath("../../Inspeccion_menu/Inspeccion_Trasera_texture/Inspeccion_at
 mesa = NodePath("../../Inspeccion_menu/Inspeccion_mesa_texture/Inspeccion_mesa")
 volver = NodePath("../../Inspeccion_menu/Inspeccion_volver_texture/Inspeccion_volver")
 
-[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("aprobado", "multar", "tomar_mate", "inspeccionar", "coima", "pc", "HUD", "yes_no_menu", "timer", "progressbarmate")]
+[node name="yes_no_menu" type="Node" parent="StateMachine" unique_id=1503657567 node_paths=PackedStringArray("aprobado", "multar", "tomar_mate", "inspeccionar", "coima", "pc", "reloj", "HUD", "yes_no_menu", "timer", "progressbarmate")]
 script = ExtResource("24_bluaa")
 tutorial_scene = ExtResource("24_eiuad")
 aprobado = NodePath("../../YES_NO_menu/Aprobado/yes")
@@ -2343,6 +2400,7 @@ tomar_mate = NodePath("../../YES_NO_menu/Tomar_Mate/mate")
 inspeccionar = NodePath("../../YES_NO_menu/Inspeccionar/Inspeccion")
 coima = NodePath("../../YES_NO_menu/Coima/Coimear")
 pc = NodePath("../../YES_NO_menu/pc_location")
+reloj = NodePath("../../YES_NO_menu/reloj_location")
 HUD = NodePath("../..")
 yes_no_menu = NodePath("../../YES_NO_menu")
 timer = NodePath("../../Hud_elementos/Timer")
@@ -2377,13 +2435,15 @@ hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_menu = NodePath("../../Inspeccion_menu/Baul_menu")
 baul_boton = NodePath("../../Inspeccion_menu/Baul_menu/cerrarbaul/cerrar_baul")
 
-[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("HUD", "hud_elementos", "hud_inspeccion", "baul_boton")]
+[node name="pc" type="Node" parent="StateMachine" unique_id=1332345196 node_paths=PackedStringArray("HUD", "hud_elementos", "hud_inspeccion", "baul_boton", "pc_exit", "pc_instrucciones")]
 script = ExtResource("29_pjbv8")
 tutorial_scene = ExtResource("24_eiuad")
 HUD = NodePath("../..")
 hud_elementos = NodePath("../../Hud_elementos")
 hud_inspeccion = NodePath("../../Inspeccion_menu")
 baul_boton = NodePath("../../Inspeccion_menu/baul_location")
+pc_exit = NodePath("../../Inspeccion_menu/pc_exit")
+pc_instrucciones = NodePath("../../Inspeccion_menu/pc_intrucciones")
 
 [node name="transicion" type="Node" parent="StateMachine" unique_id=854658723]
 script = ExtResource("31_ncrl3")

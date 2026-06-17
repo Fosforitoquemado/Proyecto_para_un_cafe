@@ -13,6 +13,7 @@ extends Control
 @export var apagado: TextureRect
 @export var cargando: TextureRect
 @export var cargando_base_de_datos: TextureRect
+@export var menu_windows:Control
 
 @export var errores_auto_control: Control
 @onready var exclamacion: MeshInstance3D = $"../../exclamacion"
@@ -40,6 +41,7 @@ extends Control
 @export var fecha_permiso: Label
 
 @export var basedatos_img: PanelContainer
+@export var panel_isntrucciones: PanelContainer
 
 @export var icono_vtv:TextureRect
 @export var icono_cedula:TextureRect
@@ -72,6 +74,8 @@ func _ready() -> void:
 	icono_licencia.hide()
 	icono_seguro.hide()
 	icono_permiso.hide()
+	panel_isntrucciones.hide()
+	menu_windows.hide()
 	if "vtv" in dia.documentos_habilitados:
 		icono_vtv.show()
 	if "cedula" in dia.documentos_habilitados:
@@ -134,6 +138,7 @@ func reset_pc():
 	basedatos_img.visible = false
 	basededatos_active = false
 	cargando_base_de_datos.visible = true
+	menu_windows.hide()
 
 func borrar_errores():
 	exclamacion.visible = false
@@ -173,7 +178,7 @@ func _on_base_datos_pressed() -> void:
 			basededatos_active = true
 	pass # Replace with function body.
 
-func _on_exit_pressed() -> void:
+func _on_apagar_pc_pressed() -> void:
 	PCSISTEM.exit()
 	reset_pc()
 	pass # Replace with function body.
@@ -201,4 +206,11 @@ func _on_button_flecha_izquierda_pressed() -> void:
 		# Animación de pasar página hacia atrás (reversa)
 		libro_guia.play("default",-1,true)
 		fsm.change_to("transicion")
+	pass # Replace with function body.
+
+func _on_boton_windows_pressed() -> void:
+	if menu_windows.visible == true:
+		menu_windows.hide()
+	else:
+		menu_windows.show()
 	pass # Replace with function body.

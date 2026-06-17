@@ -26,9 +26,10 @@ func aclarar(tiempo):
 
 func mostrar_objetivo(tiempo1,tiempo2):
 	objetivo.show()
-	objetivo.text = ""
+	objetivo.text = "PLATA "
+	stomp.play()
 	await get_tree().create_timer(tiempo1 / 3,false).timeout
-	objetivo.text += "DINERO OBJETIVO DEL DIA: "
+	objetivo.text += "NECESARIA PARA PASAR EL DIA: "
 	stomp.play()
 	await get_tree().create_timer(stomp.stream.get_length() + 1).timeout
 	objetivo.text += str(int(GameManager.dinero_objetivo),"$")
@@ -36,7 +37,7 @@ func mostrar_objetivo(tiempo1,tiempo2):
 	await get_tree().create_timer(1).timeout
 	var tween2 = create_tween()
 	tween2.tween_property(objetivo,"modulate",Color(0.0, 0.0, 0.0, 0.0),tiempo2 + tiempo1 - (tiempo1 / 3) - stomp.stream.get_length())
-	await get_tree().create_timer(tiempo2 + tiempo1 - (tiempo1 / 3) - stomp.stream.get_length(),false).timeout
+	await get_tree().create_timer(tiempo2 + tiempo1 - ((tiempo1 / 3)*2) - stomp.stream.get_length(),false).timeout
 	objetivo.hide()
 
 func comienzo_dia(tiempo1,tiempo2):
