@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cgscflce8l8lj" path="res://scenes/mapa/tele.tscn" id="9_5posd"]
 [ext_resource type="PackedScene" uid="uid://dcj77sk8m5tqg" path="res://scenes/mapa/elementos_mesa.tscn" id="10_86csk"]
 [ext_resource type="Script" uid="uid://bfiohbx33ojvf" path="res://scripts/principal/GameManager.gd" id="11_d725c"]
-[ext_resource type="PackedScene" uid="uid://dsxpsq5vg5rf8" path="res://scenes/recursos/guia_papel_mano.tscn" id="11_okm07"]
 [ext_resource type="PackedScene" uid="uid://difd7j8na68ch" path="res://scenes/day_manager.tscn" id="12_27aa5"]
 [ext_resource type="Script" uid="uid://csicyh2kn4lwd" path="res://scripts/principal/AutoGenerator.gd" id="13_ulpmu"]
 [ext_resource type="Script" uid="uid://dsovnopsul6vn" path="res://scripts/principal/DocumentosGenerator.gd" id="14_x3o8j"]
@@ -144,7 +143,6 @@ transform = Transform3D(0.030379813, 0, 0.19767919, 0, 0.19999999, 0, -0.1976791
 transform = Transform3D(0.120532185, 0, 0.04870306, 0, 0.13, 0, -0.04870306, 0, 0.120532185, 0.98357636, 0.3077581, 1.6657909)
 
 [node name="Elementos_mesa" parent="." unique_id=440201251 groups=["elementos_mesa"] instance=ExtResource("10_86csk")]
-guia_mano = ExtResource("11_okm07")
 
 [node name="GameManager" type="Node" parent="." unique_id=351716273 node_paths=PackedStringArray("sub_viewport_container")]
 script = ExtResource("11_d725c")
