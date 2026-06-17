@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxs5eiosh2k1l"
+path="res://.godot/imported/Click bocina auto.mp3-0dfa794dc051c333f3bfaed25fed0f1d.mp3str"
+
+[deps]
+
+source_file="res://sonidos/NUEVOS SONIDOS/Clicks/Click bocina auto.mp3"
+dest_files=["res://.godot/imported/Click bocina auto.mp3-0dfa794dc051c333f3bfaed25fed0f1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
