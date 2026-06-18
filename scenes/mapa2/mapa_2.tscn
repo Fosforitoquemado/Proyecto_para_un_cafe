@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cr5rek3546jbo"]
 
+[ext_resource type="Environment" uid="uid://c71aaf43jsj8q" path="res://recursos/cielo/mapa1.tres" id="1_a3sv8"]
 [ext_resource type="Shader" uid="uid://k802f1uulchn" path="res://shaders/blur.gdshader" id="3_pn8ga"]
-[ext_resource type="Texture2D" uid="uid://crf7yb0qe5gib" path="res://texture/mapa/fondo/Street View 360flip.jpg" id="4_jobha"]
 [ext_resource type="Script" uid="uid://vomk36kbxixq" path="res://scripts/hud/pruebas_troll/panel_container.gd" id="5_3vhhu"]
 [ext_resource type="PackedScene" uid="uid://bujva2sokoioq" path="res://scenes/hud/hud.tscn" id="5_w6gyl"]
 [ext_resource type="Texture2D" uid="uid://bckibxvgdpq1w" path="res://texture/hud/otros/carnet_.png" id="6_qig0w"]
@@ -30,18 +30,6 @@
 [ext_resource type="Script" uid="uid://c0i6hsu06mqa4" path="res://scripts/principal/startdaymanager.gd" id="21_8m8ba"]
 [ext_resource type="AudioStream" uid="uid://4udk7p6mbqit" path="res://sonidos/AUTOS/Doblo/freesound_community-birds-19624.wav" id="22_5yivt"]
 [ext_resource type="Script" uid="uid://7xv2q5s6d31s" path="res://scripts/hud/pruebas_troll/fps_counter.gd" id="23_m3qsi"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_al4ve"]
-panorama = ExtResource("4_jobha")
-
-[sub_resource type="Sky" id="Sky_ig7tw"]
-sky_material = SubResource("PanoramaSkyMaterial_al4ve")
-
-[sub_resource type="Environment" id="Environment_2k3vi"]
-background_mode = 2
-sky = SubResource("Sky_ig7tw")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_558d4"]
 atlas = ExtResource("6_qig0w")
@@ -909,6 +897,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ypr0s")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3sv8"]
+albedo_color = Color(0.34407577, 0.34407574, 0.34407574, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4h5y8"]
+material = SubResource("StandardMaterial3D_a3sv8")
+size = Vector3(1, 50, 25)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvn3x"]
 resource_name = "#1D3818FF"
 cull_mode = 2
@@ -1316,7 +1311,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yv5ts")
 
-[node name="mapa2" type="Node3D" unique_id=55082832]
+[node name="Main" type="Node3D" unique_id=55082832]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=204628923]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -1326,7 +1321,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 24.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=345992839]
-environment = SubResource("Environment_2k3vi")
+environment = ExtResource("1_a3sv8")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=880208377]
 visible = false
@@ -1374,6 +1369,10 @@ mesh = SubResource("ArrayMesh_ymq1t")
 transform = Transform3D(3.9056795, 0, 1.1368684e-13, 0, 2.8719423, 0, -1.1368684e-13, 0, 3.9056795, -6.710212, 9.144907, 9.9604645)
 light_color = Color(0.9999992, 0.98791295, 0.7040726, 1)
 script = ExtResource("18_a3sv8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="mapa_cosas/mapa2/radio" unique_id=1269445344]
+transform = Transform3D(0.999999, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 0.999999, -17.415838, -14.144751, 10.036097)
+mesh = SubResource("BoxMesh_4h5y8")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="mapa_cosas/mapa2" unique_id=868495259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9501033, -0.364026, -18.689121)

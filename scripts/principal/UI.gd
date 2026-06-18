@@ -10,6 +10,7 @@ class_name UIManager
 @export var autos_label: Label
 @export var fallos_label: Label
 @export var dinero_label: Label
+@export var ahorros_label: Label
 
 #elementos HUD
 @export var hud_elementos: Control
@@ -59,7 +60,8 @@ func update_ui():
 	dia = day_manager.get_day()
 	timer.max_value = dia.tiempo_limite
 	#dinero
-	dinero_label.text = str("Plata: ",GameManager.dinero)
+	dinero_label.text = str("Plata: ",GameManager.dinero_ganado_hoy)
+	ahorros_label.text = str("Ahorros: ",GameManager.dinero)
 	
 	#opciones
 	modo_pantalla.select(SaveLoad.contents_to_save.values()[8])

@@ -16,6 +16,8 @@ var dinero_ganado_hoy = 0
 var max_mates: int = 3
 var usos_mates: int = 0
 
+var max_ventanas = 1
+
 var dia_empezado = false
 var empezar_tiempo = false
 var tiempo_dia_total = 400.0
@@ -91,9 +93,9 @@ func empezar_dia():
 		var tween = create_tween()
 		tween.tween_property(directional_light_3d,"rotation",Vector3(deg_to_rad(25.8),deg_to_rad(118.7),deg_to_rad(69.7)),tiempo_dia_total)
 		var tween2 = create_tween()
-		tween2.tween_property(World_Environment,"ambient_light_sky_contribution",0.5,tiempo_dia_total)
+		tween2.tween_property(World_Environment.environment,"background_energy_multiplier",0.4,tiempo_dia_total)
 		var tween3 = create_tween()
-		tween3.tween_property(World_Environment,"background_energy_multiplier",0.5,tiempo_dia_total)
+		tween3.tween_property(World_Environment.environment,"ambient_light_sky_contribution",0.8,tiempo_dia_total)
 		
 	empezar_tiempo = true
 	dia_empezado = true
@@ -110,6 +112,7 @@ func cargar_dia():
 	print(savedata)
 	dinero = savedata.values()[1]
 	usos_mates = savedata.values()[6]
+	max_ventanas = SaveLoad.contents_to_save["max_ventanas_pc"]
 	var uicontroller
 	uicontroller = get_tree().get_first_node_in_group("ui_manager")
 	uicontroller.update_ui()
@@ -163,13 +166,20 @@ func sumar_auto():
 func update_score(score_auto):
 	var dinero_inicial = dinero
 	var dinero_final = dinero + score_auto
-
+	var dinero_inicial2 = dinero_ganado_hoy
+	var dinero_final2 = dinero_ganado_hoy + score_auto
 	var tween = create_tween()
 	tween.tween_method(actualizar_dinero, dinero_inicial, dinero_final, 0.5)
+	var tween2 = create_tween()
+	tween2.tween_method(actualizar_dinero2, dinero_inicial2, dinero_final2, 0.5)
 	#dinero += score_auto
-	dinero_ganado_hoy += score_auto
+	#dinero_ganado_hoy += score_auto
 	print("DINERO SUMADO: ",dinero)
 
+func actualizar_dinero2(valor:float):
+	dinero_ganado_hoy = int(valor)
+	var hud = get_tree().get_first_node_in_group("ui_manager")
+	hud.update_ui()
 func actualizar_dinero(valor:float):
 	dinero = int(valor)
 	var hud = get_tree().get_first_node_in_group("ui_manager")

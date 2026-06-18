@@ -15,9 +15,16 @@ extends Control
 @export var cargando_base_de_datos: TextureRect
 @export var menu_windows:Control
 
-@export var errores_auto_control: Control
-@onready var exclamacion: MeshInstance3D = $"../../exclamacion"
+@export var panel_errores:PanelContainer
 @export var errores_label:PackedScene
+@onready var exclamacion: MeshInstance3D = $"../../exclamacion"
+
+@export var panel_vtv:PanelContainer
+@export var panel_cedula:PanelContainer
+@export var panel_licencia:PanelContainer
+@export var panel_seguro:PanelContainer
+@export var panel_permiso:PanelContainer
+@export var panel_instruccion:PanelContainer
 
 #labels cedula
 @export var dominio_cedula: Label 
@@ -49,23 +56,29 @@ extends Control
 @export var icono_seguro:TextureRect
 @export var icono_permiso:TextureRect
 
-var basededatos_active = false
-
 @export var panel_windows:Array[DraggablePanelContainer]
 
-var tiempo_de_carga
+@onready var barra_de_tareas: GridContainer = $barra_de_tareas
 
 @onready var fsm: Node = $StateMachine
 @onready var libro_guia: AnimatedSprite2D = $PanelContainer_instrucciones/libro_guia
+
+var basededatos_active = false
+
+var tiempo_de_carga
 
 var busy: bool = false
 var pag_number = 1
 var min_pag_number = 1
 var max_pag_number = 7
 
+var ventanas:Dictionary = {}
+
 var pc_mouse_pos:Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	ventanas.clear()
+	
 	var dia = day_manager.get_day()
 	
 	tiempo_de_carga = dia.config["tiempo_de_carga"]
@@ -88,7 +101,7 @@ func _ready() -> void:
 		icono_permiso.show()
 	apagado.visible = true
 	cargando.visible = true
-	errores_auto_control.visible = false
+	panel_errores.visible = false
 	basedatos_img.visible = false
 
 func update_cursor_pos():
@@ -139,23 +152,52 @@ func reset_pc():
 	basededatos_active = false
 	cargando_base_de_datos.visible = true
 	menu_windows.hide()
+	#for i in ventanas:
+		#ventanas[i].queue_free()
+	#ventanas.clear()
 
 func borrar_errores():
 	exclamacion.visible = false
-	errores_auto_control.visible = false
-	var vbox = errores_auto_control.find_child("VBoxContainer")
+	var vbox = panel_errores.find_child("VBoxContainer")
 	if vbox.get_children() != null:
 		for i in vbox.get_children():
 			i.queue_free()
 
 func agregar_errores(errores):
 	exclamacion.visible = true
-	errores_auto_control.visible = true
+	panel_errores.visible = true
 	for i in errores.size():
 		var errores_labels = errores_label.instantiate()
-		var vbox = errores_auto_control.find_child("VBoxContainer")
+		var vbox = panel_errores.find_child("VBoxContainer")
 		vbox.add_child(errores_labels)
 		errores_labels.text = errores[i]
+	for i in ventanas:
+		ventanas[i].queue_free()
+	ventanas.clear()
+	var errores_icon: TextureRect = $Iconos/Errores_icon
+	agregar_icono(errores_icon,"Errores_icon")
+	panel_vtv.hide()
+	panel_cedula.hide()
+	panel_licencia.hide()
+	panel_seguro.hide()
+	panel_permiso.hide()
+
+func agregar_icono(icono,nombre):
+	if ventanas.size() < GameManager.max_ventanas:
+		var dupe:TextureRect = icono.duplicate()
+		dupe.set_script(null)
+		ventanas.merge({nombre: dupe})
+		barra_de_tareas.add_child(ventanas[nombre])
+		dupe.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		dupe.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		
+		for i in dupe.get_children():
+			i.queue_free()
+
+func borrar_icono(nombre):
+	if nombre in ventanas:
+		ventanas[nombre].queue_free()
+		ventanas.erase(nombre)
 
 func ajustar_texto(label: Label):
 	var font_size = 32
@@ -183,12 +225,6 @@ func _on_apagar_pc_pressed() -> void:
 	reset_pc()
 	pass # Replace with function body.
 
-func _on_cerrar_errores_pressed() -> void:
-	exclamacion.visible = false
-	errores_auto_control.visible = false
-	pass # Replace with function body.
-
-
 func _on_button_flecha_derecha_pressed() -> void:
 	if pag_number < max_pag_number and not busy:
 		busy = true
@@ -197,7 +233,6 @@ func _on_button_flecha_derecha_pressed() -> void:
 		libro_guia.play("default")
 		fsm.change_to("transicion")
 	pass # Replace with function body.
-
 
 func _on_button_flecha_izquierda_pressed() -> void:
 	if pag_number > min_pag_number and not busy:

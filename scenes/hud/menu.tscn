@@ -639,63 +639,76 @@ value = 0.5
 
 [node name="Button_reiniciar" type="Button" parent="opciones" unique_id=382482303]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+anchors_preset = -1
+anchor_left = 0.48125
+anchor_top = 0.48564816
+anchor_right = 0.51875
+anchor_bottom = 0.51435184
+offset_left = 32.0
+offset_top = 11.5
+offset_right = -32.0
+offset_bottom = -11.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 text = "reiniciar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_reiniciar_tutoriales" type="Button" parent="opciones" unique_id=420276816]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4606771
+anchor_top = 0.5314815
+anchor_right = 0.5393229
+anchor_bottom = 0.5601852
+offset_left = 39.5
+offset_right = -39.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+text = "reiniciar tutoriales"
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="opciones" unique_id=1756116950]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -260.0
-offset_right = 260.0
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_left = 0.36458334
+anchor_top = 0.25925925
+anchor_right = 0.6354167
+anchor_bottom = 0.7407407
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_lgy3i")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="opciones" unique_id=858660565]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -250.0
-offset_right = 250.0
-offset_bottom = 250.0
+anchors_preset = -1
+anchor_left = 0.36979166
+anchor_top = 0.2685185
+anchor_right = 0.6302083
+anchor_bottom = 0.7314815
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_42vat")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="opciones" unique_id=463464096]
 layout_mode = 0
-offset_left = 722.0
-offset_top = 292.0
-offset_right = 778.0
-offset_bottom = 356.0
+anchor_left = 0.37604168
+anchor_top = 0.27037036
+anchor_right = 0.40051523
+anchor_bottom = 0.33600023
+offset_right = 9.010742
+offset_bottom = -6.880249
 rotation = 0.13341281
 mouse_filter = 2
 texture = ExtResource("6_jgfnl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button_atras" type="Button" parent="opciones" unique_id=1323138381]
 self_modulate = Color(1, 1, 1, 0)
@@ -921,6 +934,7 @@ autoplay = true
 [connection signal="item_selected" from="opciones/VBoxContainer/vsync" to="opciones" method="_on_vsync_item_selected"]
 [connection signal="drag_ended" from="opciones/VBoxContainer/HBoxContainer/slider_opciones" to="opciones" method="_on_slider_opciones_drag_ended"]
 [connection signal="pressed" from="opciones/Button_reiniciar" to="opciones" method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="opciones/Button_reiniciar_tutoriales" to="." method="_on_button_reiniciar_tutoriales_pressed"]
 [connection signal="pressed" from="opciones/Button_atras" to="opciones" method="_on_button_atras_pressed"]
 [connection signal="pressed" from="reset_confirmacion/si" to="." method="_on_si_pressed"]
 [connection signal="pressed" from="reset_confirmacion/no" to="." method="_on_no_pressed"]

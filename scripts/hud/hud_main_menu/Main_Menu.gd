@@ -108,11 +108,8 @@ func _on_no_pressed() -> void:
 func _on_si_pressed() -> void:
 	SaveLoad.contents_to_save["dinero"] = 0
 	SaveLoad.contents_to_save["day"] = 0
-	SaveLoad.contents_to_save["tutorial_yes_no"] = false
-	SaveLoad.contents_to_save["tutorial_inspeccion"] = false
-	SaveLoad.contents_to_save["tutorial_pc"] = false
-	SaveLoad.contents_to_save["tutorial_baul"] = false
 	SaveLoad.contents_to_save["usos_mate"] = 3
+	SaveLoad.contents_to_save["max_ventanas_pc"] = 1
 	SaveLoad._save()
 	
 	label_dia.text = str("DIA: ",1)
@@ -161,4 +158,15 @@ func _on_record_pressed() -> void:
 	SaveLoad.contents_to_save["day"] = 7
 	SaveLoad._save()
 	get_tree().change_scene_to_file(day_manager.dias[7].mapa[0])
+	pass # Replace with function body.
+
+
+func _on_button_reiniciar_tutoriales_pressed() -> void:
+	SaveLoad.contents_to_save["tutorial_yes_no"] = false
+	SaveLoad.contents_to_save["tutorial_inspeccion"] = false
+	SaveLoad.contents_to_save["tutorial_pc"] = false
+	SaveLoad.contents_to_save["tutorial_baul"] = false
+	SaveLoad.contents_to_save["tutorial_baul_brillo"] = false
+	SaveLoad.contents_to_save["tutorial_papeles"] = false
+	SaveLoad._save()
 	pass # Replace with function body.

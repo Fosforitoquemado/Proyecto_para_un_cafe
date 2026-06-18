@@ -23,7 +23,6 @@ func _on_elementos_mesa_auto_ready() -> void:
 	auto_on = true
 	pass # Replace with function body.
 
-
 func _on_elementos_mesa_auto_out() -> void:
 	state_machine.change_to("main_view")
 	auto_out = true

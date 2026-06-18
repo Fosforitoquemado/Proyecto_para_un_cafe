@@ -9,6 +9,9 @@ var is_focused:bool = false
 var game_rect:ColorRect
 
 @export var default_pos:Vector2
+@export var nombre_icono:String
+
+@onready var pc_control: Control = $".."
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -32,6 +35,10 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _on_cerrar__pressed() -> void:
+	if name == "PanelContainer_Errores":
+		var exclamacion: MeshInstance3D = $"../../../exclamacion"
+		exclamacion.visible = false
 	visible = false
 	position = default_pos
+	pc_control.borrar_icono(nombre_icono)
 	pass # Replace with function body.

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_0fklj")
 texto = "Solo por hoy, tendrás que revisar la VTV de los autos."
+tiempo_velocidad = 4.0
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

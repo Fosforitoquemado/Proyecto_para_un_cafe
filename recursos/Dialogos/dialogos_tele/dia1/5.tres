@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_0d681")
 texto = "¡Hasta la próxima!"
-tiempo_velocidad = 1.0
+tiempo_cambio_dialogo = 1.0
 tamanio_font = 30
 tamanio_final = 40
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

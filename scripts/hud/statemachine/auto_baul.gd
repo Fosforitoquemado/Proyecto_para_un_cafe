@@ -1,5 +1,7 @@
 extends UIState
 
+@export var tutorial_scene: PackedScene
+
 @export var HUD: Control
 @export var hud_inspeccion: Control
 @export var baul_menu: Control
@@ -11,9 +13,43 @@ extends UIState
 var baul_abierto = false
 var baul_activo = false
 
+var tutorial_hecho = false
+
+func comenzar_guia():
+	var instancia_tutorial = tutorial_scene.instantiate()
+	add_child(instancia_tutorial)
+	
+	# Definimos los pasos: qué botón explicar y qué decir
+	var configuracion_tutorial = [
+		{
+			"nodo_boton": baul_boton,
+			"automatico": false,
+			"texto": "algunos objetos del baul se pueden abrir/interactuar (pueden tener cosas)."
+		},
+	]
+	var configuracion_posiciones = [
+		{
+			"direccion": "arriba",
+			"pixeles_x": 100,
+			"pixeles_y": 100
+		},
+	]
+	# Arrancamos el sistema
+	instancia_tutorial.iniciar_tutorial(configuracion_tutorial,configuracion_posiciones)
+
 func enter() -> void:
+	if tutorial_hecho == false:
+		tutorial_hecho = SaveLoad.contents_to_save["tutorial_baul_brillo"]
 	if hud_inspeccion:
 		CameraController.ver_baul(GameManager.auto_dupe.find_child("camara_baul").global_position,GameManager.auto_dupe.find_child("camara_baul").rotation)
+		var daymanager = get_tree().get_first_node_in_group("DayManager")
+		var dia = daymanager.get_day()
+		if "objetos_baul" in dia.documentos_habilitados:
+			if tutorial_hecho == false:
+				await  get_tree().create_timer(0.2,false).timeout
+				comenzar_guia()
+				SaveLoad.contents_to_save["tutorial_baul_brillo"] = true
+				SaveLoad._save()
 		if baul_abierto == false and not baul_activo:
 			state_machine.processing = true
 			baul_abierto = true

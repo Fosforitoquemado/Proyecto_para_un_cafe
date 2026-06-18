@@ -14,6 +14,9 @@ var contents_to_save: Dictionary = {
 	"pantalla_modo": 0,
 	"vsync" : 0,
 	"volumen": 5.0,
+	"tutorial_baul_brillo": false,
+	"tutorial_papeles": false,
+	"max_ventanas_pc": 1,
 }
 
 func _ready() -> void:

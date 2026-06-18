@@ -34,6 +34,12 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 			if state_machine.current_state.name == "yes_no_menu" or state_machine.current_state.name == "inspeccion":
 				ocupado = true
 				uicontroller.papeles_on = true
+				var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
+				if SaveLoad.contents_to_save["tutorial_papeles"] == false:
+					SaveLoad.contents_to_save["tutorial_papeles"] = true
+					SaveLoad._save()
+					personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles/guia_papeles").queue_free()
+					
 				var cedula = elementos_mesa.find_child("Documento_cedula")
 				var carnet = elementos_mesa.find_child("Documento_carnet")
 				var seguro = elementos_mesa.find_child("Documento_seguro")
@@ -54,10 +60,8 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 				var num8 = snapped(randf_range(-0.12,0.12), 0.001)
 				var tween4 = create_tween()
 				tween4.tween_property(permiso,"global_position",Vector3(position_documentos.x + num7,position_documentos.y,position_documentos.z + num8),0.6)
-				var personaje = GameManager.auto_dupe.get_node("nodo_personaje/personaje")
 				var personaje_animator:AnimationPlayer = personaje.find_child("AnimationPlayer")
 				personaje_animator.play("agarrar papeles")
-				personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles/guia_papeles").queue_free()
 				
 				await personaje_animator.animation_finished
 				personaje_animator.play("manejando")

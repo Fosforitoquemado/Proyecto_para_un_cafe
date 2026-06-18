@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_ixbnp")
 texto = "En este día tan frío, podemos ver que van a pasar muchos autos."
+tiempo_velocidad = 4.0
 metadata/_custom_type_script = "uid://ckuavikngjvdt"

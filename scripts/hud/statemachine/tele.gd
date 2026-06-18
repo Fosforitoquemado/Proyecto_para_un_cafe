@@ -9,7 +9,7 @@ extends UIState
 @onready var startdaymanager: Node = $"../../../Startdaymanager"
 
 @export var Star_Day_rect: TextureRect
-@export var skip_intro: Button
+@export var skip_intro: TextureRect
 
 func enter() -> void:
 	if fsm.debug == true:

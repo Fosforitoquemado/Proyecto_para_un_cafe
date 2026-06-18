@@ -208,7 +208,7 @@ _data = {
 &"llegada": ExtResource("2_cvks7")
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8qpf"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqhn7"]
 _data = {
 &"baul_parpadeando": ExtResource("6_fqhn7")
 }
@@ -786,7 +786,7 @@ libraries/ = SubResource("AnimationLibrary_kgap0")
 autoplay = &"llegada"
 
 [node name="baul_animator" type="AnimationPlayer" parent="." unique_id=1546937779]
-libraries/libreria = SubResource("AnimationLibrary_j8qpf")
+libraries/ = SubResource("AnimationLibrary_fqhn7")
 
 [node name="Armature" type="Node3D" parent="." unique_id=614033109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.800401e-05, -0.5721953, -1.0740255)

@@ -7,6 +7,10 @@ extends UIState
 @export var HUD_tienda:Control
 @export var tienda: Control
 @export var coste_mate: Label
+
+@export var max_ventanas_label:Label
+@export var coste_ventanas:Label
+
 @export var dinero: Label
 @export var dinero_ganado_hoy: Label
 @export var autos_pasados: Label
@@ -49,6 +53,7 @@ func enter() -> void:
 		tutorial_hecho = savedata.values()[2]
 	if tienda:
 		mates_usos.text = str("MATES: ",GameManager.usos_mates)
+		max_ventanas_label.text = str("MAX VENTANAS: ",GameManager.max_ventanas)
 		coste_mate.text = str("CUESTA: ", 100)
 		dinero.text = str("DINERO: ",GameManager.dinero)
 		dinero_ganado_hoy.text = str("DINERO GANADO HOY: ",GameManager.dinero_ganado_hoy)
@@ -90,7 +95,19 @@ func _on_siguiente_dia_pressed() -> void:
 		daymanager.sumar_dia()
 	SaveLoad.contents_to_save["dinero"] = GameManager.dinero
 	SaveLoad.contents_to_save["day"] = daymanager.dia_actual
+	SaveLoad.contents_to_save["max_ventanas_pc"] = GameManager.max_ventanas
 	SaveLoad.contents_to_save["usos_mate"] = GameManager.usos_mates
 	SaveLoad._save()
 	get_tree().change_scene_to_file(daymanager.dias[SaveLoad.contents_to_save.values()[0]].mapa[0])
+	pass # Replace with function body.
+
+
+func _on_comprar_ram_pressed() -> void:
+	if GameManager.max_ventanas < 7:
+		if GameManager.dinero >= 700:
+			GameManager.dinero -= 700
+			GameManager.max_ventanas += 1
+			dinero.text = str("DINERO: ",GameManager.dinero)
+			max_ventanas_label.text = str("MAX VENTANAS: ",GameManager.max_ventanas)
+			print("ram_comprada")
 	pass # Replace with function body.

@@ -47,6 +47,8 @@ var personaje
 
 var datos_documentos
 
+var guia_dupe
+
 signal auto_ready
 
 signal auto_out
@@ -111,7 +113,8 @@ func mostrar_datos():
 				else:
 					GameManager.auto_dupe.find_child("nodo_baul_mediano_der").add_child(objeto_dupe)
 					objeto_dupe.rotation = Vector3(objeto_dupe.rotation.x,deg_to_rad(rotacion),objeto_dupe.rotation.z)
-		GameManager.auto_dupe.baul_parpadear()
+		if SaveLoad.contents_to_save["tutorial_baul_brillo"] == false:
+			GameManager.auto_dupe.baul_parpadear()
 	#cedula
 	if "cedula" in day.documentos_habilitados:
 		dominio_cedula.text = datos_documentos["patente_cedula"] #🎫🎫🎫
@@ -184,8 +187,9 @@ func mostrar_datos():
 		if "permiso" in day.documentos_habilitados:
 			permiso.visible = true
 		var nodo_papeles = personaje.get_node("Armature/Skeleton3D/BoneAttachment3D/nodo_papeles")
-		var guia_dupe = guia_mano.instantiate()
-		nodo_papeles.add_child(guia_dupe)
+		if SaveLoad.contents_to_save["tutorial_papeles"] == false:
+			guia_dupe = guia_mano.instantiate()
+			nodo_papeles.add_child(guia_dupe)
 		cedula.global_position = nodo_papeles.global_position
 		licencia.global_position =  nodo_papeles.global_position
 		seguro.global_position = nodo_papeles.global_position
@@ -376,6 +380,8 @@ func dialogo_ida(pool):
 #condicion (0 es se va normal), (1 es se va con multa) y (2 es se va coimeado)
 func ocultar_documentos(condicion):
 	num_alcholemia.text = "..." 
+	if guia_dupe:
+		guia_dupe.queue_free()
 	if condicion == 0:
 		ocultar_docu_bien()
 		dialogo_ida(GameManager.auto_data["dialogo_ida_bien_info"]["resource"])

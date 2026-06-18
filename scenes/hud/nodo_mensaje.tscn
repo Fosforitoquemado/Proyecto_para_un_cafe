@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dcipxrf0et3t0" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)1.wav" id="1_a8sky"]
 [ext_resource type="AudioStream" uid="uid://pxoswi4ssaah" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)2.wav" id="2_5211o"]
 [ext_resource type="Texture2D" uid="uid://vsdfav036kvp" path="res://texture/hud/hud principal/iconos_menus/globo_de_texto (1).png" id="2_y3uaa"]
+[ext_resource type="FontFile" uid="uid://c1rfh1ioaxtka" path="res://fonts/Pro racing (de carreras)/Pro Racing.otf" id="3_ca1v3"]
 [ext_resource type="AudioStream" uid="uid://dwon2onp44k0s" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)3.wav" id="3_y3uaa"]
 [ext_resource type="AudioStream" uid="uid://d0xiopo7y2q1d" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)4.wav" id="4_ca1v3"]
 [ext_resource type="AudioStream" uid="uid://b23s6rm0lmrk2" path="res://sonidos/Tv/short/Sonido tele (mp3cut.net)5.wav" id="5_flmli"]
@@ -31,7 +32,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 20.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_flmli"]
-font = ExtResource("1_5211o")
+font = ExtResource("3_ca1v3")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
 
